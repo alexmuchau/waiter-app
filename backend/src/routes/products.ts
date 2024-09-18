@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
-import { getBoards } from "../controllers/boards/getBoards";
+import { getProducts } from "../controllers/products/getProducts";
 
 export async function productsRoutes(fastify: FastifyInstance){
-    fastify.get('/boards/', getBoards)
+    fastify.get('/products/', getProducts)
 }

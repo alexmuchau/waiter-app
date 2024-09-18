@@ -1,5 +1,8 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
+import { prisma } from '../../../prisma/prisma';
 
-export function getBoards(req: FastifyRequest, res: FastifyReply) {    
-    return res.send('Working!')
+export async function getBoards(req: FastifyRequest, res: FastifyReply) {    
+    const boards = await prisma.tb_mesa.findMany()
+    
+    return res.send(boards)
 }
