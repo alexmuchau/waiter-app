@@ -1,5 +1,5 @@
 export interface OrderProps {
-    table: number;
+    board: number;
     command: number;
     items: OrderItemProps[]; 
 }
