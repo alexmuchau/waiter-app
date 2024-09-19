@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
-import { getBoards } from "../controllers/boards/getBoards";
+import { createOrder } from "../controllers/orders/createOrder";
 
 export async function ordersRoutes(fastify: FastifyInstance){
-    fastify.get('/boards/', getBoards)
+    fastify.post('/order/', createOrder)
 }

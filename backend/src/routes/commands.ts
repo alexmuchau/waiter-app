@@ -1,6 +1,8 @@
 import { FastifyInstance } from "fastify";
-import { getBoards } from "../controllers/boards/getBoards";
+import { getCommands } from "../controllers/commands/getCommands";
+import { updateStateCommand } from "../controllers/commands/updateStateCommand";
 
 export async function commandsRoutes(fastify: FastifyInstance){
-    fastify.get('/boards/', getBoards)
+    fastify.get('/commands/', getCommands)
+    fastify.put('/commands/:id', updateStateCommand)
 }

@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
-import { getBoards } from "../controllers/boards/getBoards";
+import { getClients } from "../controllers/clients/getClients";
 
 export async function clientsRoutes(fastify: FastifyInstance){
-    fastify.get('/boards/', getBoards)
+    fastify.get('/clients/', getClients)
 }

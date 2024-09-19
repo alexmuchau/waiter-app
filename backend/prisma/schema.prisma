@@ -7,6 +7,132 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// #######################
+// -------> READ MODELS
+// #######################
+model tb_pessoas {
+  Codigo                    Int       @id
+  Tipo_Pessoa               String?   @db.VarChar(300)
+  CPF                       String?   @db.VarChar(300)
+  CNPJ                      String?   @db.VarChar(300)
+  RG                        String?   @db.VarChar(300)
+  IE                        String?   @db.VarChar(300)
+  CadPro                    String?   @db.VarChar(300)
+  Tipo_Contribuinte         Int?
+  Pessoa                    String?   @db.VarChar(300)
+  Fantasia                  String?   @db.VarChar(300)
+  CEP                       String?   @db.VarChar(300)
+  Endereco                  String?   @db.VarChar(300)
+  Numero                    String?   @db.VarChar(300)
+  Bairro                    String?   @db.VarChar(300)
+  UF                        String?   @db.VarChar(300)
+  cUF                       String?   @db.VarChar(300)
+  xMun                      String?   @db.VarChar(300)
+  cMun                      String?   @db.VarChar(300)
+  xPais                     String?   @db.VarChar(300)
+  cPais                     String?   @db.VarChar(300)
+  Complemento               String?   @db.VarChar(300)
+  Data_Nascimento           DateTime? @db.Date
+  Fone1                     String?   @db.VarChar(300)
+  Fone2                     String?   @db.VarChar(300)
+  Fone3                     String?   @db.VarChar(300)
+  Fone4                     String?   @db.VarChar(300)
+  Fone5                     String?   @db.VarChar(300)
+  Id_Tabela_Preco           Int?
+  RegExcluido               String?   @db.VarChar(300)
+  Ativo                     String?   @db.VarChar(300)
+  IDEmpresa                 Int?
+  DHU                       String?   @db.VarChar(300)
+  IDUser                    Int?
+  Email                     String?   @db.VarChar(300)
+  Id_Operacao_Movimento     Int?
+  Apelido                   String?   @db.VarChar(300)
+  Limite                    Float?
+  Liberado_Contas_Em_Atraso String?   @db.VarChar(300)
+  WhatsApp                  String?   @db.VarChar(300)
+}
+
+model tb_produtos {
+  Codigo                Int       @id
+  Produto               String?   @db.VarChar(300)
+  Produto_Curto         String?   @db.VarChar(300)
+  Produto_PDV           String?   @db.VarChar(300)
+  Complemento           String?   @db.VarChar(300)
+  Pesquisa_Rapida_PDV   String?   @db.VarChar(300)
+  Id_Departamento       Int?
+  Id_Setor              Int?
+  Id_Marca              Int?
+  Id_Grupo              Int?
+  Id_SubGrupo           Int?
+  Id_Unidade            Int?
+  Id_Familia            Int?
+  Codigo_Interno        String?   @db.VarChar(300)
+  Peso                  Float?
+  Capacidade            Float?
+  ID_Alocacao           Int?
+  Comissao              Float?
+  Balanca               String?   @db.VarChar(300)
+  Tipo_Balanca          String?   @db.VarChar(300)
+  Descricao_Balanca     String?   @db.VarChar(300)
+  NCM                   Int?
+  Genero                String?   @db.VarChar(300)
+  cEAN_Trib             String?   @db.VarChar(300)
+  CEST                  String?   @db.VarChar(300)
+  Estoque               Float?
+  Estoque_Reservado     Float?
+  Estoque_Disponivel    Float?
+  Tipo                  Float?
+  Deposito              String?   @db.VarChar(300)
+  Fraciona              String?   @db.VarChar(300)
+  Controle_Lote         String?   @db.VarChar(300)
+  Requer_Observacao     String?   @db.VarChar(300)
+  Nao_Controla_Estoque  String?   @db.VarChar(300)
+  Nunca_Agrupa_Venda    String?   @db.VarChar(300)
+  Preco_Atribuido       Float?
+  Preco_Venda           Float?
+  Preco_Compra          Float?
+  Preco_Medio           Float?
+  Data_Preco_Venda      DateTime? @db.Date
+  Data_Custo            DateTime? @db.Date
+  Margem                Float?
+  Markup                Float?
+  Classificacao         String?   @db.VarChar(300)
+  Id_Produto_Vinculado  Int?
+  Ultima_Venda          DateTime? @db.Date
+  Ultima_Compra         DateTime? @db.Date
+  Data_Alterado         DateTime? @db.Date
+  Ativo                 String?   @db.VarChar(300)
+  RegExcluido           String?   @db.VarChar(300)
+  IDEmpresa             Int?
+  DHU                   String?   @db.VarChar(300)
+  Id_Importacao_Sistema Int?
+  Id_SubFamilia         Int?
+  Estoque_Maximo        Float?
+  Estoque_Minimo        Float?
+  IDUser                Int?
+  Cad_ViaXML            String?   @db.VarChar(300)
+  Funcao                String?   @db.VarChar(300)
+  Alterado              String?   @db.VarChar(300)
+  N_Licenca_ANVISA      String?   @db.VarChar(300)
+  Id_DCB                Int?
+  Fidelidade_Credito    Float?
+  Fidelidade_Resgate    Float?
+  Dias_Validade         Int?
+}
+
+model tb_produtos_setor {
+  Codigo      Int     @id
+  Setor       String? @db.VarChar(300)
+  Ativo       String? @db.VarChar(300)
+  RegExcluido String? @db.VarChar(300)
+  IDEmpresa   Int?
+  DHU         String? @db.VarChar(300)
+  IDUser      Int?
+}
+
+// #######################
+// -------> WRITE MODELS
+// #######################
 model tb_comanda {
   Codigo Int     @id
   Ativo  String? @db.VarChar(10)
