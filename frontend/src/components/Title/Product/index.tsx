@@ -1,18 +1,19 @@
 'use client'
 
 import { ProductListProps } from "@/app/page"
-import { Autocomplete, AutocompleteItem } from "@nextui-org/autocomplete"
+import { SelectItem } from "@/components/SelectItem"
 import { Input } from "@nextui-org/input"
 import { Check, Plus } from "phosphor-react"
 import { Key, useState } from "react"
 
 interface TitleProductProps {
     text: string,
-    products: ProductListProps[]
+    products: ProductListProps[],
+    disabled: boolean,
     addProduct: (id: string, name:string, qtd: number) => void
 }
 
-export function TitleProduct({ text, products, addProduct } : TitleProductProps) {
+export function TitleProduct({ text, products, addProduct, disabled } : TitleProductProps) {
     const [ isAdding, setIsAdding ] = useState<boolean>(false)
     const [ productIdToAdd, setProductIdToAdd ] = useState<string | undefined>(undefined)
     const [ quantityToAdd, setQuantityToAdd ] = useState<string | undefined>(undefined)
@@ -37,23 +38,11 @@ export function TitleProduct({ text, products, addProduct } : TitleProductProps)
         <>
             { isAdding
                 ? <div className="flex w-full gap-4 items-end">
-                    <Autocomplete
-                        variant="underlined"
-                        defaultItems={products}
+                    <SelectItem
                         label={text}
-                        className=""
-                        onSelectionChange={onSelectionChange}
-                    >
-                        { (product) => 
-                            <AutocompleteItem
-                                key={product.id}
-                                color="primary"
-                                className="flex w-full"
-                            >
-                                {product.name}
-                            </AutocompleteItem>
-                        }
-                    </Autocomplete>
+                        items={products}
+                        onChange={onSelectionChange}
+                    />
                     <Input
                         label="Qtd"
                         type="number"
@@ -73,15 +62,19 @@ export function TitleProduct({ text, products, addProduct } : TitleProductProps)
                     </button>
                 </div>
 
-                : <div className="flex w-full items-center gap-3">
+                : <div className={`flex w-full items-center gap-3 ${!disabled ? "" : "opacity-20"}`}>
                     <h2 className="font-bold text-[2rem]">{text}</h2>
                     <div className="w-full bg-slate-900 h-[0.125rem]"/>
-                    <Plus
-                        onClick={handleIsAdding}
-                        size={40}
-                        weight="bold"
-                        className="cursor-pointer"
-                    />
+                    {
+                        !disabled
+                        ? <Plus
+                            onClick={handleIsAdding}
+                            size={40}
+                            weight="bold"
+                            className="cursor-pointer"
+                        />
+                        : <></>
+                    }
                 </div>  
             }
         </>

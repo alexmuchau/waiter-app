@@ -1,7 +1,7 @@
 'use client'
 
 import { ProductListProps } from "../page"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ProductItemProps, ProductList } from "@/components/ProductList"
 import { Title } from "@/components/Title/Default"
 import { TitleProduct } from "@/components/Title/Product"
@@ -10,6 +10,13 @@ import { Button } from "@/components/Buttons/Button"
 import { HeaderTitle } from "@/components/Header/HeaderTitle"
 import { IdentifyItemProps, IdentifyList } from "@/components/Identify/IdentifyList"
 import { BackHeader } from "@/components/Header/BackHeader"
+import { TitleClient } from "@/components/Title/Client"
+import { ClientItem } from "@/components/ClientItem"
+
+export interface ClientProps {
+  id: string,
+  name: string
+}
 
 export default function OrderBuild() {
   const boards: IdentifyItemProps[] = [
@@ -77,8 +84,28 @@ export default function OrderBuild() {
       }
   ]
 
+  const clients: ClientProps[] = [
+    {
+      id: "1",
+      name: "Andrei"
+    },
+    {
+      id: "2",
+      name: "Padilha"
+    },
+    {
+      id: "3",
+      name: "Murilo"
+    },
+    {
+      id: "4",
+      name: "Alex"
+    },
+  ]
+
 
   // const [ order, setOrder ] = useState<OrderProps | null>(null)
+  const [ client, setClient ] = useState<ClientProps | undefined>(undefined)
   const [ board, setBoard ] = useState<string | undefined>(undefined)
   const [ command, setCommand ] = useState<string | undefined>(undefined)
   const [ chopps, setChopps ] = useState<ProductItemProps[]>([])
@@ -162,10 +189,22 @@ export default function OrderBuild() {
     setFoods(newFoods)
   }
 
+  function selectClient(id:string, name:string) {
+    setClient({ id: id, name: name })
+  }
+
+  function removeClient() {
+    setClient(undefined)
+  }
+
   function finishOrder() {
     // TO DO!
     // redirect('/')
   }
+
+  useEffect(() => {
+    console.log(`Board - ${board}, Command - ${command}, !board && !command = ${!board && !command}`)
+  }, [board, command])
 
   return (
     <main className="flex flex-col w-full h-full justify-start py-10 px-4 gap-8">
@@ -179,6 +218,22 @@ export default function OrderBuild() {
             <HeaderTitle text="pedido"/>
           </header>
           <div className="flex flex-col gap-8 h-screen"> 
+            <div className="flex flex-col">
+              <TitleClient
+                text="Cliente"
+                selectClient={selectClient}
+                disabled={!(!client)}
+                clients={clients}
+              />
+              {
+                client
+                ? <ClientItem
+                  client={client}
+                  removeClient={removeClient}
+                />
+                : <></>
+              }
+            </div>
             <div className="flex flex-col">
               <Title text="Mesas" />
               <IdentifyList
@@ -195,7 +250,7 @@ export default function OrderBuild() {
               <IdentifyList
                 key="command"
                 listKey="command"
-                disabled={!board ? true : false}
+                disabled={!board}
                 selectItem={selectItem}
                 list={boards}
                 activeItem={command}
@@ -204,6 +259,7 @@ export default function OrderBuild() {
             <div className="flex flex-col gap-8">
               <TitleProduct
                 text="Chopp"
+                disabled={!board || !command}
                 products={products}
                 addProduct={addChoppItem}
               />
@@ -216,6 +272,7 @@ export default function OrderBuild() {
             <div className="flex flex-col gap-8">
               <TitleProduct
                 text="Porções"
+                disabled={!board || !command}
                 products={productsPorcoes}
                 addProduct={addFoodItem}
               />
