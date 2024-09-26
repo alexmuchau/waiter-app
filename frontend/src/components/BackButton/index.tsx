@@ -1,10 +1,33 @@
+import Link from 'next/link'
 import { ArrowLeft } from 'phosphor-react'
 
-export function BackButton() {
+interface BackButtonProps {
+    href: string
+    onClick?: () => void
+}
+
+export function BackButton({ href, onClick }: BackButtonProps) {
     return (
-        <ArrowLeft
-            weight='bold'
-            size={20}
-        />
+        <>
+            {
+                onClick
+                ? <div>
+                    <ArrowLeft
+                        weight='bold'
+                        size={20}
+                        className='cursor-pointer'
+                        onClick={onClick}
+                    />
+                </div>
+
+                : <Link href={href}>
+                    <ArrowLeft
+                        weight='bold'
+                        size={20}
+                        className='cursor-pointer'
+                    />
+                </Link> 
+            }
+        </>
     )
 }
