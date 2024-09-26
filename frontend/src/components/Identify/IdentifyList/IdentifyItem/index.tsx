@@ -1,13 +1,13 @@
 'use client'
 
-interface ItemProps {
+interface IdentifyItemProps {
     text: string,
     onClick: (number: string) => void,
     isDisabled: boolean
     isActive: boolean
 }
 
-export function Item({ text, onClick, isDisabled, isActive }: ItemProps) {
+export function IdentifyItem({ text, onClick, isDisabled, isActive }: IdentifyItemProps) {
     return (
         <input
             type="button"

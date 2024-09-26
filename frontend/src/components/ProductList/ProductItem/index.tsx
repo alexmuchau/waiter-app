@@ -1,5 +1,5 @@
 import { XCircle } from "phosphor-react"
-import { ProductItemProps } from "../ProductList"
+import { ProductItemProps } from ".."
 
 interface ComponentProductItemProps {
     product: ProductItemProps
