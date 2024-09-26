@@ -1,5 +1,6 @@
 'use client'
-import { LinkButton } from "@/components/LinkButton";
+import { LinkButton } from "@/components/Buttons/LinkButton";
+import { HeaderTitle } from "@/components/Header/HeaderTitle";
 
 export interface ProductListProps {
   id: string,
@@ -10,11 +11,9 @@ export default function Home() {
   return (
     <main className="flex flex-col w-full h-full justify-start py-10 px-4 gap-8">
       <header className="flex">
-        <h1 className="text-3xl">
-          mesas ativas
-        </h1>
+        <HeaderTitle text="mesas ativas"/>
       </header>
-      <div className="flex flex-col gap-8 h-screen"> 
+      <div className="flex flex-col gap-8"> 
         
       </div>
       <footer>

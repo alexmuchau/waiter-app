@@ -1,21 +1,21 @@
 'use client'
 
-import { Item } from "../Item"
+import { IdentifyItem } from "./IdentifyItem"
 
-export interface ItemProps {
+export interface IdentifyItemProps {
     value: string,
     isActive: boolean
 }
 
-interface ItemListProps {
+interface IdentifyListProps {
     listKey: "board" | "command"
     selectItem: (key: "board" | "command", value: string | undefined) => void,
     disabled: boolean
-    list: ItemProps[]
+    list: IdentifyItemProps[]
     activeItem: string | undefined
 }
 
-export function ItemList({ listKey, selectItem, disabled, list, activeItem } : ItemListProps) {
+export function IdentifyList({ listKey, selectItem, disabled, list, activeItem } : IdentifyListProps) {
     function onClick(number: string) {
         const value = number === activeItem ? undefined : number
         
@@ -26,7 +26,7 @@ export function ItemList({ listKey, selectItem, disabled, list, activeItem } : I
         <div className="flex gap-4 flex-wrap">
           {
             list.map((item) => (
-              <Item
+              <IdentifyItem
                 text={item.value}
                 onClick={onClick}
                 isDisabled={disabled ? true : item.value === activeItem || activeItem === undefined ? false : true}

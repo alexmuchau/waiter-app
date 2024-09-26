@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'phosphor-react'
 
-interface BackButtonProps {
+interface BackHeaderProps {
     href: string
     onClick?: () => void
 }
 
-export function BackButton({ href, onClick }: BackButtonProps) {
+export function BackHeader({ href, onClick }: BackHeaderProps) {
     return (
         <>
             {

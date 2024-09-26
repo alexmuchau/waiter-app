@@ -54,7 +54,14 @@ export function TitleProduct({ text, products, addProduct } : TitleProductProps)
                             </AutocompleteItem>
                         }
                     </Autocomplete>
-                    <Input label="Qtd" type="number" variant="bordered" className="w-1/4" onValueChange={setQuantityToAdd}/>
+                    <Input
+                        label="Qtd"
+                        type="number"
+                        variant="bordered"
+                        className="w-1/4"
+                        onValueChange={setQuantityToAdd}
+                        defaultValue="1"
+                    />
                     <button
                         className="flex cursor-pointer bg-accent rounded-full px-4 py-4"
                         onClick={finishAdd}

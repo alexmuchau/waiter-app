@@ -1,18 +1,18 @@
 'use client'
 
-import { ItemList, ItemProps } from "@/components/ItemList"
 import { ProductListProps } from "../page"
 import { useState } from "react"
 import { ProductItemProps, ProductList } from "@/components/ProductList"
-import { BackButton } from "@/components/BackButton"
 import { Title } from "@/components/Title/Default"
 import { TitleProduct } from "@/components/Title/Product"
-import { IdentifyCard } from "@/components/IdentifyCard"
-import { Button } from "@/components/Button"
-// import { LinkButton } from "@/components/LinkButton"
+import { IdentifyCard } from "@/components/Identify/IdentifyCard"
+import { Button } from "@/components/Buttons/Button"
+import { HeaderTitle } from "@/components/Header/HeaderTitle"
+import { IdentifyItemProps, IdentifyList } from "@/components/Identify/IdentifyList"
+import { BackHeader } from "@/components/Header/BackHeader"
 
 export default function OrderBuild() {
-  const boards: ItemProps[] = [
+  const boards: IdentifyItemProps[] = [
     {
       value: "1",
       isActive: true  
@@ -109,7 +109,7 @@ export default function OrderBuild() {
   }
 
   function removeFoodItem(id: string) {
-    setChopps(foods!.filter((food) => food.id != id))
+    setFoods(foods!.filter((food) => food.id != id))
   }
 
   function addChoppItem(id: string, name: string, quantity: number) {
@@ -172,18 +172,16 @@ export default function OrderBuild() {
       {
         !isResume
         ? <>
-          <BackButton
+          <BackHeader
             href='/'
           />
           <header className="flex">
-            <h1 className="text-3xl">
-              pedido
-            </h1>
+            <HeaderTitle text="pedido"/>
           </header>
           <div className="flex flex-col gap-8 h-screen"> 
             <div className="flex flex-col">
               <Title text="Mesas" />
-              <ItemList
+              <IdentifyList
                 key="board"
                 disabled={false}
                 listKey="board"
@@ -194,7 +192,7 @@ export default function OrderBuild() {
             </div>
             <div className="flex flex-col">
               <Title text="Comandas" />
-              <ItemList
+              <IdentifyList
                 key="command"
                 listKey="command"
                 disabled={!board ? true : false}
@@ -237,7 +235,7 @@ export default function OrderBuild() {
         </>
 
         : <>
-          <BackButton href="" onClick={handleIsResume}/>
+          <BackHeader href="" onClick={handleIsResume}/>
           <header className="flex">
             <h1 className="text-3xl">
               resumo do pedido
