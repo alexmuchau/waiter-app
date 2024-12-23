@@ -16,7 +16,7 @@ interface TitleProductProps {
 export function TitleProduct({ text, products, addProduct, disabled } : TitleProductProps) {
     const [ isAdding, setIsAdding ] = useState<boolean>(false)
     const [ productIdToAdd, setProductIdToAdd ] = useState<string | undefined>(undefined)
-    const [ quantityToAdd, setQuantityToAdd ] = useState<string | undefined>(undefined)
+    const [ quantityToAdd, setQuantityToAdd ] = useState<string>('1')
     
     function handleIsAdding() {
         setIsAdding(!isAdding)
