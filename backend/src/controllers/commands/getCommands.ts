@@ -1,8 +1,8 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { prisma } from '../../../prisma/prisma';
+import { mobileClient } from '../../../prisma/prisma';
 
 export async function getCommands(req: FastifyRequest, res: FastifyReply) {    
-    const commands = await prisma.tb_comanda.findMany()
+    const commands = mobileClient.command.findMany()
     
-    return res.send(commands)
+    return res.send({commands})
 }

@@ -1,0 +1,45 @@
+// npx prisma migrate dev --schema prisma/mobile_db/mobileSchema.prisma --name init
+// npx prisma generate --schema prisma/mobile_db/mobileSchema.prisma
+// npx prisma db pull --schema prisma/desktop_db/desktopSchema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("MOBILE_DB_URL")
+}
+
+model table {
+  tableNumber        Int                  @id
+  activeTableCommand activeTableCommand[]
+}
+
+model command {
+  commandNumber      Int                 @id
+  activeTableCommand activeTableCommand?
+  client             client?
+}
+
+model activeTableCommand {
+  commandNumber Int @id
+  tableNumber   Int
+
+  table   table   @relation(fields: [tableNumber], references: [tableNumber])
+  command command @relation(fields: [commandNumber], references: [commandNumber])
+}
+
+model client {
+  clientId Int     @id @default(autoincrement())
+  name     String
+  command  command @relation(fields: [clientId], references: [commandNumber])
+}
+
+model product {
+  productId Int    @id @default(autoincrement())
+  name      String
+  category  String
+  price     Float
+}

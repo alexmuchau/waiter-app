@@ -1,8 +1,8 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
 import type { OrderProps } from '../../../../utils/types';
-import { prisma } from '../../../prisma/prisma';
+import { desktopClient } from '../../../prisma/prisma';
 import { swapStateCommand } from '../commands/updateStateCommand';
-import { swapStateBoard } from '../boards/updateStateBoard';
+import { swapStateBoard } from '../table/updateStateTable';
 
 async function verifyBoardCommand(bcs: any, board: number, command: number) {
     for ( const bc of bcs ) {
@@ -25,7 +25,7 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     // Check if board and command exists on db
     // ############################################
     // ---------------------- BOARD AREA
-    const board = await prisma.tb_mesa.findFirst({
+    const board = await desktopClient.tb_mesa.findFirst({
         where: {
             Codigo: bodyOrder.board
         }
@@ -36,7 +36,7 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     }
     
     // ---------------------- COMMAND AREA
-    const command = await prisma.tb_comanda.findFirst({
+    const command = await desktopClient.tb_comanda.findFirst({
         where: {
             Codigo: bodyOrder.command
         }
@@ -51,7 +51,7 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     // ############################################
     // Checking if board command combinations exists or having some issue
     // ############################################
-    const boardCommand = await prisma.tb_mesa_comanda.findMany({
+    const boardCommand = await desktopClient.tb_mesa_comanda.findMany({
         where: {
             OR: [
                 { Id_Mesa: board.Codigo },
@@ -66,9 +66,9 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
         swapStateBoard(board.Codigo)
         swapStateCommand(command.Codigo)
         
-        boardCommandCode = await prisma.tb_mesa_comanda.count()
+        boardCommandCode = await desktopClient.tb_mesa_comanda.count()
         
-        await prisma.tb_mesa_comanda.create({
+        await desktopClient.tb_mesa_comanda.create({
             data: {
                 Codigo: boardCommandCode,
                 Id_Mesa: board.Codigo,
@@ -86,9 +86,9 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
             swapStateBoard(board.Codigo)
             swapStateCommand(command.Codigo)
             
-            boardCommandCode = await prisma.tb_mesa_comanda.count()
+            boardCommandCode = await desktopClient.tb_mesa_comanda.count()
             
-            await prisma.tb_mesa_comanda.create({
+            await desktopClient.tb_mesa_comanda.create({
                 data: {
                     Codigo: boardCommandCode,
                     Id_Mesa: board.Codigo,
@@ -101,7 +101,7 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     // ############################################
     // Check if all products exists on db
     // ############################################
-    const qtdProducts = await prisma.tb_produtos.count({
+    const qtdProducts = await desktopClient.tb_produtos.count({
         where: {
             Codigo: {
                 in: bodyOrder.items.map(item => item.id_product)
@@ -116,8 +116,8 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     // ############################################
     // Create order
     // ############################################
-    const orderCode = await prisma.tb_pedido.count()
-    const newOrder = await prisma.tb_pedido.create({
+    const orderCode = await desktopClient.tb_pedido.count()
+    const newOrder = await desktopClient.tb_pedido.create({
         data: {
             Codigo: orderCode,
             Id_Mesa: board.Codigo,
@@ -125,8 +125,8 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
         }
     })
     
-    let orderItemCode = await prisma.tb_pedido_item.count() - 1
-    const orderItems = await prisma.tb_pedido_item.createMany({
+    let orderItemCode = await desktopClient.tb_pedido_item.count() - 1
+    const orderItems = await desktopClient.tb_pedido_item.createMany({
         data: bodyOrder.items.map(item => {
             return {
                 Codigo: orderItemCode + 1,

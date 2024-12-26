@@ -1,8 +1,8 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { prisma } from '../../../prisma/prisma';
+import { desktopClient, mobileClient } from '../../../prisma/prisma';
 
 export async function getClients(req: FastifyRequest, res: FastifyReply) {    
-    // const clients = await prisma.tb_pessoas.findMany()
+    const clients = await mobileClient.client.findMany()
     
-    return res.send('Working!')
+    return res.send({clients})
 }

@@ -1,8 +1,8 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { prisma } from '../../../prisma/prisma';
+import { desktopClient } from '../../../prisma/prisma';
 
 export async function swapStateCommand(id: number) {
-    const command = await prisma.tb_mesa.findUnique({
+    const command = await desktopClient.tb_mesa.findUnique({
         where: {
             Codigo: id
         }
@@ -12,7 +12,7 @@ export async function swapStateCommand(id: number) {
         return null
     }
     
-    const updatedCommand = await prisma.tb_mesa.update({
+    const updatedCommand = await desktopClient.tb_mesa.update({
         where: {
             Codigo: id
         },
