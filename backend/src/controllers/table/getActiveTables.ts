@@ -3,19 +3,23 @@ import { mobileClient } from '../../../prisma/prisma';
 
 export async function getActiveTables(req: FastifyRequest, res: FastifyReply) {
     const tables = await mobileClient.table.findMany({
-        where: {
+        include: {
             activeTableCommand: {
-                every: {
-                    commandNumber: {
-                        not: undefined
+                select: {
+                    command: {
+                        select: {
+                            commandNumber: true,
+                            client: {
+                                select: {
+                                    name: true
+                                }
+                            }
+                        }
                     }
                 }
             }
-        },
-        include: {
-            activeTableCommand: true
         }
     })
     
-    return res.status(200).send(tables)
+    return res.status(200).send({tables: tables.filter(table => table.activeTableCommand.length > 0)})
 }

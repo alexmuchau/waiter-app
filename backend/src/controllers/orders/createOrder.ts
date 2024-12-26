@@ -1,21 +1,25 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
 import type { OrderProps } from '../../../../utils/types';
-import { desktopClient } from '../../../prisma/prisma';
-import { swapStateCommand } from '../commands/updateStateCommand';
-import { swapStateBoard } from '../table/updateStateTable';
+import { desktopClient, mobileClient } from '../../../prisma/prisma';
 
-async function verifyBoardCommand(bcs: any, board: number, command: number) {
-    for ( const bc of bcs ) {
-        if (bc.Id_Mesa != board) {
-            return -1
+async function swapStates(tableNumber: number, commandNumber: number, active: 'Sim' | 'Não') {
+    await desktopClient.tb_mesa.update({
+        where: {
+            Codigo: tableNumber
+        },
+        data: {
+            Ativo: active
         }
-        
-        if (bc.Id_Mesa == board && bc.Id_Comanda == command) {
-            return bc.Codigo
+    })
+
+    await desktopClient.tb_comanda.update({
+        where: {
+            Codigo: commandNumber
+        },
+        data: {
+            Ativo: active
         }
-    }
-    
-    return -2
+    })
 }
 
 export async function createOrder(req: FastifyRequest, res: FastifyReply) {    
@@ -25,9 +29,9 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     // Check if board and command exists on db
     // ############################################
     // ---------------------- BOARD AREA
-    const board = await desktopClient.tb_mesa.findFirst({
+    const board = await mobileClient.table.findFirst({
         where: {
-            Codigo: bodyOrder.board
+            tableNumber: bodyOrder.board
         }
     })
     
@@ -36,9 +40,9 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     }
     
     // ---------------------- COMMAND AREA
-    const command = await desktopClient.tb_comanda.findFirst({
+    const command = await mobileClient.command.findFirst({
         where: {
-            Codigo: bodyOrder.command
+            commandNumber: bodyOrder.command
         }
     })
     
@@ -51,59 +55,51 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     // ############################################
     // Checking if board command combinations exists or having some issue
     // ############################################
-    const boardCommand = await desktopClient.tb_mesa_comanda.findMany({
+    const tableCommand = await mobileClient.activeTableCommand.findFirst({
         where: {
-            OR: [
-                { Id_Mesa: board.Codigo },
-                { Id_Comanda: command.Codigo }
-            ]
+            commandNumber: bodyOrder.command
         }
     })
     
-    var boardCommandCode = 0
-    
-    if (!boardCommand) {
-        swapStateBoard(board.Codigo)
-        swapStateCommand(command.Codigo)
+    if (!tableCommand) {
+        swapStates(board.tableNumber, command.commandNumber, 'Sim')
         
-        boardCommandCode = await desktopClient.tb_mesa_comanda.count()
+        const boardCommandCode = await desktopClient.tb_mesa_comanda.count()
         
+        await mobileClient.activeTableCommand.create({
+            data: {
+                commandNumber: command.commandNumber,
+                tableNumber: board.tableNumber
+            }
+        })
+
         await desktopClient.tb_mesa_comanda.create({
             data: {
                 Codigo: boardCommandCode,
-                Id_Mesa: board.Codigo,
-                Id_Comanda: command.Codigo
+                Id_Mesa: board.tableNumber,
+                Id_Comanda: command.commandNumber
             }
         })
+
     } else {
-        boardCommandCode = await verifyBoardCommand(boardCommand, board.Codigo, command.Codigo)
-        
-        if (boardCommandCode === -1) {
+        if (tableCommand.tableNumber !== board.tableNumber) {
             return res.status(400).send({ error: 'Invalid board and command combination' })
         }
-        
-        if (boardCommandCode === -2) {
-            swapStateBoard(board.Codigo)
-            swapStateCommand(command.Codigo)
-            
-            boardCommandCode = await desktopClient.tb_mesa_comanda.count()
-            
-            await desktopClient.tb_mesa_comanda.create({
-                data: {
-                    Codigo: boardCommandCode,
-                    Id_Mesa: board.Codigo,
-                    Id_Comanda: command.Codigo
-                }
-            })
-        }
+
+        const boardCommandCode = await desktopClient.tb_mesa_comanda.findFirst({
+            where: {
+                Id_Mesa: board.tableNumber,
+                Id_Comanda: command.commandNumber
+            }
+        })
     }
     
     // ############################################
     // Check if all products exists on db
     // ############################################
-    const qtdProducts = await desktopClient.tb_produtos.count({
+    const qtdProducts = await mobileClient.product.count({
         where: {
-            Codigo: {
+            productId: {
                 in: bodyOrder.items.map(item => item.id_product)
             }
         }
@@ -116,16 +112,32 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     // ############################################
     // Create order
     // ############################################
-    const orderCode = await desktopClient.tb_pedido.count()
+    const orderCode = await desktopClient.tb_pedido.findMany({
+        orderBy: {
+            Codigo: 'desc'
+        },
+        select: {
+            Codigo: true
+        }
+    }).then(order => order[0].Codigo + 1)
+
     const newOrder = await desktopClient.tb_pedido.create({
         data: {
             Codigo: orderCode,
-            Id_Mesa: board.Codigo,
-            Id_Comanda: command.Codigo,
+            Id_Mesa: board.tableNumber,
+            Id_Comanda: command.commandNumber,
         }
     })
     
-    let orderItemCode = await desktopClient.tb_pedido_item.count() - 1
+    let orderItemCode = await desktopClient.tb_pedido_item.findMany({
+        orderBy: {
+            Codigo: 'desc'
+        },
+        select: {
+            Codigo: true
+        }
+    }).then(order => order[0].Codigo + 1)
+
     const orderItems = await desktopClient.tb_pedido_item.createMany({
         data: bodyOrder.items.map(item => {
             return {

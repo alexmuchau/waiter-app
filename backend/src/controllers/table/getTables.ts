@@ -4,11 +4,9 @@ import { desktopClient, mobileClient } from '../../../prisma/prisma';
 export async function getTables(req: FastifyRequest, res: FastifyReply) {
     const tables = await mobileClient.table.findMany({
         include: {
-            _count: {
-                select: {activeTableCommand: true}
-            }
+            activeTableCommand: true
         }
     })
 
-    return res.send(tables)
+    return res.send({tables})
 }
