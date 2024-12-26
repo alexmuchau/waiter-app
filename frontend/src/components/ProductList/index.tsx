@@ -8,7 +8,7 @@ export interface ProductItemProps {
 
 interface ProductListProps {
     listActiveProducts: ProductItemProps[]
-    removeItem: (id: string) => void
+    removeItem?: (id: string) => void
 }
 
 export function ProductList({ listActiveProducts, removeItem }: ProductListProps) {

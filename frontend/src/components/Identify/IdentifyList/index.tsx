@@ -1,11 +1,7 @@
 'use client'
 
+import { IdentifyItemProps } from "../../../../../utils/types"
 import { IdentifyItem } from "./IdentifyItem"
-
-export interface IdentifyItemProps {
-    value: string,
-    isActive: boolean
-}
 
 interface IdentifyListProps {
     listKey: "board" | "command"

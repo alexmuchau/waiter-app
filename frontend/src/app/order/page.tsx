@@ -5,39 +5,17 @@ import { useEffect, useState } from "react"
 import { ProductItemProps, ProductList } from "@/components/ProductList"
 import { Title } from "@/components/Title/Default"
 import { TitleProduct } from "@/components/Title/Product"
-import { IdentifyCard } from "@/components/Identify/IdentifyCard"
-import { Button } from "@/components/Buttons/Button"
 import { HeaderTitle } from "@/components/Header/HeaderTitle"
-import { IdentifyItemProps, IdentifyList } from "@/components/Identify/IdentifyList"
+import { IdentifyList } from "@/components/Identify/IdentifyList"
 import { BackHeader } from "@/components/Header/BackHeader"
 import { TitleClient } from "@/components/Title/Client"
 import { ClientItem } from "@/components/ClientItem"
-
-export interface ClientProps {
-  id: string,
-  name: string
-}
+import { ClientProps, IdentifyItemProps } from "../../../../utils/types"
+import api from "@/api/api"
+import { LinkButton } from "@/components/Buttons/LinkButton"
+import { useCookies } from "react-cookie"
 
 export default function OrderBuild() {
-  const boards: IdentifyItemProps[] = [
-    {
-      value: "1",
-      isActive: true  
-    },
-    {
-      value: "3",
-      isActive: false  
-    },
-    {
-      value: "4",
-      isActive: false 
-    },
-    {
-      value: "5",
-      isActive: false 
-    },
-  ]
-
   const products: ProductListProps[] = [
       {
           id: "1",
@@ -84,25 +62,9 @@ export default function OrderBuild() {
       }
   ]
 
-  const clients: ClientProps[] = [
-    {
-      id: "1",
-      name: "Andrei"
-    },
-    {
-      id: "2",
-      name: "Padilha"
-    },
-    {
-      id: "3",
-      name: "Murilo"
-    },
-    {
-      id: "4",
-      name: "Alex"
-    },
-  ]
-
+  const [ clients, setClients ] = useState<ClientProps[]>([])
+  const [ tables, setTables ] = useState<IdentifyItemProps[]>([])
+  const [ commands, setCommands ] = useState<IdentifyItemProps[]>([])
 
   // const [ order, setOrder ] = useState<OrderProps | null>(null)
   const [ client, setClient ] = useState<ClientProps | undefined>(undefined)
@@ -110,25 +72,24 @@ export default function OrderBuild() {
   const [ command, setCommand ] = useState<string | undefined>(undefined)
   const [ chopps, setChopps ] = useState<ProductItemProps[]>([])
   const [ foods, setFoods ] = useState<ProductItemProps[]>([])
-  const [ isResume, setIsResume ] = useState<boolean>(false)
+
+  const [ orderCookies, setOrderCookies, removeOrderCookies ] = useCookies(['orderCookies']);
+
+  const [ isListingDB, setIsListingDB ] = useState<boolean>(true)
 
   function selectItem(key: "board" | "command", value: string | undefined) {
     switch (key) {
       case "board": {
         setBoard(value)
-        setCommand(undefined)
         break;
       }
       case "command": {
         setCommand(value)
+        break;
       }
       default:
         break;
     }
-  }
-
-  function handleIsResume() {
-    setIsResume(!isResume)
   }
 
   function removeChoppItem(id: string) {
@@ -189,156 +150,140 @@ export default function OrderBuild() {
     setFoods(newFoods)
   }
 
-  function selectClient(id:string, name:string) {
+  function selectClient(id: string, name:string) {
     setClient({ id: id, name: name })
+    setCommand(id)
+    setBoard(tables.find((table) => table.value == id)?.value)
   }
 
   function removeClient() {
     setClient(undefined)
+    setCommand(undefined)
+    setBoard(undefined)
   }
 
-  function finishOrder() {
-    // TO DO!
-    // redirect('/')
+  function handleResumeOrder() {
+    setOrderCookies('orderCookies', {
+      client: client,
+      board: board,
+      command: command,
+      chopps: chopps,
+      foods: foods
+    }, {
+      maxAge: 60*60*24*7
+    })
   }
 
   useEffect(() => {
-    console.log(`Board - ${board}, Command - ${command}, !board && !command = ${!board && !command}`)
-  }, [board, command])
+    console.log('Listing DB')
+
+    async function fetchData() {
+      const { clients } = (await api.get('/clients')).data as { clients: ClientProps[] }
+      const { commands } = (await api.get('/commands')).data as { commands: IdentifyItemProps[] }
+      const { tables } = (await api.get('/tables')).data as { tables: IdentifyItemProps[] }
+
+      console.log(commands)
+
+      setClients(clients)
+      setCommands(commands)
+      setTables(tables)
+      setIsListingDB(!isListingDB)
+    }
+
+    fetchData()
+
+    if (orderCookies.orderCookies) {
+      const { client, board, command, chopps, foods } = orderCookies.orderCookies
+      setClient(client)
+      setBoard(board)
+      setCommand(command)
+      setChopps(chopps)
+      setFoods(foods)
+    }
+  }, [])
 
   return (
     <main className="flex flex-col w-full h-full justify-start py-10 px-4 gap-8">
-      {
-        !isResume
-        ? <>
-          <BackHeader
-            href='/'
+      <BackHeader
+        href='/'
+        onClick={() => removeOrderCookies('orderCookies')}
+      />
+      <header className="flex">
+        <HeaderTitle text="pedido"/>
+      </header>
+      <div className="flex flex-col gap-8 h-screen"> 
+        <div className="flex flex-col">
+          <TitleClient
+            text="Cliente"
+            selectClient={selectClient}
+            disabled={!(!client)}
+            clients={clients}
           />
-          <header className="flex">
-            <HeaderTitle text="pedido"/>
-          </header>
-          <div className="flex flex-col gap-8 h-screen"> 
-            <div className="flex flex-col">
-              <TitleClient
-                text="Cliente"
-                selectClient={selectClient}
-                disabled={!(!client)}
-                clients={clients}
-              />
-              {
-                client
-                ? <ClientItem
-                  client={client}
-                  removeClient={removeClient}
-                />
-                : <></>
-              }
-            </div>
-            <div className="flex flex-col">
-              <Title text="Mesas" />
-              <IdentifyList
-                key="board"
-                disabled={false}
-                listKey="board"
-                selectItem={selectItem}
-                list={boards}
-                activeItem={board}
-              />
-            </div>
-            <div className="flex flex-col">
-              <Title text="Comandas" />
-              <IdentifyList
-                key="command"
-                listKey="command"
-                disabled={!board}
-                selectItem={selectItem}
-                list={boards}
-                activeItem={command}
-              />
-            </div>
-            <div className="flex flex-col gap-8">
-              <TitleProduct
-                text="Chopp"
-                disabled={!board || !command}
-                products={products}
-                addProduct={addChoppItem}
-              />
-              <ProductList
-                key="chopp"
-                listActiveProducts={chopps}
-                removeItem={removeChoppItem}
-              />
-            </div>
-            <div className="flex flex-col gap-8">
-              <TitleProduct
-                text="Porções"
-                disabled={!board || !command}
-                products={productsPorcoes}
-                addProduct={addFoodItem}
-              />
-              <ProductList
-                key="porcoes"
-                listActiveProducts={foods}
-                removeItem={removeFoodItem}
-              />
-            </div>
-          </div>
-          <footer>
-            <Button
-              onClick={handleIsResume}
-              text="Resumo do Pedido"
+          {
+            client
+            ? <ClientItem
+              client={client}
+              removeClient={removeClient}
             />
-          </footer>
-        </>
-
-        : <>
-          <BackHeader href="" onClick={handleIsResume}/>
-          <header className="flex">
-            <h1 className="text-3xl">
-              resumo do pedido
-            </h1>
-          </header>
-          <div className="flex flex-col gap-8 h-screen"> 
-            <div className="flex gap-16">
-              <IdentifyCard
-                title="Mesa"
-                number={board!}
-              />
-              <IdentifyCard
-                title="Comanda"
-                number={command!}
-              />
-            </div>
-            <div className="flex flex-col gap-8">
-              <Title
-                text="Chopp"
-              />
-              <ProductList
-                key="chopp"
-                listActiveProducts={chopps}
-                removeItem={removeChoppItem}
-              />
-            </div>
-            <div className="flex flex-col gap-8">
-              <Title
-                text="Porções"
-              />
-              <ProductList
-                key="porcoes"
-                listActiveProducts={foods}
-                removeItem={removeFoodItem}
-              />
-            </div>
-          </div>
-          <footer>
-            <Button
-              onClick={finishOrder}
-              text="Finalizar Pedido"
-            />
-          </footer>
-        </>
-      }
-      
+            : <></>
+          }
+        </div>
+        <div className="flex flex-col">
+          <Title text="Mesas" />
+          <IdentifyList
+            key="board"
+            disabled={client && tables.find((table) => table.value == client.id) ? true : false}
+            listKey="board"
+            selectItem={selectItem}
+            list={tables}
+            activeItem={board}
+          />
+        </div>
+        <div className="flex flex-col">
+          <Title text="Comandas" />
+          <IdentifyList
+            key="command"
+            listKey="command"
+            disabled={client ? true : false}
+            selectItem={selectItem}
+            list={commands}
+            activeItem={command}
+          />
+        </div>
+        <div className="flex flex-col gap-8">
+          <TitleProduct
+            text="Chopp"
+            disabled={!board || !command}
+            products={products}
+            addProduct={addChoppItem}
+          />
+          <ProductList
+            key="chopp"
+            listActiveProducts={chopps}
+            removeItem={removeChoppItem}
+          />
+        </div>
+        <div className="flex flex-col gap-8">
+          <TitleProduct
+            text="Porções"
+            disabled={!board || !command}
+            products={productsPorcoes}
+            addProduct={addFoodItem}
+          />
+          <ProductList
+            key="porcoes"
+            listActiveProducts={foods}
+            removeItem={removeFoodItem}
+          />
+        </div>
+      </div>
+      <footer>
+        <LinkButton
+          href="/order/resume"
+          onClick={handleResumeOrder}
+          text="Resumo do Pedido"
+        />
+      </footer>
     </main>
   );
 }

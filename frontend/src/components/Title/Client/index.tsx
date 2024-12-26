@@ -1,13 +1,13 @@
 'use client'
 
-import { ProductListProps } from "@/app/page"
 import { SelectItem } from "@/components/SelectItem"
 import { Check, Plus } from "phosphor-react"
 import { Key, useState } from "react"
+import { ClientProps } from "../../../../../utils/types"
 
 interface TitleProductProps {
     text: string,
-    clients: ProductListProps[],
+    clients: ClientProps[],
     disabled: boolean,
     selectClient: (id: string, name:string) => void,
 }

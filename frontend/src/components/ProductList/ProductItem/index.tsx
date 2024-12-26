@@ -3,7 +3,7 @@ import { ProductItemProps } from ".."
 
 interface ComponentProductItemProps {
     product: ProductItemProps
-    removeItem: (id: string) => void
+    removeItem?: (id: string) => void
 }
 
 export function ProductItem({ product, removeItem }: ComponentProductItemProps) {
@@ -13,12 +13,15 @@ export function ProductItem({ product, removeItem }: ComponentProductItemProps) 
                 <p>{product.name}</p>
                 <p className="font-bold text underline">{product.quantity}x</p>
             </div>
-            <XCircle
-                size={20}
-                onClick={() => removeItem(product.id)}
-                weight="bold"
-                className="cursor-pointer"
-            />
+            {
+                removeItem &&
+                <XCircle
+                    size={20}
+                    onClick={() => removeItem(product.id)}
+                    weight="bold"
+                    className="cursor-pointer"
+                />
+            }
         </div>
     )
 }

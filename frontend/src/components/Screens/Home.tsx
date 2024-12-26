@@ -22,8 +22,8 @@ export function HomeScreen({ user }: HomeScreenProps) {
             </div>
             <footer>
                 <LinkButton
-                text="Construir Pedido"
-                href='/order'
+                    text="Construir Pedido"
+                    href='/order'
                 />
             </footer>
         </>

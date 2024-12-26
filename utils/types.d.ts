@@ -14,3 +14,13 @@ export interface User {
     password: string,
     name: string
 }
+
+export interface IdentifyItemProps {
+    value: string,
+    isActive: boolean
+}
+
+export interface ClientProps {
+    id: string,
+    name: string
+}

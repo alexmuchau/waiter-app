@@ -15,7 +15,10 @@ const config: Config = {
         foreground: "var(--foreground)",
         accent: {
           DEFAULT: "#DDAA55",
-          blur: "rgba(221, 170, 85, 0.15)"
+          blur: {
+            DEFAULT: "rgba(221, 170, 85, 0.15)",
+            using: "rgba(221, 170, 85, 0.3)"
+          }
         }
       },
     },
