@@ -1,13 +1,13 @@
 'use client'
 
-import { IdentifyItemProps } from "../../../../../utils/types"
+import { TableItemProps, CommandItemProps } from "../../../../../utils/types"
 import { IdentifyItem } from "./IdentifyItem"
 
 interface IdentifyListProps {
-    listKey: "board" | "command"
-    selectItem: (key: "board" | "command", value: string | undefined) => void,
+    listKey: "table" | "command"
+    selectItem: (key: "table" | "command", value: string | undefined) => void,
     disabled: boolean
-    list: IdentifyItemProps[]
+    list: TableItemProps[] | CommandItemProps[]
     activeItem: string | undefined
 }
 
@@ -21,15 +21,34 @@ export function IdentifyList({ listKey, selectItem, disabled, list, activeItem }
     return (
         <div className="flex gap-4 flex-wrap">
           {
-            list.map((item) => (
-              <IdentifyItem
-                text={item.value}
-                onClick={onClick}
-                isDisabled={disabled ? true : item.value === activeItem || activeItem === undefined ? false : true}
-                isActive={!activeItem ? false : activeItem == item.value ? true : false}
-                key={item.value}
-              />
-            ))
+            list.map((item) => {
+              if (listKey === "table") {
+                item = item as TableItemProps
+
+                return (
+                  <IdentifyItem
+                    key={item.tableNumber}
+                    text={item.tableDescription}
+                    onClick={onClick}
+                    isDisabled={disabled}
+                    isActive={item.tableNumber === activeItem}
+                    isUsing={item.isActive}
+                  />
+                )
+              }
+
+              item = item as CommandItemProps
+              return (
+                <IdentifyItem
+                  key={item.commandNumber}
+                  text={item.commandNumber}
+                  onClick={onClick}
+                  isDisabled={disabled}
+                  isActive={item.commandNumber === activeItem}
+                  isUsing={item.isActive}
+                />
+              )
+            })
           }
         </div>
     )

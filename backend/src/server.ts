@@ -8,7 +8,7 @@ export default function createServer(){
     }})
 
     fastify.register(cors, {
-        origin: 'http://localhost:3000', // Permitir apenas o frontend
+        origin: true, // Permitir apenas o frontend
         methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
     });
     fastify.register(routes)

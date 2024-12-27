@@ -1,18 +1,16 @@
 'use client'
 
-import { Button } from "@/components/Buttons/Button";
 import { BackHeader } from "@/components/Header/BackHeader";
 import { IdentifyCard } from "@/components/Identify/IdentifyCard";
 import { ProductItemProps, ProductList } from "@/components/ProductList";
 import { Title } from "@/components/Title/Default";
 import { useEffect, useState } from "react";
-import { ClientProps } from "../../../../../utils/types";
 import { useCookies } from "react-cookie";
 import { LinkButton } from "@/components/Buttons/LinkButton";
 
 export default function Resume() {
-    const [ client, setClient ] = useState<ClientProps | undefined>(undefined)
-    const [ board, setBoard ] = useState<string | undefined>(undefined)
+    const [ client, setClient ] = useState<string | undefined>(undefined)
+    const [ table, setTable ] = useState<string | undefined>(undefined)
     const [ command, setCommand ] = useState<string | undefined>(undefined)
     const [ chopps, setChopps ] = useState<ProductItemProps[]>([])
     const [ foods, setFoods ] = useState<ProductItemProps[]>([])
@@ -21,9 +19,9 @@ export default function Resume() {
 
     useEffect(() => {
         if (orderCookies.orderCookies) {
-            const { client, board, command, chopps, foods } = orderCookies.orderCookies
+            const { client, table, command, chopps, foods } = orderCookies.orderCookies
             setClient(client)
-            setBoard(board)
+            setTable(table)
             setCommand(command)
             setChopps(chopps)
             setFoods(foods)
@@ -42,7 +40,7 @@ export default function Resume() {
             </header>
             <div className="flex flex-col gap-8 h-screen">
                 <div className="flex gap-16">
-                    <IdentifyCard title="Mesa" number={board!} />
+                    <IdentifyCard title="Mesa" number={table!} />
                     <IdentifyCard title="Comanda" number={command!} />
                 </div>
                 <div className="flex flex-col gap-8">

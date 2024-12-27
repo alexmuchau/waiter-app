@@ -15,9 +15,25 @@ export interface User {
     name: string
 }
 
-export interface IdentifyItemProps {
-    value: string,
+export interface CommandItemProps {
+    commandNumber: string,
+    tableNumber?: string,
+    isActive: boolean,
+}
+
+export interface TableItemProps {
+    tableNumber: string,
+    tableDescription: string,
     isActive: boolean
+}
+
+export interface ActiveTableItemProps {
+    tableNumber: string,
+    tableDescription: string,
+    commands: {
+        commandNumber: string,
+        clientName?: string
+    }[]
 }
 
 export interface ClientProps {

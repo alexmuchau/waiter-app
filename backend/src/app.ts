@@ -4,7 +4,7 @@ import { syncDBs } from "./tools/syncDBs";
 const port = 8080;
 const app = createServer();
 
-app.listen({ host: "127.0.0.1", port }, async (err: Error | null, address: string) => {
+app.listen({ host: "192.168.0.161", port }, async (err: Error | null, address: string) => {
   // await syncDBs()
   console.log("Server Running!")
 

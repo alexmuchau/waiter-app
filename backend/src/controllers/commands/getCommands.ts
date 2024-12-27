@@ -1,21 +1,21 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
 import { mobileClient } from '../../../prisma/prisma';
-import { IdentifyItemProps } from '../../../../utils/types';
+import { CommandItemProps } from '../../../../utils/types';
 
 export async function getCommands(req: FastifyRequest, res: FastifyReply) {    
-    const commands: IdentifyItemProps[] = await mobileClient.$queryRawUnsafe(`
-        SELECT
-            command."commandNumber" AS value,
-            CASE
-                WHEN table_command."commandNumber" IS NOT NULL
-                    THEN true
-                ELSE false
-            END AS isActive
-        FROM mobile_db.command as command
-        LEFT JOIN mobile_db."activeTableCommand" table_command
-            ON command."commandNumber" = table_command."commandNumber"
-        ORDER BY command."commandNumber" ASC
-    `)
+    const commands: CommandItemProps[] = await mobileClient.command.findMany({
+        include: {
+            activeTableCommand: true
+        }
+    }).then((commands) => {
+        return commands.map((command) => {
+            return {
+                commandNumber: command.commandNumber.toString(),
+                tableNumber: command.activeTableCommand?.tableNumber.toString(),
+                isActive: command.activeTableCommand ? true : false
+            }
+        }
+    )})
 
     return res.send({commands})
 }

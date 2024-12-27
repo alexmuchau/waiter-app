@@ -1,7 +1,7 @@
 'use client'
 
-import { ClientProps } from "@/app/order/page"
 import { XCircle } from "phosphor-react"
+import { ClientProps } from "../../../../utils/types"
 
 interface ClientItemProps {
     client: ClientProps,
