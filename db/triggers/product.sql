@@ -10,27 +10,42 @@ BEGIN
 	DECLARE body JSON;
     DECLARE headers JSON;
     DECLARE res VARCHAR(255);
-    
-    SET body = JSON_OBJECT(
-		'id', NEW.Codigo,
-        'name', NEW.Produto
-	);
+    DECLARE chopp_setor INT DEFAULT 1298;
+    DECLARE porcao_setor INT DEFAULT 1398;
+    DECLARE category VARCHAR(10);
 
-    -- Define os headers da requisição
-    SET headers = JSON_OBJECT(
-        'Content-Type', 'application/json'
-    );
+    IF NEW.ID_Setor = chopp_setor OR NEW.ID_Setor = porcao_setor THEN
 
-    -- Faz a requisição HTTP assíncrona
-    SET res = (
-		SELECT http_request(
-			"POST",
-			url,
-			body,
-			headers,
-			JSON_OBJECT() -- Opções cURL adicionais (pode ser vazio)
-		)
-    );
+        IF NEW.ID_Setor = chopp_setor THEN
+            SET category = 'CHOPP';
+        ELSE
+            SET category = 'FOOD';
+        END IF;
+        
+        SET body = JSON_OBJECT(
+            'id', NEW.Codigo,
+            'name', NEW.Produto,
+            'price', NEW.Preco_Venda,
+            'category', category
+        );
+
+        -- Define os headers da requisição
+        SET headers = JSON_OBJECT(
+            'Content-Type', 'application/json'
+        );
+
+        -- Faz a requisição HTTP assíncrona
+        SET res = (
+            SELECT http_request(
+                "POST",
+                url,
+                body,
+                headers,
+                JSON_OBJECT() -- Opções cURL adicionais (pode ser vazio)
+            )
+        );
+
+    END IF;
 END$$
 
 DELIMITER ;
@@ -48,27 +63,43 @@ BEGIN
 	DECLARE body JSON;
     DECLARE headers JSON;
     DECLARE res VARCHAR(255);
-    
-    SET body = JSON_OBJECT(
-		'id', NEW.Codigo,
-        'name', NEW.Produto
-	);
+    DECLARE chopp_setor INT DEFAULT 1298;
+    DECLARE porcao_setor INT DEFAULT 1398;
+    DECLARE category VARCHAR(10);
 
-    -- Define os headers da requisição
-    SET headers = JSON_OBJECT(
-        'Content-Type', 'application/json'
-    );
+    IF NEW.ID_Setor = chopp_setor OR NEW.ID_Setor = porcao_setor THEN
 
-    -- Faz a requisição HTTP assíncrona
-    SET res = (
-		SELECT http_request(
-			"PUT",
-			url,
-			body,
-			headers,
-			JSON_OBJECT() -- Opções cURL adicionais (pode ser vazio)
-		)
-    );
+        IF NEW.ID_Setor = chopp_setor THEN
+            SET category = 'CHOPP';
+        ELSE
+            SET category = 'FOOD';
+        END IF;
+        
+        SET body = JSON_OBJECT(
+            'id', NEW.Codigo,
+            'name', NEW.Produto,
+            'price', NEW.Preco_Venda,
+            'category', category
+        );
+
+        -- Define os headers da requisição
+        SET headers = JSON_OBJECT(
+            'Content-Type', 'application/json'
+        );
+
+        -- Faz a requisição HTTP assíncrona
+        SET res = (
+            SELECT http_request(
+                "PUT",
+                url,
+                body,
+                headers,
+                JSON_OBJECT() -- Opções cURL adicionais (pode ser vazio)
+            )
+        );
+
+    END IF;
 END$$
 
 DELIMITER ;
+

@@ -24,11 +24,6 @@ export type table = $Result.DefaultSelection<Prisma.$tablePayload>
  */
 export type command = $Result.DefaultSelection<Prisma.$commandPayload>
 /**
- * Model activeTableCommand
- * 
- */
-export type activeTableCommand = $Result.DefaultSelection<Prisma.$activeTableCommandPayload>
-/**
  * Model client
  * 
  */
@@ -38,6 +33,23 @@ export type client = $Result.DefaultSelection<Prisma.$clientPayload>
  * 
  */
 export type product = $Result.DefaultSelection<Prisma.$productPayload>
+
+/**
+ * Enums
+ */
+export namespace $Enums {
+  export const Category: {
+  CHOPP: 'CHOPP',
+  FOOD: 'FOOD'
+};
+
+export type Category = (typeof Category)[keyof typeof Category]
+
+}
+
+export type Category = $Enums.Category
+
+export const Category: typeof $Enums.Category
 
 /**
  * ##  Prisma Client ʲˢ
@@ -181,16 +193,6 @@ export class PrismaClient<
     * ```
     */
   get command(): Prisma.commandDelegate<ExtArgs>;
-
-  /**
-   * `prisma.activeTableCommand`: Exposes CRUD operations for the **activeTableCommand** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more ActiveTableCommands
-    * const activeTableCommands = await prisma.activeTableCommand.findMany()
-    * ```
-    */
-  get activeTableCommand(): Prisma.activeTableCommandDelegate<ExtArgs>;
 
   /**
    * `prisma.client`: Exposes CRUD operations for the **client** model.
@@ -654,7 +656,6 @@ export namespace Prisma {
   export const ModelName: {
     table: 'table',
     command: 'command',
-    activeTableCommand: 'activeTableCommand',
     client: 'client',
     product: 'product'
   };
@@ -672,7 +673,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "table" | "command" | "activeTableCommand" | "client" | "product"
+      modelProps: "table" | "command" | "client" | "product"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -813,76 +814,6 @@ export namespace Prisma {
           count: {
             args: Prisma.commandCountArgs<ExtArgs>
             result: $Utils.Optional<CommandCountAggregateOutputType> | number
-          }
-        }
-      }
-      activeTableCommand: {
-        payload: Prisma.$activeTableCommandPayload<ExtArgs>
-        fields: Prisma.activeTableCommandFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.activeTableCommandFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$activeTableCommandPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.activeTableCommandFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$activeTableCommandPayload>
-          }
-          findFirst: {
-            args: Prisma.activeTableCommandFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$activeTableCommandPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.activeTableCommandFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$activeTableCommandPayload>
-          }
-          findMany: {
-            args: Prisma.activeTableCommandFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$activeTableCommandPayload>[]
-          }
-          create: {
-            args: Prisma.activeTableCommandCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$activeTableCommandPayload>
-          }
-          createMany: {
-            args: Prisma.activeTableCommandCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.activeTableCommandCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$activeTableCommandPayload>[]
-          }
-          delete: {
-            args: Prisma.activeTableCommandDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$activeTableCommandPayload>
-          }
-          update: {
-            args: Prisma.activeTableCommandUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$activeTableCommandPayload>
-          }
-          deleteMany: {
-            args: Prisma.activeTableCommandDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.activeTableCommandUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          upsert: {
-            args: Prisma.activeTableCommandUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$activeTableCommandPayload>
-          }
-          aggregate: {
-            args: Prisma.ActiveTableCommandAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateActiveTableCommand>
-          }
-          groupBy: {
-            args: Prisma.activeTableCommandGroupByArgs<ExtArgs>
-            result: $Utils.Optional<ActiveTableCommandGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.activeTableCommandCountArgs<ExtArgs>
-            result: $Utils.Optional<ActiveTableCommandCountAggregateOutputType> | number
           }
         }
       }
@@ -1187,11 +1118,11 @@ export namespace Prisma {
    */
 
   export type TableCountOutputType = {
-    activeTableCommand: number
+    command: number
   }
 
   export type TableCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    activeTableCommand?: boolean | TableCountOutputTypeCountActiveTableCommandArgs
+    command?: boolean | TableCountOutputTypeCountCommandArgs
   }
 
   // Custom InputTypes
@@ -1208,8 +1139,8 @@ export namespace Prisma {
   /**
    * TableCountOutputType without action
    */
-  export type TableCountOutputTypeCountActiveTableCommandArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: activeTableCommandWhereInput
+  export type TableCountOutputTypeCountCommandArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: commandWhereInput
   }
 
 
@@ -1239,14 +1170,17 @@ export namespace Prisma {
 
   export type TableMinAggregateOutputType = {
     tableNumber: number | null
+    tableDescription: string | null
   }
 
   export type TableMaxAggregateOutputType = {
     tableNumber: number | null
+    tableDescription: string | null
   }
 
   export type TableCountAggregateOutputType = {
     tableNumber: number
+    tableDescription: number
     _all: number
   }
 
@@ -1261,14 +1195,17 @@ export namespace Prisma {
 
   export type TableMinAggregateInputType = {
     tableNumber?: true
+    tableDescription?: true
   }
 
   export type TableMaxAggregateInputType = {
     tableNumber?: true
+    tableDescription?: true
   }
 
   export type TableCountAggregateInputType = {
     tableNumber?: true
+    tableDescription?: true
     _all?: true
   }
 
@@ -1360,6 +1297,7 @@ export namespace Prisma {
 
   export type TableGroupByOutputType = {
     tableNumber: number
+    tableDescription: string
     _count: TableCountAggregateOutputType | null
     _avg: TableAvgAggregateOutputType | null
     _sum: TableSumAggregateOutputType | null
@@ -1383,20 +1321,23 @@ export namespace Prisma {
 
   export type tableSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     tableNumber?: boolean
-    activeTableCommand?: boolean | table$activeTableCommandArgs<ExtArgs>
+    tableDescription?: boolean
+    command?: boolean | table$commandArgs<ExtArgs>
     _count?: boolean | TableCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["table"]>
 
   export type tableSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     tableNumber?: boolean
+    tableDescription?: boolean
   }, ExtArgs["result"]["table"]>
 
   export type tableSelectScalar = {
     tableNumber?: boolean
+    tableDescription?: boolean
   }
 
   export type tableInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    activeTableCommand?: boolean | table$activeTableCommandArgs<ExtArgs>
+    command?: boolean | table$commandArgs<ExtArgs>
     _count?: boolean | TableCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type tableIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1404,10 +1345,11 @@ export namespace Prisma {
   export type $tablePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "table"
     objects: {
-      activeTableCommand: Prisma.$activeTableCommandPayload<ExtArgs>[]
+      command: Prisma.$commandPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       tableNumber: number
+      tableDescription: string
     }, ExtArgs["result"]["table"]>
     composites: {}
   }
@@ -1772,7 +1714,7 @@ export namespace Prisma {
    */
   export interface Prisma__tableClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    activeTableCommand<T extends table$activeTableCommandArgs<ExtArgs> = {}>(args?: Subset<T, table$activeTableCommandArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$activeTableCommandPayload<ExtArgs>, T, "findMany"> | Null>
+    command<T extends table$commandArgs<ExtArgs> = {}>(args?: Subset<T, table$commandArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$commandPayload<ExtArgs>, T, "findMany"> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1803,6 +1745,7 @@ export namespace Prisma {
    */ 
   interface tableFieldRefs {
     readonly tableNumber: FieldRef<"table", 'Int'>
+    readonly tableDescription: FieldRef<"table", 'String'>
   }
     
 
@@ -2117,23 +2060,23 @@ export namespace Prisma {
   }
 
   /**
-   * table.activeTableCommand
+   * table.command
    */
-  export type table$activeTableCommandArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type table$commandArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the activeTableCommand
+     * Select specific fields to fetch from the command
      */
-    select?: activeTableCommandSelect<ExtArgs> | null
+    select?: commandSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: activeTableCommandInclude<ExtArgs> | null
-    where?: activeTableCommandWhereInput
-    orderBy?: activeTableCommandOrderByWithRelationInput | activeTableCommandOrderByWithRelationInput[]
-    cursor?: activeTableCommandWhereUniqueInput
+    include?: commandInclude<ExtArgs> | null
+    where?: commandWhereInput
+    orderBy?: commandOrderByWithRelationInput | commandOrderByWithRelationInput[]
+    cursor?: commandWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: ActiveTableCommandScalarFieldEnum | ActiveTableCommandScalarFieldEnum[]
+    distinct?: CommandScalarFieldEnum | CommandScalarFieldEnum[]
   }
 
   /**
@@ -2165,44 +2108,54 @@ export namespace Prisma {
 
   export type CommandAvgAggregateOutputType = {
     commandNumber: number | null
+    tableNumber: number | null
   }
 
   export type CommandSumAggregateOutputType = {
     commandNumber: number | null
+    tableNumber: number | null
   }
 
   export type CommandMinAggregateOutputType = {
     commandNumber: number | null
+    tableNumber: number | null
   }
 
   export type CommandMaxAggregateOutputType = {
     commandNumber: number | null
+    tableNumber: number | null
   }
 
   export type CommandCountAggregateOutputType = {
     commandNumber: number
+    tableNumber: number
     _all: number
   }
 
 
   export type CommandAvgAggregateInputType = {
     commandNumber?: true
+    tableNumber?: true
   }
 
   export type CommandSumAggregateInputType = {
     commandNumber?: true
+    tableNumber?: true
   }
 
   export type CommandMinAggregateInputType = {
     commandNumber?: true
+    tableNumber?: true
   }
 
   export type CommandMaxAggregateInputType = {
     commandNumber?: true
+    tableNumber?: true
   }
 
   export type CommandCountAggregateInputType = {
     commandNumber?: true
+    tableNumber?: true
     _all?: true
   }
 
@@ -2294,6 +2247,7 @@ export namespace Prisma {
 
   export type CommandGroupByOutputType = {
     commandNumber: number
+    tableNumber: number | null
     _count: CommandCountAggregateOutputType | null
     _avg: CommandAvgAggregateOutputType | null
     _sum: CommandSumAggregateOutputType | null
@@ -2317,32 +2271,39 @@ export namespace Prisma {
 
   export type commandSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     commandNumber?: boolean
-    activeTableCommand?: boolean | command$activeTableCommandArgs<ExtArgs>
+    tableNumber?: boolean
+    table?: boolean | command$tableArgs<ExtArgs>
     client?: boolean | command$clientArgs<ExtArgs>
   }, ExtArgs["result"]["command"]>
 
   export type commandSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     commandNumber?: boolean
+    tableNumber?: boolean
+    table?: boolean | command$tableArgs<ExtArgs>
   }, ExtArgs["result"]["command"]>
 
   export type commandSelectScalar = {
     commandNumber?: boolean
+    tableNumber?: boolean
   }
 
   export type commandInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    activeTableCommand?: boolean | command$activeTableCommandArgs<ExtArgs>
+    table?: boolean | command$tableArgs<ExtArgs>
     client?: boolean | command$clientArgs<ExtArgs>
   }
-  export type commandIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type commandIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    table?: boolean | command$tableArgs<ExtArgs>
+  }
 
   export type $commandPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "command"
     objects: {
-      activeTableCommand: Prisma.$activeTableCommandPayload<ExtArgs> | null
+      table: Prisma.$tablePayload<ExtArgs> | null
       client: Prisma.$clientPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       commandNumber: number
+      tableNumber: number | null
     }, ExtArgs["result"]["command"]>
     composites: {}
   }
@@ -2707,7 +2668,7 @@ export namespace Prisma {
    */
   export interface Prisma__commandClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    activeTableCommand<T extends command$activeTableCommandArgs<ExtArgs> = {}>(args?: Subset<T, command$activeTableCommandArgs<ExtArgs>>): Prisma__activeTableCommandClient<$Result.GetResult<Prisma.$activeTableCommandPayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
+    table<T extends command$tableArgs<ExtArgs> = {}>(args?: Subset<T, command$tableArgs<ExtArgs>>): Prisma__tableClient<$Result.GetResult<Prisma.$tablePayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
     client<T extends command$clientArgs<ExtArgs> = {}>(args?: Subset<T, command$clientArgs<ExtArgs>>): Prisma__clientClient<$Result.GetResult<Prisma.$clientPayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -2739,6 +2700,7 @@ export namespace Prisma {
    */ 
   interface commandFieldRefs {
     readonly commandNumber: FieldRef<"command", 'Int'>
+    readonly tableNumber: FieldRef<"command", 'Int'>
   }
     
 
@@ -2960,6 +2922,10 @@ export namespace Prisma {
      */
     data: commandCreateManyInput | commandCreateManyInput[]
     skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: commandIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -3053,18 +3019,18 @@ export namespace Prisma {
   }
 
   /**
-   * command.activeTableCommand
+   * command.table
    */
-  export type command$activeTableCommandArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type command$tableArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the activeTableCommand
+     * Select specific fields to fetch from the table
      */
-    select?: activeTableCommandSelect<ExtArgs> | null
+    select?: tableSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: activeTableCommandInclude<ExtArgs> | null
-    where?: activeTableCommandWhereInput
+    include?: tableInclude<ExtArgs> | null
+    where?: tableWhereInput
   }
 
   /**
@@ -3094,947 +3060,6 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: commandInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model activeTableCommand
-   */
-
-  export type AggregateActiveTableCommand = {
-    _count: ActiveTableCommandCountAggregateOutputType | null
-    _avg: ActiveTableCommandAvgAggregateOutputType | null
-    _sum: ActiveTableCommandSumAggregateOutputType | null
-    _min: ActiveTableCommandMinAggregateOutputType | null
-    _max: ActiveTableCommandMaxAggregateOutputType | null
-  }
-
-  export type ActiveTableCommandAvgAggregateOutputType = {
-    commandNumber: number | null
-    tableNumber: number | null
-  }
-
-  export type ActiveTableCommandSumAggregateOutputType = {
-    commandNumber: number | null
-    tableNumber: number | null
-  }
-
-  export type ActiveTableCommandMinAggregateOutputType = {
-    commandNumber: number | null
-    tableNumber: number | null
-  }
-
-  export type ActiveTableCommandMaxAggregateOutputType = {
-    commandNumber: number | null
-    tableNumber: number | null
-  }
-
-  export type ActiveTableCommandCountAggregateOutputType = {
-    commandNumber: number
-    tableNumber: number
-    _all: number
-  }
-
-
-  export type ActiveTableCommandAvgAggregateInputType = {
-    commandNumber?: true
-    tableNumber?: true
-  }
-
-  export type ActiveTableCommandSumAggregateInputType = {
-    commandNumber?: true
-    tableNumber?: true
-  }
-
-  export type ActiveTableCommandMinAggregateInputType = {
-    commandNumber?: true
-    tableNumber?: true
-  }
-
-  export type ActiveTableCommandMaxAggregateInputType = {
-    commandNumber?: true
-    tableNumber?: true
-  }
-
-  export type ActiveTableCommandCountAggregateInputType = {
-    commandNumber?: true
-    tableNumber?: true
-    _all?: true
-  }
-
-  export type ActiveTableCommandAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which activeTableCommand to aggregate.
-     */
-    where?: activeTableCommandWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of activeTableCommands to fetch.
-     */
-    orderBy?: activeTableCommandOrderByWithRelationInput | activeTableCommandOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: activeTableCommandWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` activeTableCommands from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` activeTableCommands.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned activeTableCommands
-    **/
-    _count?: true | ActiveTableCommandCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: ActiveTableCommandAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: ActiveTableCommandSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: ActiveTableCommandMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: ActiveTableCommandMaxAggregateInputType
-  }
-
-  export type GetActiveTableCommandAggregateType<T extends ActiveTableCommandAggregateArgs> = {
-        [P in keyof T & keyof AggregateActiveTableCommand]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateActiveTableCommand[P]>
-      : GetScalarType<T[P], AggregateActiveTableCommand[P]>
-  }
-
-
-
-
-  export type activeTableCommandGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: activeTableCommandWhereInput
-    orderBy?: activeTableCommandOrderByWithAggregationInput | activeTableCommandOrderByWithAggregationInput[]
-    by: ActiveTableCommandScalarFieldEnum[] | ActiveTableCommandScalarFieldEnum
-    having?: activeTableCommandScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: ActiveTableCommandCountAggregateInputType | true
-    _avg?: ActiveTableCommandAvgAggregateInputType
-    _sum?: ActiveTableCommandSumAggregateInputType
-    _min?: ActiveTableCommandMinAggregateInputType
-    _max?: ActiveTableCommandMaxAggregateInputType
-  }
-
-  export type ActiveTableCommandGroupByOutputType = {
-    commandNumber: number
-    tableNumber: number
-    _count: ActiveTableCommandCountAggregateOutputType | null
-    _avg: ActiveTableCommandAvgAggregateOutputType | null
-    _sum: ActiveTableCommandSumAggregateOutputType | null
-    _min: ActiveTableCommandMinAggregateOutputType | null
-    _max: ActiveTableCommandMaxAggregateOutputType | null
-  }
-
-  type GetActiveTableCommandGroupByPayload<T extends activeTableCommandGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<ActiveTableCommandGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof ActiveTableCommandGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], ActiveTableCommandGroupByOutputType[P]>
-            : GetScalarType<T[P], ActiveTableCommandGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type activeTableCommandSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    commandNumber?: boolean
-    tableNumber?: boolean
-    table?: boolean | tableDefaultArgs<ExtArgs>
-    command?: boolean | commandDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["activeTableCommand"]>
-
-  export type activeTableCommandSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    commandNumber?: boolean
-    tableNumber?: boolean
-    table?: boolean | tableDefaultArgs<ExtArgs>
-    command?: boolean | commandDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["activeTableCommand"]>
-
-  export type activeTableCommandSelectScalar = {
-    commandNumber?: boolean
-    tableNumber?: boolean
-  }
-
-  export type activeTableCommandInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    table?: boolean | tableDefaultArgs<ExtArgs>
-    command?: boolean | commandDefaultArgs<ExtArgs>
-  }
-  export type activeTableCommandIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    table?: boolean | tableDefaultArgs<ExtArgs>
-    command?: boolean | commandDefaultArgs<ExtArgs>
-  }
-
-  export type $activeTableCommandPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "activeTableCommand"
-    objects: {
-      table: Prisma.$tablePayload<ExtArgs>
-      command: Prisma.$commandPayload<ExtArgs>
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      commandNumber: number
-      tableNumber: number
-    }, ExtArgs["result"]["activeTableCommand"]>
-    composites: {}
-  }
-
-  type activeTableCommandGetPayload<S extends boolean | null | undefined | activeTableCommandDefaultArgs> = $Result.GetResult<Prisma.$activeTableCommandPayload, S>
-
-  type activeTableCommandCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<activeTableCommandFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: ActiveTableCommandCountAggregateInputType | true
-    }
-
-  export interface activeTableCommandDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['activeTableCommand'], meta: { name: 'activeTableCommand' } }
-    /**
-     * Find zero or one ActiveTableCommand that matches the filter.
-     * @param {activeTableCommandFindUniqueArgs} args - Arguments to find a ActiveTableCommand
-     * @example
-     * // Get one ActiveTableCommand
-     * const activeTableCommand = await prisma.activeTableCommand.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends activeTableCommandFindUniqueArgs>(args: SelectSubset<T, activeTableCommandFindUniqueArgs<ExtArgs>>): Prisma__activeTableCommandClient<$Result.GetResult<Prisma.$activeTableCommandPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
-
-    /**
-     * Find one ActiveTableCommand that matches the filter or throw an error with `error.code='P2025'` 
-     * if no matches were found.
-     * @param {activeTableCommandFindUniqueOrThrowArgs} args - Arguments to find a ActiveTableCommand
-     * @example
-     * // Get one ActiveTableCommand
-     * const activeTableCommand = await prisma.activeTableCommand.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends activeTableCommandFindUniqueOrThrowArgs>(args: SelectSubset<T, activeTableCommandFindUniqueOrThrowArgs<ExtArgs>>): Prisma__activeTableCommandClient<$Result.GetResult<Prisma.$activeTableCommandPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
-
-    /**
-     * Find the first ActiveTableCommand that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {activeTableCommandFindFirstArgs} args - Arguments to find a ActiveTableCommand
-     * @example
-     * // Get one ActiveTableCommand
-     * const activeTableCommand = await prisma.activeTableCommand.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends activeTableCommandFindFirstArgs>(args?: SelectSubset<T, activeTableCommandFindFirstArgs<ExtArgs>>): Prisma__activeTableCommandClient<$Result.GetResult<Prisma.$activeTableCommandPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
-
-    /**
-     * Find the first ActiveTableCommand that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {activeTableCommandFindFirstOrThrowArgs} args - Arguments to find a ActiveTableCommand
-     * @example
-     * // Get one ActiveTableCommand
-     * const activeTableCommand = await prisma.activeTableCommand.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends activeTableCommandFindFirstOrThrowArgs>(args?: SelectSubset<T, activeTableCommandFindFirstOrThrowArgs<ExtArgs>>): Prisma__activeTableCommandClient<$Result.GetResult<Prisma.$activeTableCommandPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
-
-    /**
-     * Find zero or more ActiveTableCommands that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {activeTableCommandFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all ActiveTableCommands
-     * const activeTableCommands = await prisma.activeTableCommand.findMany()
-     * 
-     * // Get first 10 ActiveTableCommands
-     * const activeTableCommands = await prisma.activeTableCommand.findMany({ take: 10 })
-     * 
-     * // Only select the `commandNumber`
-     * const activeTableCommandWithCommandNumberOnly = await prisma.activeTableCommand.findMany({ select: { commandNumber: true } })
-     * 
-     */
-    findMany<T extends activeTableCommandFindManyArgs>(args?: SelectSubset<T, activeTableCommandFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$activeTableCommandPayload<ExtArgs>, T, "findMany">>
-
-    /**
-     * Create a ActiveTableCommand.
-     * @param {activeTableCommandCreateArgs} args - Arguments to create a ActiveTableCommand.
-     * @example
-     * // Create one ActiveTableCommand
-     * const ActiveTableCommand = await prisma.activeTableCommand.create({
-     *   data: {
-     *     // ... data to create a ActiveTableCommand
-     *   }
-     * })
-     * 
-     */
-    create<T extends activeTableCommandCreateArgs>(args: SelectSubset<T, activeTableCommandCreateArgs<ExtArgs>>): Prisma__activeTableCommandClient<$Result.GetResult<Prisma.$activeTableCommandPayload<ExtArgs>, T, "create">, never, ExtArgs>
-
-    /**
-     * Create many ActiveTableCommands.
-     * @param {activeTableCommandCreateManyArgs} args - Arguments to create many ActiveTableCommands.
-     * @example
-     * // Create many ActiveTableCommands
-     * const activeTableCommand = await prisma.activeTableCommand.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends activeTableCommandCreateManyArgs>(args?: SelectSubset<T, activeTableCommandCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many ActiveTableCommands and returns the data saved in the database.
-     * @param {activeTableCommandCreateManyAndReturnArgs} args - Arguments to create many ActiveTableCommands.
-     * @example
-     * // Create many ActiveTableCommands
-     * const activeTableCommand = await prisma.activeTableCommand.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many ActiveTableCommands and only return the `commandNumber`
-     * const activeTableCommandWithCommandNumberOnly = await prisma.activeTableCommand.createManyAndReturn({ 
-     *   select: { commandNumber: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends activeTableCommandCreateManyAndReturnArgs>(args?: SelectSubset<T, activeTableCommandCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$activeTableCommandPayload<ExtArgs>, T, "createManyAndReturn">>
-
-    /**
-     * Delete a ActiveTableCommand.
-     * @param {activeTableCommandDeleteArgs} args - Arguments to delete one ActiveTableCommand.
-     * @example
-     * // Delete one ActiveTableCommand
-     * const ActiveTableCommand = await prisma.activeTableCommand.delete({
-     *   where: {
-     *     // ... filter to delete one ActiveTableCommand
-     *   }
-     * })
-     * 
-     */
-    delete<T extends activeTableCommandDeleteArgs>(args: SelectSubset<T, activeTableCommandDeleteArgs<ExtArgs>>): Prisma__activeTableCommandClient<$Result.GetResult<Prisma.$activeTableCommandPayload<ExtArgs>, T, "delete">, never, ExtArgs>
-
-    /**
-     * Update one ActiveTableCommand.
-     * @param {activeTableCommandUpdateArgs} args - Arguments to update one ActiveTableCommand.
-     * @example
-     * // Update one ActiveTableCommand
-     * const activeTableCommand = await prisma.activeTableCommand.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends activeTableCommandUpdateArgs>(args: SelectSubset<T, activeTableCommandUpdateArgs<ExtArgs>>): Prisma__activeTableCommandClient<$Result.GetResult<Prisma.$activeTableCommandPayload<ExtArgs>, T, "update">, never, ExtArgs>
-
-    /**
-     * Delete zero or more ActiveTableCommands.
-     * @param {activeTableCommandDeleteManyArgs} args - Arguments to filter ActiveTableCommands to delete.
-     * @example
-     * // Delete a few ActiveTableCommands
-     * const { count } = await prisma.activeTableCommand.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends activeTableCommandDeleteManyArgs>(args?: SelectSubset<T, activeTableCommandDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more ActiveTableCommands.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {activeTableCommandUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many ActiveTableCommands
-     * const activeTableCommand = await prisma.activeTableCommand.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends activeTableCommandUpdateManyArgs>(args: SelectSubset<T, activeTableCommandUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one ActiveTableCommand.
-     * @param {activeTableCommandUpsertArgs} args - Arguments to update or create a ActiveTableCommand.
-     * @example
-     * // Update or create a ActiveTableCommand
-     * const activeTableCommand = await prisma.activeTableCommand.upsert({
-     *   create: {
-     *     // ... data to create a ActiveTableCommand
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the ActiveTableCommand we want to update
-     *   }
-     * })
-     */
-    upsert<T extends activeTableCommandUpsertArgs>(args: SelectSubset<T, activeTableCommandUpsertArgs<ExtArgs>>): Prisma__activeTableCommandClient<$Result.GetResult<Prisma.$activeTableCommandPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
-
-
-    /**
-     * Count the number of ActiveTableCommands.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {activeTableCommandCountArgs} args - Arguments to filter ActiveTableCommands to count.
-     * @example
-     * // Count the number of ActiveTableCommands
-     * const count = await prisma.activeTableCommand.count({
-     *   where: {
-     *     // ... the filter for the ActiveTableCommands we want to count
-     *   }
-     * })
-    **/
-    count<T extends activeTableCommandCountArgs>(
-      args?: Subset<T, activeTableCommandCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], ActiveTableCommandCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a ActiveTableCommand.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ActiveTableCommandAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends ActiveTableCommandAggregateArgs>(args: Subset<T, ActiveTableCommandAggregateArgs>): Prisma.PrismaPromise<GetActiveTableCommandAggregateType<T>>
-
-    /**
-     * Group by ActiveTableCommand.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {activeTableCommandGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends activeTableCommandGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: activeTableCommandGroupByArgs['orderBy'] }
-        : { orderBy?: activeTableCommandGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, activeTableCommandGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetActiveTableCommandGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the activeTableCommand model
-   */
-  readonly fields: activeTableCommandFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for activeTableCommand.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__activeTableCommandClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    table<T extends tableDefaultArgs<ExtArgs> = {}>(args?: Subset<T, tableDefaultArgs<ExtArgs>>): Prisma__tableClient<$Result.GetResult<Prisma.$tablePayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
-    command<T extends commandDefaultArgs<ExtArgs> = {}>(args?: Subset<T, commandDefaultArgs<ExtArgs>>): Prisma__commandClient<$Result.GetResult<Prisma.$commandPayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the activeTableCommand model
-   */ 
-  interface activeTableCommandFieldRefs {
-    readonly commandNumber: FieldRef<"activeTableCommand", 'Int'>
-    readonly tableNumber: FieldRef<"activeTableCommand", 'Int'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * activeTableCommand findUnique
-   */
-  export type activeTableCommandFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the activeTableCommand
-     */
-    select?: activeTableCommandSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: activeTableCommandInclude<ExtArgs> | null
-    /**
-     * Filter, which activeTableCommand to fetch.
-     */
-    where: activeTableCommandWhereUniqueInput
-  }
-
-  /**
-   * activeTableCommand findUniqueOrThrow
-   */
-  export type activeTableCommandFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the activeTableCommand
-     */
-    select?: activeTableCommandSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: activeTableCommandInclude<ExtArgs> | null
-    /**
-     * Filter, which activeTableCommand to fetch.
-     */
-    where: activeTableCommandWhereUniqueInput
-  }
-
-  /**
-   * activeTableCommand findFirst
-   */
-  export type activeTableCommandFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the activeTableCommand
-     */
-    select?: activeTableCommandSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: activeTableCommandInclude<ExtArgs> | null
-    /**
-     * Filter, which activeTableCommand to fetch.
-     */
-    where?: activeTableCommandWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of activeTableCommands to fetch.
-     */
-    orderBy?: activeTableCommandOrderByWithRelationInput | activeTableCommandOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for activeTableCommands.
-     */
-    cursor?: activeTableCommandWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` activeTableCommands from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` activeTableCommands.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of activeTableCommands.
-     */
-    distinct?: ActiveTableCommandScalarFieldEnum | ActiveTableCommandScalarFieldEnum[]
-  }
-
-  /**
-   * activeTableCommand findFirstOrThrow
-   */
-  export type activeTableCommandFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the activeTableCommand
-     */
-    select?: activeTableCommandSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: activeTableCommandInclude<ExtArgs> | null
-    /**
-     * Filter, which activeTableCommand to fetch.
-     */
-    where?: activeTableCommandWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of activeTableCommands to fetch.
-     */
-    orderBy?: activeTableCommandOrderByWithRelationInput | activeTableCommandOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for activeTableCommands.
-     */
-    cursor?: activeTableCommandWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` activeTableCommands from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` activeTableCommands.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of activeTableCommands.
-     */
-    distinct?: ActiveTableCommandScalarFieldEnum | ActiveTableCommandScalarFieldEnum[]
-  }
-
-  /**
-   * activeTableCommand findMany
-   */
-  export type activeTableCommandFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the activeTableCommand
-     */
-    select?: activeTableCommandSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: activeTableCommandInclude<ExtArgs> | null
-    /**
-     * Filter, which activeTableCommands to fetch.
-     */
-    where?: activeTableCommandWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of activeTableCommands to fetch.
-     */
-    orderBy?: activeTableCommandOrderByWithRelationInput | activeTableCommandOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing activeTableCommands.
-     */
-    cursor?: activeTableCommandWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` activeTableCommands from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` activeTableCommands.
-     */
-    skip?: number
-    distinct?: ActiveTableCommandScalarFieldEnum | ActiveTableCommandScalarFieldEnum[]
-  }
-
-  /**
-   * activeTableCommand create
-   */
-  export type activeTableCommandCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the activeTableCommand
-     */
-    select?: activeTableCommandSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: activeTableCommandInclude<ExtArgs> | null
-    /**
-     * The data needed to create a activeTableCommand.
-     */
-    data: XOR<activeTableCommandCreateInput, activeTableCommandUncheckedCreateInput>
-  }
-
-  /**
-   * activeTableCommand createMany
-   */
-  export type activeTableCommandCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many activeTableCommands.
-     */
-    data: activeTableCommandCreateManyInput | activeTableCommandCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * activeTableCommand createManyAndReturn
-   */
-  export type activeTableCommandCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the activeTableCommand
-     */
-    select?: activeTableCommandSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * The data used to create many activeTableCommands.
-     */
-    data: activeTableCommandCreateManyInput | activeTableCommandCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: activeTableCommandIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * activeTableCommand update
-   */
-  export type activeTableCommandUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the activeTableCommand
-     */
-    select?: activeTableCommandSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: activeTableCommandInclude<ExtArgs> | null
-    /**
-     * The data needed to update a activeTableCommand.
-     */
-    data: XOR<activeTableCommandUpdateInput, activeTableCommandUncheckedUpdateInput>
-    /**
-     * Choose, which activeTableCommand to update.
-     */
-    where: activeTableCommandWhereUniqueInput
-  }
-
-  /**
-   * activeTableCommand updateMany
-   */
-  export type activeTableCommandUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update activeTableCommands.
-     */
-    data: XOR<activeTableCommandUpdateManyMutationInput, activeTableCommandUncheckedUpdateManyInput>
-    /**
-     * Filter which activeTableCommands to update
-     */
-    where?: activeTableCommandWhereInput
-  }
-
-  /**
-   * activeTableCommand upsert
-   */
-  export type activeTableCommandUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the activeTableCommand
-     */
-    select?: activeTableCommandSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: activeTableCommandInclude<ExtArgs> | null
-    /**
-     * The filter to search for the activeTableCommand to update in case it exists.
-     */
-    where: activeTableCommandWhereUniqueInput
-    /**
-     * In case the activeTableCommand found by the `where` argument doesn't exist, create a new activeTableCommand with this data.
-     */
-    create: XOR<activeTableCommandCreateInput, activeTableCommandUncheckedCreateInput>
-    /**
-     * In case the activeTableCommand was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<activeTableCommandUpdateInput, activeTableCommandUncheckedUpdateInput>
-  }
-
-  /**
-   * activeTableCommand delete
-   */
-  export type activeTableCommandDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the activeTableCommand
-     */
-    select?: activeTableCommandSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: activeTableCommandInclude<ExtArgs> | null
-    /**
-     * Filter which activeTableCommand to delete.
-     */
-    where: activeTableCommandWhereUniqueInput
-  }
-
-  /**
-   * activeTableCommand deleteMany
-   */
-  export type activeTableCommandDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which activeTableCommands to delete
-     */
-    where?: activeTableCommandWhereInput
-  }
-
-  /**
-   * activeTableCommand without action
-   */
-  export type activeTableCommandDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the activeTableCommand
-     */
-    select?: activeTableCommandSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: activeTableCommandInclude<ExtArgs> | null
   }
 
 
@@ -4994,14 +4019,14 @@ export namespace Prisma {
   export type ProductMinAggregateOutputType = {
     productId: number | null
     name: string | null
-    category: string | null
+    category: $Enums.Category | null
     price: number | null
   }
 
   export type ProductMaxAggregateOutputType = {
     productId: number | null
     name: string | null
-    category: string | null
+    category: $Enums.Category | null
     price: number | null
   }
 
@@ -5135,7 +4160,7 @@ export namespace Prisma {
   export type ProductGroupByOutputType = {
     productId: number
     name: string
-    category: string
+    category: $Enums.Category
     price: number
     _count: ProductCountAggregateOutputType | null
     _avg: ProductAvgAggregateOutputType | null
@@ -5186,7 +4211,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       productId: number
       name: string
-      category: string
+      category: $Enums.Category
       price: number
     }, ExtArgs["result"]["product"]>
     composites: {}
@@ -5583,7 +4608,7 @@ export namespace Prisma {
   interface productFieldRefs {
     readonly productId: FieldRef<"product", 'Int'>
     readonly name: FieldRef<"product", 'String'>
-    readonly category: FieldRef<"product", 'String'>
+    readonly category: FieldRef<"product", 'Category'>
     readonly price: FieldRef<"product", 'Float'>
   }
     
@@ -5888,25 +4913,19 @@ export namespace Prisma {
 
 
   export const TableScalarFieldEnum: {
-    tableNumber: 'tableNumber'
+    tableNumber: 'tableNumber',
+    tableDescription: 'tableDescription'
   };
 
   export type TableScalarFieldEnum = (typeof TableScalarFieldEnum)[keyof typeof TableScalarFieldEnum]
 
 
   export const CommandScalarFieldEnum: {
-    commandNumber: 'commandNumber'
-  };
-
-  export type CommandScalarFieldEnum = (typeof CommandScalarFieldEnum)[keyof typeof CommandScalarFieldEnum]
-
-
-  export const ActiveTableCommandScalarFieldEnum: {
     commandNumber: 'commandNumber',
     tableNumber: 'tableNumber'
   };
 
-  export type ActiveTableCommandScalarFieldEnum = (typeof ActiveTableCommandScalarFieldEnum)[keyof typeof ActiveTableCommandScalarFieldEnum]
+  export type CommandScalarFieldEnum = (typeof CommandScalarFieldEnum)[keyof typeof CommandScalarFieldEnum]
 
 
   export const ClientScalarFieldEnum: {
@@ -5943,6 +4962,14 @@ export namespace Prisma {
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
 
 
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
   /**
    * Field references 
    */
@@ -5977,6 +5004,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Category'
+   */
+  export type EnumCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Category'>
+    
+
+
+  /**
+   * Reference to a field of type 'Category[]'
+   */
+  export type ListEnumCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Category[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -5998,12 +5039,14 @@ export namespace Prisma {
     OR?: tableWhereInput[]
     NOT?: tableWhereInput | tableWhereInput[]
     tableNumber?: IntFilter<"table"> | number
-    activeTableCommand?: ActiveTableCommandListRelationFilter
+    tableDescription?: StringFilter<"table"> | string
+    command?: CommandListRelationFilter
   }
 
   export type tableOrderByWithRelationInput = {
     tableNumber?: SortOrder
-    activeTableCommand?: activeTableCommandOrderByRelationAggregateInput
+    tableDescription?: SortOrder
+    command?: commandOrderByRelationAggregateInput
   }
 
   export type tableWhereUniqueInput = Prisma.AtLeast<{
@@ -6011,11 +5054,13 @@ export namespace Prisma {
     AND?: tableWhereInput | tableWhereInput[]
     OR?: tableWhereInput[]
     NOT?: tableWhereInput | tableWhereInput[]
-    activeTableCommand?: ActiveTableCommandListRelationFilter
+    tableDescription?: StringFilter<"table"> | string
+    command?: CommandListRelationFilter
   }, "tableNumber">
 
   export type tableOrderByWithAggregationInput = {
     tableNumber?: SortOrder
+    tableDescription?: SortOrder
     _count?: tableCountOrderByAggregateInput
     _avg?: tableAvgOrderByAggregateInput
     _max?: tableMaxOrderByAggregateInput
@@ -6028,6 +5073,7 @@ export namespace Prisma {
     OR?: tableScalarWhereWithAggregatesInput[]
     NOT?: tableScalarWhereWithAggregatesInput | tableScalarWhereWithAggregatesInput[]
     tableNumber?: IntWithAggregatesFilter<"table"> | number
+    tableDescription?: StringWithAggregatesFilter<"table"> | string
   }
 
   export type commandWhereInput = {
@@ -6035,13 +5081,15 @@ export namespace Prisma {
     OR?: commandWhereInput[]
     NOT?: commandWhereInput | commandWhereInput[]
     commandNumber?: IntFilter<"command"> | number
-    activeTableCommand?: XOR<ActiveTableCommandNullableRelationFilter, activeTableCommandWhereInput> | null
+    tableNumber?: IntNullableFilter<"command"> | number | null
+    table?: XOR<TableNullableRelationFilter, tableWhereInput> | null
     client?: XOR<ClientNullableRelationFilter, clientWhereInput> | null
   }
 
   export type commandOrderByWithRelationInput = {
     commandNumber?: SortOrder
-    activeTableCommand?: activeTableCommandOrderByWithRelationInput
+    tableNumber?: SortOrderInput | SortOrder
+    table?: tableOrderByWithRelationInput
     client?: clientOrderByWithRelationInput
   }
 
@@ -6050,12 +5098,14 @@ export namespace Prisma {
     AND?: commandWhereInput | commandWhereInput[]
     OR?: commandWhereInput[]
     NOT?: commandWhereInput | commandWhereInput[]
-    activeTableCommand?: XOR<ActiveTableCommandNullableRelationFilter, activeTableCommandWhereInput> | null
+    tableNumber?: IntNullableFilter<"command"> | number | null
+    table?: XOR<TableNullableRelationFilter, tableWhereInput> | null
     client?: XOR<ClientNullableRelationFilter, clientWhereInput> | null
   }, "commandNumber">
 
   export type commandOrderByWithAggregationInput = {
     commandNumber?: SortOrder
+    tableNumber?: SortOrderInput | SortOrder
     _count?: commandCountOrderByAggregateInput
     _avg?: commandAvgOrderByAggregateInput
     _max?: commandMaxOrderByAggregateInput
@@ -6068,51 +5118,7 @@ export namespace Prisma {
     OR?: commandScalarWhereWithAggregatesInput[]
     NOT?: commandScalarWhereWithAggregatesInput | commandScalarWhereWithAggregatesInput[]
     commandNumber?: IntWithAggregatesFilter<"command"> | number
-  }
-
-  export type activeTableCommandWhereInput = {
-    AND?: activeTableCommandWhereInput | activeTableCommandWhereInput[]
-    OR?: activeTableCommandWhereInput[]
-    NOT?: activeTableCommandWhereInput | activeTableCommandWhereInput[]
-    commandNumber?: IntFilter<"activeTableCommand"> | number
-    tableNumber?: IntFilter<"activeTableCommand"> | number
-    table?: XOR<TableRelationFilter, tableWhereInput>
-    command?: XOR<CommandRelationFilter, commandWhereInput>
-  }
-
-  export type activeTableCommandOrderByWithRelationInput = {
-    commandNumber?: SortOrder
-    tableNumber?: SortOrder
-    table?: tableOrderByWithRelationInput
-    command?: commandOrderByWithRelationInput
-  }
-
-  export type activeTableCommandWhereUniqueInput = Prisma.AtLeast<{
-    commandNumber?: number
-    AND?: activeTableCommandWhereInput | activeTableCommandWhereInput[]
-    OR?: activeTableCommandWhereInput[]
-    NOT?: activeTableCommandWhereInput | activeTableCommandWhereInput[]
-    tableNumber?: IntFilter<"activeTableCommand"> | number
-    table?: XOR<TableRelationFilter, tableWhereInput>
-    command?: XOR<CommandRelationFilter, commandWhereInput>
-  }, "commandNumber">
-
-  export type activeTableCommandOrderByWithAggregationInput = {
-    commandNumber?: SortOrder
-    tableNumber?: SortOrder
-    _count?: activeTableCommandCountOrderByAggregateInput
-    _avg?: activeTableCommandAvgOrderByAggregateInput
-    _max?: activeTableCommandMaxOrderByAggregateInput
-    _min?: activeTableCommandMinOrderByAggregateInput
-    _sum?: activeTableCommandSumOrderByAggregateInput
-  }
-
-  export type activeTableCommandScalarWhereWithAggregatesInput = {
-    AND?: activeTableCommandScalarWhereWithAggregatesInput | activeTableCommandScalarWhereWithAggregatesInput[]
-    OR?: activeTableCommandScalarWhereWithAggregatesInput[]
-    NOT?: activeTableCommandScalarWhereWithAggregatesInput | activeTableCommandScalarWhereWithAggregatesInput[]
-    commandNumber?: IntWithAggregatesFilter<"activeTableCommand"> | number
-    tableNumber?: IntWithAggregatesFilter<"activeTableCommand"> | number
+    tableNumber?: IntNullableWithAggregatesFilter<"command"> | number | null
   }
 
   export type clientWhereInput = {
@@ -6163,7 +5169,7 @@ export namespace Prisma {
     NOT?: productWhereInput | productWhereInput[]
     productId?: IntFilter<"product"> | number
     name?: StringFilter<"product"> | string
-    category?: StringFilter<"product"> | string
+    category?: EnumCategoryFilter<"product"> | $Enums.Category
     price?: FloatFilter<"product"> | number
   }
 
@@ -6180,7 +5186,7 @@ export namespace Prisma {
     OR?: productWhereInput[]
     NOT?: productWhereInput | productWhereInput[]
     name?: StringFilter<"product"> | string
-    category?: StringFilter<"product"> | string
+    category?: EnumCategoryFilter<"product"> | $Enums.Category
     price?: FloatFilter<"product"> | number
   }, "productId">
 
@@ -6202,68 +5208,76 @@ export namespace Prisma {
     NOT?: productScalarWhereWithAggregatesInput | productScalarWhereWithAggregatesInput[]
     productId?: IntWithAggregatesFilter<"product"> | number
     name?: StringWithAggregatesFilter<"product"> | string
-    category?: StringWithAggregatesFilter<"product"> | string
+    category?: EnumCategoryWithAggregatesFilter<"product"> | $Enums.Category
     price?: FloatWithAggregatesFilter<"product"> | number
   }
 
   export type tableCreateInput = {
     tableNumber: number
-    activeTableCommand?: activeTableCommandCreateNestedManyWithoutTableInput
+    tableDescription: string
+    command?: commandCreateNestedManyWithoutTableInput
   }
 
   export type tableUncheckedCreateInput = {
     tableNumber: number
-    activeTableCommand?: activeTableCommandUncheckedCreateNestedManyWithoutTableInput
+    tableDescription: string
+    command?: commandUncheckedCreateNestedManyWithoutTableInput
   }
 
   export type tableUpdateInput = {
     tableNumber?: IntFieldUpdateOperationsInput | number
-    activeTableCommand?: activeTableCommandUpdateManyWithoutTableNestedInput
+    tableDescription?: StringFieldUpdateOperationsInput | string
+    command?: commandUpdateManyWithoutTableNestedInput
   }
 
   export type tableUncheckedUpdateInput = {
     tableNumber?: IntFieldUpdateOperationsInput | number
-    activeTableCommand?: activeTableCommandUncheckedUpdateManyWithoutTableNestedInput
+    tableDescription?: StringFieldUpdateOperationsInput | string
+    command?: commandUncheckedUpdateManyWithoutTableNestedInput
   }
 
   export type tableCreateManyInput = {
     tableNumber: number
+    tableDescription: string
   }
 
   export type tableUpdateManyMutationInput = {
     tableNumber?: IntFieldUpdateOperationsInput | number
+    tableDescription?: StringFieldUpdateOperationsInput | string
   }
 
   export type tableUncheckedUpdateManyInput = {
     tableNumber?: IntFieldUpdateOperationsInput | number
+    tableDescription?: StringFieldUpdateOperationsInput | string
   }
 
   export type commandCreateInput = {
     commandNumber: number
-    activeTableCommand?: activeTableCommandCreateNestedOneWithoutCommandInput
+    table?: tableCreateNestedOneWithoutCommandInput
     client?: clientCreateNestedOneWithoutCommandInput
   }
 
   export type commandUncheckedCreateInput = {
     commandNumber: number
-    activeTableCommand?: activeTableCommandUncheckedCreateNestedOneWithoutCommandInput
+    tableNumber?: number | null
     client?: clientUncheckedCreateNestedOneWithoutCommandInput
   }
 
   export type commandUpdateInput = {
     commandNumber?: IntFieldUpdateOperationsInput | number
-    activeTableCommand?: activeTableCommandUpdateOneWithoutCommandNestedInput
+    table?: tableUpdateOneWithoutCommandNestedInput
     client?: clientUpdateOneWithoutCommandNestedInput
   }
 
   export type commandUncheckedUpdateInput = {
     commandNumber?: IntFieldUpdateOperationsInput | number
-    activeTableCommand?: activeTableCommandUncheckedUpdateOneWithoutCommandNestedInput
+    tableNumber?: NullableIntFieldUpdateOperationsInput | number | null
     client?: clientUncheckedUpdateOneWithoutCommandNestedInput
   }
 
   export type commandCreateManyInput = {
     commandNumber: number
+    tableNumber?: number | null
   }
 
   export type commandUpdateManyMutationInput = {
@@ -6272,40 +5286,7 @@ export namespace Prisma {
 
   export type commandUncheckedUpdateManyInput = {
     commandNumber?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type activeTableCommandCreateInput = {
-    table: tableCreateNestedOneWithoutActiveTableCommandInput
-    command: commandCreateNestedOneWithoutActiveTableCommandInput
-  }
-
-  export type activeTableCommandUncheckedCreateInput = {
-    commandNumber: number
-    tableNumber: number
-  }
-
-  export type activeTableCommandUpdateInput = {
-    table?: tableUpdateOneRequiredWithoutActiveTableCommandNestedInput
-    command?: commandUpdateOneRequiredWithoutActiveTableCommandNestedInput
-  }
-
-  export type activeTableCommandUncheckedUpdateInput = {
-    commandNumber?: IntFieldUpdateOperationsInput | number
-    tableNumber?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type activeTableCommandCreateManyInput = {
-    commandNumber: number
-    tableNumber: number
-  }
-
-  export type activeTableCommandUpdateManyMutationInput = {
-
-  }
-
-  export type activeTableCommandUncheckedUpdateManyInput = {
-    commandNumber?: IntFieldUpdateOperationsInput | number
-    tableNumber?: IntFieldUpdateOperationsInput | number
+    tableNumber?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type clientCreateInput = {
@@ -6344,47 +5325,47 @@ export namespace Prisma {
 
   export type productCreateInput = {
     name: string
-    category: string
+    category: $Enums.Category
     price: number
   }
 
   export type productUncheckedCreateInput = {
     productId?: number
     name: string
-    category: string
+    category: $Enums.Category
     price: number
   }
 
   export type productUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
-    category?: StringFieldUpdateOperationsInput | string
+    category?: EnumCategoryFieldUpdateOperationsInput | $Enums.Category
     price?: FloatFieldUpdateOperationsInput | number
   }
 
   export type productUncheckedUpdateInput = {
     productId?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    category?: StringFieldUpdateOperationsInput | string
+    category?: EnumCategoryFieldUpdateOperationsInput | $Enums.Category
     price?: FloatFieldUpdateOperationsInput | number
   }
 
   export type productCreateManyInput = {
     productId?: number
     name: string
-    category: string
+    category: $Enums.Category
     price: number
   }
 
   export type productUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
-    category?: StringFieldUpdateOperationsInput | string
+    category?: EnumCategoryFieldUpdateOperationsInput | $Enums.Category
     price?: FloatFieldUpdateOperationsInput | number
   }
 
   export type productUncheckedUpdateManyInput = {
     productId?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    category?: StringFieldUpdateOperationsInput | string
+    category?: EnumCategoryFieldUpdateOperationsInput | $Enums.Category
     price?: FloatFieldUpdateOperationsInput | number
   }
 
@@ -6399,18 +5380,34 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
-  export type ActiveTableCommandListRelationFilter = {
-    every?: activeTableCommandWhereInput
-    some?: activeTableCommandWhereInput
-    none?: activeTableCommandWhereInput
+  export type StringFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type activeTableCommandOrderByRelationAggregateInput = {
+  export type CommandListRelationFilter = {
+    every?: commandWhereInput
+    some?: commandWhereInput
+    none?: commandWhereInput
+  }
+
+  export type commandOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
   export type tableCountOrderByAggregateInput = {
     tableNumber?: SortOrder
+    tableDescription?: SortOrder
   }
 
   export type tableAvgOrderByAggregateInput = {
@@ -6419,10 +5416,12 @@ export namespace Prisma {
 
   export type tableMaxOrderByAggregateInput = {
     tableNumber?: SortOrder
+    tableDescription?: SortOrder
   }
 
   export type tableMinOrderByAggregateInput = {
     tableNumber?: SortOrder
+    tableDescription?: SortOrder
   }
 
   export type tableSumOrderByAggregateInput = {
@@ -6445,72 +5444,7 @@ export namespace Prisma {
     _max?: NestedIntFilter<$PrismaModel>
   }
 
-  export type ActiveTableCommandNullableRelationFilter = {
-    is?: activeTableCommandWhereInput | null
-    isNot?: activeTableCommandWhereInput | null
-  }
-
-  export type ClientNullableRelationFilter = {
-    is?: clientWhereInput | null
-    isNot?: clientWhereInput | null
-  }
-
-  export type commandCountOrderByAggregateInput = {
-    commandNumber?: SortOrder
-  }
-
-  export type commandAvgOrderByAggregateInput = {
-    commandNumber?: SortOrder
-  }
-
-  export type commandMaxOrderByAggregateInput = {
-    commandNumber?: SortOrder
-  }
-
-  export type commandMinOrderByAggregateInput = {
-    commandNumber?: SortOrder
-  }
-
-  export type commandSumOrderByAggregateInput = {
-    commandNumber?: SortOrder
-  }
-
-  export type TableRelationFilter = {
-    is?: tableWhereInput
-    isNot?: tableWhereInput
-  }
-
-  export type CommandRelationFilter = {
-    is?: commandWhereInput
-    isNot?: commandWhereInput
-  }
-
-  export type activeTableCommandCountOrderByAggregateInput = {
-    commandNumber?: SortOrder
-    tableNumber?: SortOrder
-  }
-
-  export type activeTableCommandAvgOrderByAggregateInput = {
-    commandNumber?: SortOrder
-    tableNumber?: SortOrder
-  }
-
-  export type activeTableCommandMaxOrderByAggregateInput = {
-    commandNumber?: SortOrder
-    tableNumber?: SortOrder
-  }
-
-  export type activeTableCommandMinOrderByAggregateInput = {
-    commandNumber?: SortOrder
-    tableNumber?: SortOrder
-  }
-
-  export type activeTableCommandSumOrderByAggregateInput = {
-    commandNumber?: SortOrder
-    tableNumber?: SortOrder
-  }
-
-  export type StringFilter<$PrismaModel = never> = {
+  export type StringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
     notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -6522,7 +5456,82 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
-    not?: NestedStringFilter<$PrismaModel> | string
+    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type TableNullableRelationFilter = {
+    is?: tableWhereInput | null
+    isNot?: tableWhereInput | null
+  }
+
+  export type ClientNullableRelationFilter = {
+    is?: clientWhereInput | null
+    isNot?: clientWhereInput | null
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
+  export type commandCountOrderByAggregateInput = {
+    commandNumber?: SortOrder
+    tableNumber?: SortOrder
+  }
+
+  export type commandAvgOrderByAggregateInput = {
+    commandNumber?: SortOrder
+    tableNumber?: SortOrder
+  }
+
+  export type commandMaxOrderByAggregateInput = {
+    commandNumber?: SortOrder
+    tableNumber?: SortOrder
+  }
+
+  export type commandMinOrderByAggregateInput = {
+    commandNumber?: SortOrder
+    tableNumber?: SortOrder
+  }
+
+  export type commandSumOrderByAggregateInput = {
+    commandNumber?: SortOrder
+    tableNumber?: SortOrder
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type CommandRelationFilter = {
+    is?: commandWhereInput
+    isNot?: commandWhereInput
   }
 
   export type clientCountOrderByAggregateInput = {
@@ -6548,22 +5557,11 @@ export namespace Prisma {
     clientId?: SortOrder
   }
 
-  export type StringWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedStringFilter<$PrismaModel>
-    _max?: NestedStringFilter<$PrismaModel>
+  export type EnumCategoryFilter<$PrismaModel = never> = {
+    equals?: $Enums.Category | EnumCategoryFieldRefInput<$PrismaModel>
+    in?: $Enums.Category[] | ListEnumCategoryFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Category[] | ListEnumCategoryFieldRefInput<$PrismaModel>
+    not?: NestedEnumCategoryFilter<$PrismaModel> | $Enums.Category
   }
 
   export type FloatFilter<$PrismaModel = never> = {
@@ -6608,6 +5606,16 @@ export namespace Prisma {
     price?: SortOrder
   }
 
+  export type EnumCategoryWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.Category | EnumCategoryFieldRefInput<$PrismaModel>
+    in?: $Enums.Category[] | ListEnumCategoryFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Category[] | ListEnumCategoryFieldRefInput<$PrismaModel>
+    not?: NestedEnumCategoryWithAggregatesFilter<$PrismaModel> | $Enums.Category
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumCategoryFilter<$PrismaModel>
+    _max?: NestedEnumCategoryFilter<$PrismaModel>
+  }
+
   export type FloatWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel>
     in?: number[] | ListFloatFieldRefInput<$PrismaModel>
@@ -6624,18 +5632,18 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type activeTableCommandCreateNestedManyWithoutTableInput = {
-    create?: XOR<activeTableCommandCreateWithoutTableInput, activeTableCommandUncheckedCreateWithoutTableInput> | activeTableCommandCreateWithoutTableInput[] | activeTableCommandUncheckedCreateWithoutTableInput[]
-    connectOrCreate?: activeTableCommandCreateOrConnectWithoutTableInput | activeTableCommandCreateOrConnectWithoutTableInput[]
-    createMany?: activeTableCommandCreateManyTableInputEnvelope
-    connect?: activeTableCommandWhereUniqueInput | activeTableCommandWhereUniqueInput[]
+  export type commandCreateNestedManyWithoutTableInput = {
+    create?: XOR<commandCreateWithoutTableInput, commandUncheckedCreateWithoutTableInput> | commandCreateWithoutTableInput[] | commandUncheckedCreateWithoutTableInput[]
+    connectOrCreate?: commandCreateOrConnectWithoutTableInput | commandCreateOrConnectWithoutTableInput[]
+    createMany?: commandCreateManyTableInputEnvelope
+    connect?: commandWhereUniqueInput | commandWhereUniqueInput[]
   }
 
-  export type activeTableCommandUncheckedCreateNestedManyWithoutTableInput = {
-    create?: XOR<activeTableCommandCreateWithoutTableInput, activeTableCommandUncheckedCreateWithoutTableInput> | activeTableCommandCreateWithoutTableInput[] | activeTableCommandUncheckedCreateWithoutTableInput[]
-    connectOrCreate?: activeTableCommandCreateOrConnectWithoutTableInput | activeTableCommandCreateOrConnectWithoutTableInput[]
-    createMany?: activeTableCommandCreateManyTableInputEnvelope
-    connect?: activeTableCommandWhereUniqueInput | activeTableCommandWhereUniqueInput[]
+  export type commandUncheckedCreateNestedManyWithoutTableInput = {
+    create?: XOR<commandCreateWithoutTableInput, commandUncheckedCreateWithoutTableInput> | commandCreateWithoutTableInput[] | commandUncheckedCreateWithoutTableInput[]
+    connectOrCreate?: commandCreateOrConnectWithoutTableInput | commandCreateOrConnectWithoutTableInput[]
+    createMany?: commandCreateManyTableInputEnvelope
+    connect?: commandWhereUniqueInput | commandWhereUniqueInput[]
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -6646,38 +5654,42 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type activeTableCommandUpdateManyWithoutTableNestedInput = {
-    create?: XOR<activeTableCommandCreateWithoutTableInput, activeTableCommandUncheckedCreateWithoutTableInput> | activeTableCommandCreateWithoutTableInput[] | activeTableCommandUncheckedCreateWithoutTableInput[]
-    connectOrCreate?: activeTableCommandCreateOrConnectWithoutTableInput | activeTableCommandCreateOrConnectWithoutTableInput[]
-    upsert?: activeTableCommandUpsertWithWhereUniqueWithoutTableInput | activeTableCommandUpsertWithWhereUniqueWithoutTableInput[]
-    createMany?: activeTableCommandCreateManyTableInputEnvelope
-    set?: activeTableCommandWhereUniqueInput | activeTableCommandWhereUniqueInput[]
-    disconnect?: activeTableCommandWhereUniqueInput | activeTableCommandWhereUniqueInput[]
-    delete?: activeTableCommandWhereUniqueInput | activeTableCommandWhereUniqueInput[]
-    connect?: activeTableCommandWhereUniqueInput | activeTableCommandWhereUniqueInput[]
-    update?: activeTableCommandUpdateWithWhereUniqueWithoutTableInput | activeTableCommandUpdateWithWhereUniqueWithoutTableInput[]
-    updateMany?: activeTableCommandUpdateManyWithWhereWithoutTableInput | activeTableCommandUpdateManyWithWhereWithoutTableInput[]
-    deleteMany?: activeTableCommandScalarWhereInput | activeTableCommandScalarWhereInput[]
+  export type StringFieldUpdateOperationsInput = {
+    set?: string
   }
 
-  export type activeTableCommandUncheckedUpdateManyWithoutTableNestedInput = {
-    create?: XOR<activeTableCommandCreateWithoutTableInput, activeTableCommandUncheckedCreateWithoutTableInput> | activeTableCommandCreateWithoutTableInput[] | activeTableCommandUncheckedCreateWithoutTableInput[]
-    connectOrCreate?: activeTableCommandCreateOrConnectWithoutTableInput | activeTableCommandCreateOrConnectWithoutTableInput[]
-    upsert?: activeTableCommandUpsertWithWhereUniqueWithoutTableInput | activeTableCommandUpsertWithWhereUniqueWithoutTableInput[]
-    createMany?: activeTableCommandCreateManyTableInputEnvelope
-    set?: activeTableCommandWhereUniqueInput | activeTableCommandWhereUniqueInput[]
-    disconnect?: activeTableCommandWhereUniqueInput | activeTableCommandWhereUniqueInput[]
-    delete?: activeTableCommandWhereUniqueInput | activeTableCommandWhereUniqueInput[]
-    connect?: activeTableCommandWhereUniqueInput | activeTableCommandWhereUniqueInput[]
-    update?: activeTableCommandUpdateWithWhereUniqueWithoutTableInput | activeTableCommandUpdateWithWhereUniqueWithoutTableInput[]
-    updateMany?: activeTableCommandUpdateManyWithWhereWithoutTableInput | activeTableCommandUpdateManyWithWhereWithoutTableInput[]
-    deleteMany?: activeTableCommandScalarWhereInput | activeTableCommandScalarWhereInput[]
+  export type commandUpdateManyWithoutTableNestedInput = {
+    create?: XOR<commandCreateWithoutTableInput, commandUncheckedCreateWithoutTableInput> | commandCreateWithoutTableInput[] | commandUncheckedCreateWithoutTableInput[]
+    connectOrCreate?: commandCreateOrConnectWithoutTableInput | commandCreateOrConnectWithoutTableInput[]
+    upsert?: commandUpsertWithWhereUniqueWithoutTableInput | commandUpsertWithWhereUniqueWithoutTableInput[]
+    createMany?: commandCreateManyTableInputEnvelope
+    set?: commandWhereUniqueInput | commandWhereUniqueInput[]
+    disconnect?: commandWhereUniqueInput | commandWhereUniqueInput[]
+    delete?: commandWhereUniqueInput | commandWhereUniqueInput[]
+    connect?: commandWhereUniqueInput | commandWhereUniqueInput[]
+    update?: commandUpdateWithWhereUniqueWithoutTableInput | commandUpdateWithWhereUniqueWithoutTableInput[]
+    updateMany?: commandUpdateManyWithWhereWithoutTableInput | commandUpdateManyWithWhereWithoutTableInput[]
+    deleteMany?: commandScalarWhereInput | commandScalarWhereInput[]
   }
 
-  export type activeTableCommandCreateNestedOneWithoutCommandInput = {
-    create?: XOR<activeTableCommandCreateWithoutCommandInput, activeTableCommandUncheckedCreateWithoutCommandInput>
-    connectOrCreate?: activeTableCommandCreateOrConnectWithoutCommandInput
-    connect?: activeTableCommandWhereUniqueInput
+  export type commandUncheckedUpdateManyWithoutTableNestedInput = {
+    create?: XOR<commandCreateWithoutTableInput, commandUncheckedCreateWithoutTableInput> | commandCreateWithoutTableInput[] | commandUncheckedCreateWithoutTableInput[]
+    connectOrCreate?: commandCreateOrConnectWithoutTableInput | commandCreateOrConnectWithoutTableInput[]
+    upsert?: commandUpsertWithWhereUniqueWithoutTableInput | commandUpsertWithWhereUniqueWithoutTableInput[]
+    createMany?: commandCreateManyTableInputEnvelope
+    set?: commandWhereUniqueInput | commandWhereUniqueInput[]
+    disconnect?: commandWhereUniqueInput | commandWhereUniqueInput[]
+    delete?: commandWhereUniqueInput | commandWhereUniqueInput[]
+    connect?: commandWhereUniqueInput | commandWhereUniqueInput[]
+    update?: commandUpdateWithWhereUniqueWithoutTableInput | commandUpdateWithWhereUniqueWithoutTableInput[]
+    updateMany?: commandUpdateManyWithWhereWithoutTableInput | commandUpdateManyWithWhereWithoutTableInput[]
+    deleteMany?: commandScalarWhereInput | commandScalarWhereInput[]
+  }
+
+  export type tableCreateNestedOneWithoutCommandInput = {
+    create?: XOR<tableCreateWithoutCommandInput, tableUncheckedCreateWithoutCommandInput>
+    connectOrCreate?: tableCreateOrConnectWithoutCommandInput
+    connect?: tableWhereUniqueInput
   }
 
   export type clientCreateNestedOneWithoutCommandInput = {
@@ -6686,26 +5698,20 @@ export namespace Prisma {
     connect?: clientWhereUniqueInput
   }
 
-  export type activeTableCommandUncheckedCreateNestedOneWithoutCommandInput = {
-    create?: XOR<activeTableCommandCreateWithoutCommandInput, activeTableCommandUncheckedCreateWithoutCommandInput>
-    connectOrCreate?: activeTableCommandCreateOrConnectWithoutCommandInput
-    connect?: activeTableCommandWhereUniqueInput
-  }
-
   export type clientUncheckedCreateNestedOneWithoutCommandInput = {
     create?: XOR<clientCreateWithoutCommandInput, clientUncheckedCreateWithoutCommandInput>
     connectOrCreate?: clientCreateOrConnectWithoutCommandInput
     connect?: clientWhereUniqueInput
   }
 
-  export type activeTableCommandUpdateOneWithoutCommandNestedInput = {
-    create?: XOR<activeTableCommandCreateWithoutCommandInput, activeTableCommandUncheckedCreateWithoutCommandInput>
-    connectOrCreate?: activeTableCommandCreateOrConnectWithoutCommandInput
-    upsert?: activeTableCommandUpsertWithoutCommandInput
-    disconnect?: activeTableCommandWhereInput | boolean
-    delete?: activeTableCommandWhereInput | boolean
-    connect?: activeTableCommandWhereUniqueInput
-    update?: XOR<XOR<activeTableCommandUpdateToOneWithWhereWithoutCommandInput, activeTableCommandUpdateWithoutCommandInput>, activeTableCommandUncheckedUpdateWithoutCommandInput>
+  export type tableUpdateOneWithoutCommandNestedInput = {
+    create?: XOR<tableCreateWithoutCommandInput, tableUncheckedCreateWithoutCommandInput>
+    connectOrCreate?: tableCreateOrConnectWithoutCommandInput
+    upsert?: tableUpsertWithoutCommandInput
+    disconnect?: tableWhereInput | boolean
+    delete?: tableWhereInput | boolean
+    connect?: tableWhereUniqueInput
+    update?: XOR<XOR<tableUpdateToOneWithWhereWithoutCommandInput, tableUpdateWithoutCommandInput>, tableUncheckedUpdateWithoutCommandInput>
   }
 
   export type clientUpdateOneWithoutCommandNestedInput = {
@@ -6718,14 +5724,12 @@ export namespace Prisma {
     update?: XOR<XOR<clientUpdateToOneWithWhereWithoutCommandInput, clientUpdateWithoutCommandInput>, clientUncheckedUpdateWithoutCommandInput>
   }
 
-  export type activeTableCommandUncheckedUpdateOneWithoutCommandNestedInput = {
-    create?: XOR<activeTableCommandCreateWithoutCommandInput, activeTableCommandUncheckedCreateWithoutCommandInput>
-    connectOrCreate?: activeTableCommandCreateOrConnectWithoutCommandInput
-    upsert?: activeTableCommandUpsertWithoutCommandInput
-    disconnect?: activeTableCommandWhereInput | boolean
-    delete?: activeTableCommandWhereInput | boolean
-    connect?: activeTableCommandWhereUniqueInput
-    update?: XOR<XOR<activeTableCommandUpdateToOneWithWhereWithoutCommandInput, activeTableCommandUpdateWithoutCommandInput>, activeTableCommandUncheckedUpdateWithoutCommandInput>
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type clientUncheckedUpdateOneWithoutCommandNestedInput = {
@@ -6738,42 +5742,10 @@ export namespace Prisma {
     update?: XOR<XOR<clientUpdateToOneWithWhereWithoutCommandInput, clientUpdateWithoutCommandInput>, clientUncheckedUpdateWithoutCommandInput>
   }
 
-  export type tableCreateNestedOneWithoutActiveTableCommandInput = {
-    create?: XOR<tableCreateWithoutActiveTableCommandInput, tableUncheckedCreateWithoutActiveTableCommandInput>
-    connectOrCreate?: tableCreateOrConnectWithoutActiveTableCommandInput
-    connect?: tableWhereUniqueInput
-  }
-
-  export type commandCreateNestedOneWithoutActiveTableCommandInput = {
-    create?: XOR<commandCreateWithoutActiveTableCommandInput, commandUncheckedCreateWithoutActiveTableCommandInput>
-    connectOrCreate?: commandCreateOrConnectWithoutActiveTableCommandInput
-    connect?: commandWhereUniqueInput
-  }
-
-  export type tableUpdateOneRequiredWithoutActiveTableCommandNestedInput = {
-    create?: XOR<tableCreateWithoutActiveTableCommandInput, tableUncheckedCreateWithoutActiveTableCommandInput>
-    connectOrCreate?: tableCreateOrConnectWithoutActiveTableCommandInput
-    upsert?: tableUpsertWithoutActiveTableCommandInput
-    connect?: tableWhereUniqueInput
-    update?: XOR<XOR<tableUpdateToOneWithWhereWithoutActiveTableCommandInput, tableUpdateWithoutActiveTableCommandInput>, tableUncheckedUpdateWithoutActiveTableCommandInput>
-  }
-
-  export type commandUpdateOneRequiredWithoutActiveTableCommandNestedInput = {
-    create?: XOR<commandCreateWithoutActiveTableCommandInput, commandUncheckedCreateWithoutActiveTableCommandInput>
-    connectOrCreate?: commandCreateOrConnectWithoutActiveTableCommandInput
-    upsert?: commandUpsertWithoutActiveTableCommandInput
-    connect?: commandWhereUniqueInput
-    update?: XOR<XOR<commandUpdateToOneWithWhereWithoutActiveTableCommandInput, commandUpdateWithoutActiveTableCommandInput>, commandUncheckedUpdateWithoutActiveTableCommandInput>
-  }
-
   export type commandCreateNestedOneWithoutClientInput = {
     create?: XOR<commandCreateWithoutClientInput, commandUncheckedCreateWithoutClientInput>
     connectOrCreate?: commandCreateOrConnectWithoutClientInput
     connect?: commandWhereUniqueInput
-  }
-
-  export type StringFieldUpdateOperationsInput = {
-    set?: string
   }
 
   export type commandUpdateOneRequiredWithoutClientNestedInput = {
@@ -6782,6 +5754,10 @@ export namespace Prisma {
     upsert?: commandUpsertWithoutClientInput
     connect?: commandWhereUniqueInput
     update?: XOR<XOR<commandUpdateToOneWithWhereWithoutClientInput, commandUpdateWithoutClientInput>, commandUncheckedUpdateWithoutClientInput>
+  }
+
+  export type EnumCategoryFieldUpdateOperationsInput = {
+    set?: $Enums.Category
   }
 
   export type FloatFieldUpdateOperationsInput = {
@@ -6801,6 +5777,20 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type NestedStringFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringFilter<$PrismaModel> | string
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -6830,20 +5820,6 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
-  export type NestedStringFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringFilter<$PrismaModel> | string
-  }
-
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -6859,6 +5835,61 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedEnumCategoryFilter<$PrismaModel = never> = {
+    equals?: $Enums.Category | EnumCategoryFieldRefInput<$PrismaModel>
+    in?: $Enums.Category[] | ListEnumCategoryFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Category[] | ListEnumCategoryFieldRefInput<$PrismaModel>
+    not?: NestedEnumCategoryFilter<$PrismaModel> | $Enums.Category
+  }
+
+  export type NestedEnumCategoryWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.Category | EnumCategoryFieldRefInput<$PrismaModel>
+    in?: $Enums.Category[] | ListEnumCategoryFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Category[] | ListEnumCategoryFieldRefInput<$PrismaModel>
+    not?: NestedEnumCategoryWithAggregatesFilter<$PrismaModel> | $Enums.Category
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumCategoryFilter<$PrismaModel>
+    _max?: NestedEnumCategoryFilter<$PrismaModel>
   }
 
   export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
@@ -6877,59 +5908,63 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type activeTableCommandCreateWithoutTableInput = {
-    command: commandCreateNestedOneWithoutActiveTableCommandInput
-  }
-
-  export type activeTableCommandUncheckedCreateWithoutTableInput = {
+  export type commandCreateWithoutTableInput = {
     commandNumber: number
+    client?: clientCreateNestedOneWithoutCommandInput
   }
 
-  export type activeTableCommandCreateOrConnectWithoutTableInput = {
-    where: activeTableCommandWhereUniqueInput
-    create: XOR<activeTableCommandCreateWithoutTableInput, activeTableCommandUncheckedCreateWithoutTableInput>
+  export type commandUncheckedCreateWithoutTableInput = {
+    commandNumber: number
+    client?: clientUncheckedCreateNestedOneWithoutCommandInput
   }
 
-  export type activeTableCommandCreateManyTableInputEnvelope = {
-    data: activeTableCommandCreateManyTableInput | activeTableCommandCreateManyTableInput[]
+  export type commandCreateOrConnectWithoutTableInput = {
+    where: commandWhereUniqueInput
+    create: XOR<commandCreateWithoutTableInput, commandUncheckedCreateWithoutTableInput>
+  }
+
+  export type commandCreateManyTableInputEnvelope = {
+    data: commandCreateManyTableInput | commandCreateManyTableInput[]
     skipDuplicates?: boolean
   }
 
-  export type activeTableCommandUpsertWithWhereUniqueWithoutTableInput = {
-    where: activeTableCommandWhereUniqueInput
-    update: XOR<activeTableCommandUpdateWithoutTableInput, activeTableCommandUncheckedUpdateWithoutTableInput>
-    create: XOR<activeTableCommandCreateWithoutTableInput, activeTableCommandUncheckedCreateWithoutTableInput>
+  export type commandUpsertWithWhereUniqueWithoutTableInput = {
+    where: commandWhereUniqueInput
+    update: XOR<commandUpdateWithoutTableInput, commandUncheckedUpdateWithoutTableInput>
+    create: XOR<commandCreateWithoutTableInput, commandUncheckedCreateWithoutTableInput>
   }
 
-  export type activeTableCommandUpdateWithWhereUniqueWithoutTableInput = {
-    where: activeTableCommandWhereUniqueInput
-    data: XOR<activeTableCommandUpdateWithoutTableInput, activeTableCommandUncheckedUpdateWithoutTableInput>
+  export type commandUpdateWithWhereUniqueWithoutTableInput = {
+    where: commandWhereUniqueInput
+    data: XOR<commandUpdateWithoutTableInput, commandUncheckedUpdateWithoutTableInput>
   }
 
-  export type activeTableCommandUpdateManyWithWhereWithoutTableInput = {
-    where: activeTableCommandScalarWhereInput
-    data: XOR<activeTableCommandUpdateManyMutationInput, activeTableCommandUncheckedUpdateManyWithoutTableInput>
+  export type commandUpdateManyWithWhereWithoutTableInput = {
+    where: commandScalarWhereInput
+    data: XOR<commandUpdateManyMutationInput, commandUncheckedUpdateManyWithoutTableInput>
   }
 
-  export type activeTableCommandScalarWhereInput = {
-    AND?: activeTableCommandScalarWhereInput | activeTableCommandScalarWhereInput[]
-    OR?: activeTableCommandScalarWhereInput[]
-    NOT?: activeTableCommandScalarWhereInput | activeTableCommandScalarWhereInput[]
-    commandNumber?: IntFilter<"activeTableCommand"> | number
-    tableNumber?: IntFilter<"activeTableCommand"> | number
+  export type commandScalarWhereInput = {
+    AND?: commandScalarWhereInput | commandScalarWhereInput[]
+    OR?: commandScalarWhereInput[]
+    NOT?: commandScalarWhereInput | commandScalarWhereInput[]
+    commandNumber?: IntFilter<"command"> | number
+    tableNumber?: IntNullableFilter<"command"> | number | null
   }
 
-  export type activeTableCommandCreateWithoutCommandInput = {
-    table: tableCreateNestedOneWithoutActiveTableCommandInput
-  }
-
-  export type activeTableCommandUncheckedCreateWithoutCommandInput = {
+  export type tableCreateWithoutCommandInput = {
     tableNumber: number
+    tableDescription: string
   }
 
-  export type activeTableCommandCreateOrConnectWithoutCommandInput = {
-    where: activeTableCommandWhereUniqueInput
-    create: XOR<activeTableCommandCreateWithoutCommandInput, activeTableCommandUncheckedCreateWithoutCommandInput>
+  export type tableUncheckedCreateWithoutCommandInput = {
+    tableNumber: number
+    tableDescription: string
+  }
+
+  export type tableCreateOrConnectWithoutCommandInput = {
+    where: tableWhereUniqueInput
+    create: XOR<tableCreateWithoutCommandInput, tableUncheckedCreateWithoutCommandInput>
   }
 
   export type clientCreateWithoutCommandInput = {
@@ -6945,23 +5980,25 @@ export namespace Prisma {
     create: XOR<clientCreateWithoutCommandInput, clientUncheckedCreateWithoutCommandInput>
   }
 
-  export type activeTableCommandUpsertWithoutCommandInput = {
-    update: XOR<activeTableCommandUpdateWithoutCommandInput, activeTableCommandUncheckedUpdateWithoutCommandInput>
-    create: XOR<activeTableCommandCreateWithoutCommandInput, activeTableCommandUncheckedCreateWithoutCommandInput>
-    where?: activeTableCommandWhereInput
+  export type tableUpsertWithoutCommandInput = {
+    update: XOR<tableUpdateWithoutCommandInput, tableUncheckedUpdateWithoutCommandInput>
+    create: XOR<tableCreateWithoutCommandInput, tableUncheckedCreateWithoutCommandInput>
+    where?: tableWhereInput
   }
 
-  export type activeTableCommandUpdateToOneWithWhereWithoutCommandInput = {
-    where?: activeTableCommandWhereInput
-    data: XOR<activeTableCommandUpdateWithoutCommandInput, activeTableCommandUncheckedUpdateWithoutCommandInput>
+  export type tableUpdateToOneWithWhereWithoutCommandInput = {
+    where?: tableWhereInput
+    data: XOR<tableUpdateWithoutCommandInput, tableUncheckedUpdateWithoutCommandInput>
   }
 
-  export type activeTableCommandUpdateWithoutCommandInput = {
-    table?: tableUpdateOneRequiredWithoutActiveTableCommandNestedInput
-  }
-
-  export type activeTableCommandUncheckedUpdateWithoutCommandInput = {
+  export type tableUpdateWithoutCommandInput = {
     tableNumber?: IntFieldUpdateOperationsInput | number
+    tableDescription?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type tableUncheckedUpdateWithoutCommandInput = {
+    tableNumber?: IntFieldUpdateOperationsInput | number
+    tableDescription?: StringFieldUpdateOperationsInput | string
   }
 
   export type clientUpsertWithoutCommandInput = {
@@ -6983,82 +6020,14 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
   }
 
-  export type tableCreateWithoutActiveTableCommandInput = {
-    tableNumber: number
-  }
-
-  export type tableUncheckedCreateWithoutActiveTableCommandInput = {
-    tableNumber: number
-  }
-
-  export type tableCreateOrConnectWithoutActiveTableCommandInput = {
-    where: tableWhereUniqueInput
-    create: XOR<tableCreateWithoutActiveTableCommandInput, tableUncheckedCreateWithoutActiveTableCommandInput>
-  }
-
-  export type commandCreateWithoutActiveTableCommandInput = {
-    commandNumber: number
-    client?: clientCreateNestedOneWithoutCommandInput
-  }
-
-  export type commandUncheckedCreateWithoutActiveTableCommandInput = {
-    commandNumber: number
-    client?: clientUncheckedCreateNestedOneWithoutCommandInput
-  }
-
-  export type commandCreateOrConnectWithoutActiveTableCommandInput = {
-    where: commandWhereUniqueInput
-    create: XOR<commandCreateWithoutActiveTableCommandInput, commandUncheckedCreateWithoutActiveTableCommandInput>
-  }
-
-  export type tableUpsertWithoutActiveTableCommandInput = {
-    update: XOR<tableUpdateWithoutActiveTableCommandInput, tableUncheckedUpdateWithoutActiveTableCommandInput>
-    create: XOR<tableCreateWithoutActiveTableCommandInput, tableUncheckedCreateWithoutActiveTableCommandInput>
-    where?: tableWhereInput
-  }
-
-  export type tableUpdateToOneWithWhereWithoutActiveTableCommandInput = {
-    where?: tableWhereInput
-    data: XOR<tableUpdateWithoutActiveTableCommandInput, tableUncheckedUpdateWithoutActiveTableCommandInput>
-  }
-
-  export type tableUpdateWithoutActiveTableCommandInput = {
-    tableNumber?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type tableUncheckedUpdateWithoutActiveTableCommandInput = {
-    tableNumber?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type commandUpsertWithoutActiveTableCommandInput = {
-    update: XOR<commandUpdateWithoutActiveTableCommandInput, commandUncheckedUpdateWithoutActiveTableCommandInput>
-    create: XOR<commandCreateWithoutActiveTableCommandInput, commandUncheckedCreateWithoutActiveTableCommandInput>
-    where?: commandWhereInput
-  }
-
-  export type commandUpdateToOneWithWhereWithoutActiveTableCommandInput = {
-    where?: commandWhereInput
-    data: XOR<commandUpdateWithoutActiveTableCommandInput, commandUncheckedUpdateWithoutActiveTableCommandInput>
-  }
-
-  export type commandUpdateWithoutActiveTableCommandInput = {
-    commandNumber?: IntFieldUpdateOperationsInput | number
-    client?: clientUpdateOneWithoutCommandNestedInput
-  }
-
-  export type commandUncheckedUpdateWithoutActiveTableCommandInput = {
-    commandNumber?: IntFieldUpdateOperationsInput | number
-    client?: clientUncheckedUpdateOneWithoutCommandNestedInput
-  }
-
   export type commandCreateWithoutClientInput = {
     commandNumber: number
-    activeTableCommand?: activeTableCommandCreateNestedOneWithoutCommandInput
+    table?: tableCreateNestedOneWithoutCommandInput
   }
 
   export type commandUncheckedCreateWithoutClientInput = {
     commandNumber: number
-    activeTableCommand?: activeTableCommandUncheckedCreateNestedOneWithoutCommandInput
+    tableNumber?: number | null
   }
 
   export type commandCreateOrConnectWithoutClientInput = {
@@ -7079,27 +6048,29 @@ export namespace Prisma {
 
   export type commandUpdateWithoutClientInput = {
     commandNumber?: IntFieldUpdateOperationsInput | number
-    activeTableCommand?: activeTableCommandUpdateOneWithoutCommandNestedInput
+    table?: tableUpdateOneWithoutCommandNestedInput
   }
 
   export type commandUncheckedUpdateWithoutClientInput = {
     commandNumber?: IntFieldUpdateOperationsInput | number
-    activeTableCommand?: activeTableCommandUncheckedUpdateOneWithoutCommandNestedInput
+    tableNumber?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type activeTableCommandCreateManyTableInput = {
+  export type commandCreateManyTableInput = {
     commandNumber: number
   }
 
-  export type activeTableCommandUpdateWithoutTableInput = {
-    command?: commandUpdateOneRequiredWithoutActiveTableCommandNestedInput
-  }
-
-  export type activeTableCommandUncheckedUpdateWithoutTableInput = {
+  export type commandUpdateWithoutTableInput = {
     commandNumber?: IntFieldUpdateOperationsInput | number
+    client?: clientUpdateOneWithoutCommandNestedInput
   }
 
-  export type activeTableCommandUncheckedUpdateManyWithoutTableInput = {
+  export type commandUncheckedUpdateWithoutTableInput = {
+    commandNumber?: IntFieldUpdateOperationsInput | number
+    client?: clientUncheckedUpdateOneWithoutCommandNestedInput
+  }
+
+  export type commandUncheckedUpdateManyWithoutTableInput = {
     commandNumber?: IntFieldUpdateOperationsInput | number
   }
 
@@ -7120,10 +6091,6 @@ export namespace Prisma {
      * @deprecated Use commandDefaultArgs instead
      */
     export type commandArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = commandDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use activeTableCommandDefaultArgs instead
-     */
-    export type activeTableCommandArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = activeTableCommandDefaultArgs<ExtArgs>
     /**
      * @deprecated Use clientDefaultArgs instead
      */

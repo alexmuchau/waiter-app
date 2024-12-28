@@ -123,14 +123,11 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 });
 
 exports.Prisma.TableScalarFieldEnum = {
-  tableNumber: 'tableNumber'
+  tableNumber: 'tableNumber',
+  tableDescription: 'tableDescription'
 };
 
 exports.Prisma.CommandScalarFieldEnum = {
-  commandNumber: 'commandNumber'
-};
-
-exports.Prisma.ActiveTableCommandScalarFieldEnum = {
   commandNumber: 'commandNumber',
   tableNumber: 'tableNumber'
 };
@@ -157,11 +154,18 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+exports.Category = exports.$Enums.Category = {
+  CHOPP: 'CHOPP',
+  FOOD: 'FOOD'
+};
 
 exports.Prisma.ModelName = {
   table: 'table',
   command: 'command',
-  activeTableCommand: 'activeTableCommand',
   client: 'client',
   product: 'product'
 };

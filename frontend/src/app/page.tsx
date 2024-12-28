@@ -12,8 +12,12 @@ export interface ProductListProps {
 }
 
 export default function Home() {
-  const [ user, setUser ] = useState<User | undefined>(undefined)
-  const [ checkingCookies, setCheckingCookies ] = useState<boolean>(true)
+  const [ user, setUser ] = useState<User | undefined>({
+    login: "admin",
+    password: "admin",
+    name: "Admin"
+  })
+  const [ checkingCookies, setCheckingCookies ] = useState<boolean>(false)
 
   const [ cookies, setCookie ] = useCookies(['user']);
 
@@ -26,13 +30,13 @@ export default function Home() {
     })
   }
 
-  useEffect(() => {
-    if (cookies.user) {
-      setUser(cookies.user)
-    }
+  // useEffect(() => {
+  //   if (cookies.user) {
+  //     setUser(cookies.user)
+  //   }
 
-    setCheckingCookies(false)
-  }, [cookies])
+  //   setCheckingCookies(false)
+  // }, [cookies])
 
   return (
     <CookiesProvider defaultSetOptions={{ path: '/' }}>

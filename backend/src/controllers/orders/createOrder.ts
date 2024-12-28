@@ -3,7 +3,7 @@ import type { OrderProps } from '../../../../utils/types';
 import { desktopClient, mobileClient } from '../../../prisma/prisma';
 
 async function swapStates(tableNumber: number, commandNumber: number, active: 'Sim' | 'Não') {
-    await desktopClient.tb_mesa.update({
+    await desktopClient.tb_mesas.update({
         where: {
             Codigo: tableNumber
         },
@@ -12,7 +12,7 @@ async function swapStates(tableNumber: number, commandNumber: number, active: 'S
         }
     })
 
-    await desktopClient.tb_comanda.update({
+    await desktopClient.tb_comandas.update({
         where: {
             Codigo: commandNumber
         },
@@ -29,9 +29,9 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     // Check if board and command exists on db
     // ############################################
     // ---------------------- BOARD AREA
-    const board = await mobileClient.table.findFirst({
+    const board = await desktopClient.tb_mesas.findFirst({
         where: {
-            tableNumber: bodyOrder.board
+            Codigo: bodyOrder.board
         }
     })
     
@@ -40,58 +40,32 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     }
     
     // ---------------------- COMMAND AREA
-    const command = await mobileClient.command.findFirst({
+    const command = await desktopClient.tb_comandas.findFirst({
         where: {
-            commandNumber: bodyOrder.command
+            Comanda_Numero: bodyOrder.command.toString()
         }
     })
     
     if (!command) {
-        return res.status(400).send({ error: 'Invalid command command' })
+        return res.status(400).send({ error: 'Invalid command number' })
+    }
+
+    if (command.ID_Mesa && command.ID_Mesa !== board.Codigo) {
+        return res.status(400).send({ error: 'Invalid board and command combination' })
     }
     
-    // ############################################
-    
-    // ############################################
-    // Checking if board command combinations exists or having some issue
-    // ############################################
-    const tableCommand = await mobileClient.activeTableCommand.findFirst({
-        where: {
-            commandNumber: bodyOrder.command
-        }
-    })
-    
-    if (!tableCommand) {
-        swapStates(board.tableNumber, command.commandNumber, 'Sim')
+    if (!command.ID_Mesa) {
+        swapStates(board.Codigo, command.Codigo, 'Sim')
         
-        const boardCommandCode = await desktopClient.tb_mesa_comanda.count()
-        
-        await mobileClient.activeTableCommand.create({
-            data: {
-                commandNumber: command.commandNumber,
-                tableNumber: board.tableNumber
-            }
-        })
-
-        await desktopClient.tb_mesa_comanda.create({
-            data: {
-                Codigo: boardCommandCode,
-                Id_Mesa: board.tableNumber,
-                Id_Comanda: command.commandNumber
-            }
-        })
-
-    } else {
-        if (tableCommand.tableNumber !== board.tableNumber) {
-            return res.status(400).send({ error: 'Invalid board and command combination' })
-        }
-
-        const boardCommandCode = await desktopClient.tb_mesa_comanda.findFirst({
+        await desktopClient.tb_comandas.update({
             where: {
-                Id_Mesa: board.tableNumber,
-                Id_Comanda: command.commandNumber
+                Codigo: command.Codigo
+            },
+            data: {
+                ID_Mesa: board.Codigo
             }
         })
+
     }
     
     // ############################################
@@ -112,7 +86,7 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     // ############################################
     // Create order
     // ############################################
-    const orderCode = await desktopClient.tb_pedido.findMany({
+    const orderCode = await desktopClient.tb_vendas_pre.findMany({
         orderBy: {
             Codigo: 'desc'
         },
@@ -121,33 +95,33 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
         }
     }).then(order => order[0].Codigo + 1)
 
-    const newOrder = await desktopClient.tb_pedido.create({
-        data: {
-            Codigo: orderCode,
-            Id_Mesa: board.tableNumber,
-            Id_Comanda: command.commandNumber,
-        }
-    })
+    // const newOrder = await desktopClient.tb_vendas_pre.create({
+    //     data: {
+    //         Codigo: orderCode,
+    //         Id_Cliente: bodyOrder.command,
+
+    //     }
+    // })
     
-    let orderItemCode = await desktopClient.tb_pedido_item.findMany({
-        orderBy: {
-            Codigo: 'desc'
-        },
-        select: {
-            Codigo: true
-        }
-    }).then(order => order[0].Codigo + 1)
+    // let orderItemCode = await desktopClient.tb_pedido_item.findMany({
+    //     orderBy: {
+    //         Codigo: 'desc'
+    //     },
+    //     select: {
+    //         Codigo: true
+    //     }
+    // }).then(order => order[0].Codigo + 1)
 
-    const orderItems = await desktopClient.tb_pedido_item.createMany({
-        data: bodyOrder.items.map(item => {
-            return {
-                Codigo: orderItemCode + 1,
-                Id_Pedido: newOrder.Codigo,
-                Id_Produto: item.id_product,
-                Quantidade: item.quantity
-            }
-        })
-    })
+    // const orderItems = await desktopClient.tb_pedido_item.createMany({
+    //     data: bodyOrder.items.map(item => {
+    //         return {
+    //             Codigo: orderItemCode + 1,
+    //             Id_Pedido: newOrder.Codigo,
+    //             Id_Produto: item.id_product,
+    //             Quantidade: item.quantity
+    //         }
+    //     })
+    // })
     
     return res.send('Working!')
 }

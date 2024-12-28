@@ -5,27 +5,23 @@ import { ActiveTableItemProps } from '../../../../utils/types';
 export async function getActiveTables(req: FastifyRequest, res: FastifyReply) {
     const tables: ActiveTableItemProps[] = await mobileClient.table.findMany({
         include: {
-            activeTableCommand: {
+            command: {
                 select: {
-                    command: {
+                    commandNumber: true,
+                    client: {
                         select: {
-                            commandNumber: true,
-                            client: {
-                                select: {
-                                    name: true
-                                }
-                            }
+                            name: true
                         }
                     }
                 }
             }
         }
-    }).then((tables) => tables.filter((table) => table.activeTableCommand.length > 0).map((table) => ({
+    }).then((tables) => tables.filter((table) => table.command.length > 0).map((table) => ({
             tableNumber: table.tableNumber.toString(),
             tableDescription: table.tableNumber.toString(),
-            commands: table.activeTableCommand.map((activeTableCommand) => ({
-                commandNumber: activeTableCommand.command.commandNumber.toString(),
-                clientName: activeTableCommand.command.client?.name
+            commands: table.command.map((command) => ({
+                commandNumber: command.commandNumber.toString(),
+                clientName: command.client?.name
             }))
     })))
     

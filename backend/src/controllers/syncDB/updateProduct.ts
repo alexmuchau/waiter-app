@@ -5,7 +5,7 @@ export async function updateProduct(req: FastifyRequest, res: FastifyReply) {
     const { product } = req.body as { product: {
         id: number,
         name: string,
-        category: string,
+        category: "CHOPP" | "FOOD",
         price: number
     } }
 

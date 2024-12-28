@@ -7,6 +7,8 @@ import { Title } from "@/components/Title/Default";
 import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { LinkButton } from "@/components/Buttons/LinkButton";
+import { OrderProps } from "../../../../../utils/types";
+import api from "@/api/api";
 
 export default function Resume() {
     const [ client, setClient ] = useState<string | undefined>(undefined)
@@ -28,8 +30,23 @@ export default function Resume() {
         }
     }, [])
 
-    function finishOrder() {
+    async function finishOrder() {
         removeOrderCookies('orderCookies')
+
+        const order: OrderProps = {
+            board: +table!,
+            command: +command!,
+            items: chopps.concat(foods).map(item => {
+                return {
+                    id_product: +item.id,
+                    quantity: item.quantity
+                }
+            })
+        }
+
+        console.log({bodyOrder: order})
+
+        await api.post('/order', {bodyOrder: order})
     }
 
     return (
@@ -59,7 +76,9 @@ export default function Resume() {
                 </div>
             </div>
             <footer>
-                <LinkButton href='/' onClick={finishOrder} text="Finalizar Pedido" />
+                <LinkButton href='/' onClick={finishOrder}>
+                    Finalizar Pedido
+                </LinkButton>
             </footer>
         </main>
     );

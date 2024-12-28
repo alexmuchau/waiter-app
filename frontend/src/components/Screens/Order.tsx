@@ -237,8 +237,9 @@ export function OrderScreen({
                 <LinkButton
                     href="/order/resume"
                     onClick={updateCookiesToResume}
-                    text="Resumo do Pedido"
-                />
+                >
+                    Resumo do Pedido
+                </LinkButton>
             </footer>
         </>
     );

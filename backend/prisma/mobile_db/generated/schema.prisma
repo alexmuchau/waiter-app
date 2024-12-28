@@ -13,22 +13,16 @@ datasource db {
 }
 
 model table {
-  tableNumber        Int                  @id
-  activeTableCommand activeTableCommand[]
+  tableNumber      Int       @id
+  tableDescription String
+  command          command[]
 }
 
 model command {
-  commandNumber      Int                 @id
-  activeTableCommand activeTableCommand?
-  client             client?
-}
-
-model activeTableCommand {
-  commandNumber Int @id
-  tableNumber   Int
-
-  table   table   @relation(fields: [tableNumber], references: [tableNumber])
-  command command @relation(fields: [commandNumber], references: [commandNumber])
+  commandNumber Int     @id
+  tableNumber   Int?
+  table         table?  @relation(fields: [tableNumber], references: [tableNumber])
+  client        client?
 }
 
 model client {
@@ -38,8 +32,13 @@ model client {
 }
 
 model product {
-  productId Int    @id @default(autoincrement())
+  productId Int      @id @default(autoincrement())
   name      String
-  category  String
+  category  Category
   price     Float
+}
+
+enum Category {
+  CHOPP
+  FOOD
 }

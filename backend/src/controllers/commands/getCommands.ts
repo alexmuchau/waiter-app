@@ -5,14 +5,14 @@ import { CommandItemProps } from '../../../../utils/types';
 export async function getCommands(req: FastifyRequest, res: FastifyReply) {    
     const commands: CommandItemProps[] = await mobileClient.command.findMany({
         include: {
-            activeTableCommand: true
+            table: true
         }
     }).then((commands) => {
         return commands.map((command) => {
             return {
                 commandNumber: command.commandNumber.toString(),
-                tableNumber: command.activeTableCommand?.tableNumber.toString(),
-                isActive: command.activeTableCommand ? true : false
+                tableNumber: command.tableNumber?.toString(),
+                isActive: command.tableNumber ? true : false
             }
         }
     )})

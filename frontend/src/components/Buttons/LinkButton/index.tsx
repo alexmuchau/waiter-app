@@ -2,13 +2,13 @@ import Link from "next/link"
 import { ParsedUrlQueryInput } from "querystring"
 
 interface LinkButtonProps {
-    text: string,
+    children: React.ReactNode,
     href: string,
     query?: ParsedUrlQueryInput
     onClick?: () => void
 }
 
-export function LinkButton({ text, href, query, onClick }: LinkButtonProps) {
+export function LinkButton({ children, href, query, onClick }: LinkButtonProps) {
     return (
         <Link
             className="flex w-full items-center justify-center py-2 bg-accent rounded-full text-slate-900 font-bold"
@@ -18,7 +18,7 @@ export function LinkButton({ text, href, query, onClick }: LinkButtonProps) {
                 query: query
             }}
         >
-            {text}
+            {children}
         </Link>
     )
 }
