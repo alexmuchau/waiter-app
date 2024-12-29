@@ -13,7 +13,6 @@ const {
   empty,
   join,
   raw,
-  skip,
   Decimal,
   Debug,
   objectEnumValues,
@@ -32,12 +31,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 5.22.0
- * Query Engine version: 605197351a3c8bdd595af2d2a9bc3025bca48ea2
+ * Prisma Client JS version: 5.19.1
+ * Query Engine version: 69d742ee20b815d88e17e54db4a2a7a3b30324e3
  */
 Prisma.prismaVersion = {
-  client: "5.22.0",
-  engine: "605197351a3c8bdd595af2d2a9bc3025bca48ea2"
+  client: "5.19.1",
+  engine: "69d742ee20b815d88e17e54db4a2a7a3b30324e3"
 }
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -75,8 +74,6 @@ Prisma.NullTypes = {
   JsonNull: objectEnumValues.classes.JsonNull,
   AnyNull: objectEnumValues.classes.AnyNull
 }
-
-
 
 
 
@@ -148,7 +145,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/alekkdev/Documents/waiter-app/backend/prisma/mobile_db/generated",
+      "value": "/home/alekk/Documents/waiter-app/backend/prisma/mobile_db/generated",
       "fromEnvVar": null
     },
     "config": {
@@ -162,7 +159,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/alekkdev/Documents/waiter-app/backend/prisma/mobile_db/mobileSchema.prisma",
+    "sourceFilePath": "/home/alekk/Documents/waiter-app/backend/prisma/mobile_db/mobileSchema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -170,8 +167,8 @@ const config = {
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "..",
-  "clientVersion": "5.22.0",
-  "engineVersion": "605197351a3c8bdd595af2d2a9bc3025bca48ea2",
+  "clientVersion": "5.19.1",
+  "engineVersion": "69d742ee20b815d88e17e54db4a2a7a3b30324e3",
   "datasourceNames": [
     "db"
   ],
