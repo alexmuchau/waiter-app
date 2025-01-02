@@ -26,40 +26,14 @@ async function syncTables() {
         }
     });
 
-    const mobileRecords = await mobileClient.table.findMany({
-        where: {
-            tableNumber: {
-                notIn: desktopRecords.map(record => record.Codigo)
-            }
-        }
+    await mobileClient.table.deleteMany();
+
+    await mobileClient.table.createMany({
+        data: desktopRecords.map(record => ({
+            tableNumber: record.Codigo,
+            tableDescription: record.Codigo.toString(),
+        }))
     })
-
-    await mobileClient.table.deleteMany({
-        where: {
-            tableNumber: {
-                in: mobileRecords.map(record => record.tableNumber)
-            }
-        }
-    });
-
-    for (const record of desktopRecords) {
-        const existingRecord = await mobileClient.table.findUnique({
-            where: {
-                tableNumber: record.Codigo
-            },
-        });
-
-        if (!existingRecord) {
-            await mobileClient.table.create({
-                data: {
-                    tableNumber: record.Codigo,
-                    tableDescription: record.Codigo.toString()
-                },
-            });
-
-            continue
-        }
-    }
 }
 
 async function syncCommands() {
@@ -77,51 +51,14 @@ async function syncCommands() {
         }
     });
 
-    for (const record of desktopRecords) {
-        const existingRecord = await mobileClient.command.findUnique({
-            where: {
-                commandNumber: parseInt(record.Comanda_Numero!)
-            },
-        });
-
-        if (!existingRecord) {
-            await mobileClient.command.create({
-                data: {
-                    commandNumber: parseInt(record.Comanda_Numero!),
-                    tableNumber: record.ID_Mesa ? record.ID_Mesa : null
-                },
-            });
-
-            continue
-        }
-
-        if (existingRecord.tableNumber != record.ID_Mesa) {
-            await mobileClient.command.update({
-                data: {
-                    tableNumber: record.ID_Mesa ? record.ID_Mesa : null
-                },
-                where: {
-                    commandNumber: parseInt(record.Comanda_Numero!)
-                }
-            });
-        }
-    }
-
-    const mobileRecords = await mobileClient.command.findMany({
-        where: {
-            commandNumber: {
-                notIn: desktopRecords.map(record => parseInt(record.Comanda_Numero!))
-            }
-        }
+    await mobileClient.command.deleteMany();
+    await mobileClient.command.createMany({
+        data: desktopRecords.map(record => ({
+            commandNumber: parseInt(record.Comanda_Numero!),
+            tableNumber: record.ID_Mesa!,
+            commandId: record.Codigo
+        }))
     })
-
-    for (const record of mobileRecords) {
-        await mobileClient.command.delete({
-            where: {
-                commandNumber: record.commandNumber
-            }
-        });
-    }
 }
 
 async function syncProducts() {
@@ -152,74 +89,15 @@ async function syncProducts() {
         }
     });
 
-    const categoriesMap: { [key: number]: string } = desktopCategories.reduce((acc, category) => {
-        (acc as { [key: number]: string })[category.Codigo] = category.Setor!
-        return acc
-    })
-
-    interface ProductItem {
-        productId: number,
-        name: string,
-        category: string,
-        price: number
-    }
-
-    const desktopRecordsMap: { [key: number]: ProductItem } = desktopRecords.reduce((acc, record) => {
-        (acc as { [key: number]: ProductItem })[record.Codigo] = {
+    await mobileClient.product.deleteMany();
+    await mobileClient.product.createMany({
+        data: desktopRecords.map(record => ({
             productId: record.Codigo,
             name: record.Produto!,
-            category: categoriesMap[record.Id_Setor!],
+            category: desktopCategories.find(category => category.Codigo === record.Id_Setor)?.Setor == 'TAP' ? 'CHOPP' : "FOOD",
             price: record.Preco_Venda!
-        }
-        return acc
-    }, {})
-
-    const mobileRecords = await mobileClient.product.findMany({
-        where: {
-            productId: {
-                in: desktopRecords.map(record => record.Codigo)
-            }
-        }
+        }))
     })
-
-    for (const record of mobileRecords) {
-        if (!desktopRecordsMap[record.productId]) {
-            await mobileClient.product.delete({
-                where: {
-                    productId: record.productId
-                }
-            });
-
-            continue
-        }
-
-        if (record.name != desktopRecordsMap[record.productId].name || record.price != desktopRecordsMap[record.productId].price) {
-            await mobileClient.product.update({
-                data: {
-                    name: desktopRecordsMap[record.productId].name,
-                    price: desktopRecordsMap[record.productId].price
-                },
-                where: {
-                    productId: record.productId
-                }
-            });
-        }
-    }
-
-    for (const record of desktopRecords) {
-        if (!desktopRecordsMap[record.Codigo]) continue
-
-        if (!mobileRecords.find(mobileRecord => mobileRecord.productId == record.Codigo)) {
-            await mobileClient.product.create({
-                data: {
-                    productId: record.Codigo,
-                    name: record.Produto!,
-                    category: categoriesMap[record.Id_Setor!] === 'TAP' ? 'CHOPP' : "FOOD",
-                    price: record.Preco_Venda!
-                },
-            });
-        }
-    }
 }
 
 async function syncClients() {
@@ -234,35 +112,11 @@ async function syncClients() {
         }
     });
 
-    for (const record of desktopRecords) {
-        if (!record.Apelido) continue
-
-        const existingRecord = await mobileClient.client.findUnique({
-            where: {
-                clientId: record.Codigo
-            },
-        });
-
-        if (!existingRecord) {
-            await mobileClient.client.create({
-                data: {
-                    clientId: record.Codigo,
-                    name: record.Apelido
-                },
-            });
-
-            continue
-        }
-
-        if (existingRecord.name != record.Apelido) {
-            await mobileClient.client.update({
-                data: {
-                    name: record.Apelido
-                },
-                where: {
-                    clientId: record.Codigo
-                }
-            });
-        }
-    }
+    await mobileClient.client.deleteMany();
+    await mobileClient.client.createMany({
+        data: desktopRecords.map(record => ({
+            clientId: record.Codigo,
+            name: record.Apelido!
+        }))
+    })
 }

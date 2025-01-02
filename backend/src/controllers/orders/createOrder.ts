@@ -1,8 +1,10 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
 import type { OrderProps } from '../../../../utils/types';
 import { desktopClient, mobileClient } from '../../../prisma/prisma';
+import { format } from 'date-fns';
 
-async function swapStates(tableNumber: number, commandNumber: number, active: 'Sim' | 'Não') {
+// -1 = Ativo, 0 = Inativo
+async function swapStates(tableNumber: number, commandNumber: number, active: '0' | '-1') {
     await desktopClient.tb_mesas.update({
         where: {
             Codigo: tableNumber
@@ -25,103 +27,193 @@ async function swapStates(tableNumber: number, commandNumber: number, active: 'S
 export async function createOrder(req: FastifyRequest, res: FastifyReply) {    
     const { bodyOrder } = req.body as { bodyOrder: OrderProps }
     
-    // ############################################
-    // Check if board and command exists on db
-    // ############################################
-    // ---------------------- BOARD AREA
-    const board = await desktopClient.tb_mesas.findFirst({
-        where: {
-            Codigo: bodyOrder.board
-        }
-    })
+    const products = await checkProducts(bodyOrder.items)
+    if (!products) return res.status(400).send('Products error')
+
+    const table = await checkTable(bodyOrder.board)
+    if (!table) return res.status(400).send('Table not found')
+
+    const command = await checkCommand(bodyOrder.command, table.Codigo)
+    if (!command) return res.status(400).send('Command error')
+
+    await createPreOrder(command.Codigo, bodyOrder.items, products)
     
-    if (!board) {
-        return res.status(400).send({ error: 'Invalid board number' })
-    }
-    
-    // ---------------------- COMMAND AREA
+    return res.send('Working!')
+}
+
+async function checkCommand(commandNumber: number, tableNumber: number) {
     const command = await desktopClient.tb_comandas.findFirst({
         where: {
-            Comanda_Numero: bodyOrder.command.toString()
+            Comanda_Numero: commandNumber.toString()
         }
     })
     
     if (!command) {
-        return res.status(400).send({ error: 'Invalid command number' })
+        return undefined
     }
 
-    if (command.ID_Mesa && command.ID_Mesa !== board.Codigo) {
-        return res.status(400).send({ error: 'Invalid board and command combination' })
+    if (command.ID_Mesa && command.ID_Mesa !== tableNumber) {
+        return undefined
     }
-    
+
     if (!command.ID_Mesa) {
-        swapStates(board.Codigo, command.Codigo, 'Sim')
+        swapStates(tableNumber, command.Codigo, '-1')
         
         await desktopClient.tb_comandas.update({
             where: {
                 Codigo: command.Codigo
             },
             data: {
-                ID_Mesa: board.Codigo
+                ID_Mesa: tableNumber
             }
         })
-
     }
+
+    return command
+}
+
+async function checkTable(tableNumber: number) {
+    const board = await desktopClient.tb_mesas.findFirst({
+        where: {
+            Codigo: tableNumber
+        }
+    })
     
-    // ############################################
-    // Check if all products exists on db
-    // ############################################
-    const qtdProducts = await mobileClient.product.count({
+    if (!board) {
+        return undefined
+    }
+
+    return board
+}
+
+async function checkProducts(items: OrderProps['items']) {
+    const products = await mobileClient.product.findMany({
         where: {
             productId: {
-                in: bodyOrder.items.map(item => item.id_product)
+                in: items.map(item => item.id_product)
             }
         }
     })
     
-    if (qtdProducts !== bodyOrder.items.length) {
-        return res.status(400).send({ error: 'Invalid product' })
+    if (products.length !== items.length) {
+        return false
     }
-    
-    // ############################################
-    // Create order
-    // ############################################
+
+    return true
+}
+
+async function createPreOrder(commandNumber: number, products: OrderProps['items'], productsDB: any) {
     const orderCode = await desktopClient.tb_vendas_pre.findMany({
         orderBy: {
             Codigo: 'desc'
         },
         select: {
             Codigo: true
-        }
+        },
+        take: 1
     }).then(order => order[0].Codigo + 1)
 
-    // const newOrder = await desktopClient.tb_vendas_pre.create({
-    //     data: {
-    //         Codigo: orderCode,
-    //         Id_Cliente: bodyOrder.command,
+    const params = await desktopClient.tb_parametros_execucao.findFirst({
+        select: {
+            Id_Operacao_Movimento_Ret: true,
+            IDUser: true,
+            IDEmpresa: true
+        },
+        where: {
+            Codigo: 199
+        }
+    })
 
-    //     }
-    // })
-    
-    // let orderItemCode = await desktopClient.tb_pedido_item.findMany({
-    //     orderBy: {
-    //         Codigo: 'desc'
-    //     },
-    //     select: {
-    //         Codigo: true
-    //     }
-    // }).then(order => order[0].Codigo + 1)
+    const order = await desktopClient.tb_vendas_pre.create({
+        data: {
+            Codigo: orderCode,
+            Data_Movimento: format(new Date(), 'yyyy-MM-dd'),
+            Hora_Inicio: format(new Date(), 'HH:mm:ss'),
+            Hora_Finalizacao: format(new Date(), 'HH:mm:ss'),
+            Id_Cliente: 0,
+            Id_Operacao: params?.Id_Operacao_Movimento_Ret,
+            Desconto_Venda: 0,
+            Total_Produtos: 0,
+            Total_Desconto: 0,
+            Total_Acrescimo: 0,
+            Total_Frete: 0,
+            Total_A_Receber: 0,
+            Total_Itens: 0,
+            Total_Peso: 0,
+            Troco: 0,
+            RegExcluido: '0',
+            DHU: new Date().toString(),
+            MODO: 'MODO PDV',
+            Tempo: parseInt(format(new Date().getTime() - new Date('2000-01-01T00:00:00').getTime(), 'hmmmss')),
+            Observacao: null,
+            IDUser: params?.IDUser,
+            IDEmpresa: params?.IDEmpresa,
+        }
+    })
 
-    // const orderItems = await desktopClient.tb_pedido_item.createMany({
-    //     data: bodyOrder.items.map(item => {
-    //         return {
-    //             Codigo: orderItemCode + 1,
-    //             Id_Pedido: newOrder.Codigo,
-    //             Id_Produto: item.id_product,
-    //             Quantidade: item.quantity
-    //         }
-    //     })
-    // })
-    
-    return res.send('Working!')
+    const orderCommandCode = await desktopClient.tb_vendas_pre_comandas.findFirst({
+        select: {
+            Codigo: true
+        },
+        take: 1
+    }).then(orderCommand => !orderCommand ? 0 : orderCommand.Codigo + 1)
+
+    const orderCommand = await desktopClient.tb_vendas_pre_comandas.create({
+        data: {
+            Codigo: orderCommandCode,
+            Numero_Comanda: commandNumber.toString(),
+            Codigo_Barras: '0',
+            Id_Pre_venda: orderCode,
+            IDUser: params?.IDUser,
+            IDEmpresa: params?.IDEmpresa,
+            RegExcluido: '0'
+        }
+    })
+
+    let orderItemCode = await desktopClient.tb_vendas_produtos_pre.findFirst({
+        select: {
+            Codigo: true
+        },
+        take: 1
+    }).then(orderItem => orderItem!.Codigo + 1)
+
+    const orderItems = await desktopClient.tb_vendas_produtos_pre.createMany({
+        data: products.map(product => {
+            orderItemCode += 1
+            const productDB = productsDB.find((productDB: any) => productDB.productId === product.id_product)
+            
+            return {
+                Codigo: orderItemCode,
+                Item: 0,
+                Id_venda: orderCode,
+                Id_Produto: product.id_product,
+                Codigo_Barras: '0',
+                Quantidade: product.quantity,
+                Unitario: parseFloat(productDB.Preco_Venda),
+                Total: parseFloat(productDB.Preco_Venda) * product.quantity,
+                Acrescimo: 0,
+                Desconto: 0,
+                Frete: 0,
+                Total_A_Receber: 0,
+                Peso: 0,
+                Unitario_Referencia: 0,
+                Id_Vendedor: 0,
+                Comissao: 0,
+                Comissao_Referencia: 0,
+                Reservado: '0',
+                RegExcluido: '0',
+                Via_Oferta: '0',
+                DHU: format(new Date(), 'hhmmss'),
+                Desconto_Venda: 0,
+                Custo: parseFloat(productDB.Preco_Compra),
+                Proc_Estoque: '0',
+                IDUser: params?.IDUser,
+                Preco_Digitado: 0,
+                Valor_FPag_Desconto: 0,
+                Valor_Fpag_Acrescimo: 0,
+            }
+        })
+    })
+
+
 }

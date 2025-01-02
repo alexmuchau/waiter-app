@@ -13,6 +13,7 @@ const {
   empty,
   join,
   raw,
+  skip,
   Decimal,
   Debug,
   objectEnumValues,
@@ -31,12 +32,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 5.19.1
- * Query Engine version: 69d742ee20b815d88e17e54db4a2a7a3b30324e3
+ * Prisma Client JS version: 5.22.0
+ * Query Engine version: 605197351a3c8bdd595af2d2a9bc3025bca48ea2
  */
 Prisma.prismaVersion = {
-  client: "5.19.1",
-  engine: "69d742ee20b815d88e17e54db4a2a7a3b30324e3"
+  client: "5.22.0",
+  engine: "605197351a3c8bdd595af2d2a9bc3025bca48ea2"
 }
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -74,6 +75,8 @@ Prisma.NullTypes = {
   JsonNull: objectEnumValues.classes.JsonNull,
   AnyNull: objectEnumValues.classes.AnyNull
 }
+
+
 
 
   const path = require('path')
@@ -146,7 +149,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/alekk/Documents/waiter-app/backend/prisma/mobile_db/generated",
+      "value": "C:\\Users\\srrpl\\Repositories\\waiter-app\\backend\\prisma\\mobile_db\\generated",
       "fromEnvVar": null
     },
     "config": {
@@ -155,12 +158,16 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "debian-openssl-3.0.x",
+        "value": "windows",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "windows"
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/alekk/Documents/waiter-app/backend/prisma/mobile_db/mobileSchema.prisma",
+    "sourceFilePath": "C:\\Users\\srrpl\\Repositories\\waiter-app\\backend\\prisma\\mobile_db\\mobileSchema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -168,12 +175,13 @@ const config = {
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "..",
-  "clientVersion": "5.19.1",
-  "engineVersion": "69d742ee20b815d88e17e54db4a2a7a3b30324e3",
+  "clientVersion": "5.22.0",
+  "engineVersion": "605197351a3c8bdd595af2d2a9bc3025bca48ea2",
   "datasourceNames": [
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -182,8 +190,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// npx prisma migrate dev --schema prisma/mobile_db/mobileSchema.prisma --name init\n// npx prisma generate --schema prisma/mobile_db/mobileSchema.prisma\n// npx prisma db pull --schema prisma/desktop_db/desktopSchema.prisma\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated\"\n}\n\ndatasource db {\n  provider = \"postgres\"\n  url      = env(\"MOBILE_DB_URL\")\n}\n\nmodel table {\n  tableNumber      Int       @id\n  tableDescription String\n  command          command[]\n}\n\nmodel command {\n  commandNumber Int     @id\n  tableNumber   Int?\n  table         table?  @relation(fields: [tableNumber], references: [tableNumber])\n  client        client?\n}\n\nmodel client {\n  clientId Int     @id @default(autoincrement())\n  name     String\n  command  command @relation(fields: [clientId], references: [commandNumber])\n}\n\nmodel product {\n  productId Int      @id @default(autoincrement())\n  name      String\n  category  Category\n  price     Float\n}\n\nenum Category {\n  CHOPP\n  FOOD\n}\n",
-  "inlineSchemaHash": "6a580f0ab07ad3e7a71f5cc0156819913f91287a122f4f6d818f42aa404432ed",
+  "inlineSchema": "// npx prisma migrate dev --schema prisma/mobile_db/mobileSchema.prisma --name init\n// npx prisma generate --schema prisma/mobile_db/mobileSchema.prisma\n// npx prisma db pull --schema prisma/desktop_db/desktopSchema.prisma\n\ngenerator client {\n  provider      = \"prisma-client-js\"\n  output        = \"./generated\"\n  binaryTargets = [\"native\", \"windows\"]\n}\n\ndatasource db {\n  provider = \"postgres\"\n  url      = env(\"MOBILE_DB_URL\")\n}\n\nmodel table {\n  tableNumber      Int       @id\n  tableDescription String\n  command          command[]\n}\n\nmodel command {\n  commandNumber Int     @id\n  tableNumber   Int?\n  table         table?  @relation(fields: [tableNumber], references: [tableNumber])\n  client        client?\n}\n\nmodel client {\n  clientId Int     @id @default(autoincrement())\n  name     String\n  command  command @relation(fields: [clientId], references: [commandNumber])\n}\n\nmodel product {\n  productId Int      @id @default(autoincrement())\n  name      String\n  category  Category\n  price     Float\n}\n\nenum Category {\n  CHOPP\n  FOOD\n}\n",
+  "inlineSchemaHash": "386cc517c3bd014aef6d9f76a7640ae38d58e3dddddac1c927581b3df855866c",
   "copyEngine": true
 }
 
@@ -221,8 +229,8 @@ exports.PrismaClient = PrismaClient
 Object.assign(exports, Prisma)
 
 // file annotations for bundling tools to include these files
-path.join(__dirname, "libquery_engine-debian-openssl-3.0.x.so.node");
-path.join(process.cwd(), "prisma/mobile_db/generated/libquery_engine-debian-openssl-3.0.x.so.node")
+path.join(__dirname, "query_engine-windows.dll.node");
+path.join(process.cwd(), "prisma/mobile_db/generated/query_engine-windows.dll.node")
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
 path.join(process.cwd(), "prisma/mobile_db/generated/schema.prisma")

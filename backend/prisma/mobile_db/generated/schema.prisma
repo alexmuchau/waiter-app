@@ -3,8 +3,9 @@
 // npx prisma db pull --schema prisma/desktop_db/desktopSchema.prisma
 
 generator client {
-  provider = "prisma-client-js"
-  output   = "./generated"
+  provider      = "prisma-client-js"
+  output        = "./generated"
+  binaryTargets = ["native", "windows"]
 }
 
 datasource db {
