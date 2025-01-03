@@ -2,31 +2,32 @@
 
 import { BackHeader } from "@/components/Header/BackHeader";
 import { IdentifyCard } from "@/components/Identify/IdentifyCard";
-import { ProductItemProps, ProductList } from "@/components/ProductList";
+import { ProductList } from "@/components/ProductList";
 import { Title } from "@/components/Title/Default";
 import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { LinkButton } from "@/components/Buttons/LinkButton";
 import { OrderProps } from "../../../../../utils/types";
 import api from "@/api/api";
+import { ProductItemProps } from "@/components/ProductList/ProductItem";
 
 export default function Resume() {
     const [ client, setClient ] = useState<string | undefined>(undefined)
     const [ table, setTable ] = useState<string | undefined>(undefined)
     const [ command, setCommand ] = useState<string | undefined>(undefined)
-    const [ chopps, setChopps ] = useState<ProductItemProps[]>([])
-    const [ foods, setFoods ] = useState<ProductItemProps[]>([])
+    const [ chosenChopps, setChosenChopps ] = useState<ProductItemProps[]>([])
+    const [ chosenFoods, setChosenFoods ] = useState<ProductItemProps[]>([])
 
     const [ orderCookies, setOrderCookies, removeOrderCookies ] = useCookies(['orderCookies']);
 
     useEffect(() => {
         if (orderCookies.orderCookies) {
-            const { client, table, command, chopps, foods } = orderCookies.orderCookies
+            const { client, table, command, chosenChopps, chosenFoods } = orderCookies.orderCookies
             setClient(client)
             setTable(table)
             setCommand(command)
-            setChopps(chopps)
-            setFoods(foods)
+            setChosenChopps(chosenChopps)
+            setChosenFoods(chosenFoods)
         }
     }, [])
 
@@ -36,7 +37,7 @@ export default function Resume() {
         const order: OrderProps = {
             board: +table!,
             command: +command!,
-            items: chopps.concat(foods).map(item => {
+            items: chosenChopps.concat(chosenFoods).map(item => {
                 return {
                     id_product: +item.id,
                     quantity: item.quantity
@@ -64,14 +65,14 @@ export default function Resume() {
                     <Title text="Chopp" />
                     <ProductList
                         key="chopp"
-                        listActiveProducts={chopps}
+                        listActiveProducts={chosenChopps}
                     />
                 </div>
                 <div className="flex flex-col gap-8">
                     <Title text="Porções" />
                     <ProductList
                         key="porcoes"
-                        listActiveProducts={foods}
+                        listActiveProducts={chosenFoods}
                     />
                 </div>
             </div>

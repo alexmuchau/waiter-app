@@ -18,7 +18,7 @@ export async function getActiveTables(req: FastifyRequest, res: FastifyReply) {
         }
     }).then((tables) => tables.filter((table) => table.command.length > 0).map((table) => ({
             tableNumber: table.tableNumber.toString(),
-            tableDescription: table.tableNumber.toString(),
+            tableDescription: table.tableDescription,
             commands: table.command.map((command) => ({
                 commandNumber: command.commandNumber.toString(),
                 clientName: command.client?.name

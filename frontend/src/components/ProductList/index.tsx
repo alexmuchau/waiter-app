@@ -1,17 +1,12 @@
+import { ProductListProps } from "../../../../utils/types"
 import { ProductItem } from "./ProductItem"
 
-export interface ProductItemProps {
-    id: string,
-    name: string,
-    quantity: number
-}
-
-interface ProductListProps {
-    listActiveProducts: ProductItemProps[]
+interface ComponentProductListProps {
+    listActiveProducts: Array<ProductListProps & { quantity: number }>
     removeItem?: (id: string) => void
 }
 
-export function ProductList({ listActiveProducts, removeItem }: ProductListProps) {
+export function ProductList({ listActiveProducts, removeItem }: ComponentProductListProps) {
     return (
         <div className="flex flex-col gap-4">
             {

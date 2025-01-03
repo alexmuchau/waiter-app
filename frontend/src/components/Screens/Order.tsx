@@ -1,7 +1,8 @@
-import { ProductListProps } from "@/app/page";
+import { useEffect, useState } from "react";
 import {
     ClientProps,
     CommandItemProps,
+    ProductListProps,
     TableItemProps,
 } from "../../../../utils/types";
 import { LinkButton } from "../Buttons/LinkButton";
@@ -9,10 +10,12 @@ import { ClientItem } from "../ClientItem";
 import { BackHeader } from "../Header/BackHeader";
 import { HeaderTitle } from "../Header/HeaderTitle";
 import { IdentifyList } from "../Identify/IdentifyList";
-import { ProductItemProps, ProductList } from "../ProductList";
+import { ProductList } from "../ProductList";
+import { ProductItemProps } from "../ProductList/ProductItem";
 import { TitleClient } from "../Title/Client";
 import { Title } from "../Title/Default";
 import { TitleProduct } from "../Title/Product";
+import { create } from "domain";
 
 interface OrderScreenProps {
     removeOrderCookies: () => void;
@@ -21,16 +24,18 @@ interface OrderScreenProps {
     command: CommandItemProps | undefined;
     tables: TableItemProps[];
     commands: CommandItemProps[];
+    listCommands: Array<CommandItemProps & { disabled: boolean }>;
     clients: ClientProps[];
-    products: ProductListProps[];
-    productsPorcoes: ProductListProps[];
-    chopps: ProductItemProps[];
-    foods: ProductItemProps[];
+    chopps: ProductListProps[];
+    foods: ProductListProps[];
+    chosenChopps: ProductItemProps[];
+    chosenFoods: ProductItemProps[];
     setClient: (client: ClientProps | undefined) => void;
     setTable: (table: TableItemProps | undefined) => void;
     setCommand: (command: CommandItemProps | undefined) => void;
-    setChopps: (chopps: ProductItemProps[]) => void;
-    setFoods: (foods: ProductItemProps[]) => void;
+    setListCommands: (tableNumber?: string) => void;
+    setChosenChopps: (chopps: ProductItemProps[]) => void;
+    setChosenFoods: (foods: ProductItemProps[]) => void;
     updateCookiesToResume: () => void;
 }
 
@@ -40,37 +45,37 @@ export function OrderScreen({
     table,
     command,
     tables,
+    listCommands,
     commands,
     clients,
-    products,
-    productsPorcoes,
     chopps,
     foods,
+    chosenChopps,
+    chosenFoods,
     setClient,
     setTable,
     setCommand,
-    setChopps,
-    setFoods,
+    setListCommands,
+    setChosenChopps,
+    setChosenFoods,
     updateCookiesToResume
 }: OrderScreenProps) {
     function selectItem(key: "table" | "command", value: string | undefined) {
         switch (key) {
             case "table": {
-                setTable(
-                    value
-                        ? tables.find((table) => table.tableNumber == value)
-                        : undefined
-                );
+                const table = tables.find((table) => table.tableNumber == value)
+                setTable(table);
+
+                setListCommands(value)
+
                 break;
             }
             case "command": {
-                setCommand(
-                    value
-                        ? commands.find(
-                              (command) => command.commandNumber == value
-                          )
-                        : undefined
-                );
+                const command = value ? commands.find( (command) => command.commandNumber == value) : undefined
+                setCommand(command);
+
+                const table = tables.find((table) => table.tableNumber == command?.tableNumber)
+                setTable(table)
                 break;
             }
             default:
@@ -79,22 +84,23 @@ export function OrderScreen({
     }
 
     function removeChoppItem(id: string) {
-        setChopps(chopps!.filter((chopp) => chopp.id != id));
+        setChosenChopps(chosenChopps!.filter((chopp) => chopp.id != id));
     }
 
     function removeFoodItem(id: string) {
-        setFoods(foods!.filter((food) => food.id != id));
+        setChosenFoods(chosenFoods!.filter((food) => food.id != id));
     }
 
-    function addChoppItem(id: string, name: string, quantity: number) {
+    function addChoppItem(id: string, name: string, price: number, quantity: number) {
         let exists = false;
 
-        const newChopps = chopps.map((chopp) => {
+        const newChopps = chosenChopps.map((chopp) => {
             if (chopp.id == id) {
                 exists = true;
                 return {
                     id: id,
                     name: name,
+                    price: price,
                     quantity: chopp.quantity + quantity,
                 };
             }
@@ -102,24 +108,26 @@ export function OrderScreen({
             return {
                 id: chopp.id,
                 name: chopp.name,
+                price: chopp.price,
                 quantity: chopp.quantity,
             };
         });
 
-        if (!exists) newChopps.push({ id: id, name: name, quantity: quantity });
+        if (!exists) newChopps.push({ id: id, name: name, price: price, quantity: quantity });
 
-        setChopps(newChopps);
+        setChosenChopps(newChopps);
     }
 
-    function addFoodItem(id: string, name: string, quantity: number) {
+    function addFoodItem(id: string, name: string, price: number, quantity: number) {
         let exists = false;
 
-        const newFoods = foods.map((food) => {
+        const newFoods = chosenFoods.map((food) => {
             if (food.id == id) {
                 exists = true;
                 return {
                     id: id,
                     name: name,
+                    price: price,
                     quantity: food.quantity + quantity,
                 };
             }
@@ -127,13 +135,14 @@ export function OrderScreen({
             return {
                 id: food.id,
                 name: food.name,
+                price: food.price,
                 quantity: food.quantity,
             };
         });
 
-        if (!exists) newFoods.push({ id: id, name: name, quantity: quantity });
+        if (!exists) newFoods.push({ id: id, name: name, price: price, quantity: quantity });
 
-        setFoods(newFoods);
+        setChosenFoods(newFoods);
     }
 
     function selectClient(id: string, name: string) {
@@ -167,7 +176,7 @@ export function OrderScreen({
             <header className="flex">
                 <HeaderTitle text="pedido" />
             </header>
-            <div className="flex flex-col gap-8 h-screen">
+            <div className="flex flex-col gap-8">
                 <div className="flex flex-col">
                     <TitleClient
                         text="Cliente"
@@ -185,7 +194,18 @@ export function OrderScreen({
                     )}
                 </div>
                 <div className="flex flex-col">
-                    <Title text="Mesas" />
+                    <Title text="Comanda" />
+                    <IdentifyList
+                        key="command"
+                        listKey="command"
+                        disabled={client ? true : false}
+                        selectItem={selectItem}
+                        list={listCommands}
+                        activeItem={command?.commandNumber}
+                    />
+                </div>
+                <div className="flex flex-col">
+                    <Title text="Mesa" />
                     <IdentifyList
                         key="table"
                         disabled={false}
@@ -195,27 +215,16 @@ export function OrderScreen({
                         activeItem={table?.tableNumber}
                     />
                 </div>
-                <div className="flex flex-col">
-                    <Title text="Comandas" />
-                    <IdentifyList
-                        key="command"
-                        listKey="command"
-                        disabled={client ? true : false}
-                        selectItem={selectItem}
-                        list={commands}
-                        activeItem={command?.commandNumber}
-                    />
-                </div>
                 <div className="flex flex-col gap-8">
                     <TitleProduct
                         text="Chopp"
                         disabled={!table || !command}
-                        products={products}
+                        products={chopps}
                         addProduct={addChoppItem}
                     />
                     <ProductList
                         key="chopp"
-                        listActiveProducts={chopps}
+                        listActiveProducts={chosenChopps}
                         removeItem={removeChoppItem}
                     />
                 </div>
@@ -223,12 +232,12 @@ export function OrderScreen({
                     <TitleProduct
                         text="Porções"
                         disabled={!table || !command}
-                        products={productsPorcoes}
+                        products={foods}
                         addProduct={addFoodItem}
                     />
                     <ProductList
                         key="porcoes"
-                        listActiveProducts={foods}
+                        listActiveProducts={chosenFoods}
                         removeItem={removeFoodItem}
                     />
                 </div>
@@ -237,6 +246,7 @@ export function OrderScreen({
                 <LinkButton
                     href="/order/resume"
                     onClick={updateCookiesToResume}
+                    disabled={!table || !command || (!chosenChopps.length && !chosenFoods.length)}
                 >
                     Resumo do Pedido
                 </LinkButton>

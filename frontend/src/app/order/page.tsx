@@ -1,75 +1,32 @@
 "use client";
 
-import { ProductListProps } from "../page";
 import { useEffect, useState } from "react";
-import { ProductItemProps } from "@/components/ProductList";
 import {
     ClientProps,
     TableItemProps,
     CommandItemProps,
+    ProductListProps,
 } from "../../../../utils/types";
 import api from "@/api/api";
 import { useCookies } from "react-cookie";
 import { OrderScreen } from "@/components/Screens/Order";
+import { ProductItemProps } from "@/components/ProductList/ProductItem";
 
 export default function OrderBuild() {
-    const products: ProductListProps[] = [
-        {
-            id: "1",
-            name: "Pilsen 300ml",
-        },
-        {
-            id: "2",
-            name: "Pilsen 500ml",
-        },
-        {
-            id: "3",
-            name: "Pilsen 1000ml",
-        },
-        {
-            id: "4",
-            name: "Vinhedo 473ml",
-        },
-        {
-            id: "5",
-            name: "Ipa 1000ml",
-        },
-    ];
-
-    const productsPorcoes: ProductListProps[] = [
-        {
-            id: "6",
-            name: "Frango á Passarinho",
-        },
-        {
-            id: "7",
-            name: "Frango Sassami",
-        },
-        {
-            id: "8",
-            name: "Bolinho de Bacalhau",
-        },
-        {
-            id: "9",
-            name: "Bolinho 2",
-        },
-        {
-            id: "10",
-            name: "Bolinho 3",
-        },
-    ];
-
     const [clients, setClients] = useState<ClientProps[]>([]);
     const [tables, setTables] = useState<TableItemProps[]>([]);
     const [commands, setCommands] = useState<CommandItemProps[]>([]);
+    const [listCommands, setListCommands] = useState<Array<CommandItemProps & { disabled: boolean }>>([])
+    const [chopps, setChopps] = useState<ProductListProps[]>([]);
+    const [foods, setFoods] = useState<ProductListProps[]>([]);
 
     const [client, setClient] = useState<ClientProps | undefined>(undefined);
     const [table, setTable] = useState<TableItemProps | undefined>(undefined);
     const [command, setCommand] = useState<CommandItemProps | undefined>(
         undefined
     );
-    const [chopps, setChopps] = useState<ProductItemProps[]>([]);
-    const [foods, setFoods] = useState<ProductItemProps[]>([]);
+    const [chosenChopps, setChosenChopps] = useState<ProductItemProps[]>([]);
+    const [chosenFoods, setChosenFoods] = useState<ProductItemProps[]>([]);
 
     const [orderCookies, setOrderCookies, removeOrderCookies] = useCookies([
         "orderCookies",
@@ -88,13 +45,25 @@ export default function OrderBuild() {
                 client: client?.id,
                 table: table?.tableNumber,
                 command: command?.commandNumber,
-                chopps: chopps,
-                foods: foods,
+                chosenChopps: chosenChopps,
+                chosenFoods: chosenFoods,
             },
             {
                 maxAge: 60 * 60 * 24 * 7,
             }
         );
+    }
+
+    function createListCommands(commands: CommandItemProps[], clients: ClientProps[], tableNumber?: string) {
+        return setListCommands(commands
+            .filter((c) =>
+                c.commandNumber == command?.commandNumber
+                || !clients.find((client) => client.id === c.commandNumber))
+            .map((command) => ({
+                ...command,
+                disabled: !!tableNumber && !!command.tableNumber && command.tableNumber != tableNumber
+            }))
+        )
     }
 
     useEffect(() => {
@@ -113,14 +82,15 @@ export default function OrderBuild() {
                 const command = commands.find(
                     (command) => command.commandNumber == cookies.command
                 );
-                const chopps = cookies.chopps;
-                const foods = cookies.foods;
+                const chopps = cookies.chosenChopps;
+                const foods = cookies.chosenFoods;
 
                 setClient(client);
                 setTable(table);
                 setCommand(command);
-                setChopps(chopps);
-                setFoods(foods);
+                createListCommands(commands, clients, table?.tableNumber)
+                setChosenChopps(!chopps ? [] : chopps);
+                setChosenFoods(!foods ? [] : foods);
             }
         }
 
@@ -128,16 +98,27 @@ export default function OrderBuild() {
             const { clients } = (await api.get("/clients")).data as {
                 clients: ClientProps[];
             };
-            const { commands } = (await api.get("/commands")).data as {
+            let { commands } = (await api.get("/commands")).data as {
                 commands: CommandItemProps[];
             };
             const { tables } = (await api.get("/tables")).data as {
                 tables: TableItemProps[];
             };
 
+            const chopps = (await api.get("/products?category=CHOPP")).data as {
+                products: ProductListProps[];
+            };
+
+            const foods = (await api.get("/products?category=FOOD")).data as {
+                products: ProductListProps[];
+            };
+
             setClients(clients);
             setCommands(commands);
+            createListCommands(commands, clients)
             setTables(tables);
+            setChopps(chopps.products);
+            setFoods(foods.products);
 
             checkCookies(clients, commands, tables);
 
@@ -157,15 +138,17 @@ export default function OrderBuild() {
                 tables={tables}
                 commands={commands}
                 clients={clients}
-                products={products}
-                productsPorcoes={productsPorcoes}
                 chopps={chopps}
                 foods={foods}
+                chosenChopps={chosenChopps}
+                chosenFoods={chosenFoods}
                 setClient={setClient}
                 setTable={setTable}
                 setCommand={setCommand}
-                setChopps={setChopps}
-                setFoods={setFoods}
+                listCommands={listCommands}
+                setListCommands={(tableNumber?: string) => createListCommands(commands, clients, tableNumber)}
+                setChosenChopps={setChosenChopps}
+                setChosenFoods={setChosenFoods}
                 updateCookiesToResume={updateCookiesToResume}
             />
         </main>

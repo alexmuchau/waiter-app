@@ -1,16 +1,16 @@
 'use client'
 
-import { ProductListProps } from "@/app/page"
 import { SelectItem } from "@/components/SelectItem"
 import { Input } from "@nextui-org/input"
 import { Check, Plus } from "phosphor-react"
 import { Key, useState } from "react"
+import { ProductListProps } from "../../../../../utils/types"
 
 interface TitleProductProps {
     text: string,
     products: ProductListProps[],
     disabled: boolean,
-    addProduct: (id: string, name:string, qtd: number) => void
+    addProduct: (id: string, name:string, price: number, qtd: number) => void
 }
 
 export function TitleProduct({ text, products, addProduct, disabled } : TitleProductProps) {
@@ -22,10 +22,14 @@ export function TitleProduct({ text, products, addProduct, disabled } : TitlePro
         setIsAdding(!isAdding)
     }
 
+    function setQttyToAdd(qtd: string) {
+        if (+qtd > 0) setQuantityToAdd(qtd)
+    }
+
     function finishAdd() {
         if (productIdToAdd && quantityToAdd ) {
-            const productName = products.filter((p) => p.id == productIdToAdd)[0].name
-            addProduct(productIdToAdd, productName, +quantityToAdd)
+            const product = products.filter((p) => p.id == productIdToAdd)[0]
+            addProduct(productIdToAdd, product.name, product.price, +quantityToAdd)
             handleIsAdding()
         }
     }
@@ -40,7 +44,7 @@ export function TitleProduct({ text, products, addProduct, disabled } : TitlePro
                 ? <div className="flex w-full gap-4 items-end">
                     <SelectItem
                         label={text}
-                        items={products}
+                        items={products.map((product) => ({ id: product.id, name: product.name + " - R$" + product.price }))}
                         onChange={onSelectionChange}
                     />
                     <Input
@@ -48,7 +52,8 @@ export function TitleProduct({ text, products, addProduct, disabled } : TitlePro
                         type="number"
                         variant="bordered"
                         className="w-1/4"
-                        onValueChange={setQuantityToAdd}
+                        value={quantityToAdd}
+                        onValueChange={setQttyToAdd}
                         defaultValue="1"
                     />
                     <button

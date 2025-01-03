@@ -40,3 +40,9 @@ export interface ClientProps {
     id: string,
     name: string
 }
+
+export interface ProductListProps {
+    id: string,
+    name: string,
+    price: number
+  }

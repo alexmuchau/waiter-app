@@ -7,7 +7,7 @@ interface IdentifyListProps {
     listKey: "table" | "command"
     selectItem: (key: "table" | "command", value: string | undefined) => void,
     disabled: boolean
-    list: TableItemProps[] | CommandItemProps[]
+    list: TableItemProps[] | Array<CommandItemProps & { disabled: boolean }>
     activeItem: string | undefined
 }
 
@@ -28,6 +28,7 @@ export function IdentifyList({ listKey, selectItem, disabled, list, activeItem }
                 return (
                   <IdentifyItem
                     key={item.tableNumber}
+                    id={item.tableNumber}
                     text={item.tableDescription}
                     onClick={onClick}
                     isDisabled={disabled}
@@ -37,17 +38,22 @@ export function IdentifyList({ listKey, selectItem, disabled, list, activeItem }
                 )
               }
 
-              item = item as CommandItemProps
-              return (
-                <IdentifyItem
-                  key={item.commandNumber}
-                  text={item.commandNumber}
-                  onClick={onClick}
-                  isDisabled={disabled}
-                  isActive={item.commandNumber === activeItem}
-                  isUsing={item.isActive}
-                />
-              )
+              if (listKey === "command") {
+                item = item as CommandItemProps & { disabled: boolean }
+
+                return (
+                  <IdentifyItem
+                    key={item.commandNumber}
+                    id={item.commandNumber}
+                    text={item.commandNumber}
+                    onClick={onClick}
+                    isDisabled={disabled === true ? true : item.disabled}
+                    isActive={item.commandNumber === activeItem}
+                    isUsing={item.isActive}
+                  />
+                )
+              }
+
             })
           }
         </div>

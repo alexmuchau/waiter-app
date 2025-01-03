@@ -57,7 +57,7 @@ async function checkCommand(commandNumber: number, tableNumber: number) {
     }
 
     if (!command.ID_Mesa) {
-        swapStates(tableNumber, command.Codigo, '-1')
+        // swapStates(tableNumber, command.Codigo, '-1')
         
         await desktopClient.tb_comandas.update({
             where: {

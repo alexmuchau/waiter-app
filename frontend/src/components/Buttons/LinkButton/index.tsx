@@ -6,19 +6,29 @@ interface LinkButtonProps {
     href: string,
     query?: ParsedUrlQueryInput
     onClick?: () => void
+    disabled?: boolean
 }
 
-export function LinkButton({ children, href, query, onClick }: LinkButtonProps) {
+export function LinkButton({ children, href, query, onClick, disabled = false }: LinkButtonProps) {
     return (
-        <Link
-            className="flex w-full items-center justify-center py-2 bg-accent rounded-full text-slate-900 font-bold"
-            onClick={onClick}
-            href={{
-                pathname: href,
-                query: query
-            }}
+        <div
+            className="fixed bottom-0 left-0 flex w-full p-4 justify-center"
         >
-            {children}
-        </Link>
+            <Link
+                className={`
+                    flex w-full py-2 items-center justify-center bg-accent text-slate-900 rounded-full font-bold
+                    ${disabled ? 'opacity-40 pointer-events-none' : ''}
+                `}
+                onClick={onClick}
+                href={{
+                    pathname: href,
+                    query: query
+                }}
+                aria-disabled={disabled}
+                tabIndex={disabled ? -1 : undefined}
+            >
+                {children}
+            </Link>
+        </div>
     )
 }

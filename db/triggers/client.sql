@@ -12,8 +12,10 @@ BEGIN
     DECLARE res VARCHAR(255);
     
     SET body = JSON_OBJECT(
-		'id', NEW.Codigo,
-        'name', NEW.Apelido
+        'client', JSON_OBJECT(
+            'id', NEW.Codigo,
+            'name', NEW.Apelido
+        )
 	);
 
     -- Define os headers da requisição

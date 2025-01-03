@@ -23,10 +23,12 @@ BEGIN
         END IF;
         
         SET body = JSON_OBJECT(
-            'id', NEW.Codigo,
-            'name', NEW.Produto,
-            'price', NEW.Preco_Venda,
-            'category', category
+            'product', JSON_OBJECT(
+                'id', NEW.Codigo,
+                'name', NEW.Produto,
+                'price', NEW.Preco_Venda,
+                'category', category
+            )
         );
 
         -- Define os headers da requisição

@@ -6,11 +6,6 @@ import { useEffect, useState } from "react";
 import { User } from "../../../utils/types" 
 import { CookiesProvider, useCookies } from "react-cookie";
 
-export interface ProductListProps {
-  id: string,
-  name: string
-}
-
 export default function Home() {
   const [ user, setUser ] = useState<User | undefined>({
     login: "admin",
