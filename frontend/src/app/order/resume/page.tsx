@@ -51,12 +51,12 @@ export default function Resume() {
     }
 
     return (
-        <main className="flex flex-col w-full h-full justify-start py-10 px-4 gap-8">
+        <main className="flex flex-col w-full justify-start py-10 px-4 gap-8">
             <BackHeader href="/order" replace={true} />
             <header className="flex">
                 <h1 className="text-3xl">resumo do pedido</h1>
             </header>
-            <div className="flex flex-col gap-8 h-screen">
+            <div className="flex flex-col gap-8">
                 <div className="flex gap-16">
                     <IdentifyCard title="Mesa" number={table!} />
                     <IdentifyCard title="Comanda" number={command!} />

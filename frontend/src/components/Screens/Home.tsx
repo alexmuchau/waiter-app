@@ -6,6 +6,7 @@ import { LoggedUser } from "../LoggedUser";
 import { useEffect, useState } from "react";
 import { ActiveTablesList } from "../ActiveTablesList";
 import api from "@/api/api";
+import { ConnectionBackend } from "../ConnectionBackend";
 
 interface HomeScreenProps {
     user: User
@@ -25,9 +26,12 @@ export function HomeScreen({ user }: HomeScreenProps) {
     
     return (
         <>
-            <header className="flex">
+            <header className="flex gap-4">
                 <LoggedUser
                     user={user}
+                />
+                <ConnectionBackend
+                    status={true}
                 />
             </header>
             <div className="flex flex-col gap-8"> 

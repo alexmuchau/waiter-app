@@ -55,7 +55,7 @@ export default function OrderBuild() {
     }
 
     function createListCommands(commands: CommandItemProps[], clients: ClientProps[], tableNumber?: string) {
-        return setListCommands(commands
+        setListCommands(commands
             .filter((c) =>
                 c.commandNumber == command?.commandNumber
                 || !clients.find((client) => client.id === c.commandNumber))

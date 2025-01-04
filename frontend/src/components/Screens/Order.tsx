@@ -62,20 +62,19 @@ export function OrderScreen({
 }: OrderScreenProps) {
     function selectItem(key: "table" | "command", value: string | undefined) {
         switch (key) {
-            case "table": {
-                const table = tables.find((table) => table.tableNumber == value)
-                setTable(table);
+            case "command": {
+                const newCommand = value ? commands.find( (command) => command.commandNumber == value) : undefined
+                setCommand(newCommand);
 
-                setListCommands(value)
-
+                const table = tables.find((table) => table.tableNumber == newCommand?.tableNumber)
+                setTable(table)
                 break;
             }
-            case "command": {
-                const command = value ? commands.find( (command) => command.commandNumber == value) : undefined
-                setCommand(command);
-
-                const table = tables.find((table) => table.tableNumber == command?.tableNumber)
-                setTable(table)
+            case "table": {
+                const newTable = tables.find((table) => table.tableNumber == value)
+                setTable(newTable);
+                
+                setListCommands(value)
                 break;
             }
             default:
@@ -208,7 +207,7 @@ export function OrderScreen({
                     <Title text="Mesa" />
                     <IdentifyList
                         key="table"
-                        disabled={false}
+                        disabled={command?.tableNumber ? true : false}
                         listKey="table"
                         selectItem={selectItem}
                         list={tables}
