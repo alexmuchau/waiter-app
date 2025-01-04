@@ -5,6 +5,7 @@ import { commandsRoutes } from "./commands";
 import { ordersRoutes } from "./orders";
 import { productsRoutes } from "./products";
 import { syncDBRoutes } from "./syncDB";
+import { waitersRoutes } from "./waiters";
 
 export async function routes(fastify: FastifyInstance){
     fastify.register(tablesRoutes)
@@ -12,10 +13,10 @@ export async function routes(fastify: FastifyInstance){
     fastify.register(commandsRoutes)
     fastify.register(ordersRoutes)
     fastify.register(productsRoutes)
+    fastify.register(waitersRoutes)
     fastify.register(syncDBRoutes)
     
     fastify.get('/', (req, res) => {
-        console.log('Connected')
-        res.send('Connected')
+        res.status(200).send('Connected')
     })
 }

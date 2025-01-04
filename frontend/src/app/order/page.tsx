@@ -56,9 +56,6 @@ export default function OrderBuild() {
 
     function createListCommands(commands: CommandItemProps[], clients: ClientProps[], tableNumber?: string) {
         setListCommands(commands
-            .filter((c) =>
-                c.commandNumber == command?.commandNumber
-                || !clients.find((client) => client.id === c.commandNumber))
             .map((command) => ({
                 ...command,
                 disabled: !!tableNumber && !!command.tableNumber && command.tableNumber != tableNumber
@@ -76,12 +73,15 @@ export default function OrderBuild() {
                 const client = clients.find(
                     (client) => client.id == cookies.client
                 );
-                const table = tables.find(
-                    (table) => table.tableNumber == cookies.table
-                );
-                const command = commands.find(
-                    (command) => command.commandNumber == cookies.command
-                );
+
+                const command = !!client
+                    ? client.command
+                    : commands.find((command) => command.commandNumber == cookies.command)
+
+                const table = !!command?.tableNumber
+                    ? tables.find((table) => table.tableNumber == command.tableNumber)
+                    : tables.find((table) => table.tableNumber == cookies.table)
+
                 const chopps = cookies.chosenChopps;
                 const foods = cookies.chosenFoods;
 

@@ -17,12 +17,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 5.22.0
- * Query Engine version: 605197351a3c8bdd595af2d2a9bc3025bca48ea2
+ * Prisma Client JS version: 6.1.0
+ * Query Engine version: 11f085a2012c0f4778414c8db2651556ee0ef959
  */
 Prisma.prismaVersion = {
-  client: "5.22.0",
-  engine: "605197351a3c8bdd595af2d2a9bc3025bca48ea2"
+  client: "6.1.0",
+  engine: "11f085a2012c0f4778414c8db2651556ee0ef959"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -48,11 +48,6 @@ In case this error is unexpected for you, please report it in https://pris.ly/pr
 Prisma.PrismaClientValidationError = () => {
   const runtimeName = getRuntime().prettyName;
   throw new Error(`PrismaClientValidationError is unable to run in this browser environment, or has been bundled for the browser (running in ${runtimeName}).
-In case this error is unexpected for you, please report it in https://pris.ly/prisma-prisma-bug-report`,
-)}
-Prisma.NotFoundError = () => {
-  const runtimeName = getRuntime().prettyName;
-  throw new Error(`NotFoundError is unable to run in this browser environment, or has been bundled for the browser (running in ${runtimeName}).
 In case this error is unexpected for you, please report it in https://pris.ly/prisma-prisma-bug-report`,
 )}
 Prisma.Decimal = Decimal
@@ -3976,6 +3971,2010 @@ exports.Prisma.SortOrder = {
 exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
+};
+
+exports.Prisma.tb_pessoasOrderByRelevanceFieldEnum = {
+  Tipo_Pessoa: 'Tipo_Pessoa',
+  CPF: 'CPF',
+  CNPJ: 'CNPJ',
+  RG: 'RG',
+  IE: 'IE',
+  CadPro: 'CadPro',
+  Pessoa: 'Pessoa',
+  Fantasia: 'Fantasia',
+  CEP: 'CEP',
+  Endereco: 'Endereco',
+  Numero: 'Numero',
+  Bairro: 'Bairro',
+  UF: 'UF',
+  cUF: 'cUF',
+  xMun: 'xMun',
+  cMun: 'cMun',
+  xPais: 'xPais',
+  cPais: 'cPais',
+  Complemento: 'Complemento',
+  Fone1: 'Fone1',
+  Fone2: 'Fone2',
+  Fone3: 'Fone3',
+  Fone4: 'Fone4',
+  Fone5: 'Fone5',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo',
+  DHU: 'DHU',
+  Email: 'Email',
+  Apelido: 'Apelido',
+  Liberado_Contas_Em_Atraso: 'Liberado_Contas_Em_Atraso',
+  WhatsApp: 'WhatsApp',
+  uMovMe_Enviar: 'uMovMe_Enviar',
+  Obs_Retirada: 'Obs_Retirada',
+  Op_Cliente: 'Op_Cliente',
+  Op_Fornecedor: 'Op_Fornecedor',
+  Op_Transportador: 'Op_Transportador',
+  Op_Prestador_Servico: 'Op_Prestador_Servico'
+};
+
+exports.Prisma.tb_produtosOrderByRelevanceFieldEnum = {
+  Produto: 'Produto',
+  Produto_Curto: 'Produto_Curto',
+  Produto_PDV: 'Produto_PDV',
+  Complemento: 'Complemento',
+  Pesquisa_Rapida_PDV: 'Pesquisa_Rapida_PDV',
+  Codigo_Interno: 'Codigo_Interno',
+  Balanca: 'Balanca',
+  Tipo_Balanca: 'Tipo_Balanca',
+  Descricao_Balanca: 'Descricao_Balanca',
+  Genero: 'Genero',
+  cEAN_Trib: 'cEAN_Trib',
+  CEST: 'CEST',
+  Deposito: 'Deposito',
+  Fraciona: 'Fraciona',
+  Controle_Lote: 'Controle_Lote',
+  Requer_Observacao: 'Requer_Observacao',
+  Nao_Controla_Estoque: 'Nao_Controla_Estoque',
+  Nunca_Agrupa_Venda: 'Nunca_Agrupa_Venda',
+  Classificacao: 'Classificacao',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Cad_ViaXML: 'Cad_ViaXML',
+  Funcao: 'Funcao',
+  Alterado: 'Alterado',
+  N_Licenca_ANVISA: 'N_Licenca_ANVISA',
+  Dados_Tecnicos: 'Dados_Tecnicos',
+  uMovMe_Enviar: 'uMovMe_Enviar',
+  Codigo_ANP: 'Codigo_ANP',
+  Descricao_ANP: 'Descricao_ANP'
+};
+
+exports.Prisma.tb_produtos_setorOrderByRelevanceFieldEnum = {
+  Setor: 'Setor',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  uMovMe_Enviar: 'uMovMe_Enviar'
+};
+
+exports.Prisma.tb_abertura_caixaOrderByRelevanceFieldEnum = {
+  Hora_Abertura: 'Hora_Abertura',
+  Hora_Fechamento: 'Hora_Fechamento',
+  Fechado: 'Fechado',
+  DHU: 'DHU',
+  Numero_Fechamento: 'Numero_Fechamento',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  Importado_Mentor: 'Importado_Mentor'
+};
+
+exports.Prisma.tb_abertura_caixa_contagemOrderByRelevanceFieldEnum = {
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  Importado_Mentor: 'Importado_Mentor'
+};
+
+exports.Prisma.tb_adquirentesOrderByRelevanceFieldEnum = {
+  Nome: 'Nome',
+  CNPJ: 'CNPJ',
+  DHU: 'DHU',
+  Ativo: 'Ativo'
+};
+
+exports.Prisma.tb_adquirentes_bandeirasOrderByRelevanceFieldEnum = {
+  Descricao: 'Descricao',
+  Retorno_TEF: 'Retorno_TEF',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Ativo: 'Ativo',
+  CD: 'CD'
+};
+
+exports.Prisma.tb_boleto_carteiraOrderByRelevanceFieldEnum = {
+  Descricao: 'Descricao',
+  Nro_Banco: 'Nro_Banco',
+  Logo_Banco: 'Logo_Banco',
+  Codigo_Agencia: 'Codigo_Agencia',
+  DV_Agencia: 'DV_Agencia',
+  Conta_Corrente: 'Conta_Corrente',
+  DV_Conta_Corrente: 'DV_Conta_Corrente',
+  Nro_Carteira: 'Nro_Carteira',
+  Nro_Convenio: 'Nro_Convenio',
+  DV_Convenio: 'DV_Convenio',
+  Variacao_Carteira: 'Variacao_Carteira',
+  Aceite: 'Aceite',
+  Instrucao_Codificada: 'Instrucao_Codificada',
+  CNPJ_Cedente: 'CNPJ_Cedente',
+  Nome_Cedente: 'Nome_Cedente',
+  Logradouro_Cedente: 'Logradouro_Cedente',
+  Nro_Cedente: 'Nro_Cedente',
+  Complemento_Cedente: 'Complemento_Cedente',
+  Bairro_Cedenten: 'Bairro_Cedenten',
+  CEP_Cedente: 'CEP_Cedente',
+  Cidade_Cedente: 'Cidade_Cedente',
+  UF_Cedente: 'UF_Cedente',
+  BoletoMensagem: 'BoletoMensagem',
+  Cod_Especie: 'Cod_Especie',
+  Especie: 'Especie',
+  Local_Pagamento: 'Local_Pagamento',
+  Nro_Banco_Boleto: 'Nro_Banco_Boleto',
+  Posto: 'Posto',
+  Imagem_Frente: 'Imagem_Frente',
+  Imagem_Verso: 'Imagem_Verso',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_boleto_comando_retornoOrderByRelevanceFieldEnum = {
+  Codigo_Interno: 'Codigo_Interno',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_caixas_retOrderByRelevanceFieldEnum = {
+  Hora_Abertura: 'Hora_Abertura',
+  Hora_fechamento: 'Hora_fechamento',
+  RegExcluido: 'RegExcluido',
+  Hora_Reabertura: 'Hora_Reabertura'
+};
+
+exports.Prisma.tb_cancelamentosOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Tipo: 'Tipo'
+};
+
+exports.Prisma.tb_cartoesOrderByRelevanceFieldEnum = {
+  Cartao: 'Cartao',
+  Apelido: 'Apelido',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_centro_uso_consumoOrderByRelevanceFieldEnum = {
+  Centro: 'Centro',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_cfop_devolucaoOrderByRelevanceFieldEnum = {
+  CFOP_Entrada: 'CFOP_Entrada',
+  CFOP_Devolucao: 'CFOP_Devolucao'
+};
+
+exports.Prisma.tb_comando_sql_clienteOrderByRelevanceFieldEnum = {
+  Comando_SQL: 'Comando_SQL'
+};
+
+exports.Prisma.tb_comprasOrderByRelevanceFieldEnum = {
+  Hora_Lancamento: 'Hora_Lancamento',
+  Documento: 'Documento',
+  Modelo: 'Modelo',
+  Serie: 'Serie',
+  Chave_Acesso: 'Chave_Acesso',
+  Movimenta_Estoque: 'Movimenta_Estoque',
+  Start_Estoque: 'Start_Estoque',
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido',
+  Status: 'Status',
+  Hora_Finalizacao: 'Hora_Finalizacao',
+  Revisado: 'Revisado',
+  XML: 'XML',
+  Revisado_Financeiro: 'Revisado_Financeiro',
+  Doc_Sem_Chave: 'Doc_Sem_Chave',
+  Financeiro_Inconsistente: 'Financeiro_Inconsistente',
+  Motivo_Inconsistente: 'Motivo_Inconsistente'
+};
+
+exports.Prisma.tb_compras_devolucaoOrderByRelevanceFieldEnum = {
+  Digitacao: 'Digitacao',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_compras_duplicatasOrderByRelevanceFieldEnum = {
+  Duplicata: 'Duplicata'
+};
+
+exports.Prisma.tb_compras_envio_nfeOrderByRelevanceFieldEnum = {
+  Mentor_Estoque: 'Mentor_Estoque',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_compras_pagamentosOrderByRelevanceFieldEnum = {
+  Duplicata: 'Duplicata'
+};
+
+exports.Prisma.tb_compras_produtosOrderByRelevanceFieldEnum = {
+  NCM: 'NCM',
+  CFOP: 'CFOP',
+  cBenef: 'cBenef',
+  CSTICMS: 'CSTICMS',
+  CSTIPI: 'CSTIPI',
+  CSTPIS: 'CSTPIS',
+  CSTCOFINS: 'CSTCOFINS',
+  Status_NCM: 'Status_NCM',
+  Descricao_XML: 'Descricao_XML',
+  Acao_Revisao: 'Acao_Revisao',
+  DHU: 'DHU',
+  cProd: 'cProd',
+  Status_Cadastro: 'Status_Cadastro',
+  Descricao_Cadastro: 'Descricao_Cadastro',
+  CEST: 'CEST',
+  Revisado: 'Revisado',
+  Consolidado: 'Consolidado',
+  Revisado_Aut: 'Revisado_Aut',
+  Estoque_Processado: 'Estoque_Processado',
+  Cad_ViaXML: 'Cad_ViaXML',
+  Produto: 'Produto',
+  ID_Empresas: 'ID_Empresas',
+  Origem_Desmembramento_ID: 'Origem_Desmembramento_ID',
+  cEAN: 'cEAN'
+};
+
+exports.Prisma.tb_compras_produtos_lotesOrderByRelevanceFieldEnum = {
+  nLote: 'nLote',
+  Processo_Estoque: 'Processo_Estoque'
+};
+
+exports.Prisma.tb_conta_razaoOrderByRelevanceFieldEnum = {
+  Conta_Razao: 'Conta_Razao',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_cotacaoOrderByRelevanceFieldEnum = {
+  Descricao: 'Descricao',
+  Hora: 'Hora',
+  Hora_Fechamento: 'Hora_Fechamento',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Status: 'Status'
+};
+
+exports.Prisma.tb_cotacao_fechamentoOrderByRelevanceFieldEnum = {
+  Arquivo_PDF: 'Arquivo_PDF',
+  WhatsApp_Enviado: 'WhatsApp_Enviado',
+  Email_Enviado: 'Email_Enviado'
+};
+
+exports.Prisma.tb_cotacao_itemOrderByRelevanceFieldEnum = {
+  RegExcluido: 'RegExcluido',
+  Status: 'Status'
+};
+
+exports.Prisma.tb_cotacao_participantesOrderByRelevanceFieldEnum = {
+  RegExcluido: 'RegExcluido',
+  Arquivo_Excel: 'Arquivo_Excel',
+  Email_Enviado: 'Email_Enviado',
+  WhatsApp_Enviado: 'WhatsApp_Enviado',
+  Retorno: 'Retorno'
+};
+
+exports.Prisma.tb_cotacao_retornosOrderByRelevanceFieldEnum = {
+  Ignorado: 'Ignorado'
+};
+
+exports.Prisma.tb_despesasOrderByRelevanceFieldEnum = {
+  Documento: 'Documento',
+  Observacao: 'Observacao',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_despesas_aplicacaoOrderByRelevanceFieldEnum = {
+  Aplicacao: 'Aplicacao',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_despesas_aplicacao_subOrderByRelevanceFieldEnum = {
+  Aplicacao: 'Aplicacao',
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo'
+};
+
+exports.Prisma.tb_despesas_bOrderByRelevanceFieldEnum = {
+  Documento: 'Documento',
+  Observacao: 'Observacao',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Conciliacao_Nao_Gera_Financeiro: 'Conciliacao_Nao_Gera_Financeiro',
+  Financeiro_Inconsistente: 'Financeiro_Inconsistente',
+  Motivo_Inconsistente: 'Motivo_Inconsistente',
+  Sem_Financeiro: 'Sem_Financeiro',
+  RegSysADM: 'RegSysADM'
+};
+
+exports.Prisma.tb_despesas_b_financeiroOrderByRelevanceFieldEnum = {
+  Parcela: 'Parcela'
+};
+
+exports.Prisma.tb_despesas_b_rateioOrderByRelevanceFieldEnum = {
+  RegExcluido: 'RegExcluido',
+  Observacao: 'Observacao'
+};
+
+exports.Prisma.tb_devolucao_fiscalOrderByRelevanceFieldEnum = {
+  RegExcluido: 'RegExcluido',
+  Mentor_Estoque: 'Mentor_Estoque',
+  Digitacao: 'Digitacao'
+};
+
+exports.Prisma.tb_documentos_personalizadosOrderByRelevanceFieldEnum = {
+  Produtos: 'Produtos',
+  Com_Frete: 'Com_Frete',
+  Acionar_Sirene: 'Acionar_Sirene',
+  RegExcluido: 'RegExcluido',
+  Funcao: 'Funcao',
+  Impressao_Individual: 'Impressao_Individual',
+  Texto_Relatorio: 'Texto_Relatorio',
+  Integra_Servidor: 'Integra_Servidor',
+  Texto_Relatorio_Servidor: 'Texto_Relatorio_Servidor'
+};
+
+exports.Prisma.tb_documentos_personalizados_servidorOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Texto: 'Texto',
+  Rnd_01: 'Rnd_01',
+  Rnd_02: 'Rnd_02',
+  DHU: 'DHU',
+  DHU_Impressao: 'DHU_Impressao',
+  Emitido: 'Emitido',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor'
+};
+
+exports.Prisma.tb_dre_confOrderByRelevanceFieldEnum = {
+  Descricao: 'Descricao',
+  Receita_Bruta: 'Receita_Bruta',
+  Deducoes: 'Deducoes',
+  Receita_Liquida: 'Receita_Liquida',
+  CMV: 'CMV',
+  Lucro_Bruto: 'Lucro_Bruto',
+  Despesas: 'Despesas',
+  Resultado_Operacional: 'Resultado_Operacional',
+  CSLL_IRPJ: 'CSLL_IRPJ',
+  Resultado_Liquido: 'Resultado_Liquido',
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_empresasOrderByRelevanceFieldEnum = {
+  emi_CNPJ: 'emi_CNPJ',
+  emi_CPF: 'emi_CPF',
+  emi_xNome: 'emi_xNome',
+  emi_xfant: 'emi_xfant',
+  emi_nro: 'emi_nro',
+  emi_xLgr: 'emi_xLgr',
+  emi_xCpl: 'emi_xCpl',
+  emi_xBairro: 'emi_xBairro',
+  emi_cMun: 'emi_cMun',
+  emi_xMun: 'emi_xMun',
+  emi_xUF: 'emi_xUF',
+  emi_cUF: 'emi_cUF',
+  emi_CEP: 'emi_CEP',
+  emi_cPais: 'emi_cPais',
+  emi_xPais: 'emi_xPais',
+  emi_fone: 'emi_fone',
+  emi_IE: 'emi_IE',
+  emi_IEST: 'emi_IEST',
+  emi_IM: 'emi_IM',
+  emi_CNAE: 'emi_CNAE',
+  emi_CRT: 'emi_CRT',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo',
+  DHU: 'DHU',
+  Apelido: 'Apelido'
+};
+
+exports.Prisma.tb_empresas_comunicacaoOrderByRelevanceFieldEnum = {
+  Op_Venda: 'Op_Venda',
+  Op_Financeiro: 'Op_Financeiro',
+  Op_Estoque: 'Op_Estoque',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_empresas_conf_etiqueta_pedidoOrderByRelevanceFieldEnum = {
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_empresas_conf_geralOrderByRelevanceFieldEnum = {
+  Licenca_ANVISA: 'Licenca_ANVISA',
+  Mostrar_Tributos_NFe: 'Mostrar_Tributos_NFe',
+  Permite_Itens_Zerados_Venda: 'Permite_Itens_Zerados_Venda',
+  Faturar_Contas_Status_Diferentes: 'Faturar_Contas_Status_Diferentes',
+  Pergunta_CPF: 'Pergunta_CPF',
+  Finaliza_Venda_Cartao_Fiscal: 'Finaliza_Venda_Cartao_Fiscal',
+  Fatura_Sobre_Fatura: 'Fatura_Sobre_Fatura',
+  Acao_Imprimir: 'Acao_Imprimir',
+  DHU: 'DHU',
+  Acao_Imprimir_NFe: 'Acao_Imprimir_NFe',
+  Acao_Imprimir_NFCe: 'Acao_Imprimir_NFCe',
+  Modelo_Documento_Impressao: 'Modelo_Documento_Impressao',
+  Alteracao_Unitario: 'Alteracao_Unitario',
+  Obs_Venda_A4: 'Obs_Venda_A4',
+  Promissoria_Termica: 'Promissoria_Termica'
+};
+
+exports.Prisma.tb_empresas_conf_petOrderByRelevanceFieldEnum = {
+  Filtro_Mod_02: 'Filtro_Mod_02',
+  Pacote_Apenas_Debito: 'Pacote_Apenas_Debito',
+  Totaliza_Exame: 'Totaliza_Exame',
+  Totaliza_Medicamento: 'Totaliza_Medicamento',
+  Totaliza_Psicotropico: 'Totaliza_Psicotropico',
+  Totaliza_Insumos: 'Totaliza_Insumos',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_empresas_conf_vendasOrderByRelevanceFieldEnum = {
+  Repete_Item: 'Repete_Item',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_empresas_custoOrderByRelevanceFieldEnum = {
+  Descricao_Custo: 'Descricao_Custo'
+};
+
+exports.Prisma.tb_empresas_diretoriosOrderByRelevanceFieldEnum = {
+  NFe_XML_Gerado: 'NFe_XML_Gerado',
+  NFe_XML_Assinado: 'NFe_XML_Assinado',
+  NFe_XML_Autorizado: 'NFe_XML_Autorizado',
+  NFe_DANFe: 'NFe_DANFe',
+  NFe_XML_CCe: 'NFe_XML_CCe',
+  NFCe_XML_Gerado: 'NFCe_XML_Gerado',
+  NFCe_XML_Assinado: 'NFCe_XML_Assinado',
+  NFCe_XML_Autorizado: 'NFCe_XML_Autorizado',
+  NFCe_DANFCe: 'NFCe_DANFCe',
+  NFCe_XML_CCe: 'NFCe_XML_CCe',
+  NFCe_Img_QRCode: 'NFCe_Img_QRCode',
+  CTe_XML_Gerado: 'CTe_XML_Gerado',
+  CTe_XML_Assinado: 'CTe_XML_Assinado',
+  CTe_XML_Autorizado: 'CTe_XML_Autorizado',
+  CTe_DACTe: 'CTe_DACTe',
+  CTe_XML_CCe: 'CTe_XML_CCe',
+  MDFe_XML_Gerado: 'MDFe_XML_Gerado',
+  MDFe_XML_Assinado: 'MDFe_XML_Assinado',
+  MDFe_XML_Autorizado: 'MDFe_XML_Autorizado',
+  MDFe_XML_Encerramento: 'MDFe_XML_Encerramento',
+  MDFe_XML_Inclusao_Condutor: 'MDFe_XML_Inclusao_Condutor',
+  MDFe_DAMDFe: 'MDFe_DAMDFe',
+  TXT_Defender: 'TXT_Defender',
+  XML_Entradas: 'XML_Entradas',
+  DHU: 'DHU',
+  Txt_NFCe: 'Txt_NFCe',
+  Txt_NFCe_Retorno: 'Txt_NFCe_Retorno',
+  NFCe_Lote: 'NFCe_Lote',
+  Excel_Cotacao: 'Excel_Cotacao',
+  XML_Download_Manual: 'XML_Download_Manual',
+  Inutilizacao: 'Inutilizacao',
+  Quadro_Recibo: 'Quadro_Recibo'
+};
+
+exports.Prisma.tb_empresas_emailOrderByRelevanceFieldEnum = {
+  Remetente: 'Remetente',
+  SMTP_Cliente: 'SMTP_Cliente',
+  SMTP_Porta: 'SMTP_Porta',
+  SMTP_SSL: 'SMTP_SSL',
+  SMTP_Usuario: 'SMTP_Usuario',
+  SMTP_Senha: 'SMTP_Senha',
+  DHU: 'DHU',
+  Nome_Remetente: 'Nome_Remetente'
+};
+
+exports.Prisma.tb_empresas_imagensOrderByRelevanceFieldEnum = {
+  Imagem_NFe: 'Imagem_NFe',
+  Imagem_NFCe: 'Imagem_NFCe',
+  Imagem_Relatorios: 'Imagem_Relatorios',
+  Imagem_PicPay: 'Imagem_PicPay',
+  DHU: 'DHU',
+  Imagem_Inicial: 'Imagem_Inicial'
+};
+
+exports.Prisma.tb_empresas_liberadas_usuariosOrderByRelevanceFieldEnum = {
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_empresas_odbcOrderByRelevanceFieldEnum = {
+  Servidor: 'Servidor',
+  DataBaseName: 'DataBaseName',
+  Usuario: 'Usuario',
+  Porta: 'Porta',
+  DHU: 'DHU',
+  Ultima_Comunicacao_Mentor: 'Ultima_Comunicacao_Mentor'
+};
+
+exports.Prisma.tb_empresas_pedido_onlineOrderByRelevanceFieldEnum = {
+  IP: 'IP',
+  DataBase_Name: 'DataBase_Name',
+  Usuario: 'Usuario',
+  Porta: 'Porta',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_empresas_wsOrderByRelevanceFieldEnum = {
+  Sigla_WS_NF: 'Sigla_WS_NF',
+  Sigla_WS_NFCe: 'Sigla_WS_NFCe',
+  Sigla_WS_CTe: 'Sigla_WS_CTe',
+  CSC_Producao: 'CSC_Producao',
+  CSC_Homologacao: 'CSC_Homologacao',
+  Token_Producao: 'Token_Producao',
+  Token_Homologacao: 'Token_Homologacao',
+  RNTRC: 'RNTRC',
+  Certificado: 'Certificado',
+  Licenca_NFe_NFCe: 'Licenca_NFe_NFCe',
+  Licenca_CTe: 'Licenca_CTe',
+  Licenca_MDFe: 'Licenca_MDFe',
+  URL_Estado_NFCe: 'URL_Estado_NFCe',
+  URL_Consulta_NFCe: 'URL_Consulta_NFCe',
+  URL_Cte: 'URL_Cte',
+  CPF_CNPJ_Contador: 'CPF_CNPJ_Contador',
+  DHU: 'DHU',
+  Token_IBPT: 'Token_IBPT',
+  API_uMovMe: 'API_uMovMe'
+};
+
+exports.Prisma.tb_financeiro_canal_pagamentoOrderByRelevanceFieldEnum = {
+  Nome: 'Nome',
+  Solicita_Dados_PIX: 'Solicita_Dados_PIX',
+  Solicita_Portador: 'Solicita_Portador',
+  Solicita_Linha_Digitavel: 'Solicita_Linha_Digitavel',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Ativo: 'Ativo'
+};
+
+exports.Prisma.tb_financeiro_dadosOrderByRelevanceFieldEnum = {
+  Documento: 'Documento',
+  Hora_Emissao: 'Hora_Emissao',
+  Observacao: 'Observacao',
+  RegExcluido: 'RegExcluido',
+  CRP: 'CRP',
+  Arquivo_Remessa: 'Arquivo_Remessa',
+  Origem_Fat: 'Origem_Fat'
+};
+
+exports.Prisma.tb_financeiro_parcelasOrderByRelevanceFieldEnum = {
+  Parcela: 'Parcela',
+  Status: 'Status',
+  RegExcluido: 'RegExcluido',
+  Revisado_CR: 'Revisado_CR',
+  Baixa_Parcial: 'Baixa_Parcial',
+  Origem_Fatura: 'Origem_Fatura',
+  Observacao_Baixa: 'Observacao_Baixa',
+  Nosso_Numero: 'Nosso_Numero',
+  Linha_Digitavel: 'Linha_Digitavel',
+  Barras: 'Barras',
+  Tipo_Documento_Baixa: 'Tipo_Documento_Baixa',
+  Cartao_Conciliado: 'Cartao_Conciliado'
+};
+
+exports.Prisma.tb_financeiro_vinculosOrderByRelevanceFieldEnum = {
+  Origem: 'Origem'
+};
+
+exports.Prisma.tb_formas_pagamentoOrderByRelevanceFieldEnum = {
+  Descricao: 'Descricao',
+  Finalizacao_Caixa: 'Finalizacao_Caixa',
+  TEF: 'TEF',
+  Uti_Entradas: 'Uti_Entradas',
+  Uti_Saidas: 'Uti_Saidas',
+  Uti_Despesas: 'Uti_Despesas',
+  Uti_Fatura: 'Uti_Fatura',
+  Permite_Troco: 'Permite_Troco',
+  Permite_Contra_Vale: 'Permite_Contra_Vale',
+  Detalhes_PDV_Fechamento: 'Detalhes_PDV_Fechamento',
+  Fiscal_indPag_Opc: 'Fiscal_indPag_Opc',
+  Fiscal_tPag: 'Fiscal_tPag',
+  Fiscal_tpIntegra_Opc: 'Fiscal_tpIntegra_Opc',
+  Fiscal_xPag_Opc: 'Fiscal_xPag_Opc',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Integracao_SIP: 'Integracao_SIP',
+  Recebe_Vale_Credito: 'Recebe_Vale_Credito',
+  Uti_Quitacao: 'Uti_Quitacao',
+  Considerar_Desconto_Pontualidade: 'Considerar_Desconto_Pontualidade',
+  Preferencia_Fiscal: 'Preferencia_Fiscal',
+  Uti_NFe: 'Uti_NFe',
+  Abre_Gaveta: 'Abre_Gaveta',
+  Integra_Fechamento: 'Integra_Fechamento',
+  uMovMe_Enviar: 'uMovMe_Enviar',
+  Utiliza_Movel: 'Utiliza_Movel'
+};
+
+exports.Prisma.tb_formas_pagamento_desconto_autorizadoOrderByRelevanceFieldEnum = {
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_formas_pagamento_empresasOrderByRelevanceFieldEnum = {
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_formas_pagamento_oferta_autorizadoOrderByRelevanceFieldEnum = {
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_formas_pagamento_usuariosOrderByRelevanceFieldEnum = {
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_formulario_permissaoOrderByRelevanceFieldEnum = {
+  Legenda: 'Legenda',
+  Formulario: 'Formulario'
+};
+
+exports.Prisma.tb_formulario_permissao_subOrderByRelevanceFieldEnum = {
+  Objeto: 'Objeto',
+  Legenda: 'Legenda',
+  Ativo: 'Ativo'
+};
+
+exports.Prisma.tb_grade_fiscalOrderByRelevanceFieldEnum = {
+  CFOP: 'CFOP',
+  ICMS_CST_SN: 'ICMS_CST_SN',
+  ICMS_CST_NO: 'ICMS_CST_NO',
+  ICMS_HabilitaICMSST: 'ICMS_HabilitaICMSST',
+  ICMS_Habilita_ICMSDeson: 'ICMS_Habilita_ICMSDeson',
+  ICMS_Habilita_ICMSSN: 'ICMS_Habilita_ICMSSN',
+  ICMS_Habilita_ICMSFCP: 'ICMS_Habilita_ICMSFCP',
+  ICMS_cBenef: 'ICMS_cBenef',
+  IPIcEnq: 'IPIcEnq',
+  IPI_Habilita: 'IPI_Habilita',
+  IPI_Acao_Valor_ICMS: 'IPI_Acao_Valor_ICMS',
+  IPI_CST: 'IPI_CST',
+  PIS_Acao_Valor_ICMS: 'PIS_Acao_Valor_ICMS',
+  PIS_CST: 'PIS_CST',
+  COFINS_Acao_Valor_ICMS: 'COFINS_Acao_Valor_ICMS',
+  COFINS_CST: 'COFINS_CST',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  Observacao: 'Observacao',
+  DHU: 'DHU',
+  Padrao_Dev_Estadual: 'Padrao_Dev_Estadual',
+  Padrao_Dev_Interestadual: 'Padrao_Dev_Interestadual',
+  Padrao_Sistemas_Integracao: 'Padrao_Sistemas_Integracao',
+  Padrao_Sistemas_Integracao_Combustivel: 'Padrao_Sistemas_Integracao_Combustivel'
+};
+
+exports.Prisma.tb_inutilizacao_fiscalOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Modelo: 'Modelo',
+  Serie: 'Serie',
+  Numero_Documento: 'Numero_Documento',
+  nProtocolo: 'nProtocolo',
+  dProtocolo: 'dProtocolo',
+  Status: 'Status',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_inventarioOrderByRelevanceFieldEnum = {
+  Hora_Abertura: 'Hora_Abertura',
+  Hora_Fechamento: 'Hora_Fechamento',
+  Status: 'Status',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Importado_Mentor: 'Importado_Mentor',
+  Dados_Validados: 'Dados_Validados'
+};
+
+exports.Prisma.tb_inventario_conclusaoOrderByRelevanceFieldEnum = {
+  Processado: 'Processado',
+  Hora_Processamento: 'Hora_Processamento',
+  Hora: 'Hora'
+};
+
+exports.Prisma.tb_inventario_nao_coletadoOrderByRelevanceFieldEnum = {
+  RegExcluido: 'RegExcluido',
+  Estoque_Processado: 'Estoque_Processado',
+  RegExcludio: 'RegExcludio'
+};
+
+exports.Prisma.tb_inventario_subOrderByRelevanceFieldEnum = {
+  Arquivo: 'Arquivo',
+  Hora: 'Hora',
+  Codigo_Barras: 'Codigo_Barras',
+  RegExcluido: 'RegExcluido',
+  Status_Produto: 'Status_Produto',
+  Importado_Mentor: 'Importado_Mentor',
+  Estoque_Processado: 'Estoque_Processado',
+  Origem_Coleta: 'Origem_Coleta'
+};
+
+exports.Prisma.tb_local_retiradaOrderByRelevanceFieldEnum = {
+  Local: 'Local',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_log_alteracaoOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Tipo: 'Tipo',
+  Tabela: 'Tabela',
+  Alteracao: 'Alteracao'
+};
+
+exports.Prisma.tb_logoutOrderByRelevanceFieldEnum = {
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_ncmOrderByRelevanceFieldEnum = {
+  NCM: 'NCM',
+  Descricao: 'Descricao',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_ncm_novoOrderByRelevanceFieldEnum = {
+  NCM: 'NCM',
+  DHU: 'DHU',
+  CST_ICMS: 'CST_ICMS'
+};
+
+exports.Prisma.tb_nfceOrderByRelevanceFieldEnum = {
+  ide_cUF: 'ide_cUF',
+  ide_natOp: 'ide_natOp',
+  ide_Hora: 'ide_Hora',
+  ide_tpNF: 'ide_tpNF',
+  ide_idDest: 'ide_idDest',
+  ide_cMunFG: 'ide_cMunFG',
+  ide_dhCont: 'ide_dhCont',
+  ide_xJust: 'ide_xJust',
+  dest_CNPJ: 'dest_CNPJ',
+  dest_CPF: 'dest_CPF',
+  dest_xNome: 'dest_xNome',
+  dest_xLgr: 'dest_xLgr',
+  dest_nro: 'dest_nro',
+  dest_xCpl: 'dest_xCpl',
+  dest_xBairro: 'dest_xBairro',
+  dest_cMun: 'dest_cMun',
+  dest_xMun: 'dest_xMun',
+  dest_UF: 'dest_UF',
+  dest_CEP: 'dest_CEP',
+  dest_cPais: 'dest_cPais',
+  dest_xPais: 'dest_xPais',
+  dest_fone: 'dest_fone',
+  dest_indIEDest: 'dest_indIEDest',
+  dest_IE: 'dest_IE',
+  dest_IESUF: 'dest_IESUF',
+  dest_IM: 'dest_IM',
+  dest_eMail: 'dest_eMail',
+  modFrete: 'modFrete',
+  transporta_CNPJ: 'transporta_CNPJ',
+  transporta_CPF: 'transporta_CPF',
+  transporta_xNome: 'transporta_xNome',
+  transporta_IE: 'transporta_IE',
+  transporta_xEnder: 'transporta_xEnder',
+  transporta_xMun: 'transporta_xMun',
+  transporta_UF: 'transporta_UF',
+  vol_esp: 'vol_esp',
+  vol_marca: 'vol_marca',
+  vol_nvol: 'vol_nvol',
+  infCpl: 'infCpl',
+  ChaveNFe: 'ChaveNFe',
+  Recibo: 'Recibo',
+  DH_Autorizacao: 'DH_Autorizacao',
+  xJust_Cancelamento: 'xJust_Cancelamento',
+  Protocolo_Cancelamento: 'Protocolo_Cancelamento',
+  DH_Cancelamento: 'DH_Cancelamento',
+  Status: 'Status',
+  URL_NFCe: 'URL_NFCe',
+  XML_Gerado: 'XML_Gerado',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  Importado_Mentor: 'Importado_Mentor',
+  Motivo_cStat: 'Motivo_cStat',
+  Protocolo: 'Protocolo'
+};
+
+exports.Prisma.tb_nfce_assinadosOrderByRelevanceFieldEnum = {
+  XML_Assinado: 'XML_Assinado'
+};
+
+exports.Prisma.tb_nfce_autxmlOrderByRelevanceFieldEnum = {
+  CNPJ: 'CNPJ',
+  CPF: 'CPF',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_nfce_detpagamentosOrderByRelevanceFieldEnum = {
+  indPag_Opc: 'indPag_Opc',
+  tPag: 'tPag',
+  xPag_Opc: 'xPag_Opc',
+  tpIntegra_Opc: 'tpIntegra_Opc',
+  CNPJ_Opc: 'CNPJ_Opc',
+  tBand_Opc: 'tBand_Opc',
+  cAut_Opc: 'cAut_Opc',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  Importado_Mentor: 'Importado_Mentor'
+};
+
+exports.Prisma.tb_nfce_duplicatasOrderByRelevanceFieldEnum = {
+  nDup: 'nDup',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor'
+};
+
+exports.Prisma.tb_nfce_itemOrderByRelevanceFieldEnum = {
+  prod_cProd: 'prod_cProd',
+  prod_cEAN: 'prod_cEAN',
+  prod_xProd: 'prod_xProd',
+  prod_NCM: 'prod_NCM',
+  prod_NVE: 'prod_NVE',
+  prod_CEST: 'prod_CEST',
+  prod_CNPJFab: 'prod_CNPJFab',
+  prod_cBenef: 'prod_cBenef',
+  prod_ExTIPI: 'prod_ExTIPI',
+  prod_CFOP: 'prod_CFOP',
+  prod_uCOM: 'prod_uCOM',
+  prod_cEANTrib: 'prod_cEANTrib',
+  prod_uTrib: 'prod_uTrib',
+  prod_xPed: 'prod_xPed',
+  prod_nItemPed: 'prod_nItemPed',
+  infAdprod: 'infAdprod',
+  Hab_IPI: 'Hab_IPI',
+  ipi_cEnq: 'ipi_cEnq',
+  IPI_CST: 'IPI_CST',
+  PIS_CST: 'PIS_CST',
+  COFINS_CST: 'COFINS_CST',
+  icms_orig: 'icms_orig',
+  icms_CST: 'icms_CST',
+  icms_UFST: 'icms_UFST',
+  RegExcluido: 'RegExcluido',
+  Via_Oferta: 'Via_Oferta',
+  DHU: 'DHU',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  Importado_Mentor: 'Importado_Mentor'
+};
+
+exports.Prisma.tb_nfce_loteOrderByRelevanceFieldEnum = {
+  DH_Criacao: 'DH_Criacao',
+  Recibo: 'Recibo'
+};
+
+exports.Prisma.tb_nfeOrderByRelevanceFieldEnum = {
+  ide_cUF: 'ide_cUF',
+  ide_natOp: 'ide_natOp',
+  ide_Hora: 'ide_Hora',
+  ide_tpNF: 'ide_tpNF',
+  ide_idDest: 'ide_idDest',
+  ide_cMunFG: 'ide_cMunFG',
+  ide_dhCont: 'ide_dhCont',
+  ide_xJust: 'ide_xJust',
+  dest_CNPJ: 'dest_CNPJ',
+  dest_CPF: 'dest_CPF',
+  dest_xNome: 'dest_xNome',
+  dest_xLgr: 'dest_xLgr',
+  dest_nro: 'dest_nro',
+  dest_xCpl: 'dest_xCpl',
+  dest_xBairro: 'dest_xBairro',
+  dest_cMun: 'dest_cMun',
+  dest_xMun: 'dest_xMun',
+  dest_UF: 'dest_UF',
+  dest_CEP: 'dest_CEP',
+  dest_cPais: 'dest_cPais',
+  dest_xPais: 'dest_xPais',
+  dest_fone: 'dest_fone',
+  dest_indIEDest: 'dest_indIEDest',
+  dest_IE: 'dest_IE',
+  dest_IESUF: 'dest_IESUF',
+  dest_IM: 'dest_IM',
+  dest_eMail: 'dest_eMail',
+  modFrete: 'modFrete',
+  transporta_CNPJ: 'transporta_CNPJ',
+  transporta_CPF: 'transporta_CPF',
+  transporta_xNome: 'transporta_xNome',
+  transporta_IE: 'transporta_IE',
+  transporta_xEnder: 'transporta_xEnder',
+  transporta_xMun: 'transporta_xMun',
+  transporta_UF: 'transporta_UF',
+  vol_esp: 'vol_esp',
+  vol_marca: 'vol_marca',
+  vol_nvol: 'vol_nvol',
+  infCpl: 'infCpl',
+  ChaveNFe: 'ChaveNFe',
+  Recibo: 'Recibo',
+  Protocolo: 'Protocolo',
+  DH_Autorizacao: 'DH_Autorizacao',
+  xJust_Cancelamento: 'xJust_Cancelamento',
+  Protocolo_Cancelamento: 'Protocolo_Cancelamento',
+  DH_Cancelamento: 'DH_Cancelamento',
+  Status: 'Status',
+  XML_Gerado: 'XML_Gerado',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  RegConfirmado: 'RegConfirmado',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Info_IRRF: 'Info_IRRF'
+};
+
+exports.Prisma.tb_nfe_autxmlOrderByRelevanceFieldEnum = {
+  CNPJ: 'CNPJ',
+  CPF: 'CPF',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_nfe_cceOrderByRelevanceFieldEnum = {
+  txtCorrecao: 'txtCorrecao',
+  horaCorrecao: 'horaCorrecao',
+  nProtocolo: 'nProtocolo',
+  dhProtocolo: 'dhProtocolo',
+  Status: 'Status',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_nfe_defenderOrderByRelevanceFieldEnum = {
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_nfe_defender_dadosOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Modelo: 'Modelo',
+  Serie: 'Serie',
+  ChaveNFe: 'ChaveNFe',
+  CNPJ_Emitente: 'CNPJ_Emitente',
+  Status_Fornecedor: 'Status_Fornecedor',
+  Valor: 'Valor',
+  Entrada_Ok: 'Entrada_Ok',
+  DHU: 'DHU',
+  Fornecedor: 'Fornecedor',
+  XML_Path: 'XML_Path',
+  Status_Organizacao: 'Status_Organizacao',
+  UF: 'UF',
+  NF_Cancelada: 'NF_Cancelada',
+  XML_Organizado: 'XML_Organizado'
+};
+
+exports.Prisma.tb_nfe_defender_resumoOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  ChaveNFe: 'ChaveNFe',
+  CNPJ_Emitente: 'CNPJ_Emitente',
+  xNome_Emitente: 'xNome_Emitente',
+  IE_Emitente: 'IE_Emitente',
+  Protocolo: 'Protocolo',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_nfe_detpagamentosOrderByRelevanceFieldEnum = {
+  indPag_Opc: 'indPag_Opc',
+  tPag: 'tPag',
+  xPag_Opc: 'xPag_Opc',
+  tpIntegra_Opc: 'tpIntegra_Opc',
+  CNPJ_Opc: 'CNPJ_Opc',
+  tBand_Opc: 'tBand_Opc',
+  cAut_Opc: 'cAut_Opc',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Liberado_para_Servidor: 'Liberado_para_Servidor'
+};
+
+exports.Prisma.tb_nfe_duplicatasOrderByRelevanceFieldEnum = {
+  nDup: 'nDup',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Liberado_para_Servidor: 'Liberado_para_Servidor'
+};
+
+exports.Prisma.tb_nfe_itemOrderByRelevanceFieldEnum = {
+  prod_cProd: 'prod_cProd',
+  prod_cEAN: 'prod_cEAN',
+  prod_xProd: 'prod_xProd',
+  prod_NCM: 'prod_NCM',
+  prod_NVE: 'prod_NVE',
+  prod_CEST: 'prod_CEST',
+  prod_CNPJFab: 'prod_CNPJFab',
+  prod_cBenef: 'prod_cBenef',
+  prod_ExTIPI: 'prod_ExTIPI',
+  prod_CFOP: 'prod_CFOP',
+  prod_uCOM: 'prod_uCOM',
+  prod_cEANTrib: 'prod_cEANTrib',
+  prod_uTrib: 'prod_uTrib',
+  prod_xPed: 'prod_xPed',
+  prod_nItemPed: 'prod_nItemPed',
+  infAdprod: 'infAdprod',
+  Hab_IPI: 'Hab_IPI',
+  ipi_cEnq: 'ipi_cEnq',
+  IPI_CST: 'IPI_CST',
+  PIS_CST: 'PIS_CST',
+  COFINS_CST: 'COFINS_CST',
+  icms_orig: 'icms_orig',
+  icms_CST: 'icms_CST',
+  icms_UFST: 'icms_UFST',
+  RegExcluido: 'RegExcluido',
+  Via_Oferta: 'Via_Oferta',
+  DHU: 'DHU',
+  Liberado_para_Servidor: 'Liberado_para_Servidor'
+};
+
+exports.Prisma.tb_nfe_item_rastroOrderByRelevanceFieldEnum = {
+  nLote: 'nLote'
+};
+
+exports.Prisma.tb_nfe_mandestOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  chaveNFe: 'chaveNFe',
+  tpEvento: 'tpEvento',
+  xJust: 'xJust',
+  cStat: 'cStat',
+  nroProtocolo: 'nroProtocolo',
+  dhProtocolo: 'dhProtocolo',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_nfe_operacao_inverso_estoqueOrderByRelevanceFieldEnum = {
+  Mentor_Estoque: 'Mentor_Estoque',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_nfe_padraoOrderByRelevanceFieldEnum = {
+  modFrete: 'modFrete'
+};
+
+exports.Prisma.tb_nfe_referenciaOrderByRelevanceFieldEnum = {
+  Chave_NFe: 'Chave_NFe',
+  Chave_CTe: 'Chave_CTe',
+  AAMM: 'AAMM',
+  CNPJ: 'CNPJ',
+  CPF: 'CPF',
+  IE: 'IE',
+  Serie: 'Serie',
+  nNF: 'nNF',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_nfe_solicitacao_pdvOrderByRelevanceFieldEnum = {
+  WhatsApp: 'WhatsApp',
+  Email: 'Email',
+  Status: 'Status'
+};
+
+exports.Prisma.tb_nfe_veiculosOrderByRelevanceFieldEnum = {
+  Placa: 'Placa',
+  UF: 'UF',
+  RNTC: 'RNTC',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_ocorrenciasOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Computador: 'Computador',
+  Descricao: 'Descricao',
+  Hora_Revisao: 'Hora_Revisao',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  Importado_Mentor: 'Importado_Mentor'
+};
+
+exports.Prisma.tb_operacao_fiscalOrderByRelevanceFieldEnum = {
+  Operacao: 'Operacao',
+  Natureza: 'Natureza',
+  ide_dest: 'ide_dest',
+  ide_finNFe: 'ide_finNFe',
+  ide_indPres: 'ide_indPres',
+  ide_tpEmis: 'ide_tpEmis',
+  ide_tpImp: 'ide_tpImp',
+  Entrada_Saida: 'Entrada_Saida',
+  Modelo: 'Modelo',
+  Exporta_PDV: 'Exporta_PDV',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_operacao_fiscal_raiz_cnpjOrderByRelevanceFieldEnum = {
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_operacao_movimentoOrderByRelevanceFieldEnum = {
+  Operacao: 'Operacao',
+  Descricao_Report: 'Descricao_Report',
+  Entrada_Saida_Despesa: 'Entrada_Saida_Despesa',
+  Processo_Financeiro: 'Processo_Financeiro',
+  Processo_Fiscal: 'Processo_Fiscal',
+  Processo_Comissao: 'Processo_Comissao',
+  Processo_Consulta_Operacao_Pessoa: 'Processo_Consulta_Operacao_Pessoa',
+  Processo_Movimenta_Estoque: 'Processo_Movimenta_Estoque',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Processo_Revisao_Compra: 'Processo_Revisao_Compra',
+  Confirmar_Faturamento_Saida: 'Confirmar_Faturamento_Saida',
+  Processo_Incluir_Produto_Manual: 'Processo_Incluir_Produto_Manual',
+  Processo_Entrada_NF_Produtor: 'Processo_Entrada_NF_Produtor',
+  Saida_Preco_Custo: 'Saida_Preco_Custo',
+  Exibe_Comando_Importar: 'Exibe_Comando_Importar',
+  Pre_Venda_Nao_Envia_Venda: 'Pre_Venda_Nao_Envia_Venda',
+  Exibe_Painel_Comprador: 'Exibe_Painel_Comprador',
+  Pedido_A_faturar: 'Pedido_A_faturar',
+  EntXML_Consulta_Via_Cadastro: 'EntXML_Consulta_Via_Cadastro',
+  Programa_Fidelidade: 'Programa_Fidelidade',
+  Nao_Informa_Pagamento: 'Nao_Informa_Pagamento',
+  Indica_Representante: 'Indica_Representante',
+  Exibe_Historico: 'Exibe_Historico'
+};
+
+exports.Prisma.tb_operacao_movimento_cfopOrderByRelevanceFieldEnum = {
+  CFOP: 'CFOP',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_parametros_execucaoOrderByRelevanceFieldEnum = {
+  Padrao_Balanca: 'Padrao_Balanca',
+  DHU: 'DHU',
+  PDV_Senha_Mult: 'PDV_Senha_Mult',
+  Escreve_SQL_Sinc: 'Escreve_SQL_Sinc',
+  Ir_Novo_Produto_Ao_Salvar: 'Ir_Novo_Produto_Ao_Salvar',
+  Releitura_XML_Processar_Item: 'Releitura_XML_Processar_Item',
+  Editar_Custo_Revisao: 'Editar_Custo_Revisao',
+  Edita_Operacao_venda: 'Edita_Operacao_venda',
+  Consultar_Financeiro_Historico: 'Consultar_Financeiro_Historico',
+  Tipo_Saida_Lote: 'Tipo_Saida_Lote',
+  Alteracao_Imediata_Custo_Revisao: 'Alteracao_Imediata_Custo_Revisao',
+  Finalizadora_Pre_Venda: 'Finalizadora_Pre_Venda',
+  Pessoa_Limite_Padrao: 'Pessoa_Limite_Padrao',
+  Permite_Venda_Sem_Caixa: 'Permite_Venda_Sem_Caixa',
+  Supervisor_Cancelar_Venda: 'Supervisor_Cancelar_Venda',
+  Supervisor_Abrir_Caixa: 'Supervisor_Abrir_Caixa',
+  Supervisor_Fechar_Caixa: 'Supervisor_Fechar_Caixa',
+  Pedido_Compra_Aut_Sobreescrever: 'Pedido_Compra_Aut_Sobreescrever',
+  XML_Organize: 'XML_Organize',
+  Operacao_Caixa_Unico: 'Operacao_Caixa_Unico',
+  Alternar_Empresa: 'Alternar_Empresa',
+  Supervisor_Cancelar_Item: 'Supervisor_Cancelar_Item',
+  Pgr_Fid: 'Pgr_Fid',
+  Despesa_Gera_Financeiro: 'Despesa_Gera_Financeiro',
+  Path_Send_WhatsApp: 'Path_Send_WhatsApp',
+  Estoque_Unico: 'Estoque_Unico',
+  Promissoria_Vencimento_Disponivel: 'Promissoria_Vencimento_Disponivel',
+  Exibe_Diferenca_Fechamento_caixa: 'Exibe_Diferenca_Fechamento_caixa',
+  Libera_Pedido_Baixado: 'Libera_Pedido_Baixado',
+  Requer_Autenticacao_Alteracao_Custo: 'Requer_Autenticacao_Alteracao_Custo',
+  Det_Fechamento_CX_Retaguarda: 'Det_Fechamento_CX_Retaguarda',
+  Setar_Servidor: 'Setar_Servidor',
+  Pesquisa_Produto_ID: 'Pesquisa_Produto_ID',
+  Logo_Relatorio: 'Logo_Relatorio',
+  Caminho_Retorno_Bancario_Processado: 'Caminho_Retorno_Bancario_Processado',
+  Confirmacao_Item_Na_Venda: 'Confirmacao_Item_Na_Venda',
+  Tipo_Padrao_Gestor: 'Tipo_Padrao_Gestor',
+  Confirmar_Preco_Ao_Alterar_Margem: 'Confirmar_Preco_Ao_Alterar_Margem',
+  Confirma_Nro_Parcelas_Venda: 'Confirma_Nro_Parcelas_Venda',
+  Filtro_Tipo_Pessoa: 'Filtro_Tipo_Pessoa',
+  Logo_Minha_Empresa: 'Logo_Minha_Empresa',
+  Nome_Minha_Empresa: 'Nome_Minha_Empresa',
+  Rodape_Minha_Empresa: 'Rodape_Minha_Empresa'
+};
+
+exports.Prisma.tb_pdv_cadastroOrderByRelevanceFieldEnum = {
+  Descricao: 'Descricao',
+  IP_Rede: 'IP_Rede',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  Rota_Aplicativo: 'Rota_Aplicativo',
+  DHU: 'DHU',
+  HD: 'HD',
+  Caminho_TXT_Importar: 'Caminho_TXT_Importar',
+  Importado_Mentor: 'Importado_Mentor',
+  XML_Autorizado_Rede: 'XML_Autorizado_Rede',
+  Carga_Geral_Obrigatoria: 'Carga_Geral_Obrigatoria'
+};
+
+exports.Prisma.tb_pdv_cargasOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_pdv_cargas_txtOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Arquivo_Origem: 'Arquivo_Origem',
+  Arquivo_Destino: 'Arquivo_Destino',
+  PDV: 'PDV',
+  Status: 'Status',
+  xStatus: 'xStatus',
+  Excluido: 'Excluido'
+};
+
+exports.Prisma.tb_pdv_contra_valeOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_pedidos_compras_listaOrderByRelevanceFieldEnum = {
+  Status: 'Status',
+  Hora: 'Hora',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Confirmado: 'Confirmado',
+  Importado_Mentor: 'Importado_Mentor',
+  Hora_Lcto_Pedido: 'Hora_Lcto_Pedido',
+  Recebido_Parcial: 'Recebido_Parcial',
+  ALterado: 'ALterado',
+  complemento_pdd: 'complemento_pdd',
+  Ped_Automatico: 'Ped_Automatico'
+};
+
+exports.Prisma.tb_pedidos_stOrderByRelevanceFieldEnum = {
+  Tipo_Documento: 'Tipo_Documento',
+  CPF_CNPJ_Nota: 'CPF_CNPJ_Nota'
+};
+
+exports.Prisma.tb_pessoas_canal_cadastroOrderByRelevanceFieldEnum = {
+  Canal: 'Canal',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_pessoas_formas_pagamentoOrderByRelevanceFieldEnum = {
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_pessoas_representante_comercialOrderByRelevanceFieldEnum = {
+  Nome: 'Nome',
+  Telefone: 'Telefone',
+  WhatsApp: 'WhatsApp',
+  Email: 'Email',
+  RegExcluido: 'RegExcluido',
+  Empresas: 'Empresas'
+};
+
+exports.Prisma.tb_pessoas_retencoesOrderByRelevanceFieldEnum = {
+  Lei_IRRF: 'Lei_IRRF'
+};
+
+exports.Prisma.tb_pessoas_veiculosOrderByRelevanceFieldEnum = {
+  Placa: 'Placa',
+  UF: 'UF',
+  RNTC: 'RNTC',
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_pessoas_vencimentosOrderByRelevanceFieldEnum = {
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_pgr_fidOrderByRelevanceFieldEnum = {
+  Hora_Inclusao: 'Hora_Inclusao',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Ultima_Verificacao: 'Ultima_Verificacao'
+};
+
+exports.Prisma.tb_pgr_fid_resgateOrderByRelevanceFieldEnum = {
+  Estoque: 'Estoque'
+};
+
+exports.Prisma.tb_pgr_fid_subOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Historico: 'Historico',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_portadorOrderByRelevanceFieldEnum = {
+  Portador: 'Portador',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_portador_subOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Documento: 'Documento',
+  Historico: 'Historico',
+  ID: 'ID',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Estorno_Realizado: 'Estorno_Realizado'
+};
+
+exports.Prisma.tb_portador_transferenciasOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Historico: 'Historico',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_prestacao_servico_desacordoOrderByRelevanceFieldEnum = {
+  CHave_CTe: 'CHave_CTe',
+  Observacao: 'Observacao',
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido',
+  nroProtocolo: 'nroProtocolo',
+  dhProtocolo: 'dhProtocolo'
+};
+
+exports.Prisma.tb_produtos_alocacaoOrderByRelevanceFieldEnum = {
+  Alocacao: 'Alocacao',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_produtos_cliente_especialOrderByRelevanceFieldEnum = {
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_produtos_cliente_especial_faixaOrderByRelevanceFieldEnum = {
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_produtos_codigo_barrasOrderByRelevanceFieldEnum = {
+  Codigo_Barras: 'Codigo_Barras',
+  Codigo_Barras_Caixa: 'Codigo_Barras_Caixa',
+  Descricao: 'Descricao',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Complemento: 'Complemento',
+  Alterado: 'Alterado'
+};
+
+exports.Prisma.tb_produtos_dcbOrderByRelevanceFieldEnum = {
+  Descricao: 'Descricao',
+  N_CAS: 'N_CAS',
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo'
+};
+
+exports.Prisma.tb_produtos_departamentoOrderByRelevanceFieldEnum = {
+  Departamento: 'Departamento',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_produtos_desmembramentoOrderByRelevanceFieldEnum = {
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo'
+};
+
+exports.Prisma.tb_produtos_desmembramento_subOrderByRelevanceFieldEnum = {
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_produtos_estoqueOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Tabela: 'Tabela',
+  Motivo: 'Motivo',
+  Reservado: 'Reservado',
+  DHU: 'DHU',
+  SQL_Out: 'SQL_Out',
+  Zerar: 'Zerar'
+};
+
+exports.Prisma.tb_produtos_estoque_posicao_empresaOrderByRelevanceFieldEnum = {
+  Tempo: 'Tempo'
+};
+
+exports.Prisma.tb_produtos_faixa_descontoOrderByRelevanceFieldEnum = {
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_produtos_familiaOrderByRelevanceFieldEnum = {
+  Familia: 'Familia',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_produtos_fornecedorOrderByRelevanceFieldEnum = {
+  cProd_Fornecedor: 'cProd_Fornecedor',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_produtos_grupoOrderByRelevanceFieldEnum = {
+  Grupo: 'Grupo',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_produtos_imagemOrderByRelevanceFieldEnum = {
+  Descricao: 'Descricao',
+  Path: 'Path',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_produtos_lotesOrderByRelevanceFieldEnum = {
+  nLote: 'nLote',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Renasem: 'Renasem'
+};
+
+exports.Prisma.tb_produtos_lotes_estoqueOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Tabela: 'Tabela',
+  Motivo: 'Motivo'
+};
+
+exports.Prisma.tb_produtos_manutencao_estoque_min_maxOrderByRelevanceFieldEnum = {
+  Codigo_Barras: 'Codigo_Barras',
+  Produto: 'Produto'
+};
+
+exports.Prisma.tb_produtos_marcaOrderByRelevanceFieldEnum = {
+  Marca: 'Marca',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_produtos_padraoOrderByRelevanceFieldEnum = {
+  Pesquisa_Rapida_PDV: 'Pesquisa_Rapida_PDV'
+};
+
+exports.Prisma.tb_produtos_precos_filialOrderByRelevanceFieldEnum = {
+  DHU: 'DHU',
+  Alterado: 'Alterado'
+};
+
+exports.Prisma.tb_produtos_receitasOrderByRelevanceFieldEnum = {
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo'
+};
+
+exports.Prisma.tb_produtos_receitas_subOrderByRelevanceFieldEnum = {
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_produtos_subfamiliaOrderByRelevanceFieldEnum = {
+  SubFamilia: 'SubFamilia',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_produtos_subgrupoOrderByRelevanceFieldEnum = {
+  SubGrupo: 'SubGrupo',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_produtos_tabela_precoOrderByRelevanceFieldEnum = {
+  Tabela_Preco: 'Tabela_Preco',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_produtos_tabela_preco_subOrderByRelevanceFieldEnum = {
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_produtos_tabela_preco_sub_faixaOrderByRelevanceFieldEnum = {
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_produtos_unidadesOrderByRelevanceFieldEnum = {
+  Unidade: 'Unidade',
+  Abreviacao: 'Abreviacao',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_promocao_ticketOrderByRelevanceFieldEnum = {
+  Regulamento: 'Regulamento',
+  Promocao: 'Promocao',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_representante_comercialOrderByRelevanceFieldEnum = {
+  Nome: 'Nome',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_sangriaOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  Importado_Mentor: 'Importado_Mentor'
+};
+
+exports.Prisma.tb_segurancaOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  DB: 'DB',
+  Destino: 'Destino',
+  Status: 'Status',
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_seguranca_confOrderByRelevanceFieldEnum = {
+  DB: 'DB',
+  Pasta_Destino: 'Pasta_Destino',
+  Horario: 'Horario',
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo'
+};
+
+exports.Prisma.tb_sip_quitacaoOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Nome_Cliente: 'Nome_Cliente',
+  Cliente: 'Cliente'
+};
+
+exports.Prisma.tb_sql_base_executadoOrderByRelevanceFieldEnum = {
+  xSQL: 'xSQL',
+  Status: 'Status'
+};
+
+exports.Prisma.tb_sql_objetosOrderByRelevanceFieldEnum = {
+  Formulario: 'Formulario',
+  Objeto: 'Objeto',
+  Larguras: 'Larguras',
+  Tabela: 'Tabela',
+  Exibe_ID: 'Exibe_ID',
+  Nome: 'Nome',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_sql_objetos_subOrderByRelevanceFieldEnum = {
+  Nome_Coluna: 'Nome_Coluna',
+  Visivel: 'Visivel',
+  Pesquisa: 'Pesquisa',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_sql_sincronizacaoOrderByRelevanceFieldEnum = {
+  Comando_SQL: 'Comando_SQL',
+  Mov_Saida: 'Mov_Saida',
+  HORA: 'HORA',
+  Liberado: 'Liberado'
+};
+
+exports.Prisma.tb_sql_sincronizacao_receberOrderByRelevanceFieldEnum = {
+  Comando_SQL: 'Comando_SQL',
+  Mov_Saida: 'Mov_Saida',
+  Liberado: 'Liberado'
+};
+
+exports.Prisma.tb_tipos_pagamentosOrderByRelevanceFieldEnum = {
+  Tipo_Pagamento: 'Tipo_Pagamento',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_transferencias_filiaisOrderByRelevanceFieldEnum = {
+  Status: 'Status',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_umovme_activityhistoryOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Consulta_Dados: 'Consulta_Dados',
+  Atividade: 'Atividade',
+  Arquivo: 'Arquivo',
+  Usuario: 'Usuario',
+  API: 'API'
+};
+
+exports.Prisma.tb_umovme_apiOrderByRelevanceFieldEnum = {
+  Token: 'Token',
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_umovme_indicadoresOrderByRelevanceFieldEnum = {
+  Informacao: 'Informacao',
+  Data_Hora: 'Data_Hora'
+};
+
+exports.Prisma.tb_umovme_invconfOrderByRelevanceFieldEnum = {
+  Codigo_Barras: 'Codigo_Barras',
+  Hora: 'Hora',
+  Usuario: 'Usuario'
+};
+
+exports.Prisma.tb_umovme_parametros_execucaoOrderByRelevanceFieldEnum = {
+  Com_Dash: 'Com_Dash',
+  Com_Entidades: 'Com_Entidades',
+  Com_Finalizadoras: 'Com_Finalizadoras',
+  Com_Produtos: 'Com_Produtos',
+  DHU: 'DHU',
+  Com_Precos: 'Com_Precos'
+};
+
+exports.Prisma.tb_umovme_pre_vendaOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Observacao: 'Observacao',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_umovme_precosOrderByRelevanceFieldEnum = {
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido',
+  uMovMe_Enviar: 'uMovMe_Enviar'
+};
+
+exports.Prisma.tb_umovme_usuariosOrderByRelevanceFieldEnum = {
+  Atividade_Criada: 'Atividade_Criada',
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_usuariosOrderByRelevanceFieldEnum = {
+  Login: 'Login',
+  Senha: 'Senha',
+  Visualiza_Log: 'Visualiza_Log',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Atua_Central: 'Atua_Central',
+  CPF: 'CPF',
+  Gerente: 'Gerente',
+  Supervisor: 'Supervisor',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  Importado_Mentor: 'Importado_Mentor',
+  SQLAut: 'SQLAut',
+  Master: 'Master',
+  uMovMe_Enviar: 'uMovMe_Enviar'
+};
+
+exports.Prisma.tb_usuarios_comunicacao_obrigatoriaOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Processado: 'Processado'
+};
+
+exports.Prisma.tb_usuarios_permissoesOrderByRelevanceFieldEnum = {
+  Descricao: 'Descricao',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_usuarios_permissoes_comandosOrderByRelevanceFieldEnum = {
+  Visivel: 'Visivel',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_usuarios_permissoes_comandos_subOrderByRelevanceFieldEnum = {
+  Visivel: 'Visivel',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_usuarios_permissoes_telasOrderByRelevanceFieldEnum = {
+  Formulario: 'Formulario',
+  liberado: 'liberado'
+};
+
+exports.Prisma.tb_usuarios_permissoes_telas_objetosOrderByRelevanceFieldEnum = {
+  Objeto: 'Objeto',
+  Legenda: 'Legenda',
+  Ativo: 'Ativo'
+};
+
+exports.Prisma.tb_usuarios_senhaOrderByRelevanceFieldEnum = {
+  Senha: 'Senha',
+  Importado_Mentor: 'Importado_Mentor',
+  Processado: 'Processado'
+};
+
+exports.Prisma.tb_vale_creditoOrderByRelevanceFieldEnum = {
+  Codigo_Vale: 'Codigo_Vale',
+  RegExcluido: 'RegExcluido',
+  Ativo: 'Ativo',
+  DHU: 'DHU',
+  Hora: 'Hora',
+  Observacao: 'Observacao'
+};
+
+exports.Prisma.tb_vale_credito_origemOrderByRelevanceFieldEnum = {
+  Mentor_Estoque: 'Mentor_Estoque',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_vale_credito_presenteOrderByRelevanceFieldEnum = {
+  Processado: 'Processado',
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_vale_credito_subOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Historico: 'Historico'
+};
+
+exports.Prisma.tb_vendasOrderByRelevanceFieldEnum = {
+  Hora_Inicio: 'Hora_Inicio',
+  Hora_Finalizacao: 'Hora_Finalizacao',
+  CPF_Consumidor: 'CPF_Consumidor',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  MODO: 'MODO',
+  Importado_Mentor: 'Importado_Mentor',
+  Importado_NFe: 'Importado_NFe',
+  Observacao: 'Observacao',
+  Movimenta_Estoque: 'Movimenta_Estoque',
+  Numero_Contrato: 'Numero_Contrato',
+  Numero_Requisicao: 'Numero_Requisicao',
+  Venda_Online: 'Venda_Online',
+  RegSysADM: 'RegSysADM'
+};
+
+exports.Prisma.tb_vendas_devolucaoOrderByRelevanceFieldEnum = {
+  Liberado_para_servidor: 'Liberado_para_servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  Importado_Mentor: 'Importado_Mentor'
+};
+
+exports.Prisma.tb_vendas_pagamentosOrderByRelevanceFieldEnum = {
+  tPag: 'tPag',
+  indPag_Opc: 'indPag_Opc',
+  xPag_Opc: 'xPag_Opc',
+  tpIntegra_Opc: 'tpIntegra_Opc',
+  CNPJ_Opc: 'CNPJ_Opc',
+  tBand_Opc: 'tBand_Opc',
+  cAut_Opc: 'cAut_Opc',
+  Finalizacao_Caixa: 'Finalizacao_Caixa',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  TEF_Ok: 'TEF_Ok',
+  TEF_Adquirente: 'TEF_Adquirente',
+  TEF_CNPJ: 'TEF_CNPJ',
+  TEF_Bandeira: 'TEF_Bandeira',
+  TEF_CD: 'TEF_CD',
+  Importado_Mentor: 'Importado_Mentor'
+};
+
+exports.Prisma.tb_vendas_pagamentos_preOrderByRelevanceFieldEnum = {
+  tPag: 'tPag',
+  indPag_Opc: 'indPag_Opc',
+  xPag_Opc: 'xPag_Opc',
+  tpIntegra_Opc: 'tpIntegra_Opc',
+  CNPJ_Opc: 'CNPJ_Opc',
+  tBand_Opc: 'tBand_Opc',
+  cAut_Opc: 'cAut_Opc',
+  Finalizacao_Caixa: 'Finalizacao_Caixa',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  TEF_Ok: 'TEF_Ok',
+  TEF_Adquirente: 'TEF_Adquirente',
+  TEF_CNPJ: 'TEF_CNPJ',
+  TEF_Bandeira: 'TEF_Bandeira',
+  TEF_CD: 'TEF_CD',
+  Importado_Mentor: 'Importado_Mentor'
+};
+
+exports.Prisma.tb_vendas_preOrderByRelevanceFieldEnum = {
+  Hora_Inicio: 'Hora_Inicio',
+  Hora_Finalizacao: 'Hora_Finalizacao',
+  CPF_Consumidor: 'CPF_Consumidor',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  MODO: 'MODO',
+  Importado_Mentor: 'Importado_Mentor',
+  Importado_NFe: 'Importado_NFe',
+  Observacao: 'Observacao',
+  Numero_Contrato: 'Numero_Contrato',
+  Numero_Requisicao: 'Numero_Requisicao'
+};
+
+exports.Prisma.tb_vendas_pre_comandasOrderByRelevanceFieldEnum = {
+  Numero_Comanda: 'Numero_Comanda',
+  Codigo_Barras: 'Codigo_Barras',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_vendas_produtosOrderByRelevanceFieldEnum = {
+  Codigo_Barras: 'Codigo_Barras',
+  Reservado: 'Reservado',
+  RegExcluido: 'RegExcluido',
+  Via_Oferta: 'Via_Oferta',
+  DHU: 'DHU',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  Proc_Estoque: 'Proc_Estoque',
+  Importado_Mentor: 'Importado_Mentor',
+  Mentor_Estoque: 'Mentor_Estoque',
+  Codigo_BarrasB: 'Codigo_BarrasB',
+  Importado_NFe: 'Importado_NFe',
+  Importado_NFe_Pre_Selecao: 'Importado_NFe_Pre_Selecao',
+  ID_NFe: 'ID_NFe',
+  Observacao: 'Observacao',
+  Descricao_Digitada: 'Descricao_Digitada',
+  Pgr_Fid: 'Pgr_Fid'
+};
+
+exports.Prisma.tb_vendas_produtos_auxiliarOrderByRelevanceFieldEnum = {
+  Info_01: 'Info_01',
+  Info_02: 'Info_02',
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_vendas_produtos_insumosOrderByRelevanceFieldEnum = {
+  Mentor_Estoque: 'Mentor_Estoque',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_vendas_produtos_insumos_preOrderByRelevanceFieldEnum = {
+  Mentor_Estoque: 'Mentor_Estoque',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_vendas_produtos_lotesOrderByRelevanceFieldEnum = {
+  Estoque_Processado: 'Estoque_Processado',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_vendas_produtos_lotes_preOrderByRelevanceFieldEnum = {
+  Estoque_Processado: 'Estoque_Processado',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_vendas_produtos_preOrderByRelevanceFieldEnum = {
+  Codigo_Barras: 'Codigo_Barras',
+  Reservado: 'Reservado',
+  RegExcluido: 'RegExcluido',
+  Via_Oferta: 'Via_Oferta',
+  DHU: 'DHU',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  Proc_Estoque: 'Proc_Estoque',
+  Importado_Mentor: 'Importado_Mentor',
+  Mentor_Estoque: 'Mentor_Estoque',
+  Codigo_BarrasB: 'Codigo_BarrasB',
+  Importado_NFe: 'Importado_NFe',
+  Importado_NFe_Pre_Selecao: 'Importado_NFe_Pre_Selecao',
+  ID_NFe: 'ID_NFe',
+  Observacao: 'Observacao',
+  Descricao_Digitada: 'Descricao_Digitada',
+  Pgr_Fid: 'Pgr_Fid'
+};
+
+exports.Prisma.tb_vendas_produtos_receitasOrderByRelevanceFieldEnum = {
+  Mentor_Estoque: 'Mentor_Estoque',
+  RegExcluido: 'RegExcluido',
+  Liberado_para_Servidor: 'Liberado_para_Servidor',
+  Importado_Servidor: 'Importado_Servidor',
+  Importado_Mentor: 'Importado_Mentor'
+};
+
+exports.Prisma.tb_vendas_tef_comprovanteOrderByRelevanceFieldEnum = {
+  Comprovante: 'Comprovante'
+};
+
+exports.Prisma.tb_vendedorOrderByRelevanceFieldEnum = {
+  Vendedor: 'Vendedor',
+  Tipo_Comissao: 'Tipo_Comissao',
+  Comissao_Conforme_Parcelas: 'Comissao_Conforme_Parcelas',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_vendedor_subOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Documento: 'Documento',
+  Historico: 'Historico',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU',
+  Tempo: 'Tempo',
+  Liberado: 'Liberado'
+};
+
+exports.Prisma.tb_vendedor_sub_pendenciaOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Documento: 'Documento',
+  Historico: 'Historico',
+  RegExcluido: 'RegExcluido',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_versao_windadosOrderByRelevanceFieldEnum = {
+  Codigo: 'Codigo',
+  DHU: 'DHU'
+};
+
+exports.Prisma.tb_whatsapp_mensagemOrderByRelevanceFieldEnum = {
+  Hora_Solicitacao: 'Hora_Solicitacao',
+  Telefone: 'Telefone',
+  Mensagem: 'Mensagem',
+  Enviado: 'Enviado',
+  RegExcluido: 'RegExcluido',
+  Arquivo: 'Arquivo'
+};
+
+exports.Prisma.tb_whatsapp_parametrosOrderByRelevanceFieldEnum = {
+  Texto: 'Texto',
+  Ativo: 'Ativo',
+  DHU: 'DHU',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_comandasOrderByRelevanceFieldEnum = {
+  Comanda: 'Comanda',
+  Comanda_Numero: 'Comanda_Numero',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_mesasOrderByRelevanceFieldEnum = {
+  Mesa: 'Mesa',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido'
 };
 
 

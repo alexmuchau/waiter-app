@@ -3,27 +3,6 @@ import type { OrderProps } from '../../../../utils/types';
 import { desktopClient, mobileClient } from '../../../prisma/prisma';
 import { format } from 'date-fns';
 
-// -1 = Ativo, 0 = Inativo
-async function swapStates(tableNumber: number, commandNumber: number, active: '0' | '-1') {
-    await desktopClient.tb_mesas.update({
-        where: {
-            Codigo: tableNumber
-        },
-        data: {
-            Ativo: active
-        }
-    })
-
-    await desktopClient.tb_comandas.update({
-        where: {
-            Codigo: commandNumber
-        },
-        data: {
-            Ativo: active
-        }
-    })
-}
-
 export async function createOrder(req: FastifyRequest, res: FastifyReply) {    
     const { bodyOrder } = req.body as { bodyOrder: OrderProps }
     

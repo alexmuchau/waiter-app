@@ -6,6 +6,11 @@ export async function getCommands(req: FastifyRequest, res: FastifyReply) {
     const commands: CommandItemProps[] = await mobileClient.command.findMany({
         include: {
             table: true
+        },
+        where: {
+            client: {
+                is: null
+            }
         }
     }).then((commands) => {
         return commands.map((command) => {

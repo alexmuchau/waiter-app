@@ -44,7 +44,7 @@ export function TitleProduct({ text, products, addProduct, disabled } : TitlePro
                 ? <div className="flex w-full gap-4 items-end">
                     <SelectItem
                         label={text}
-                        items={products.map((product) => ({ id: product.id, name: product.name + " - R$" + product.price }))}
+                        items={products.map((product) => ({ id: product.id, name: product.name + " - R$" + product.price.toFixed(2) }))}
                         onChange={onSelectionChange}
                     />
                     <Input

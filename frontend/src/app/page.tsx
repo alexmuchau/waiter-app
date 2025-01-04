@@ -7,31 +7,24 @@ import { User } from "../../../utils/types"
 import { CookiesProvider, useCookies } from "react-cookie";
 
 export default function Home() {
-  const [ user, setUser ] = useState<User | undefined>({
-    login: "admin",
-    password: "admin",
-    name: "Admin"
-  })
-  const [ checkingCookies, setCheckingCookies ] = useState<boolean>(false)
+  const [ user, setUser ] = useState<User | undefined>(undefined)
+  const [ checkingCookies, setCheckingCookies ] = useState<boolean>(true)
 
   const [ cookies, setCookie ] = useCookies(['user']);
 
   function setUserCredentialsCookie(user: User) {
-    setCheckingCookies(true)
-
-    // 7 days max age, in seconds
     setCookie("user", user, {
       maxAge: 60*60*24*7
     })
   }
 
-  // useEffect(() => {
-  //   if (cookies.user) {
-  //     setUser(cookies.user)
-  //   }
+  useEffect(() => {
+    if (cookies.user) {
+      setUser(cookies.user)
+    }
 
-  //   setCheckingCookies(false)
-  // }, [cookies])
+    setCheckingCookies(false)
+  }, [cookies])
 
   return (
     <CookiesProvider defaultSetOptions={{ path: '/' }}>

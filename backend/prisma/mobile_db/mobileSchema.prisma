@@ -3,8 +3,8 @@
 // npx prisma db pull --schema prisma/desktop_db/desktopSchema.prisma
 
 generator client {
-  provider = "prisma-client-js"
-  output   = "./generated"
+  provider      = "prisma-client-js"
+  output        = "./generated"
   binaryTargets = ["native", "windows"]
 }
 
@@ -14,9 +14,9 @@ datasource db {
 }
 
 model table {
-  tableNumber Int       @id
+  tableNumber      Int       @id
   tableDescription String
-  command     command[]
+  command          command[]
 }
 
 model command {
@@ -33,7 +33,7 @@ model client {
 }
 
 model product {
-  productId Int    @id @default(autoincrement())
+  productId Int      @id @default(autoincrement())
   name      String
   category  Category
   price     Float
@@ -42,4 +42,11 @@ model product {
 enum Category {
   CHOPP
   FOOD
+}
+
+model waiter {
+  waiterId Int    @id @default(autoincrement())
+  username String
+  password String
+  name     String
 }

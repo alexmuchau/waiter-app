@@ -43,3 +43,10 @@ enum Category {
   CHOPP
   FOOD
 }
+
+model waiter {
+  waiterId Int    @id @default(autoincrement())
+  username String
+  password String
+  name     String
+}

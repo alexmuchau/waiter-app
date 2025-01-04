@@ -10,8 +10,7 @@ export interface OrderItemProps {
 }
 
 export interface User {
-    login: string,
-    password: string,
+    id: string,
     name: string
 }
 
@@ -38,7 +37,8 @@ export interface ActiveTableItemProps {
 
 export interface ClientProps {
     id: string,
-    name: string
+    name: string,
+    command: CommandItemProps
 }
 
 export interface ProductListProps {

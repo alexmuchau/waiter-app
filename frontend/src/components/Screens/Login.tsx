@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { User } from "../../../../utils/types"
 import { Button } from "../Buttons/Button";
+import api from "@/api/api";
 
 interface LoginScreenProps {
     setCookie: (user: User) => void
@@ -12,16 +13,25 @@ interface LoginScreenProps {
 export function LoginScreen({ setCookie }: LoginScreenProps) {
     const [ username, setUsername ] = useState<string>('')
     const [ password, setPassword ] = useState<string>('')
+    const [ errorMessage, setErrorMessage ] = useState<string | undefined>(undefined)
 
-    function tryLogin() {
-        // BACKEND things
-        const user: User = {
-            login: username,
-            password: password,
-            name: 'Alex'
+    async function tryLogin() {
+        try {
+            if(!username || !password) {
+                setErrorMessage("Preencha todos os campos!!")
+                return
+            }
+
+            const res = await api.post('/waiters/login', {
+                username,
+                password
+            })
+
+            const { waiter } = res.data as { waiter: User }
+            setCookie(waiter)
+        } catch (error) {
+            setErrorMessage("Erro ao fazer login!!")
         }
-
-        setCookie(user)
     }
     
     return (
@@ -46,6 +56,10 @@ export function LoginScreen({ setCookie }: LoginScreenProps) {
                     onClick={tryLogin}
                     text="Login"
                 />
+
+                {
+                    errorMessage && <p className="text-red-500 text-xs">{errorMessage}</p>
+                }
             </div>
         </>
     )

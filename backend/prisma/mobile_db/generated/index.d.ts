@@ -33,6 +33,11 @@ export type client = $Result.DefaultSelection<Prisma.$clientPayload>
  * 
  */
 export type product = $Result.DefaultSelection<Prisma.$productPayload>
+/**
+ * Model waiter
+ * 
+ */
+export type waiter = $Result.DefaultSelection<Prisma.$waiterPayload>
 
 /**
  * Enums
@@ -213,6 +218,16 @@ export class PrismaClient<
     * ```
     */
   get product(): Prisma.productDelegate<ExtArgs>;
+
+  /**
+   * `prisma.waiter`: Exposes CRUD operations for the **waiter** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Waiters
+    * const waiters = await prisma.waiter.findMany()
+    * ```
+    */
+  get waiter(): Prisma.waiterDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -233,7 +248,6 @@ export namespace Prisma {
   export import PrismaClientRustPanicError = runtime.PrismaClientRustPanicError
   export import PrismaClientInitializationError = runtime.PrismaClientInitializationError
   export import PrismaClientValidationError = runtime.PrismaClientValidationError
-  export import NotFoundError = runtime.NotFoundError
 
   /**
    * Re-export of sql-template-tag
@@ -272,8 +286,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 5.22.0
-   * Query Engine version: 605197351a3c8bdd595af2d2a9bc3025bca48ea2
+   * Prisma Client JS version: 6.1.0
+   * Query Engine version: 11f085a2012c0f4778414c8db2651556ee0ef959
    */
   export type PrismaVersion = {
     client: string
@@ -657,7 +671,8 @@ export namespace Prisma {
     table: 'table',
     command: 'command',
     client: 'client',
-    product: 'product'
+    product: 'product',
+    waiter: 'waiter'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -673,7 +688,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "table" | "command" | "client" | "product"
+      modelProps: "table" | "command" | "client" | "product" | "waiter"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -954,6 +969,76 @@ export namespace Prisma {
           count: {
             args: Prisma.productCountArgs<ExtArgs>
             result: $Utils.Optional<ProductCountAggregateOutputType> | number
+          }
+        }
+      }
+      waiter: {
+        payload: Prisma.$waiterPayload<ExtArgs>
+        fields: Prisma.waiterFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.waiterFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$waiterPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.waiterFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$waiterPayload>
+          }
+          findFirst: {
+            args: Prisma.waiterFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$waiterPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.waiterFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$waiterPayload>
+          }
+          findMany: {
+            args: Prisma.waiterFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$waiterPayload>[]
+          }
+          create: {
+            args: Prisma.waiterCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$waiterPayload>
+          }
+          createMany: {
+            args: Prisma.waiterCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.waiterCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$waiterPayload>[]
+          }
+          delete: {
+            args: Prisma.waiterDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$waiterPayload>
+          }
+          update: {
+            args: Prisma.waiterUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$waiterPayload>
+          }
+          deleteMany: {
+            args: Prisma.waiterDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.waiterUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.waiterUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$waiterPayload>
+          }
+          aggregate: {
+            args: Prisma.WaiterAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateWaiter>
+          }
+          groupBy: {
+            args: Prisma.waiterGroupByArgs<ExtArgs>
+            result: $Utils.Optional<WaiterGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.waiterCountArgs<ExtArgs>
+            result: $Utils.Optional<WaiterCountAggregateOutputType> | number
           }
         }
       }
@@ -4899,6 +4984,906 @@ export namespace Prisma {
 
 
   /**
+   * Model waiter
+   */
+
+  export type AggregateWaiter = {
+    _count: WaiterCountAggregateOutputType | null
+    _avg: WaiterAvgAggregateOutputType | null
+    _sum: WaiterSumAggregateOutputType | null
+    _min: WaiterMinAggregateOutputType | null
+    _max: WaiterMaxAggregateOutputType | null
+  }
+
+  export type WaiterAvgAggregateOutputType = {
+    waiterId: number | null
+  }
+
+  export type WaiterSumAggregateOutputType = {
+    waiterId: number | null
+  }
+
+  export type WaiterMinAggregateOutputType = {
+    waiterId: number | null
+    username: string | null
+    password: string | null
+    name: string | null
+  }
+
+  export type WaiterMaxAggregateOutputType = {
+    waiterId: number | null
+    username: string | null
+    password: string | null
+    name: string | null
+  }
+
+  export type WaiterCountAggregateOutputType = {
+    waiterId: number
+    username: number
+    password: number
+    name: number
+    _all: number
+  }
+
+
+  export type WaiterAvgAggregateInputType = {
+    waiterId?: true
+  }
+
+  export type WaiterSumAggregateInputType = {
+    waiterId?: true
+  }
+
+  export type WaiterMinAggregateInputType = {
+    waiterId?: true
+    username?: true
+    password?: true
+    name?: true
+  }
+
+  export type WaiterMaxAggregateInputType = {
+    waiterId?: true
+    username?: true
+    password?: true
+    name?: true
+  }
+
+  export type WaiterCountAggregateInputType = {
+    waiterId?: true
+    username?: true
+    password?: true
+    name?: true
+    _all?: true
+  }
+
+  export type WaiterAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which waiter to aggregate.
+     */
+    where?: waiterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of waiters to fetch.
+     */
+    orderBy?: waiterOrderByWithRelationInput | waiterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: waiterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` waiters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` waiters.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned waiters
+    **/
+    _count?: true | WaiterCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: WaiterAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: WaiterSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: WaiterMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: WaiterMaxAggregateInputType
+  }
+
+  export type GetWaiterAggregateType<T extends WaiterAggregateArgs> = {
+        [P in keyof T & keyof AggregateWaiter]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateWaiter[P]>
+      : GetScalarType<T[P], AggregateWaiter[P]>
+  }
+
+
+
+
+  export type waiterGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: waiterWhereInput
+    orderBy?: waiterOrderByWithAggregationInput | waiterOrderByWithAggregationInput[]
+    by: WaiterScalarFieldEnum[] | WaiterScalarFieldEnum
+    having?: waiterScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: WaiterCountAggregateInputType | true
+    _avg?: WaiterAvgAggregateInputType
+    _sum?: WaiterSumAggregateInputType
+    _min?: WaiterMinAggregateInputType
+    _max?: WaiterMaxAggregateInputType
+  }
+
+  export type WaiterGroupByOutputType = {
+    waiterId: number
+    username: string
+    password: string
+    name: string
+    _count: WaiterCountAggregateOutputType | null
+    _avg: WaiterAvgAggregateOutputType | null
+    _sum: WaiterSumAggregateOutputType | null
+    _min: WaiterMinAggregateOutputType | null
+    _max: WaiterMaxAggregateOutputType | null
+  }
+
+  type GetWaiterGroupByPayload<T extends waiterGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<WaiterGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof WaiterGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], WaiterGroupByOutputType[P]>
+            : GetScalarType<T[P], WaiterGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type waiterSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    waiterId?: boolean
+    username?: boolean
+    password?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["waiter"]>
+
+  export type waiterSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    waiterId?: boolean
+    username?: boolean
+    password?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["waiter"]>
+
+  export type waiterSelectScalar = {
+    waiterId?: boolean
+    username?: boolean
+    password?: boolean
+    name?: boolean
+  }
+
+
+  export type $waiterPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "waiter"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      waiterId: number
+      username: string
+      password: string
+      name: string
+    }, ExtArgs["result"]["waiter"]>
+    composites: {}
+  }
+
+  type waiterGetPayload<S extends boolean | null | undefined | waiterDefaultArgs> = $Result.GetResult<Prisma.$waiterPayload, S>
+
+  type waiterCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<waiterFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: WaiterCountAggregateInputType | true
+    }
+
+  export interface waiterDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['waiter'], meta: { name: 'waiter' } }
+    /**
+     * Find zero or one Waiter that matches the filter.
+     * @param {waiterFindUniqueArgs} args - Arguments to find a Waiter
+     * @example
+     * // Get one Waiter
+     * const waiter = await prisma.waiter.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends waiterFindUniqueArgs>(args: SelectSubset<T, waiterFindUniqueArgs<ExtArgs>>): Prisma__waiterClient<$Result.GetResult<Prisma.$waiterPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Waiter that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {waiterFindUniqueOrThrowArgs} args - Arguments to find a Waiter
+     * @example
+     * // Get one Waiter
+     * const waiter = await prisma.waiter.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends waiterFindUniqueOrThrowArgs>(args: SelectSubset<T, waiterFindUniqueOrThrowArgs<ExtArgs>>): Prisma__waiterClient<$Result.GetResult<Prisma.$waiterPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Waiter that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {waiterFindFirstArgs} args - Arguments to find a Waiter
+     * @example
+     * // Get one Waiter
+     * const waiter = await prisma.waiter.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends waiterFindFirstArgs>(args?: SelectSubset<T, waiterFindFirstArgs<ExtArgs>>): Prisma__waiterClient<$Result.GetResult<Prisma.$waiterPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Waiter that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {waiterFindFirstOrThrowArgs} args - Arguments to find a Waiter
+     * @example
+     * // Get one Waiter
+     * const waiter = await prisma.waiter.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends waiterFindFirstOrThrowArgs>(args?: SelectSubset<T, waiterFindFirstOrThrowArgs<ExtArgs>>): Prisma__waiterClient<$Result.GetResult<Prisma.$waiterPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Waiters that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {waiterFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Waiters
+     * const waiters = await prisma.waiter.findMany()
+     * 
+     * // Get first 10 Waiters
+     * const waiters = await prisma.waiter.findMany({ take: 10 })
+     * 
+     * // Only select the `waiterId`
+     * const waiterWithWaiterIdOnly = await prisma.waiter.findMany({ select: { waiterId: true } })
+     * 
+     */
+    findMany<T extends waiterFindManyArgs>(args?: SelectSubset<T, waiterFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$waiterPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Waiter.
+     * @param {waiterCreateArgs} args - Arguments to create a Waiter.
+     * @example
+     * // Create one Waiter
+     * const Waiter = await prisma.waiter.create({
+     *   data: {
+     *     // ... data to create a Waiter
+     *   }
+     * })
+     * 
+     */
+    create<T extends waiterCreateArgs>(args: SelectSubset<T, waiterCreateArgs<ExtArgs>>): Prisma__waiterClient<$Result.GetResult<Prisma.$waiterPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Waiters.
+     * @param {waiterCreateManyArgs} args - Arguments to create many Waiters.
+     * @example
+     * // Create many Waiters
+     * const waiter = await prisma.waiter.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends waiterCreateManyArgs>(args?: SelectSubset<T, waiterCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Waiters and returns the data saved in the database.
+     * @param {waiterCreateManyAndReturnArgs} args - Arguments to create many Waiters.
+     * @example
+     * // Create many Waiters
+     * const waiter = await prisma.waiter.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Waiters and only return the `waiterId`
+     * const waiterWithWaiterIdOnly = await prisma.waiter.createManyAndReturn({ 
+     *   select: { waiterId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends waiterCreateManyAndReturnArgs>(args?: SelectSubset<T, waiterCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$waiterPayload<ExtArgs>, T, "createManyAndReturn">>
+
+    /**
+     * Delete a Waiter.
+     * @param {waiterDeleteArgs} args - Arguments to delete one Waiter.
+     * @example
+     * // Delete one Waiter
+     * const Waiter = await prisma.waiter.delete({
+     *   where: {
+     *     // ... filter to delete one Waiter
+     *   }
+     * })
+     * 
+     */
+    delete<T extends waiterDeleteArgs>(args: SelectSubset<T, waiterDeleteArgs<ExtArgs>>): Prisma__waiterClient<$Result.GetResult<Prisma.$waiterPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Waiter.
+     * @param {waiterUpdateArgs} args - Arguments to update one Waiter.
+     * @example
+     * // Update one Waiter
+     * const waiter = await prisma.waiter.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends waiterUpdateArgs>(args: SelectSubset<T, waiterUpdateArgs<ExtArgs>>): Prisma__waiterClient<$Result.GetResult<Prisma.$waiterPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Waiters.
+     * @param {waiterDeleteManyArgs} args - Arguments to filter Waiters to delete.
+     * @example
+     * // Delete a few Waiters
+     * const { count } = await prisma.waiter.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends waiterDeleteManyArgs>(args?: SelectSubset<T, waiterDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Waiters.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {waiterUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Waiters
+     * const waiter = await prisma.waiter.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends waiterUpdateManyArgs>(args: SelectSubset<T, waiterUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Waiter.
+     * @param {waiterUpsertArgs} args - Arguments to update or create a Waiter.
+     * @example
+     * // Update or create a Waiter
+     * const waiter = await prisma.waiter.upsert({
+     *   create: {
+     *     // ... data to create a Waiter
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Waiter we want to update
+     *   }
+     * })
+     */
+    upsert<T extends waiterUpsertArgs>(args: SelectSubset<T, waiterUpsertArgs<ExtArgs>>): Prisma__waiterClient<$Result.GetResult<Prisma.$waiterPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Waiters.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {waiterCountArgs} args - Arguments to filter Waiters to count.
+     * @example
+     * // Count the number of Waiters
+     * const count = await prisma.waiter.count({
+     *   where: {
+     *     // ... the filter for the Waiters we want to count
+     *   }
+     * })
+    **/
+    count<T extends waiterCountArgs>(
+      args?: Subset<T, waiterCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], WaiterCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Waiter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaiterAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends WaiterAggregateArgs>(args: Subset<T, WaiterAggregateArgs>): Prisma.PrismaPromise<GetWaiterAggregateType<T>>
+
+    /**
+     * Group by Waiter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {waiterGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends waiterGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: waiterGroupByArgs['orderBy'] }
+        : { orderBy?: waiterGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, waiterGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWaiterGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the waiter model
+   */
+  readonly fields: waiterFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for waiter.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__waiterClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the waiter model
+   */ 
+  interface waiterFieldRefs {
+    readonly waiterId: FieldRef<"waiter", 'Int'>
+    readonly username: FieldRef<"waiter", 'String'>
+    readonly password: FieldRef<"waiter", 'String'>
+    readonly name: FieldRef<"waiter", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * waiter findUnique
+   */
+  export type waiterFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the waiter
+     */
+    select?: waiterSelect<ExtArgs> | null
+    /**
+     * Filter, which waiter to fetch.
+     */
+    where: waiterWhereUniqueInput
+  }
+
+  /**
+   * waiter findUniqueOrThrow
+   */
+  export type waiterFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the waiter
+     */
+    select?: waiterSelect<ExtArgs> | null
+    /**
+     * Filter, which waiter to fetch.
+     */
+    where: waiterWhereUniqueInput
+  }
+
+  /**
+   * waiter findFirst
+   */
+  export type waiterFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the waiter
+     */
+    select?: waiterSelect<ExtArgs> | null
+    /**
+     * Filter, which waiter to fetch.
+     */
+    where?: waiterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of waiters to fetch.
+     */
+    orderBy?: waiterOrderByWithRelationInput | waiterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for waiters.
+     */
+    cursor?: waiterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` waiters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` waiters.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of waiters.
+     */
+    distinct?: WaiterScalarFieldEnum | WaiterScalarFieldEnum[]
+  }
+
+  /**
+   * waiter findFirstOrThrow
+   */
+  export type waiterFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the waiter
+     */
+    select?: waiterSelect<ExtArgs> | null
+    /**
+     * Filter, which waiter to fetch.
+     */
+    where?: waiterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of waiters to fetch.
+     */
+    orderBy?: waiterOrderByWithRelationInput | waiterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for waiters.
+     */
+    cursor?: waiterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` waiters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` waiters.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of waiters.
+     */
+    distinct?: WaiterScalarFieldEnum | WaiterScalarFieldEnum[]
+  }
+
+  /**
+   * waiter findMany
+   */
+  export type waiterFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the waiter
+     */
+    select?: waiterSelect<ExtArgs> | null
+    /**
+     * Filter, which waiters to fetch.
+     */
+    where?: waiterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of waiters to fetch.
+     */
+    orderBy?: waiterOrderByWithRelationInput | waiterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing waiters.
+     */
+    cursor?: waiterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` waiters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` waiters.
+     */
+    skip?: number
+    distinct?: WaiterScalarFieldEnum | WaiterScalarFieldEnum[]
+  }
+
+  /**
+   * waiter create
+   */
+  export type waiterCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the waiter
+     */
+    select?: waiterSelect<ExtArgs> | null
+    /**
+     * The data needed to create a waiter.
+     */
+    data: XOR<waiterCreateInput, waiterUncheckedCreateInput>
+  }
+
+  /**
+   * waiter createMany
+   */
+  export type waiterCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many waiters.
+     */
+    data: waiterCreateManyInput | waiterCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * waiter createManyAndReturn
+   */
+  export type waiterCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the waiter
+     */
+    select?: waiterSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * The data used to create many waiters.
+     */
+    data: waiterCreateManyInput | waiterCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * waiter update
+   */
+  export type waiterUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the waiter
+     */
+    select?: waiterSelect<ExtArgs> | null
+    /**
+     * The data needed to update a waiter.
+     */
+    data: XOR<waiterUpdateInput, waiterUncheckedUpdateInput>
+    /**
+     * Choose, which waiter to update.
+     */
+    where: waiterWhereUniqueInput
+  }
+
+  /**
+   * waiter updateMany
+   */
+  export type waiterUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update waiters.
+     */
+    data: XOR<waiterUpdateManyMutationInput, waiterUncheckedUpdateManyInput>
+    /**
+     * Filter which waiters to update
+     */
+    where?: waiterWhereInput
+  }
+
+  /**
+   * waiter upsert
+   */
+  export type waiterUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the waiter
+     */
+    select?: waiterSelect<ExtArgs> | null
+    /**
+     * The filter to search for the waiter to update in case it exists.
+     */
+    where: waiterWhereUniqueInput
+    /**
+     * In case the waiter found by the `where` argument doesn't exist, create a new waiter with this data.
+     */
+    create: XOR<waiterCreateInput, waiterUncheckedCreateInput>
+    /**
+     * In case the waiter was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<waiterUpdateInput, waiterUncheckedUpdateInput>
+  }
+
+  /**
+   * waiter delete
+   */
+  export type waiterDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the waiter
+     */
+    select?: waiterSelect<ExtArgs> | null
+    /**
+     * Filter which waiter to delete.
+     */
+    where: waiterWhereUniqueInput
+  }
+
+  /**
+   * waiter deleteMany
+   */
+  export type waiterDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which waiters to delete
+     */
+    where?: waiterWhereInput
+  }
+
+  /**
+   * waiter without action
+   */
+  export type waiterDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the waiter
+     */
+    select?: waiterSelect<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -4944,6 +5929,16 @@ export namespace Prisma {
   };
 
   export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
+
+
+  export const WaiterScalarFieldEnum: {
+    waiterId: 'waiterId',
+    username: 'username',
+    password: 'password',
+    name: 'name'
+  };
+
+  export type WaiterScalarFieldEnum = (typeof WaiterScalarFieldEnum)[keyof typeof WaiterScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -5082,8 +6077,8 @@ export namespace Prisma {
     NOT?: commandWhereInput | commandWhereInput[]
     commandNumber?: IntFilter<"command"> | number
     tableNumber?: IntNullableFilter<"command"> | number | null
-    table?: XOR<TableNullableRelationFilter, tableWhereInput> | null
-    client?: XOR<ClientNullableRelationFilter, clientWhereInput> | null
+    table?: XOR<TableNullableScalarRelationFilter, tableWhereInput> | null
+    client?: XOR<ClientNullableScalarRelationFilter, clientWhereInput> | null
   }
 
   export type commandOrderByWithRelationInput = {
@@ -5099,8 +6094,8 @@ export namespace Prisma {
     OR?: commandWhereInput[]
     NOT?: commandWhereInput | commandWhereInput[]
     tableNumber?: IntNullableFilter<"command"> | number | null
-    table?: XOR<TableNullableRelationFilter, tableWhereInput> | null
-    client?: XOR<ClientNullableRelationFilter, clientWhereInput> | null
+    table?: XOR<TableNullableScalarRelationFilter, tableWhereInput> | null
+    client?: XOR<ClientNullableScalarRelationFilter, clientWhereInput> | null
   }, "commandNumber">
 
   export type commandOrderByWithAggregationInput = {
@@ -5127,7 +6122,7 @@ export namespace Prisma {
     NOT?: clientWhereInput | clientWhereInput[]
     clientId?: IntFilter<"client"> | number
     name?: StringFilter<"client"> | string
-    command?: XOR<CommandRelationFilter, commandWhereInput>
+    command?: XOR<CommandScalarRelationFilter, commandWhereInput>
   }
 
   export type clientOrderByWithRelationInput = {
@@ -5142,7 +6137,7 @@ export namespace Prisma {
     OR?: clientWhereInput[]
     NOT?: clientWhereInput | clientWhereInput[]
     name?: StringFilter<"client"> | string
-    command?: XOR<CommandRelationFilter, commandWhereInput>
+    command?: XOR<CommandScalarRelationFilter, commandWhereInput>
   }, "clientId">
 
   export type clientOrderByWithAggregationInput = {
@@ -5210,6 +6205,55 @@ export namespace Prisma {
     name?: StringWithAggregatesFilter<"product"> | string
     category?: EnumCategoryWithAggregatesFilter<"product"> | $Enums.Category
     price?: FloatWithAggregatesFilter<"product"> | number
+  }
+
+  export type waiterWhereInput = {
+    AND?: waiterWhereInput | waiterWhereInput[]
+    OR?: waiterWhereInput[]
+    NOT?: waiterWhereInput | waiterWhereInput[]
+    waiterId?: IntFilter<"waiter"> | number
+    username?: StringFilter<"waiter"> | string
+    password?: StringFilter<"waiter"> | string
+    name?: StringFilter<"waiter"> | string
+  }
+
+  export type waiterOrderByWithRelationInput = {
+    waiterId?: SortOrder
+    username?: SortOrder
+    password?: SortOrder
+    name?: SortOrder
+  }
+
+  export type waiterWhereUniqueInput = Prisma.AtLeast<{
+    waiterId?: number
+    AND?: waiterWhereInput | waiterWhereInput[]
+    OR?: waiterWhereInput[]
+    NOT?: waiterWhereInput | waiterWhereInput[]
+    username?: StringFilter<"waiter"> | string
+    password?: StringFilter<"waiter"> | string
+    name?: StringFilter<"waiter"> | string
+  }, "waiterId">
+
+  export type waiterOrderByWithAggregationInput = {
+    waiterId?: SortOrder
+    username?: SortOrder
+    password?: SortOrder
+    name?: SortOrder
+    _count?: waiterCountOrderByAggregateInput
+    _avg?: waiterAvgOrderByAggregateInput
+    _max?: waiterMaxOrderByAggregateInput
+    _min?: waiterMinOrderByAggregateInput
+    _sum?: waiterSumOrderByAggregateInput
+  }
+
+  export type waiterScalarWhereWithAggregatesInput = {
+    AND?: waiterScalarWhereWithAggregatesInput | waiterScalarWhereWithAggregatesInput[]
+    OR?: waiterScalarWhereWithAggregatesInput[]
+    NOT?: waiterScalarWhereWithAggregatesInput | waiterScalarWhereWithAggregatesInput[]
+    waiterId?: IntWithAggregatesFilter<"waiter"> | number
+    username?: StringWithAggregatesFilter<"waiter"> | string
+    password?: StringWithAggregatesFilter<"waiter"> | string
+    name?: StringWithAggregatesFilter<"waiter"> | string
   }
 
   export type tableCreateInput = {
@@ -5369,6 +6413,52 @@ export namespace Prisma {
     price?: FloatFieldUpdateOperationsInput | number
   }
 
+  export type waiterCreateInput = {
+    username: string
+    password: string
+    name: string
+  }
+
+  export type waiterUncheckedCreateInput = {
+    waiterId?: number
+    username: string
+    password: string
+    name: string
+  }
+
+  export type waiterUpdateInput = {
+    username?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type waiterUncheckedUpdateInput = {
+    waiterId?: IntFieldUpdateOperationsInput | number
+    username?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type waiterCreateManyInput = {
+    waiterId?: number
+    username: string
+    password: string
+    name: string
+  }
+
+  export type waiterUpdateManyMutationInput = {
+    username?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type waiterUncheckedUpdateManyInput = {
+    waiterId?: IntFieldUpdateOperationsInput | number
+    username?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
   export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -5473,12 +6563,12 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type TableNullableRelationFilter = {
+  export type TableNullableScalarRelationFilter = {
     is?: tableWhereInput | null
     isNot?: tableWhereInput | null
   }
 
-  export type ClientNullableRelationFilter = {
+  export type ClientNullableScalarRelationFilter = {
     is?: clientWhereInput | null
     isNot?: clientWhereInput | null
   }
@@ -5529,7 +6619,7 @@ export namespace Prisma {
     _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
-  export type CommandRelationFilter = {
+  export type CommandScalarRelationFilter = {
     is?: commandWhereInput
     isNot?: commandWhereInput
   }
@@ -5630,6 +6720,35 @@ export namespace Prisma {
     _sum?: NestedFloatFilter<$PrismaModel>
     _min?: NestedFloatFilter<$PrismaModel>
     _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type waiterCountOrderByAggregateInput = {
+    waiterId?: SortOrder
+    username?: SortOrder
+    password?: SortOrder
+    name?: SortOrder
+  }
+
+  export type waiterAvgOrderByAggregateInput = {
+    waiterId?: SortOrder
+  }
+
+  export type waiterMaxOrderByAggregateInput = {
+    waiterId?: SortOrder
+    username?: SortOrder
+    password?: SortOrder
+    name?: SortOrder
+  }
+
+  export type waiterMinOrderByAggregateInput = {
+    waiterId?: SortOrder
+    username?: SortOrder
+    password?: SortOrder
+    name?: SortOrder
+  }
+
+  export type waiterSumOrderByAggregateInput = {
+    waiterId?: SortOrder
   }
 
   export type commandCreateNestedManyWithoutTableInput = {
@@ -6075,30 +7194,6 @@ export namespace Prisma {
   }
 
 
-
-  /**
-   * Aliases for legacy arg types
-   */
-    /**
-     * @deprecated Use TableCountOutputTypeDefaultArgs instead
-     */
-    export type TableCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = TableCountOutputTypeDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use tableDefaultArgs instead
-     */
-    export type tableArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = tableDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use commandDefaultArgs instead
-     */
-    export type commandArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = commandDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use clientDefaultArgs instead
-     */
-    export type clientArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = clientDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use productDefaultArgs instead
-     */
-    export type productArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = productDefaultArgs<ExtArgs>
 
   /**
    * Batch Payload for updateMany & deleteMany & createMany

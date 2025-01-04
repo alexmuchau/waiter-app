@@ -1,4 +1,4 @@
-import { XCircle } from "phosphor-react"
+import { ArrowRight, XCircle } from "phosphor-react"
 import { ProductListProps } from "../../../../../utils/types"
 
 export interface ProductItemProps {
@@ -20,17 +20,24 @@ export function ProductItem({ product, removeItem }: ComponentProductItemProps) 
         <div className="flex px-8 py-2 bg-accent-blur text-slate-900 justify-between items-center rounded-full">
             <div className="flex items-center gap-4 text-base">
                 <p>{product.name}</p>
-                <p className="font-bold text underline">R${product.price}</p>
+                <p className="font-bold text underline">R${product.price.toFixed(2)}</p>
                 <p className="font-bold text underline">{product.quantity}x</p>
             </div>
             {
-                removeItem &&
-                <XCircle
-                    size={20}
-                    onClick={() => removeItem(product.id)}
-                    weight="bold"
-                    className="cursor-pointer"
-                />
+                !!removeItem
+                    ? <XCircle
+                        size={20}
+                        onClick={() => removeItem(product.id)}
+                        weight="bold"
+                        className="cursor-pointer"
+                    />
+                    : <div className="flex items-center gap-2">
+                        <p>Total</p>
+                        <ArrowRight
+                            weight="bold"
+                        />
+                        <p className="font-bold text underline">R${(product.price * product.quantity).toFixed(2)}</p>
+                    </div>
             }
         </div>
     )

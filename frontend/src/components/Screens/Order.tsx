@@ -145,19 +145,15 @@ export function OrderScreen({
     }
 
     function selectClient(id: string, name: string) {
-        setClient({ id: id, name: name });
-        const command = commands.find((command) => command.tableNumber == id);
+        const client = clients.find((client) => client.id == id);
+        setClient(client);
+        setCommand(client?.command);
 
-        if (!command) return;
+        console.log(client)
 
-        setCommand(command);
-        setTable(
-            command.tableNumber
-                ? tables.find(
-                      (table) => table.tableNumber == command.tableNumber
-                  )
-                : undefined
-        );
+        if (!client?.command.tableNumber) return
+        
+        setTable(tables.find((table) => table.tableNumber == client?.command.tableNumber));
     }
 
     function removeClient() {
@@ -197,7 +193,7 @@ export function OrderScreen({
                     <IdentifyList
                         key="command"
                         listKey="command"
-                        disabled={client ? true : false}
+                        disabled={!!client}
                         selectItem={selectItem}
                         list={listCommands}
                         activeItem={command?.commandNumber}
@@ -207,7 +203,7 @@ export function OrderScreen({
                     <Title text="Mesa" />
                     <IdentifyList
                         key="table"
-                        disabled={command?.tableNumber ? true : false}
+                        disabled={!!command?.tableNumber}
                         listKey="table"
                         selectItem={selectItem}
                         list={tables}

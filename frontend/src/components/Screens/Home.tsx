@@ -13,14 +13,29 @@ interface HomeScreenProps {
 }
 
 export function HomeScreen({ user }: HomeScreenProps) {
+    const [ connectedBackend, setConnectedBackend ] = useState<boolean>(false)
     const [ activeTables, setActiveTables ] = useState<ActiveTableItemProps[]>([])
 
     useEffect(() => {
         async function getActiveTables() {
+            if (!(await checkConnection())) return
             const { tables } = (await api.get('/tables/active')).data as { tables: ActiveTableItemProps[] }
             setActiveTables(tables)
         }
 
+        async function checkConnection() {
+            try {
+                await api.get('/')
+                setConnectedBackend(true)
+            } catch (error) {
+                setConnectedBackend(false)
+                return false
+            }
+
+            return true
+        }
+
+        checkConnection()
         getActiveTables()
     })
     
@@ -31,7 +46,7 @@ export function HomeScreen({ user }: HomeScreenProps) {
                     user={user}
                 />
                 <ConnectionBackend
-                    status={true}
+                    status={connectedBackend}
                 />
             </header>
             <div className="flex flex-col gap-8"> 
@@ -42,6 +57,7 @@ export function HomeScreen({ user }: HomeScreenProps) {
             <footer>
                 <LinkButton
                     href='/order'
+                    disabled={!connectedBackend}
                 >
                     Construir Pedido
                 </LinkButton>
