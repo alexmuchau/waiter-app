@@ -12,6 +12,9 @@ export async function getProducts(req: FastifyRequest, res: FastifyReply) {
     const products: ProductListProps[] = await mobileClient.product.findMany({
         where: {
             category: category
+        },
+        orderBy: {
+            name: 'asc'
         }
     }).then((products) => {
         return products.map((product) => ({

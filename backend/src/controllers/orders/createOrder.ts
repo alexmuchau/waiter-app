@@ -5,6 +5,8 @@ import { format } from 'date-fns';
 
 export async function createOrder(req: FastifyRequest, res: FastifyReply) {    
     const { bodyOrder } = req.body as { bodyOrder: OrderProps }
+
+    console.log(bodyOrder)
     
     const products = await checkProducts(bodyOrder.items)
     if (!products) return res.status(400).send('Products error')
@@ -15,15 +17,15 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     const command = await checkCommand(bodyOrder.command, table.Codigo)
     if (!command) return res.status(400).send('Command error')
 
-    await createPreOrder(command.Codigo, bodyOrder.items, products)
+    await createPreOrder(command.Codigo, table.Codigo, bodyOrder.items, products)
     
     return res.send('Working!')
 }
 
 async function checkCommand(commandNumber: number, tableNumber: number) {
-    const command = await desktopClient.tb_comandas.findFirst({
+    const command = await desktopClient.tb_vendas_pre_comandas.findFirst({
         where: {
-            Comanda_Numero: commandNumber.toString()
+            Numero_Comanda: commandNumber.toString()
         }
     })
     
@@ -31,19 +33,17 @@ async function checkCommand(commandNumber: number, tableNumber: number) {
         return undefined
     }
 
-    if (command.ID_Mesa && command.ID_Mesa !== tableNumber) {
+    if (command.Id_Mesa && command.Id_Mesa !== tableNumber) {
         return undefined
     }
 
-    if (!command.ID_Mesa) {
-        // swapStates(tableNumber, command.Codigo, '-1')
-        
-        await desktopClient.tb_comandas.update({
+    if (!command.Id_Mesa) {
+        await desktopClient.tb_vendas_pre_comandas.update({
             where: {
                 Codigo: command.Codigo
             },
             data: {
-                ID_Mesa: tableNumber
+                Id_Mesa: tableNumber
             }
         })
     }
@@ -54,7 +54,7 @@ async function checkCommand(commandNumber: number, tableNumber: number) {
 async function checkTable(tableNumber: number) {
     const board = await desktopClient.tb_mesas.findFirst({
         where: {
-            Codigo: tableNumber
+            Mesa: tableNumber < 10 ? `0${tableNumber}` : tableNumber.toString()
         }
     })
     
@@ -75,13 +75,13 @@ async function checkProducts(items: OrderProps['items']) {
     })
     
     if (products.length !== items.length) {
-        return false
+        return undefined
     }
 
-    return true
+    return products
 }
 
-async function createPreOrder(commandNumber: number, products: OrderProps['items'], productsDB: any) {
+async function createPreOrder(commandNumber: number, tableId: number, products: OrderProps['items'], productsDB: any) {
     const orderCode = await desktopClient.tb_vendas_pre.findMany({
         orderBy: {
             Codigo: 'desc'
@@ -89,8 +89,10 @@ async function createPreOrder(commandNumber: number, products: OrderProps['items
         select: {
             Codigo: true
         },
-        take: 1
-    }).then(order => order[0].Codigo + 1)
+    }).then(order => {
+        const foundOrder = order.find(order => order.Codigo % 100 == 99);
+        return foundOrder ? foundOrder.Codigo + 100 : 99;
+    })
 
     const params = await desktopClient.tb_parametros_execucao.findFirst({
         select: {
@@ -103,10 +105,12 @@ async function createPreOrder(commandNumber: number, products: OrderProps['items
         }
     })
 
+    console.log(format(new Date(), 'yyyy-MM-dd'))
+
     const order = await desktopClient.tb_vendas_pre.create({
         data: {
             Codigo: orderCode,
-            Data_Movimento: format(new Date(), 'yyyy-MM-dd'),
+            Data_Movimento: (new Date()).toISOString(),
             Hora_Inicio: format(new Date(), 'HH:mm:ss'),
             Hora_Finalizacao: format(new Date(), 'HH:mm:ss'),
             Id_Cliente: 0,
@@ -127,34 +131,19 @@ async function createPreOrder(commandNumber: number, products: OrderProps['items
             Observacao: null,
             IDUser: params?.IDUser,
             IDEmpresa: params?.IDEmpresa,
+            Id_Comanda: commandNumber,
+            Id_Mesa: tableId
         }
     })
 
-    const orderCommandCode = await desktopClient.tb_vendas_pre_comandas.findFirst({
+    let orderItemCode = await desktopClient.tb_vendas_produtos_pre.findMany({
         select: {
             Codigo: true
-        },
-        take: 1
-    }).then(orderCommand => !orderCommand ? 0 : orderCommand.Codigo + 1)
-
-    const orderCommand = await desktopClient.tb_vendas_pre_comandas.create({
-        data: {
-            Codigo: orderCommandCode,
-            Numero_Comanda: commandNumber.toString(),
-            Codigo_Barras: '0',
-            Id_Pre_venda: orderCode,
-            IDUser: params?.IDUser,
-            IDEmpresa: params?.IDEmpresa,
-            RegExcluido: '0'
         }
+    }).then(orderItem => {
+        const foundOrderItem = orderItem.find(orderItem => orderItem.Codigo % 100 == 99);
+        return foundOrderItem ? foundOrderItem.Codigo + 100 : 99;
     })
-
-    let orderItemCode = await desktopClient.tb_vendas_produtos_pre.findFirst({
-        select: {
-            Codigo: true
-        },
-        take: 1
-    }).then(orderItem => orderItem!.Codigo + 1)
 
     const orderItems = await desktopClient.tb_vendas_produtos_pre.createMany({
         data: products.map(product => {
@@ -164,7 +153,7 @@ async function createPreOrder(commandNumber: number, products: OrderProps['items
             return {
                 Codigo: orderItemCode,
                 Item: 0,
-                Id_venda: orderCode,
+                Id_Venda: orderCode,
                 Id_Produto: product.id_product,
                 Codigo_Barras: '0',
                 Quantidade: product.quantity,
@@ -188,8 +177,8 @@ async function createPreOrder(commandNumber: number, products: OrderProps['items
                 Proc_Estoque: '0',
                 IDUser: params?.IDUser,
                 Preco_Digitado: 0,
-                Valor_FPag_Desconto: 0,
-                Valor_Fpag_Acrescimo: 0,
+                Valor_FPag_DEsconto: 0,
+                Valor_FPag_Acrescimo: 0,
             }
         })
     })

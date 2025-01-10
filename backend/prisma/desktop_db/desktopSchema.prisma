@@ -58,6 +58,7 @@ model tb_pessoas {
   Op_Fornecedor             String?   @db.VarChar(300)
   Op_Transportador          String?   @db.VarChar(300)
   Op_Prestador_Servico      String?   @db.VarChar(300)
+  Id_Comanda_Personalizada  Int?
 }
 
 model tb_produtos {
@@ -2160,23 +2161,25 @@ model tb_ocorrencias {
 }
 
 model tb_operacao_fiscal {
-  Codigo              Int     @id
-  Operacao            String? @db.VarChar(300)
-  Natureza            String? @db.VarChar(300)
-  ide_dest            String? @db.VarChar(300)
-  ide_finNFe          String? @db.VarChar(300)
-  ide_indPres         String? @db.VarChar(300)
-  ide_tpEmis          String? @db.VarChar(300)
-  ide_tpImp           String? @db.VarChar(300)
-  Entrada_Saida       String? @db.VarChar(300)
-  Modelo              String? @db.VarChar(300)
-  Exporta_PDV         String? @db.VarChar(300)
-  Ativo               String? @db.VarChar(300)
-  RegExcluido         String? @db.VarChar(300)
-  IDEmpresa           Int?
-  DHU                 String? @db.VarChar(300)
-  IDUser              Int?
-  Id_Operacao_Inverso Int?
+  Codigo                  Int     @id
+  Operacao                String? @db.VarChar(300)
+  Natureza                String? @db.VarChar(300)
+  ide_dest                String? @db.VarChar(300)
+  ide_finNFe              String? @db.VarChar(300)
+  ide_indPres             String? @db.VarChar(300)
+  ide_tpEmis              String? @db.VarChar(300)
+  ide_tpImp               String? @db.VarChar(300)
+  Entrada_Saida           String? @db.VarChar(300)
+  Modelo                  String? @db.VarChar(300)
+  Exporta_PDV             String? @db.VarChar(300)
+  Ativo                   String? @db.VarChar(300)
+  RegExcluido             String? @db.VarChar(300)
+  IDEmpresa               Int?
+  DHU                     String? @db.VarChar(300)
+  IDUser                  Int?
+  Id_Operacao_Inverso     Int?
+  Somente_CNPJ_Mesma_Raiz String? @db.VarChar(300)
+  Id_Operacao_Outra_Raiz  Int?
 }
 
 model tb_operacao_fiscal_raiz_cnpj {
@@ -2302,6 +2305,7 @@ model tb_parametros_execucao {
   Logo_Minha_Empresa                   String? @db.VarChar(300)
   Nome_Minha_Empresa                   String? @db.VarChar(300)
   Rodape_Minha_Empresa                 String? @db.VarChar(300)
+  Exibe_Info_Mesa                      String? @db.VarChar(300)
 }
 
 model tb_pdv_cadastro {
@@ -3620,6 +3624,8 @@ model tb_vendas_pre {
   Numero_Contrato         String?   @db.VarChar(300)
   Numero_Requisicao       String?   @db.VarChar(300)
   Data_Fiscal             DateTime? @db.Date
+  Id_Comanda              Int?
+  Id_Mesa                 Int?
 
   @@index([Id_Venda], map: "Idx_Id_Venda")
 }
@@ -3632,6 +3638,7 @@ model tb_vendas_pre_comandas {
   IDUser         Int?
   IDEmpresa      Int?
   RegExcluido    String? @db.VarChar(300)
+  Id_Mesa        Int?
 }
 
 model tb_vendas_produtos {
@@ -3919,4 +3926,5 @@ model tb_mesas {
   Ativo       String? @db.VarChar(300)
   RegExcluido String? @db.VarChar(300)
   IDEmpresa   Int?
+  IDUser      Int?
 }

@@ -5,8 +5,8 @@ const port = 8080;
 const app = createServer();
 
 // 26.73.84.222
-app.listen({ host: "192.168.0.35", port }, async (err: Error | null, address: string) => {
-  // await syncDBs()
+app.listen({ host: "26.73.84.222", port }, async (err: Error | null, address: string) => {
+  await syncDBs()
   console.log("Server Running!")
 
   if (err) {

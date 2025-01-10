@@ -6,7 +6,7 @@ ON tb_pessoas
 FOR EACH ROW
 BEGIN
     -- Define a URL do backend principal
-    DECLARE url VARCHAR(255) DEFAULT 'http://localhost:8080/syncDB/clients';
+    DECLARE url VARCHAR(255) DEFAULT 'http://26.73.84.222:8080/syncDB/clients';
 	DECLARE body JSON;
     DECLARE headers JSON;
     DECLARE res VARCHAR(255);
@@ -46,7 +46,7 @@ ON tb_pessoas
 FOR EACH ROW
 BEGIN
     -- Define a URL do backend principal
-    DECLARE url VARCHAR(255) DEFAULT 'http://localhost:8080/syncDB/clients';
+    DECLARE url VARCHAR(255) DEFAULT 'http://26.73.84.222:8080/syncDB/clients';
 	DECLARE body JSON;
     DECLARE headers JSON;
     DECLARE res VARCHAR(255);

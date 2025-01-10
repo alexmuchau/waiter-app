@@ -27,9 +27,9 @@ model command {
 }
 
 model client {
-  clientId Int     @id @default(autoincrement())
+  clientId Int      @id @default(autoincrement())
   name     String
-  command  command @relation(fields: [clientId], references: [commandNumber])
+  command  command? @relation(fields: [clientId], references: [commandNumber])
 }
 
 model product {

@@ -165,7 +165,8 @@ exports.Prisma.Tb_pessoasScalarFieldEnum = {
   Op_Cliente: 'Op_Cliente',
   Op_Fornecedor: 'Op_Fornecedor',
   Op_Transportador: 'Op_Transportador',
-  Op_Prestador_Servico: 'Op_Prestador_Servico'
+  Op_Prestador_Servico: 'Op_Prestador_Servico',
+  Id_Comanda_Personalizada: 'Id_Comanda_Personalizada'
 };
 
 exports.Prisma.Tb_produtosScalarFieldEnum = {
@@ -2257,7 +2258,9 @@ exports.Prisma.Tb_operacao_fiscalScalarFieldEnum = {
   IDEmpresa: 'IDEmpresa',
   DHU: 'DHU',
   IDUser: 'IDUser',
-  Id_Operacao_Inverso: 'Id_Operacao_Inverso'
+  Id_Operacao_Inverso: 'Id_Operacao_Inverso',
+  Somente_CNPJ_Mesma_Raiz: 'Somente_CNPJ_Mesma_Raiz',
+  Id_Operacao_Outra_Raiz: 'Id_Operacao_Outra_Raiz'
 };
 
 exports.Prisma.Tb_operacao_fiscal_raiz_cnpjScalarFieldEnum = {
@@ -2382,7 +2385,8 @@ exports.Prisma.Tb_parametros_execucaoScalarFieldEnum = {
   Filtro_Tipo_Pessoa: 'Filtro_Tipo_Pessoa',
   Logo_Minha_Empresa: 'Logo_Minha_Empresa',
   Nome_Minha_Empresa: 'Nome_Minha_Empresa',
-  Rodape_Minha_Empresa: 'Rodape_Minha_Empresa'
+  Rodape_Minha_Empresa: 'Rodape_Minha_Empresa',
+  Exibe_Info_Mesa: 'Exibe_Info_Mesa'
 };
 
 exports.Prisma.Tb_pdv_cadastroScalarFieldEnum = {
@@ -3675,7 +3679,9 @@ exports.Prisma.Tb_vendas_preScalarFieldEnum = {
   IdUser_Cancelamento: 'IdUser_Cancelamento',
   Numero_Contrato: 'Numero_Contrato',
   Numero_Requisicao: 'Numero_Requisicao',
-  Data_Fiscal: 'Data_Fiscal'
+  Data_Fiscal: 'Data_Fiscal',
+  Id_Comanda: 'Id_Comanda',
+  Id_Mesa: 'Id_Mesa'
 };
 
 exports.Prisma.Tb_vendas_pre_comandasScalarFieldEnum = {
@@ -3685,7 +3691,8 @@ exports.Prisma.Tb_vendas_pre_comandasScalarFieldEnum = {
   Id_Pre_venda: 'Id_Pre_venda',
   IDUser: 'IDUser',
   IDEmpresa: 'IDEmpresa',
-  RegExcluido: 'RegExcluido'
+  RegExcluido: 'RegExcluido',
+  Id_Mesa: 'Id_Mesa'
 };
 
 exports.Prisma.Tb_vendas_produtosScalarFieldEnum = {
@@ -3960,7 +3967,8 @@ exports.Prisma.Tb_mesasScalarFieldEnum = {
   Mesa: 'Mesa',
   Ativo: 'Ativo',
   RegExcluido: 'RegExcluido',
-  IDEmpresa: 'IDEmpresa'
+  IDEmpresa: 'IDEmpresa',
+  IDUser: 'IDUser'
 };
 
 exports.Prisma.SortOrder = {
@@ -5100,7 +5108,8 @@ exports.Prisma.tb_operacao_fiscalOrderByRelevanceFieldEnum = {
   Exporta_PDV: 'Exporta_PDV',
   Ativo: 'Ativo',
   RegExcluido: 'RegExcluido',
-  DHU: 'DHU'
+  DHU: 'DHU',
+  Somente_CNPJ_Mesma_Raiz: 'Somente_CNPJ_Mesma_Raiz'
 };
 
 exports.Prisma.tb_operacao_fiscal_raiz_cnpjOrderByRelevanceFieldEnum = {
@@ -5184,7 +5193,8 @@ exports.Prisma.tb_parametros_execucaoOrderByRelevanceFieldEnum = {
   Filtro_Tipo_Pessoa: 'Filtro_Tipo_Pessoa',
   Logo_Minha_Empresa: 'Logo_Minha_Empresa',
   Nome_Minha_Empresa: 'Nome_Minha_Empresa',
-  Rodape_Minha_Empresa: 'Rodape_Minha_Empresa'
+  Rodape_Minha_Empresa: 'Rodape_Minha_Empresa',
+  Exibe_Info_Mesa: 'Exibe_Info_Mesa'
 };
 
 exports.Prisma.tb_pdv_cadastroOrderByRelevanceFieldEnum = {
