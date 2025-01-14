@@ -1,6 +1,7 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
 import { mobileClient } from '../../../prisma/prisma';
 import { ActiveTableItemProps } from '../../../../utils/types';
+import { syncDBs } from '../../tools/syncDBs';
 
 export async function getActiveTables(req: FastifyRequest, res: FastifyReply) {
     const tables: ActiveTableItemProps[] = await mobileClient.table.findMany({
@@ -24,6 +25,8 @@ export async function getActiveTables(req: FastifyRequest, res: FastifyReply) {
                 clientName: command.client?.name
             }))
     })))
+
+    await syncDBs()
     
     return res.status(200).send({tables})
 }

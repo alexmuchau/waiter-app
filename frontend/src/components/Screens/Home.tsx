@@ -37,7 +37,7 @@ export function HomeScreen({ user }: HomeScreenProps) {
 
         checkConnection()
         getActiveTables()
-    })
+    }, [])
     
     return (
         <>

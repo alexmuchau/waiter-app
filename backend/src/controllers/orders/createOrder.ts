@@ -83,12 +83,12 @@ async function checkProducts(items: OrderProps['items']) {
 
 async function createPreOrder(commandNumber: number, tableId: number, products: OrderProps['items'], productsDB: any) {
     const orderCode = await desktopClient.tb_vendas_pre.findMany({
-        orderBy: {
-            Codigo: 'desc'
-        },
         select: {
             Codigo: true
         },
+        orderBy: {
+            Codigo: 'desc'
+        }
     }).then(order => {
         const foundOrder = order.find(order => order.Codigo % 100 == 99);
         return foundOrder ? foundOrder.Codigo + 100 : 99;
@@ -139,6 +139,9 @@ async function createPreOrder(commandNumber: number, tableId: number, products: 
     let orderItemCode = await desktopClient.tb_vendas_produtos_pre.findMany({
         select: {
             Codigo: true
+        },
+        orderBy: {
+            Codigo: 'desc'
         }
     }).then(orderItem => {
         const foundOrderItem = orderItem.find(orderItem => orderItem.Codigo % 100 == 99);

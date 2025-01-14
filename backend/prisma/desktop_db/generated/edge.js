@@ -31,12 +31,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 6.1.0
- * Query Engine version: 11f085a2012c0f4778414c8db2651556ee0ef959
+ * Prisma Client JS version: 6.2.1
+ * Query Engine version: 4123509d24aa4dede1e864b46351bf2790323b69
  */
 Prisma.prismaVersion = {
-  client: "6.1.0",
-  engine: "11f085a2012c0f4778414c8db2651556ee0ef959"
+  client: "6.2.1",
+  engine: "4123509d24aa4dede1e864b46351bf2790323b69"
 }
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -6197,7 +6197,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\srrpl\\Repositories\\waiter-app\\backend\\prisma\\desktop_db\\generated",
+      "value": "/home/alekkdev/Documents/waiter-app/backend/prisma/desktop_db/generated",
       "fromEnvVar": null
     },
     "config": {
@@ -6206,7 +6206,7 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "debian-openssl-3.0.x",
         "native": true
       },
       {
@@ -6215,7 +6215,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\srrpl\\Repositories\\waiter-app\\backend\\prisma\\desktop_db\\desktopSchema.prisma",
+    "sourceFilePath": "/home/alekkdev/Documents/waiter-app/backend/prisma/desktop_db/desktopSchema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -6223,8 +6223,8 @@ const config = {
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "..",
-  "clientVersion": "6.1.0",
-  "engineVersion": "11f085a2012c0f4778414c8db2651556ee0ef959",
+  "clientVersion": "6.2.1",
+  "engineVersion": "4123509d24aa4dede1e864b46351bf2790323b69",
   "datasourceNames": [
     "db"
   ],
