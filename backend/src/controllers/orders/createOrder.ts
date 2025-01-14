@@ -82,6 +82,10 @@ async function checkProducts(items: OrderProps['items']) {
 }
 
 async function createPreOrder(commandNumber: number, tableId: number, products: OrderProps['items'], productsDB: any) {
+    const mobileOrderIdentifier = 97
+
+    console.log(products)
+    
     const orderCode = await desktopClient.tb_vendas_pre.findMany({
         select: {
             Codigo: true
@@ -90,8 +94,8 @@ async function createPreOrder(commandNumber: number, tableId: number, products: 
             Codigo: 'desc'
         }
     }).then(order => {
-        const foundOrder = order.find(order => order.Codigo % 100 == 99);
-        return foundOrder ? foundOrder.Codigo + 100 : 99;
+        const foundOrder = order.find(order => order.Codigo % 100 == mobileOrderIdentifier);
+        return foundOrder ? foundOrder.Codigo + 100 : mobileOrderIdentifier;
     })
 
     const params = await desktopClient.tb_parametros_execucao.findFirst({
@@ -115,6 +119,8 @@ async function createPreOrder(commandNumber: number, tableId: number, products: 
             Hora_Finalizacao: format(new Date(), 'HH:mm:ss'),
             Id_Cliente: 0,
             Id_Operacao: params?.Id_Operacao_Movimento_Ret,
+            Peso_Bruto: 0,
+            Peso_Liquido: 0,
             Desconto_Venda: 0,
             Total_Produtos: 0,
             Total_Desconto: 0,
@@ -127,7 +133,7 @@ async function createPreOrder(commandNumber: number, tableId: number, products: 
             RegExcluido: '0',
             DHU: new Date().toString(),
             MODO: 'MODO PDV',
-            Tempo: parseInt(format(new Date().getTime() - new Date('2000-01-01T00:00:00').getTime(), 'hmmmss')),
+            Tempo: new Date().getTime() - new Date('2000-01-01T00:00:00').getTime(),
             Observacao: null,
             IDUser: params?.IDUser,
             IDEmpresa: params?.IDEmpresa,
@@ -144,13 +150,13 @@ async function createPreOrder(commandNumber: number, tableId: number, products: 
             Codigo: 'desc'
         }
     }).then(orderItem => {
-        const foundOrderItem = orderItem.find(orderItem => orderItem.Codigo % 100 == 99);
-        return foundOrderItem ? foundOrderItem.Codigo + 100 : 99;
+        const foundOrderItem = orderItem.find(orderItem => orderItem.Codigo % 100 == mobileOrderIdentifier);
+        return foundOrderItem ? foundOrderItem.Codigo + 100 : mobileOrderIdentifier;
     })
 
     const orderItems = await desktopClient.tb_vendas_produtos_pre.createMany({
         data: products.map(product => {
-            orderItemCode += 1
+            orderItemCode += 100
             const productDB = productsDB.find((productDB: any) => productDB.productId === product.id_product)
             
             return {
