@@ -84,8 +84,6 @@ async function checkProducts(items: OrderProps['items']) {
 async function createPreOrder(commandNumber: number, tableId: number, products: OrderProps['items'], productsDB: any) {
     const mobileOrderIdentifier = 97
 
-    console.log(products)
-    
     const orderCode = await desktopClient.tb_vendas_pre.findMany({
         select: {
             Codigo: true
@@ -109,9 +107,7 @@ async function createPreOrder(commandNumber: number, tableId: number, products: 
         }
     })
 
-    console.log(format(new Date(), 'yyyy-MM-dd'))
-
-    const order = await desktopClient.tb_vendas_pre.create({
+    await desktopClient.tb_vendas_pre.create({
         data: {
             Codigo: orderCode,
             Data_Movimento: (new Date()).toISOString(),
@@ -133,7 +129,7 @@ async function createPreOrder(commandNumber: number, tableId: number, products: 
             RegExcluido: '0',
             DHU: new Date().toString(),
             MODO: 'MODO PDV',
-            Tempo: new Date().getTime() - new Date('2000-01-01T00:00:00').getTime(),
+            Tempo: ((new Date().getTime() / 1000) - (new Date('2000-01-01T00:00:00').getTime() / 1000)),
             Observacao: null,
             IDUser: params?.IDUser,
             IDEmpresa: params?.IDEmpresa,
@@ -154,7 +150,7 @@ async function createPreOrder(commandNumber: number, tableId: number, products: 
         return foundOrderItem ? foundOrderItem.Codigo + 100 : mobileOrderIdentifier;
     })
 
-    const orderItems = await desktopClient.tb_vendas_produtos_pre.createMany({
+    await desktopClient.tb_vendas_produtos_pre.createMany({
         data: products.map(product => {
             orderItemCode += 100
             const productDB = productsDB.find((productDB: any) => productDB.productId === product.id_product)
@@ -166,8 +162,8 @@ async function createPreOrder(commandNumber: number, tableId: number, products: 
                 Id_Produto: product.id_product,
                 Codigo_Barras: '0',
                 Quantidade: product.quantity,
-                Unitario: parseFloat(productDB.Preco_Venda),
-                Total: parseFloat(productDB.Preco_Venda) * product.quantity,
+                Unitario: parseFloat(productDB.price),
+                Total: parseFloat(productDB.price) * product.quantity,
                 Acrescimo: 0,
                 Desconto: 0,
                 Frete: 0,
@@ -182,7 +178,7 @@ async function createPreOrder(commandNumber: number, tableId: number, products: 
                 Via_Oferta: '0',
                 DHU: format(new Date(), 'hhmmss'),
                 Desconto_Venda: 0,
-                Custo: parseFloat(productDB.Preco_Compra),
+                Custo: 0,
                 Proc_Estoque: '0',
                 IDUser: params?.IDUser,
                 Preco_Digitado: 0,

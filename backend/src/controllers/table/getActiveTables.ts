@@ -4,6 +4,8 @@ import { ActiveTableItemProps } from '../../../../utils/types';
 import { syncDBs } from '../../tools/syncDBs';
 
 export async function getActiveTables(req: FastifyRequest, res: FastifyReply) {
+    await syncDBs()
+    
     const tables: ActiveTableItemProps[] = await mobileClient.table.findMany({
         include: {
             command: {
@@ -25,8 +27,6 @@ export async function getActiveTables(req: FastifyRequest, res: FastifyReply) {
                 clientName: command.client?.name
             }))
     })))
-
-    await syncDBs()
     
     return res.status(200).send({tables})
 }
