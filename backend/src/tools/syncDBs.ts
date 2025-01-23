@@ -30,7 +30,6 @@ async function syncTables() {
     });
 
     await mobileClient.table.deleteMany();
-
     await mobileClient.table.createMany({
         data: desktopRecords.map(record => ({
             tableNumber: parseInt(record.Mesa!),

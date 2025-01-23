@@ -1,7 +1,7 @@
 'use client'
 
 import { SelectItem } from "@/components/SelectItem"
-import { Input } from "@nextui-org/input"
+import { Input } from "@heroui/input"
 import { Check, Plus } from "phosphor-react"
 import { Key, useState } from "react"
 import { ProductListProps } from "../../../../../utils/types"

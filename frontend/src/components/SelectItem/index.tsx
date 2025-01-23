@@ -1,6 +1,6 @@
 'use client'
 
-import { Autocomplete, AutocompleteItem } from "@nextui-org/autocomplete";
+import { Autocomplete, AutocompleteItem } from "@heroui/autocomplete";
 import { Key } from "react";
 
 interface ItemProps {

@@ -1,28 +1,25 @@
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { ArrowLeft } from 'phosphor-react'
 
 interface BackHeaderProps {
-    href: string,
-    query?: object,
-    replace?: boolean
-    onClick?: () => void
+    additionalOnClick?: () => void
 }
 
-export function BackHeader({ href, query, replace = true, onClick }: BackHeaderProps) {
+export function BackHeader({ additionalOnClick }: BackHeaderProps) {
+    const router = useRouter()
+
     return (
-        <Link
-            href={{
-                pathname: href,
-                query: JSON.stringify(query)
+        <button
+            onClick={() => {
+                router.back()
+                if (additionalOnClick) additionalOnClick()
             }}
-            replace={replace}
-            onClick={onClick}
         >
             <ArrowLeft
                 weight='bold'
                 size={20}
                 className='cursor-pointer'
             />
-        </Link> 
+        </button> 
     )
 }

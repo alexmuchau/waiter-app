@@ -1,46 +1,86 @@
 'use client'
 
-import { HomeScreen } from "@/components/Screens/Home";
-import { LoginScreen } from "@/components/Screens/Login";
 import { useEffect, useState } from "react";
-import { User } from "../../../utils/types" 
-import { CookiesProvider, useCookies } from "react-cookie";
+import { ActiveTableItemProps, User } from "../../../utils/types" 
+import { LinkButton } from "@/components/Buttons/LinkButton";
+import { ActiveTablesList } from "@/components/ActiveTablesList";
+import { ConnectionBackend } from "@/components/ConnectionBackend";
+import { LoggedUser } from "@/components/LoggedUser";
+import api from "@/api/api";
+import { useRouter } from "next/navigation";
+import { getCookie, getCookies, setCookie, deleteCookie, hasCookie } from 'cookies-next';
 
 export default function Home() {
-  const [ user, setUser ] = useState<User | undefined>(undefined)
-  const [ checkingCookies, setCheckingCookies ] = useState<boolean>(true)
-
-  const [ cookies, setCookie ] = useCookies(['user']);
-
-  function setUserCredentialsCookie(user: User) {
-    setCookie("user", user, {
-      maxAge: 60*60*24*7
-    })
-  }
-
-  useEffect(() => {
-    if (cookies.user) {
-      setUser(cookies.user)
-    }
-
-    setCheckingCookies(false)
-  }, [cookies])
-
-  return (
-    <CookiesProvider defaultSetOptions={{ path: '/' }}>
-      <main className="flex flex-col w-full h-full justify-start py-10 px-4 gap-8">
-        { 
-          checkingCookies === true
-          ? <h1>Checking Cookies</h1>
-          : !user
-          ? <LoginScreen
-              setCookie={setUserCredentialsCookie}
-            />
-          : <HomeScreen
-              user={user}
-            />
+    const router = useRouter()
+    
+    const [ user, setUser ] = useState<User | undefined>(undefined)
+    const [ checkingCookies, setCheckingCookies ] = useState<boolean>(true)
+    const [ connectedBackend, setConnectedBackend ] = useState<boolean>(false)
+    const [ activeTables, setActiveTables ] = useState<ActiveTableItemProps[]>([])
+    
+    useEffect(() => {
+        async function getActiveTables() {
+            if (!(await checkConnection())) return
+            const { tables } = (await api.get('/tables/active')).data as { tables: ActiveTableItemProps[] }
+            setActiveTables(tables)
         }
-      </main>
-    </CookiesProvider>
-  );
+        
+        async function checkConnection() {
+            try {
+                await api.get('/')
+                setConnectedBackend(true)
+            } catch (error) {
+                setConnectedBackend(false)
+                return false
+            }
+            
+            return true
+        }
+
+        const userCookie = getCookie('user');
+        
+        if (userCookie) {
+            setUser(JSON.parse(userCookie))
+            checkConnection()
+            getActiveTables()
+        } else {
+            router.push('/login')
+        }
+        
+        setCheckingCookies(false)
+    }, [router])
+    
+    return (
+        <main className="flex flex-col w-full h-full justify-start py-10 px-4 gap-8">
+        { 
+            checkingCookies === true
+                ? <h1>Checking Cookies</h1>
+                : !user
+                ? <h1>Sem usuário!</h1>
+                : <>
+                    <header className="flex gap-4">
+                        <LoggedUser
+                            user={user}
+                        />
+                        <ConnectionBackend
+                            status={connectedBackend}
+                        />
+                    </header>
+                    <div className="flex flex-col gap-8"> 
+                        <ActiveTablesList
+                            activeTables={activeTables}
+                        />
+                    </div>
+                    <footer>
+                        <LinkButton
+                            href='/order'
+                            disabled={!connectedBackend}
+                        >
+                            Construir Pedido
+                        </LinkButton>
+                    </footer>
+                </>
+        }
+        </main>
+    );
 }

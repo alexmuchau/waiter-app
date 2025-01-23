@@ -5,11 +5,12 @@ import { IdentifyCard } from "@/components/Identify/IdentifyCard";
 import { ProductList } from "@/components/ProductList";
 import { Title } from "@/components/Title/Default";
 import { useEffect, useState } from "react";
-import { useCookies } from "react-cookie";
 import { LinkButton } from "@/components/Buttons/LinkButton";
 import { OrderProps } from "../../../../../utils/types";
 import api from "@/api/api";
 import { ProductItemProps } from "@/components/ProductList/ProductItem";
+import { getCookie, getCookies, setCookie, deleteCookie, hasCookie } from 'cookies-next';
+import { useRouter } from "next/navigation";
 
 export default function Resume() {
     const [ client, setClient ] = useState<string | undefined>(undefined)
@@ -17,22 +18,25 @@ export default function Resume() {
     const [ command, setCommand ] = useState<string | undefined>(undefined)
     const [ chosenChopps, setChosenChopps ] = useState<ProductItemProps[]>([])
     const [ chosenFoods, setChosenFoods ] = useState<ProductItemProps[]>([])
-
-    const [ orderCookies, setOrderCookies, removeOrderCookies ] = useCookies(['orderCookies']);
+    const router = useRouter()
 
     useEffect(() => {
-        if (orderCookies.orderCookies) {
-            const { client, table, command, chosenChopps, chosenFoods } = orderCookies.orderCookies
+        const orderCookies = getCookie("orderCookies")
+
+        if (orderCookies) {
+            const { client, table, command, chosenChopps, chosenFoods } = JSON.parse(orderCookies)
             setClient(client)
             setTable(table)
             setCommand(command)
             setChosenChopps(chosenChopps)
             setChosenFoods(chosenFoods)
+        } else {
+            router.push('/order')
         }
     }, [])
 
     async function finishOrder() {
-        removeOrderCookies('orderCookies')
+        deleteCookie('orderCookies')
 
         const order: OrderProps = {
             board: +table!,
@@ -52,7 +56,7 @@ export default function Resume() {
 
     return (
         <main className="flex flex-col w-full justify-start py-10 px-4 gap-8">
-            <BackHeader href="/order" replace={true} />
+            <BackHeader/>
             <header className="flex">
                 <h1 className="text-3xl">resumo do pedido</h1>
             </header>
