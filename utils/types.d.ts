@@ -45,4 +45,8 @@ export interface ProductListProps {
     id: string,
     name: string,
     price: number
-  }
+}
+
+export interface CategoryGroupedProductProps {
+    [category: string]: ProductListProps[]
+}

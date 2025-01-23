@@ -6,7 +6,7 @@ import { ProductList } from "@/components/ProductList";
 import { Title } from "@/components/Title/Default";
 import { useEffect, useState } from "react";
 import { LinkButton } from "@/components/Buttons/LinkButton";
-import { OrderProps } from "../../../../../utils/types";
+import { CategoryGroupedProductProps, OrderProps } from "../../../../../utils/types";
 import api from "@/api/api";
 import { ProductItemProps } from "@/components/ProductList/ProductItem";
 import { getCookie, getCookies, setCookie, deleteCookie, hasCookie } from 'cookies-next';
@@ -16,20 +16,18 @@ export default function Resume() {
     const [ client, setClient ] = useState<string | undefined>(undefined)
     const [ table, setTable ] = useState<string | undefined>(undefined)
     const [ command, setCommand ] = useState<string | undefined>(undefined)
-    const [ chosenChopps, setChosenChopps ] = useState<ProductItemProps[]>([])
-    const [ chosenFoods, setChosenFoods ] = useState<ProductItemProps[]>([])
+    const [ chosenProducts, setChosenProducts ] = useState<{[category: string]: ProductItemProps[]}>({})
     const router = useRouter()
 
     useEffect(() => {
         const orderCookies = getCookie("orderCookies")
 
         if (orderCookies) {
-            const { client, table, command, chosenChopps, chosenFoods } = JSON.parse(orderCookies)
+            const { client, table, command, chosenProducts } = JSON.parse(orderCookies)
             setClient(client)
             setTable(table)
             setCommand(command)
-            setChosenChopps(chosenChopps)
-            setChosenFoods(chosenFoods)
+            setChosenProducts(chosenProducts)
         } else {
             router.push('/order')
         }
@@ -37,19 +35,16 @@ export default function Resume() {
 
     async function finishOrder() {
         deleteCookie('orderCookies')
+        const items = Object.keys(chosenProducts).flatMap((category) => chosenProducts[category].map((item) => ({
+            id_product: +item.id,
+            quantity: item.quantity
+        })))
 
         const order: OrderProps = {
             board: +table!,
             command: +command!,
-            items: chosenChopps.concat(chosenFoods).map(item => {
-                return {
-                    id_product: +item.id,
-                    quantity: item.quantity
-                }
-            })
+            items: items
         }
-
-        console.log({bodyOrder: order})
 
         await api.post('/order', {bodyOrder: order})
     }
@@ -65,20 +60,18 @@ export default function Resume() {
                     <IdentifyCard title="Mesa" number={table!} />
                     <IdentifyCard title="Comanda" number={command!} />
                 </div>
-                <div className="flex flex-col gap-8">
-                    <Title text="Chopp" />
-                    <ProductList
-                        key="chopp"
-                        listActiveProducts={chosenChopps}
-                    />
-                </div>
-                <div className="flex flex-col gap-8">
-                    <Title text="Porções" />
-                    <ProductList
-                        key="porcoes"
-                        listActiveProducts={chosenFoods}
-                    />
-                </div>
+                {
+                    Object.keys(chosenProducts).map((category) =>
+                        chosenProducts[category].length > 0 &&
+                        <div className="flex flex-col gap-8" key={category}>
+                            <Title text={category} />
+                            <ProductList
+                                key={category}
+                                listActiveProducts={chosenProducts[category]}
+                            />
+                        </div>
+                    )
+                }
             </div>
             <footer>
                 <LinkButton href='/' onClick={finishOrder}>

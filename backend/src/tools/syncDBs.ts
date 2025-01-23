@@ -83,18 +83,6 @@ export async function syncCommands() {
 
 export async function syncProducts() {
     console.log('Sincronizando produtos...');
-    const desktopCategories = await desktopClient.tb_produtos_setor.findMany({
-        select: {
-            Codigo: true,
-            Setor: true
-        },
-        where: {
-            Setor: {
-                in: ['TAP', 'PORCAO']
-            }
-        }
-    });
-
     
     const desktopRecords = await desktopClient.tb_produtos.findMany({
         select: {
@@ -105,18 +93,56 @@ export async function syncProducts() {
         },
         where: {
             Ativo: '-1',
+            Funcao: {
+                contains: '5600'
+            },
             Id_Setor: {
-                in: desktopCategories.map(category => category.Codigo)
+                not: null
             }
         }
     });
+    
+    const desktopCategories = await desktopClient.tb_produtos_setor.findMany({
+        select: {
+            Codigo: true,
+            Setor: true
+        },
+        where: {
+            Ativo: '-1',
+            Codigo: {
+                in: [...new Set(desktopRecords.map(record => record.Id_Setor!))]
+            }
+        }
+    });
+    
+    for (const category of desktopCategories) {
+        if (!category.Setor) continue
+        
+        const categoryName = category.Setor.split('-')[1].toLowerCase()
+        const categoryOrder = parseInt(category.Setor.split('-')[0])
+        
+        await mobileClient.category.upsert({
+            where: {
+                categoryId: category.Codigo
+            },
+            update: {
+                name: categoryName,
+                order: categoryOrder
+            },
+            create: {
+                categoryId: category.Codigo,
+                name: categoryName,
+                order: categoryOrder
+            }
+        })
+    }
     
     await mobileClient.product.deleteMany();
     await mobileClient.product.createMany({
         data: desktopRecords.map(record => ({
             productId: record.Codigo,
             name: record.Produto!,
-            category: desktopCategories.find(category => category.Codigo === record.Id_Setor)?.Setor == 'TAP' ? 'CHOPP' : "FOOD",
+            categoryId: record.Id_Setor!,
             price: record.Preco_Venda!
         }))
     })

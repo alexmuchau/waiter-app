@@ -33,15 +33,18 @@ model client {
 }
 
 model product {
-  productId Int      @id @default(autoincrement())
-  name      String
-  category  Category
-  price     Float
+  productId  Int      @id @default(autoincrement())
+  name       String
+  categoryId Int
+  category   category @relation(fields: [categoryId], references: [categoryId])
+  price      Float
 }
 
-enum Category {
-  CHOPP
-  FOOD
+model category {
+  categoryId Int       @id @default(autoincrement())
+  name       String
+  order      Int       @default(autoincrement())
+  products   product[]
 }
 
 model waiter {

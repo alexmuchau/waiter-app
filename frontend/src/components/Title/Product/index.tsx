@@ -10,19 +10,19 @@ import { ModalProductList } from "./ModalProductList"
 import { ProductItemProps } from "@/components/ProductList/ProductItem"
 
 interface TitleProductProps {
-    text: string,
+    category: string,
     products: ProductListProps[],
     chosenProducts: ProductItemProps[],
     disabled: boolean,
-    addProduct: (id: string, name:string, price: number, qtd: number) => void
+    addProduct: (id: string, name:string, price: number, category: string, quantity: number) => void
 }
 
-export function TitleProduct({ text, products, chosenProducts, addProduct, disabled } : TitleProductProps) {
+export function TitleProduct({ category, products, chosenProducts, addProduct, disabled } : TitleProductProps) {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     return (
-        <div className={`flex w-full items-center gap-3 ${!disabled ? "" : "opacity-20"}`}>
-            <h2 className="font-bold text-[2rem]">{text}</h2>
+        <div className={`flex w-full items-center gap-3 ${!disabled ? "" : "opacity-20"} justify-between`}>
+            <h2 className="flex min-w-max max-w-[50vw] font-bold text-[2rem] capitalize">{category}</h2>
             <div className="w-full bg-slate-900 h-[0.125rem]"/>
             {
                 !disabled
@@ -39,7 +39,7 @@ export function TitleProduct({ text, products, chosenProducts, addProduct, disab
                         products={products}
                         chosenProducts={chosenProducts}
                         addProduct={addProduct}
-                        itemTitle={text}
+                        category={category}
                     />
                 </> 
             }

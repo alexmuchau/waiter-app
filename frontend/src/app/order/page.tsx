@@ -8,6 +8,7 @@ import {
     TableItemProps,
     CommandItemProps,
     ProductListProps,
+    CategoryGroupedProductProps,
 } from "../../../../utils/types";
 
 import { ProductItemProps } from "@/components/ProductList/ProductItem";
@@ -27,26 +28,22 @@ export default function Order() {
     const [tables, setTables] = useState<TableItemProps[]>([]);
     const [commands, setCommands] = useState<CommandItemProps[]>([]);
     const [listCommands, setListCommands] = useState<Array<CommandItemProps & { disabled: boolean }>>([])
-    const [chopps, setChopps] = useState<ProductListProps[]>([]);
-    const [foods, setFoods] = useState<ProductListProps[]>([]);
+    const [products, setProducts] = useState<CategoryGroupedProductProps>({})
 
     const [client, setClient] = useState<ClientProps | undefined>(undefined);
     const [table, setTable] = useState<TableItemProps | undefined>(undefined);
-    const [command, setCommand] = useState<CommandItemProps | undefined>(
-        undefined
-    );
-    const [chosenChopps, setChosenChopps] = useState<ProductItemProps[]>([]);
-    const [chosenFoods, setChosenFoods] = useState<ProductItemProps[]>([]);
+    const [command, setCommand] = useState<CommandItemProps | undefined>(undefined);
+    const [chosenProducts, setChosenProducts] = useState<{[category: string]: ProductItemProps[]}>({});
 
     const [isListingDB, setIsListingDB] = useState<boolean>(true);
+    const [isReadyToResume, setIsReadyToResume] = useState<boolean>(false);
 
     function updateCookiesToResume() {
         setCookie("orderCookies", {
             client: client?.id,
             table: table?.tableNumber,
             command: command?.commandNumber,
-            chosenChopps: chosenChopps,
-            chosenFoods: chosenFoods,
+            chosenProducts: chosenProducts
         });
     }
 
@@ -79,15 +76,13 @@ export default function Order() {
                     ? tables.find((table) => table.tableNumber == command.tableNumber)
                     : tables.find((table) => table.tableNumber == order.table)
 
-                const chopps = order.chosenChopps;
-                const foods = order.chosenFoods;
+                const chosenProducts = order.chosenProducts;
 
                 setClient(client);
                 setTable(table);
                 setCommand(command);
                 createListCommands(commands, clients, table?.tableNumber)
-                setChosenChopps(!chopps ? [] : chopps);
-                setChosenFoods(!foods ? [] : foods);
+                setChosenProducts(chosenProducts)
             }
         }
 
@@ -103,29 +98,50 @@ export default function Order() {
                 tables: TableItemProps[];
             };
 
-            checkCookies(clients, commands, tables);
-
-            const chopps = (await api.get("/products?category=CHOPP")).data as {
-                products: ProductListProps[];
+            const { products } = (await api.get("/products")).data as {
+                products: CategoryGroupedProductProps;
             };
-
-            const foods = (await api.get("/products?category=FOOD")).data as {
-                products: ProductListProps[];
-            };
+            
+            let chosenProducts: {[category: string]: ProductItemProps[]} = {}
+            for(const key of Object.keys(products)) {
+                chosenProducts[key] = []
+            } 
 
             setClients(clients);
             setCommands(commands);
             createListCommands(commands, clients)
             setTables(tables);
-            setChopps(chopps.products);
-            setFoods(foods.products);
+            setProducts(products);
+            setChosenProducts(chosenProducts);
+            
+            checkCookies(clients, commands, tables);
 
             setIsListingDB(false);
         }
 
         fetchData();
     }, []);
-
+    
+    useEffect(() => {
+        if (!chosenProducts) return
+        
+        if (!client && (!table || !command)) {
+            setIsReadyToResume(false)
+            console.log("setIsReadyToResume(false)")
+            return
+        }
+        
+        for (const key of Object.keys(chosenProducts)) {
+            if (chosenProducts[key].length > 0) {
+                console.log("setIsReadyToResume(true)")
+                setIsReadyToResume(true)
+                return
+            }
+        }
+        
+        setIsReadyToResume(false)
+    }, [client, table, command, chosenProducts])
+    
     function selectItem(key: "table" | "command", value: string | undefined) {
         switch (key) {
             case "command": {
@@ -148,70 +164,44 @@ export default function Order() {
         }
     }
 
-    function removeChoppItem(id: string) {
-        setChosenChopps(chosenChopps!.filter((chopp) => chopp.id != id));
+    function removeProduct(id: string, category: string) {
+        const categoryChosenProducts = chosenProducts[category].filter((product) => product.id != id);
+        setChosenProducts((prevChosenProducts) => ({
+            ...prevChosenProducts,
+            [category]: categoryChosenProducts,
+        }));
     }
 
-    function removeFoodItem(id: string) {
-        setChosenFoods(chosenFoods!.filter((food) => food.id != id));
-    }
-
-    function addChoppItem(id: string, name: string, price: number, quantity: number) {
+    function addProduct(id: string, name: string, price: number, category: string, quantity: number) {
         let exists = false;
         
-        if (quantity == 0) return removeChoppItem(id);
+        if (quantity == 0) return removeProduct(id, category);
 
-        const newChopps = chosenChopps.map((chopp) => {
-            if (chopp.id == id) {
+        const categoryChosenProducts = chosenProducts[category].map((product) => {
+            if (product.id == id) {
                 exists = true;
                 return {
                     id: id,
-                    name: name,
-                    price: price,
+                    name: product.name,
+                    price: product.price,
                     quantity: quantity,
                 };
             }
 
             return {
-                id: chopp.id,
-                name: chopp.name,
-                price: chopp.price,
-                quantity: chopp.quantity,
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                quantity: product.quantity,
             };
         });
 
-        if (!exists) newChopps.push({ id: id, name: name, price: price, quantity: quantity });
+        if (!exists) categoryChosenProducts.push({ id: id, name: name, price: price, quantity: quantity });
 
-        setChosenChopps(newChopps);
-    }
-
-    function addFoodItem(id: string, name: string, price: number, quantity: number) {
-        let exists = false;
-        
-        if (quantity == 0) return removeFoodItem(id);
-
-        const newFoods = chosenFoods.map((food) => {
-            if (food.id == id) {
-                exists = true;
-                return {
-                    id: id,
-                    name: name,
-                    price: price,
-                    quantity: food.quantity + quantity,
-                };
-            }
-
-            return {
-                id: food.id,
-                name: food.name,
-                price: food.price,
-                quantity: food.quantity,
-            };
-        });
-
-        if (!exists) newFoods.push({ id: id, name: name, price: price, quantity: quantity });
-
-        setChosenFoods(newFoods);
+        setChosenProducts((prevChosenProducts) => ({
+            ...prevChosenProducts,
+            [category]: categoryChosenProducts,
+        }));
     }
 
     function selectClient(id: string) {
@@ -283,40 +273,30 @@ export default function Order() {
                                 activeItem={table?.tableNumber}
                             />
                         </div>
-                        <div className="flex flex-col gap-8">
-                            <TitleProduct
-                                text="Chopp"
-                                disabled={!table || !command}
-                                products={chopps}
-                                chosenProducts={chosenChopps}
-                                addProduct={addChoppItem}
-                            />
-                            <ProductList
-                                key="chopp"
-                                listActiveProducts={chosenChopps}
-                                removeItem={removeChoppItem}
-                            />
-                        </div>
-                        <div className="flex flex-col gap-8">
-                            <TitleProduct
-                                text="Porções"
-                                disabled={!table || !command}
-                                products={foods}
-                                addProduct={addFoodItem}
-                                chosenProducts={chosenFoods}
-                            />
-                            <ProductList
-                                key="porcoes"
-                                listActiveProducts={chosenFoods}
-                                removeItem={removeFoodItem}
-                            />
-                        </div>
+                        {
+                            Object.keys(products).map((category) => 
+                                <div className="flex flex-col gap-8" key={category}>
+                                    <TitleProduct
+                                        category={category}
+                                        disabled={!table || !command}
+                                        products={products[category]}
+                                        chosenProducts={chosenProducts[category]}
+                                        addProduct={addProduct}
+                                    />
+                                    <ProductList
+                                        key={category}
+                                        listActiveProducts={chosenProducts[category]}
+                                        removeItem={(id: string) => removeProduct(id, category)}
+                                    />
+                                </div>
+                            )
+                        }
                     </div>
                     <footer>
                         <LinkButton
                             href="/order/resume"
                             onClick={updateCookiesToResume}
-                            disabled={!table || !command || (!chosenChopps.length && !chosenFoods.length)}
+                            disabled={!isReadyToResume}
                         >
                             Resumo do Pedido
                         </LinkButton>
@@ -326,25 +306,3 @@ export default function Order() {
         </main>
     );
 }
-
-{/* <OrderScreen
-    removeOrderCookies={removeCookies}
-    client={client}
-    table={table}
-    command={command}
-    tables={tables}
-    commands={commands}
-    clients={clients}
-    chopps={chopps}
-    foods={foods}
-    chosenChopps={chosenChopps}
-    chosenFoods={chosenFoods}
-    setClient={setClient}
-    setTable={setTable}
-    setCommand={setCommand}
-    listCommands={listCommands}
-    setListCommands={(tableNumber?: string) => createListCommands(commands, clients, tableNumber)}
-    setChosenChopps={setChosenChopps}
-    setChosenFoods={setChosenFoods}
-    updateCookiesToResume={updateCookiesToResume}
-/> */}

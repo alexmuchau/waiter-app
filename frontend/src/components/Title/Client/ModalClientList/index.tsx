@@ -29,7 +29,7 @@ export function ModalClientList({ isOpen, onOpenChange, selectedClient, clients,
             size="md"
             scrollBehavior="inside"
             placement="center"
-            className="max-h-screen"
+            className="max-h-[80vh]"
         >
             <ModalContent className="py-4 px-2">
                 {

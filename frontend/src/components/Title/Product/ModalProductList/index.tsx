@@ -7,15 +7,15 @@ import { useState } from "react";
 import { MagnifyingGlass } from "phosphor-react";
 
 interface ModalProductListProps {
+    category: string;
     isOpen: boolean
     onOpenChange: () => void
     products: ProductListProps[]
     chosenProducts: ProductItemProps[]
-    addProduct: (id: string, name: string, price: number, qtd: number) => void;
-    itemTitle: string;
+    addProduct: (id: string, name:string, price: number, category: string, quantity: number) => void
 }
 
-export function ModalProductList({ isOpen, onOpenChange, products, chosenProducts, addProduct, itemTitle }: ModalProductListProps) {
+export function ModalProductList({ category, isOpen, onOpenChange, products, chosenProducts, addProduct }: ModalProductListProps) {
     const [ productsList, setProductsList ] = useState<ProductListProps[]>(products)
     
     function filterProducts(e: React.ChangeEvent<HTMLInputElement>) {
@@ -30,14 +30,14 @@ export function ModalProductList({ isOpen, onOpenChange, products, chosenProduct
             size="md"
             scrollBehavior="inside"
             placement="center"
-            className="max-h-screen"
+            className="max-h-[80vh]"
         >
             <ModalContent className="py-4 px-2">
                 {
                     (onClose) => (
                         <>
                             <ModalHeader className="flex justify-between gap-4">
-                                Adicionar {itemTitle}
+                                Adicionar {category}
                             </ModalHeader>
                             <ModalBody>
                                 <Input
@@ -60,13 +60,12 @@ export function ModalProductList({ isOpen, onOpenChange, products, chosenProduct
                                                 ...p,
                                                 quantity: chosenProduct ? chosenProduct.quantity : 0
                                             }
-                                            if (chosenProduct) console.log(product)
                                                 
                                             return (
                                                 <ModalProductItem
                                                     key={product.id}
                                                     product={product}
-                                                    addProduct={addProduct}
+                                                    addProduct={(quantity: number) => addProduct(product.id, product.name, product.price, category, quantity)}
                                                 />
                                             )
                                         })

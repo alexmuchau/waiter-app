@@ -5,7 +5,7 @@ import { ProductItemProps } from "@/components/ProductList/ProductItem";
 
 interface ModalProductItemProps {
     product: ProductItemProps
-    addProduct: (id: string, name: string, price: number, qtd: number) => void
+    addProduct: (quantity: number) => void
 }
 
 export function ModalProductItem({ product, addProduct }: ModalProductItemProps) {
@@ -14,14 +14,14 @@ export function ModalProductItem({ product, addProduct }: ModalProductItemProps)
     function minusQuantity() {
         if (quantity > 0) {
             setQuantity(quantity - 1)
-            addProduct(product.id, product.name, product.price, quantity - 1)
+            addProduct(quantity - 1)
         }
     }
 
     function plusQuantity() {
         if (quantity < 10) {
             setQuantity(quantity + 1)
-            addProduct(product.id, product.name, product.price, quantity + 1)
+            addProduct(quantity + 1)
         }
     }
 
