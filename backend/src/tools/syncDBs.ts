@@ -2,23 +2,18 @@ import { desktopClient, mobileClient } from "../../prisma/prisma";
 
 export async function syncDBs() {
     console.log('Iniciando sincronização de bancos...');
-
-    console.log('Sincronizando mesas...');
-    await syncTables()
-
-    console.log('Sincronizando comandas...');
+    
     await syncCommands()
 
-    console.log('Sincronizando clientes...');
     await syncClients()
-
-    console.log('Sincronizando produtos...');
+    
     await syncProducts()
 
     console.log('Sincronização concluída.');
 }
 
-async function syncTables() {
+export async function syncTables() {
+    console.log('Sincronizando mesas...');
     const desktopRecords = await desktopClient.tb_mesas.findMany({
         select: {
             Mesa: true,
@@ -38,7 +33,10 @@ async function syncTables() {
     })
 }
 
-async function syncCommands() {
+export async function syncCommands() {
+    await syncTables()
+    
+    console.log('Sincronizando comandas...');
     const tablesDesktop = await desktopClient.tb_mesas.findMany({
         select: {
             Codigo: true,
@@ -83,7 +81,8 @@ async function syncCommands() {
     })
 }
 
-async function syncProducts() {
+export async function syncProducts() {
+    console.log('Sincronizando produtos...');
     const desktopCategories = await desktopClient.tb_produtos_setor.findMany({
         select: {
             Codigo: true,
@@ -123,7 +122,8 @@ async function syncProducts() {
     })
 }
 
-async function syncClients() {
+export async function syncClients() {
+    console.log('Sincronizando clientes...');
     const commandsDesktops = await desktopClient.tb_vendas_pre_comandas.findMany({
         select: {
             Numero_Comanda: true

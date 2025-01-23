@@ -4,69 +4,44 @@ import { SelectItem } from "@/components/SelectItem"
 import { Check, Plus } from "phosphor-react"
 import { Key, useState } from "react"
 import { ClientProps } from "../../../../../utils/types"
+import { ModalClientList } from "./ModalClientList"
+import { useDisclosure } from "@heroui/react"
 
 interface TitleProductProps {
     text: string,
+    selectedClient: ClientProps | undefined,
     clients: ClientProps[],
     disabled: boolean,
-    selectClient: (id: string, name:string) => void,
+    selectClient: (id: string) => void,
 }
 
-export function TitleClient({ text, clients, disabled, selectClient } : TitleProductProps) {
-    const [ isSelecting, setIsSelecting ] = useState<boolean>(false)
-    const [ selectedClientId, setSelectedClientId ] = useState<string | undefined>(undefined)
-
-    function handleIsSelecting() {
-        setIsSelecting(!isSelecting)
-    }
-
-    function finishSelection() {
-        if (selectedClientId ) {
-            const clientName = clients.filter((p) => p.id == selectedClientId)[0].name
-            selectClient(selectedClientId, clientName)
-            handleIsSelecting()
-        }
-    }
-
-    function onSelectionChange(id: Key | null) {
-        if (id) setSelectedClientId(id.toString())
-    }
+export function TitleClient({ text, selectedClient, clients, disabled, selectClient } : TitleProductProps) {
+    const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     return (
         <>
-            { isSelecting
-                ? <div className="flex flex-col w-full gap-4 items-end">
-                    <SelectItem
-                        label={text}
-                        items={clients}
-                        onChange={onSelectionChange}
-                    />
-                    <button
-                        className="flex w-full cursor-pointer bg-accent rounded-full px-4 py-4"
-                        onClick={finishSelection}
-                    >
-                        <Check
-                            size={20}
-                            weight="bold"
-                        />
-                    </button>
-                </div>
-
-                : <div className={`flex w-full items-center gap-3`}>
-                    <h2 className="font-bold text-[2rem]">{text}</h2>
-                    <div className="w-full bg-slate-900 h-[0.125rem]"/>
-                        {
-                            !disabled
-                            ? <Plus
-                                onClick={handleIsSelecting}
+            <div className={`flex w-full items-center gap-3`}>
+                <h2 className="font-bold text-[2rem]">{text}</h2>
+                <div className="w-full bg-slate-900 h-[0.125rem]"/>
+                    {
+                        !disabled
+                        && <> 
+                            <Plus
+                                onClick={onOpen}
                                 size={40}
                                 weight="bold"
                                 className="cursor-pointer"
                             />
-                            : <></>
-                        }
-                </div>  
-            }
+                            <ModalClientList
+                                isOpen={isOpen}
+                                selectedClient={selectedClient}
+                                onOpenChange={onOpenChange}
+                                clients={clients}
+                                addClient={selectClient}
+                            />
+                        </>
+                    }
+            </div>
         </>
     )
 }

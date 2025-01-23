@@ -158,6 +158,8 @@ export default function Order() {
 
     function addChoppItem(id: string, name: string, price: number, quantity: number) {
         let exists = false;
+        
+        if (quantity == 0) return removeChoppItem(id);
 
         const newChopps = chosenChopps.map((chopp) => {
             if (chopp.id == id) {
@@ -166,7 +168,7 @@ export default function Order() {
                     id: id,
                     name: name,
                     price: price,
-                    quantity: chopp.quantity + quantity,
+                    quantity: quantity,
                 };
             }
 
@@ -185,6 +187,8 @@ export default function Order() {
 
     function addFoodItem(id: string, name: string, price: number, quantity: number) {
         let exists = false;
+        
+        if (quantity == 0) return removeFoodItem(id);
 
         const newFoods = chosenFoods.map((food) => {
             if (food.id == id) {
@@ -210,12 +214,11 @@ export default function Order() {
         setChosenFoods(newFoods);
     }
 
-    function selectClient(id: string, name: string) {
+    function selectClient(id: string) {
         const client = clients.find((client) => client.id == id);
+        
         setClient(client);
         setCommand(client?.command);
-
-        console.log(client)
 
         if (!client?.command.tableNumber) return
         
@@ -247,6 +250,7 @@ export default function Order() {
                                 selectClient={selectClient}
                                 disabled={!!client}
                                 clients={clients}
+                                selectedClient={client}
                             />
                             {client ? (
                                 <ClientItem
@@ -284,6 +288,7 @@ export default function Order() {
                                 text="Chopp"
                                 disabled={!table || !command}
                                 products={chopps}
+                                chosenProducts={chosenChopps}
                                 addProduct={addChoppItem}
                             />
                             <ProductList
@@ -298,6 +303,7 @@ export default function Order() {
                                 disabled={!table || !command}
                                 products={foods}
                                 addProduct={addFoodItem}
+                                chosenProducts={chosenFoods}
                             />
                             <ProductList
                                 key="porcoes"

@@ -30,6 +30,7 @@ const config: Config = {
         light: {
           colors: {
             primary: "#DDAA55",
+            secondary: "var(--background)"
           }
         },
         dark: {
