@@ -10,7 +10,6 @@ interface ActiveTablesListProps {
 export function ActiveTablesList({ activeTables }: ActiveTablesListProps) {
     return (
         <>
-            <HeaderTitle text="mesas ativas"/>
             <div className="flex flex-col gap-6">
                 {
                     activeTables.map((activeTable) => (

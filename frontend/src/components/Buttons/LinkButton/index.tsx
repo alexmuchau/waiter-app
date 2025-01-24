@@ -5,14 +5,16 @@ interface LinkButtonProps {
     children: React.ReactNode,
     href: string,
     query?: ParsedUrlQueryInput
+    fixed?: boolean
     onClick?: () => void
     disabled?: boolean
+    replace?: boolean
 }
 
-export function LinkButton({ children, href, query, onClick, disabled = false }: LinkButtonProps) {
+export function LinkButton({ fixed = true, replace = false, children, href, query, onClick, disabled = false }: LinkButtonProps) {
     return (
         <div
-            className="fixed bottom-0 left-0 flex w-full p-4 justify-center"
+            className={`${fixed && 'fixed'} bottom-0 left-0 flex w-full p-4 justify-center`}
         >
             <Link
                 className={`
@@ -26,6 +28,7 @@ export function LinkButton({ children, href, query, onClick, disabled = false }:
                 }}
                 aria-disabled={disabled}
                 tabIndex={disabled ? -1 : undefined}
+                replace={replace}
             >
                 {children}
             </Link>

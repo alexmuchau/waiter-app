@@ -74,7 +74,7 @@ export default function Resume() {
                 }
             </div>
             <footer>
-                <LinkButton href='/' onClick={finishOrder}>
+                <LinkButton href='/' onClick={finishOrder} replace={true}>
                     Finalizar Pedido
                 </LinkButton>
             </footer>

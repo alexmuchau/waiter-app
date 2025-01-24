@@ -9,6 +9,7 @@ import { LoggedUser } from "@/components/LoggedUser";
 import api from "@/api/api";
 import { useRouter } from "next/navigation";
 import { getCookie, getCookies, setCookie, deleteCookie, hasCookie } from 'cookies-next';
+import { HeaderTitle } from "@/components/Header/HeaderTitle";
 
 export default function Home() {
     const router = useRouter()
@@ -66,7 +67,17 @@ export default function Home() {
                             status={connectedBackend}
                         />
                     </header>
-                    <div className="flex flex-col gap-8"> 
+                    <div className="flex flex-col gap-8">
+                        <div className="flex w-full">
+                            <HeaderTitle text="mesas ativas"/>
+                            <LinkButton
+                                href="/tableUpdate"
+                                disabled={!connectedBackend}
+                                fixed={false}
+                            >
+                                Atualizar comanda mesa
+                            </LinkButton>
+                        </div>
                         <ActiveTablesList
                             activeTables={activeTables}
                         />

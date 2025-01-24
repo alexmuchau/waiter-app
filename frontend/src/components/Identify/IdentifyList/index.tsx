@@ -4,58 +4,32 @@ import { TableItemProps, CommandItemProps } from "../../../../../utils/types"
 import { IdentifyItem } from "./IdentifyItem"
 
 interface IdentifyListProps {
-    listKey: "table" | "command"
-    selectItem: (key: "table" | "command", value: string | undefined) => void,
-    disabled: boolean
+    setIdentify: (value: TableItemProps | CommandItemProps) => void,
     list: TableItemProps[] | Array<CommandItemProps & { disabled: boolean }>
     activeItem: string | undefined
+    disabled: boolean
 }
 
-export function IdentifyList({ listKey, selectItem, disabled, list, activeItem } : IdentifyListProps) {
-    function onClick(number: string) {
-        const value = number === activeItem ? undefined : number
-        
-        selectItem(listKey, value)
+export function IdentifyList({ setIdentify, disabled, list, activeItem }: IdentifyListProps) {
+    function selectItem(value: TableItemProps | CommandItemProps) {
+        setIdentify(value)
     }
-    
+
     return (
         <div className="flex gap-4 flex-wrap">
-          {
-            list.map((item) => {
-              if (listKey === "table") {
-                item = item as TableItemProps
-
-                return (
-                  <IdentifyItem
-                    key={item.tableNumber}
-                    id={item.tableNumber}
-                    text={item.tableDescription}
-                    onClick={onClick}
-                    isDisabled={disabled}
-                    isActive={item.tableNumber === activeItem}
-                    isUsing={item.isActive}
-                  />
+            {
+                list.map((item) => 
+                    <IdentifyItem
+                        key={"commandNumber" in item ? `C${item.commandNumber}` : `T${item.tableNumber}`}
+                        id={"commandNumber" in item ? item.commandNumber : item.tableNumber}
+                        text={"commandNumber" in item ? item.commandNumber : item.tableDescription}
+                        isActive={"commandNumber" in item ? item.commandNumber === activeItem : item.tableNumber === activeItem}
+                        isDisabled={disabled === true ? true : "disabled" in item ? item.disabled : false}
+                        isUsing={item.isActive}
+                        onClick={() => selectItem(item)}
+                    />
                 )
-              }
-
-              if (listKey === "command") {
-                item = item as CommandItemProps & { disabled: boolean }
-
-                return (
-                  <IdentifyItem
-                    key={item.commandNumber}
-                    id={item.commandNumber}
-                    text={item.commandNumber}
-                    onClick={onClick}
-                    isDisabled={disabled === true ? true : item.disabled}
-                    isActive={item.commandNumber === activeItem}
-                    isUsing={item.isActive}
-                  />
-                )
-              }
-
-            })
-          }
+            }
         </div>
     )
 }
