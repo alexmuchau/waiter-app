@@ -18,10 +18,10 @@ interface ComponentProductItemProps {
 export function ProductItem({ product, removeItem }: ComponentProductItemProps) {
     return (
         <div className={`
-            flex ${!removeItem && 'flex-col'} px-8 py-2 bg-accent-blur text-slate-900 justify-between items-start rounded-full
+            flex ${!removeItem && 'flex-col'} px-8 py-2 bg-accent-blur text-slate-900 justify-between items-center rounded-full
         `}>
+            <p className="w-1/2">{product.name}</p>
             <div className="flex items-center gap-4 text-base">
-                <p>{product.name}</p>
                 <p className="font-bold text underline">{product.quantity}x</p>
                 <p className="font-bold text underline">R${product.price.toFixed(2)}</p>
             </div>

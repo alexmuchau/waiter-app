@@ -59,14 +59,18 @@ export default function Order() {
         });
     }
 
-    function createListCommands(commands: CommandItemProps[], tableNumber?: string) {
+    function createListCommands(commands: CommandItemProps[], table?: TableItemProps, commandNumber?: string) {
         setListCommands(
             commands.map((command) => ({
                 ...command,
                 disabled:
-                    !!tableNumber &&
-                    !!command.tableNumber &&
-                    command.tableNumber != tableNumber,
+                    (
+                        !!commandNumber &&
+                        command.commandNumber !== commandNumber
+                    ) || (
+                        !!table && table.isActive &&
+                        command.tableNumber !== table.tableNumber
+                    )
             })),
         );
     }
@@ -76,9 +80,9 @@ export default function Order() {
             clients: ClientProps[],
             commands: CommandItemProps[],
             tables: TableItemProps[],
+            chosenProducts: { [category: string]: ProductItemProps[] }
         ) {
             const orderCookies = getCookie("orderCookies");
-            console.log(orderCookies);
 
             if (orderCookies) {
                 const order = JSON.parse(orderCookies);
@@ -99,11 +103,10 @@ export default function Order() {
                       )
                     : tables.find((table) => table.tableNumber == order.table);
                     
-                    
                 if (order.chosenProducts) {
                     let newChosenProducts = chosenProducts
                     for (const key of Object.keys(order.chosenProducts)) {
-                        newChosenProducts[key].concat(order.chosenProducts[key])
+                        newChosenProducts[key] = newChosenProducts[key].concat(order.chosenProducts[key])
                     }
                     
                     setChosenProducts(newChosenProducts)
@@ -113,7 +116,7 @@ export default function Order() {
                 setTable(table);
                 setCommand(command);
                 
-                createListCommands(commands, table?.tableNumber)
+                createListCommands(commands, table)
             }
         }
 
@@ -144,7 +147,7 @@ export default function Order() {
             setChosenProducts(chosenProducts);
 
             createListCommands(commands)
-            checkCookies(clients, commands, tables);
+            checkCookies(clients, commands, tables, chosenProducts);
 
             setIsListingDB(false);
         }
@@ -157,13 +160,11 @@ export default function Order() {
 
         if (!client && (!table || !command)) {
             setIsReadyToResume(false);
-            console.log("setIsReadyToResume(false)");
             return;
         }
 
         for (const key of Object.keys(chosenProducts)) {
             if (chosenProducts[key].length > 0) {
-                console.log("setIsReadyToResume(true)");
                 setIsReadyToResume(true);
                 return;
             }
@@ -229,18 +230,26 @@ export default function Order() {
     }
     
     function selectCommand(value: CommandItemProps) {
-        if (value === command) {
+        if (value.commandNumber === command?.commandNumber) {
             setCommand(undefined);
+            
             setTable(undefined)
+            createListCommands(commands, undefined, undefined)
             return
         }
+        
         setCommand(value)
-        setTable(value.tableNumber ? tables.find((table) => table.tableNumber == value.tableNumber) : undefined)
+        
+        const newTable = value.tableNumber ? tables.find((table) => table.tableNumber == value.tableNumber) : undefined
+        if (!!newTable) setTable(newTable)
+        createListCommands(commands, newTable, value.commandNumber)
     }
     
-    function selectTable(value: TableItemProps) {
-        setTable(value === table ? undefined : value)
-        createListCommands(commands, value.tableNumber)
+    function selectTable(value?: TableItemProps) {
+        const newTable = value === table ? undefined : value
+        
+        setTable(newTable)
+        if(!command) createListCommands(commands, newTable)
     }
 
     function selectClient(id: string) {
