@@ -3,47 +3,34 @@ import { mobileClient } from "../../../prisma/prisma";
 import { CommandItemProps } from "../../../../utils/types";
 
 export async function getCommands(req: FastifyRequest, res: FastifyReply) {
-    const { onlyActive } = req.query as { onlyActive: boolean };
+    const { onlyActive, useClientName } = req.query as { onlyActive: boolean, useClientName: boolean };
 
-    if (!onlyActive) {
-        var commands: CommandItemProps[] = await mobileClient.command
-            .findMany({
-                include: {
-                    table: true,
+    const commands: CommandItemProps[] = await mobileClient.command
+        .findMany({
+            include: {
+                table: true,
+                client: true,
+            },
+            where: !!onlyActive ? {
+                tableNumber: {
+                    not: null,
                 },
-                where: {
-                    client: {
-                        is: null,
-                    },
-                },
-            })
-            .then((commands) => {
-                return commands.map((command) => ({
-                    commandNumber: command.commandNumber.toString(),
-                    tableNumber: command.tableNumber?.toString(),
-                    isActive: command.tableNumber ? true : false,
-                }));
-            });
-    } else {
-        var commands: CommandItemProps[] = await mobileClient.command
-            .findMany({
-                include: {
-                    table: true,
-                },
-                where: {
-                    tableNumber: {
-                        not: null,
-                    },
-                },
-            })
-            .then((commands) => {
-                return commands.map((command) => ({
-                    commandNumber: command.commandNumber.toString(),
-                    tableNumber: command.tableNumber?.toString(),
-                    isActive: command.tableNumber ? true : false,
-                }));
-            });
-    }
+            } : undefined,
+        })
+        .then((commands) => 
+            commands.map((command) => ({
+                id: 'C' + command.commandNumber.toString(),
+                description: !!command.client && useClientName ? command.client.name : command.commandNumber.toString(),
+                commandNumber: command.commandNumber.toString(),
+                table: !!command.table ? {
+                    id: command.table.tableNumber.toString(),
+                    description: command.table.tableDescription.toString(),
+                    tableNumber: command.table.tableNumber.toString(),
+                    isActive: true,
+                } : undefined,
+                isActive: command.tableNumber ? true : false,
+            }))
+        );
 
     return res.send({ commands });
 }

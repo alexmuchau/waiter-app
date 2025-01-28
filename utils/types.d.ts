@@ -15,15 +15,24 @@ export interface User {
 }
 
 export interface CommandItemProps {
+    id: string,
+    description: string,
     commandNumber: string,
-    tableNumber?: string,
     isActive: boolean,
+    table?: TableItemProps,
 }
 
 export interface TableItemProps {
+    id: string,
+    description: string,
     tableNumber: string,
-    tableDescription: string,
     isActive: boolean
+}
+
+export interface ClientProps {
+    id: string,
+    name: string,
+    command: CommandItemProps
 }
 
 export interface ActiveTableItemProps {
@@ -35,11 +44,6 @@ export interface ActiveTableItemProps {
     }[]
 }
 
-export interface ClientProps {
-    id: string,
-    name: string,
-    command: CommandItemProps
-}
 
 export interface ProductListProps {
     id: string,

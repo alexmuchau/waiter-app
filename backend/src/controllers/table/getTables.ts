@@ -8,13 +8,12 @@ export async function getTables(req: FastifyRequest, res: FastifyReply) {
             command: true
         }
     }).then((tables) => {
-        return tables.map((table) => {
-            return {
-                tableNumber: table.tableNumber.toString(),
-                tableDescription: table.tableDescription,
-                isActive: table.command.length > 0 ? true : false
-            }
-        }
+        return tables.map((table) => ({
+            id: 'T' + table.tableNumber.toString(),
+            description: table.tableDescription,
+            tableNumber: table.tableNumber.toString(),
+            isActive: table.command.length > 0 ? true : false
+        })
     )})
 
     return res.send({tables})

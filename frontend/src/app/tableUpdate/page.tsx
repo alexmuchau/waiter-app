@@ -25,7 +25,6 @@ import { LinkButton } from "@/components/Buttons/LinkButton";
 export default function TableUpdate() {
     const [tables, setTables] = useState<TableItemProps[]>([]);
     const [commands, setCommands] = useState<CommandItemProps[]>([]);
-    const [clients, setClients] = useState<ClientProps[]>([]);
     const [listCommands, setListCommands] = useState<
         Array<CommandItemProps & { disabled: boolean }>
     >([]);
@@ -37,10 +36,7 @@ export default function TableUpdate() {
     const [newTable, setNewTable] = useState<TableItemProps | undefined>(
         undefined,
     );
-    const [command, setCommand] = useState<CommandItemProps | undefined>(
-        undefined,
-    );
-    const [client, setClient] = useState<ClientProps | undefined>(undefined);
+    const [activeCommands, setActiveCommands] = useState<CommandItemProps[]>([]);
 
     const [isListingDB, setIsListingDB] = useState<boolean>(true);
 
@@ -49,38 +45,22 @@ export default function TableUpdate() {
     async function submitUpdate() {
         try {
             await api.put('/commands', {
-                commandNumber: command?.commandNumber,
+                commandNumbers: activeCommands.map((command) => command.commandNumber),
                 tableNumber: newTable?.tableNumber
             })
         } catch (error) {
             
         }
     }
-
-    function selectClient(id: string) {
-        const client = clients.find((client) => client.id == id);
-
-        setClient(client);
-        setCommand(client?.command);
-
-        if (!client?.command.tableNumber) return;
-
-        setTable(
-            tables.find(
-                (table) => table.tableNumber == client?.command.tableNumber,
-            ),
-        );
-    }
     
     function selectCommand(value: CommandItemProps) {
-        if (value.commandNumber === command?.commandNumber) {
-            setCommand(undefined);
-            selectTable(undefined);
+        const activeCommand = activeCommands.find((command) => command.id === value.id)
+        if (value.id === activeCommand?.id) {
+            setActiveCommands(activeCommands.filter((command) => command.id !== value.id));
             return
         }
         
-        setCommand(value)
-        selectTable(tables.find((table) => table.tableNumber == value.tableNumber))
+        setActiveCommands(activeCommands.concat([value]))
     }
     
     function selectTable(value?: TableItemProps) {
@@ -93,20 +73,13 @@ export default function TableUpdate() {
         setNewTable((prevTable) => value === prevTable ? undefined : value)
     }
 
-    function removeClient() {
-        setClient(undefined);
-        setCommand(undefined);
-        setTable(undefined);
-    }
-    
     function createListCommands(commands: CommandItemProps[], tableNumber?: string) {
         setListCommands(
             commands.map((command) => ({
                 ...command,
                 disabled:
-                    !!tableNumber &&
-                    !!command.tableNumber &&
-                    command.tableNumber != tableNumber,
+                    !!tableNumber && !!command.table &&
+                    command.table.tableNumber != tableNumber,
             })),
         );
     }
@@ -124,10 +97,7 @@ export default function TableUpdate() {
 
     useEffect(() => {
         async function fetchData() {
-            const { clients } = (await api.get("/clients")).data as {
-                clients: ClientProps[];
-            };
-            const { commands } = (await api.get("/commands?onlyActive=true"))
+            const { commands } = (await api.get("/commands?onlyActive=true&useClientName=true"))
                 .data as {
                 commands: CommandItemProps[];
             };
@@ -135,7 +105,6 @@ export default function TableUpdate() {
                 tables: TableItemProps[];
             };
 
-            setClients(clients);
             setCommands(commands);
             setTables(tables);
             
@@ -155,47 +124,30 @@ export default function TableUpdate() {
             </header>
             <div className="flex flex-col gap-8">
                 <div className="flex flex-col">
-                    <TitleClient
-                        text="Cliente"
-                        selectClient={selectClient}
-                        disabled={!!client}
-                        clients={clients}
-                        selectedClient={client}
+                    <Title text="Mesa" />
+                    <IdentifyList
+                        disabled={false}
+                        setIdentify={(value: CommandItemProps | TableItemProps) => selectTable(value as TableItemProps)}
+                        list={tables}
+                        activeItens={!!table ? [table.id] : []}
                     />
-                    {client ? (
-                        <ClientItem
-                            client={client}
-                            removeClient={removeClient}
-                        />
-                    ) : (
-                        <></>
-                    )}
                 </div>
                 <div className="flex flex-col">
                     <Title text="Comanda" />
                     <IdentifyList
-                        disabled={!!client}
+                        disabled={!table}
                         setIdentify={(value: CommandItemProps | TableItemProps) => selectCommand(value as CommandItemProps)}
                         list={listCommands}
-                        activeItem={command?.commandNumber}
-                    />
-                </div>
-                <div className="flex flex-col">
-                    <Title text="Mesa" />
-                    <IdentifyList
-                        disabled={!!command?.tableNumber}
-                        setIdentify={(value: CommandItemProps | TableItemProps) => selectTable(value as TableItemProps)}
-                        list={tables}
-                        activeItem={table?.tableNumber}
+                        activeItens={activeCommands.map((c) => c.id)}
                     />
                 </div>
                 <div className="flex flex-col">
                     <Title text="Nova Mesa" />
                     <IdentifyList
-                        disabled={!command || !table}
+                        disabled={activeCommands.length < 1 || !table}
                         setIdentify={(value: CommandItemProps | TableItemProps) => selectNewTable(value as TableItemProps)}
                         list={listNewTables}
-                        activeItem={newTable?.tableNumber}
+                        activeItens={!!newTable ? [newTable.id] : []}
                     />
                 </div>
             </div>
@@ -203,7 +155,7 @@ export default function TableUpdate() {
                 <LinkButton
                     href="/"
                     replace={true}
-                    disabled={!command || !table || !newTable}
+                    disabled={!table || activeCommands.length < 1 || !newTable}
                     onClick={submitUpdate}
                 >
                     Alterar comanda mesa

@@ -69,10 +69,102 @@ export default function Order() {
                         command.commandNumber !== commandNumber
                     ) || (
                         !!table && table.isActive &&
-                        command.tableNumber !== table.tableNumber
+                        command.table?.tableNumber !== table.tableNumber
                     )
             })),
         );
+    }
+
+    function removeProduct(id: string, category: string) {
+        const categoryChosenProducts = chosenProducts[category].filter(
+            (product) => product.id != id,
+        );
+        setChosenProducts((prevChosenProducts) => ({
+            ...prevChosenProducts,
+            [category]: categoryChosenProducts,
+        }));
+    }
+
+    function addProduct(
+        id: string,
+        name: string,
+        price: number,
+        category: string,
+        quantity: number,
+    ) {
+        let exists = false;
+
+        if (quantity == 0) return removeProduct(id, category);
+
+        const categoryChosenProducts = chosenProducts[category].map(
+            (product) => {
+                if (product.id == id) {
+                    exists = true;
+                    return {
+                        id: id,
+                        name: product.name,
+                        price: product.price,
+                        quantity: quantity,
+                    };
+                }
+
+                return {
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    quantity: product.quantity,
+                };
+            },
+        );
+
+        if (!exists)
+            categoryChosenProducts.push({
+                id: id,
+                name: name,
+                price: price,
+                quantity: quantity,
+            });
+
+        setChosenProducts((prevChosenProducts) => ({
+            ...prevChosenProducts,
+            [category]: categoryChosenProducts,
+        }));
+    }
+    
+    function selectCommand(value: CommandItemProps) {
+        if (value.commandNumber === command?.commandNumber) {
+            setCommand(undefined);
+            
+            setTable(undefined)
+            createListCommands(commands, undefined, undefined)
+            return
+        }
+        
+        setCommand(value)
+        
+        if (!!value.table) setTable(value.table)
+        createListCommands(commands, value.table, value.commandNumber)
+    }
+    
+    function selectTable(value?: TableItemProps) {
+        const newTable = value === table ? undefined : value
+        
+        setTable(newTable)
+        if(!command) createListCommands(commands, newTable)
+    }
+
+    function selectClient(id: string) {
+        const client = clients.find((client) => client.id == id);
+
+        setClient(client);
+        setCommand(client?.command);
+        setTable(client?.command.table);
+    }
+
+    function removeClient() {
+        setClient(undefined);
+        setCommand(undefined);
+        setTable(undefined);
     }
 
     useEffect(() => {
@@ -97,11 +189,11 @@ export default function Order() {
                           (command) => command.commandNumber == order.command,
                       );
 
-                const table = !!command?.tableNumber
-                    ? tables.find(
-                          (table) => table.tableNumber == command.tableNumber,
-                      )
-                    : tables.find((table) => table.tableNumber == order.table);
+                const table = !!command?.table
+                    ? command.table
+                    : tables.find(
+                        (table) => table.tableNumber == order.table,
+                    );
                     
                 if (order.chosenProducts) {
                     let newChosenProducts = chosenProducts
@@ -172,106 +264,6 @@ export default function Order() {
 
         setIsReadyToResume(false);
     }, [client, table, command, chosenProducts]);
-    
-    function removeProduct(id: string, category: string) {
-        const categoryChosenProducts = chosenProducts[category].filter(
-            (product) => product.id != id,
-        );
-        setChosenProducts((prevChosenProducts) => ({
-            ...prevChosenProducts,
-            [category]: categoryChosenProducts,
-        }));
-    }
-
-    function addProduct(
-        id: string,
-        name: string,
-        price: number,
-        category: string,
-        quantity: number,
-    ) {
-        let exists = false;
-
-        if (quantity == 0) return removeProduct(id, category);
-
-        const categoryChosenProducts = chosenProducts[category].map(
-            (product) => {
-                if (product.id == id) {
-                    exists = true;
-                    return {
-                        id: id,
-                        name: product.name,
-                        price: product.price,
-                        quantity: quantity,
-                    };
-                }
-
-                return {
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    quantity: product.quantity,
-                };
-            },
-        );
-
-        if (!exists)
-            categoryChosenProducts.push({
-                id: id,
-                name: name,
-                price: price,
-                quantity: quantity,
-            });
-
-        setChosenProducts((prevChosenProducts) => ({
-            ...prevChosenProducts,
-            [category]: categoryChosenProducts,
-        }));
-    }
-    
-    function selectCommand(value: CommandItemProps) {
-        if (value.commandNumber === command?.commandNumber) {
-            setCommand(undefined);
-            
-            setTable(undefined)
-            createListCommands(commands, undefined, undefined)
-            return
-        }
-        
-        setCommand(value)
-        
-        const newTable = value.tableNumber ? tables.find((table) => table.tableNumber == value.tableNumber) : undefined
-        if (!!newTable) setTable(newTable)
-        createListCommands(commands, newTable, value.commandNumber)
-    }
-    
-    function selectTable(value?: TableItemProps) {
-        const newTable = value === table ? undefined : value
-        
-        setTable(newTable)
-        if(!command) createListCommands(commands, newTable)
-    }
-
-    function selectClient(id: string) {
-        const client = clients.find((client) => client.id == id);
-
-        setClient(client);
-        setCommand(client?.command);
-
-        if (!client?.command.tableNumber) return;
-
-        setTable(
-            tables.find(
-                (table) => table.tableNumber == client?.command.tableNumber,
-            ),
-        );
-    }
-
-    function removeClient() {
-        setClient(undefined);
-        setCommand(undefined);
-        setTable(undefined);
-    }
 
     return (
         <main className="flex flex-col w-full h-full justify-start py-10 px-4 gap-8">
@@ -309,16 +301,16 @@ export default function Order() {
                                 disabled={!!client}
                                 setIdentify={(value: CommandItemProps | TableItemProps) => selectCommand(value as CommandItemProps)}
                                 list={listCommands}
-                                activeItem={command?.commandNumber}
+                                activeItens={!!command ? [command.id] : []}
                             />
                         </div>
                         <div className="flex flex-col">
                             <Title text="Mesa" />
                             <IdentifyList
-                                disabled={!!command?.tableNumber}
+                                disabled={!!command?.table}
                                 setIdentify={(value: CommandItemProps | TableItemProps) => selectTable(value as TableItemProps)}
                                 list={tables}
-                                activeItem={table?.tableNumber}
+                                activeItens={!!table ? [table.id] : []}
                             />
                         </div>
                         {Object.keys(products).map((category) => (

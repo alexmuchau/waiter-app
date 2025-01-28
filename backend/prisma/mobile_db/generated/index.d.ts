@@ -3422,13 +3422,13 @@ export namespace Prisma {
   export type clientSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     clientId?: boolean
     name?: boolean
-    command?: boolean | client$commandArgs<ExtArgs>
+    command?: boolean | commandDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["client"]>
 
   export type clientSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     clientId?: boolean
     name?: boolean
-    command?: boolean | client$commandArgs<ExtArgs>
+    command?: boolean | commandDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["client"]>
 
   export type clientSelectScalar = {
@@ -3437,16 +3437,16 @@ export namespace Prisma {
   }
 
   export type clientInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    command?: boolean | client$commandArgs<ExtArgs>
+    command?: boolean | commandDefaultArgs<ExtArgs>
   }
   export type clientIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    command?: boolean | client$commandArgs<ExtArgs>
+    command?: boolean | commandDefaultArgs<ExtArgs>
   }
 
   export type $clientPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "client"
     objects: {
-      command: Prisma.$commandPayload<ExtArgs> | null
+      command: Prisma.$commandPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       clientId: number
@@ -3815,7 +3815,7 @@ export namespace Prisma {
    */
   export interface Prisma__clientClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    command<T extends client$commandArgs<ExtArgs> = {}>(args?: Subset<T, client$commandArgs<ExtArgs>>): Prisma__commandClient<$Result.GetResult<Prisma.$commandPayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
+    command<T extends commandDefaultArgs<ExtArgs> = {}>(args?: Subset<T, commandDefaultArgs<ExtArgs>>): Prisma__commandClient<$Result.GetResult<Prisma.$commandPayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4162,21 +4162,6 @@ export namespace Prisma {
      * Filter which clients to delete
      */
     where?: clientWhereInput
-  }
-
-  /**
-   * client.command
-   */
-  export type client$commandArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the command
-     */
-    select?: commandSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: commandInclude<ExtArgs> | null
-    where?: commandWhereInput
   }
 
   /**
@@ -7253,7 +7238,7 @@ export namespace Prisma {
     NOT?: clientWhereInput | clientWhereInput[]
     clientId?: IntFilter<"client"> | number
     name?: StringFilter<"client"> | string
-    command?: XOR<CommandNullableScalarRelationFilter, commandWhereInput> | null
+    command?: XOR<CommandScalarRelationFilter, commandWhereInput>
   }
 
   export type clientOrderByWithRelationInput = {
@@ -7268,7 +7253,7 @@ export namespace Prisma {
     OR?: clientWhereInput[]
     NOT?: clientWhereInput | clientWhereInput[]
     name?: StringFilter<"client"> | string
-    command?: XOR<CommandNullableScalarRelationFilter, commandWhereInput> | null
+    command?: XOR<CommandScalarRelationFilter, commandWhereInput>
   }, "clientId">
 
   export type clientOrderByWithAggregationInput = {
@@ -7526,7 +7511,7 @@ export namespace Prisma {
 
   export type clientUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
-    command?: commandUpdateOneWithoutClientNestedInput
+    command?: commandUpdateOneRequiredWithoutClientNestedInput
   }
 
   export type clientUncheckedUpdateInput = {
@@ -7842,9 +7827,9 @@ export namespace Prisma {
     _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
-  export type CommandNullableScalarRelationFilter = {
-    is?: commandWhereInput | null
-    isNot?: commandWhereInput | null
+  export type CommandScalarRelationFilter = {
+    is?: commandWhereInput
+    isNot?: commandWhereInput
   }
 
   export type clientCountOrderByAggregateInput = {
@@ -8118,12 +8103,10 @@ export namespace Prisma {
     connect?: commandWhereUniqueInput
   }
 
-  export type commandUpdateOneWithoutClientNestedInput = {
+  export type commandUpdateOneRequiredWithoutClientNestedInput = {
     create?: XOR<commandCreateWithoutClientInput, commandUncheckedCreateWithoutClientInput>
     connectOrCreate?: commandCreateOrConnectWithoutClientInput
     upsert?: commandUpsertWithoutClientInput
-    disconnect?: commandWhereInput | boolean
-    delete?: commandWhereInput | boolean
     connect?: commandWhereUniqueInput
     update?: XOR<XOR<commandUpdateToOneWithWhereWithoutClientInput, commandUpdateWithoutClientInput>, commandUncheckedUpdateWithoutClientInput>
   }

@@ -6,11 +6,11 @@ import { IdentifyItem } from "./IdentifyItem"
 interface IdentifyListProps {
     setIdentify: (value: TableItemProps | CommandItemProps) => void,
     list: TableItemProps[] | Array<CommandItemProps & { disabled: boolean }>
-    activeItem: string | undefined
+    activeItens: string[]
     disabled: boolean
 }
 
-export function IdentifyList({ setIdentify, disabled, list, activeItem }: IdentifyListProps) {
+export function IdentifyList({ setIdentify, disabled, list, activeItens }: IdentifyListProps) {
     function selectItem(value: TableItemProps | CommandItemProps) {
         setIdentify(value)
     }
@@ -20,10 +20,10 @@ export function IdentifyList({ setIdentify, disabled, list, activeItem }: Identi
             {
                 list.map((item) => 
                     <IdentifyItem
-                        key={"commandNumber" in item ? `C${item.commandNumber}` : `T${item.tableNumber}`}
-                        id={"commandNumber" in item ? item.commandNumber : item.tableNumber}
-                        text={"commandNumber" in item ? item.commandNumber : item.tableDescription}
-                        isActive={"commandNumber" in item ? item.commandNumber === activeItem : item.tableNumber === activeItem}
+                        key={item.id}
+                        id={item.id}
+                        text={item.description}
+                        isActive={activeItens.includes(item.id)}
                         isDisabled={disabled === true ? true : "disabled" in item ? item.disabled : false}
                         isUsing={item.isActive}
                         onClick={() => selectItem(item)}
