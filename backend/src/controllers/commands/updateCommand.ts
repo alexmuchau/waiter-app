@@ -1,24 +1,22 @@
 import { FastifyRequest, FastifyReply } from "fastify";
 import { desktopClient, mobileClient } from "../../../prisma/prisma";
-import { CommandItemProps } from "../../../../utils/types";
-import { syncCommands } from "../../tools/syncDBs";
 
 export async function updateCommand(req: FastifyRequest, res: FastifyReply) {
-    const { commandNumber, tableNumber } = req.body as {
-        commandNumber: string,
+    const { commandNumbers, tableNumber } = req.body as {
+        commandNumbers: string[],
         tableNumber: string
     };
     
-    console.log(commandNumber, tableNumber)
-    
-    const desktopCommand = await desktopClient.tb_vendas_pre_comandas.findFirst({
+    const desktopCommands = await desktopClient.tb_vendas_pre_comandas.findMany({
         where: {
-            Numero_Comanda: commandNumber
+            Numero_Comanda: {
+                in: commandNumbers.map((command) => command)
+            }
         }
     })
     
-    if (!desktopCommand) {
-        return res.status(500).send("Error when finding table");
+    if (!(desktopCommands.length == commandNumbers.length)) {
+        return res.status(500).send("Error when finding command");
     }
     
     const desktopTable = await desktopClient.tb_mesas.findFirst({
@@ -31,20 +29,22 @@ export async function updateCommand(req: FastifyRequest, res: FastifyReply) {
         return res.status(500).send("Error when finding table");
     }
     
-    const command = await mobileClient.command.update({
+    const command = await mobileClient.command.updateMany({
         where: {
-            commandNumber: parseInt(commandNumber)
+            commandNumber: {
+                in: commandNumbers.map((command) => parseInt(command))
+            } 
         },
         data: {
             tableNumber: parseInt(tableNumber)
         }
     })
     
-    console.log(command)
-    
-    await desktopClient.tb_vendas_pre_comandas.update({
+    await desktopClient.tb_vendas_pre_comandas.updateMany({
         where: {
-            Codigo: desktopCommand.Codigo
+            Codigo: {
+                in: desktopCommands.map((command) => command.Codigo)
+            }
         },
         data: {
             Id_Mesa: desktopTable.Codigo
