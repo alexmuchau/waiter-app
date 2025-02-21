@@ -14,7 +14,7 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     const table = await checkTable(bodyOrder.board)
     if (!table) return res.status(400).send('Table not found')
 
-    const command = await checkCommand(bodyOrder.command, table.Codigo)
+    const command = await checkCommand(bodyOrder.command, bodyOrder.board, table.Codigo)
     if (!command) return res.status(400).send('Command error')
 
     await createPreOrder(command.Codigo, table.Codigo, bodyOrder.items, products)
@@ -22,18 +22,17 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     return res.send('Working!')
 }
 
-async function checkCommand(commandNumber: number, tableNumber: number) {
-    const command = await desktopClient.tb_vendas_pre_comandas.findFirst({
-        where: {
-            Numero_Comanda: commandNumber.toString()
-        }
-    })
+async function checkCommand(commandNumber: number, tableNumber: number, tableCode: number) {
+    const command: {Codigo: number, Id_Mesa: number} | undefined = await desktopClient.$queryRaw`
+        SELECT Codigo, Id_Mesa FROM tb_vendas_pre_comandas
+        WHERE CAST(Numero_Comanda AS SIGNED) = ${commandNumber}
+    `
     
     if (!command) {
         return undefined
     }
 
-    if (command.Id_Mesa && command.Id_Mesa !== tableNumber) {
+    if (command.Id_Mesa && command.Id_Mesa !== tableCode) {
         return undefined
     }
 
@@ -43,7 +42,7 @@ async function checkCommand(commandNumber: number, tableNumber: number) {
                 Codigo: command.Codigo
             },
             data: {
-                Id_Mesa: tableNumber
+                Id_Mesa: tableCode
             }
         })
 

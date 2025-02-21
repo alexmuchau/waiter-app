@@ -87,9 +87,19 @@ export async function syncCommands() {
         },
     });
 
+    await mobileClient.client.deleteMany({
+        where: {
+            command: {
+                commandNumber: {
+                    notIn: desktopRecords.map((t) => parseInt(t.Numero_Comanda!))
+                }
+            }
+        }
+    })
+
     await mobileClient.command.deleteMany({
         where: {
-            tableNumber: {
+            commandNumber: {
                 notIn: desktopRecords.map((t) => parseInt(t.Numero_Comanda!))
             }
         }
@@ -173,11 +183,14 @@ export async function syncProducts() {
         let categoryOrder: number | undefined = parseInt(
             category.Setor.split("-")[0],
         );
-        let categoryName = category.Setor.split("-")[1].toLowerCase();
+        
+        let categoryName = ''
 
         if (!categoryOrder) {
             categoryOrder = undefined;
             categoryName = category.Setor.toLowerCase();
+        } else {
+            categoryName = category.Setor.split("-")[1].toLowerCase();
         }
 
         await mobileClient.category.upsert({
