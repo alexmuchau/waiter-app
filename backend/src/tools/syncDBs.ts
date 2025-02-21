@@ -22,6 +22,9 @@ export async function syncTables() {
         where: {
             Ativo: "-1",
         },
+        orderBy: {
+            Mesa: "asc"
+        }
     });
 
     await mobileClient.table.deleteMany();
@@ -74,6 +77,7 @@ export async function syncCommands() {
 
     await mobileClient.command.deleteMany();
     await mobileClient.command.createMany({
+        skipDuplicates: true,
         data: desktopRecords.map((record) => ({
             commandNumber: parseInt(record.Numero_Comanda!),
             tableNumber: !!record.Id_Mesa
