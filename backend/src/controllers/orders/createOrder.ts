@@ -46,6 +46,15 @@ async function checkCommand(commandNumber: number, tableNumber: number) {
                 Id_Mesa: tableNumber
             }
         })
+
+        await mobileClient.command.update({
+            data: {
+                tableNumber: tableNumber
+            },
+            where: {
+                commandNumber: commandNumber
+            }
+        })
     }
 
     return command

@@ -16,43 +16,52 @@ export async function syncTables() {
     console.log("Sincronizando mesas...");
     const desktopRecords = await desktopClient.tb_mesas.findMany({
         select: {
+            Codigo: true,
             Mesa: true,
             Ativo: true,
         },
         where: {
             Ativo: "-1",
-            RegExcluido: "0"
+            RegExcluido: "0",
+            Mesa: {
+                not: null
+            }
         },
         orderBy: {
             Mesa: "asc"
         }
     });
 
-    await mobileClient.table.deleteMany();
-    await mobileClient.table.createMany({
-        data: desktopRecords.map((record) => ({
-            tableNumber: parseInt(record.Mesa!),
-            tableDescription: parseInt(record.Mesa!).toString(),
-        })),
+    await mobileClient.table.deleteMany({
+        where: {
+            tableNumber: {
+                notIn: desktopRecords.map((t) => parseInt(t.Mesa!))
+            }
+        }
     });
+
+    for (const record of desktopRecords) {
+        await mobileClient.table.upsert({
+            create: {
+                tableNumber: parseInt(record.Mesa!),
+                tableDescription: parseInt(record.Mesa!).toString(),
+            },
+            update: {
+                tableDescription: parseInt(record.Mesa!).toString(),
+            },
+            where: {
+                tableNumber: parseInt(record.Mesa!)
+            }
+        });
+    }
+
+    return desktopRecords
 }
 
 export async function syncCommands() {
-    await syncTables();
+    const tablesDesktop = await syncTables();
 
     console.log("Sincronizando comandas...");
-    const tablesDesktop = await desktopClient.tb_mesas.findMany({
-        select: {
-            Codigo: true,
-            Mesa: true,
-        },
-        where: {
-            Mesa: {
-                not: null,
-            },
-            RegExcluido: "0"
-        },
-    });
 
     const desktopRecords = await desktopClient.tb_vendas_pre_comandas.findMany({
         distinct: "Numero_Comanda",
@@ -78,20 +87,42 @@ export async function syncCommands() {
         },
     });
 
-    await mobileClient.command.deleteMany();
-    await mobileClient.command.createMany({
-        skipDuplicates: true,
-        data: desktopRecords.map((record) => ({
-            commandNumber: parseInt(record.Numero_Comanda!),
-            tableNumber: !!record.Id_Mesa
-                ? parseInt(
-                      tablesDesktop.find(
-                          (table) => table.Codigo == record.Id_Mesa,
-                      )!.Mesa!,
-                  )
-                : null,
-        })),
+    await mobileClient.command.deleteMany({
+        where: {
+            tableNumber: {
+                notIn: desktopRecords.map((t) => parseInt(t.Numero_Comanda!))
+            }
+        }
     });
+
+    let created: {[commandNumber: number]: boolean} = {}
+    for (const record of desktopRecords) {
+        const commandNumber = parseInt(record.Numero_Comanda!)
+        if (commandNumber in created) continue
+        
+        const tableNumber = !!record.Id_Mesa
+            ? parseInt(
+                tablesDesktop.find(
+                    (table) => table.Codigo == record.Id_Mesa,
+                )!.Mesa!,
+            )
+            : null
+
+        await mobileClient.command.upsert({
+            create: {
+                commandNumber: commandNumber,
+                tableNumber: tableNumber,
+            },
+            update: {
+                tableNumber: tableNumber,
+            },
+            where: {
+                commandNumber: commandNumber
+            }
+        });
+
+        created[commandNumber] = true
+    }
 }
 
 export async function syncProducts() {
@@ -192,7 +223,8 @@ export async function syncClients() {
     const desktopRecords = await desktopClient.tb_pessoas.findMany({
         select: {
             Codigo: true,
-            Fantasia: true,
+            Pessoa: true,
+            Apelido: true,
         },
         where: {
             Ativo: "-1",
@@ -207,7 +239,7 @@ export async function syncClients() {
     await mobileClient.client.createMany({
         data: desktopRecords.map((record) => ({
             clientId: record.Codigo,
-            name: record.Fantasia!,
+            name: !!record.Apelido ? record.Apelido : record.Pessoa!,
         })),
     });
 }
