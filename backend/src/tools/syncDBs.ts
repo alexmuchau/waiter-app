@@ -123,6 +123,8 @@ export async function syncCommands() {
 
         created[commandNumber] = true
     }
+
+    return desktopRecords
 }
 
 export async function syncProducts() {
@@ -206,19 +208,9 @@ export async function syncProducts() {
 }
 
 export async function syncClients() {
+    const commandsDesktops = await syncCommands()
+
     console.log("Sincronizando clientes...");
-    const commandsDesktops =
-        await desktopClient.tb_vendas_pre_comandas.findMany({
-            select: {
-                Numero_Comanda: true,
-            },
-            where: {
-                Numero_Comanda: {
-                    not: null,
-                },
-                RegExcluido: "0"
-            },
-        });
 
     const desktopRecords = await desktopClient.tb_pessoas.findMany({
         select: {
