@@ -60,19 +60,19 @@ async function checkCommand(commandNumber: number, tableNumber: number, tableCod
 }
 
 async function checkTable(tableNumber: number) {
-    const board = await desktopClient.tb_mesas.findFirst({
-        where: {
-            Mesa: tableNumber < 10 ? `0${tableNumber}` : tableNumber.toString(),
-            Ativo: '-1',
-            RegExcluido: '0'
-        }
-    })
+    const table: {Codigo: number} | undefined = await desktopClient.$queryRaw`
+        SELECT Codigo FROM tb_mesas
+        WHERE
+            RegExcluido = "0"
+            AND Ativo = '-1'
+            AND CAST(Mesa AS SIGNED) = ${tableNumber}
+    `.then((res: any) => res.lenght < 1 ? undefined : res[0])
     
-    if (!board) {
+    if (!table) {
         return undefined
     }
 
-    return board
+    return table
 }
 
 async function checkProducts(items: OrderProps['items']) {
