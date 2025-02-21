@@ -192,13 +192,12 @@ export async function syncClients() {
     const desktopRecords = await desktopClient.tb_pessoas.findMany({
         select: {
             Codigo: true,
-            Apelido: true,
+            Fantasia: true,
         },
         where: {
             Ativo: "-1",
-            Tipo_Pessoa: "PF - Pessoa Fisica",
-            Apelido: {
-                in: commandsDesktops.map((command) => command.Numero_Comanda!),
+            Codigo: {
+                in: commandsDesktops.map((command) => parseInt(command.Numero_Comanda!)),
             },
             RegExcluido: "0"
         },
@@ -208,7 +207,7 @@ export async function syncClients() {
     await mobileClient.client.createMany({
         data: desktopRecords.map((record) => ({
             clientId: record.Codigo,
-            name: record.Apelido!,
+            name: record.Fantasia!,
         })),
     });
 }
