@@ -6,6 +6,9 @@ export async function getTables(req: FastifyRequest, res: FastifyReply) {
     const tables: TableItemProps[] = await mobileClient.table.findMany({
         include: {
             command: true
+        },
+        orderBy: {
+            tableNumber: "asc"
         }
     }).then((tables) => {
         return tables.map((table) => ({

@@ -21,6 +21,7 @@ export async function syncTables() {
         },
         where: {
             Ativo: "-1",
+            RegExcluido: "0"
         },
         orderBy: {
             Mesa: "asc"
@@ -31,7 +32,7 @@ export async function syncTables() {
     await mobileClient.table.createMany({
         data: desktopRecords.map((record) => ({
             tableNumber: parseInt(record.Mesa!),
-            tableDescription: record.Mesa!.toString(),
+            tableDescription: parseInt(record.Mesa!).toString(),
         })),
     });
 }
@@ -49,6 +50,7 @@ export async function syncCommands() {
             Mesa: {
                 not: null,
             },
+            RegExcluido: "0"
         },
     });
 
@@ -72,6 +74,7 @@ export async function syncCommands() {
                     Id_Mesa: null,
                 },
             ],
+            RegExcluido: "0"
         },
     });
 
@@ -109,6 +112,7 @@ export async function syncProducts() {
             Id_Setor: {
                 not: null,
             },
+            RegExcluido: "0"
         },
     });
 
@@ -126,6 +130,7 @@ export async function syncProducts() {
                     ),
                 ],
             },
+            RegExcluido: "0"
         },
     });
 
@@ -180,6 +185,7 @@ export async function syncClients() {
                 Numero_Comanda: {
                     not: null,
                 },
+                RegExcluido: "0"
             },
         });
 
@@ -194,6 +200,7 @@ export async function syncClients() {
             Apelido: {
                 in: commandsDesktops.map((command) => command.Numero_Comanda!),
             },
+            RegExcluido: "0"
         },
     });
 

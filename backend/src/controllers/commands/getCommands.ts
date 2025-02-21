@@ -16,6 +16,9 @@ export async function getCommands(req: FastifyRequest, res: FastifyReply) {
                     not: null,
                 },
             } : undefined,
+            orderBy: {
+                commandNumber: "asc"
+            }
         })
         .then((commands) => 
             commands.map((command) => ({

@@ -18,6 +18,9 @@ export async function getActiveTables(req: FastifyRequest, res: FastifyReply) {
                     }
                 }
             }
+        },
+        orderBy: {
+            tableNumber: "asc"
         }
     }).then((tables) => tables.filter((table) => table.command.length > 0).map((table) => ({
             tableNumber: table.tableNumber.toString(),
