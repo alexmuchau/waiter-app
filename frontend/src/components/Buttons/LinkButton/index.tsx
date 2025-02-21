@@ -18,7 +18,7 @@ export function LinkButton({ fixed = true, replace = false, children, href, quer
         >
             <Link
                 className={`
-                    flex w-full py-2 items-center justify-center bg-accent text-slate-900 rounded-full font-bold
+                    flex w-full py-2 items-center justify-center bg-accent text-slate-900 rounded-md font-bold
                     ${disabled ? 'opacity-40 pointer-events-none' : ''}
                 `}
                 onClick={onClick}

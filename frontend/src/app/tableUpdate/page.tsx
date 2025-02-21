@@ -10,13 +10,7 @@ import {
 import api from "@/api/api";
 
 import { HeaderTitle } from "@/components/Header/HeaderTitle";
-import { Button } from "@/components/Buttons/Button";
-import { useCookies } from "react-cookie";
-import { Form } from "@heroui/form";
-import { setCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
-import { TitleClient } from "@/components/Title/Client";
-import { ClientItem } from "@/components/ClientItem";
 import { Title } from "@/components/Title/Default";
 import { IdentifyList } from "@/components/Identify/IdentifyList";
 import { BackHeader } from "@/components/Header/BackHeader";
@@ -123,7 +117,7 @@ export default function TableUpdate() {
                 <HeaderTitle text="atualizar mesa" />
             </header>
             <div className="flex flex-col gap-8">
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-4">
                     <Title text="Mesa" />
                     <IdentifyList
                         disabled={false}
@@ -132,7 +126,7 @@ export default function TableUpdate() {
                         activeItens={!!table ? [table.id] : []}
                     />
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-4">
                     <Title text="Comanda" />
                     <IdentifyList
                         disabled={!table}
@@ -141,7 +135,7 @@ export default function TableUpdate() {
                         activeItens={activeCommands.map((c) => c.id)}
                     />
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-4">
                     <Title text="Nova Mesa" />
                     <IdentifyList
                         disabled={activeCommands.length < 1 || !table}

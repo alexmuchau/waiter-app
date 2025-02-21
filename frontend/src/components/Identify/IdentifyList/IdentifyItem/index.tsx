@@ -14,7 +14,7 @@ export function IdentifyItem({ id, text, onClick, isDisabled, isActive, isUsing 
         <input
             type="button"
             className={`
-                flex px-4 py-2 transition-all cursor-pointer border-2 rounded-full
+                flex px-4 py-2 transition-all cursor-pointer border-2 rounded-md
                 ${  isActive === true
                     ? "bg-accent border-accent"
                     : isUsing === true

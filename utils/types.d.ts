@@ -19,6 +19,7 @@ export interface CommandItemProps {
     description: string,
     commandNumber: string,
     isActive: boolean,
+    hasClient: boolean,
     table?: TableItemProps,
 }
 

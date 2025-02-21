@@ -1,11 +1,8 @@
 'use client'
 
-import { SelectItem } from "@/components/SelectItem"
-import { Check, Plus } from "phosphor-react"
-import { Key, useState } from "react"
 import { ClientProps } from "../../../../../utils/types"
 import { ModalClientList } from "./ModalClientList"
-import { useDisclosure } from "@heroui/react"
+import { Button, useDisclosure } from "@heroui/react"
 
 interface TitleProductProps {
     text: string,
@@ -20,28 +17,23 @@ export function TitleClient({ text, selectedClient, clients, disabled, selectCli
 
     return (
         <>
-            <div className={`flex w-full items-center gap-3`}>
-                <h2 className="font-bold text-[2rem]">{text}</h2>
-                <div className="w-full bg-slate-900 h-[0.125rem]"/>
-                    {
-                        !disabled
-                        && <> 
-                            <Plus
-                                onClick={onOpen}
-                                size={40}
-                                weight="bold"
-                                className="cursor-pointer"
-                            />
-                            <ModalClientList
-                                isOpen={isOpen}
-                                selectedClient={selectedClient}
-                                onOpenChange={onOpenChange}
-                                clients={clients}
-                                addClient={selectClient}
-                            />
-                        </>
-                    }
-            </div>
+            <ModalClientList
+                isOpen={isOpen}
+                selectedClient={selectedClient}
+                onOpenChange={onOpenChange}
+                clients={clients}
+                addClient={selectClient}
+            />
+            <Button
+                className="flex h-full py-4"
+                fullWidth={true}
+                radius="md"
+                isDisabled={disabled}
+                onPress={onOpen}
+                color="primary"
+                startContent={<h2 className="flex w-full items-start font-bold text-[2rem]">{text}</h2>}
+                variant="shadow"
+            />
         </>
     )
 }

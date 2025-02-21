@@ -16,7 +16,7 @@ export function IdentifyList({ setIdentify, disabled, list, activeItens }: Ident
     }
 
     return (
-        <div className="flex gap-4 flex-wrap">
+        <div className="flex gap-4 flex-wrap pl-8">
             {
                 list.map((item) => 
                     <IdentifyItem

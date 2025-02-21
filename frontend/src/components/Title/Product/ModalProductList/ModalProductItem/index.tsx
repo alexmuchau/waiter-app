@@ -38,8 +38,8 @@ export function ModalProductItem({ product, addProduct }: ModalProductItemProps)
             <div className="flex items-center gap-2">
                 <p>R${product.price.toFixed(2)}</p>
                 <Button
-                    className="flex p-2 min-w-0 min-h-0 h-full rounded-full"
-                    color={quantity < 1 ? "default" : "secondary"}
+                    className={`flex p-2 min-w-0 min-h-0 h-full rounded-full ${quantity > 0 && 'bg-background'}`}
+                    isDisabled={quantity < 1}
                     onPress={minusQuantity}
                 >
                     <Minus size={12} weight="bold" opacity={quantity < 1 ? 0.2 : 1}/>

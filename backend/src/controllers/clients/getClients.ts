@@ -16,11 +16,12 @@ export async function getClients(req: FastifyRequest, res: FastifyReply) {
             id: String(client.clientId),
             name: client.name,
             command: {
-                id: client.command.commandNumber.toString(),
+                id: 'C' + client.command.commandNumber.toString(),
                 description: client.command.commandNumber.toString(),
                 commandNumber: client.command.commandNumber.toString(),
+                hasClient: true,
                 table: !!client.command.table ? {
-                    id: client.command.table.tableNumber.toString(),
+                    id: 'T' + client.command.table.tableNumber.toString(),
                     description: client.command.table.tableDescription.toString(),
                     tableNumber: client.command.table.tableNumber.toString(),
                     isActive: !!client.command.table,

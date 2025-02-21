@@ -10,15 +10,15 @@ interface ActiveTablesListProps {
 export function ActiveTablesList({ activeTables }: ActiveTablesListProps) {
     return (
         <>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-8">
                 {
                     activeTables.map((activeTable) => (
                         <div
                             key={activeTable.tableNumber}
-                            className="flex flex-col gap-2"
+                            className="flex flex-col gap-4"
                         >
                             <Title text={activeTable.tableDescription}/>
-                            <div className="flex gap-4 flex-wrap">
+                            <div className="flex gap-4 flex-wrap pl-8">
                                 {
                                     activeTable.commands.map((command) => (
                                         <ActiveCommandItem

@@ -25,8 +25,9 @@ export async function getCommands(req: FastifyRequest, res: FastifyReply) {
                 id: 'C' + command.commandNumber.toString(),
                 description: !!command.client && useClientName ? command.client.name : command.commandNumber.toString(),
                 commandNumber: command.commandNumber.toString(),
+                hasClient: !!command.client,
                 table: !!command.table ? {
-                    id: command.table.tableNumber.toString(),
+                    id: 'T' + command.table.tableNumber.toString(),
                     description: command.table.tableDescription.toString(),
                     tableNumber: command.table.tableNumber.toString(),
                     isActive: true,

@@ -1,6 +1,6 @@
 'use client'
 
-import { XCircle } from "phosphor-react"
+import { X, XCircle } from "phosphor-react"
 import { ClientProps } from "../../../../utils/types"
 
 interface ClientItemProps {
@@ -10,9 +10,9 @@ interface ClientItemProps {
 
 export function ClientItem({ client, removeClient }: ClientItemProps) {
     return (
-        <div className="flex px-8 py-2 bg-accent-blur text-slate-900 justify-between items-center rounded-full">
+        <div className="flex px-8 py-2 bg-accent-blur text-slate-900 justify-between items-center rounded-md ml-8">
             <p>{client.name}</p>
-            <XCircle
+            <X
                 size={20}
                 onClick={removeClient}
                 weight="bold"

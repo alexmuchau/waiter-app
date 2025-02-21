@@ -1,12 +1,19 @@
+import { Button } from "@heroui/react"
+
 interface TitleProps {
     text: string
 }
 
 export function Title({text} : TitleProps) {
     return (
-        <div className="flex w-full items-center gap-3">
-            <h2 className="font-bold text-[2rem] whitespace-nowrap capitalize">{text}</h2>
-            <div className="bg-slate-900 h-[0.125rem] flex w-full"/>
-        </div>
+        <Button
+            className="flex h-full py-5 opacity-100"
+            fullWidth={true}
+            radius="md"
+            isDisabled={true}
+            color="primary"
+            startContent={<h2 className="flex w-full items-start font-bold text-[2rem] whitespace-nowrap capitalize">{text}</h2>}
+            variant="shadow"
+        />
     )
 }

@@ -8,7 +8,7 @@ interface ComponentProductListProps {
 
 export function ProductList({ listActiveProducts, removeItem }: ComponentProductListProps) {
     return (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 pl-8">
             {
                 listActiveProducts.map((product) => 
                     <ProductItem

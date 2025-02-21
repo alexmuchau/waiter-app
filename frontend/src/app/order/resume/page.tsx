@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 
 export default function Resume() {
     const [ client, setClient ] = useState<string | undefined>(undefined)
+    const [ clientName, setClientName ] = useState<string | undefined>(undefined)
     const [ table, setTable ] = useState<string | undefined>(undefined)
     const [ command, setCommand ] = useState<string | undefined>(undefined)
     const [ chosenProducts, setChosenProducts ] = useState<{[category: string]: ProductItemProps[]}>({})
@@ -23,8 +24,9 @@ export default function Resume() {
         const orderCookies = getCookie("orderCookies")
 
         if (orderCookies) {
-            const { client, table, command, chosenProducts } = JSON.parse(orderCookies)
+            const { client, clientName, table, command, chosenProducts } = JSON.parse(orderCookies)
             setClient(client)
+            setClientName(clientName)
             setTable(table)
             setCommand(command)
             setChosenProducts(chosenProducts)
@@ -58,7 +60,7 @@ export default function Resume() {
             <div className="flex flex-col gap-8">
                 <div className="flex gap-16">
                     <IdentifyCard title="Mesa" number={table!} />
-                    <IdentifyCard title="Comanda" number={command!} />
+                    <IdentifyCard title={!!client ? "Cliente" : 'Comanda'} number={!!client ? clientName! : command!} />
                 </div>
                 {
                     Object.keys(chosenProducts).map((category) =>

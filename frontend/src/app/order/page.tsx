@@ -7,7 +7,6 @@ import {
     ClientProps,
     TableItemProps,
     CommandItemProps,
-    ProductListProps,
     CategoryGroupedProductProps,
 } from "../../../../utils/types";
 
@@ -53,6 +52,7 @@ export default function Order() {
     function updateCookiesToResume() {
         setCookie("orderCookies", {
             client: client?.id,
+            clientName: client?.name,
             table: table?.tableNumber,
             command: command?.commandNumber,
             chosenProducts: chosenProducts,
@@ -61,7 +61,7 @@ export default function Order() {
 
     function createListCommands(commands: CommandItemProps[], table?: TableItemProps, commandNumber?: string) {
         setListCommands(
-            commands.map((command) => ({
+            commands.filter((c) => !c.hasClient).map((command) => ({
                 ...command,
                 disabled:
                     (
@@ -165,6 +165,7 @@ export default function Order() {
         setClient(undefined);
         setCommand(undefined);
         setTable(undefined);
+        createListCommands(commands)
     }
 
     useEffect(() => {
@@ -205,10 +206,12 @@ export default function Order() {
                 }
 
                 setClient(client);
-                setTable(table);
-                setCommand(command);
-                
-                createListCommands(commands, table)
+                if (command) { 
+                    setCommand(command)
+                    
+                    if (!!command.table) setTable(command.table)
+                    createListCommands(commands, command.table, command.commandNumber)
+                }
             }
         }
 
@@ -277,8 +280,8 @@ export default function Order() {
                     <header className="flex">
                         <HeaderTitle text="pedido" />
                     </header>
-                    <div className="flex flex-col gap-8">
-                        <div className="flex flex-col">
+                    <div className="flex flex-col gap-12">
+                        <div className="flex flex-col gap-4">
                             <TitleClient
                                 text="Cliente"
                                 selectClient={selectClient}
@@ -295,7 +298,7 @@ export default function Order() {
                                 <></>
                             )}
                         </div>
-                        <div className="flex flex-col">
+                        <div className="flex flex-col gap-4">
                             <Title text="Comanda" />
                             <IdentifyList
                                 disabled={!!client}
@@ -304,7 +307,7 @@ export default function Order() {
                                 activeItens={!!command ? [command.id] : []}
                             />
                         </div>
-                        <div className="flex flex-col">
+                        <div className="flex flex-col gap-4">
                             <Title text="Mesa" />
                             <IdentifyList
                                 disabled={!!command?.table}
@@ -314,7 +317,7 @@ export default function Order() {
                             />
                         </div>
                         {Object.keys(products).map((category) => (
-                            <div className="flex flex-col gap-8" key={category}>
+                            <div className="flex flex-col gap-4" key={category}>
                                 <TitleProduct
                                     category={category}
                                     disabled={!table || !command}

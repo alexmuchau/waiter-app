@@ -7,23 +7,24 @@ export async function updateCommand(req: FastifyRequest, res: FastifyReply) {
         tableNumber: string
     };
     
-    const desktopCommands = await desktopClient.tb_vendas_pre_comandas.findMany({
-        where: {
-            Numero_Comanda: {
-                in: commandNumbers.map((command) => command)
-            }
-        }
-    })
+    const desktopCommands: {Codigo: number, Id_Mesa: number}[] = await desktopClient.$queryRaw`
+        SELECT Codigo, Numero_Comanda, Id_Mesa FROM tb_vendas_pre_comandas
+        WHERE
+            RegExcluido = "0"
+            AND CAST(Numero_Comanda AS SIGNED) IN (${commandNumbers.map((command) => command).join(',')})
+    `
     
     if (!(desktopCommands.length == commandNumbers.length)) {
         return res.status(500).send("Error when finding command");
     }
-    
-    const desktopTable = await desktopClient.tb_mesas.findFirst({
-        where: {
-            Mesa: tableNumber.padStart(2, '0')
-        }
-    })
+
+    const desktopTable: {Codigo: number} | undefined = await desktopClient.$queryRaw`
+        SELECT Codigo FROM tb_mesas
+        WHERE
+            RegExcluido = "0"
+            AND Ativo = '-1'
+            AND CAST(Mesa AS SIGNED) = ${tableNumber}
+    `.then((res: any) => res.lenght < 1 ? undefined : res[0])
     
     if (!desktopTable) {
         return res.status(500).send("Error when finding table");
@@ -33,7 +34,7 @@ export async function updateCommand(req: FastifyRequest, res: FastifyReply) {
         where: {
             commandNumber: {
                 in: commandNumbers.map((command) => parseInt(command))
-            } 
+            }
         },
         data: {
             tableNumber: parseInt(tableNumber)

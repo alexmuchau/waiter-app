@@ -24,7 +24,7 @@ export function ActiveCommandItem({ commandNumber, tableNumber, clientName }: Ac
         <Link href={`/order`}
             className={`
                 flex px-4 py-2 transition-all cursor-pointer border-accent
-                border-2 rounded-full bg-accent-blur
+                border-2 rounded-md bg-accent-blur
             `}
             onClick={onClickActiveTable}
             key={commandNumber}
