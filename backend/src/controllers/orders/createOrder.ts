@@ -6,8 +6,6 @@ import { format } from 'date-fns';
 export async function createOrder(req: FastifyRequest, res: FastifyReply) {    
     const { bodyOrder } = req.body as { bodyOrder: OrderProps }
 
-    console.log(bodyOrder)
-    
     const products = await checkProducts(bodyOrder.items)
     if (!products) return res.status(400).send('Products error')
 
@@ -24,9 +22,11 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
 
 async function checkCommand(commandNumber: number, tableNumber: number, tableCode: number) {
     const command: {Codigo: number, Id_Mesa: number} | undefined = await desktopClient.$queryRaw`
-        SELECT Codigo, Id_Mesa FROM tb_vendas_pre_comandas
-        WHERE CAST(Numero_Comanda AS SIGNED) = ${commandNumber}
-    `
+        SELECT Codigo, Numero_Comanda, Id_Mesa FROM tb_vendas_pre_comandas
+        WHERE
+            RegExcluido = "0"
+            AND CAST(Numero_Comanda AS SIGNED) = ${commandNumber}
+    `.then((res: any) => res.lenght < 1 ? undefined : res[0])
     
     if (!command) {
         return undefined
@@ -62,7 +62,9 @@ async function checkCommand(commandNumber: number, tableNumber: number, tableCod
 async function checkTable(tableNumber: number) {
     const board = await desktopClient.tb_mesas.findFirst({
         where: {
-            Mesa: tableNumber < 10 ? `0${tableNumber}` : tableNumber.toString()
+            Mesa: tableNumber < 10 ? `0${tableNumber}` : tableNumber.toString(),
+            Ativo: '-1',
+            RegExcluido: '0'
         }
     })
     
