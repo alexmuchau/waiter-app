@@ -2,7 +2,7 @@
 
 import { Input } from "@heroui/input";
 import { FormEvent, useState } from "react";
-import { User } from "../../../../utils/types"
+import { User } from "../../../../../utils/types"
 import api from "@/api/api";
 
 import { HeaderTitle } from "@/components/Header/HeaderTitle";
@@ -32,10 +32,11 @@ export default function LoginScreen() {
                 password
             })
 
-            const { waiter } = res.data as { waiter: User }
+            const { waiter, token } = res.data as { waiter: User, token: string }
             setCookie("user", waiter, {
                 maxAge: 60*60*24*7
             })
+            setCookie("token", token )
             router.push('/')
         } catch (error) {
             setErrorMessage("Erro ao fazer login!!")

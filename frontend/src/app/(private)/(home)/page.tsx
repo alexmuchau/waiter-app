@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import { ActiveTableItemProps, User } from "../../../utils/types" 
+import { ActiveTableItemProps, User } from "../../../../../utils/types" 
 import { LinkButton } from "@/components/Buttons/LinkButton";
 import { ActiveTablesList } from "@/components/ActiveTablesList";
 import { ConnectionBackend } from "@/components/ConnectionBackend";
@@ -22,7 +22,12 @@ export default function Home() {
     useEffect(() => {
         async function getActiveTables() {
             if (!(await checkConnection())) return
-            const { tables } = (await api.get('/tables/active')).data as { tables: ActiveTableItemProps[] }
+            const token = getCookie('token');
+            const { tables } = (await api.get('/tables/active', {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })).data as { tables: ActiveTableItemProps[] }
             setActiveTables(tables)
         }
         

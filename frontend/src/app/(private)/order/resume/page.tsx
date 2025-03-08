@@ -6,7 +6,7 @@ import { ProductList } from "@/components/ProductList";
 import { Title } from "@/components/Title/Default";
 import { useEffect, useState } from "react";
 import { LinkButton } from "@/components/Buttons/LinkButton";
-import { CategoryGroupedProductProps, OrderProps } from "../../../../../utils/types";
+import { CategoryGroupedProductProps, OrderProps } from "../../../../../../utils/types";
 import api from "@/api/api";
 import { ProductItemProps } from "@/components/ProductList/ProductItem";
 import { getCookie, getCookies, setCookie, deleteCookie, hasCookie } from 'cookies-next';
@@ -47,8 +47,16 @@ export default function Resume() {
             command: +command!,
             items: items
         }
+        
+        const token = getCookie('token')
 
-        await api.post('/order', {bodyOrder: order})
+        await api.post('/orders', {
+            bodyOrder: order,
+        }, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
     }
 
     return (

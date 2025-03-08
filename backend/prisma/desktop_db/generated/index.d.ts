@@ -1138,6 +1138,61 @@ export type tb_comandas = $Result.DefaultSelection<Prisma.$tb_comandasPayload>
  * 
  */
 export type tb_mesas = $Result.DefaultSelection<Prisma.$tb_mesasPayload>
+/**
+ * Model tb_empresas_movel_0001
+ * 
+ */
+export type tb_empresas_movel_0001 = $Result.DefaultSelection<Prisma.$tb_empresas_movel_0001Payload>
+/**
+ * Model tb_movel_0001_impressao
+ * 
+ */
+export type tb_movel_0001_impressao = $Result.DefaultSelection<Prisma.$tb_movel_0001_impressaoPayload>
+/**
+ * Model tb_operacao_movimento_produto
+ * 
+ */
+export type tb_operacao_movimento_produto = $Result.DefaultSelection<Prisma.$tb_operacao_movimento_produtoPayload>
+/**
+ * Model tb_parametros_data_inicial_tela_gerenciar
+ * 
+ */
+export type tb_parametros_data_inicial_tela_gerenciar = $Result.DefaultSelection<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload>
+/**
+ * Model tb_produtos_food_entrega_tap
+ * 
+ */
+export type tb_produtos_food_entrega_tap = $Result.DefaultSelection<Prisma.$tb_produtos_food_entrega_tapPayload>
+/**
+ * Model tb_produtos_food_producao_cozinha
+ * 
+ */
+export type tb_produtos_food_producao_cozinha = $Result.DefaultSelection<Prisma.$tb_produtos_food_producao_cozinhaPayload>
+/**
+ * Model tb_produtos_transformacao
+ * 
+ */
+export type tb_produtos_transformacao = $Result.DefaultSelection<Prisma.$tb_produtos_transformacaoPayload>
+/**
+ * Model tb_produtos_transformacao_conf
+ * 
+ */
+export type tb_produtos_transformacao_conf = $Result.DefaultSelection<Prisma.$tb_produtos_transformacao_confPayload>
+/**
+ * Model tb_vendas_pre_comandas_pre_pagamentos
+ * 
+ */
+export type tb_vendas_pre_comandas_pre_pagamentos = $Result.DefaultSelection<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload>
+/**
+ * Model tb_vendas_produtos_lotes_avulso
+ * 
+ */
+export type tb_vendas_produtos_lotes_avulso = $Result.DefaultSelection<Prisma.$tb_vendas_produtos_lotes_avulsoPayload>
+/**
+ * Model tb_vendas_produtos_lotes_avulso_pre
+ * 
+ */
+export type tb_vendas_produtos_lotes_avulso_pre = $Result.DefaultSelection<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -3511,6 +3566,116 @@ export class PrismaClient<
     * ```
     */
   get tb_mesas(): Prisma.tb_mesasDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tb_empresas_movel_0001`: Exposes CRUD operations for the **tb_empresas_movel_0001** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tb_empresas_movel_0001s
+    * const tb_empresas_movel_0001s = await prisma.tb_empresas_movel_0001.findMany()
+    * ```
+    */
+  get tb_empresas_movel_0001(): Prisma.tb_empresas_movel_0001Delegate<ExtArgs>;
+
+  /**
+   * `prisma.tb_movel_0001_impressao`: Exposes CRUD operations for the **tb_movel_0001_impressao** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tb_movel_0001_impressaos
+    * const tb_movel_0001_impressaos = await prisma.tb_movel_0001_impressao.findMany()
+    * ```
+    */
+  get tb_movel_0001_impressao(): Prisma.tb_movel_0001_impressaoDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tb_operacao_movimento_produto`: Exposes CRUD operations for the **tb_operacao_movimento_produto** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tb_operacao_movimento_produtos
+    * const tb_operacao_movimento_produtos = await prisma.tb_operacao_movimento_produto.findMany()
+    * ```
+    */
+  get tb_operacao_movimento_produto(): Prisma.tb_operacao_movimento_produtoDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tb_parametros_data_inicial_tela_gerenciar`: Exposes CRUD operations for the **tb_parametros_data_inicial_tela_gerenciar** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tb_parametros_data_inicial_tela_gerenciars
+    * const tb_parametros_data_inicial_tela_gerenciars = await prisma.tb_parametros_data_inicial_tela_gerenciar.findMany()
+    * ```
+    */
+  get tb_parametros_data_inicial_tela_gerenciar(): Prisma.tb_parametros_data_inicial_tela_gerenciarDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tb_produtos_food_entrega_tap`: Exposes CRUD operations for the **tb_produtos_food_entrega_tap** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tb_produtos_food_entrega_taps
+    * const tb_produtos_food_entrega_taps = await prisma.tb_produtos_food_entrega_tap.findMany()
+    * ```
+    */
+  get tb_produtos_food_entrega_tap(): Prisma.tb_produtos_food_entrega_tapDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tb_produtos_food_producao_cozinha`: Exposes CRUD operations for the **tb_produtos_food_producao_cozinha** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tb_produtos_food_producao_cozinhas
+    * const tb_produtos_food_producao_cozinhas = await prisma.tb_produtos_food_producao_cozinha.findMany()
+    * ```
+    */
+  get tb_produtos_food_producao_cozinha(): Prisma.tb_produtos_food_producao_cozinhaDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tb_produtos_transformacao`: Exposes CRUD operations for the **tb_produtos_transformacao** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tb_produtos_transformacaos
+    * const tb_produtos_transformacaos = await prisma.tb_produtos_transformacao.findMany()
+    * ```
+    */
+  get tb_produtos_transformacao(): Prisma.tb_produtos_transformacaoDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tb_produtos_transformacao_conf`: Exposes CRUD operations for the **tb_produtos_transformacao_conf** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tb_produtos_transformacao_confs
+    * const tb_produtos_transformacao_confs = await prisma.tb_produtos_transformacao_conf.findMany()
+    * ```
+    */
+  get tb_produtos_transformacao_conf(): Prisma.tb_produtos_transformacao_confDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tb_vendas_pre_comandas_pre_pagamentos`: Exposes CRUD operations for the **tb_vendas_pre_comandas_pre_pagamentos** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tb_vendas_pre_comandas_pre_pagamentos
+    * const tb_vendas_pre_comandas_pre_pagamentos = await prisma.tb_vendas_pre_comandas_pre_pagamentos.findMany()
+    * ```
+    */
+  get tb_vendas_pre_comandas_pre_pagamentos(): Prisma.tb_vendas_pre_comandas_pre_pagamentosDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tb_vendas_produtos_lotes_avulso`: Exposes CRUD operations for the **tb_vendas_produtos_lotes_avulso** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tb_vendas_produtos_lotes_avulsos
+    * const tb_vendas_produtos_lotes_avulsos = await prisma.tb_vendas_produtos_lotes_avulso.findMany()
+    * ```
+    */
+  get tb_vendas_produtos_lotes_avulso(): Prisma.tb_vendas_produtos_lotes_avulsoDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tb_vendas_produtos_lotes_avulso_pre`: Exposes CRUD operations for the **tb_vendas_produtos_lotes_avulso_pre** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tb_vendas_produtos_lotes_avulso_pres
+    * const tb_vendas_produtos_lotes_avulso_pres = await prisma.tb_vendas_produtos_lotes_avulso_pre.findMany()
+    * ```
+    */
+  get tb_vendas_produtos_lotes_avulso_pre(): Prisma.tb_vendas_produtos_lotes_avulso_preDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -4175,7 +4340,18 @@ export namespace Prisma {
     tb_whatsapp_mensagem: 'tb_whatsapp_mensagem',
     tb_whatsapp_parametros: 'tb_whatsapp_parametros',
     tb_comandas: 'tb_comandas',
-    tb_mesas: 'tb_mesas'
+    tb_mesas: 'tb_mesas',
+    tb_empresas_movel_0001: 'tb_empresas_movel_0001',
+    tb_movel_0001_impressao: 'tb_movel_0001_impressao',
+    tb_operacao_movimento_produto: 'tb_operacao_movimento_produto',
+    tb_parametros_data_inicial_tela_gerenciar: 'tb_parametros_data_inicial_tela_gerenciar',
+    tb_produtos_food_entrega_tap: 'tb_produtos_food_entrega_tap',
+    tb_produtos_food_producao_cozinha: 'tb_produtos_food_producao_cozinha',
+    tb_produtos_transformacao: 'tb_produtos_transformacao',
+    tb_produtos_transformacao_conf: 'tb_produtos_transformacao_conf',
+    tb_vendas_pre_comandas_pre_pagamentos: 'tb_vendas_pre_comandas_pre_pagamentos',
+    tb_vendas_produtos_lotes_avulso: 'tb_vendas_produtos_lotes_avulso',
+    tb_vendas_produtos_lotes_avulso_pre: 'tb_vendas_produtos_lotes_avulso_pre'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -4191,7 +4367,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "tb_pessoas" | "tb_produtos" | "tb_produtos_setor" | "tb_abertura_caixa" | "tb_abertura_caixa_contagem" | "tb_adquirentes" | "tb_adquirentes_bandeiras" | "tb_boleto_carteira" | "tb_boleto_comando_retorno" | "tb_caixas_ret" | "tb_cancelamentos" | "tb_cartoes" | "tb_centro_uso_consumo" | "tb_cfop_devolucao" | "tb_check_contas" | "tb_comando_sql_cliente" | "tb_compras" | "tb_compras_alteracao_imediata" | "tb_compras_devolucao" | "tb_compras_duplicatas" | "tb_compras_envio_nfe" | "tb_compras_padrao" | "tb_compras_pagamentos" | "tb_compras_produtos" | "tb_compras_produtos_lotes" | "tb_conta_razao" | "tb_cotacao" | "tb_cotacao_fechamento" | "tb_cotacao_item" | "tb_cotacao_participantes" | "tb_cotacao_retornos" | "tb_despesas" | "tb_despesas_aplicacao" | "tb_despesas_aplicacao_sub" | "tb_despesas_b" | "tb_despesas_b_financeiro" | "tb_despesas_b_rateio" | "tb_devolucao_fiscal" | "tb_documentos_personalizados" | "tb_documentos_personalizados_servidor" | "tb_dre_conf" | "tb_empresas" | "tb_empresas_comunicacao" | "tb_empresas_conf_etiqueta_pedido" | "tb_empresas_conf_geral" | "tb_empresas_conf_pet" | "tb_empresas_conf_vendas" | "tb_empresas_custo" | "tb_empresas_diretorios" | "tb_empresas_email" | "tb_empresas_etiquetas" | "tb_empresas_imagens" | "tb_empresas_liberadas_usuarios" | "tb_empresas_odbc" | "tb_empresas_pedido_online" | "tb_empresas_ws" | "tb_financeiro_canal_pagamento" | "tb_financeiro_dados" | "tb_financeiro_faturas" | "tb_financeiro_parcelas" | "tb_financeiro_vinculos" | "tb_formas_pagamento" | "tb_formas_pagamento_desconto_autorizado" | "tb_formas_pagamento_empresas" | "tb_formas_pagamento_oferta_autorizado" | "tb_formas_pagamento_usuarios" | "tb_formulario_permissao" | "tb_formulario_permissao_sub" | "tb_grade_fiscal" | "tb_inutilizacao_fiscal" | "tb_inventario" | "tb_inventario_conclusao" | "tb_inventario_exclusoes_departamento" | "tb_inventario_nao_coletado" | "tb_inventario_sub" | "tb_local_retirada" | "tb_log_alteracao" | "tb_logout" | "tb_ncm" | "tb_ncm_novo" | "tb_nfce" | "tb_nfce_assinados" | "tb_nfce_autxml" | "tb_nfce_detpagamentos" | "tb_nfce_duplicatas" | "tb_nfce_item" | "tb_nfce_lote" | "tb_nfe" | "tb_nfe_autxml" | "tb_nfe_cce" | "tb_nfe_defender" | "tb_nfe_defender_dados" | "tb_nfe_defender_resumo" | "tb_nfe_detpagamentos" | "tb_nfe_duplicatas" | "tb_nfe_item" | "tb_nfe_item_rastro" | "tb_nfe_mandest" | "tb_nfe_operacao_inverso_estoque" | "tb_nfe_padrao" | "tb_nfe_referencia" | "tb_nfe_solicitacao_pdv" | "tb_nfe_veiculos" | "tb_ocorrencias" | "tb_operacao_fiscal" | "tb_operacao_fiscal_raiz_cnpj" | "tb_operacao_movimento" | "tb_operacao_movimento_cfop" | "tb_parametros_execucao" | "tb_pdv_cadastro" | "tb_pdv_cargas" | "tb_pdv_cargas_txt" | "tb_pdv_contra_vale" | "tb_pedidos_compras_lista" | "tb_pedidos_pagamentos_st" | "tb_pedidos_produtos_st" | "tb_pedidos_st" | "tb_pessoas_canal_cadastro" | "tb_pessoas_formas_pagamento" | "tb_pessoas_representante_comercial" | "tb_pessoas_retencoes" | "tb_pessoas_veiculos" | "tb_pessoas_vencimentos" | "tb_pgr_fid" | "tb_pgr_fid_resgate" | "tb_pgr_fid_sub" | "tb_portador" | "tb_portador_sub" | "tb_portador_transferencias" | "tb_prestacao_servico_desacordo" | "tb_produtos_alocacao" | "tb_produtos_cliente_especial" | "tb_produtos_cliente_especial_faixa" | "tb_produtos_codigo_barras" | "tb_produtos_dcb" | "tb_produtos_departamento" | "tb_produtos_desmembramento" | "tb_produtos_desmembramento_sub" | "tb_produtos_estoque" | "tb_produtos_estoque_posicao_empresa" | "tb_produtos_estrutura_custo" | "tb_produtos_faixa_desconto" | "tb_produtos_familia" | "tb_produtos_fornecedor" | "tb_produtos_grupo" | "tb_produtos_imagem" | "tb_produtos_lotes" | "tb_produtos_lotes_estoque" | "tb_produtos_manutencao_estoque_min_max" | "tb_produtos_manutencao_estoque_min_max_vendas" | "tb_produtos_marca" | "tb_produtos_padrao" | "tb_produtos_pedido_online" | "tb_produtos_precos_filial" | "tb_produtos_receitas" | "tb_produtos_receitas_sub" | "tb_produtos_subfamilia" | "tb_produtos_subgrupo" | "tb_produtos_tabela_preco" | "tb_produtos_tabela_preco_sub" | "tb_produtos_tabela_preco_sub_faixa" | "tb_produtos_unidades" | "tb_promocao_ticket" | "tb_representante_comercial" | "tb_sangria" | "tb_seguranca" | "tb_seguranca_conf" | "tb_sip_quitacao" | "tb_sql_base_executado" | "tb_sql_objetos" | "tb_sql_objetos_sub" | "tb_sql_sincronizacao" | "tb_sql_sincronizacao_posicao" | "tb_sql_sincronizacao_receber" | "tb_temp" | "tb_tipos_pagamentos" | "tb_tipos_pagamentos_sub" | "tb_transferencias_filiais" | "tb_umovme_activityhistory" | "tb_umovme_api" | "tb_umovme_indicadores" | "tb_umovme_invconf" | "tb_umovme_parametros_execucao" | "tb_umovme_pre_venda" | "tb_umovme_pre_venda_item" | "tb_umovme_precos" | "tb_umovme_usuarios" | "tb_usuarios" | "tb_usuarios_comunicacao_obrigatoria" | "tb_usuarios_empresas" | "tb_usuarios_permissoes" | "tb_usuarios_permissoes_comandos" | "tb_usuarios_permissoes_comandos_sub" | "tb_usuarios_permissoes_relatorios" | "tb_usuarios_permissoes_telas" | "tb_usuarios_permissoes_telas_objetos" | "tb_usuarios_senha" | "tb_vale_credito" | "tb_vale_credito_origem" | "tb_vale_credito_presente" | "tb_vale_credito_sub" | "tb_vendas" | "tb_vendas_agrupamentos" | "tb_vendas_devolucao" | "tb_vendas_pagamentos" | "tb_vendas_pagamentos_pre" | "tb_vendas_pre" | "tb_vendas_pre_comandas" | "tb_vendas_produtos" | "tb_vendas_produtos_auxiliar" | "tb_vendas_produtos_insumos" | "tb_vendas_produtos_insumos_pre" | "tb_vendas_produtos_lotes" | "tb_vendas_produtos_lotes_pre" | "tb_vendas_produtos_pre" | "tb_vendas_produtos_receitas" | "tb_vendas_tef_comprovante" | "tb_vendedor" | "tb_vendedor_sub" | "tb_vendedor_sub_pendencia" | "tb_versao_windados" | "tb_whatsapp_mensagem" | "tb_whatsapp_parametros" | "tb_comandas" | "tb_mesas"
+      modelProps: "tb_pessoas" | "tb_produtos" | "tb_produtos_setor" | "tb_abertura_caixa" | "tb_abertura_caixa_contagem" | "tb_adquirentes" | "tb_adquirentes_bandeiras" | "tb_boleto_carteira" | "tb_boleto_comando_retorno" | "tb_caixas_ret" | "tb_cancelamentos" | "tb_cartoes" | "tb_centro_uso_consumo" | "tb_cfop_devolucao" | "tb_check_contas" | "tb_comando_sql_cliente" | "tb_compras" | "tb_compras_alteracao_imediata" | "tb_compras_devolucao" | "tb_compras_duplicatas" | "tb_compras_envio_nfe" | "tb_compras_padrao" | "tb_compras_pagamentos" | "tb_compras_produtos" | "tb_compras_produtos_lotes" | "tb_conta_razao" | "tb_cotacao" | "tb_cotacao_fechamento" | "tb_cotacao_item" | "tb_cotacao_participantes" | "tb_cotacao_retornos" | "tb_despesas" | "tb_despesas_aplicacao" | "tb_despesas_aplicacao_sub" | "tb_despesas_b" | "tb_despesas_b_financeiro" | "tb_despesas_b_rateio" | "tb_devolucao_fiscal" | "tb_documentos_personalizados" | "tb_documentos_personalizados_servidor" | "tb_dre_conf" | "tb_empresas" | "tb_empresas_comunicacao" | "tb_empresas_conf_etiqueta_pedido" | "tb_empresas_conf_geral" | "tb_empresas_conf_pet" | "tb_empresas_conf_vendas" | "tb_empresas_custo" | "tb_empresas_diretorios" | "tb_empresas_email" | "tb_empresas_etiquetas" | "tb_empresas_imagens" | "tb_empresas_liberadas_usuarios" | "tb_empresas_odbc" | "tb_empresas_pedido_online" | "tb_empresas_ws" | "tb_financeiro_canal_pagamento" | "tb_financeiro_dados" | "tb_financeiro_faturas" | "tb_financeiro_parcelas" | "tb_financeiro_vinculos" | "tb_formas_pagamento" | "tb_formas_pagamento_desconto_autorizado" | "tb_formas_pagamento_empresas" | "tb_formas_pagamento_oferta_autorizado" | "tb_formas_pagamento_usuarios" | "tb_formulario_permissao" | "tb_formulario_permissao_sub" | "tb_grade_fiscal" | "tb_inutilizacao_fiscal" | "tb_inventario" | "tb_inventario_conclusao" | "tb_inventario_exclusoes_departamento" | "tb_inventario_nao_coletado" | "tb_inventario_sub" | "tb_local_retirada" | "tb_log_alteracao" | "tb_logout" | "tb_ncm" | "tb_ncm_novo" | "tb_nfce" | "tb_nfce_assinados" | "tb_nfce_autxml" | "tb_nfce_detpagamentos" | "tb_nfce_duplicatas" | "tb_nfce_item" | "tb_nfce_lote" | "tb_nfe" | "tb_nfe_autxml" | "tb_nfe_cce" | "tb_nfe_defender" | "tb_nfe_defender_dados" | "tb_nfe_defender_resumo" | "tb_nfe_detpagamentos" | "tb_nfe_duplicatas" | "tb_nfe_item" | "tb_nfe_item_rastro" | "tb_nfe_mandest" | "tb_nfe_operacao_inverso_estoque" | "tb_nfe_padrao" | "tb_nfe_referencia" | "tb_nfe_solicitacao_pdv" | "tb_nfe_veiculos" | "tb_ocorrencias" | "tb_operacao_fiscal" | "tb_operacao_fiscal_raiz_cnpj" | "tb_operacao_movimento" | "tb_operacao_movimento_cfop" | "tb_parametros_execucao" | "tb_pdv_cadastro" | "tb_pdv_cargas" | "tb_pdv_cargas_txt" | "tb_pdv_contra_vale" | "tb_pedidos_compras_lista" | "tb_pedidos_pagamentos_st" | "tb_pedidos_produtos_st" | "tb_pedidos_st" | "tb_pessoas_canal_cadastro" | "tb_pessoas_formas_pagamento" | "tb_pessoas_representante_comercial" | "tb_pessoas_retencoes" | "tb_pessoas_veiculos" | "tb_pessoas_vencimentos" | "tb_pgr_fid" | "tb_pgr_fid_resgate" | "tb_pgr_fid_sub" | "tb_portador" | "tb_portador_sub" | "tb_portador_transferencias" | "tb_prestacao_servico_desacordo" | "tb_produtos_alocacao" | "tb_produtos_cliente_especial" | "tb_produtos_cliente_especial_faixa" | "tb_produtos_codigo_barras" | "tb_produtos_dcb" | "tb_produtos_departamento" | "tb_produtos_desmembramento" | "tb_produtos_desmembramento_sub" | "tb_produtos_estoque" | "tb_produtos_estoque_posicao_empresa" | "tb_produtos_estrutura_custo" | "tb_produtos_faixa_desconto" | "tb_produtos_familia" | "tb_produtos_fornecedor" | "tb_produtos_grupo" | "tb_produtos_imagem" | "tb_produtos_lotes" | "tb_produtos_lotes_estoque" | "tb_produtos_manutencao_estoque_min_max" | "tb_produtos_manutencao_estoque_min_max_vendas" | "tb_produtos_marca" | "tb_produtos_padrao" | "tb_produtos_pedido_online" | "tb_produtos_precos_filial" | "tb_produtos_receitas" | "tb_produtos_receitas_sub" | "tb_produtos_subfamilia" | "tb_produtos_subgrupo" | "tb_produtos_tabela_preco" | "tb_produtos_tabela_preco_sub" | "tb_produtos_tabela_preco_sub_faixa" | "tb_produtos_unidades" | "tb_promocao_ticket" | "tb_representante_comercial" | "tb_sangria" | "tb_seguranca" | "tb_seguranca_conf" | "tb_sip_quitacao" | "tb_sql_base_executado" | "tb_sql_objetos" | "tb_sql_objetos_sub" | "tb_sql_sincronizacao" | "tb_sql_sincronizacao_posicao" | "tb_sql_sincronizacao_receber" | "tb_temp" | "tb_tipos_pagamentos" | "tb_tipos_pagamentos_sub" | "tb_transferencias_filiais" | "tb_umovme_activityhistory" | "tb_umovme_api" | "tb_umovme_indicadores" | "tb_umovme_invconf" | "tb_umovme_parametros_execucao" | "tb_umovme_pre_venda" | "tb_umovme_pre_venda_item" | "tb_umovme_precos" | "tb_umovme_usuarios" | "tb_usuarios" | "tb_usuarios_comunicacao_obrigatoria" | "tb_usuarios_empresas" | "tb_usuarios_permissoes" | "tb_usuarios_permissoes_comandos" | "tb_usuarios_permissoes_comandos_sub" | "tb_usuarios_permissoes_relatorios" | "tb_usuarios_permissoes_telas" | "tb_usuarios_permissoes_telas_objetos" | "tb_usuarios_senha" | "tb_vale_credito" | "tb_vale_credito_origem" | "tb_vale_credito_presente" | "tb_vale_credito_sub" | "tb_vendas" | "tb_vendas_agrupamentos" | "tb_vendas_devolucao" | "tb_vendas_pagamentos" | "tb_vendas_pagamentos_pre" | "tb_vendas_pre" | "tb_vendas_pre_comandas" | "tb_vendas_produtos" | "tb_vendas_produtos_auxiliar" | "tb_vendas_produtos_insumos" | "tb_vendas_produtos_insumos_pre" | "tb_vendas_produtos_lotes" | "tb_vendas_produtos_lotes_pre" | "tb_vendas_produtos_pre" | "tb_vendas_produtos_receitas" | "tb_vendas_tef_comprovante" | "tb_vendedor" | "tb_vendedor_sub" | "tb_vendedor_sub_pendencia" | "tb_versao_windados" | "tb_whatsapp_mensagem" | "tb_whatsapp_parametros" | "tb_comandas" | "tb_mesas" | "tb_empresas_movel_0001" | "tb_movel_0001_impressao" | "tb_operacao_movimento_produto" | "tb_parametros_data_inicial_tela_gerenciar" | "tb_produtos_food_entrega_tap" | "tb_produtos_food_producao_cozinha" | "tb_produtos_transformacao" | "tb_produtos_transformacao_conf" | "tb_vendas_pre_comandas_pre_pagamentos" | "tb_vendas_produtos_lotes_avulso" | "tb_vendas_produtos_lotes_avulso_pre"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -19045,6 +19221,732 @@ export namespace Prisma {
           }
         }
       }
+      tb_empresas_movel_0001: {
+        payload: Prisma.$tb_empresas_movel_0001Payload<ExtArgs>
+        fields: Prisma.tb_empresas_movel_0001FieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tb_empresas_movel_0001FindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_empresas_movel_0001Payload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tb_empresas_movel_0001FindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_empresas_movel_0001Payload>
+          }
+          findFirst: {
+            args: Prisma.tb_empresas_movel_0001FindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_empresas_movel_0001Payload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tb_empresas_movel_0001FindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_empresas_movel_0001Payload>
+          }
+          findMany: {
+            args: Prisma.tb_empresas_movel_0001FindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_empresas_movel_0001Payload>[]
+          }
+          create: {
+            args: Prisma.tb_empresas_movel_0001CreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_empresas_movel_0001Payload>
+          }
+          createMany: {
+            args: Prisma.tb_empresas_movel_0001CreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.tb_empresas_movel_0001DeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_empresas_movel_0001Payload>
+          }
+          update: {
+            args: Prisma.tb_empresas_movel_0001UpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_empresas_movel_0001Payload>
+          }
+          deleteMany: {
+            args: Prisma.tb_empresas_movel_0001DeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tb_empresas_movel_0001UpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.tb_empresas_movel_0001UpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_empresas_movel_0001Payload>
+          }
+          aggregate: {
+            args: Prisma.Tb_empresas_movel_0001AggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTb_empresas_movel_0001>
+          }
+          groupBy: {
+            args: Prisma.tb_empresas_movel_0001GroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tb_empresas_movel_0001GroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tb_empresas_movel_0001CountArgs<ExtArgs>
+            result: $Utils.Optional<Tb_empresas_movel_0001CountAggregateOutputType> | number
+          }
+        }
+      }
+      tb_movel_0001_impressao: {
+        payload: Prisma.$tb_movel_0001_impressaoPayload<ExtArgs>
+        fields: Prisma.tb_movel_0001_impressaoFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tb_movel_0001_impressaoFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_movel_0001_impressaoPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tb_movel_0001_impressaoFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_movel_0001_impressaoPayload>
+          }
+          findFirst: {
+            args: Prisma.tb_movel_0001_impressaoFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_movel_0001_impressaoPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tb_movel_0001_impressaoFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_movel_0001_impressaoPayload>
+          }
+          findMany: {
+            args: Prisma.tb_movel_0001_impressaoFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_movel_0001_impressaoPayload>[]
+          }
+          create: {
+            args: Prisma.tb_movel_0001_impressaoCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_movel_0001_impressaoPayload>
+          }
+          createMany: {
+            args: Prisma.tb_movel_0001_impressaoCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.tb_movel_0001_impressaoDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_movel_0001_impressaoPayload>
+          }
+          update: {
+            args: Prisma.tb_movel_0001_impressaoUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_movel_0001_impressaoPayload>
+          }
+          deleteMany: {
+            args: Prisma.tb_movel_0001_impressaoDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tb_movel_0001_impressaoUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.tb_movel_0001_impressaoUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_movel_0001_impressaoPayload>
+          }
+          aggregate: {
+            args: Prisma.Tb_movel_0001_impressaoAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTb_movel_0001_impressao>
+          }
+          groupBy: {
+            args: Prisma.tb_movel_0001_impressaoGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tb_movel_0001_impressaoGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tb_movel_0001_impressaoCountArgs<ExtArgs>
+            result: $Utils.Optional<Tb_movel_0001_impressaoCountAggregateOutputType> | number
+          }
+        }
+      }
+      tb_operacao_movimento_produto: {
+        payload: Prisma.$tb_operacao_movimento_produtoPayload<ExtArgs>
+        fields: Prisma.tb_operacao_movimento_produtoFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tb_operacao_movimento_produtoFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_operacao_movimento_produtoPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tb_operacao_movimento_produtoFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_operacao_movimento_produtoPayload>
+          }
+          findFirst: {
+            args: Prisma.tb_operacao_movimento_produtoFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_operacao_movimento_produtoPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tb_operacao_movimento_produtoFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_operacao_movimento_produtoPayload>
+          }
+          findMany: {
+            args: Prisma.tb_operacao_movimento_produtoFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_operacao_movimento_produtoPayload>[]
+          }
+          create: {
+            args: Prisma.tb_operacao_movimento_produtoCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_operacao_movimento_produtoPayload>
+          }
+          createMany: {
+            args: Prisma.tb_operacao_movimento_produtoCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.tb_operacao_movimento_produtoDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_operacao_movimento_produtoPayload>
+          }
+          update: {
+            args: Prisma.tb_operacao_movimento_produtoUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_operacao_movimento_produtoPayload>
+          }
+          deleteMany: {
+            args: Prisma.tb_operacao_movimento_produtoDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tb_operacao_movimento_produtoUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.tb_operacao_movimento_produtoUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_operacao_movimento_produtoPayload>
+          }
+          aggregate: {
+            args: Prisma.Tb_operacao_movimento_produtoAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTb_operacao_movimento_produto>
+          }
+          groupBy: {
+            args: Prisma.tb_operacao_movimento_produtoGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tb_operacao_movimento_produtoGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tb_operacao_movimento_produtoCountArgs<ExtArgs>
+            result: $Utils.Optional<Tb_operacao_movimento_produtoCountAggregateOutputType> | number
+          }
+        }
+      }
+      tb_parametros_data_inicial_tela_gerenciar: {
+        payload: Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload<ExtArgs>
+        fields: Prisma.tb_parametros_data_inicial_tela_gerenciarFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tb_parametros_data_inicial_tela_gerenciarFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tb_parametros_data_inicial_tela_gerenciarFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload>
+          }
+          findFirst: {
+            args: Prisma.tb_parametros_data_inicial_tela_gerenciarFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tb_parametros_data_inicial_tela_gerenciarFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload>
+          }
+          findMany: {
+            args: Prisma.tb_parametros_data_inicial_tela_gerenciarFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload>[]
+          }
+          create: {
+            args: Prisma.tb_parametros_data_inicial_tela_gerenciarCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload>
+          }
+          createMany: {
+            args: Prisma.tb_parametros_data_inicial_tela_gerenciarCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.tb_parametros_data_inicial_tela_gerenciarDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload>
+          }
+          update: {
+            args: Prisma.tb_parametros_data_inicial_tela_gerenciarUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload>
+          }
+          deleteMany: {
+            args: Prisma.tb_parametros_data_inicial_tela_gerenciarDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tb_parametros_data_inicial_tela_gerenciarUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.tb_parametros_data_inicial_tela_gerenciarUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload>
+          }
+          aggregate: {
+            args: Prisma.Tb_parametros_data_inicial_tela_gerenciarAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTb_parametros_data_inicial_tela_gerenciar>
+          }
+          groupBy: {
+            args: Prisma.tb_parametros_data_inicial_tela_gerenciarGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tb_parametros_data_inicial_tela_gerenciarGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tb_parametros_data_inicial_tela_gerenciarCountArgs<ExtArgs>
+            result: $Utils.Optional<Tb_parametros_data_inicial_tela_gerenciarCountAggregateOutputType> | number
+          }
+        }
+      }
+      tb_produtos_food_entrega_tap: {
+        payload: Prisma.$tb_produtos_food_entrega_tapPayload<ExtArgs>
+        fields: Prisma.tb_produtos_food_entrega_tapFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tb_produtos_food_entrega_tapFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_entrega_tapPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tb_produtos_food_entrega_tapFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_entrega_tapPayload>
+          }
+          findFirst: {
+            args: Prisma.tb_produtos_food_entrega_tapFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_entrega_tapPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tb_produtos_food_entrega_tapFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_entrega_tapPayload>
+          }
+          findMany: {
+            args: Prisma.tb_produtos_food_entrega_tapFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_entrega_tapPayload>[]
+          }
+          create: {
+            args: Prisma.tb_produtos_food_entrega_tapCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_entrega_tapPayload>
+          }
+          createMany: {
+            args: Prisma.tb_produtos_food_entrega_tapCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.tb_produtos_food_entrega_tapDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_entrega_tapPayload>
+          }
+          update: {
+            args: Prisma.tb_produtos_food_entrega_tapUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_entrega_tapPayload>
+          }
+          deleteMany: {
+            args: Prisma.tb_produtos_food_entrega_tapDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tb_produtos_food_entrega_tapUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.tb_produtos_food_entrega_tapUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_entrega_tapPayload>
+          }
+          aggregate: {
+            args: Prisma.Tb_produtos_food_entrega_tapAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTb_produtos_food_entrega_tap>
+          }
+          groupBy: {
+            args: Prisma.tb_produtos_food_entrega_tapGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tb_produtos_food_entrega_tapGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tb_produtos_food_entrega_tapCountArgs<ExtArgs>
+            result: $Utils.Optional<Tb_produtos_food_entrega_tapCountAggregateOutputType> | number
+          }
+        }
+      }
+      tb_produtos_food_producao_cozinha: {
+        payload: Prisma.$tb_produtos_food_producao_cozinhaPayload<ExtArgs>
+        fields: Prisma.tb_produtos_food_producao_cozinhaFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tb_produtos_food_producao_cozinhaFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_producao_cozinhaPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tb_produtos_food_producao_cozinhaFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_producao_cozinhaPayload>
+          }
+          findFirst: {
+            args: Prisma.tb_produtos_food_producao_cozinhaFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_producao_cozinhaPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tb_produtos_food_producao_cozinhaFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_producao_cozinhaPayload>
+          }
+          findMany: {
+            args: Prisma.tb_produtos_food_producao_cozinhaFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_producao_cozinhaPayload>[]
+          }
+          create: {
+            args: Prisma.tb_produtos_food_producao_cozinhaCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_producao_cozinhaPayload>
+          }
+          createMany: {
+            args: Prisma.tb_produtos_food_producao_cozinhaCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.tb_produtos_food_producao_cozinhaDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_producao_cozinhaPayload>
+          }
+          update: {
+            args: Prisma.tb_produtos_food_producao_cozinhaUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_producao_cozinhaPayload>
+          }
+          deleteMany: {
+            args: Prisma.tb_produtos_food_producao_cozinhaDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tb_produtos_food_producao_cozinhaUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.tb_produtos_food_producao_cozinhaUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_food_producao_cozinhaPayload>
+          }
+          aggregate: {
+            args: Prisma.Tb_produtos_food_producao_cozinhaAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTb_produtos_food_producao_cozinha>
+          }
+          groupBy: {
+            args: Prisma.tb_produtos_food_producao_cozinhaGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tb_produtos_food_producao_cozinhaGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tb_produtos_food_producao_cozinhaCountArgs<ExtArgs>
+            result: $Utils.Optional<Tb_produtos_food_producao_cozinhaCountAggregateOutputType> | number
+          }
+        }
+      }
+      tb_produtos_transformacao: {
+        payload: Prisma.$tb_produtos_transformacaoPayload<ExtArgs>
+        fields: Prisma.tb_produtos_transformacaoFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tb_produtos_transformacaoFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacaoPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tb_produtos_transformacaoFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacaoPayload>
+          }
+          findFirst: {
+            args: Prisma.tb_produtos_transformacaoFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacaoPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tb_produtos_transformacaoFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacaoPayload>
+          }
+          findMany: {
+            args: Prisma.tb_produtos_transformacaoFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacaoPayload>[]
+          }
+          create: {
+            args: Prisma.tb_produtos_transformacaoCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacaoPayload>
+          }
+          createMany: {
+            args: Prisma.tb_produtos_transformacaoCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.tb_produtos_transformacaoDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacaoPayload>
+          }
+          update: {
+            args: Prisma.tb_produtos_transformacaoUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacaoPayload>
+          }
+          deleteMany: {
+            args: Prisma.tb_produtos_transformacaoDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tb_produtos_transformacaoUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.tb_produtos_transformacaoUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacaoPayload>
+          }
+          aggregate: {
+            args: Prisma.Tb_produtos_transformacaoAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTb_produtos_transformacao>
+          }
+          groupBy: {
+            args: Prisma.tb_produtos_transformacaoGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tb_produtos_transformacaoGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tb_produtos_transformacaoCountArgs<ExtArgs>
+            result: $Utils.Optional<Tb_produtos_transformacaoCountAggregateOutputType> | number
+          }
+        }
+      }
+      tb_produtos_transformacao_conf: {
+        payload: Prisma.$tb_produtos_transformacao_confPayload<ExtArgs>
+        fields: Prisma.tb_produtos_transformacao_confFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tb_produtos_transformacao_confFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacao_confPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tb_produtos_transformacao_confFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacao_confPayload>
+          }
+          findFirst: {
+            args: Prisma.tb_produtos_transformacao_confFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacao_confPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tb_produtos_transformacao_confFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacao_confPayload>
+          }
+          findMany: {
+            args: Prisma.tb_produtos_transformacao_confFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacao_confPayload>[]
+          }
+          create: {
+            args: Prisma.tb_produtos_transformacao_confCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacao_confPayload>
+          }
+          createMany: {
+            args: Prisma.tb_produtos_transformacao_confCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.tb_produtos_transformacao_confDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacao_confPayload>
+          }
+          update: {
+            args: Prisma.tb_produtos_transformacao_confUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacao_confPayload>
+          }
+          deleteMany: {
+            args: Prisma.tb_produtos_transformacao_confDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tb_produtos_transformacao_confUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.tb_produtos_transformacao_confUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_produtos_transformacao_confPayload>
+          }
+          aggregate: {
+            args: Prisma.Tb_produtos_transformacao_confAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTb_produtos_transformacao_conf>
+          }
+          groupBy: {
+            args: Prisma.tb_produtos_transformacao_confGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tb_produtos_transformacao_confGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tb_produtos_transformacao_confCountArgs<ExtArgs>
+            result: $Utils.Optional<Tb_produtos_transformacao_confCountAggregateOutputType> | number
+          }
+        }
+      }
+      tb_vendas_pre_comandas_pre_pagamentos: {
+        payload: Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload<ExtArgs>
+        fields: Prisma.tb_vendas_pre_comandas_pre_pagamentosFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tb_vendas_pre_comandas_pre_pagamentosFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tb_vendas_pre_comandas_pre_pagamentosFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload>
+          }
+          findFirst: {
+            args: Prisma.tb_vendas_pre_comandas_pre_pagamentosFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tb_vendas_pre_comandas_pre_pagamentosFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload>
+          }
+          findMany: {
+            args: Prisma.tb_vendas_pre_comandas_pre_pagamentosFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload>[]
+          }
+          create: {
+            args: Prisma.tb_vendas_pre_comandas_pre_pagamentosCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload>
+          }
+          createMany: {
+            args: Prisma.tb_vendas_pre_comandas_pre_pagamentosCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.tb_vendas_pre_comandas_pre_pagamentosDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload>
+          }
+          update: {
+            args: Prisma.tb_vendas_pre_comandas_pre_pagamentosUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload>
+          }
+          deleteMany: {
+            args: Prisma.tb_vendas_pre_comandas_pre_pagamentosDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tb_vendas_pre_comandas_pre_pagamentosUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.tb_vendas_pre_comandas_pre_pagamentosUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload>
+          }
+          aggregate: {
+            args: Prisma.Tb_vendas_pre_comandas_pre_pagamentosAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTb_vendas_pre_comandas_pre_pagamentos>
+          }
+          groupBy: {
+            args: Prisma.tb_vendas_pre_comandas_pre_pagamentosGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tb_vendas_pre_comandas_pre_pagamentosGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tb_vendas_pre_comandas_pre_pagamentosCountArgs<ExtArgs>
+            result: $Utils.Optional<Tb_vendas_pre_comandas_pre_pagamentosCountAggregateOutputType> | number
+          }
+        }
+      }
+      tb_vendas_produtos_lotes_avulso: {
+        payload: Prisma.$tb_vendas_produtos_lotes_avulsoPayload<ExtArgs>
+        fields: Prisma.tb_vendas_produtos_lotes_avulsoFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tb_vendas_produtos_lotes_avulsoFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tb_vendas_produtos_lotes_avulsoFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload>
+          }
+          findFirst: {
+            args: Prisma.tb_vendas_produtos_lotes_avulsoFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tb_vendas_produtos_lotes_avulsoFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload>
+          }
+          findMany: {
+            args: Prisma.tb_vendas_produtos_lotes_avulsoFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload>[]
+          }
+          create: {
+            args: Prisma.tb_vendas_produtos_lotes_avulsoCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload>
+          }
+          createMany: {
+            args: Prisma.tb_vendas_produtos_lotes_avulsoCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.tb_vendas_produtos_lotes_avulsoDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload>
+          }
+          update: {
+            args: Prisma.tb_vendas_produtos_lotes_avulsoUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload>
+          }
+          deleteMany: {
+            args: Prisma.tb_vendas_produtos_lotes_avulsoDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tb_vendas_produtos_lotes_avulsoUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.tb_vendas_produtos_lotes_avulsoUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload>
+          }
+          aggregate: {
+            args: Prisma.Tb_vendas_produtos_lotes_avulsoAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTb_vendas_produtos_lotes_avulso>
+          }
+          groupBy: {
+            args: Prisma.tb_vendas_produtos_lotes_avulsoGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tb_vendas_produtos_lotes_avulsoGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tb_vendas_produtos_lotes_avulsoCountArgs<ExtArgs>
+            result: $Utils.Optional<Tb_vendas_produtos_lotes_avulsoCountAggregateOutputType> | number
+          }
+        }
+      }
+      tb_vendas_produtos_lotes_avulso_pre: {
+        payload: Prisma.$tb_vendas_produtos_lotes_avulso_prePayload<ExtArgs>
+        fields: Prisma.tb_vendas_produtos_lotes_avulso_preFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tb_vendas_produtos_lotes_avulso_preFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tb_vendas_produtos_lotes_avulso_preFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload>
+          }
+          findFirst: {
+            args: Prisma.tb_vendas_produtos_lotes_avulso_preFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tb_vendas_produtos_lotes_avulso_preFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload>
+          }
+          findMany: {
+            args: Prisma.tb_vendas_produtos_lotes_avulso_preFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload>[]
+          }
+          create: {
+            args: Prisma.tb_vendas_produtos_lotes_avulso_preCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload>
+          }
+          createMany: {
+            args: Prisma.tb_vendas_produtos_lotes_avulso_preCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.tb_vendas_produtos_lotes_avulso_preDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload>
+          }
+          update: {
+            args: Prisma.tb_vendas_produtos_lotes_avulso_preUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload>
+          }
+          deleteMany: {
+            args: Prisma.tb_vendas_produtos_lotes_avulso_preDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tb_vendas_produtos_lotes_avulso_preUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.tb_vendas_produtos_lotes_avulso_preUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload>
+          }
+          aggregate: {
+            args: Prisma.Tb_vendas_produtos_lotes_avulso_preAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTb_vendas_produtos_lotes_avulso_pre>
+          }
+          groupBy: {
+            args: Prisma.tb_vendas_produtos_lotes_avulso_preGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tb_vendas_produtos_lotes_avulso_preGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tb_vendas_produtos_lotes_avulso_preCountArgs<ExtArgs>
+            result: $Utils.Optional<Tb_vendas_produtos_lotes_avulso_preCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -20654,6 +21556,8 @@ export namespace Prisma {
     Margem_Ideal: number | null
     Markup_Ideal: number | null
     Custo_Ideal: number | null
+    Id_Unidade_Tributacao: number | null
+    Fator_Unidade_Tributacao: number | null
   }
 
   export type Tb_produtosSumAggregateOutputType = {
@@ -20702,6 +21606,8 @@ export namespace Prisma {
     Margem_Ideal: number | null
     Markup_Ideal: number | null
     Custo_Ideal: number | null
+    Id_Unidade_Tributacao: number | null
+    Fator_Unidade_Tributacao: number | null
   }
 
   export type Tb_produtosMinAggregateOutputType = {
@@ -20786,6 +21692,8 @@ export namespace Prisma {
     Margem_Ideal: number | null
     Markup_Ideal: number | null
     Custo_Ideal: number | null
+    Id_Unidade_Tributacao: number | null
+    Fator_Unidade_Tributacao: number | null
   }
 
   export type Tb_produtosMaxAggregateOutputType = {
@@ -20870,6 +21778,8 @@ export namespace Prisma {
     Margem_Ideal: number | null
     Markup_Ideal: number | null
     Custo_Ideal: number | null
+    Id_Unidade_Tributacao: number | null
+    Fator_Unidade_Tributacao: number | null
   }
 
   export type Tb_produtosCountAggregateOutputType = {
@@ -20954,6 +21864,8 @@ export namespace Prisma {
     Margem_Ideal: number
     Markup_Ideal: number
     Custo_Ideal: number
+    Id_Unidade_Tributacao: number
+    Fator_Unidade_Tributacao: number
     _all: number
   }
 
@@ -21004,6 +21916,8 @@ export namespace Prisma {
     Margem_Ideal?: true
     Markup_Ideal?: true
     Custo_Ideal?: true
+    Id_Unidade_Tributacao?: true
+    Fator_Unidade_Tributacao?: true
   }
 
   export type Tb_produtosSumAggregateInputType = {
@@ -21052,6 +21966,8 @@ export namespace Prisma {
     Margem_Ideal?: true
     Markup_Ideal?: true
     Custo_Ideal?: true
+    Id_Unidade_Tributacao?: true
+    Fator_Unidade_Tributacao?: true
   }
 
   export type Tb_produtosMinAggregateInputType = {
@@ -21136,6 +22052,8 @@ export namespace Prisma {
     Margem_Ideal?: true
     Markup_Ideal?: true
     Custo_Ideal?: true
+    Id_Unidade_Tributacao?: true
+    Fator_Unidade_Tributacao?: true
   }
 
   export type Tb_produtosMaxAggregateInputType = {
@@ -21220,6 +22138,8 @@ export namespace Prisma {
     Margem_Ideal?: true
     Markup_Ideal?: true
     Custo_Ideal?: true
+    Id_Unidade_Tributacao?: true
+    Fator_Unidade_Tributacao?: true
   }
 
   export type Tb_produtosCountAggregateInputType = {
@@ -21304,6 +22224,8 @@ export namespace Prisma {
     Margem_Ideal?: true
     Markup_Ideal?: true
     Custo_Ideal?: true
+    Id_Unidade_Tributacao?: true
+    Fator_Unidade_Tributacao?: true
     _all?: true
   }
 
@@ -21475,6 +22397,8 @@ export namespace Prisma {
     Margem_Ideal: number | null
     Markup_Ideal: number | null
     Custo_Ideal: number | null
+    Id_Unidade_Tributacao: number | null
+    Fator_Unidade_Tributacao: number | null
     _count: Tb_produtosCountAggregateOutputType | null
     _avg: Tb_produtosAvgAggregateOutputType | null
     _sum: Tb_produtosSumAggregateOutputType | null
@@ -21578,6 +22502,8 @@ export namespace Prisma {
     Margem_Ideal?: boolean
     Markup_Ideal?: boolean
     Custo_Ideal?: boolean
+    Id_Unidade_Tributacao?: boolean
+    Fator_Unidade_Tributacao?: boolean
   }, ExtArgs["result"]["tb_produtos"]>
 
 
@@ -21663,6 +22589,8 @@ export namespace Prisma {
     Margem_Ideal?: boolean
     Markup_Ideal?: boolean
     Custo_Ideal?: boolean
+    Id_Unidade_Tributacao?: boolean
+    Fator_Unidade_Tributacao?: boolean
   }
 
 
@@ -21751,6 +22679,8 @@ export namespace Prisma {
       Margem_Ideal: number | null
       Markup_Ideal: number | null
       Custo_Ideal: number | null
+      Id_Unidade_Tributacao: number | null
+      Fator_Unidade_Tributacao: number | null
     }, ExtArgs["result"]["tb_produtos"]>
     composites: {}
   }
@@ -22201,6 +23131,8 @@ export namespace Prisma {
     readonly Margem_Ideal: FieldRef<"tb_produtos", 'Float'>
     readonly Markup_Ideal: FieldRef<"tb_produtos", 'Float'>
     readonly Custo_Ideal: FieldRef<"tb_produtos", 'Float'>
+    readonly Id_Unidade_Tributacao: FieldRef<"tb_produtos", 'Int'>
+    readonly Fator_Unidade_Tributacao: FieldRef<"tb_produtos", 'Float'>
   }
     
 
@@ -130828,6 +131760,7 @@ export namespace Prisma {
     Tipo_Preenchimento_CI: number | null
     Impressao_Recibo_Quitacao: number | null
     Tipo_Consulta_Dados: number | null
+    Tipo_Liberacao_Desconto: number | null
   }
 
   export type Tb_parametros_execucaoSumAggregateOutputType = {
@@ -130858,6 +131791,7 @@ export namespace Prisma {
     Tipo_Preenchimento_CI: number | null
     Impressao_Recibo_Quitacao: number | null
     Tipo_Consulta_Dados: number | null
+    Tipo_Liberacao_Desconto: number | null
   }
 
   export type Tb_parametros_execucaoMinAggregateOutputType = {
@@ -130932,6 +131866,13 @@ export namespace Prisma {
     Nome_Minha_Empresa: string | null
     Rodape_Minha_Empresa: string | null
     Exibe_Info_Mesa: string | null
+    Tipo_Liberacao_Desconto: number | null
+    Valida_Pre_Venda: string | null
+    Supervisor_Sangria: string | null
+    Pessoa_Pgr_Fid_Comanda: string | null
+    Impressao_TAP: string | null
+    Impressao_Cozinha: string | null
+    Incluir_Acres_Desc_Unitario: string | null
   }
 
   export type Tb_parametros_execucaoMaxAggregateOutputType = {
@@ -131006,6 +131947,13 @@ export namespace Prisma {
     Nome_Minha_Empresa: string | null
     Rodape_Minha_Empresa: string | null
     Exibe_Info_Mesa: string | null
+    Tipo_Liberacao_Desconto: number | null
+    Valida_Pre_Venda: string | null
+    Supervisor_Sangria: string | null
+    Pessoa_Pgr_Fid_Comanda: string | null
+    Impressao_TAP: string | null
+    Impressao_Cozinha: string | null
+    Incluir_Acres_Desc_Unitario: string | null
   }
 
   export type Tb_parametros_execucaoCountAggregateOutputType = {
@@ -131080,6 +132028,13 @@ export namespace Prisma {
     Nome_Minha_Empresa: number
     Rodape_Minha_Empresa: number
     Exibe_Info_Mesa: number
+    Tipo_Liberacao_Desconto: number
+    Valida_Pre_Venda: number
+    Supervisor_Sangria: number
+    Pessoa_Pgr_Fid_Comanda: number
+    Impressao_TAP: number
+    Impressao_Cozinha: number
+    Incluir_Acres_Desc_Unitario: number
     _all: number
   }
 
@@ -131112,6 +132067,7 @@ export namespace Prisma {
     Tipo_Preenchimento_CI?: true
     Impressao_Recibo_Quitacao?: true
     Tipo_Consulta_Dados?: true
+    Tipo_Liberacao_Desconto?: true
   }
 
   export type Tb_parametros_execucaoSumAggregateInputType = {
@@ -131142,6 +132098,7 @@ export namespace Prisma {
     Tipo_Preenchimento_CI?: true
     Impressao_Recibo_Quitacao?: true
     Tipo_Consulta_Dados?: true
+    Tipo_Liberacao_Desconto?: true
   }
 
   export type Tb_parametros_execucaoMinAggregateInputType = {
@@ -131216,6 +132173,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: true
     Rodape_Minha_Empresa?: true
     Exibe_Info_Mesa?: true
+    Tipo_Liberacao_Desconto?: true
+    Valida_Pre_Venda?: true
+    Supervisor_Sangria?: true
+    Pessoa_Pgr_Fid_Comanda?: true
+    Impressao_TAP?: true
+    Impressao_Cozinha?: true
+    Incluir_Acres_Desc_Unitario?: true
   }
 
   export type Tb_parametros_execucaoMaxAggregateInputType = {
@@ -131290,6 +132254,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: true
     Rodape_Minha_Empresa?: true
     Exibe_Info_Mesa?: true
+    Tipo_Liberacao_Desconto?: true
+    Valida_Pre_Venda?: true
+    Supervisor_Sangria?: true
+    Pessoa_Pgr_Fid_Comanda?: true
+    Impressao_TAP?: true
+    Impressao_Cozinha?: true
+    Incluir_Acres_Desc_Unitario?: true
   }
 
   export type Tb_parametros_execucaoCountAggregateInputType = {
@@ -131364,6 +132335,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: true
     Rodape_Minha_Empresa?: true
     Exibe_Info_Mesa?: true
+    Tipo_Liberacao_Desconto?: true
+    Valida_Pre_Venda?: true
+    Supervisor_Sangria?: true
+    Pessoa_Pgr_Fid_Comanda?: true
+    Impressao_TAP?: true
+    Impressao_Cozinha?: true
+    Incluir_Acres_Desc_Unitario?: true
     _all?: true
   }
 
@@ -131525,6 +132503,13 @@ export namespace Prisma {
     Nome_Minha_Empresa: string | null
     Rodape_Minha_Empresa: string | null
     Exibe_Info_Mesa: string | null
+    Tipo_Liberacao_Desconto: number | null
+    Valida_Pre_Venda: string | null
+    Supervisor_Sangria: string | null
+    Pessoa_Pgr_Fid_Comanda: string | null
+    Impressao_TAP: string | null
+    Impressao_Cozinha: string | null
+    Incluir_Acres_Desc_Unitario: string | null
     _count: Tb_parametros_execucaoCountAggregateOutputType | null
     _avg: Tb_parametros_execucaoAvgAggregateOutputType | null
     _sum: Tb_parametros_execucaoSumAggregateOutputType | null
@@ -131618,6 +132603,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: boolean
     Rodape_Minha_Empresa?: boolean
     Exibe_Info_Mesa?: boolean
+    Tipo_Liberacao_Desconto?: boolean
+    Valida_Pre_Venda?: boolean
+    Supervisor_Sangria?: boolean
+    Pessoa_Pgr_Fid_Comanda?: boolean
+    Impressao_TAP?: boolean
+    Impressao_Cozinha?: boolean
+    Incluir_Acres_Desc_Unitario?: boolean
   }, ExtArgs["result"]["tb_parametros_execucao"]>
 
 
@@ -131693,6 +132685,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: boolean
     Rodape_Minha_Empresa?: boolean
     Exibe_Info_Mesa?: boolean
+    Tipo_Liberacao_Desconto?: boolean
+    Valida_Pre_Venda?: boolean
+    Supervisor_Sangria?: boolean
+    Pessoa_Pgr_Fid_Comanda?: boolean
+    Impressao_TAP?: boolean
+    Impressao_Cozinha?: boolean
+    Incluir_Acres_Desc_Unitario?: boolean
   }
 
 
@@ -131771,6 +132770,13 @@ export namespace Prisma {
       Nome_Minha_Empresa: string | null
       Rodape_Minha_Empresa: string | null
       Exibe_Info_Mesa: string | null
+      Tipo_Liberacao_Desconto: number | null
+      Valida_Pre_Venda: string | null
+      Supervisor_Sangria: string | null
+      Pessoa_Pgr_Fid_Comanda: string | null
+      Impressao_TAP: string | null
+      Impressao_Cozinha: string | null
+      Incluir_Acres_Desc_Unitario: string | null
     }, ExtArgs["result"]["tb_parametros_execucao"]>
     composites: {}
   }
@@ -132211,6 +133217,13 @@ export namespace Prisma {
     readonly Nome_Minha_Empresa: FieldRef<"tb_parametros_execucao", 'String'>
     readonly Rodape_Minha_Empresa: FieldRef<"tb_parametros_execucao", 'String'>
     readonly Exibe_Info_Mesa: FieldRef<"tb_parametros_execucao", 'String'>
+    readonly Tipo_Liberacao_Desconto: FieldRef<"tb_parametros_execucao", 'Int'>
+    readonly Valida_Pre_Venda: FieldRef<"tb_parametros_execucao", 'String'>
+    readonly Supervisor_Sangria: FieldRef<"tb_parametros_execucao", 'String'>
+    readonly Pessoa_Pgr_Fid_Comanda: FieldRef<"tb_parametros_execucao", 'String'>
+    readonly Impressao_TAP: FieldRef<"tb_parametros_execucao", 'String'>
+    readonly Impressao_Cozinha: FieldRef<"tb_parametros_execucao", 'String'>
+    readonly Incluir_Acres_Desc_Unitario: FieldRef<"tb_parametros_execucao", 'String'>
   }
     
 
@@ -183945,6 +184958,7 @@ export namespace Prisma {
     Liberado_para_Servidor: string | null
     Importado_Servidor: string | null
     Importado_Mentor: string | null
+    Observacao: string | null
   }
 
   export type Tb_sangriaMaxAggregateOutputType = {
@@ -183958,6 +184972,7 @@ export namespace Prisma {
     Liberado_para_Servidor: string | null
     Importado_Servidor: string | null
     Importado_Mentor: string | null
+    Observacao: string | null
   }
 
   export type Tb_sangriaCountAggregateOutputType = {
@@ -183971,6 +184986,7 @@ export namespace Prisma {
     Liberado_para_Servidor: number
     Importado_Servidor: number
     Importado_Mentor: number
+    Observacao: number
     _all: number
   }
 
@@ -184002,6 +185018,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: true
     Importado_Servidor?: true
     Importado_Mentor?: true
+    Observacao?: true
   }
 
   export type Tb_sangriaMaxAggregateInputType = {
@@ -184015,6 +185032,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: true
     Importado_Servidor?: true
     Importado_Mentor?: true
+    Observacao?: true
   }
 
   export type Tb_sangriaCountAggregateInputType = {
@@ -184028,6 +185046,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: true
     Importado_Servidor?: true
     Importado_Mentor?: true
+    Observacao?: true
     _all?: true
   }
 
@@ -184128,6 +185147,7 @@ export namespace Prisma {
     Liberado_para_Servidor: string | null
     Importado_Servidor: string | null
     Importado_Mentor: string | null
+    Observacao: string | null
     _count: Tb_sangriaCountAggregateOutputType | null
     _avg: Tb_sangriaAvgAggregateOutputType | null
     _sum: Tb_sangriaSumAggregateOutputType | null
@@ -184160,6 +185180,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: boolean
     Importado_Servidor?: boolean
     Importado_Mentor?: boolean
+    Observacao?: boolean
   }, ExtArgs["result"]["tb_sangria"]>
 
 
@@ -184174,6 +185195,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: boolean
     Importado_Servidor?: boolean
     Importado_Mentor?: boolean
+    Observacao?: boolean
   }
 
 
@@ -184191,6 +185213,7 @@ export namespace Prisma {
       Liberado_para_Servidor: string | null
       Importado_Servidor: string | null
       Importado_Mentor: string | null
+      Observacao: string | null
     }, ExtArgs["result"]["tb_sangria"]>
     composites: {}
   }
@@ -184570,6 +185593,7 @@ export namespace Prisma {
     readonly Liberado_para_Servidor: FieldRef<"tb_sangria", 'String'>
     readonly Importado_Servidor: FieldRef<"tb_sangria", 'String'>
     readonly Importado_Mentor: FieldRef<"tb_sangria", 'String'>
+    readonly Observacao: FieldRef<"tb_sangria", 'String'>
   }
     
 
@@ -223559,6 +224583,7 @@ export namespace Prisma {
     Data_Fiscal: Date | null
     Id_Comanda: number | null
     Id_Mesa: number | null
+    Validado: string | null
   }
 
   export type Tb_vendas_preMaxAggregateOutputType = {
@@ -223608,6 +224633,7 @@ export namespace Prisma {
     Data_Fiscal: Date | null
     Id_Comanda: number | null
     Id_Mesa: number | null
+    Validado: string | null
   }
 
   export type Tb_vendas_preCountAggregateOutputType = {
@@ -223657,6 +224683,7 @@ export namespace Prisma {
     Data_Fiscal: number
     Id_Comanda: number
     Id_Mesa: number
+    Validado: number
     _all: number
   }
 
@@ -223776,6 +224803,7 @@ export namespace Prisma {
     Data_Fiscal?: true
     Id_Comanda?: true
     Id_Mesa?: true
+    Validado?: true
   }
 
   export type Tb_vendas_preMaxAggregateInputType = {
@@ -223825,6 +224853,7 @@ export namespace Prisma {
     Data_Fiscal?: true
     Id_Comanda?: true
     Id_Mesa?: true
+    Validado?: true
   }
 
   export type Tb_vendas_preCountAggregateInputType = {
@@ -223874,6 +224903,7 @@ export namespace Prisma {
     Data_Fiscal?: true
     Id_Comanda?: true
     Id_Mesa?: true
+    Validado?: true
     _all?: true
   }
 
@@ -224010,6 +225040,7 @@ export namespace Prisma {
     Data_Fiscal: Date | null
     Id_Comanda: number | null
     Id_Mesa: number | null
+    Validado: string | null
     _count: Tb_vendas_preCountAggregateOutputType | null
     _avg: Tb_vendas_preAvgAggregateOutputType | null
     _sum: Tb_vendas_preSumAggregateOutputType | null
@@ -224078,6 +225109,7 @@ export namespace Prisma {
     Data_Fiscal?: boolean
     Id_Comanda?: boolean
     Id_Mesa?: boolean
+    Validado?: boolean
   }, ExtArgs["result"]["tb_vendas_pre"]>
 
 
@@ -224128,6 +225160,7 @@ export namespace Prisma {
     Data_Fiscal?: boolean
     Id_Comanda?: boolean
     Id_Mesa?: boolean
+    Validado?: boolean
   }
 
 
@@ -224181,6 +225214,7 @@ export namespace Prisma {
       Data_Fiscal: Date | null
       Id_Comanda: number | null
       Id_Mesa: number | null
+      Validado: string | null
     }, ExtArgs["result"]["tb_vendas_pre"]>
     composites: {}
   }
@@ -224596,6 +225630,7 @@ export namespace Prisma {
     readonly Data_Fiscal: FieldRef<"tb_vendas_pre", 'DateTime'>
     readonly Id_Comanda: FieldRef<"tb_vendas_pre", 'Int'>
     readonly Id_Mesa: FieldRef<"tb_vendas_pre", 'Int'>
+    readonly Validado: FieldRef<"tb_vendas_pre", 'String'>
   }
     
 
@@ -224906,6 +225941,7 @@ export namespace Prisma {
     IDEmpresa: number | null
     RegExcluido: string | null
     Id_Mesa: number | null
+    Comanda_Pessoa: string | null
   }
 
   export type Tb_vendas_pre_comandasMaxAggregateOutputType = {
@@ -224917,6 +225953,7 @@ export namespace Prisma {
     IDEmpresa: number | null
     RegExcluido: string | null
     Id_Mesa: number | null
+    Comanda_Pessoa: string | null
   }
 
   export type Tb_vendas_pre_comandasCountAggregateOutputType = {
@@ -224928,6 +225965,7 @@ export namespace Prisma {
     IDEmpresa: number
     RegExcluido: number
     Id_Mesa: number
+    Comanda_Pessoa: number
     _all: number
   }
 
@@ -224957,6 +225995,7 @@ export namespace Prisma {
     IDEmpresa?: true
     RegExcluido?: true
     Id_Mesa?: true
+    Comanda_Pessoa?: true
   }
 
   export type Tb_vendas_pre_comandasMaxAggregateInputType = {
@@ -224968,6 +226007,7 @@ export namespace Prisma {
     IDEmpresa?: true
     RegExcluido?: true
     Id_Mesa?: true
+    Comanda_Pessoa?: true
   }
 
   export type Tb_vendas_pre_comandasCountAggregateInputType = {
@@ -224979,6 +226019,7 @@ export namespace Prisma {
     IDEmpresa?: true
     RegExcluido?: true
     Id_Mesa?: true
+    Comanda_Pessoa?: true
     _all?: true
   }
 
@@ -225077,6 +226118,7 @@ export namespace Prisma {
     IDEmpresa: number | null
     RegExcluido: string | null
     Id_Mesa: number | null
+    Comanda_Pessoa: string | null
     _count: Tb_vendas_pre_comandasCountAggregateOutputType | null
     _avg: Tb_vendas_pre_comandasAvgAggregateOutputType | null
     _sum: Tb_vendas_pre_comandasSumAggregateOutputType | null
@@ -225107,6 +226149,7 @@ export namespace Prisma {
     IDEmpresa?: boolean
     RegExcluido?: boolean
     Id_Mesa?: boolean
+    Comanda_Pessoa?: boolean
   }, ExtArgs["result"]["tb_vendas_pre_comandas"]>
 
 
@@ -225119,6 +226162,7 @@ export namespace Prisma {
     IDEmpresa?: boolean
     RegExcluido?: boolean
     Id_Mesa?: boolean
+    Comanda_Pessoa?: boolean
   }
 
 
@@ -225134,6 +226178,7 @@ export namespace Prisma {
       IDEmpresa: number | null
       RegExcluido: string | null
       Id_Mesa: number | null
+      Comanda_Pessoa: string | null
     }, ExtArgs["result"]["tb_vendas_pre_comandas"]>
     composites: {}
   }
@@ -225511,6 +226556,7 @@ export namespace Prisma {
     readonly IDEmpresa: FieldRef<"tb_vendas_pre_comandas", 'Int'>
     readonly RegExcluido: FieldRef<"tb_vendas_pre_comandas", 'String'>
     readonly Id_Mesa: FieldRef<"tb_vendas_pre_comandas", 'Int'>
+    readonly Comanda_Pessoa: FieldRef<"tb_vendas_pre_comandas", 'String'>
   }
     
 
@@ -231881,6 +232927,8 @@ export namespace Prisma {
     Pgr_Fid_Credito: number | null
     Mentor_Estoque_ID_Agrupamento: number | null
     Preco_Normal: number | null
+    Impressao_Tap: string | null
+    Impressao_Cozinha: string | null
   }
 
   export type Tb_vendas_produtos_preMaxAggregateOutputType = {
@@ -231931,6 +232979,8 @@ export namespace Prisma {
     Pgr_Fid_Credito: number | null
     Mentor_Estoque_ID_Agrupamento: number | null
     Preco_Normal: number | null
+    Impressao_Tap: string | null
+    Impressao_Cozinha: string | null
   }
 
   export type Tb_vendas_produtos_preCountAggregateOutputType = {
@@ -231981,6 +233031,8 @@ export namespace Prisma {
     Pgr_Fid_Credito: number
     Mentor_Estoque_ID_Agrupamento: number
     Preco_Normal: number
+    Impressao_Tap: number
+    Impressao_Cozinha: number
     _all: number
   }
 
@@ -232099,6 +233151,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: true
     Mentor_Estoque_ID_Agrupamento?: true
     Preco_Normal?: true
+    Impressao_Tap?: true
+    Impressao_Cozinha?: true
   }
 
   export type Tb_vendas_produtos_preMaxAggregateInputType = {
@@ -232149,6 +233203,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: true
     Mentor_Estoque_ID_Agrupamento?: true
     Preco_Normal?: true
+    Impressao_Tap?: true
+    Impressao_Cozinha?: true
   }
 
   export type Tb_vendas_produtos_preCountAggregateInputType = {
@@ -232199,6 +233255,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: true
     Mentor_Estoque_ID_Agrupamento?: true
     Preco_Normal?: true
+    Impressao_Tap?: true
+    Impressao_Cozinha?: true
     _all?: true
   }
 
@@ -232336,6 +233394,8 @@ export namespace Prisma {
     Pgr_Fid_Credito: number | null
     Mentor_Estoque_ID_Agrupamento: number | null
     Preco_Normal: number | null
+    Impressao_Tap: string | null
+    Impressao_Cozinha: string | null
     _count: Tb_vendas_produtos_preCountAggregateOutputType | null
     _avg: Tb_vendas_produtos_preAvgAggregateOutputType | null
     _sum: Tb_vendas_produtos_preSumAggregateOutputType | null
@@ -232405,6 +233465,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: boolean
     Mentor_Estoque_ID_Agrupamento?: boolean
     Preco_Normal?: boolean
+    Impressao_Tap?: boolean
+    Impressao_Cozinha?: boolean
   }, ExtArgs["result"]["tb_vendas_produtos_pre"]>
 
 
@@ -232456,6 +233518,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: boolean
     Mentor_Estoque_ID_Agrupamento?: boolean
     Preco_Normal?: boolean
+    Impressao_Tap?: boolean
+    Impressao_Cozinha?: boolean
   }
 
 
@@ -232510,6 +233574,8 @@ export namespace Prisma {
       Pgr_Fid_Credito: number | null
       Mentor_Estoque_ID_Agrupamento: number | null
       Preco_Normal: number | null
+      Impressao_Tap: string | null
+      Impressao_Cozinha: string | null
     }, ExtArgs["result"]["tb_vendas_produtos_pre"]>
     composites: {}
   }
@@ -232926,6 +233992,8 @@ export namespace Prisma {
     readonly Pgr_Fid_Credito: FieldRef<"tb_vendas_produtos_pre", 'Float'>
     readonly Mentor_Estoque_ID_Agrupamento: FieldRef<"tb_vendas_produtos_pre", 'Int'>
     readonly Preco_Normal: FieldRef<"tb_vendas_produtos_pre", 'Float'>
+    readonly Impressao_Tap: FieldRef<"tb_vendas_produtos_pre", 'String'>
+    readonly Impressao_Cozinha: FieldRef<"tb_vendas_produtos_pre", 'String'>
   }
     
 
@@ -242503,6 +243571,10255 @@ export namespace Prisma {
 
 
   /**
+   * Model tb_empresas_movel_0001
+   */
+
+  export type AggregateTb_empresas_movel_0001 = {
+    _count: Tb_empresas_movel_0001CountAggregateOutputType | null
+    _avg: Tb_empresas_movel_0001AvgAggregateOutputType | null
+    _sum: Tb_empresas_movel_0001SumAggregateOutputType | null
+    _min: Tb_empresas_movel_0001MinAggregateOutputType | null
+    _max: Tb_empresas_movel_0001MaxAggregateOutputType | null
+  }
+
+  export type Tb_empresas_movel_0001AvgAggregateOutputType = {
+    Codigo: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_empresas_movel_0001SumAggregateOutputType = {
+    Codigo: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_empresas_movel_0001MinAggregateOutputType = {
+    Codigo: number | null
+    Servidor: string | null
+    Porta: string | null
+    DHU: string | null
+    IDUser: number | null
+  }
+
+  export type Tb_empresas_movel_0001MaxAggregateOutputType = {
+    Codigo: number | null
+    Servidor: string | null
+    Porta: string | null
+    DHU: string | null
+    IDUser: number | null
+  }
+
+  export type Tb_empresas_movel_0001CountAggregateOutputType = {
+    Codigo: number
+    Servidor: number
+    Porta: number
+    DHU: number
+    IDUser: number
+    _all: number
+  }
+
+
+  export type Tb_empresas_movel_0001AvgAggregateInputType = {
+    Codigo?: true
+    IDUser?: true
+  }
+
+  export type Tb_empresas_movel_0001SumAggregateInputType = {
+    Codigo?: true
+    IDUser?: true
+  }
+
+  export type Tb_empresas_movel_0001MinAggregateInputType = {
+    Codigo?: true
+    Servidor?: true
+    Porta?: true
+    DHU?: true
+    IDUser?: true
+  }
+
+  export type Tb_empresas_movel_0001MaxAggregateInputType = {
+    Codigo?: true
+    Servidor?: true
+    Porta?: true
+    DHU?: true
+    IDUser?: true
+  }
+
+  export type Tb_empresas_movel_0001CountAggregateInputType = {
+    Codigo?: true
+    Servidor?: true
+    Porta?: true
+    DHU?: true
+    IDUser?: true
+    _all?: true
+  }
+
+  export type Tb_empresas_movel_0001AggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_empresas_movel_0001 to aggregate.
+     */
+    where?: tb_empresas_movel_0001WhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_empresas_movel_0001s to fetch.
+     */
+    orderBy?: tb_empresas_movel_0001OrderByWithRelationInput | tb_empresas_movel_0001OrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tb_empresas_movel_0001WhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_empresas_movel_0001s from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_empresas_movel_0001s.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tb_empresas_movel_0001s
+    **/
+    _count?: true | Tb_empresas_movel_0001CountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tb_empresas_movel_0001AvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tb_empresas_movel_0001SumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tb_empresas_movel_0001MinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tb_empresas_movel_0001MaxAggregateInputType
+  }
+
+  export type GetTb_empresas_movel_0001AggregateType<T extends Tb_empresas_movel_0001AggregateArgs> = {
+        [P in keyof T & keyof AggregateTb_empresas_movel_0001]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTb_empresas_movel_0001[P]>
+      : GetScalarType<T[P], AggregateTb_empresas_movel_0001[P]>
+  }
+
+
+
+
+  export type tb_empresas_movel_0001GroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tb_empresas_movel_0001WhereInput
+    orderBy?: tb_empresas_movel_0001OrderByWithAggregationInput | tb_empresas_movel_0001OrderByWithAggregationInput[]
+    by: Tb_empresas_movel_0001ScalarFieldEnum[] | Tb_empresas_movel_0001ScalarFieldEnum
+    having?: tb_empresas_movel_0001ScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tb_empresas_movel_0001CountAggregateInputType | true
+    _avg?: Tb_empresas_movel_0001AvgAggregateInputType
+    _sum?: Tb_empresas_movel_0001SumAggregateInputType
+    _min?: Tb_empresas_movel_0001MinAggregateInputType
+    _max?: Tb_empresas_movel_0001MaxAggregateInputType
+  }
+
+  export type Tb_empresas_movel_0001GroupByOutputType = {
+    Codigo: number
+    Servidor: string | null
+    Porta: string | null
+    DHU: string | null
+    IDUser: number | null
+    _count: Tb_empresas_movel_0001CountAggregateOutputType | null
+    _avg: Tb_empresas_movel_0001AvgAggregateOutputType | null
+    _sum: Tb_empresas_movel_0001SumAggregateOutputType | null
+    _min: Tb_empresas_movel_0001MinAggregateOutputType | null
+    _max: Tb_empresas_movel_0001MaxAggregateOutputType | null
+  }
+
+  type GetTb_empresas_movel_0001GroupByPayload<T extends tb_empresas_movel_0001GroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tb_empresas_movel_0001GroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tb_empresas_movel_0001GroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tb_empresas_movel_0001GroupByOutputType[P]>
+            : GetScalarType<T[P], Tb_empresas_movel_0001GroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tb_empresas_movel_0001Select<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Codigo?: boolean
+    Servidor?: boolean
+    Porta?: boolean
+    DHU?: boolean
+    IDUser?: boolean
+  }, ExtArgs["result"]["tb_empresas_movel_0001"]>
+
+
+  export type tb_empresas_movel_0001SelectScalar = {
+    Codigo?: boolean
+    Servidor?: boolean
+    Porta?: boolean
+    DHU?: boolean
+    IDUser?: boolean
+  }
+
+
+  export type $tb_empresas_movel_0001Payload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tb_empresas_movel_0001"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      Codigo: number
+      Servidor: string | null
+      Porta: string | null
+      DHU: string | null
+      IDUser: number | null
+    }, ExtArgs["result"]["tb_empresas_movel_0001"]>
+    composites: {}
+  }
+
+  type tb_empresas_movel_0001GetPayload<S extends boolean | null | undefined | tb_empresas_movel_0001DefaultArgs> = $Result.GetResult<Prisma.$tb_empresas_movel_0001Payload, S>
+
+  type tb_empresas_movel_0001CountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<tb_empresas_movel_0001FindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Tb_empresas_movel_0001CountAggregateInputType | true
+    }
+
+  export interface tb_empresas_movel_0001Delegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tb_empresas_movel_0001'], meta: { name: 'tb_empresas_movel_0001' } }
+    /**
+     * Find zero or one Tb_empresas_movel_0001 that matches the filter.
+     * @param {tb_empresas_movel_0001FindUniqueArgs} args - Arguments to find a Tb_empresas_movel_0001
+     * @example
+     * // Get one Tb_empresas_movel_0001
+     * const tb_empresas_movel_0001 = await prisma.tb_empresas_movel_0001.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tb_empresas_movel_0001FindUniqueArgs>(args: SelectSubset<T, tb_empresas_movel_0001FindUniqueArgs<ExtArgs>>): Prisma__tb_empresas_movel_0001Client<$Result.GetResult<Prisma.$tb_empresas_movel_0001Payload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Tb_empresas_movel_0001 that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {tb_empresas_movel_0001FindUniqueOrThrowArgs} args - Arguments to find a Tb_empresas_movel_0001
+     * @example
+     * // Get one Tb_empresas_movel_0001
+     * const tb_empresas_movel_0001 = await prisma.tb_empresas_movel_0001.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tb_empresas_movel_0001FindUniqueOrThrowArgs>(args: SelectSubset<T, tb_empresas_movel_0001FindUniqueOrThrowArgs<ExtArgs>>): Prisma__tb_empresas_movel_0001Client<$Result.GetResult<Prisma.$tb_empresas_movel_0001Payload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Tb_empresas_movel_0001 that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_empresas_movel_0001FindFirstArgs} args - Arguments to find a Tb_empresas_movel_0001
+     * @example
+     * // Get one Tb_empresas_movel_0001
+     * const tb_empresas_movel_0001 = await prisma.tb_empresas_movel_0001.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tb_empresas_movel_0001FindFirstArgs>(args?: SelectSubset<T, tb_empresas_movel_0001FindFirstArgs<ExtArgs>>): Prisma__tb_empresas_movel_0001Client<$Result.GetResult<Prisma.$tb_empresas_movel_0001Payload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Tb_empresas_movel_0001 that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_empresas_movel_0001FindFirstOrThrowArgs} args - Arguments to find a Tb_empresas_movel_0001
+     * @example
+     * // Get one Tb_empresas_movel_0001
+     * const tb_empresas_movel_0001 = await prisma.tb_empresas_movel_0001.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tb_empresas_movel_0001FindFirstOrThrowArgs>(args?: SelectSubset<T, tb_empresas_movel_0001FindFirstOrThrowArgs<ExtArgs>>): Prisma__tb_empresas_movel_0001Client<$Result.GetResult<Prisma.$tb_empresas_movel_0001Payload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Tb_empresas_movel_0001s that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_empresas_movel_0001FindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tb_empresas_movel_0001s
+     * const tb_empresas_movel_0001s = await prisma.tb_empresas_movel_0001.findMany()
+     * 
+     * // Get first 10 Tb_empresas_movel_0001s
+     * const tb_empresas_movel_0001s = await prisma.tb_empresas_movel_0001.findMany({ take: 10 })
+     * 
+     * // Only select the `Codigo`
+     * const tb_empresas_movel_0001WithCodigoOnly = await prisma.tb_empresas_movel_0001.findMany({ select: { Codigo: true } })
+     * 
+     */
+    findMany<T extends tb_empresas_movel_0001FindManyArgs>(args?: SelectSubset<T, tb_empresas_movel_0001FindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tb_empresas_movel_0001Payload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Tb_empresas_movel_0001.
+     * @param {tb_empresas_movel_0001CreateArgs} args - Arguments to create a Tb_empresas_movel_0001.
+     * @example
+     * // Create one Tb_empresas_movel_0001
+     * const Tb_empresas_movel_0001 = await prisma.tb_empresas_movel_0001.create({
+     *   data: {
+     *     // ... data to create a Tb_empresas_movel_0001
+     *   }
+     * })
+     * 
+     */
+    create<T extends tb_empresas_movel_0001CreateArgs>(args: SelectSubset<T, tb_empresas_movel_0001CreateArgs<ExtArgs>>): Prisma__tb_empresas_movel_0001Client<$Result.GetResult<Prisma.$tb_empresas_movel_0001Payload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Tb_empresas_movel_0001s.
+     * @param {tb_empresas_movel_0001CreateManyArgs} args - Arguments to create many Tb_empresas_movel_0001s.
+     * @example
+     * // Create many Tb_empresas_movel_0001s
+     * const tb_empresas_movel_0001 = await prisma.tb_empresas_movel_0001.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tb_empresas_movel_0001CreateManyArgs>(args?: SelectSubset<T, tb_empresas_movel_0001CreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Tb_empresas_movel_0001.
+     * @param {tb_empresas_movel_0001DeleteArgs} args - Arguments to delete one Tb_empresas_movel_0001.
+     * @example
+     * // Delete one Tb_empresas_movel_0001
+     * const Tb_empresas_movel_0001 = await prisma.tb_empresas_movel_0001.delete({
+     *   where: {
+     *     // ... filter to delete one Tb_empresas_movel_0001
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tb_empresas_movel_0001DeleteArgs>(args: SelectSubset<T, tb_empresas_movel_0001DeleteArgs<ExtArgs>>): Prisma__tb_empresas_movel_0001Client<$Result.GetResult<Prisma.$tb_empresas_movel_0001Payload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Tb_empresas_movel_0001.
+     * @param {tb_empresas_movel_0001UpdateArgs} args - Arguments to update one Tb_empresas_movel_0001.
+     * @example
+     * // Update one Tb_empresas_movel_0001
+     * const tb_empresas_movel_0001 = await prisma.tb_empresas_movel_0001.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tb_empresas_movel_0001UpdateArgs>(args: SelectSubset<T, tb_empresas_movel_0001UpdateArgs<ExtArgs>>): Prisma__tb_empresas_movel_0001Client<$Result.GetResult<Prisma.$tb_empresas_movel_0001Payload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Tb_empresas_movel_0001s.
+     * @param {tb_empresas_movel_0001DeleteManyArgs} args - Arguments to filter Tb_empresas_movel_0001s to delete.
+     * @example
+     * // Delete a few Tb_empresas_movel_0001s
+     * const { count } = await prisma.tb_empresas_movel_0001.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tb_empresas_movel_0001DeleteManyArgs>(args?: SelectSubset<T, tb_empresas_movel_0001DeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tb_empresas_movel_0001s.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_empresas_movel_0001UpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tb_empresas_movel_0001s
+     * const tb_empresas_movel_0001 = await prisma.tb_empresas_movel_0001.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tb_empresas_movel_0001UpdateManyArgs>(args: SelectSubset<T, tb_empresas_movel_0001UpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Tb_empresas_movel_0001.
+     * @param {tb_empresas_movel_0001UpsertArgs} args - Arguments to update or create a Tb_empresas_movel_0001.
+     * @example
+     * // Update or create a Tb_empresas_movel_0001
+     * const tb_empresas_movel_0001 = await prisma.tb_empresas_movel_0001.upsert({
+     *   create: {
+     *     // ... data to create a Tb_empresas_movel_0001
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tb_empresas_movel_0001 we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tb_empresas_movel_0001UpsertArgs>(args: SelectSubset<T, tb_empresas_movel_0001UpsertArgs<ExtArgs>>): Prisma__tb_empresas_movel_0001Client<$Result.GetResult<Prisma.$tb_empresas_movel_0001Payload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Tb_empresas_movel_0001s.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_empresas_movel_0001CountArgs} args - Arguments to filter Tb_empresas_movel_0001s to count.
+     * @example
+     * // Count the number of Tb_empresas_movel_0001s
+     * const count = await prisma.tb_empresas_movel_0001.count({
+     *   where: {
+     *     // ... the filter for the Tb_empresas_movel_0001s we want to count
+     *   }
+     * })
+    **/
+    count<T extends tb_empresas_movel_0001CountArgs>(
+      args?: Subset<T, tb_empresas_movel_0001CountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tb_empresas_movel_0001CountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tb_empresas_movel_0001.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tb_empresas_movel_0001AggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tb_empresas_movel_0001AggregateArgs>(args: Subset<T, Tb_empresas_movel_0001AggregateArgs>): Prisma.PrismaPromise<GetTb_empresas_movel_0001AggregateType<T>>
+
+    /**
+     * Group by Tb_empresas_movel_0001.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_empresas_movel_0001GroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tb_empresas_movel_0001GroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tb_empresas_movel_0001GroupByArgs['orderBy'] }
+        : { orderBy?: tb_empresas_movel_0001GroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tb_empresas_movel_0001GroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTb_empresas_movel_0001GroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tb_empresas_movel_0001 model
+   */
+  readonly fields: tb_empresas_movel_0001FieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tb_empresas_movel_0001.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tb_empresas_movel_0001Client<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tb_empresas_movel_0001 model
+   */ 
+  interface tb_empresas_movel_0001FieldRefs {
+    readonly Codigo: FieldRef<"tb_empresas_movel_0001", 'Int'>
+    readonly Servidor: FieldRef<"tb_empresas_movel_0001", 'String'>
+    readonly Porta: FieldRef<"tb_empresas_movel_0001", 'String'>
+    readonly DHU: FieldRef<"tb_empresas_movel_0001", 'String'>
+    readonly IDUser: FieldRef<"tb_empresas_movel_0001", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tb_empresas_movel_0001 findUnique
+   */
+  export type tb_empresas_movel_0001FindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_empresas_movel_0001
+     */
+    select?: tb_empresas_movel_0001Select<ExtArgs> | null
+    /**
+     * Filter, which tb_empresas_movel_0001 to fetch.
+     */
+    where: tb_empresas_movel_0001WhereUniqueInput
+  }
+
+  /**
+   * tb_empresas_movel_0001 findUniqueOrThrow
+   */
+  export type tb_empresas_movel_0001FindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_empresas_movel_0001
+     */
+    select?: tb_empresas_movel_0001Select<ExtArgs> | null
+    /**
+     * Filter, which tb_empresas_movel_0001 to fetch.
+     */
+    where: tb_empresas_movel_0001WhereUniqueInput
+  }
+
+  /**
+   * tb_empresas_movel_0001 findFirst
+   */
+  export type tb_empresas_movel_0001FindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_empresas_movel_0001
+     */
+    select?: tb_empresas_movel_0001Select<ExtArgs> | null
+    /**
+     * Filter, which tb_empresas_movel_0001 to fetch.
+     */
+    where?: tb_empresas_movel_0001WhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_empresas_movel_0001s to fetch.
+     */
+    orderBy?: tb_empresas_movel_0001OrderByWithRelationInput | tb_empresas_movel_0001OrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_empresas_movel_0001s.
+     */
+    cursor?: tb_empresas_movel_0001WhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_empresas_movel_0001s from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_empresas_movel_0001s.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_empresas_movel_0001s.
+     */
+    distinct?: Tb_empresas_movel_0001ScalarFieldEnum | Tb_empresas_movel_0001ScalarFieldEnum[]
+  }
+
+  /**
+   * tb_empresas_movel_0001 findFirstOrThrow
+   */
+  export type tb_empresas_movel_0001FindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_empresas_movel_0001
+     */
+    select?: tb_empresas_movel_0001Select<ExtArgs> | null
+    /**
+     * Filter, which tb_empresas_movel_0001 to fetch.
+     */
+    where?: tb_empresas_movel_0001WhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_empresas_movel_0001s to fetch.
+     */
+    orderBy?: tb_empresas_movel_0001OrderByWithRelationInput | tb_empresas_movel_0001OrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_empresas_movel_0001s.
+     */
+    cursor?: tb_empresas_movel_0001WhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_empresas_movel_0001s from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_empresas_movel_0001s.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_empresas_movel_0001s.
+     */
+    distinct?: Tb_empresas_movel_0001ScalarFieldEnum | Tb_empresas_movel_0001ScalarFieldEnum[]
+  }
+
+  /**
+   * tb_empresas_movel_0001 findMany
+   */
+  export type tb_empresas_movel_0001FindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_empresas_movel_0001
+     */
+    select?: tb_empresas_movel_0001Select<ExtArgs> | null
+    /**
+     * Filter, which tb_empresas_movel_0001s to fetch.
+     */
+    where?: tb_empresas_movel_0001WhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_empresas_movel_0001s to fetch.
+     */
+    orderBy?: tb_empresas_movel_0001OrderByWithRelationInput | tb_empresas_movel_0001OrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tb_empresas_movel_0001s.
+     */
+    cursor?: tb_empresas_movel_0001WhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_empresas_movel_0001s from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_empresas_movel_0001s.
+     */
+    skip?: number
+    distinct?: Tb_empresas_movel_0001ScalarFieldEnum | Tb_empresas_movel_0001ScalarFieldEnum[]
+  }
+
+  /**
+   * tb_empresas_movel_0001 create
+   */
+  export type tb_empresas_movel_0001CreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_empresas_movel_0001
+     */
+    select?: tb_empresas_movel_0001Select<ExtArgs> | null
+    /**
+     * The data needed to create a tb_empresas_movel_0001.
+     */
+    data: XOR<tb_empresas_movel_0001CreateInput, tb_empresas_movel_0001UncheckedCreateInput>
+  }
+
+  /**
+   * tb_empresas_movel_0001 createMany
+   */
+  export type tb_empresas_movel_0001CreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tb_empresas_movel_0001s.
+     */
+    data: tb_empresas_movel_0001CreateManyInput | tb_empresas_movel_0001CreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tb_empresas_movel_0001 update
+   */
+  export type tb_empresas_movel_0001UpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_empresas_movel_0001
+     */
+    select?: tb_empresas_movel_0001Select<ExtArgs> | null
+    /**
+     * The data needed to update a tb_empresas_movel_0001.
+     */
+    data: XOR<tb_empresas_movel_0001UpdateInput, tb_empresas_movel_0001UncheckedUpdateInput>
+    /**
+     * Choose, which tb_empresas_movel_0001 to update.
+     */
+    where: tb_empresas_movel_0001WhereUniqueInput
+  }
+
+  /**
+   * tb_empresas_movel_0001 updateMany
+   */
+  export type tb_empresas_movel_0001UpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tb_empresas_movel_0001s.
+     */
+    data: XOR<tb_empresas_movel_0001UpdateManyMutationInput, tb_empresas_movel_0001UncheckedUpdateManyInput>
+    /**
+     * Filter which tb_empresas_movel_0001s to update
+     */
+    where?: tb_empresas_movel_0001WhereInput
+  }
+
+  /**
+   * tb_empresas_movel_0001 upsert
+   */
+  export type tb_empresas_movel_0001UpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_empresas_movel_0001
+     */
+    select?: tb_empresas_movel_0001Select<ExtArgs> | null
+    /**
+     * The filter to search for the tb_empresas_movel_0001 to update in case it exists.
+     */
+    where: tb_empresas_movel_0001WhereUniqueInput
+    /**
+     * In case the tb_empresas_movel_0001 found by the `where` argument doesn't exist, create a new tb_empresas_movel_0001 with this data.
+     */
+    create: XOR<tb_empresas_movel_0001CreateInput, tb_empresas_movel_0001UncheckedCreateInput>
+    /**
+     * In case the tb_empresas_movel_0001 was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tb_empresas_movel_0001UpdateInput, tb_empresas_movel_0001UncheckedUpdateInput>
+  }
+
+  /**
+   * tb_empresas_movel_0001 delete
+   */
+  export type tb_empresas_movel_0001DeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_empresas_movel_0001
+     */
+    select?: tb_empresas_movel_0001Select<ExtArgs> | null
+    /**
+     * Filter which tb_empresas_movel_0001 to delete.
+     */
+    where: tb_empresas_movel_0001WhereUniqueInput
+  }
+
+  /**
+   * tb_empresas_movel_0001 deleteMany
+   */
+  export type tb_empresas_movel_0001DeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_empresas_movel_0001s to delete
+     */
+    where?: tb_empresas_movel_0001WhereInput
+  }
+
+  /**
+   * tb_empresas_movel_0001 without action
+   */
+  export type tb_empresas_movel_0001DefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_empresas_movel_0001
+     */
+    select?: tb_empresas_movel_0001Select<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tb_movel_0001_impressao
+   */
+
+  export type AggregateTb_movel_0001_impressao = {
+    _count: Tb_movel_0001_impressaoCountAggregateOutputType | null
+    _avg: Tb_movel_0001_impressaoAvgAggregateOutputType | null
+    _sum: Tb_movel_0001_impressaoSumAggregateOutputType | null
+    _min: Tb_movel_0001_impressaoMinAggregateOutputType | null
+    _max: Tb_movel_0001_impressaoMaxAggregateOutputType | null
+  }
+
+  export type Tb_movel_0001_impressaoAvgAggregateOutputType = {
+    Codigo: number | null
+    Tempo: number | null
+    Id_Comanda: number | null
+  }
+
+  export type Tb_movel_0001_impressaoSumAggregateOutputType = {
+    Codigo: number | null
+    Tempo: number | null
+    Id_Comanda: number | null
+  }
+
+  export type Tb_movel_0001_impressaoMinAggregateOutputType = {
+    Codigo: number | null
+    Data: Date | null
+    Hora: string | null
+    Tempo: number | null
+    Id_Comanda: number | null
+    Processado: string | null
+  }
+
+  export type Tb_movel_0001_impressaoMaxAggregateOutputType = {
+    Codigo: number | null
+    Data: Date | null
+    Hora: string | null
+    Tempo: number | null
+    Id_Comanda: number | null
+    Processado: string | null
+  }
+
+  export type Tb_movel_0001_impressaoCountAggregateOutputType = {
+    Codigo: number
+    Data: number
+    Hora: number
+    Tempo: number
+    Id_Comanda: number
+    Processado: number
+    _all: number
+  }
+
+
+  export type Tb_movel_0001_impressaoAvgAggregateInputType = {
+    Codigo?: true
+    Tempo?: true
+    Id_Comanda?: true
+  }
+
+  export type Tb_movel_0001_impressaoSumAggregateInputType = {
+    Codigo?: true
+    Tempo?: true
+    Id_Comanda?: true
+  }
+
+  export type Tb_movel_0001_impressaoMinAggregateInputType = {
+    Codigo?: true
+    Data?: true
+    Hora?: true
+    Tempo?: true
+    Id_Comanda?: true
+    Processado?: true
+  }
+
+  export type Tb_movel_0001_impressaoMaxAggregateInputType = {
+    Codigo?: true
+    Data?: true
+    Hora?: true
+    Tempo?: true
+    Id_Comanda?: true
+    Processado?: true
+  }
+
+  export type Tb_movel_0001_impressaoCountAggregateInputType = {
+    Codigo?: true
+    Data?: true
+    Hora?: true
+    Tempo?: true
+    Id_Comanda?: true
+    Processado?: true
+    _all?: true
+  }
+
+  export type Tb_movel_0001_impressaoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_movel_0001_impressao to aggregate.
+     */
+    where?: tb_movel_0001_impressaoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_movel_0001_impressaos to fetch.
+     */
+    orderBy?: tb_movel_0001_impressaoOrderByWithRelationInput | tb_movel_0001_impressaoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tb_movel_0001_impressaoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_movel_0001_impressaos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_movel_0001_impressaos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tb_movel_0001_impressaos
+    **/
+    _count?: true | Tb_movel_0001_impressaoCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tb_movel_0001_impressaoAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tb_movel_0001_impressaoSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tb_movel_0001_impressaoMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tb_movel_0001_impressaoMaxAggregateInputType
+  }
+
+  export type GetTb_movel_0001_impressaoAggregateType<T extends Tb_movel_0001_impressaoAggregateArgs> = {
+        [P in keyof T & keyof AggregateTb_movel_0001_impressao]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTb_movel_0001_impressao[P]>
+      : GetScalarType<T[P], AggregateTb_movel_0001_impressao[P]>
+  }
+
+
+
+
+  export type tb_movel_0001_impressaoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tb_movel_0001_impressaoWhereInput
+    orderBy?: tb_movel_0001_impressaoOrderByWithAggregationInput | tb_movel_0001_impressaoOrderByWithAggregationInput[]
+    by: Tb_movel_0001_impressaoScalarFieldEnum[] | Tb_movel_0001_impressaoScalarFieldEnum
+    having?: tb_movel_0001_impressaoScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tb_movel_0001_impressaoCountAggregateInputType | true
+    _avg?: Tb_movel_0001_impressaoAvgAggregateInputType
+    _sum?: Tb_movel_0001_impressaoSumAggregateInputType
+    _min?: Tb_movel_0001_impressaoMinAggregateInputType
+    _max?: Tb_movel_0001_impressaoMaxAggregateInputType
+  }
+
+  export type Tb_movel_0001_impressaoGroupByOutputType = {
+    Codigo: number
+    Data: Date | null
+    Hora: string | null
+    Tempo: number | null
+    Id_Comanda: number | null
+    Processado: string | null
+    _count: Tb_movel_0001_impressaoCountAggregateOutputType | null
+    _avg: Tb_movel_0001_impressaoAvgAggregateOutputType | null
+    _sum: Tb_movel_0001_impressaoSumAggregateOutputType | null
+    _min: Tb_movel_0001_impressaoMinAggregateOutputType | null
+    _max: Tb_movel_0001_impressaoMaxAggregateOutputType | null
+  }
+
+  type GetTb_movel_0001_impressaoGroupByPayload<T extends tb_movel_0001_impressaoGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tb_movel_0001_impressaoGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tb_movel_0001_impressaoGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tb_movel_0001_impressaoGroupByOutputType[P]>
+            : GetScalarType<T[P], Tb_movel_0001_impressaoGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tb_movel_0001_impressaoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Codigo?: boolean
+    Data?: boolean
+    Hora?: boolean
+    Tempo?: boolean
+    Id_Comanda?: boolean
+    Processado?: boolean
+  }, ExtArgs["result"]["tb_movel_0001_impressao"]>
+
+
+  export type tb_movel_0001_impressaoSelectScalar = {
+    Codigo?: boolean
+    Data?: boolean
+    Hora?: boolean
+    Tempo?: boolean
+    Id_Comanda?: boolean
+    Processado?: boolean
+  }
+
+
+  export type $tb_movel_0001_impressaoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tb_movel_0001_impressao"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      Codigo: number
+      Data: Date | null
+      Hora: string | null
+      Tempo: number | null
+      Id_Comanda: number | null
+      Processado: string | null
+    }, ExtArgs["result"]["tb_movel_0001_impressao"]>
+    composites: {}
+  }
+
+  type tb_movel_0001_impressaoGetPayload<S extends boolean | null | undefined | tb_movel_0001_impressaoDefaultArgs> = $Result.GetResult<Prisma.$tb_movel_0001_impressaoPayload, S>
+
+  type tb_movel_0001_impressaoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<tb_movel_0001_impressaoFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Tb_movel_0001_impressaoCountAggregateInputType | true
+    }
+
+  export interface tb_movel_0001_impressaoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tb_movel_0001_impressao'], meta: { name: 'tb_movel_0001_impressao' } }
+    /**
+     * Find zero or one Tb_movel_0001_impressao that matches the filter.
+     * @param {tb_movel_0001_impressaoFindUniqueArgs} args - Arguments to find a Tb_movel_0001_impressao
+     * @example
+     * // Get one Tb_movel_0001_impressao
+     * const tb_movel_0001_impressao = await prisma.tb_movel_0001_impressao.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tb_movel_0001_impressaoFindUniqueArgs>(args: SelectSubset<T, tb_movel_0001_impressaoFindUniqueArgs<ExtArgs>>): Prisma__tb_movel_0001_impressaoClient<$Result.GetResult<Prisma.$tb_movel_0001_impressaoPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Tb_movel_0001_impressao that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {tb_movel_0001_impressaoFindUniqueOrThrowArgs} args - Arguments to find a Tb_movel_0001_impressao
+     * @example
+     * // Get one Tb_movel_0001_impressao
+     * const tb_movel_0001_impressao = await prisma.tb_movel_0001_impressao.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tb_movel_0001_impressaoFindUniqueOrThrowArgs>(args: SelectSubset<T, tb_movel_0001_impressaoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tb_movel_0001_impressaoClient<$Result.GetResult<Prisma.$tb_movel_0001_impressaoPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Tb_movel_0001_impressao that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_movel_0001_impressaoFindFirstArgs} args - Arguments to find a Tb_movel_0001_impressao
+     * @example
+     * // Get one Tb_movel_0001_impressao
+     * const tb_movel_0001_impressao = await prisma.tb_movel_0001_impressao.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tb_movel_0001_impressaoFindFirstArgs>(args?: SelectSubset<T, tb_movel_0001_impressaoFindFirstArgs<ExtArgs>>): Prisma__tb_movel_0001_impressaoClient<$Result.GetResult<Prisma.$tb_movel_0001_impressaoPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Tb_movel_0001_impressao that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_movel_0001_impressaoFindFirstOrThrowArgs} args - Arguments to find a Tb_movel_0001_impressao
+     * @example
+     * // Get one Tb_movel_0001_impressao
+     * const tb_movel_0001_impressao = await prisma.tb_movel_0001_impressao.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tb_movel_0001_impressaoFindFirstOrThrowArgs>(args?: SelectSubset<T, tb_movel_0001_impressaoFindFirstOrThrowArgs<ExtArgs>>): Prisma__tb_movel_0001_impressaoClient<$Result.GetResult<Prisma.$tb_movel_0001_impressaoPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Tb_movel_0001_impressaos that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_movel_0001_impressaoFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tb_movel_0001_impressaos
+     * const tb_movel_0001_impressaos = await prisma.tb_movel_0001_impressao.findMany()
+     * 
+     * // Get first 10 Tb_movel_0001_impressaos
+     * const tb_movel_0001_impressaos = await prisma.tb_movel_0001_impressao.findMany({ take: 10 })
+     * 
+     * // Only select the `Codigo`
+     * const tb_movel_0001_impressaoWithCodigoOnly = await prisma.tb_movel_0001_impressao.findMany({ select: { Codigo: true } })
+     * 
+     */
+    findMany<T extends tb_movel_0001_impressaoFindManyArgs>(args?: SelectSubset<T, tb_movel_0001_impressaoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tb_movel_0001_impressaoPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Tb_movel_0001_impressao.
+     * @param {tb_movel_0001_impressaoCreateArgs} args - Arguments to create a Tb_movel_0001_impressao.
+     * @example
+     * // Create one Tb_movel_0001_impressao
+     * const Tb_movel_0001_impressao = await prisma.tb_movel_0001_impressao.create({
+     *   data: {
+     *     // ... data to create a Tb_movel_0001_impressao
+     *   }
+     * })
+     * 
+     */
+    create<T extends tb_movel_0001_impressaoCreateArgs>(args: SelectSubset<T, tb_movel_0001_impressaoCreateArgs<ExtArgs>>): Prisma__tb_movel_0001_impressaoClient<$Result.GetResult<Prisma.$tb_movel_0001_impressaoPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Tb_movel_0001_impressaos.
+     * @param {tb_movel_0001_impressaoCreateManyArgs} args - Arguments to create many Tb_movel_0001_impressaos.
+     * @example
+     * // Create many Tb_movel_0001_impressaos
+     * const tb_movel_0001_impressao = await prisma.tb_movel_0001_impressao.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tb_movel_0001_impressaoCreateManyArgs>(args?: SelectSubset<T, tb_movel_0001_impressaoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Tb_movel_0001_impressao.
+     * @param {tb_movel_0001_impressaoDeleteArgs} args - Arguments to delete one Tb_movel_0001_impressao.
+     * @example
+     * // Delete one Tb_movel_0001_impressao
+     * const Tb_movel_0001_impressao = await prisma.tb_movel_0001_impressao.delete({
+     *   where: {
+     *     // ... filter to delete one Tb_movel_0001_impressao
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tb_movel_0001_impressaoDeleteArgs>(args: SelectSubset<T, tb_movel_0001_impressaoDeleteArgs<ExtArgs>>): Prisma__tb_movel_0001_impressaoClient<$Result.GetResult<Prisma.$tb_movel_0001_impressaoPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Tb_movel_0001_impressao.
+     * @param {tb_movel_0001_impressaoUpdateArgs} args - Arguments to update one Tb_movel_0001_impressao.
+     * @example
+     * // Update one Tb_movel_0001_impressao
+     * const tb_movel_0001_impressao = await prisma.tb_movel_0001_impressao.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tb_movel_0001_impressaoUpdateArgs>(args: SelectSubset<T, tb_movel_0001_impressaoUpdateArgs<ExtArgs>>): Prisma__tb_movel_0001_impressaoClient<$Result.GetResult<Prisma.$tb_movel_0001_impressaoPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Tb_movel_0001_impressaos.
+     * @param {tb_movel_0001_impressaoDeleteManyArgs} args - Arguments to filter Tb_movel_0001_impressaos to delete.
+     * @example
+     * // Delete a few Tb_movel_0001_impressaos
+     * const { count } = await prisma.tb_movel_0001_impressao.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tb_movel_0001_impressaoDeleteManyArgs>(args?: SelectSubset<T, tb_movel_0001_impressaoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tb_movel_0001_impressaos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_movel_0001_impressaoUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tb_movel_0001_impressaos
+     * const tb_movel_0001_impressao = await prisma.tb_movel_0001_impressao.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tb_movel_0001_impressaoUpdateManyArgs>(args: SelectSubset<T, tb_movel_0001_impressaoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Tb_movel_0001_impressao.
+     * @param {tb_movel_0001_impressaoUpsertArgs} args - Arguments to update or create a Tb_movel_0001_impressao.
+     * @example
+     * // Update or create a Tb_movel_0001_impressao
+     * const tb_movel_0001_impressao = await prisma.tb_movel_0001_impressao.upsert({
+     *   create: {
+     *     // ... data to create a Tb_movel_0001_impressao
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tb_movel_0001_impressao we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tb_movel_0001_impressaoUpsertArgs>(args: SelectSubset<T, tb_movel_0001_impressaoUpsertArgs<ExtArgs>>): Prisma__tb_movel_0001_impressaoClient<$Result.GetResult<Prisma.$tb_movel_0001_impressaoPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Tb_movel_0001_impressaos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_movel_0001_impressaoCountArgs} args - Arguments to filter Tb_movel_0001_impressaos to count.
+     * @example
+     * // Count the number of Tb_movel_0001_impressaos
+     * const count = await prisma.tb_movel_0001_impressao.count({
+     *   where: {
+     *     // ... the filter for the Tb_movel_0001_impressaos we want to count
+     *   }
+     * })
+    **/
+    count<T extends tb_movel_0001_impressaoCountArgs>(
+      args?: Subset<T, tb_movel_0001_impressaoCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tb_movel_0001_impressaoCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tb_movel_0001_impressao.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tb_movel_0001_impressaoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tb_movel_0001_impressaoAggregateArgs>(args: Subset<T, Tb_movel_0001_impressaoAggregateArgs>): Prisma.PrismaPromise<GetTb_movel_0001_impressaoAggregateType<T>>
+
+    /**
+     * Group by Tb_movel_0001_impressao.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_movel_0001_impressaoGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tb_movel_0001_impressaoGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tb_movel_0001_impressaoGroupByArgs['orderBy'] }
+        : { orderBy?: tb_movel_0001_impressaoGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tb_movel_0001_impressaoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTb_movel_0001_impressaoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tb_movel_0001_impressao model
+   */
+  readonly fields: tb_movel_0001_impressaoFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tb_movel_0001_impressao.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tb_movel_0001_impressaoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tb_movel_0001_impressao model
+   */ 
+  interface tb_movel_0001_impressaoFieldRefs {
+    readonly Codigo: FieldRef<"tb_movel_0001_impressao", 'Int'>
+    readonly Data: FieldRef<"tb_movel_0001_impressao", 'DateTime'>
+    readonly Hora: FieldRef<"tb_movel_0001_impressao", 'String'>
+    readonly Tempo: FieldRef<"tb_movel_0001_impressao", 'Int'>
+    readonly Id_Comanda: FieldRef<"tb_movel_0001_impressao", 'Int'>
+    readonly Processado: FieldRef<"tb_movel_0001_impressao", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tb_movel_0001_impressao findUnique
+   */
+  export type tb_movel_0001_impressaoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_movel_0001_impressao
+     */
+    select?: tb_movel_0001_impressaoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_movel_0001_impressao to fetch.
+     */
+    where: tb_movel_0001_impressaoWhereUniqueInput
+  }
+
+  /**
+   * tb_movel_0001_impressao findUniqueOrThrow
+   */
+  export type tb_movel_0001_impressaoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_movel_0001_impressao
+     */
+    select?: tb_movel_0001_impressaoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_movel_0001_impressao to fetch.
+     */
+    where: tb_movel_0001_impressaoWhereUniqueInput
+  }
+
+  /**
+   * tb_movel_0001_impressao findFirst
+   */
+  export type tb_movel_0001_impressaoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_movel_0001_impressao
+     */
+    select?: tb_movel_0001_impressaoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_movel_0001_impressao to fetch.
+     */
+    where?: tb_movel_0001_impressaoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_movel_0001_impressaos to fetch.
+     */
+    orderBy?: tb_movel_0001_impressaoOrderByWithRelationInput | tb_movel_0001_impressaoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_movel_0001_impressaos.
+     */
+    cursor?: tb_movel_0001_impressaoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_movel_0001_impressaos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_movel_0001_impressaos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_movel_0001_impressaos.
+     */
+    distinct?: Tb_movel_0001_impressaoScalarFieldEnum | Tb_movel_0001_impressaoScalarFieldEnum[]
+  }
+
+  /**
+   * tb_movel_0001_impressao findFirstOrThrow
+   */
+  export type tb_movel_0001_impressaoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_movel_0001_impressao
+     */
+    select?: tb_movel_0001_impressaoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_movel_0001_impressao to fetch.
+     */
+    where?: tb_movel_0001_impressaoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_movel_0001_impressaos to fetch.
+     */
+    orderBy?: tb_movel_0001_impressaoOrderByWithRelationInput | tb_movel_0001_impressaoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_movel_0001_impressaos.
+     */
+    cursor?: tb_movel_0001_impressaoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_movel_0001_impressaos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_movel_0001_impressaos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_movel_0001_impressaos.
+     */
+    distinct?: Tb_movel_0001_impressaoScalarFieldEnum | Tb_movel_0001_impressaoScalarFieldEnum[]
+  }
+
+  /**
+   * tb_movel_0001_impressao findMany
+   */
+  export type tb_movel_0001_impressaoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_movel_0001_impressao
+     */
+    select?: tb_movel_0001_impressaoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_movel_0001_impressaos to fetch.
+     */
+    where?: tb_movel_0001_impressaoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_movel_0001_impressaos to fetch.
+     */
+    orderBy?: tb_movel_0001_impressaoOrderByWithRelationInput | tb_movel_0001_impressaoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tb_movel_0001_impressaos.
+     */
+    cursor?: tb_movel_0001_impressaoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_movel_0001_impressaos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_movel_0001_impressaos.
+     */
+    skip?: number
+    distinct?: Tb_movel_0001_impressaoScalarFieldEnum | Tb_movel_0001_impressaoScalarFieldEnum[]
+  }
+
+  /**
+   * tb_movel_0001_impressao create
+   */
+  export type tb_movel_0001_impressaoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_movel_0001_impressao
+     */
+    select?: tb_movel_0001_impressaoSelect<ExtArgs> | null
+    /**
+     * The data needed to create a tb_movel_0001_impressao.
+     */
+    data: XOR<tb_movel_0001_impressaoCreateInput, tb_movel_0001_impressaoUncheckedCreateInput>
+  }
+
+  /**
+   * tb_movel_0001_impressao createMany
+   */
+  export type tb_movel_0001_impressaoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tb_movel_0001_impressaos.
+     */
+    data: tb_movel_0001_impressaoCreateManyInput | tb_movel_0001_impressaoCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tb_movel_0001_impressao update
+   */
+  export type tb_movel_0001_impressaoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_movel_0001_impressao
+     */
+    select?: tb_movel_0001_impressaoSelect<ExtArgs> | null
+    /**
+     * The data needed to update a tb_movel_0001_impressao.
+     */
+    data: XOR<tb_movel_0001_impressaoUpdateInput, tb_movel_0001_impressaoUncheckedUpdateInput>
+    /**
+     * Choose, which tb_movel_0001_impressao to update.
+     */
+    where: tb_movel_0001_impressaoWhereUniqueInput
+  }
+
+  /**
+   * tb_movel_0001_impressao updateMany
+   */
+  export type tb_movel_0001_impressaoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tb_movel_0001_impressaos.
+     */
+    data: XOR<tb_movel_0001_impressaoUpdateManyMutationInput, tb_movel_0001_impressaoUncheckedUpdateManyInput>
+    /**
+     * Filter which tb_movel_0001_impressaos to update
+     */
+    where?: tb_movel_0001_impressaoWhereInput
+  }
+
+  /**
+   * tb_movel_0001_impressao upsert
+   */
+  export type tb_movel_0001_impressaoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_movel_0001_impressao
+     */
+    select?: tb_movel_0001_impressaoSelect<ExtArgs> | null
+    /**
+     * The filter to search for the tb_movel_0001_impressao to update in case it exists.
+     */
+    where: tb_movel_0001_impressaoWhereUniqueInput
+    /**
+     * In case the tb_movel_0001_impressao found by the `where` argument doesn't exist, create a new tb_movel_0001_impressao with this data.
+     */
+    create: XOR<tb_movel_0001_impressaoCreateInput, tb_movel_0001_impressaoUncheckedCreateInput>
+    /**
+     * In case the tb_movel_0001_impressao was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tb_movel_0001_impressaoUpdateInput, tb_movel_0001_impressaoUncheckedUpdateInput>
+  }
+
+  /**
+   * tb_movel_0001_impressao delete
+   */
+  export type tb_movel_0001_impressaoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_movel_0001_impressao
+     */
+    select?: tb_movel_0001_impressaoSelect<ExtArgs> | null
+    /**
+     * Filter which tb_movel_0001_impressao to delete.
+     */
+    where: tb_movel_0001_impressaoWhereUniqueInput
+  }
+
+  /**
+   * tb_movel_0001_impressao deleteMany
+   */
+  export type tb_movel_0001_impressaoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_movel_0001_impressaos to delete
+     */
+    where?: tb_movel_0001_impressaoWhereInput
+  }
+
+  /**
+   * tb_movel_0001_impressao without action
+   */
+  export type tb_movel_0001_impressaoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_movel_0001_impressao
+     */
+    select?: tb_movel_0001_impressaoSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tb_operacao_movimento_produto
+   */
+
+  export type AggregateTb_operacao_movimento_produto = {
+    _count: Tb_operacao_movimento_produtoCountAggregateOutputType | null
+    _avg: Tb_operacao_movimento_produtoAvgAggregateOutputType | null
+    _sum: Tb_operacao_movimento_produtoSumAggregateOutputType | null
+    _min: Tb_operacao_movimento_produtoMinAggregateOutputType | null
+    _max: Tb_operacao_movimento_produtoMaxAggregateOutputType | null
+  }
+
+  export type Tb_operacao_movimento_produtoAvgAggregateOutputType = {
+    Codigo: number | null
+    Id_Operacao: number | null
+    Id_Produto: number | null
+    IDEmpresa: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_operacao_movimento_produtoSumAggregateOutputType = {
+    Codigo: number | null
+    Id_Operacao: number | null
+    Id_Produto: number | null
+    IDEmpresa: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_operacao_movimento_produtoMinAggregateOutputType = {
+    Codigo: number | null
+    Id_Operacao: number | null
+    Id_Produto: number | null
+    IDEmpresa: number | null
+    IDUser: number | null
+    RegExcluido: string | null
+  }
+
+  export type Tb_operacao_movimento_produtoMaxAggregateOutputType = {
+    Codigo: number | null
+    Id_Operacao: number | null
+    Id_Produto: number | null
+    IDEmpresa: number | null
+    IDUser: number | null
+    RegExcluido: string | null
+  }
+
+  export type Tb_operacao_movimento_produtoCountAggregateOutputType = {
+    Codigo: number
+    Id_Operacao: number
+    Id_Produto: number
+    IDEmpresa: number
+    IDUser: number
+    RegExcluido: number
+    _all: number
+  }
+
+
+  export type Tb_operacao_movimento_produtoAvgAggregateInputType = {
+    Codigo?: true
+    Id_Operacao?: true
+    Id_Produto?: true
+    IDEmpresa?: true
+    IDUser?: true
+  }
+
+  export type Tb_operacao_movimento_produtoSumAggregateInputType = {
+    Codigo?: true
+    Id_Operacao?: true
+    Id_Produto?: true
+    IDEmpresa?: true
+    IDUser?: true
+  }
+
+  export type Tb_operacao_movimento_produtoMinAggregateInputType = {
+    Codigo?: true
+    Id_Operacao?: true
+    Id_Produto?: true
+    IDEmpresa?: true
+    IDUser?: true
+    RegExcluido?: true
+  }
+
+  export type Tb_operacao_movimento_produtoMaxAggregateInputType = {
+    Codigo?: true
+    Id_Operacao?: true
+    Id_Produto?: true
+    IDEmpresa?: true
+    IDUser?: true
+    RegExcluido?: true
+  }
+
+  export type Tb_operacao_movimento_produtoCountAggregateInputType = {
+    Codigo?: true
+    Id_Operacao?: true
+    Id_Produto?: true
+    IDEmpresa?: true
+    IDUser?: true
+    RegExcluido?: true
+    _all?: true
+  }
+
+  export type Tb_operacao_movimento_produtoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_operacao_movimento_produto to aggregate.
+     */
+    where?: tb_operacao_movimento_produtoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_operacao_movimento_produtos to fetch.
+     */
+    orderBy?: tb_operacao_movimento_produtoOrderByWithRelationInput | tb_operacao_movimento_produtoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tb_operacao_movimento_produtoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_operacao_movimento_produtos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_operacao_movimento_produtos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tb_operacao_movimento_produtos
+    **/
+    _count?: true | Tb_operacao_movimento_produtoCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tb_operacao_movimento_produtoAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tb_operacao_movimento_produtoSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tb_operacao_movimento_produtoMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tb_operacao_movimento_produtoMaxAggregateInputType
+  }
+
+  export type GetTb_operacao_movimento_produtoAggregateType<T extends Tb_operacao_movimento_produtoAggregateArgs> = {
+        [P in keyof T & keyof AggregateTb_operacao_movimento_produto]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTb_operacao_movimento_produto[P]>
+      : GetScalarType<T[P], AggregateTb_operacao_movimento_produto[P]>
+  }
+
+
+
+
+  export type tb_operacao_movimento_produtoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tb_operacao_movimento_produtoWhereInput
+    orderBy?: tb_operacao_movimento_produtoOrderByWithAggregationInput | tb_operacao_movimento_produtoOrderByWithAggregationInput[]
+    by: Tb_operacao_movimento_produtoScalarFieldEnum[] | Tb_operacao_movimento_produtoScalarFieldEnum
+    having?: tb_operacao_movimento_produtoScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tb_operacao_movimento_produtoCountAggregateInputType | true
+    _avg?: Tb_operacao_movimento_produtoAvgAggregateInputType
+    _sum?: Tb_operacao_movimento_produtoSumAggregateInputType
+    _min?: Tb_operacao_movimento_produtoMinAggregateInputType
+    _max?: Tb_operacao_movimento_produtoMaxAggregateInputType
+  }
+
+  export type Tb_operacao_movimento_produtoGroupByOutputType = {
+    Codigo: number
+    Id_Operacao: number | null
+    Id_Produto: number | null
+    IDEmpresa: number | null
+    IDUser: number | null
+    RegExcluido: string | null
+    _count: Tb_operacao_movimento_produtoCountAggregateOutputType | null
+    _avg: Tb_operacao_movimento_produtoAvgAggregateOutputType | null
+    _sum: Tb_operacao_movimento_produtoSumAggregateOutputType | null
+    _min: Tb_operacao_movimento_produtoMinAggregateOutputType | null
+    _max: Tb_operacao_movimento_produtoMaxAggregateOutputType | null
+  }
+
+  type GetTb_operacao_movimento_produtoGroupByPayload<T extends tb_operacao_movimento_produtoGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tb_operacao_movimento_produtoGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tb_operacao_movimento_produtoGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tb_operacao_movimento_produtoGroupByOutputType[P]>
+            : GetScalarType<T[P], Tb_operacao_movimento_produtoGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tb_operacao_movimento_produtoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Codigo?: boolean
+    Id_Operacao?: boolean
+    Id_Produto?: boolean
+    IDEmpresa?: boolean
+    IDUser?: boolean
+    RegExcluido?: boolean
+  }, ExtArgs["result"]["tb_operacao_movimento_produto"]>
+
+
+  export type tb_operacao_movimento_produtoSelectScalar = {
+    Codigo?: boolean
+    Id_Operacao?: boolean
+    Id_Produto?: boolean
+    IDEmpresa?: boolean
+    IDUser?: boolean
+    RegExcluido?: boolean
+  }
+
+
+  export type $tb_operacao_movimento_produtoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tb_operacao_movimento_produto"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      Codigo: number
+      Id_Operacao: number | null
+      Id_Produto: number | null
+      IDEmpresa: number | null
+      IDUser: number | null
+      RegExcluido: string | null
+    }, ExtArgs["result"]["tb_operacao_movimento_produto"]>
+    composites: {}
+  }
+
+  type tb_operacao_movimento_produtoGetPayload<S extends boolean | null | undefined | tb_operacao_movimento_produtoDefaultArgs> = $Result.GetResult<Prisma.$tb_operacao_movimento_produtoPayload, S>
+
+  type tb_operacao_movimento_produtoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<tb_operacao_movimento_produtoFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Tb_operacao_movimento_produtoCountAggregateInputType | true
+    }
+
+  export interface tb_operacao_movimento_produtoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tb_operacao_movimento_produto'], meta: { name: 'tb_operacao_movimento_produto' } }
+    /**
+     * Find zero or one Tb_operacao_movimento_produto that matches the filter.
+     * @param {tb_operacao_movimento_produtoFindUniqueArgs} args - Arguments to find a Tb_operacao_movimento_produto
+     * @example
+     * // Get one Tb_operacao_movimento_produto
+     * const tb_operacao_movimento_produto = await prisma.tb_operacao_movimento_produto.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tb_operacao_movimento_produtoFindUniqueArgs>(args: SelectSubset<T, tb_operacao_movimento_produtoFindUniqueArgs<ExtArgs>>): Prisma__tb_operacao_movimento_produtoClient<$Result.GetResult<Prisma.$tb_operacao_movimento_produtoPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Tb_operacao_movimento_produto that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {tb_operacao_movimento_produtoFindUniqueOrThrowArgs} args - Arguments to find a Tb_operacao_movimento_produto
+     * @example
+     * // Get one Tb_operacao_movimento_produto
+     * const tb_operacao_movimento_produto = await prisma.tb_operacao_movimento_produto.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tb_operacao_movimento_produtoFindUniqueOrThrowArgs>(args: SelectSubset<T, tb_operacao_movimento_produtoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tb_operacao_movimento_produtoClient<$Result.GetResult<Prisma.$tb_operacao_movimento_produtoPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Tb_operacao_movimento_produto that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_operacao_movimento_produtoFindFirstArgs} args - Arguments to find a Tb_operacao_movimento_produto
+     * @example
+     * // Get one Tb_operacao_movimento_produto
+     * const tb_operacao_movimento_produto = await prisma.tb_operacao_movimento_produto.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tb_operacao_movimento_produtoFindFirstArgs>(args?: SelectSubset<T, tb_operacao_movimento_produtoFindFirstArgs<ExtArgs>>): Prisma__tb_operacao_movimento_produtoClient<$Result.GetResult<Prisma.$tb_operacao_movimento_produtoPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Tb_operacao_movimento_produto that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_operacao_movimento_produtoFindFirstOrThrowArgs} args - Arguments to find a Tb_operacao_movimento_produto
+     * @example
+     * // Get one Tb_operacao_movimento_produto
+     * const tb_operacao_movimento_produto = await prisma.tb_operacao_movimento_produto.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tb_operacao_movimento_produtoFindFirstOrThrowArgs>(args?: SelectSubset<T, tb_operacao_movimento_produtoFindFirstOrThrowArgs<ExtArgs>>): Prisma__tb_operacao_movimento_produtoClient<$Result.GetResult<Prisma.$tb_operacao_movimento_produtoPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Tb_operacao_movimento_produtos that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_operacao_movimento_produtoFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tb_operacao_movimento_produtos
+     * const tb_operacao_movimento_produtos = await prisma.tb_operacao_movimento_produto.findMany()
+     * 
+     * // Get first 10 Tb_operacao_movimento_produtos
+     * const tb_operacao_movimento_produtos = await prisma.tb_operacao_movimento_produto.findMany({ take: 10 })
+     * 
+     * // Only select the `Codigo`
+     * const tb_operacao_movimento_produtoWithCodigoOnly = await prisma.tb_operacao_movimento_produto.findMany({ select: { Codigo: true } })
+     * 
+     */
+    findMany<T extends tb_operacao_movimento_produtoFindManyArgs>(args?: SelectSubset<T, tb_operacao_movimento_produtoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tb_operacao_movimento_produtoPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Tb_operacao_movimento_produto.
+     * @param {tb_operacao_movimento_produtoCreateArgs} args - Arguments to create a Tb_operacao_movimento_produto.
+     * @example
+     * // Create one Tb_operacao_movimento_produto
+     * const Tb_operacao_movimento_produto = await prisma.tb_operacao_movimento_produto.create({
+     *   data: {
+     *     // ... data to create a Tb_operacao_movimento_produto
+     *   }
+     * })
+     * 
+     */
+    create<T extends tb_operacao_movimento_produtoCreateArgs>(args: SelectSubset<T, tb_operacao_movimento_produtoCreateArgs<ExtArgs>>): Prisma__tb_operacao_movimento_produtoClient<$Result.GetResult<Prisma.$tb_operacao_movimento_produtoPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Tb_operacao_movimento_produtos.
+     * @param {tb_operacao_movimento_produtoCreateManyArgs} args - Arguments to create many Tb_operacao_movimento_produtos.
+     * @example
+     * // Create many Tb_operacao_movimento_produtos
+     * const tb_operacao_movimento_produto = await prisma.tb_operacao_movimento_produto.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tb_operacao_movimento_produtoCreateManyArgs>(args?: SelectSubset<T, tb_operacao_movimento_produtoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Tb_operacao_movimento_produto.
+     * @param {tb_operacao_movimento_produtoDeleteArgs} args - Arguments to delete one Tb_operacao_movimento_produto.
+     * @example
+     * // Delete one Tb_operacao_movimento_produto
+     * const Tb_operacao_movimento_produto = await prisma.tb_operacao_movimento_produto.delete({
+     *   where: {
+     *     // ... filter to delete one Tb_operacao_movimento_produto
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tb_operacao_movimento_produtoDeleteArgs>(args: SelectSubset<T, tb_operacao_movimento_produtoDeleteArgs<ExtArgs>>): Prisma__tb_operacao_movimento_produtoClient<$Result.GetResult<Prisma.$tb_operacao_movimento_produtoPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Tb_operacao_movimento_produto.
+     * @param {tb_operacao_movimento_produtoUpdateArgs} args - Arguments to update one Tb_operacao_movimento_produto.
+     * @example
+     * // Update one Tb_operacao_movimento_produto
+     * const tb_operacao_movimento_produto = await prisma.tb_operacao_movimento_produto.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tb_operacao_movimento_produtoUpdateArgs>(args: SelectSubset<T, tb_operacao_movimento_produtoUpdateArgs<ExtArgs>>): Prisma__tb_operacao_movimento_produtoClient<$Result.GetResult<Prisma.$tb_operacao_movimento_produtoPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Tb_operacao_movimento_produtos.
+     * @param {tb_operacao_movimento_produtoDeleteManyArgs} args - Arguments to filter Tb_operacao_movimento_produtos to delete.
+     * @example
+     * // Delete a few Tb_operacao_movimento_produtos
+     * const { count } = await prisma.tb_operacao_movimento_produto.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tb_operacao_movimento_produtoDeleteManyArgs>(args?: SelectSubset<T, tb_operacao_movimento_produtoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tb_operacao_movimento_produtos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_operacao_movimento_produtoUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tb_operacao_movimento_produtos
+     * const tb_operacao_movimento_produto = await prisma.tb_operacao_movimento_produto.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tb_operacao_movimento_produtoUpdateManyArgs>(args: SelectSubset<T, tb_operacao_movimento_produtoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Tb_operacao_movimento_produto.
+     * @param {tb_operacao_movimento_produtoUpsertArgs} args - Arguments to update or create a Tb_operacao_movimento_produto.
+     * @example
+     * // Update or create a Tb_operacao_movimento_produto
+     * const tb_operacao_movimento_produto = await prisma.tb_operacao_movimento_produto.upsert({
+     *   create: {
+     *     // ... data to create a Tb_operacao_movimento_produto
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tb_operacao_movimento_produto we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tb_operacao_movimento_produtoUpsertArgs>(args: SelectSubset<T, tb_operacao_movimento_produtoUpsertArgs<ExtArgs>>): Prisma__tb_operacao_movimento_produtoClient<$Result.GetResult<Prisma.$tb_operacao_movimento_produtoPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Tb_operacao_movimento_produtos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_operacao_movimento_produtoCountArgs} args - Arguments to filter Tb_operacao_movimento_produtos to count.
+     * @example
+     * // Count the number of Tb_operacao_movimento_produtos
+     * const count = await prisma.tb_operacao_movimento_produto.count({
+     *   where: {
+     *     // ... the filter for the Tb_operacao_movimento_produtos we want to count
+     *   }
+     * })
+    **/
+    count<T extends tb_operacao_movimento_produtoCountArgs>(
+      args?: Subset<T, tb_operacao_movimento_produtoCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tb_operacao_movimento_produtoCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tb_operacao_movimento_produto.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tb_operacao_movimento_produtoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tb_operacao_movimento_produtoAggregateArgs>(args: Subset<T, Tb_operacao_movimento_produtoAggregateArgs>): Prisma.PrismaPromise<GetTb_operacao_movimento_produtoAggregateType<T>>
+
+    /**
+     * Group by Tb_operacao_movimento_produto.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_operacao_movimento_produtoGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tb_operacao_movimento_produtoGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tb_operacao_movimento_produtoGroupByArgs['orderBy'] }
+        : { orderBy?: tb_operacao_movimento_produtoGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tb_operacao_movimento_produtoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTb_operacao_movimento_produtoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tb_operacao_movimento_produto model
+   */
+  readonly fields: tb_operacao_movimento_produtoFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tb_operacao_movimento_produto.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tb_operacao_movimento_produtoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tb_operacao_movimento_produto model
+   */ 
+  interface tb_operacao_movimento_produtoFieldRefs {
+    readonly Codigo: FieldRef<"tb_operacao_movimento_produto", 'Int'>
+    readonly Id_Operacao: FieldRef<"tb_operacao_movimento_produto", 'Int'>
+    readonly Id_Produto: FieldRef<"tb_operacao_movimento_produto", 'Int'>
+    readonly IDEmpresa: FieldRef<"tb_operacao_movimento_produto", 'Int'>
+    readonly IDUser: FieldRef<"tb_operacao_movimento_produto", 'Int'>
+    readonly RegExcluido: FieldRef<"tb_operacao_movimento_produto", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tb_operacao_movimento_produto findUnique
+   */
+  export type tb_operacao_movimento_produtoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_operacao_movimento_produto
+     */
+    select?: tb_operacao_movimento_produtoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_operacao_movimento_produto to fetch.
+     */
+    where: tb_operacao_movimento_produtoWhereUniqueInput
+  }
+
+  /**
+   * tb_operacao_movimento_produto findUniqueOrThrow
+   */
+  export type tb_operacao_movimento_produtoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_operacao_movimento_produto
+     */
+    select?: tb_operacao_movimento_produtoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_operacao_movimento_produto to fetch.
+     */
+    where: tb_operacao_movimento_produtoWhereUniqueInput
+  }
+
+  /**
+   * tb_operacao_movimento_produto findFirst
+   */
+  export type tb_operacao_movimento_produtoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_operacao_movimento_produto
+     */
+    select?: tb_operacao_movimento_produtoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_operacao_movimento_produto to fetch.
+     */
+    where?: tb_operacao_movimento_produtoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_operacao_movimento_produtos to fetch.
+     */
+    orderBy?: tb_operacao_movimento_produtoOrderByWithRelationInput | tb_operacao_movimento_produtoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_operacao_movimento_produtos.
+     */
+    cursor?: tb_operacao_movimento_produtoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_operacao_movimento_produtos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_operacao_movimento_produtos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_operacao_movimento_produtos.
+     */
+    distinct?: Tb_operacao_movimento_produtoScalarFieldEnum | Tb_operacao_movimento_produtoScalarFieldEnum[]
+  }
+
+  /**
+   * tb_operacao_movimento_produto findFirstOrThrow
+   */
+  export type tb_operacao_movimento_produtoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_operacao_movimento_produto
+     */
+    select?: tb_operacao_movimento_produtoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_operacao_movimento_produto to fetch.
+     */
+    where?: tb_operacao_movimento_produtoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_operacao_movimento_produtos to fetch.
+     */
+    orderBy?: tb_operacao_movimento_produtoOrderByWithRelationInput | tb_operacao_movimento_produtoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_operacao_movimento_produtos.
+     */
+    cursor?: tb_operacao_movimento_produtoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_operacao_movimento_produtos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_operacao_movimento_produtos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_operacao_movimento_produtos.
+     */
+    distinct?: Tb_operacao_movimento_produtoScalarFieldEnum | Tb_operacao_movimento_produtoScalarFieldEnum[]
+  }
+
+  /**
+   * tb_operacao_movimento_produto findMany
+   */
+  export type tb_operacao_movimento_produtoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_operacao_movimento_produto
+     */
+    select?: tb_operacao_movimento_produtoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_operacao_movimento_produtos to fetch.
+     */
+    where?: tb_operacao_movimento_produtoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_operacao_movimento_produtos to fetch.
+     */
+    orderBy?: tb_operacao_movimento_produtoOrderByWithRelationInput | tb_operacao_movimento_produtoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tb_operacao_movimento_produtos.
+     */
+    cursor?: tb_operacao_movimento_produtoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_operacao_movimento_produtos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_operacao_movimento_produtos.
+     */
+    skip?: number
+    distinct?: Tb_operacao_movimento_produtoScalarFieldEnum | Tb_operacao_movimento_produtoScalarFieldEnum[]
+  }
+
+  /**
+   * tb_operacao_movimento_produto create
+   */
+  export type tb_operacao_movimento_produtoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_operacao_movimento_produto
+     */
+    select?: tb_operacao_movimento_produtoSelect<ExtArgs> | null
+    /**
+     * The data needed to create a tb_operacao_movimento_produto.
+     */
+    data: XOR<tb_operacao_movimento_produtoCreateInput, tb_operacao_movimento_produtoUncheckedCreateInput>
+  }
+
+  /**
+   * tb_operacao_movimento_produto createMany
+   */
+  export type tb_operacao_movimento_produtoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tb_operacao_movimento_produtos.
+     */
+    data: tb_operacao_movimento_produtoCreateManyInput | tb_operacao_movimento_produtoCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tb_operacao_movimento_produto update
+   */
+  export type tb_operacao_movimento_produtoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_operacao_movimento_produto
+     */
+    select?: tb_operacao_movimento_produtoSelect<ExtArgs> | null
+    /**
+     * The data needed to update a tb_operacao_movimento_produto.
+     */
+    data: XOR<tb_operacao_movimento_produtoUpdateInput, tb_operacao_movimento_produtoUncheckedUpdateInput>
+    /**
+     * Choose, which tb_operacao_movimento_produto to update.
+     */
+    where: tb_operacao_movimento_produtoWhereUniqueInput
+  }
+
+  /**
+   * tb_operacao_movimento_produto updateMany
+   */
+  export type tb_operacao_movimento_produtoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tb_operacao_movimento_produtos.
+     */
+    data: XOR<tb_operacao_movimento_produtoUpdateManyMutationInput, tb_operacao_movimento_produtoUncheckedUpdateManyInput>
+    /**
+     * Filter which tb_operacao_movimento_produtos to update
+     */
+    where?: tb_operacao_movimento_produtoWhereInput
+  }
+
+  /**
+   * tb_operacao_movimento_produto upsert
+   */
+  export type tb_operacao_movimento_produtoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_operacao_movimento_produto
+     */
+    select?: tb_operacao_movimento_produtoSelect<ExtArgs> | null
+    /**
+     * The filter to search for the tb_operacao_movimento_produto to update in case it exists.
+     */
+    where: tb_operacao_movimento_produtoWhereUniqueInput
+    /**
+     * In case the tb_operacao_movimento_produto found by the `where` argument doesn't exist, create a new tb_operacao_movimento_produto with this data.
+     */
+    create: XOR<tb_operacao_movimento_produtoCreateInput, tb_operacao_movimento_produtoUncheckedCreateInput>
+    /**
+     * In case the tb_operacao_movimento_produto was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tb_operacao_movimento_produtoUpdateInput, tb_operacao_movimento_produtoUncheckedUpdateInput>
+  }
+
+  /**
+   * tb_operacao_movimento_produto delete
+   */
+  export type tb_operacao_movimento_produtoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_operacao_movimento_produto
+     */
+    select?: tb_operacao_movimento_produtoSelect<ExtArgs> | null
+    /**
+     * Filter which tb_operacao_movimento_produto to delete.
+     */
+    where: tb_operacao_movimento_produtoWhereUniqueInput
+  }
+
+  /**
+   * tb_operacao_movimento_produto deleteMany
+   */
+  export type tb_operacao_movimento_produtoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_operacao_movimento_produtos to delete
+     */
+    where?: tb_operacao_movimento_produtoWhereInput
+  }
+
+  /**
+   * tb_operacao_movimento_produto without action
+   */
+  export type tb_operacao_movimento_produtoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_operacao_movimento_produto
+     */
+    select?: tb_operacao_movimento_produtoSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tb_parametros_data_inicial_tela_gerenciar
+   */
+
+  export type AggregateTb_parametros_data_inicial_tela_gerenciar = {
+    _count: Tb_parametros_data_inicial_tela_gerenciarCountAggregateOutputType | null
+    _avg: Tb_parametros_data_inicial_tela_gerenciarAvgAggregateOutputType | null
+    _sum: Tb_parametros_data_inicial_tela_gerenciarSumAggregateOutputType | null
+    _min: Tb_parametros_data_inicial_tela_gerenciarMinAggregateOutputType | null
+    _max: Tb_parametros_data_inicial_tela_gerenciarMaxAggregateOutputType | null
+  }
+
+  export type Tb_parametros_data_inicial_tela_gerenciarAvgAggregateOutputType = {
+    Codigo: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    Dias: number | null
+  }
+
+  export type Tb_parametros_data_inicial_tela_gerenciarSumAggregateOutputType = {
+    Codigo: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    Dias: number | null
+  }
+
+  export type Tb_parametros_data_inicial_tela_gerenciarMinAggregateOutputType = {
+    Codigo: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    DHU: string | null
+    RegExcluido: string | null
+    Objeto: string | null
+    Nome_Comercial: string | null
+    Dias: number | null
+  }
+
+  export type Tb_parametros_data_inicial_tela_gerenciarMaxAggregateOutputType = {
+    Codigo: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    DHU: string | null
+    RegExcluido: string | null
+    Objeto: string | null
+    Nome_Comercial: string | null
+    Dias: number | null
+  }
+
+  export type Tb_parametros_data_inicial_tela_gerenciarCountAggregateOutputType = {
+    Codigo: number
+    IDUser: number
+    IDEmpresa: number
+    DHU: number
+    RegExcluido: number
+    Objeto: number
+    Nome_Comercial: number
+    Dias: number
+    _all: number
+  }
+
+
+  export type Tb_parametros_data_inicial_tela_gerenciarAvgAggregateInputType = {
+    Codigo?: true
+    IDUser?: true
+    IDEmpresa?: true
+    Dias?: true
+  }
+
+  export type Tb_parametros_data_inicial_tela_gerenciarSumAggregateInputType = {
+    Codigo?: true
+    IDUser?: true
+    IDEmpresa?: true
+    Dias?: true
+  }
+
+  export type Tb_parametros_data_inicial_tela_gerenciarMinAggregateInputType = {
+    Codigo?: true
+    IDUser?: true
+    IDEmpresa?: true
+    DHU?: true
+    RegExcluido?: true
+    Objeto?: true
+    Nome_Comercial?: true
+    Dias?: true
+  }
+
+  export type Tb_parametros_data_inicial_tela_gerenciarMaxAggregateInputType = {
+    Codigo?: true
+    IDUser?: true
+    IDEmpresa?: true
+    DHU?: true
+    RegExcluido?: true
+    Objeto?: true
+    Nome_Comercial?: true
+    Dias?: true
+  }
+
+  export type Tb_parametros_data_inicial_tela_gerenciarCountAggregateInputType = {
+    Codigo?: true
+    IDUser?: true
+    IDEmpresa?: true
+    DHU?: true
+    RegExcluido?: true
+    Objeto?: true
+    Nome_Comercial?: true
+    Dias?: true
+    _all?: true
+  }
+
+  export type Tb_parametros_data_inicial_tela_gerenciarAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_parametros_data_inicial_tela_gerenciar to aggregate.
+     */
+    where?: tb_parametros_data_inicial_tela_gerenciarWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_parametros_data_inicial_tela_gerenciars to fetch.
+     */
+    orderBy?: tb_parametros_data_inicial_tela_gerenciarOrderByWithRelationInput | tb_parametros_data_inicial_tela_gerenciarOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tb_parametros_data_inicial_tela_gerenciarWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_parametros_data_inicial_tela_gerenciars from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_parametros_data_inicial_tela_gerenciars.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tb_parametros_data_inicial_tela_gerenciars
+    **/
+    _count?: true | Tb_parametros_data_inicial_tela_gerenciarCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tb_parametros_data_inicial_tela_gerenciarAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tb_parametros_data_inicial_tela_gerenciarSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tb_parametros_data_inicial_tela_gerenciarMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tb_parametros_data_inicial_tela_gerenciarMaxAggregateInputType
+  }
+
+  export type GetTb_parametros_data_inicial_tela_gerenciarAggregateType<T extends Tb_parametros_data_inicial_tela_gerenciarAggregateArgs> = {
+        [P in keyof T & keyof AggregateTb_parametros_data_inicial_tela_gerenciar]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTb_parametros_data_inicial_tela_gerenciar[P]>
+      : GetScalarType<T[P], AggregateTb_parametros_data_inicial_tela_gerenciar[P]>
+  }
+
+
+
+
+  export type tb_parametros_data_inicial_tela_gerenciarGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tb_parametros_data_inicial_tela_gerenciarWhereInput
+    orderBy?: tb_parametros_data_inicial_tela_gerenciarOrderByWithAggregationInput | tb_parametros_data_inicial_tela_gerenciarOrderByWithAggregationInput[]
+    by: Tb_parametros_data_inicial_tela_gerenciarScalarFieldEnum[] | Tb_parametros_data_inicial_tela_gerenciarScalarFieldEnum
+    having?: tb_parametros_data_inicial_tela_gerenciarScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tb_parametros_data_inicial_tela_gerenciarCountAggregateInputType | true
+    _avg?: Tb_parametros_data_inicial_tela_gerenciarAvgAggregateInputType
+    _sum?: Tb_parametros_data_inicial_tela_gerenciarSumAggregateInputType
+    _min?: Tb_parametros_data_inicial_tela_gerenciarMinAggregateInputType
+    _max?: Tb_parametros_data_inicial_tela_gerenciarMaxAggregateInputType
+  }
+
+  export type Tb_parametros_data_inicial_tela_gerenciarGroupByOutputType = {
+    Codigo: number
+    IDUser: number | null
+    IDEmpresa: number | null
+    DHU: string | null
+    RegExcluido: string | null
+    Objeto: string | null
+    Nome_Comercial: string | null
+    Dias: number | null
+    _count: Tb_parametros_data_inicial_tela_gerenciarCountAggregateOutputType | null
+    _avg: Tb_parametros_data_inicial_tela_gerenciarAvgAggregateOutputType | null
+    _sum: Tb_parametros_data_inicial_tela_gerenciarSumAggregateOutputType | null
+    _min: Tb_parametros_data_inicial_tela_gerenciarMinAggregateOutputType | null
+    _max: Tb_parametros_data_inicial_tela_gerenciarMaxAggregateOutputType | null
+  }
+
+  type GetTb_parametros_data_inicial_tela_gerenciarGroupByPayload<T extends tb_parametros_data_inicial_tela_gerenciarGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tb_parametros_data_inicial_tela_gerenciarGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tb_parametros_data_inicial_tela_gerenciarGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tb_parametros_data_inicial_tela_gerenciarGroupByOutputType[P]>
+            : GetScalarType<T[P], Tb_parametros_data_inicial_tela_gerenciarGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tb_parametros_data_inicial_tela_gerenciarSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Codigo?: boolean
+    IDUser?: boolean
+    IDEmpresa?: boolean
+    DHU?: boolean
+    RegExcluido?: boolean
+    Objeto?: boolean
+    Nome_Comercial?: boolean
+    Dias?: boolean
+  }, ExtArgs["result"]["tb_parametros_data_inicial_tela_gerenciar"]>
+
+
+  export type tb_parametros_data_inicial_tela_gerenciarSelectScalar = {
+    Codigo?: boolean
+    IDUser?: boolean
+    IDEmpresa?: boolean
+    DHU?: boolean
+    RegExcluido?: boolean
+    Objeto?: boolean
+    Nome_Comercial?: boolean
+    Dias?: boolean
+  }
+
+
+  export type $tb_parametros_data_inicial_tela_gerenciarPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tb_parametros_data_inicial_tela_gerenciar"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      Codigo: number
+      IDUser: number | null
+      IDEmpresa: number | null
+      DHU: string | null
+      RegExcluido: string | null
+      Objeto: string | null
+      Nome_Comercial: string | null
+      Dias: number | null
+    }, ExtArgs["result"]["tb_parametros_data_inicial_tela_gerenciar"]>
+    composites: {}
+  }
+
+  type tb_parametros_data_inicial_tela_gerenciarGetPayload<S extends boolean | null | undefined | tb_parametros_data_inicial_tela_gerenciarDefaultArgs> = $Result.GetResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload, S>
+
+  type tb_parametros_data_inicial_tela_gerenciarCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<tb_parametros_data_inicial_tela_gerenciarFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Tb_parametros_data_inicial_tela_gerenciarCountAggregateInputType | true
+    }
+
+  export interface tb_parametros_data_inicial_tela_gerenciarDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tb_parametros_data_inicial_tela_gerenciar'], meta: { name: 'tb_parametros_data_inicial_tela_gerenciar' } }
+    /**
+     * Find zero or one Tb_parametros_data_inicial_tela_gerenciar that matches the filter.
+     * @param {tb_parametros_data_inicial_tela_gerenciarFindUniqueArgs} args - Arguments to find a Tb_parametros_data_inicial_tela_gerenciar
+     * @example
+     * // Get one Tb_parametros_data_inicial_tela_gerenciar
+     * const tb_parametros_data_inicial_tela_gerenciar = await prisma.tb_parametros_data_inicial_tela_gerenciar.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tb_parametros_data_inicial_tela_gerenciarFindUniqueArgs>(args: SelectSubset<T, tb_parametros_data_inicial_tela_gerenciarFindUniqueArgs<ExtArgs>>): Prisma__tb_parametros_data_inicial_tela_gerenciarClient<$Result.GetResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Tb_parametros_data_inicial_tela_gerenciar that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {tb_parametros_data_inicial_tela_gerenciarFindUniqueOrThrowArgs} args - Arguments to find a Tb_parametros_data_inicial_tela_gerenciar
+     * @example
+     * // Get one Tb_parametros_data_inicial_tela_gerenciar
+     * const tb_parametros_data_inicial_tela_gerenciar = await prisma.tb_parametros_data_inicial_tela_gerenciar.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tb_parametros_data_inicial_tela_gerenciarFindUniqueOrThrowArgs>(args: SelectSubset<T, tb_parametros_data_inicial_tela_gerenciarFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tb_parametros_data_inicial_tela_gerenciarClient<$Result.GetResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Tb_parametros_data_inicial_tela_gerenciar that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_parametros_data_inicial_tela_gerenciarFindFirstArgs} args - Arguments to find a Tb_parametros_data_inicial_tela_gerenciar
+     * @example
+     * // Get one Tb_parametros_data_inicial_tela_gerenciar
+     * const tb_parametros_data_inicial_tela_gerenciar = await prisma.tb_parametros_data_inicial_tela_gerenciar.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tb_parametros_data_inicial_tela_gerenciarFindFirstArgs>(args?: SelectSubset<T, tb_parametros_data_inicial_tela_gerenciarFindFirstArgs<ExtArgs>>): Prisma__tb_parametros_data_inicial_tela_gerenciarClient<$Result.GetResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Tb_parametros_data_inicial_tela_gerenciar that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_parametros_data_inicial_tela_gerenciarFindFirstOrThrowArgs} args - Arguments to find a Tb_parametros_data_inicial_tela_gerenciar
+     * @example
+     * // Get one Tb_parametros_data_inicial_tela_gerenciar
+     * const tb_parametros_data_inicial_tela_gerenciar = await prisma.tb_parametros_data_inicial_tela_gerenciar.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tb_parametros_data_inicial_tela_gerenciarFindFirstOrThrowArgs>(args?: SelectSubset<T, tb_parametros_data_inicial_tela_gerenciarFindFirstOrThrowArgs<ExtArgs>>): Prisma__tb_parametros_data_inicial_tela_gerenciarClient<$Result.GetResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Tb_parametros_data_inicial_tela_gerenciars that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_parametros_data_inicial_tela_gerenciarFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tb_parametros_data_inicial_tela_gerenciars
+     * const tb_parametros_data_inicial_tela_gerenciars = await prisma.tb_parametros_data_inicial_tela_gerenciar.findMany()
+     * 
+     * // Get first 10 Tb_parametros_data_inicial_tela_gerenciars
+     * const tb_parametros_data_inicial_tela_gerenciars = await prisma.tb_parametros_data_inicial_tela_gerenciar.findMany({ take: 10 })
+     * 
+     * // Only select the `Codigo`
+     * const tb_parametros_data_inicial_tela_gerenciarWithCodigoOnly = await prisma.tb_parametros_data_inicial_tela_gerenciar.findMany({ select: { Codigo: true } })
+     * 
+     */
+    findMany<T extends tb_parametros_data_inicial_tela_gerenciarFindManyArgs>(args?: SelectSubset<T, tb_parametros_data_inicial_tela_gerenciarFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Tb_parametros_data_inicial_tela_gerenciar.
+     * @param {tb_parametros_data_inicial_tela_gerenciarCreateArgs} args - Arguments to create a Tb_parametros_data_inicial_tela_gerenciar.
+     * @example
+     * // Create one Tb_parametros_data_inicial_tela_gerenciar
+     * const Tb_parametros_data_inicial_tela_gerenciar = await prisma.tb_parametros_data_inicial_tela_gerenciar.create({
+     *   data: {
+     *     // ... data to create a Tb_parametros_data_inicial_tela_gerenciar
+     *   }
+     * })
+     * 
+     */
+    create<T extends tb_parametros_data_inicial_tela_gerenciarCreateArgs>(args: SelectSubset<T, tb_parametros_data_inicial_tela_gerenciarCreateArgs<ExtArgs>>): Prisma__tb_parametros_data_inicial_tela_gerenciarClient<$Result.GetResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Tb_parametros_data_inicial_tela_gerenciars.
+     * @param {tb_parametros_data_inicial_tela_gerenciarCreateManyArgs} args - Arguments to create many Tb_parametros_data_inicial_tela_gerenciars.
+     * @example
+     * // Create many Tb_parametros_data_inicial_tela_gerenciars
+     * const tb_parametros_data_inicial_tela_gerenciar = await prisma.tb_parametros_data_inicial_tela_gerenciar.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tb_parametros_data_inicial_tela_gerenciarCreateManyArgs>(args?: SelectSubset<T, tb_parametros_data_inicial_tela_gerenciarCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Tb_parametros_data_inicial_tela_gerenciar.
+     * @param {tb_parametros_data_inicial_tela_gerenciarDeleteArgs} args - Arguments to delete one Tb_parametros_data_inicial_tela_gerenciar.
+     * @example
+     * // Delete one Tb_parametros_data_inicial_tela_gerenciar
+     * const Tb_parametros_data_inicial_tela_gerenciar = await prisma.tb_parametros_data_inicial_tela_gerenciar.delete({
+     *   where: {
+     *     // ... filter to delete one Tb_parametros_data_inicial_tela_gerenciar
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tb_parametros_data_inicial_tela_gerenciarDeleteArgs>(args: SelectSubset<T, tb_parametros_data_inicial_tela_gerenciarDeleteArgs<ExtArgs>>): Prisma__tb_parametros_data_inicial_tela_gerenciarClient<$Result.GetResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Tb_parametros_data_inicial_tela_gerenciar.
+     * @param {tb_parametros_data_inicial_tela_gerenciarUpdateArgs} args - Arguments to update one Tb_parametros_data_inicial_tela_gerenciar.
+     * @example
+     * // Update one Tb_parametros_data_inicial_tela_gerenciar
+     * const tb_parametros_data_inicial_tela_gerenciar = await prisma.tb_parametros_data_inicial_tela_gerenciar.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tb_parametros_data_inicial_tela_gerenciarUpdateArgs>(args: SelectSubset<T, tb_parametros_data_inicial_tela_gerenciarUpdateArgs<ExtArgs>>): Prisma__tb_parametros_data_inicial_tela_gerenciarClient<$Result.GetResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Tb_parametros_data_inicial_tela_gerenciars.
+     * @param {tb_parametros_data_inicial_tela_gerenciarDeleteManyArgs} args - Arguments to filter Tb_parametros_data_inicial_tela_gerenciars to delete.
+     * @example
+     * // Delete a few Tb_parametros_data_inicial_tela_gerenciars
+     * const { count } = await prisma.tb_parametros_data_inicial_tela_gerenciar.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tb_parametros_data_inicial_tela_gerenciarDeleteManyArgs>(args?: SelectSubset<T, tb_parametros_data_inicial_tela_gerenciarDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tb_parametros_data_inicial_tela_gerenciars.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_parametros_data_inicial_tela_gerenciarUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tb_parametros_data_inicial_tela_gerenciars
+     * const tb_parametros_data_inicial_tela_gerenciar = await prisma.tb_parametros_data_inicial_tela_gerenciar.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tb_parametros_data_inicial_tela_gerenciarUpdateManyArgs>(args: SelectSubset<T, tb_parametros_data_inicial_tela_gerenciarUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Tb_parametros_data_inicial_tela_gerenciar.
+     * @param {tb_parametros_data_inicial_tela_gerenciarUpsertArgs} args - Arguments to update or create a Tb_parametros_data_inicial_tela_gerenciar.
+     * @example
+     * // Update or create a Tb_parametros_data_inicial_tela_gerenciar
+     * const tb_parametros_data_inicial_tela_gerenciar = await prisma.tb_parametros_data_inicial_tela_gerenciar.upsert({
+     *   create: {
+     *     // ... data to create a Tb_parametros_data_inicial_tela_gerenciar
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tb_parametros_data_inicial_tela_gerenciar we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tb_parametros_data_inicial_tela_gerenciarUpsertArgs>(args: SelectSubset<T, tb_parametros_data_inicial_tela_gerenciarUpsertArgs<ExtArgs>>): Prisma__tb_parametros_data_inicial_tela_gerenciarClient<$Result.GetResult<Prisma.$tb_parametros_data_inicial_tela_gerenciarPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Tb_parametros_data_inicial_tela_gerenciars.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_parametros_data_inicial_tela_gerenciarCountArgs} args - Arguments to filter Tb_parametros_data_inicial_tela_gerenciars to count.
+     * @example
+     * // Count the number of Tb_parametros_data_inicial_tela_gerenciars
+     * const count = await prisma.tb_parametros_data_inicial_tela_gerenciar.count({
+     *   where: {
+     *     // ... the filter for the Tb_parametros_data_inicial_tela_gerenciars we want to count
+     *   }
+     * })
+    **/
+    count<T extends tb_parametros_data_inicial_tela_gerenciarCountArgs>(
+      args?: Subset<T, tb_parametros_data_inicial_tela_gerenciarCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tb_parametros_data_inicial_tela_gerenciarCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tb_parametros_data_inicial_tela_gerenciar.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tb_parametros_data_inicial_tela_gerenciarAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tb_parametros_data_inicial_tela_gerenciarAggregateArgs>(args: Subset<T, Tb_parametros_data_inicial_tela_gerenciarAggregateArgs>): Prisma.PrismaPromise<GetTb_parametros_data_inicial_tela_gerenciarAggregateType<T>>
+
+    /**
+     * Group by Tb_parametros_data_inicial_tela_gerenciar.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_parametros_data_inicial_tela_gerenciarGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tb_parametros_data_inicial_tela_gerenciarGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tb_parametros_data_inicial_tela_gerenciarGroupByArgs['orderBy'] }
+        : { orderBy?: tb_parametros_data_inicial_tela_gerenciarGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tb_parametros_data_inicial_tela_gerenciarGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTb_parametros_data_inicial_tela_gerenciarGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tb_parametros_data_inicial_tela_gerenciar model
+   */
+  readonly fields: tb_parametros_data_inicial_tela_gerenciarFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tb_parametros_data_inicial_tela_gerenciar.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tb_parametros_data_inicial_tela_gerenciarClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tb_parametros_data_inicial_tela_gerenciar model
+   */ 
+  interface tb_parametros_data_inicial_tela_gerenciarFieldRefs {
+    readonly Codigo: FieldRef<"tb_parametros_data_inicial_tela_gerenciar", 'Int'>
+    readonly IDUser: FieldRef<"tb_parametros_data_inicial_tela_gerenciar", 'Int'>
+    readonly IDEmpresa: FieldRef<"tb_parametros_data_inicial_tela_gerenciar", 'Int'>
+    readonly DHU: FieldRef<"tb_parametros_data_inicial_tela_gerenciar", 'String'>
+    readonly RegExcluido: FieldRef<"tb_parametros_data_inicial_tela_gerenciar", 'String'>
+    readonly Objeto: FieldRef<"tb_parametros_data_inicial_tela_gerenciar", 'String'>
+    readonly Nome_Comercial: FieldRef<"tb_parametros_data_inicial_tela_gerenciar", 'String'>
+    readonly Dias: FieldRef<"tb_parametros_data_inicial_tela_gerenciar", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tb_parametros_data_inicial_tela_gerenciar findUnique
+   */
+  export type tb_parametros_data_inicial_tela_gerenciarFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_parametros_data_inicial_tela_gerenciar
+     */
+    select?: tb_parametros_data_inicial_tela_gerenciarSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_parametros_data_inicial_tela_gerenciar to fetch.
+     */
+    where: tb_parametros_data_inicial_tela_gerenciarWhereUniqueInput
+  }
+
+  /**
+   * tb_parametros_data_inicial_tela_gerenciar findUniqueOrThrow
+   */
+  export type tb_parametros_data_inicial_tela_gerenciarFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_parametros_data_inicial_tela_gerenciar
+     */
+    select?: tb_parametros_data_inicial_tela_gerenciarSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_parametros_data_inicial_tela_gerenciar to fetch.
+     */
+    where: tb_parametros_data_inicial_tela_gerenciarWhereUniqueInput
+  }
+
+  /**
+   * tb_parametros_data_inicial_tela_gerenciar findFirst
+   */
+  export type tb_parametros_data_inicial_tela_gerenciarFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_parametros_data_inicial_tela_gerenciar
+     */
+    select?: tb_parametros_data_inicial_tela_gerenciarSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_parametros_data_inicial_tela_gerenciar to fetch.
+     */
+    where?: tb_parametros_data_inicial_tela_gerenciarWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_parametros_data_inicial_tela_gerenciars to fetch.
+     */
+    orderBy?: tb_parametros_data_inicial_tela_gerenciarOrderByWithRelationInput | tb_parametros_data_inicial_tela_gerenciarOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_parametros_data_inicial_tela_gerenciars.
+     */
+    cursor?: tb_parametros_data_inicial_tela_gerenciarWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_parametros_data_inicial_tela_gerenciars from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_parametros_data_inicial_tela_gerenciars.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_parametros_data_inicial_tela_gerenciars.
+     */
+    distinct?: Tb_parametros_data_inicial_tela_gerenciarScalarFieldEnum | Tb_parametros_data_inicial_tela_gerenciarScalarFieldEnum[]
+  }
+
+  /**
+   * tb_parametros_data_inicial_tela_gerenciar findFirstOrThrow
+   */
+  export type tb_parametros_data_inicial_tela_gerenciarFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_parametros_data_inicial_tela_gerenciar
+     */
+    select?: tb_parametros_data_inicial_tela_gerenciarSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_parametros_data_inicial_tela_gerenciar to fetch.
+     */
+    where?: tb_parametros_data_inicial_tela_gerenciarWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_parametros_data_inicial_tela_gerenciars to fetch.
+     */
+    orderBy?: tb_parametros_data_inicial_tela_gerenciarOrderByWithRelationInput | tb_parametros_data_inicial_tela_gerenciarOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_parametros_data_inicial_tela_gerenciars.
+     */
+    cursor?: tb_parametros_data_inicial_tela_gerenciarWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_parametros_data_inicial_tela_gerenciars from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_parametros_data_inicial_tela_gerenciars.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_parametros_data_inicial_tela_gerenciars.
+     */
+    distinct?: Tb_parametros_data_inicial_tela_gerenciarScalarFieldEnum | Tb_parametros_data_inicial_tela_gerenciarScalarFieldEnum[]
+  }
+
+  /**
+   * tb_parametros_data_inicial_tela_gerenciar findMany
+   */
+  export type tb_parametros_data_inicial_tela_gerenciarFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_parametros_data_inicial_tela_gerenciar
+     */
+    select?: tb_parametros_data_inicial_tela_gerenciarSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_parametros_data_inicial_tela_gerenciars to fetch.
+     */
+    where?: tb_parametros_data_inicial_tela_gerenciarWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_parametros_data_inicial_tela_gerenciars to fetch.
+     */
+    orderBy?: tb_parametros_data_inicial_tela_gerenciarOrderByWithRelationInput | tb_parametros_data_inicial_tela_gerenciarOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tb_parametros_data_inicial_tela_gerenciars.
+     */
+    cursor?: tb_parametros_data_inicial_tela_gerenciarWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_parametros_data_inicial_tela_gerenciars from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_parametros_data_inicial_tela_gerenciars.
+     */
+    skip?: number
+    distinct?: Tb_parametros_data_inicial_tela_gerenciarScalarFieldEnum | Tb_parametros_data_inicial_tela_gerenciarScalarFieldEnum[]
+  }
+
+  /**
+   * tb_parametros_data_inicial_tela_gerenciar create
+   */
+  export type tb_parametros_data_inicial_tela_gerenciarCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_parametros_data_inicial_tela_gerenciar
+     */
+    select?: tb_parametros_data_inicial_tela_gerenciarSelect<ExtArgs> | null
+    /**
+     * The data needed to create a tb_parametros_data_inicial_tela_gerenciar.
+     */
+    data: XOR<tb_parametros_data_inicial_tela_gerenciarCreateInput, tb_parametros_data_inicial_tela_gerenciarUncheckedCreateInput>
+  }
+
+  /**
+   * tb_parametros_data_inicial_tela_gerenciar createMany
+   */
+  export type tb_parametros_data_inicial_tela_gerenciarCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tb_parametros_data_inicial_tela_gerenciars.
+     */
+    data: tb_parametros_data_inicial_tela_gerenciarCreateManyInput | tb_parametros_data_inicial_tela_gerenciarCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tb_parametros_data_inicial_tela_gerenciar update
+   */
+  export type tb_parametros_data_inicial_tela_gerenciarUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_parametros_data_inicial_tela_gerenciar
+     */
+    select?: tb_parametros_data_inicial_tela_gerenciarSelect<ExtArgs> | null
+    /**
+     * The data needed to update a tb_parametros_data_inicial_tela_gerenciar.
+     */
+    data: XOR<tb_parametros_data_inicial_tela_gerenciarUpdateInput, tb_parametros_data_inicial_tela_gerenciarUncheckedUpdateInput>
+    /**
+     * Choose, which tb_parametros_data_inicial_tela_gerenciar to update.
+     */
+    where: tb_parametros_data_inicial_tela_gerenciarWhereUniqueInput
+  }
+
+  /**
+   * tb_parametros_data_inicial_tela_gerenciar updateMany
+   */
+  export type tb_parametros_data_inicial_tela_gerenciarUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tb_parametros_data_inicial_tela_gerenciars.
+     */
+    data: XOR<tb_parametros_data_inicial_tela_gerenciarUpdateManyMutationInput, tb_parametros_data_inicial_tela_gerenciarUncheckedUpdateManyInput>
+    /**
+     * Filter which tb_parametros_data_inicial_tela_gerenciars to update
+     */
+    where?: tb_parametros_data_inicial_tela_gerenciarWhereInput
+  }
+
+  /**
+   * tb_parametros_data_inicial_tela_gerenciar upsert
+   */
+  export type tb_parametros_data_inicial_tela_gerenciarUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_parametros_data_inicial_tela_gerenciar
+     */
+    select?: tb_parametros_data_inicial_tela_gerenciarSelect<ExtArgs> | null
+    /**
+     * The filter to search for the tb_parametros_data_inicial_tela_gerenciar to update in case it exists.
+     */
+    where: tb_parametros_data_inicial_tela_gerenciarWhereUniqueInput
+    /**
+     * In case the tb_parametros_data_inicial_tela_gerenciar found by the `where` argument doesn't exist, create a new tb_parametros_data_inicial_tela_gerenciar with this data.
+     */
+    create: XOR<tb_parametros_data_inicial_tela_gerenciarCreateInput, tb_parametros_data_inicial_tela_gerenciarUncheckedCreateInput>
+    /**
+     * In case the tb_parametros_data_inicial_tela_gerenciar was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tb_parametros_data_inicial_tela_gerenciarUpdateInput, tb_parametros_data_inicial_tela_gerenciarUncheckedUpdateInput>
+  }
+
+  /**
+   * tb_parametros_data_inicial_tela_gerenciar delete
+   */
+  export type tb_parametros_data_inicial_tela_gerenciarDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_parametros_data_inicial_tela_gerenciar
+     */
+    select?: tb_parametros_data_inicial_tela_gerenciarSelect<ExtArgs> | null
+    /**
+     * Filter which tb_parametros_data_inicial_tela_gerenciar to delete.
+     */
+    where: tb_parametros_data_inicial_tela_gerenciarWhereUniqueInput
+  }
+
+  /**
+   * tb_parametros_data_inicial_tela_gerenciar deleteMany
+   */
+  export type tb_parametros_data_inicial_tela_gerenciarDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_parametros_data_inicial_tela_gerenciars to delete
+     */
+    where?: tb_parametros_data_inicial_tela_gerenciarWhereInput
+  }
+
+  /**
+   * tb_parametros_data_inicial_tela_gerenciar without action
+   */
+  export type tb_parametros_data_inicial_tela_gerenciarDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_parametros_data_inicial_tela_gerenciar
+     */
+    select?: tb_parametros_data_inicial_tela_gerenciarSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tb_produtos_food_entrega_tap
+   */
+
+  export type AggregateTb_produtos_food_entrega_tap = {
+    _count: Tb_produtos_food_entrega_tapCountAggregateOutputType | null
+    _avg: Tb_produtos_food_entrega_tapAvgAggregateOutputType | null
+    _sum: Tb_produtos_food_entrega_tapSumAggregateOutputType | null
+    _min: Tb_produtos_food_entrega_tapMinAggregateOutputType | null
+    _max: Tb_produtos_food_entrega_tapMaxAggregateOutputType | null
+  }
+
+  export type Tb_produtos_food_entrega_tapAvgAggregateOutputType = {
+    Codigo: number | null
+    Id_Produto: number | null
+    IDEmpresa: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_produtos_food_entrega_tapSumAggregateOutputType = {
+    Codigo: number | null
+    Id_Produto: number | null
+    IDEmpresa: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_produtos_food_entrega_tapMinAggregateOutputType = {
+    Codigo: number | null
+    DHU: string | null
+    Id_Produto: number | null
+    RegExcluido: string | null
+    IDEmpresa: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_produtos_food_entrega_tapMaxAggregateOutputType = {
+    Codigo: number | null
+    DHU: string | null
+    Id_Produto: number | null
+    RegExcluido: string | null
+    IDEmpresa: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_produtos_food_entrega_tapCountAggregateOutputType = {
+    Codigo: number
+    DHU: number
+    Id_Produto: number
+    RegExcluido: number
+    IDEmpresa: number
+    IDUser: number
+    _all: number
+  }
+
+
+  export type Tb_produtos_food_entrega_tapAvgAggregateInputType = {
+    Codigo?: true
+    Id_Produto?: true
+    IDEmpresa?: true
+    IDUser?: true
+  }
+
+  export type Tb_produtos_food_entrega_tapSumAggregateInputType = {
+    Codigo?: true
+    Id_Produto?: true
+    IDEmpresa?: true
+    IDUser?: true
+  }
+
+  export type Tb_produtos_food_entrega_tapMinAggregateInputType = {
+    Codigo?: true
+    DHU?: true
+    Id_Produto?: true
+    RegExcluido?: true
+    IDEmpresa?: true
+    IDUser?: true
+  }
+
+  export type Tb_produtos_food_entrega_tapMaxAggregateInputType = {
+    Codigo?: true
+    DHU?: true
+    Id_Produto?: true
+    RegExcluido?: true
+    IDEmpresa?: true
+    IDUser?: true
+  }
+
+  export type Tb_produtos_food_entrega_tapCountAggregateInputType = {
+    Codigo?: true
+    DHU?: true
+    Id_Produto?: true
+    RegExcluido?: true
+    IDEmpresa?: true
+    IDUser?: true
+    _all?: true
+  }
+
+  export type Tb_produtos_food_entrega_tapAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_produtos_food_entrega_tap to aggregate.
+     */
+    where?: tb_produtos_food_entrega_tapWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_food_entrega_taps to fetch.
+     */
+    orderBy?: tb_produtos_food_entrega_tapOrderByWithRelationInput | tb_produtos_food_entrega_tapOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tb_produtos_food_entrega_tapWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_food_entrega_taps from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_food_entrega_taps.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tb_produtos_food_entrega_taps
+    **/
+    _count?: true | Tb_produtos_food_entrega_tapCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tb_produtos_food_entrega_tapAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tb_produtos_food_entrega_tapSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tb_produtos_food_entrega_tapMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tb_produtos_food_entrega_tapMaxAggregateInputType
+  }
+
+  export type GetTb_produtos_food_entrega_tapAggregateType<T extends Tb_produtos_food_entrega_tapAggregateArgs> = {
+        [P in keyof T & keyof AggregateTb_produtos_food_entrega_tap]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTb_produtos_food_entrega_tap[P]>
+      : GetScalarType<T[P], AggregateTb_produtos_food_entrega_tap[P]>
+  }
+
+
+
+
+  export type tb_produtos_food_entrega_tapGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tb_produtos_food_entrega_tapWhereInput
+    orderBy?: tb_produtos_food_entrega_tapOrderByWithAggregationInput | tb_produtos_food_entrega_tapOrderByWithAggregationInput[]
+    by: Tb_produtos_food_entrega_tapScalarFieldEnum[] | Tb_produtos_food_entrega_tapScalarFieldEnum
+    having?: tb_produtos_food_entrega_tapScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tb_produtos_food_entrega_tapCountAggregateInputType | true
+    _avg?: Tb_produtos_food_entrega_tapAvgAggregateInputType
+    _sum?: Tb_produtos_food_entrega_tapSumAggregateInputType
+    _min?: Tb_produtos_food_entrega_tapMinAggregateInputType
+    _max?: Tb_produtos_food_entrega_tapMaxAggregateInputType
+  }
+
+  export type Tb_produtos_food_entrega_tapGroupByOutputType = {
+    Codigo: number
+    DHU: string | null
+    Id_Produto: number | null
+    RegExcluido: string | null
+    IDEmpresa: number | null
+    IDUser: number | null
+    _count: Tb_produtos_food_entrega_tapCountAggregateOutputType | null
+    _avg: Tb_produtos_food_entrega_tapAvgAggregateOutputType | null
+    _sum: Tb_produtos_food_entrega_tapSumAggregateOutputType | null
+    _min: Tb_produtos_food_entrega_tapMinAggregateOutputType | null
+    _max: Tb_produtos_food_entrega_tapMaxAggregateOutputType | null
+  }
+
+  type GetTb_produtos_food_entrega_tapGroupByPayload<T extends tb_produtos_food_entrega_tapGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tb_produtos_food_entrega_tapGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tb_produtos_food_entrega_tapGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tb_produtos_food_entrega_tapGroupByOutputType[P]>
+            : GetScalarType<T[P], Tb_produtos_food_entrega_tapGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tb_produtos_food_entrega_tapSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Codigo?: boolean
+    DHU?: boolean
+    Id_Produto?: boolean
+    RegExcluido?: boolean
+    IDEmpresa?: boolean
+    IDUser?: boolean
+  }, ExtArgs["result"]["tb_produtos_food_entrega_tap"]>
+
+
+  export type tb_produtos_food_entrega_tapSelectScalar = {
+    Codigo?: boolean
+    DHU?: boolean
+    Id_Produto?: boolean
+    RegExcluido?: boolean
+    IDEmpresa?: boolean
+    IDUser?: boolean
+  }
+
+
+  export type $tb_produtos_food_entrega_tapPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tb_produtos_food_entrega_tap"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      Codigo: number
+      DHU: string | null
+      Id_Produto: number | null
+      RegExcluido: string | null
+      IDEmpresa: number | null
+      IDUser: number | null
+    }, ExtArgs["result"]["tb_produtos_food_entrega_tap"]>
+    composites: {}
+  }
+
+  type tb_produtos_food_entrega_tapGetPayload<S extends boolean | null | undefined | tb_produtos_food_entrega_tapDefaultArgs> = $Result.GetResult<Prisma.$tb_produtos_food_entrega_tapPayload, S>
+
+  type tb_produtos_food_entrega_tapCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<tb_produtos_food_entrega_tapFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Tb_produtos_food_entrega_tapCountAggregateInputType | true
+    }
+
+  export interface tb_produtos_food_entrega_tapDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tb_produtos_food_entrega_tap'], meta: { name: 'tb_produtos_food_entrega_tap' } }
+    /**
+     * Find zero or one Tb_produtos_food_entrega_tap that matches the filter.
+     * @param {tb_produtos_food_entrega_tapFindUniqueArgs} args - Arguments to find a Tb_produtos_food_entrega_tap
+     * @example
+     * // Get one Tb_produtos_food_entrega_tap
+     * const tb_produtos_food_entrega_tap = await prisma.tb_produtos_food_entrega_tap.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tb_produtos_food_entrega_tapFindUniqueArgs>(args: SelectSubset<T, tb_produtos_food_entrega_tapFindUniqueArgs<ExtArgs>>): Prisma__tb_produtos_food_entrega_tapClient<$Result.GetResult<Prisma.$tb_produtos_food_entrega_tapPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Tb_produtos_food_entrega_tap that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {tb_produtos_food_entrega_tapFindUniqueOrThrowArgs} args - Arguments to find a Tb_produtos_food_entrega_tap
+     * @example
+     * // Get one Tb_produtos_food_entrega_tap
+     * const tb_produtos_food_entrega_tap = await prisma.tb_produtos_food_entrega_tap.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tb_produtos_food_entrega_tapFindUniqueOrThrowArgs>(args: SelectSubset<T, tb_produtos_food_entrega_tapFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tb_produtos_food_entrega_tapClient<$Result.GetResult<Prisma.$tb_produtos_food_entrega_tapPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Tb_produtos_food_entrega_tap that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_food_entrega_tapFindFirstArgs} args - Arguments to find a Tb_produtos_food_entrega_tap
+     * @example
+     * // Get one Tb_produtos_food_entrega_tap
+     * const tb_produtos_food_entrega_tap = await prisma.tb_produtos_food_entrega_tap.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tb_produtos_food_entrega_tapFindFirstArgs>(args?: SelectSubset<T, tb_produtos_food_entrega_tapFindFirstArgs<ExtArgs>>): Prisma__tb_produtos_food_entrega_tapClient<$Result.GetResult<Prisma.$tb_produtos_food_entrega_tapPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Tb_produtos_food_entrega_tap that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_food_entrega_tapFindFirstOrThrowArgs} args - Arguments to find a Tb_produtos_food_entrega_tap
+     * @example
+     * // Get one Tb_produtos_food_entrega_tap
+     * const tb_produtos_food_entrega_tap = await prisma.tb_produtos_food_entrega_tap.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tb_produtos_food_entrega_tapFindFirstOrThrowArgs>(args?: SelectSubset<T, tb_produtos_food_entrega_tapFindFirstOrThrowArgs<ExtArgs>>): Prisma__tb_produtos_food_entrega_tapClient<$Result.GetResult<Prisma.$tb_produtos_food_entrega_tapPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Tb_produtos_food_entrega_taps that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_food_entrega_tapFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tb_produtos_food_entrega_taps
+     * const tb_produtos_food_entrega_taps = await prisma.tb_produtos_food_entrega_tap.findMany()
+     * 
+     * // Get first 10 Tb_produtos_food_entrega_taps
+     * const tb_produtos_food_entrega_taps = await prisma.tb_produtos_food_entrega_tap.findMany({ take: 10 })
+     * 
+     * // Only select the `Codigo`
+     * const tb_produtos_food_entrega_tapWithCodigoOnly = await prisma.tb_produtos_food_entrega_tap.findMany({ select: { Codigo: true } })
+     * 
+     */
+    findMany<T extends tb_produtos_food_entrega_tapFindManyArgs>(args?: SelectSubset<T, tb_produtos_food_entrega_tapFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tb_produtos_food_entrega_tapPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Tb_produtos_food_entrega_tap.
+     * @param {tb_produtos_food_entrega_tapCreateArgs} args - Arguments to create a Tb_produtos_food_entrega_tap.
+     * @example
+     * // Create one Tb_produtos_food_entrega_tap
+     * const Tb_produtos_food_entrega_tap = await prisma.tb_produtos_food_entrega_tap.create({
+     *   data: {
+     *     // ... data to create a Tb_produtos_food_entrega_tap
+     *   }
+     * })
+     * 
+     */
+    create<T extends tb_produtos_food_entrega_tapCreateArgs>(args: SelectSubset<T, tb_produtos_food_entrega_tapCreateArgs<ExtArgs>>): Prisma__tb_produtos_food_entrega_tapClient<$Result.GetResult<Prisma.$tb_produtos_food_entrega_tapPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Tb_produtos_food_entrega_taps.
+     * @param {tb_produtos_food_entrega_tapCreateManyArgs} args - Arguments to create many Tb_produtos_food_entrega_taps.
+     * @example
+     * // Create many Tb_produtos_food_entrega_taps
+     * const tb_produtos_food_entrega_tap = await prisma.tb_produtos_food_entrega_tap.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tb_produtos_food_entrega_tapCreateManyArgs>(args?: SelectSubset<T, tb_produtos_food_entrega_tapCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Tb_produtos_food_entrega_tap.
+     * @param {tb_produtos_food_entrega_tapDeleteArgs} args - Arguments to delete one Tb_produtos_food_entrega_tap.
+     * @example
+     * // Delete one Tb_produtos_food_entrega_tap
+     * const Tb_produtos_food_entrega_tap = await prisma.tb_produtos_food_entrega_tap.delete({
+     *   where: {
+     *     // ... filter to delete one Tb_produtos_food_entrega_tap
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tb_produtos_food_entrega_tapDeleteArgs>(args: SelectSubset<T, tb_produtos_food_entrega_tapDeleteArgs<ExtArgs>>): Prisma__tb_produtos_food_entrega_tapClient<$Result.GetResult<Prisma.$tb_produtos_food_entrega_tapPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Tb_produtos_food_entrega_tap.
+     * @param {tb_produtos_food_entrega_tapUpdateArgs} args - Arguments to update one Tb_produtos_food_entrega_tap.
+     * @example
+     * // Update one Tb_produtos_food_entrega_tap
+     * const tb_produtos_food_entrega_tap = await prisma.tb_produtos_food_entrega_tap.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tb_produtos_food_entrega_tapUpdateArgs>(args: SelectSubset<T, tb_produtos_food_entrega_tapUpdateArgs<ExtArgs>>): Prisma__tb_produtos_food_entrega_tapClient<$Result.GetResult<Prisma.$tb_produtos_food_entrega_tapPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Tb_produtos_food_entrega_taps.
+     * @param {tb_produtos_food_entrega_tapDeleteManyArgs} args - Arguments to filter Tb_produtos_food_entrega_taps to delete.
+     * @example
+     * // Delete a few Tb_produtos_food_entrega_taps
+     * const { count } = await prisma.tb_produtos_food_entrega_tap.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tb_produtos_food_entrega_tapDeleteManyArgs>(args?: SelectSubset<T, tb_produtos_food_entrega_tapDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tb_produtos_food_entrega_taps.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_food_entrega_tapUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tb_produtos_food_entrega_taps
+     * const tb_produtos_food_entrega_tap = await prisma.tb_produtos_food_entrega_tap.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tb_produtos_food_entrega_tapUpdateManyArgs>(args: SelectSubset<T, tb_produtos_food_entrega_tapUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Tb_produtos_food_entrega_tap.
+     * @param {tb_produtos_food_entrega_tapUpsertArgs} args - Arguments to update or create a Tb_produtos_food_entrega_tap.
+     * @example
+     * // Update or create a Tb_produtos_food_entrega_tap
+     * const tb_produtos_food_entrega_tap = await prisma.tb_produtos_food_entrega_tap.upsert({
+     *   create: {
+     *     // ... data to create a Tb_produtos_food_entrega_tap
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tb_produtos_food_entrega_tap we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tb_produtos_food_entrega_tapUpsertArgs>(args: SelectSubset<T, tb_produtos_food_entrega_tapUpsertArgs<ExtArgs>>): Prisma__tb_produtos_food_entrega_tapClient<$Result.GetResult<Prisma.$tb_produtos_food_entrega_tapPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Tb_produtos_food_entrega_taps.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_food_entrega_tapCountArgs} args - Arguments to filter Tb_produtos_food_entrega_taps to count.
+     * @example
+     * // Count the number of Tb_produtos_food_entrega_taps
+     * const count = await prisma.tb_produtos_food_entrega_tap.count({
+     *   where: {
+     *     // ... the filter for the Tb_produtos_food_entrega_taps we want to count
+     *   }
+     * })
+    **/
+    count<T extends tb_produtos_food_entrega_tapCountArgs>(
+      args?: Subset<T, tb_produtos_food_entrega_tapCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tb_produtos_food_entrega_tapCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tb_produtos_food_entrega_tap.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tb_produtos_food_entrega_tapAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tb_produtos_food_entrega_tapAggregateArgs>(args: Subset<T, Tb_produtos_food_entrega_tapAggregateArgs>): Prisma.PrismaPromise<GetTb_produtos_food_entrega_tapAggregateType<T>>
+
+    /**
+     * Group by Tb_produtos_food_entrega_tap.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_food_entrega_tapGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tb_produtos_food_entrega_tapGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tb_produtos_food_entrega_tapGroupByArgs['orderBy'] }
+        : { orderBy?: tb_produtos_food_entrega_tapGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tb_produtos_food_entrega_tapGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTb_produtos_food_entrega_tapGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tb_produtos_food_entrega_tap model
+   */
+  readonly fields: tb_produtos_food_entrega_tapFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tb_produtos_food_entrega_tap.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tb_produtos_food_entrega_tapClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tb_produtos_food_entrega_tap model
+   */ 
+  interface tb_produtos_food_entrega_tapFieldRefs {
+    readonly Codigo: FieldRef<"tb_produtos_food_entrega_tap", 'Int'>
+    readonly DHU: FieldRef<"tb_produtos_food_entrega_tap", 'String'>
+    readonly Id_Produto: FieldRef<"tb_produtos_food_entrega_tap", 'Int'>
+    readonly RegExcluido: FieldRef<"tb_produtos_food_entrega_tap", 'String'>
+    readonly IDEmpresa: FieldRef<"tb_produtos_food_entrega_tap", 'Int'>
+    readonly IDUser: FieldRef<"tb_produtos_food_entrega_tap", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tb_produtos_food_entrega_tap findUnique
+   */
+  export type tb_produtos_food_entrega_tapFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_entrega_tap
+     */
+    select?: tb_produtos_food_entrega_tapSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_food_entrega_tap to fetch.
+     */
+    where: tb_produtos_food_entrega_tapWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_food_entrega_tap findUniqueOrThrow
+   */
+  export type tb_produtos_food_entrega_tapFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_entrega_tap
+     */
+    select?: tb_produtos_food_entrega_tapSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_food_entrega_tap to fetch.
+     */
+    where: tb_produtos_food_entrega_tapWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_food_entrega_tap findFirst
+   */
+  export type tb_produtos_food_entrega_tapFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_entrega_tap
+     */
+    select?: tb_produtos_food_entrega_tapSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_food_entrega_tap to fetch.
+     */
+    where?: tb_produtos_food_entrega_tapWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_food_entrega_taps to fetch.
+     */
+    orderBy?: tb_produtos_food_entrega_tapOrderByWithRelationInput | tb_produtos_food_entrega_tapOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_produtos_food_entrega_taps.
+     */
+    cursor?: tb_produtos_food_entrega_tapWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_food_entrega_taps from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_food_entrega_taps.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_produtos_food_entrega_taps.
+     */
+    distinct?: Tb_produtos_food_entrega_tapScalarFieldEnum | Tb_produtos_food_entrega_tapScalarFieldEnum[]
+  }
+
+  /**
+   * tb_produtos_food_entrega_tap findFirstOrThrow
+   */
+  export type tb_produtos_food_entrega_tapFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_entrega_tap
+     */
+    select?: tb_produtos_food_entrega_tapSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_food_entrega_tap to fetch.
+     */
+    where?: tb_produtos_food_entrega_tapWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_food_entrega_taps to fetch.
+     */
+    orderBy?: tb_produtos_food_entrega_tapOrderByWithRelationInput | tb_produtos_food_entrega_tapOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_produtos_food_entrega_taps.
+     */
+    cursor?: tb_produtos_food_entrega_tapWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_food_entrega_taps from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_food_entrega_taps.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_produtos_food_entrega_taps.
+     */
+    distinct?: Tb_produtos_food_entrega_tapScalarFieldEnum | Tb_produtos_food_entrega_tapScalarFieldEnum[]
+  }
+
+  /**
+   * tb_produtos_food_entrega_tap findMany
+   */
+  export type tb_produtos_food_entrega_tapFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_entrega_tap
+     */
+    select?: tb_produtos_food_entrega_tapSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_food_entrega_taps to fetch.
+     */
+    where?: tb_produtos_food_entrega_tapWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_food_entrega_taps to fetch.
+     */
+    orderBy?: tb_produtos_food_entrega_tapOrderByWithRelationInput | tb_produtos_food_entrega_tapOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tb_produtos_food_entrega_taps.
+     */
+    cursor?: tb_produtos_food_entrega_tapWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_food_entrega_taps from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_food_entrega_taps.
+     */
+    skip?: number
+    distinct?: Tb_produtos_food_entrega_tapScalarFieldEnum | Tb_produtos_food_entrega_tapScalarFieldEnum[]
+  }
+
+  /**
+   * tb_produtos_food_entrega_tap create
+   */
+  export type tb_produtos_food_entrega_tapCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_entrega_tap
+     */
+    select?: tb_produtos_food_entrega_tapSelect<ExtArgs> | null
+    /**
+     * The data needed to create a tb_produtos_food_entrega_tap.
+     */
+    data: XOR<tb_produtos_food_entrega_tapCreateInput, tb_produtos_food_entrega_tapUncheckedCreateInput>
+  }
+
+  /**
+   * tb_produtos_food_entrega_tap createMany
+   */
+  export type tb_produtos_food_entrega_tapCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tb_produtos_food_entrega_taps.
+     */
+    data: tb_produtos_food_entrega_tapCreateManyInput | tb_produtos_food_entrega_tapCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tb_produtos_food_entrega_tap update
+   */
+  export type tb_produtos_food_entrega_tapUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_entrega_tap
+     */
+    select?: tb_produtos_food_entrega_tapSelect<ExtArgs> | null
+    /**
+     * The data needed to update a tb_produtos_food_entrega_tap.
+     */
+    data: XOR<tb_produtos_food_entrega_tapUpdateInput, tb_produtos_food_entrega_tapUncheckedUpdateInput>
+    /**
+     * Choose, which tb_produtos_food_entrega_tap to update.
+     */
+    where: tb_produtos_food_entrega_tapWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_food_entrega_tap updateMany
+   */
+  export type tb_produtos_food_entrega_tapUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tb_produtos_food_entrega_taps.
+     */
+    data: XOR<tb_produtos_food_entrega_tapUpdateManyMutationInput, tb_produtos_food_entrega_tapUncheckedUpdateManyInput>
+    /**
+     * Filter which tb_produtos_food_entrega_taps to update
+     */
+    where?: tb_produtos_food_entrega_tapWhereInput
+  }
+
+  /**
+   * tb_produtos_food_entrega_tap upsert
+   */
+  export type tb_produtos_food_entrega_tapUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_entrega_tap
+     */
+    select?: tb_produtos_food_entrega_tapSelect<ExtArgs> | null
+    /**
+     * The filter to search for the tb_produtos_food_entrega_tap to update in case it exists.
+     */
+    where: tb_produtos_food_entrega_tapWhereUniqueInput
+    /**
+     * In case the tb_produtos_food_entrega_tap found by the `where` argument doesn't exist, create a new tb_produtos_food_entrega_tap with this data.
+     */
+    create: XOR<tb_produtos_food_entrega_tapCreateInput, tb_produtos_food_entrega_tapUncheckedCreateInput>
+    /**
+     * In case the tb_produtos_food_entrega_tap was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tb_produtos_food_entrega_tapUpdateInput, tb_produtos_food_entrega_tapUncheckedUpdateInput>
+  }
+
+  /**
+   * tb_produtos_food_entrega_tap delete
+   */
+  export type tb_produtos_food_entrega_tapDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_entrega_tap
+     */
+    select?: tb_produtos_food_entrega_tapSelect<ExtArgs> | null
+    /**
+     * Filter which tb_produtos_food_entrega_tap to delete.
+     */
+    where: tb_produtos_food_entrega_tapWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_food_entrega_tap deleteMany
+   */
+  export type tb_produtos_food_entrega_tapDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_produtos_food_entrega_taps to delete
+     */
+    where?: tb_produtos_food_entrega_tapWhereInput
+  }
+
+  /**
+   * tb_produtos_food_entrega_tap without action
+   */
+  export type tb_produtos_food_entrega_tapDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_entrega_tap
+     */
+    select?: tb_produtos_food_entrega_tapSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tb_produtos_food_producao_cozinha
+   */
+
+  export type AggregateTb_produtos_food_producao_cozinha = {
+    _count: Tb_produtos_food_producao_cozinhaCountAggregateOutputType | null
+    _avg: Tb_produtos_food_producao_cozinhaAvgAggregateOutputType | null
+    _sum: Tb_produtos_food_producao_cozinhaSumAggregateOutputType | null
+    _min: Tb_produtos_food_producao_cozinhaMinAggregateOutputType | null
+    _max: Tb_produtos_food_producao_cozinhaMaxAggregateOutputType | null
+  }
+
+  export type Tb_produtos_food_producao_cozinhaAvgAggregateOutputType = {
+    Codigo: number | null
+    Id_Produto: number | null
+    IDEmpresa: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_produtos_food_producao_cozinhaSumAggregateOutputType = {
+    Codigo: number | null
+    Id_Produto: number | null
+    IDEmpresa: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_produtos_food_producao_cozinhaMinAggregateOutputType = {
+    Codigo: number | null
+    Id_Produto: number | null
+    RegExcluido: string | null
+    DHU: string | null
+    IDEmpresa: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_produtos_food_producao_cozinhaMaxAggregateOutputType = {
+    Codigo: number | null
+    Id_Produto: number | null
+    RegExcluido: string | null
+    DHU: string | null
+    IDEmpresa: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_produtos_food_producao_cozinhaCountAggregateOutputType = {
+    Codigo: number
+    Id_Produto: number
+    RegExcluido: number
+    DHU: number
+    IDEmpresa: number
+    IDUser: number
+    _all: number
+  }
+
+
+  export type Tb_produtos_food_producao_cozinhaAvgAggregateInputType = {
+    Codigo?: true
+    Id_Produto?: true
+    IDEmpresa?: true
+    IDUser?: true
+  }
+
+  export type Tb_produtos_food_producao_cozinhaSumAggregateInputType = {
+    Codigo?: true
+    Id_Produto?: true
+    IDEmpresa?: true
+    IDUser?: true
+  }
+
+  export type Tb_produtos_food_producao_cozinhaMinAggregateInputType = {
+    Codigo?: true
+    Id_Produto?: true
+    RegExcluido?: true
+    DHU?: true
+    IDEmpresa?: true
+    IDUser?: true
+  }
+
+  export type Tb_produtos_food_producao_cozinhaMaxAggregateInputType = {
+    Codigo?: true
+    Id_Produto?: true
+    RegExcluido?: true
+    DHU?: true
+    IDEmpresa?: true
+    IDUser?: true
+  }
+
+  export type Tb_produtos_food_producao_cozinhaCountAggregateInputType = {
+    Codigo?: true
+    Id_Produto?: true
+    RegExcluido?: true
+    DHU?: true
+    IDEmpresa?: true
+    IDUser?: true
+    _all?: true
+  }
+
+  export type Tb_produtos_food_producao_cozinhaAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_produtos_food_producao_cozinha to aggregate.
+     */
+    where?: tb_produtos_food_producao_cozinhaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_food_producao_cozinhas to fetch.
+     */
+    orderBy?: tb_produtos_food_producao_cozinhaOrderByWithRelationInput | tb_produtos_food_producao_cozinhaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tb_produtos_food_producao_cozinhaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_food_producao_cozinhas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_food_producao_cozinhas.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tb_produtos_food_producao_cozinhas
+    **/
+    _count?: true | Tb_produtos_food_producao_cozinhaCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tb_produtos_food_producao_cozinhaAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tb_produtos_food_producao_cozinhaSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tb_produtos_food_producao_cozinhaMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tb_produtos_food_producao_cozinhaMaxAggregateInputType
+  }
+
+  export type GetTb_produtos_food_producao_cozinhaAggregateType<T extends Tb_produtos_food_producao_cozinhaAggregateArgs> = {
+        [P in keyof T & keyof AggregateTb_produtos_food_producao_cozinha]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTb_produtos_food_producao_cozinha[P]>
+      : GetScalarType<T[P], AggregateTb_produtos_food_producao_cozinha[P]>
+  }
+
+
+
+
+  export type tb_produtos_food_producao_cozinhaGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tb_produtos_food_producao_cozinhaWhereInput
+    orderBy?: tb_produtos_food_producao_cozinhaOrderByWithAggregationInput | tb_produtos_food_producao_cozinhaOrderByWithAggregationInput[]
+    by: Tb_produtos_food_producao_cozinhaScalarFieldEnum[] | Tb_produtos_food_producao_cozinhaScalarFieldEnum
+    having?: tb_produtos_food_producao_cozinhaScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tb_produtos_food_producao_cozinhaCountAggregateInputType | true
+    _avg?: Tb_produtos_food_producao_cozinhaAvgAggregateInputType
+    _sum?: Tb_produtos_food_producao_cozinhaSumAggregateInputType
+    _min?: Tb_produtos_food_producao_cozinhaMinAggregateInputType
+    _max?: Tb_produtos_food_producao_cozinhaMaxAggregateInputType
+  }
+
+  export type Tb_produtos_food_producao_cozinhaGroupByOutputType = {
+    Codigo: number
+    Id_Produto: number | null
+    RegExcluido: string | null
+    DHU: string | null
+    IDEmpresa: number | null
+    IDUser: number | null
+    _count: Tb_produtos_food_producao_cozinhaCountAggregateOutputType | null
+    _avg: Tb_produtos_food_producao_cozinhaAvgAggregateOutputType | null
+    _sum: Tb_produtos_food_producao_cozinhaSumAggregateOutputType | null
+    _min: Tb_produtos_food_producao_cozinhaMinAggregateOutputType | null
+    _max: Tb_produtos_food_producao_cozinhaMaxAggregateOutputType | null
+  }
+
+  type GetTb_produtos_food_producao_cozinhaGroupByPayload<T extends tb_produtos_food_producao_cozinhaGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tb_produtos_food_producao_cozinhaGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tb_produtos_food_producao_cozinhaGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tb_produtos_food_producao_cozinhaGroupByOutputType[P]>
+            : GetScalarType<T[P], Tb_produtos_food_producao_cozinhaGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tb_produtos_food_producao_cozinhaSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Codigo?: boolean
+    Id_Produto?: boolean
+    RegExcluido?: boolean
+    DHU?: boolean
+    IDEmpresa?: boolean
+    IDUser?: boolean
+  }, ExtArgs["result"]["tb_produtos_food_producao_cozinha"]>
+
+
+  export type tb_produtos_food_producao_cozinhaSelectScalar = {
+    Codigo?: boolean
+    Id_Produto?: boolean
+    RegExcluido?: boolean
+    DHU?: boolean
+    IDEmpresa?: boolean
+    IDUser?: boolean
+  }
+
+
+  export type $tb_produtos_food_producao_cozinhaPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tb_produtos_food_producao_cozinha"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      Codigo: number
+      Id_Produto: number | null
+      RegExcluido: string | null
+      DHU: string | null
+      IDEmpresa: number | null
+      IDUser: number | null
+    }, ExtArgs["result"]["tb_produtos_food_producao_cozinha"]>
+    composites: {}
+  }
+
+  type tb_produtos_food_producao_cozinhaGetPayload<S extends boolean | null | undefined | tb_produtos_food_producao_cozinhaDefaultArgs> = $Result.GetResult<Prisma.$tb_produtos_food_producao_cozinhaPayload, S>
+
+  type tb_produtos_food_producao_cozinhaCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<tb_produtos_food_producao_cozinhaFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Tb_produtos_food_producao_cozinhaCountAggregateInputType | true
+    }
+
+  export interface tb_produtos_food_producao_cozinhaDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tb_produtos_food_producao_cozinha'], meta: { name: 'tb_produtos_food_producao_cozinha' } }
+    /**
+     * Find zero or one Tb_produtos_food_producao_cozinha that matches the filter.
+     * @param {tb_produtos_food_producao_cozinhaFindUniqueArgs} args - Arguments to find a Tb_produtos_food_producao_cozinha
+     * @example
+     * // Get one Tb_produtos_food_producao_cozinha
+     * const tb_produtos_food_producao_cozinha = await prisma.tb_produtos_food_producao_cozinha.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tb_produtos_food_producao_cozinhaFindUniqueArgs>(args: SelectSubset<T, tb_produtos_food_producao_cozinhaFindUniqueArgs<ExtArgs>>): Prisma__tb_produtos_food_producao_cozinhaClient<$Result.GetResult<Prisma.$tb_produtos_food_producao_cozinhaPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Tb_produtos_food_producao_cozinha that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {tb_produtos_food_producao_cozinhaFindUniqueOrThrowArgs} args - Arguments to find a Tb_produtos_food_producao_cozinha
+     * @example
+     * // Get one Tb_produtos_food_producao_cozinha
+     * const tb_produtos_food_producao_cozinha = await prisma.tb_produtos_food_producao_cozinha.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tb_produtos_food_producao_cozinhaFindUniqueOrThrowArgs>(args: SelectSubset<T, tb_produtos_food_producao_cozinhaFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tb_produtos_food_producao_cozinhaClient<$Result.GetResult<Prisma.$tb_produtos_food_producao_cozinhaPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Tb_produtos_food_producao_cozinha that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_food_producao_cozinhaFindFirstArgs} args - Arguments to find a Tb_produtos_food_producao_cozinha
+     * @example
+     * // Get one Tb_produtos_food_producao_cozinha
+     * const tb_produtos_food_producao_cozinha = await prisma.tb_produtos_food_producao_cozinha.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tb_produtos_food_producao_cozinhaFindFirstArgs>(args?: SelectSubset<T, tb_produtos_food_producao_cozinhaFindFirstArgs<ExtArgs>>): Prisma__tb_produtos_food_producao_cozinhaClient<$Result.GetResult<Prisma.$tb_produtos_food_producao_cozinhaPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Tb_produtos_food_producao_cozinha that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_food_producao_cozinhaFindFirstOrThrowArgs} args - Arguments to find a Tb_produtos_food_producao_cozinha
+     * @example
+     * // Get one Tb_produtos_food_producao_cozinha
+     * const tb_produtos_food_producao_cozinha = await prisma.tb_produtos_food_producao_cozinha.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tb_produtos_food_producao_cozinhaFindFirstOrThrowArgs>(args?: SelectSubset<T, tb_produtos_food_producao_cozinhaFindFirstOrThrowArgs<ExtArgs>>): Prisma__tb_produtos_food_producao_cozinhaClient<$Result.GetResult<Prisma.$tb_produtos_food_producao_cozinhaPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Tb_produtos_food_producao_cozinhas that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_food_producao_cozinhaFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tb_produtos_food_producao_cozinhas
+     * const tb_produtos_food_producao_cozinhas = await prisma.tb_produtos_food_producao_cozinha.findMany()
+     * 
+     * // Get first 10 Tb_produtos_food_producao_cozinhas
+     * const tb_produtos_food_producao_cozinhas = await prisma.tb_produtos_food_producao_cozinha.findMany({ take: 10 })
+     * 
+     * // Only select the `Codigo`
+     * const tb_produtos_food_producao_cozinhaWithCodigoOnly = await prisma.tb_produtos_food_producao_cozinha.findMany({ select: { Codigo: true } })
+     * 
+     */
+    findMany<T extends tb_produtos_food_producao_cozinhaFindManyArgs>(args?: SelectSubset<T, tb_produtos_food_producao_cozinhaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tb_produtos_food_producao_cozinhaPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Tb_produtos_food_producao_cozinha.
+     * @param {tb_produtos_food_producao_cozinhaCreateArgs} args - Arguments to create a Tb_produtos_food_producao_cozinha.
+     * @example
+     * // Create one Tb_produtos_food_producao_cozinha
+     * const Tb_produtos_food_producao_cozinha = await prisma.tb_produtos_food_producao_cozinha.create({
+     *   data: {
+     *     // ... data to create a Tb_produtos_food_producao_cozinha
+     *   }
+     * })
+     * 
+     */
+    create<T extends tb_produtos_food_producao_cozinhaCreateArgs>(args: SelectSubset<T, tb_produtos_food_producao_cozinhaCreateArgs<ExtArgs>>): Prisma__tb_produtos_food_producao_cozinhaClient<$Result.GetResult<Prisma.$tb_produtos_food_producao_cozinhaPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Tb_produtos_food_producao_cozinhas.
+     * @param {tb_produtos_food_producao_cozinhaCreateManyArgs} args - Arguments to create many Tb_produtos_food_producao_cozinhas.
+     * @example
+     * // Create many Tb_produtos_food_producao_cozinhas
+     * const tb_produtos_food_producao_cozinha = await prisma.tb_produtos_food_producao_cozinha.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tb_produtos_food_producao_cozinhaCreateManyArgs>(args?: SelectSubset<T, tb_produtos_food_producao_cozinhaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Tb_produtos_food_producao_cozinha.
+     * @param {tb_produtos_food_producao_cozinhaDeleteArgs} args - Arguments to delete one Tb_produtos_food_producao_cozinha.
+     * @example
+     * // Delete one Tb_produtos_food_producao_cozinha
+     * const Tb_produtos_food_producao_cozinha = await prisma.tb_produtos_food_producao_cozinha.delete({
+     *   where: {
+     *     // ... filter to delete one Tb_produtos_food_producao_cozinha
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tb_produtos_food_producao_cozinhaDeleteArgs>(args: SelectSubset<T, tb_produtos_food_producao_cozinhaDeleteArgs<ExtArgs>>): Prisma__tb_produtos_food_producao_cozinhaClient<$Result.GetResult<Prisma.$tb_produtos_food_producao_cozinhaPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Tb_produtos_food_producao_cozinha.
+     * @param {tb_produtos_food_producao_cozinhaUpdateArgs} args - Arguments to update one Tb_produtos_food_producao_cozinha.
+     * @example
+     * // Update one Tb_produtos_food_producao_cozinha
+     * const tb_produtos_food_producao_cozinha = await prisma.tb_produtos_food_producao_cozinha.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tb_produtos_food_producao_cozinhaUpdateArgs>(args: SelectSubset<T, tb_produtos_food_producao_cozinhaUpdateArgs<ExtArgs>>): Prisma__tb_produtos_food_producao_cozinhaClient<$Result.GetResult<Prisma.$tb_produtos_food_producao_cozinhaPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Tb_produtos_food_producao_cozinhas.
+     * @param {tb_produtos_food_producao_cozinhaDeleteManyArgs} args - Arguments to filter Tb_produtos_food_producao_cozinhas to delete.
+     * @example
+     * // Delete a few Tb_produtos_food_producao_cozinhas
+     * const { count } = await prisma.tb_produtos_food_producao_cozinha.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tb_produtos_food_producao_cozinhaDeleteManyArgs>(args?: SelectSubset<T, tb_produtos_food_producao_cozinhaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tb_produtos_food_producao_cozinhas.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_food_producao_cozinhaUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tb_produtos_food_producao_cozinhas
+     * const tb_produtos_food_producao_cozinha = await prisma.tb_produtos_food_producao_cozinha.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tb_produtos_food_producao_cozinhaUpdateManyArgs>(args: SelectSubset<T, tb_produtos_food_producao_cozinhaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Tb_produtos_food_producao_cozinha.
+     * @param {tb_produtos_food_producao_cozinhaUpsertArgs} args - Arguments to update or create a Tb_produtos_food_producao_cozinha.
+     * @example
+     * // Update or create a Tb_produtos_food_producao_cozinha
+     * const tb_produtos_food_producao_cozinha = await prisma.tb_produtos_food_producao_cozinha.upsert({
+     *   create: {
+     *     // ... data to create a Tb_produtos_food_producao_cozinha
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tb_produtos_food_producao_cozinha we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tb_produtos_food_producao_cozinhaUpsertArgs>(args: SelectSubset<T, tb_produtos_food_producao_cozinhaUpsertArgs<ExtArgs>>): Prisma__tb_produtos_food_producao_cozinhaClient<$Result.GetResult<Prisma.$tb_produtos_food_producao_cozinhaPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Tb_produtos_food_producao_cozinhas.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_food_producao_cozinhaCountArgs} args - Arguments to filter Tb_produtos_food_producao_cozinhas to count.
+     * @example
+     * // Count the number of Tb_produtos_food_producao_cozinhas
+     * const count = await prisma.tb_produtos_food_producao_cozinha.count({
+     *   where: {
+     *     // ... the filter for the Tb_produtos_food_producao_cozinhas we want to count
+     *   }
+     * })
+    **/
+    count<T extends tb_produtos_food_producao_cozinhaCountArgs>(
+      args?: Subset<T, tb_produtos_food_producao_cozinhaCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tb_produtos_food_producao_cozinhaCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tb_produtos_food_producao_cozinha.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tb_produtos_food_producao_cozinhaAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tb_produtos_food_producao_cozinhaAggregateArgs>(args: Subset<T, Tb_produtos_food_producao_cozinhaAggregateArgs>): Prisma.PrismaPromise<GetTb_produtos_food_producao_cozinhaAggregateType<T>>
+
+    /**
+     * Group by Tb_produtos_food_producao_cozinha.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_food_producao_cozinhaGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tb_produtos_food_producao_cozinhaGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tb_produtos_food_producao_cozinhaGroupByArgs['orderBy'] }
+        : { orderBy?: tb_produtos_food_producao_cozinhaGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tb_produtos_food_producao_cozinhaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTb_produtos_food_producao_cozinhaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tb_produtos_food_producao_cozinha model
+   */
+  readonly fields: tb_produtos_food_producao_cozinhaFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tb_produtos_food_producao_cozinha.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tb_produtos_food_producao_cozinhaClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tb_produtos_food_producao_cozinha model
+   */ 
+  interface tb_produtos_food_producao_cozinhaFieldRefs {
+    readonly Codigo: FieldRef<"tb_produtos_food_producao_cozinha", 'Int'>
+    readonly Id_Produto: FieldRef<"tb_produtos_food_producao_cozinha", 'Int'>
+    readonly RegExcluido: FieldRef<"tb_produtos_food_producao_cozinha", 'String'>
+    readonly DHU: FieldRef<"tb_produtos_food_producao_cozinha", 'String'>
+    readonly IDEmpresa: FieldRef<"tb_produtos_food_producao_cozinha", 'Int'>
+    readonly IDUser: FieldRef<"tb_produtos_food_producao_cozinha", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tb_produtos_food_producao_cozinha findUnique
+   */
+  export type tb_produtos_food_producao_cozinhaFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_producao_cozinha
+     */
+    select?: tb_produtos_food_producao_cozinhaSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_food_producao_cozinha to fetch.
+     */
+    where: tb_produtos_food_producao_cozinhaWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_food_producao_cozinha findUniqueOrThrow
+   */
+  export type tb_produtos_food_producao_cozinhaFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_producao_cozinha
+     */
+    select?: tb_produtos_food_producao_cozinhaSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_food_producao_cozinha to fetch.
+     */
+    where: tb_produtos_food_producao_cozinhaWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_food_producao_cozinha findFirst
+   */
+  export type tb_produtos_food_producao_cozinhaFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_producao_cozinha
+     */
+    select?: tb_produtos_food_producao_cozinhaSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_food_producao_cozinha to fetch.
+     */
+    where?: tb_produtos_food_producao_cozinhaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_food_producao_cozinhas to fetch.
+     */
+    orderBy?: tb_produtos_food_producao_cozinhaOrderByWithRelationInput | tb_produtos_food_producao_cozinhaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_produtos_food_producao_cozinhas.
+     */
+    cursor?: tb_produtos_food_producao_cozinhaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_food_producao_cozinhas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_food_producao_cozinhas.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_produtos_food_producao_cozinhas.
+     */
+    distinct?: Tb_produtos_food_producao_cozinhaScalarFieldEnum | Tb_produtos_food_producao_cozinhaScalarFieldEnum[]
+  }
+
+  /**
+   * tb_produtos_food_producao_cozinha findFirstOrThrow
+   */
+  export type tb_produtos_food_producao_cozinhaFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_producao_cozinha
+     */
+    select?: tb_produtos_food_producao_cozinhaSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_food_producao_cozinha to fetch.
+     */
+    where?: tb_produtos_food_producao_cozinhaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_food_producao_cozinhas to fetch.
+     */
+    orderBy?: tb_produtos_food_producao_cozinhaOrderByWithRelationInput | tb_produtos_food_producao_cozinhaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_produtos_food_producao_cozinhas.
+     */
+    cursor?: tb_produtos_food_producao_cozinhaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_food_producao_cozinhas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_food_producao_cozinhas.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_produtos_food_producao_cozinhas.
+     */
+    distinct?: Tb_produtos_food_producao_cozinhaScalarFieldEnum | Tb_produtos_food_producao_cozinhaScalarFieldEnum[]
+  }
+
+  /**
+   * tb_produtos_food_producao_cozinha findMany
+   */
+  export type tb_produtos_food_producao_cozinhaFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_producao_cozinha
+     */
+    select?: tb_produtos_food_producao_cozinhaSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_food_producao_cozinhas to fetch.
+     */
+    where?: tb_produtos_food_producao_cozinhaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_food_producao_cozinhas to fetch.
+     */
+    orderBy?: tb_produtos_food_producao_cozinhaOrderByWithRelationInput | tb_produtos_food_producao_cozinhaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tb_produtos_food_producao_cozinhas.
+     */
+    cursor?: tb_produtos_food_producao_cozinhaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_food_producao_cozinhas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_food_producao_cozinhas.
+     */
+    skip?: number
+    distinct?: Tb_produtos_food_producao_cozinhaScalarFieldEnum | Tb_produtos_food_producao_cozinhaScalarFieldEnum[]
+  }
+
+  /**
+   * tb_produtos_food_producao_cozinha create
+   */
+  export type tb_produtos_food_producao_cozinhaCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_producao_cozinha
+     */
+    select?: tb_produtos_food_producao_cozinhaSelect<ExtArgs> | null
+    /**
+     * The data needed to create a tb_produtos_food_producao_cozinha.
+     */
+    data: XOR<tb_produtos_food_producao_cozinhaCreateInput, tb_produtos_food_producao_cozinhaUncheckedCreateInput>
+  }
+
+  /**
+   * tb_produtos_food_producao_cozinha createMany
+   */
+  export type tb_produtos_food_producao_cozinhaCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tb_produtos_food_producao_cozinhas.
+     */
+    data: tb_produtos_food_producao_cozinhaCreateManyInput | tb_produtos_food_producao_cozinhaCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tb_produtos_food_producao_cozinha update
+   */
+  export type tb_produtos_food_producao_cozinhaUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_producao_cozinha
+     */
+    select?: tb_produtos_food_producao_cozinhaSelect<ExtArgs> | null
+    /**
+     * The data needed to update a tb_produtos_food_producao_cozinha.
+     */
+    data: XOR<tb_produtos_food_producao_cozinhaUpdateInput, tb_produtos_food_producao_cozinhaUncheckedUpdateInput>
+    /**
+     * Choose, which tb_produtos_food_producao_cozinha to update.
+     */
+    where: tb_produtos_food_producao_cozinhaWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_food_producao_cozinha updateMany
+   */
+  export type tb_produtos_food_producao_cozinhaUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tb_produtos_food_producao_cozinhas.
+     */
+    data: XOR<tb_produtos_food_producao_cozinhaUpdateManyMutationInput, tb_produtos_food_producao_cozinhaUncheckedUpdateManyInput>
+    /**
+     * Filter which tb_produtos_food_producao_cozinhas to update
+     */
+    where?: tb_produtos_food_producao_cozinhaWhereInput
+  }
+
+  /**
+   * tb_produtos_food_producao_cozinha upsert
+   */
+  export type tb_produtos_food_producao_cozinhaUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_producao_cozinha
+     */
+    select?: tb_produtos_food_producao_cozinhaSelect<ExtArgs> | null
+    /**
+     * The filter to search for the tb_produtos_food_producao_cozinha to update in case it exists.
+     */
+    where: tb_produtos_food_producao_cozinhaWhereUniqueInput
+    /**
+     * In case the tb_produtos_food_producao_cozinha found by the `where` argument doesn't exist, create a new tb_produtos_food_producao_cozinha with this data.
+     */
+    create: XOR<tb_produtos_food_producao_cozinhaCreateInput, tb_produtos_food_producao_cozinhaUncheckedCreateInput>
+    /**
+     * In case the tb_produtos_food_producao_cozinha was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tb_produtos_food_producao_cozinhaUpdateInput, tb_produtos_food_producao_cozinhaUncheckedUpdateInput>
+  }
+
+  /**
+   * tb_produtos_food_producao_cozinha delete
+   */
+  export type tb_produtos_food_producao_cozinhaDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_producao_cozinha
+     */
+    select?: tb_produtos_food_producao_cozinhaSelect<ExtArgs> | null
+    /**
+     * Filter which tb_produtos_food_producao_cozinha to delete.
+     */
+    where: tb_produtos_food_producao_cozinhaWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_food_producao_cozinha deleteMany
+   */
+  export type tb_produtos_food_producao_cozinhaDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_produtos_food_producao_cozinhas to delete
+     */
+    where?: tb_produtos_food_producao_cozinhaWhereInput
+  }
+
+  /**
+   * tb_produtos_food_producao_cozinha without action
+   */
+  export type tb_produtos_food_producao_cozinhaDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_food_producao_cozinha
+     */
+    select?: tb_produtos_food_producao_cozinhaSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tb_produtos_transformacao
+   */
+
+  export type AggregateTb_produtos_transformacao = {
+    _count: Tb_produtos_transformacaoCountAggregateOutputType | null
+    _avg: Tb_produtos_transformacaoAvgAggregateOutputType | null
+    _sum: Tb_produtos_transformacaoSumAggregateOutputType | null
+    _min: Tb_produtos_transformacaoMinAggregateOutputType | null
+    _max: Tb_produtos_transformacaoMaxAggregateOutputType | null
+  }
+
+  export type Tb_produtos_transformacaoAvgAggregateOutputType = {
+    Codigo: number | null
+    Id_Produto_Entrada: number | null
+    Id_Produto_Saida: number | null
+    Quantidade_Saida: number | null
+    Quantidade_Entrada: number | null
+    IDEmpresa: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_produtos_transformacaoSumAggregateOutputType = {
+    Codigo: number | null
+    Id_Produto_Entrada: number | null
+    Id_Produto_Saida: number | null
+    Quantidade_Saida: number | null
+    Quantidade_Entrada: number | null
+    IDEmpresa: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_produtos_transformacaoMinAggregateOutputType = {
+    Codigo: number | null
+    Id_Produto_Entrada: number | null
+    Id_Produto_Saida: number | null
+    Quantidade_Saida: number | null
+    Quantidade_Entrada: number | null
+    Estoque_Processado: string | null
+    IDEmpresa: number | null
+    IDUser: number | null
+    DHU: string | null
+    Data_Movimento: Date | null
+    Hora_Movimento: string | null
+    Tempo: string | null
+    Via_Sistema: string | null
+  }
+
+  export type Tb_produtos_transformacaoMaxAggregateOutputType = {
+    Codigo: number | null
+    Id_Produto_Entrada: number | null
+    Id_Produto_Saida: number | null
+    Quantidade_Saida: number | null
+    Quantidade_Entrada: number | null
+    Estoque_Processado: string | null
+    IDEmpresa: number | null
+    IDUser: number | null
+    DHU: string | null
+    Data_Movimento: Date | null
+    Hora_Movimento: string | null
+    Tempo: string | null
+    Via_Sistema: string | null
+  }
+
+  export type Tb_produtos_transformacaoCountAggregateOutputType = {
+    Codigo: number
+    Id_Produto_Entrada: number
+    Id_Produto_Saida: number
+    Quantidade_Saida: number
+    Quantidade_Entrada: number
+    Estoque_Processado: number
+    IDEmpresa: number
+    IDUser: number
+    DHU: number
+    Data_Movimento: number
+    Hora_Movimento: number
+    Tempo: number
+    Via_Sistema: number
+    _all: number
+  }
+
+
+  export type Tb_produtos_transformacaoAvgAggregateInputType = {
+    Codigo?: true
+    Id_Produto_Entrada?: true
+    Id_Produto_Saida?: true
+    Quantidade_Saida?: true
+    Quantidade_Entrada?: true
+    IDEmpresa?: true
+    IDUser?: true
+  }
+
+  export type Tb_produtos_transformacaoSumAggregateInputType = {
+    Codigo?: true
+    Id_Produto_Entrada?: true
+    Id_Produto_Saida?: true
+    Quantidade_Saida?: true
+    Quantidade_Entrada?: true
+    IDEmpresa?: true
+    IDUser?: true
+  }
+
+  export type Tb_produtos_transformacaoMinAggregateInputType = {
+    Codigo?: true
+    Id_Produto_Entrada?: true
+    Id_Produto_Saida?: true
+    Quantidade_Saida?: true
+    Quantidade_Entrada?: true
+    Estoque_Processado?: true
+    IDEmpresa?: true
+    IDUser?: true
+    DHU?: true
+    Data_Movimento?: true
+    Hora_Movimento?: true
+    Tempo?: true
+    Via_Sistema?: true
+  }
+
+  export type Tb_produtos_transformacaoMaxAggregateInputType = {
+    Codigo?: true
+    Id_Produto_Entrada?: true
+    Id_Produto_Saida?: true
+    Quantidade_Saida?: true
+    Quantidade_Entrada?: true
+    Estoque_Processado?: true
+    IDEmpresa?: true
+    IDUser?: true
+    DHU?: true
+    Data_Movimento?: true
+    Hora_Movimento?: true
+    Tempo?: true
+    Via_Sistema?: true
+  }
+
+  export type Tb_produtos_transformacaoCountAggregateInputType = {
+    Codigo?: true
+    Id_Produto_Entrada?: true
+    Id_Produto_Saida?: true
+    Quantidade_Saida?: true
+    Quantidade_Entrada?: true
+    Estoque_Processado?: true
+    IDEmpresa?: true
+    IDUser?: true
+    DHU?: true
+    Data_Movimento?: true
+    Hora_Movimento?: true
+    Tempo?: true
+    Via_Sistema?: true
+    _all?: true
+  }
+
+  export type Tb_produtos_transformacaoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_produtos_transformacao to aggregate.
+     */
+    where?: tb_produtos_transformacaoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_transformacaos to fetch.
+     */
+    orderBy?: tb_produtos_transformacaoOrderByWithRelationInput | tb_produtos_transformacaoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tb_produtos_transformacaoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_transformacaos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_transformacaos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tb_produtos_transformacaos
+    **/
+    _count?: true | Tb_produtos_transformacaoCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tb_produtos_transformacaoAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tb_produtos_transformacaoSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tb_produtos_transformacaoMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tb_produtos_transformacaoMaxAggregateInputType
+  }
+
+  export type GetTb_produtos_transformacaoAggregateType<T extends Tb_produtos_transformacaoAggregateArgs> = {
+        [P in keyof T & keyof AggregateTb_produtos_transformacao]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTb_produtos_transformacao[P]>
+      : GetScalarType<T[P], AggregateTb_produtos_transformacao[P]>
+  }
+
+
+
+
+  export type tb_produtos_transformacaoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tb_produtos_transformacaoWhereInput
+    orderBy?: tb_produtos_transformacaoOrderByWithAggregationInput | tb_produtos_transformacaoOrderByWithAggregationInput[]
+    by: Tb_produtos_transformacaoScalarFieldEnum[] | Tb_produtos_transformacaoScalarFieldEnum
+    having?: tb_produtos_transformacaoScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tb_produtos_transformacaoCountAggregateInputType | true
+    _avg?: Tb_produtos_transformacaoAvgAggregateInputType
+    _sum?: Tb_produtos_transformacaoSumAggregateInputType
+    _min?: Tb_produtos_transformacaoMinAggregateInputType
+    _max?: Tb_produtos_transformacaoMaxAggregateInputType
+  }
+
+  export type Tb_produtos_transformacaoGroupByOutputType = {
+    Codigo: number
+    Id_Produto_Entrada: number | null
+    Id_Produto_Saida: number | null
+    Quantidade_Saida: number | null
+    Quantidade_Entrada: number | null
+    Estoque_Processado: string | null
+    IDEmpresa: number | null
+    IDUser: number | null
+    DHU: string | null
+    Data_Movimento: Date | null
+    Hora_Movimento: string | null
+    Tempo: string | null
+    Via_Sistema: string | null
+    _count: Tb_produtos_transformacaoCountAggregateOutputType | null
+    _avg: Tb_produtos_transformacaoAvgAggregateOutputType | null
+    _sum: Tb_produtos_transformacaoSumAggregateOutputType | null
+    _min: Tb_produtos_transformacaoMinAggregateOutputType | null
+    _max: Tb_produtos_transformacaoMaxAggregateOutputType | null
+  }
+
+  type GetTb_produtos_transformacaoGroupByPayload<T extends tb_produtos_transformacaoGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tb_produtos_transformacaoGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tb_produtos_transformacaoGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tb_produtos_transformacaoGroupByOutputType[P]>
+            : GetScalarType<T[P], Tb_produtos_transformacaoGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tb_produtos_transformacaoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Codigo?: boolean
+    Id_Produto_Entrada?: boolean
+    Id_Produto_Saida?: boolean
+    Quantidade_Saida?: boolean
+    Quantidade_Entrada?: boolean
+    Estoque_Processado?: boolean
+    IDEmpresa?: boolean
+    IDUser?: boolean
+    DHU?: boolean
+    Data_Movimento?: boolean
+    Hora_Movimento?: boolean
+    Tempo?: boolean
+    Via_Sistema?: boolean
+  }, ExtArgs["result"]["tb_produtos_transformacao"]>
+
+
+  export type tb_produtos_transformacaoSelectScalar = {
+    Codigo?: boolean
+    Id_Produto_Entrada?: boolean
+    Id_Produto_Saida?: boolean
+    Quantidade_Saida?: boolean
+    Quantidade_Entrada?: boolean
+    Estoque_Processado?: boolean
+    IDEmpresa?: boolean
+    IDUser?: boolean
+    DHU?: boolean
+    Data_Movimento?: boolean
+    Hora_Movimento?: boolean
+    Tempo?: boolean
+    Via_Sistema?: boolean
+  }
+
+
+  export type $tb_produtos_transformacaoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tb_produtos_transformacao"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      Codigo: number
+      Id_Produto_Entrada: number | null
+      Id_Produto_Saida: number | null
+      Quantidade_Saida: number | null
+      Quantidade_Entrada: number | null
+      Estoque_Processado: string | null
+      IDEmpresa: number | null
+      IDUser: number | null
+      DHU: string | null
+      Data_Movimento: Date | null
+      Hora_Movimento: string | null
+      Tempo: string | null
+      Via_Sistema: string | null
+    }, ExtArgs["result"]["tb_produtos_transformacao"]>
+    composites: {}
+  }
+
+  type tb_produtos_transformacaoGetPayload<S extends boolean | null | undefined | tb_produtos_transformacaoDefaultArgs> = $Result.GetResult<Prisma.$tb_produtos_transformacaoPayload, S>
+
+  type tb_produtos_transformacaoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<tb_produtos_transformacaoFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Tb_produtos_transformacaoCountAggregateInputType | true
+    }
+
+  export interface tb_produtos_transformacaoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tb_produtos_transformacao'], meta: { name: 'tb_produtos_transformacao' } }
+    /**
+     * Find zero or one Tb_produtos_transformacao that matches the filter.
+     * @param {tb_produtos_transformacaoFindUniqueArgs} args - Arguments to find a Tb_produtos_transformacao
+     * @example
+     * // Get one Tb_produtos_transformacao
+     * const tb_produtos_transformacao = await prisma.tb_produtos_transformacao.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tb_produtos_transformacaoFindUniqueArgs>(args: SelectSubset<T, tb_produtos_transformacaoFindUniqueArgs<ExtArgs>>): Prisma__tb_produtos_transformacaoClient<$Result.GetResult<Prisma.$tb_produtos_transformacaoPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Tb_produtos_transformacao that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {tb_produtos_transformacaoFindUniqueOrThrowArgs} args - Arguments to find a Tb_produtos_transformacao
+     * @example
+     * // Get one Tb_produtos_transformacao
+     * const tb_produtos_transformacao = await prisma.tb_produtos_transformacao.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tb_produtos_transformacaoFindUniqueOrThrowArgs>(args: SelectSubset<T, tb_produtos_transformacaoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tb_produtos_transformacaoClient<$Result.GetResult<Prisma.$tb_produtos_transformacaoPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Tb_produtos_transformacao that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_transformacaoFindFirstArgs} args - Arguments to find a Tb_produtos_transformacao
+     * @example
+     * // Get one Tb_produtos_transformacao
+     * const tb_produtos_transformacao = await prisma.tb_produtos_transformacao.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tb_produtos_transformacaoFindFirstArgs>(args?: SelectSubset<T, tb_produtos_transformacaoFindFirstArgs<ExtArgs>>): Prisma__tb_produtos_transformacaoClient<$Result.GetResult<Prisma.$tb_produtos_transformacaoPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Tb_produtos_transformacao that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_transformacaoFindFirstOrThrowArgs} args - Arguments to find a Tb_produtos_transformacao
+     * @example
+     * // Get one Tb_produtos_transformacao
+     * const tb_produtos_transformacao = await prisma.tb_produtos_transformacao.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tb_produtos_transformacaoFindFirstOrThrowArgs>(args?: SelectSubset<T, tb_produtos_transformacaoFindFirstOrThrowArgs<ExtArgs>>): Prisma__tb_produtos_transformacaoClient<$Result.GetResult<Prisma.$tb_produtos_transformacaoPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Tb_produtos_transformacaos that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_transformacaoFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tb_produtos_transformacaos
+     * const tb_produtos_transformacaos = await prisma.tb_produtos_transformacao.findMany()
+     * 
+     * // Get first 10 Tb_produtos_transformacaos
+     * const tb_produtos_transformacaos = await prisma.tb_produtos_transformacao.findMany({ take: 10 })
+     * 
+     * // Only select the `Codigo`
+     * const tb_produtos_transformacaoWithCodigoOnly = await prisma.tb_produtos_transformacao.findMany({ select: { Codigo: true } })
+     * 
+     */
+    findMany<T extends tb_produtos_transformacaoFindManyArgs>(args?: SelectSubset<T, tb_produtos_transformacaoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tb_produtos_transformacaoPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Tb_produtos_transformacao.
+     * @param {tb_produtos_transformacaoCreateArgs} args - Arguments to create a Tb_produtos_transformacao.
+     * @example
+     * // Create one Tb_produtos_transformacao
+     * const Tb_produtos_transformacao = await prisma.tb_produtos_transformacao.create({
+     *   data: {
+     *     // ... data to create a Tb_produtos_transformacao
+     *   }
+     * })
+     * 
+     */
+    create<T extends tb_produtos_transformacaoCreateArgs>(args: SelectSubset<T, tb_produtos_transformacaoCreateArgs<ExtArgs>>): Prisma__tb_produtos_transformacaoClient<$Result.GetResult<Prisma.$tb_produtos_transformacaoPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Tb_produtos_transformacaos.
+     * @param {tb_produtos_transformacaoCreateManyArgs} args - Arguments to create many Tb_produtos_transformacaos.
+     * @example
+     * // Create many Tb_produtos_transformacaos
+     * const tb_produtos_transformacao = await prisma.tb_produtos_transformacao.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tb_produtos_transformacaoCreateManyArgs>(args?: SelectSubset<T, tb_produtos_transformacaoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Tb_produtos_transformacao.
+     * @param {tb_produtos_transformacaoDeleteArgs} args - Arguments to delete one Tb_produtos_transformacao.
+     * @example
+     * // Delete one Tb_produtos_transformacao
+     * const Tb_produtos_transformacao = await prisma.tb_produtos_transformacao.delete({
+     *   where: {
+     *     // ... filter to delete one Tb_produtos_transformacao
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tb_produtos_transformacaoDeleteArgs>(args: SelectSubset<T, tb_produtos_transformacaoDeleteArgs<ExtArgs>>): Prisma__tb_produtos_transformacaoClient<$Result.GetResult<Prisma.$tb_produtos_transformacaoPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Tb_produtos_transformacao.
+     * @param {tb_produtos_transformacaoUpdateArgs} args - Arguments to update one Tb_produtos_transformacao.
+     * @example
+     * // Update one Tb_produtos_transformacao
+     * const tb_produtos_transformacao = await prisma.tb_produtos_transformacao.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tb_produtos_transformacaoUpdateArgs>(args: SelectSubset<T, tb_produtos_transformacaoUpdateArgs<ExtArgs>>): Prisma__tb_produtos_transformacaoClient<$Result.GetResult<Prisma.$tb_produtos_transformacaoPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Tb_produtos_transformacaos.
+     * @param {tb_produtos_transformacaoDeleteManyArgs} args - Arguments to filter Tb_produtos_transformacaos to delete.
+     * @example
+     * // Delete a few Tb_produtos_transformacaos
+     * const { count } = await prisma.tb_produtos_transformacao.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tb_produtos_transformacaoDeleteManyArgs>(args?: SelectSubset<T, tb_produtos_transformacaoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tb_produtos_transformacaos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_transformacaoUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tb_produtos_transformacaos
+     * const tb_produtos_transformacao = await prisma.tb_produtos_transformacao.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tb_produtos_transformacaoUpdateManyArgs>(args: SelectSubset<T, tb_produtos_transformacaoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Tb_produtos_transformacao.
+     * @param {tb_produtos_transformacaoUpsertArgs} args - Arguments to update or create a Tb_produtos_transformacao.
+     * @example
+     * // Update or create a Tb_produtos_transformacao
+     * const tb_produtos_transformacao = await prisma.tb_produtos_transformacao.upsert({
+     *   create: {
+     *     // ... data to create a Tb_produtos_transformacao
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tb_produtos_transformacao we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tb_produtos_transformacaoUpsertArgs>(args: SelectSubset<T, tb_produtos_transformacaoUpsertArgs<ExtArgs>>): Prisma__tb_produtos_transformacaoClient<$Result.GetResult<Prisma.$tb_produtos_transformacaoPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Tb_produtos_transformacaos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_transformacaoCountArgs} args - Arguments to filter Tb_produtos_transformacaos to count.
+     * @example
+     * // Count the number of Tb_produtos_transformacaos
+     * const count = await prisma.tb_produtos_transformacao.count({
+     *   where: {
+     *     // ... the filter for the Tb_produtos_transformacaos we want to count
+     *   }
+     * })
+    **/
+    count<T extends tb_produtos_transformacaoCountArgs>(
+      args?: Subset<T, tb_produtos_transformacaoCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tb_produtos_transformacaoCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tb_produtos_transformacao.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tb_produtos_transformacaoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tb_produtos_transformacaoAggregateArgs>(args: Subset<T, Tb_produtos_transformacaoAggregateArgs>): Prisma.PrismaPromise<GetTb_produtos_transformacaoAggregateType<T>>
+
+    /**
+     * Group by Tb_produtos_transformacao.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_transformacaoGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tb_produtos_transformacaoGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tb_produtos_transformacaoGroupByArgs['orderBy'] }
+        : { orderBy?: tb_produtos_transformacaoGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tb_produtos_transformacaoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTb_produtos_transformacaoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tb_produtos_transformacao model
+   */
+  readonly fields: tb_produtos_transformacaoFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tb_produtos_transformacao.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tb_produtos_transformacaoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tb_produtos_transformacao model
+   */ 
+  interface tb_produtos_transformacaoFieldRefs {
+    readonly Codigo: FieldRef<"tb_produtos_transformacao", 'Int'>
+    readonly Id_Produto_Entrada: FieldRef<"tb_produtos_transformacao", 'Int'>
+    readonly Id_Produto_Saida: FieldRef<"tb_produtos_transformacao", 'Int'>
+    readonly Quantidade_Saida: FieldRef<"tb_produtos_transformacao", 'Float'>
+    readonly Quantidade_Entrada: FieldRef<"tb_produtos_transformacao", 'Float'>
+    readonly Estoque_Processado: FieldRef<"tb_produtos_transformacao", 'String'>
+    readonly IDEmpresa: FieldRef<"tb_produtos_transformacao", 'Int'>
+    readonly IDUser: FieldRef<"tb_produtos_transformacao", 'Int'>
+    readonly DHU: FieldRef<"tb_produtos_transformacao", 'String'>
+    readonly Data_Movimento: FieldRef<"tb_produtos_transformacao", 'DateTime'>
+    readonly Hora_Movimento: FieldRef<"tb_produtos_transformacao", 'String'>
+    readonly Tempo: FieldRef<"tb_produtos_transformacao", 'String'>
+    readonly Via_Sistema: FieldRef<"tb_produtos_transformacao", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tb_produtos_transformacao findUnique
+   */
+  export type tb_produtos_transformacaoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao
+     */
+    select?: tb_produtos_transformacaoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_transformacao to fetch.
+     */
+    where: tb_produtos_transformacaoWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_transformacao findUniqueOrThrow
+   */
+  export type tb_produtos_transformacaoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao
+     */
+    select?: tb_produtos_transformacaoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_transformacao to fetch.
+     */
+    where: tb_produtos_transformacaoWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_transformacao findFirst
+   */
+  export type tb_produtos_transformacaoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao
+     */
+    select?: tb_produtos_transformacaoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_transformacao to fetch.
+     */
+    where?: tb_produtos_transformacaoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_transformacaos to fetch.
+     */
+    orderBy?: tb_produtos_transformacaoOrderByWithRelationInput | tb_produtos_transformacaoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_produtos_transformacaos.
+     */
+    cursor?: tb_produtos_transformacaoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_transformacaos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_transformacaos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_produtos_transformacaos.
+     */
+    distinct?: Tb_produtos_transformacaoScalarFieldEnum | Tb_produtos_transformacaoScalarFieldEnum[]
+  }
+
+  /**
+   * tb_produtos_transformacao findFirstOrThrow
+   */
+  export type tb_produtos_transformacaoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao
+     */
+    select?: tb_produtos_transformacaoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_transformacao to fetch.
+     */
+    where?: tb_produtos_transformacaoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_transformacaos to fetch.
+     */
+    orderBy?: tb_produtos_transformacaoOrderByWithRelationInput | tb_produtos_transformacaoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_produtos_transformacaos.
+     */
+    cursor?: tb_produtos_transformacaoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_transformacaos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_transformacaos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_produtos_transformacaos.
+     */
+    distinct?: Tb_produtos_transformacaoScalarFieldEnum | Tb_produtos_transformacaoScalarFieldEnum[]
+  }
+
+  /**
+   * tb_produtos_transformacao findMany
+   */
+  export type tb_produtos_transformacaoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao
+     */
+    select?: tb_produtos_transformacaoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_transformacaos to fetch.
+     */
+    where?: tb_produtos_transformacaoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_transformacaos to fetch.
+     */
+    orderBy?: tb_produtos_transformacaoOrderByWithRelationInput | tb_produtos_transformacaoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tb_produtos_transformacaos.
+     */
+    cursor?: tb_produtos_transformacaoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_transformacaos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_transformacaos.
+     */
+    skip?: number
+    distinct?: Tb_produtos_transformacaoScalarFieldEnum | Tb_produtos_transformacaoScalarFieldEnum[]
+  }
+
+  /**
+   * tb_produtos_transformacao create
+   */
+  export type tb_produtos_transformacaoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao
+     */
+    select?: tb_produtos_transformacaoSelect<ExtArgs> | null
+    /**
+     * The data needed to create a tb_produtos_transformacao.
+     */
+    data: XOR<tb_produtos_transformacaoCreateInput, tb_produtos_transformacaoUncheckedCreateInput>
+  }
+
+  /**
+   * tb_produtos_transformacao createMany
+   */
+  export type tb_produtos_transformacaoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tb_produtos_transformacaos.
+     */
+    data: tb_produtos_transformacaoCreateManyInput | tb_produtos_transformacaoCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tb_produtos_transformacao update
+   */
+  export type tb_produtos_transformacaoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao
+     */
+    select?: tb_produtos_transformacaoSelect<ExtArgs> | null
+    /**
+     * The data needed to update a tb_produtos_transformacao.
+     */
+    data: XOR<tb_produtos_transformacaoUpdateInput, tb_produtos_transformacaoUncheckedUpdateInput>
+    /**
+     * Choose, which tb_produtos_transformacao to update.
+     */
+    where: tb_produtos_transformacaoWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_transformacao updateMany
+   */
+  export type tb_produtos_transformacaoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tb_produtos_transformacaos.
+     */
+    data: XOR<tb_produtos_transformacaoUpdateManyMutationInput, tb_produtos_transformacaoUncheckedUpdateManyInput>
+    /**
+     * Filter which tb_produtos_transformacaos to update
+     */
+    where?: tb_produtos_transformacaoWhereInput
+  }
+
+  /**
+   * tb_produtos_transformacao upsert
+   */
+  export type tb_produtos_transformacaoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao
+     */
+    select?: tb_produtos_transformacaoSelect<ExtArgs> | null
+    /**
+     * The filter to search for the tb_produtos_transformacao to update in case it exists.
+     */
+    where: tb_produtos_transformacaoWhereUniqueInput
+    /**
+     * In case the tb_produtos_transformacao found by the `where` argument doesn't exist, create a new tb_produtos_transformacao with this data.
+     */
+    create: XOR<tb_produtos_transformacaoCreateInput, tb_produtos_transformacaoUncheckedCreateInput>
+    /**
+     * In case the tb_produtos_transformacao was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tb_produtos_transformacaoUpdateInput, tb_produtos_transformacaoUncheckedUpdateInput>
+  }
+
+  /**
+   * tb_produtos_transformacao delete
+   */
+  export type tb_produtos_transformacaoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao
+     */
+    select?: tb_produtos_transformacaoSelect<ExtArgs> | null
+    /**
+     * Filter which tb_produtos_transformacao to delete.
+     */
+    where: tb_produtos_transformacaoWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_transformacao deleteMany
+   */
+  export type tb_produtos_transformacaoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_produtos_transformacaos to delete
+     */
+    where?: tb_produtos_transformacaoWhereInput
+  }
+
+  /**
+   * tb_produtos_transformacao without action
+   */
+  export type tb_produtos_transformacaoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao
+     */
+    select?: tb_produtos_transformacaoSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tb_produtos_transformacao_conf
+   */
+
+  export type AggregateTb_produtos_transformacao_conf = {
+    _count: Tb_produtos_transformacao_confCountAggregateOutputType | null
+    _avg: Tb_produtos_transformacao_confAvgAggregateOutputType | null
+    _sum: Tb_produtos_transformacao_confSumAggregateOutputType | null
+    _min: Tb_produtos_transformacao_confMinAggregateOutputType | null
+    _max: Tb_produtos_transformacao_confMaxAggregateOutputType | null
+  }
+
+  export type Tb_produtos_transformacao_confAvgAggregateOutputType = {
+    Codigo: number | null
+    Id_Produto_Saida: number | null
+    Id_Produto_Entrada: number | null
+    Quantidade_Saida: number | null
+    Quantidade_Entrada: number | null
+    Acionar_Em: number | null
+    IDEmpresa: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_produtos_transformacao_confSumAggregateOutputType = {
+    Codigo: number | null
+    Id_Produto_Saida: number | null
+    Id_Produto_Entrada: number | null
+    Quantidade_Saida: number | null
+    Quantidade_Entrada: number | null
+    Acionar_Em: number | null
+    IDEmpresa: number | null
+    IDUser: number | null
+  }
+
+  export type Tb_produtos_transformacao_confMinAggregateOutputType = {
+    Codigo: number | null
+    Id_Produto_Saida: number | null
+    Id_Produto_Entrada: number | null
+    Quantidade_Saida: number | null
+    Quantidade_Entrada: number | null
+    Acionar_Em: number | null
+    DHU: string | null
+    IDEmpresa: number | null
+    IDUser: number | null
+    RegExcluido: string | null
+  }
+
+  export type Tb_produtos_transformacao_confMaxAggregateOutputType = {
+    Codigo: number | null
+    Id_Produto_Saida: number | null
+    Id_Produto_Entrada: number | null
+    Quantidade_Saida: number | null
+    Quantidade_Entrada: number | null
+    Acionar_Em: number | null
+    DHU: string | null
+    IDEmpresa: number | null
+    IDUser: number | null
+    RegExcluido: string | null
+  }
+
+  export type Tb_produtos_transformacao_confCountAggregateOutputType = {
+    Codigo: number
+    Id_Produto_Saida: number
+    Id_Produto_Entrada: number
+    Quantidade_Saida: number
+    Quantidade_Entrada: number
+    Acionar_Em: number
+    DHU: number
+    IDEmpresa: number
+    IDUser: number
+    RegExcluido: number
+    _all: number
+  }
+
+
+  export type Tb_produtos_transformacao_confAvgAggregateInputType = {
+    Codigo?: true
+    Id_Produto_Saida?: true
+    Id_Produto_Entrada?: true
+    Quantidade_Saida?: true
+    Quantidade_Entrada?: true
+    Acionar_Em?: true
+    IDEmpresa?: true
+    IDUser?: true
+  }
+
+  export type Tb_produtos_transformacao_confSumAggregateInputType = {
+    Codigo?: true
+    Id_Produto_Saida?: true
+    Id_Produto_Entrada?: true
+    Quantidade_Saida?: true
+    Quantidade_Entrada?: true
+    Acionar_Em?: true
+    IDEmpresa?: true
+    IDUser?: true
+  }
+
+  export type Tb_produtos_transformacao_confMinAggregateInputType = {
+    Codigo?: true
+    Id_Produto_Saida?: true
+    Id_Produto_Entrada?: true
+    Quantidade_Saida?: true
+    Quantidade_Entrada?: true
+    Acionar_Em?: true
+    DHU?: true
+    IDEmpresa?: true
+    IDUser?: true
+    RegExcluido?: true
+  }
+
+  export type Tb_produtos_transformacao_confMaxAggregateInputType = {
+    Codigo?: true
+    Id_Produto_Saida?: true
+    Id_Produto_Entrada?: true
+    Quantidade_Saida?: true
+    Quantidade_Entrada?: true
+    Acionar_Em?: true
+    DHU?: true
+    IDEmpresa?: true
+    IDUser?: true
+    RegExcluido?: true
+  }
+
+  export type Tb_produtos_transformacao_confCountAggregateInputType = {
+    Codigo?: true
+    Id_Produto_Saida?: true
+    Id_Produto_Entrada?: true
+    Quantidade_Saida?: true
+    Quantidade_Entrada?: true
+    Acionar_Em?: true
+    DHU?: true
+    IDEmpresa?: true
+    IDUser?: true
+    RegExcluido?: true
+    _all?: true
+  }
+
+  export type Tb_produtos_transformacao_confAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_produtos_transformacao_conf to aggregate.
+     */
+    where?: tb_produtos_transformacao_confWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_transformacao_confs to fetch.
+     */
+    orderBy?: tb_produtos_transformacao_confOrderByWithRelationInput | tb_produtos_transformacao_confOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tb_produtos_transformacao_confWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_transformacao_confs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_transformacao_confs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tb_produtos_transformacao_confs
+    **/
+    _count?: true | Tb_produtos_transformacao_confCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tb_produtos_transformacao_confAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tb_produtos_transformacao_confSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tb_produtos_transformacao_confMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tb_produtos_transformacao_confMaxAggregateInputType
+  }
+
+  export type GetTb_produtos_transformacao_confAggregateType<T extends Tb_produtos_transformacao_confAggregateArgs> = {
+        [P in keyof T & keyof AggregateTb_produtos_transformacao_conf]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTb_produtos_transformacao_conf[P]>
+      : GetScalarType<T[P], AggregateTb_produtos_transformacao_conf[P]>
+  }
+
+
+
+
+  export type tb_produtos_transformacao_confGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tb_produtos_transformacao_confWhereInput
+    orderBy?: tb_produtos_transformacao_confOrderByWithAggregationInput | tb_produtos_transformacao_confOrderByWithAggregationInput[]
+    by: Tb_produtos_transformacao_confScalarFieldEnum[] | Tb_produtos_transformacao_confScalarFieldEnum
+    having?: tb_produtos_transformacao_confScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tb_produtos_transformacao_confCountAggregateInputType | true
+    _avg?: Tb_produtos_transformacao_confAvgAggregateInputType
+    _sum?: Tb_produtos_transformacao_confSumAggregateInputType
+    _min?: Tb_produtos_transformacao_confMinAggregateInputType
+    _max?: Tb_produtos_transformacao_confMaxAggregateInputType
+  }
+
+  export type Tb_produtos_transformacao_confGroupByOutputType = {
+    Codigo: number
+    Id_Produto_Saida: number | null
+    Id_Produto_Entrada: number | null
+    Quantidade_Saida: number | null
+    Quantidade_Entrada: number | null
+    Acionar_Em: number | null
+    DHU: string | null
+    IDEmpresa: number | null
+    IDUser: number | null
+    RegExcluido: string | null
+    _count: Tb_produtos_transformacao_confCountAggregateOutputType | null
+    _avg: Tb_produtos_transformacao_confAvgAggregateOutputType | null
+    _sum: Tb_produtos_transformacao_confSumAggregateOutputType | null
+    _min: Tb_produtos_transformacao_confMinAggregateOutputType | null
+    _max: Tb_produtos_transformacao_confMaxAggregateOutputType | null
+  }
+
+  type GetTb_produtos_transformacao_confGroupByPayload<T extends tb_produtos_transformacao_confGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tb_produtos_transformacao_confGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tb_produtos_transformacao_confGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tb_produtos_transformacao_confGroupByOutputType[P]>
+            : GetScalarType<T[P], Tb_produtos_transformacao_confGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tb_produtos_transformacao_confSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Codigo?: boolean
+    Id_Produto_Saida?: boolean
+    Id_Produto_Entrada?: boolean
+    Quantidade_Saida?: boolean
+    Quantidade_Entrada?: boolean
+    Acionar_Em?: boolean
+    DHU?: boolean
+    IDEmpresa?: boolean
+    IDUser?: boolean
+    RegExcluido?: boolean
+  }, ExtArgs["result"]["tb_produtos_transformacao_conf"]>
+
+
+  export type tb_produtos_transformacao_confSelectScalar = {
+    Codigo?: boolean
+    Id_Produto_Saida?: boolean
+    Id_Produto_Entrada?: boolean
+    Quantidade_Saida?: boolean
+    Quantidade_Entrada?: boolean
+    Acionar_Em?: boolean
+    DHU?: boolean
+    IDEmpresa?: boolean
+    IDUser?: boolean
+    RegExcluido?: boolean
+  }
+
+
+  export type $tb_produtos_transformacao_confPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tb_produtos_transformacao_conf"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      Codigo: number
+      Id_Produto_Saida: number | null
+      Id_Produto_Entrada: number | null
+      Quantidade_Saida: number | null
+      Quantidade_Entrada: number | null
+      Acionar_Em: number | null
+      DHU: string | null
+      IDEmpresa: number | null
+      IDUser: number | null
+      RegExcluido: string | null
+    }, ExtArgs["result"]["tb_produtos_transformacao_conf"]>
+    composites: {}
+  }
+
+  type tb_produtos_transformacao_confGetPayload<S extends boolean | null | undefined | tb_produtos_transformacao_confDefaultArgs> = $Result.GetResult<Prisma.$tb_produtos_transformacao_confPayload, S>
+
+  type tb_produtos_transformacao_confCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<tb_produtos_transformacao_confFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Tb_produtos_transformacao_confCountAggregateInputType | true
+    }
+
+  export interface tb_produtos_transformacao_confDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tb_produtos_transformacao_conf'], meta: { name: 'tb_produtos_transformacao_conf' } }
+    /**
+     * Find zero or one Tb_produtos_transformacao_conf that matches the filter.
+     * @param {tb_produtos_transformacao_confFindUniqueArgs} args - Arguments to find a Tb_produtos_transformacao_conf
+     * @example
+     * // Get one Tb_produtos_transformacao_conf
+     * const tb_produtos_transformacao_conf = await prisma.tb_produtos_transformacao_conf.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tb_produtos_transformacao_confFindUniqueArgs>(args: SelectSubset<T, tb_produtos_transformacao_confFindUniqueArgs<ExtArgs>>): Prisma__tb_produtos_transformacao_confClient<$Result.GetResult<Prisma.$tb_produtos_transformacao_confPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Tb_produtos_transformacao_conf that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {tb_produtos_transformacao_confFindUniqueOrThrowArgs} args - Arguments to find a Tb_produtos_transformacao_conf
+     * @example
+     * // Get one Tb_produtos_transformacao_conf
+     * const tb_produtos_transformacao_conf = await prisma.tb_produtos_transformacao_conf.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tb_produtos_transformacao_confFindUniqueOrThrowArgs>(args: SelectSubset<T, tb_produtos_transformacao_confFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tb_produtos_transformacao_confClient<$Result.GetResult<Prisma.$tb_produtos_transformacao_confPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Tb_produtos_transformacao_conf that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_transformacao_confFindFirstArgs} args - Arguments to find a Tb_produtos_transformacao_conf
+     * @example
+     * // Get one Tb_produtos_transformacao_conf
+     * const tb_produtos_transformacao_conf = await prisma.tb_produtos_transformacao_conf.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tb_produtos_transformacao_confFindFirstArgs>(args?: SelectSubset<T, tb_produtos_transformacao_confFindFirstArgs<ExtArgs>>): Prisma__tb_produtos_transformacao_confClient<$Result.GetResult<Prisma.$tb_produtos_transformacao_confPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Tb_produtos_transformacao_conf that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_transformacao_confFindFirstOrThrowArgs} args - Arguments to find a Tb_produtos_transformacao_conf
+     * @example
+     * // Get one Tb_produtos_transformacao_conf
+     * const tb_produtos_transformacao_conf = await prisma.tb_produtos_transformacao_conf.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tb_produtos_transformacao_confFindFirstOrThrowArgs>(args?: SelectSubset<T, tb_produtos_transformacao_confFindFirstOrThrowArgs<ExtArgs>>): Prisma__tb_produtos_transformacao_confClient<$Result.GetResult<Prisma.$tb_produtos_transformacao_confPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Tb_produtos_transformacao_confs that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_transformacao_confFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tb_produtos_transformacao_confs
+     * const tb_produtos_transformacao_confs = await prisma.tb_produtos_transformacao_conf.findMany()
+     * 
+     * // Get first 10 Tb_produtos_transformacao_confs
+     * const tb_produtos_transformacao_confs = await prisma.tb_produtos_transformacao_conf.findMany({ take: 10 })
+     * 
+     * // Only select the `Codigo`
+     * const tb_produtos_transformacao_confWithCodigoOnly = await prisma.tb_produtos_transformacao_conf.findMany({ select: { Codigo: true } })
+     * 
+     */
+    findMany<T extends tb_produtos_transformacao_confFindManyArgs>(args?: SelectSubset<T, tb_produtos_transformacao_confFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tb_produtos_transformacao_confPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Tb_produtos_transformacao_conf.
+     * @param {tb_produtos_transformacao_confCreateArgs} args - Arguments to create a Tb_produtos_transformacao_conf.
+     * @example
+     * // Create one Tb_produtos_transformacao_conf
+     * const Tb_produtos_transformacao_conf = await prisma.tb_produtos_transformacao_conf.create({
+     *   data: {
+     *     // ... data to create a Tb_produtos_transformacao_conf
+     *   }
+     * })
+     * 
+     */
+    create<T extends tb_produtos_transformacao_confCreateArgs>(args: SelectSubset<T, tb_produtos_transformacao_confCreateArgs<ExtArgs>>): Prisma__tb_produtos_transformacao_confClient<$Result.GetResult<Prisma.$tb_produtos_transformacao_confPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Tb_produtos_transformacao_confs.
+     * @param {tb_produtos_transformacao_confCreateManyArgs} args - Arguments to create many Tb_produtos_transformacao_confs.
+     * @example
+     * // Create many Tb_produtos_transformacao_confs
+     * const tb_produtos_transformacao_conf = await prisma.tb_produtos_transformacao_conf.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tb_produtos_transformacao_confCreateManyArgs>(args?: SelectSubset<T, tb_produtos_transformacao_confCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Tb_produtos_transformacao_conf.
+     * @param {tb_produtos_transformacao_confDeleteArgs} args - Arguments to delete one Tb_produtos_transformacao_conf.
+     * @example
+     * // Delete one Tb_produtos_transformacao_conf
+     * const Tb_produtos_transformacao_conf = await prisma.tb_produtos_transformacao_conf.delete({
+     *   where: {
+     *     // ... filter to delete one Tb_produtos_transformacao_conf
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tb_produtos_transformacao_confDeleteArgs>(args: SelectSubset<T, tb_produtos_transformacao_confDeleteArgs<ExtArgs>>): Prisma__tb_produtos_transformacao_confClient<$Result.GetResult<Prisma.$tb_produtos_transformacao_confPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Tb_produtos_transformacao_conf.
+     * @param {tb_produtos_transformacao_confUpdateArgs} args - Arguments to update one Tb_produtos_transformacao_conf.
+     * @example
+     * // Update one Tb_produtos_transformacao_conf
+     * const tb_produtos_transformacao_conf = await prisma.tb_produtos_transformacao_conf.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tb_produtos_transformacao_confUpdateArgs>(args: SelectSubset<T, tb_produtos_transformacao_confUpdateArgs<ExtArgs>>): Prisma__tb_produtos_transformacao_confClient<$Result.GetResult<Prisma.$tb_produtos_transformacao_confPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Tb_produtos_transformacao_confs.
+     * @param {tb_produtos_transformacao_confDeleteManyArgs} args - Arguments to filter Tb_produtos_transformacao_confs to delete.
+     * @example
+     * // Delete a few Tb_produtos_transformacao_confs
+     * const { count } = await prisma.tb_produtos_transformacao_conf.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tb_produtos_transformacao_confDeleteManyArgs>(args?: SelectSubset<T, tb_produtos_transformacao_confDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tb_produtos_transformacao_confs.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_transformacao_confUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tb_produtos_transformacao_confs
+     * const tb_produtos_transformacao_conf = await prisma.tb_produtos_transformacao_conf.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tb_produtos_transformacao_confUpdateManyArgs>(args: SelectSubset<T, tb_produtos_transformacao_confUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Tb_produtos_transformacao_conf.
+     * @param {tb_produtos_transformacao_confUpsertArgs} args - Arguments to update or create a Tb_produtos_transformacao_conf.
+     * @example
+     * // Update or create a Tb_produtos_transformacao_conf
+     * const tb_produtos_transformacao_conf = await prisma.tb_produtos_transformacao_conf.upsert({
+     *   create: {
+     *     // ... data to create a Tb_produtos_transformacao_conf
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tb_produtos_transformacao_conf we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tb_produtos_transformacao_confUpsertArgs>(args: SelectSubset<T, tb_produtos_transformacao_confUpsertArgs<ExtArgs>>): Prisma__tb_produtos_transformacao_confClient<$Result.GetResult<Prisma.$tb_produtos_transformacao_confPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Tb_produtos_transformacao_confs.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_transformacao_confCountArgs} args - Arguments to filter Tb_produtos_transformacao_confs to count.
+     * @example
+     * // Count the number of Tb_produtos_transformacao_confs
+     * const count = await prisma.tb_produtos_transformacao_conf.count({
+     *   where: {
+     *     // ... the filter for the Tb_produtos_transformacao_confs we want to count
+     *   }
+     * })
+    **/
+    count<T extends tb_produtos_transformacao_confCountArgs>(
+      args?: Subset<T, tb_produtos_transformacao_confCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tb_produtos_transformacao_confCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tb_produtos_transformacao_conf.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tb_produtos_transformacao_confAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tb_produtos_transformacao_confAggregateArgs>(args: Subset<T, Tb_produtos_transformacao_confAggregateArgs>): Prisma.PrismaPromise<GetTb_produtos_transformacao_confAggregateType<T>>
+
+    /**
+     * Group by Tb_produtos_transformacao_conf.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_produtos_transformacao_confGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tb_produtos_transformacao_confGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tb_produtos_transformacao_confGroupByArgs['orderBy'] }
+        : { orderBy?: tb_produtos_transformacao_confGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tb_produtos_transformacao_confGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTb_produtos_transformacao_confGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tb_produtos_transformacao_conf model
+   */
+  readonly fields: tb_produtos_transformacao_confFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tb_produtos_transformacao_conf.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tb_produtos_transformacao_confClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tb_produtos_transformacao_conf model
+   */ 
+  interface tb_produtos_transformacao_confFieldRefs {
+    readonly Codigo: FieldRef<"tb_produtos_transformacao_conf", 'Int'>
+    readonly Id_Produto_Saida: FieldRef<"tb_produtos_transformacao_conf", 'Int'>
+    readonly Id_Produto_Entrada: FieldRef<"tb_produtos_transformacao_conf", 'Int'>
+    readonly Quantidade_Saida: FieldRef<"tb_produtos_transformacao_conf", 'Float'>
+    readonly Quantidade_Entrada: FieldRef<"tb_produtos_transformacao_conf", 'Float'>
+    readonly Acionar_Em: FieldRef<"tb_produtos_transformacao_conf", 'Float'>
+    readonly DHU: FieldRef<"tb_produtos_transformacao_conf", 'String'>
+    readonly IDEmpresa: FieldRef<"tb_produtos_transformacao_conf", 'Int'>
+    readonly IDUser: FieldRef<"tb_produtos_transformacao_conf", 'Int'>
+    readonly RegExcluido: FieldRef<"tb_produtos_transformacao_conf", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tb_produtos_transformacao_conf findUnique
+   */
+  export type tb_produtos_transformacao_confFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao_conf
+     */
+    select?: tb_produtos_transformacao_confSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_transformacao_conf to fetch.
+     */
+    where: tb_produtos_transformacao_confWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_transformacao_conf findUniqueOrThrow
+   */
+  export type tb_produtos_transformacao_confFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao_conf
+     */
+    select?: tb_produtos_transformacao_confSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_transformacao_conf to fetch.
+     */
+    where: tb_produtos_transformacao_confWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_transformacao_conf findFirst
+   */
+  export type tb_produtos_transformacao_confFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao_conf
+     */
+    select?: tb_produtos_transformacao_confSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_transformacao_conf to fetch.
+     */
+    where?: tb_produtos_transformacao_confWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_transformacao_confs to fetch.
+     */
+    orderBy?: tb_produtos_transformacao_confOrderByWithRelationInput | tb_produtos_transformacao_confOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_produtos_transformacao_confs.
+     */
+    cursor?: tb_produtos_transformacao_confWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_transformacao_confs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_transformacao_confs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_produtos_transformacao_confs.
+     */
+    distinct?: Tb_produtos_transformacao_confScalarFieldEnum | Tb_produtos_transformacao_confScalarFieldEnum[]
+  }
+
+  /**
+   * tb_produtos_transformacao_conf findFirstOrThrow
+   */
+  export type tb_produtos_transformacao_confFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao_conf
+     */
+    select?: tb_produtos_transformacao_confSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_transformacao_conf to fetch.
+     */
+    where?: tb_produtos_transformacao_confWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_transformacao_confs to fetch.
+     */
+    orderBy?: tb_produtos_transformacao_confOrderByWithRelationInput | tb_produtos_transformacao_confOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_produtos_transformacao_confs.
+     */
+    cursor?: tb_produtos_transformacao_confWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_transformacao_confs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_transformacao_confs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_produtos_transformacao_confs.
+     */
+    distinct?: Tb_produtos_transformacao_confScalarFieldEnum | Tb_produtos_transformacao_confScalarFieldEnum[]
+  }
+
+  /**
+   * tb_produtos_transformacao_conf findMany
+   */
+  export type tb_produtos_transformacao_confFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao_conf
+     */
+    select?: tb_produtos_transformacao_confSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_produtos_transformacao_confs to fetch.
+     */
+    where?: tb_produtos_transformacao_confWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_produtos_transformacao_confs to fetch.
+     */
+    orderBy?: tb_produtos_transformacao_confOrderByWithRelationInput | tb_produtos_transformacao_confOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tb_produtos_transformacao_confs.
+     */
+    cursor?: tb_produtos_transformacao_confWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_produtos_transformacao_confs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_produtos_transformacao_confs.
+     */
+    skip?: number
+    distinct?: Tb_produtos_transformacao_confScalarFieldEnum | Tb_produtos_transformacao_confScalarFieldEnum[]
+  }
+
+  /**
+   * tb_produtos_transformacao_conf create
+   */
+  export type tb_produtos_transformacao_confCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao_conf
+     */
+    select?: tb_produtos_transformacao_confSelect<ExtArgs> | null
+    /**
+     * The data needed to create a tb_produtos_transformacao_conf.
+     */
+    data: XOR<tb_produtos_transformacao_confCreateInput, tb_produtos_transformacao_confUncheckedCreateInput>
+  }
+
+  /**
+   * tb_produtos_transformacao_conf createMany
+   */
+  export type tb_produtos_transformacao_confCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tb_produtos_transformacao_confs.
+     */
+    data: tb_produtos_transformacao_confCreateManyInput | tb_produtos_transformacao_confCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tb_produtos_transformacao_conf update
+   */
+  export type tb_produtos_transformacao_confUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao_conf
+     */
+    select?: tb_produtos_transformacao_confSelect<ExtArgs> | null
+    /**
+     * The data needed to update a tb_produtos_transformacao_conf.
+     */
+    data: XOR<tb_produtos_transformacao_confUpdateInput, tb_produtos_transformacao_confUncheckedUpdateInput>
+    /**
+     * Choose, which tb_produtos_transformacao_conf to update.
+     */
+    where: tb_produtos_transformacao_confWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_transformacao_conf updateMany
+   */
+  export type tb_produtos_transformacao_confUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tb_produtos_transformacao_confs.
+     */
+    data: XOR<tb_produtos_transformacao_confUpdateManyMutationInput, tb_produtos_transformacao_confUncheckedUpdateManyInput>
+    /**
+     * Filter which tb_produtos_transformacao_confs to update
+     */
+    where?: tb_produtos_transformacao_confWhereInput
+  }
+
+  /**
+   * tb_produtos_transformacao_conf upsert
+   */
+  export type tb_produtos_transformacao_confUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao_conf
+     */
+    select?: tb_produtos_transformacao_confSelect<ExtArgs> | null
+    /**
+     * The filter to search for the tb_produtos_transformacao_conf to update in case it exists.
+     */
+    where: tb_produtos_transformacao_confWhereUniqueInput
+    /**
+     * In case the tb_produtos_transformacao_conf found by the `where` argument doesn't exist, create a new tb_produtos_transformacao_conf with this data.
+     */
+    create: XOR<tb_produtos_transformacao_confCreateInput, tb_produtos_transformacao_confUncheckedCreateInput>
+    /**
+     * In case the tb_produtos_transformacao_conf was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tb_produtos_transformacao_confUpdateInput, tb_produtos_transformacao_confUncheckedUpdateInput>
+  }
+
+  /**
+   * tb_produtos_transformacao_conf delete
+   */
+  export type tb_produtos_transformacao_confDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao_conf
+     */
+    select?: tb_produtos_transformacao_confSelect<ExtArgs> | null
+    /**
+     * Filter which tb_produtos_transformacao_conf to delete.
+     */
+    where: tb_produtos_transformacao_confWhereUniqueInput
+  }
+
+  /**
+   * tb_produtos_transformacao_conf deleteMany
+   */
+  export type tb_produtos_transformacao_confDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_produtos_transformacao_confs to delete
+     */
+    where?: tb_produtos_transformacao_confWhereInput
+  }
+
+  /**
+   * tb_produtos_transformacao_conf without action
+   */
+  export type tb_produtos_transformacao_confDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_produtos_transformacao_conf
+     */
+    select?: tb_produtos_transformacao_confSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tb_vendas_pre_comandas_pre_pagamentos
+   */
+
+  export type AggregateTb_vendas_pre_comandas_pre_pagamentos = {
+    _count: Tb_vendas_pre_comandas_pre_pagamentosCountAggregateOutputType | null
+    _avg: Tb_vendas_pre_comandas_pre_pagamentosAvgAggregateOutputType | null
+    _sum: Tb_vendas_pre_comandas_pre_pagamentosSumAggregateOutputType | null
+    _min: Tb_vendas_pre_comandas_pre_pagamentosMinAggregateOutputType | null
+    _max: Tb_vendas_pre_comandas_pre_pagamentosMaxAggregateOutputType | null
+  }
+
+  export type Tb_vendas_pre_comandas_pre_pagamentosAvgAggregateOutputType = {
+    Codigo: number | null
+    Id_Comanda: number | null
+    Id_Pagamento: number | null
+    Valor: number | null
+    Valor_Recebido: number | null
+    Troco: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    ID_Lcto: number | null
+  }
+
+  export type Tb_vendas_pre_comandas_pre_pagamentosSumAggregateOutputType = {
+    Codigo: number | null
+    Id_Comanda: number | null
+    Id_Pagamento: number | null
+    Valor: number | null
+    Valor_Recebido: number | null
+    Troco: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    ID_Lcto: number | null
+  }
+
+  export type Tb_vendas_pre_comandas_pre_pagamentosMinAggregateOutputType = {
+    Codigo: number | null
+    Id_Comanda: number | null
+    Id_Pagamento: number | null
+    Valor: number | null
+    Valor_Recebido: number | null
+    Troco: number | null
+    tPag: string | null
+    indPag_Opc: string | null
+    xPag_Opc: string | null
+    tpIntegra_Opc: string | null
+    CNPJ_Opc: string | null
+    tBand_Opc: string | null
+    cAut_Opc: string | null
+    TEF_Ok: string | null
+    TEF_Adquirente: string | null
+    TEF_CNPJ: string | null
+    TEF_Bandeira: string | null
+    TEF_CD: string | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    Processado: string | null
+    ID_Lcto: number | null
+    RegExcluido: string | null
+  }
+
+  export type Tb_vendas_pre_comandas_pre_pagamentosMaxAggregateOutputType = {
+    Codigo: number | null
+    Id_Comanda: number | null
+    Id_Pagamento: number | null
+    Valor: number | null
+    Valor_Recebido: number | null
+    Troco: number | null
+    tPag: string | null
+    indPag_Opc: string | null
+    xPag_Opc: string | null
+    tpIntegra_Opc: string | null
+    CNPJ_Opc: string | null
+    tBand_Opc: string | null
+    cAut_Opc: string | null
+    TEF_Ok: string | null
+    TEF_Adquirente: string | null
+    TEF_CNPJ: string | null
+    TEF_Bandeira: string | null
+    TEF_CD: string | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    Processado: string | null
+    ID_Lcto: number | null
+    RegExcluido: string | null
+  }
+
+  export type Tb_vendas_pre_comandas_pre_pagamentosCountAggregateOutputType = {
+    Codigo: number
+    Id_Comanda: number
+    Id_Pagamento: number
+    Valor: number
+    Valor_Recebido: number
+    Troco: number
+    tPag: number
+    indPag_Opc: number
+    xPag_Opc: number
+    tpIntegra_Opc: number
+    CNPJ_Opc: number
+    tBand_Opc: number
+    cAut_Opc: number
+    TEF_Ok: number
+    TEF_Adquirente: number
+    TEF_CNPJ: number
+    TEF_Bandeira: number
+    TEF_CD: number
+    IDUser: number
+    IDEmpresa: number
+    Processado: number
+    ID_Lcto: number
+    RegExcluido: number
+    _all: number
+  }
+
+
+  export type Tb_vendas_pre_comandas_pre_pagamentosAvgAggregateInputType = {
+    Codigo?: true
+    Id_Comanda?: true
+    Id_Pagamento?: true
+    Valor?: true
+    Valor_Recebido?: true
+    Troco?: true
+    IDUser?: true
+    IDEmpresa?: true
+    ID_Lcto?: true
+  }
+
+  export type Tb_vendas_pre_comandas_pre_pagamentosSumAggregateInputType = {
+    Codigo?: true
+    Id_Comanda?: true
+    Id_Pagamento?: true
+    Valor?: true
+    Valor_Recebido?: true
+    Troco?: true
+    IDUser?: true
+    IDEmpresa?: true
+    ID_Lcto?: true
+  }
+
+  export type Tb_vendas_pre_comandas_pre_pagamentosMinAggregateInputType = {
+    Codigo?: true
+    Id_Comanda?: true
+    Id_Pagamento?: true
+    Valor?: true
+    Valor_Recebido?: true
+    Troco?: true
+    tPag?: true
+    indPag_Opc?: true
+    xPag_Opc?: true
+    tpIntegra_Opc?: true
+    CNPJ_Opc?: true
+    tBand_Opc?: true
+    cAut_Opc?: true
+    TEF_Ok?: true
+    TEF_Adquirente?: true
+    TEF_CNPJ?: true
+    TEF_Bandeira?: true
+    TEF_CD?: true
+    IDUser?: true
+    IDEmpresa?: true
+    Processado?: true
+    ID_Lcto?: true
+    RegExcluido?: true
+  }
+
+  export type Tb_vendas_pre_comandas_pre_pagamentosMaxAggregateInputType = {
+    Codigo?: true
+    Id_Comanda?: true
+    Id_Pagamento?: true
+    Valor?: true
+    Valor_Recebido?: true
+    Troco?: true
+    tPag?: true
+    indPag_Opc?: true
+    xPag_Opc?: true
+    tpIntegra_Opc?: true
+    CNPJ_Opc?: true
+    tBand_Opc?: true
+    cAut_Opc?: true
+    TEF_Ok?: true
+    TEF_Adquirente?: true
+    TEF_CNPJ?: true
+    TEF_Bandeira?: true
+    TEF_CD?: true
+    IDUser?: true
+    IDEmpresa?: true
+    Processado?: true
+    ID_Lcto?: true
+    RegExcluido?: true
+  }
+
+  export type Tb_vendas_pre_comandas_pre_pagamentosCountAggregateInputType = {
+    Codigo?: true
+    Id_Comanda?: true
+    Id_Pagamento?: true
+    Valor?: true
+    Valor_Recebido?: true
+    Troco?: true
+    tPag?: true
+    indPag_Opc?: true
+    xPag_Opc?: true
+    tpIntegra_Opc?: true
+    CNPJ_Opc?: true
+    tBand_Opc?: true
+    cAut_Opc?: true
+    TEF_Ok?: true
+    TEF_Adquirente?: true
+    TEF_CNPJ?: true
+    TEF_Bandeira?: true
+    TEF_CD?: true
+    IDUser?: true
+    IDEmpresa?: true
+    Processado?: true
+    ID_Lcto?: true
+    RegExcluido?: true
+    _all?: true
+  }
+
+  export type Tb_vendas_pre_comandas_pre_pagamentosAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_vendas_pre_comandas_pre_pagamentos to aggregate.
+     */
+    where?: tb_vendas_pre_comandas_pre_pagamentosWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_vendas_pre_comandas_pre_pagamentos to fetch.
+     */
+    orderBy?: tb_vendas_pre_comandas_pre_pagamentosOrderByWithRelationInput | tb_vendas_pre_comandas_pre_pagamentosOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tb_vendas_pre_comandas_pre_pagamentosWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_vendas_pre_comandas_pre_pagamentos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_vendas_pre_comandas_pre_pagamentos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tb_vendas_pre_comandas_pre_pagamentos
+    **/
+    _count?: true | Tb_vendas_pre_comandas_pre_pagamentosCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tb_vendas_pre_comandas_pre_pagamentosAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tb_vendas_pre_comandas_pre_pagamentosSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tb_vendas_pre_comandas_pre_pagamentosMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tb_vendas_pre_comandas_pre_pagamentosMaxAggregateInputType
+  }
+
+  export type GetTb_vendas_pre_comandas_pre_pagamentosAggregateType<T extends Tb_vendas_pre_comandas_pre_pagamentosAggregateArgs> = {
+        [P in keyof T & keyof AggregateTb_vendas_pre_comandas_pre_pagamentos]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTb_vendas_pre_comandas_pre_pagamentos[P]>
+      : GetScalarType<T[P], AggregateTb_vendas_pre_comandas_pre_pagamentos[P]>
+  }
+
+
+
+
+  export type tb_vendas_pre_comandas_pre_pagamentosGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tb_vendas_pre_comandas_pre_pagamentosWhereInput
+    orderBy?: tb_vendas_pre_comandas_pre_pagamentosOrderByWithAggregationInput | tb_vendas_pre_comandas_pre_pagamentosOrderByWithAggregationInput[]
+    by: Tb_vendas_pre_comandas_pre_pagamentosScalarFieldEnum[] | Tb_vendas_pre_comandas_pre_pagamentosScalarFieldEnum
+    having?: tb_vendas_pre_comandas_pre_pagamentosScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tb_vendas_pre_comandas_pre_pagamentosCountAggregateInputType | true
+    _avg?: Tb_vendas_pre_comandas_pre_pagamentosAvgAggregateInputType
+    _sum?: Tb_vendas_pre_comandas_pre_pagamentosSumAggregateInputType
+    _min?: Tb_vendas_pre_comandas_pre_pagamentosMinAggregateInputType
+    _max?: Tb_vendas_pre_comandas_pre_pagamentosMaxAggregateInputType
+  }
+
+  export type Tb_vendas_pre_comandas_pre_pagamentosGroupByOutputType = {
+    Codigo: number
+    Id_Comanda: number | null
+    Id_Pagamento: number | null
+    Valor: number | null
+    Valor_Recebido: number | null
+    Troco: number | null
+    tPag: string | null
+    indPag_Opc: string | null
+    xPag_Opc: string | null
+    tpIntegra_Opc: string | null
+    CNPJ_Opc: string | null
+    tBand_Opc: string | null
+    cAut_Opc: string | null
+    TEF_Ok: string | null
+    TEF_Adquirente: string | null
+    TEF_CNPJ: string | null
+    TEF_Bandeira: string | null
+    TEF_CD: string | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    Processado: string | null
+    ID_Lcto: number | null
+    RegExcluido: string | null
+    _count: Tb_vendas_pre_comandas_pre_pagamentosCountAggregateOutputType | null
+    _avg: Tb_vendas_pre_comandas_pre_pagamentosAvgAggregateOutputType | null
+    _sum: Tb_vendas_pre_comandas_pre_pagamentosSumAggregateOutputType | null
+    _min: Tb_vendas_pre_comandas_pre_pagamentosMinAggregateOutputType | null
+    _max: Tb_vendas_pre_comandas_pre_pagamentosMaxAggregateOutputType | null
+  }
+
+  type GetTb_vendas_pre_comandas_pre_pagamentosGroupByPayload<T extends tb_vendas_pre_comandas_pre_pagamentosGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tb_vendas_pre_comandas_pre_pagamentosGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tb_vendas_pre_comandas_pre_pagamentosGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tb_vendas_pre_comandas_pre_pagamentosGroupByOutputType[P]>
+            : GetScalarType<T[P], Tb_vendas_pre_comandas_pre_pagamentosGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tb_vendas_pre_comandas_pre_pagamentosSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Codigo?: boolean
+    Id_Comanda?: boolean
+    Id_Pagamento?: boolean
+    Valor?: boolean
+    Valor_Recebido?: boolean
+    Troco?: boolean
+    tPag?: boolean
+    indPag_Opc?: boolean
+    xPag_Opc?: boolean
+    tpIntegra_Opc?: boolean
+    CNPJ_Opc?: boolean
+    tBand_Opc?: boolean
+    cAut_Opc?: boolean
+    TEF_Ok?: boolean
+    TEF_Adquirente?: boolean
+    TEF_CNPJ?: boolean
+    TEF_Bandeira?: boolean
+    TEF_CD?: boolean
+    IDUser?: boolean
+    IDEmpresa?: boolean
+    Processado?: boolean
+    ID_Lcto?: boolean
+    RegExcluido?: boolean
+  }, ExtArgs["result"]["tb_vendas_pre_comandas_pre_pagamentos"]>
+
+
+  export type tb_vendas_pre_comandas_pre_pagamentosSelectScalar = {
+    Codigo?: boolean
+    Id_Comanda?: boolean
+    Id_Pagamento?: boolean
+    Valor?: boolean
+    Valor_Recebido?: boolean
+    Troco?: boolean
+    tPag?: boolean
+    indPag_Opc?: boolean
+    xPag_Opc?: boolean
+    tpIntegra_Opc?: boolean
+    CNPJ_Opc?: boolean
+    tBand_Opc?: boolean
+    cAut_Opc?: boolean
+    TEF_Ok?: boolean
+    TEF_Adquirente?: boolean
+    TEF_CNPJ?: boolean
+    TEF_Bandeira?: boolean
+    TEF_CD?: boolean
+    IDUser?: boolean
+    IDEmpresa?: boolean
+    Processado?: boolean
+    ID_Lcto?: boolean
+    RegExcluido?: boolean
+  }
+
+
+  export type $tb_vendas_pre_comandas_pre_pagamentosPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tb_vendas_pre_comandas_pre_pagamentos"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      Codigo: number
+      Id_Comanda: number | null
+      Id_Pagamento: number | null
+      Valor: number | null
+      Valor_Recebido: number | null
+      Troco: number | null
+      tPag: string | null
+      indPag_Opc: string | null
+      xPag_Opc: string | null
+      tpIntegra_Opc: string | null
+      CNPJ_Opc: string | null
+      tBand_Opc: string | null
+      cAut_Opc: string | null
+      TEF_Ok: string | null
+      TEF_Adquirente: string | null
+      TEF_CNPJ: string | null
+      TEF_Bandeira: string | null
+      TEF_CD: string | null
+      IDUser: number | null
+      IDEmpresa: number | null
+      Processado: string | null
+      ID_Lcto: number | null
+      RegExcluido: string | null
+    }, ExtArgs["result"]["tb_vendas_pre_comandas_pre_pagamentos"]>
+    composites: {}
+  }
+
+  type tb_vendas_pre_comandas_pre_pagamentosGetPayload<S extends boolean | null | undefined | tb_vendas_pre_comandas_pre_pagamentosDefaultArgs> = $Result.GetResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload, S>
+
+  type tb_vendas_pre_comandas_pre_pagamentosCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<tb_vendas_pre_comandas_pre_pagamentosFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Tb_vendas_pre_comandas_pre_pagamentosCountAggregateInputType | true
+    }
+
+  export interface tb_vendas_pre_comandas_pre_pagamentosDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tb_vendas_pre_comandas_pre_pagamentos'], meta: { name: 'tb_vendas_pre_comandas_pre_pagamentos' } }
+    /**
+     * Find zero or one Tb_vendas_pre_comandas_pre_pagamentos that matches the filter.
+     * @param {tb_vendas_pre_comandas_pre_pagamentosFindUniqueArgs} args - Arguments to find a Tb_vendas_pre_comandas_pre_pagamentos
+     * @example
+     * // Get one Tb_vendas_pre_comandas_pre_pagamentos
+     * const tb_vendas_pre_comandas_pre_pagamentos = await prisma.tb_vendas_pre_comandas_pre_pagamentos.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tb_vendas_pre_comandas_pre_pagamentosFindUniqueArgs>(args: SelectSubset<T, tb_vendas_pre_comandas_pre_pagamentosFindUniqueArgs<ExtArgs>>): Prisma__tb_vendas_pre_comandas_pre_pagamentosClient<$Result.GetResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Tb_vendas_pre_comandas_pre_pagamentos that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {tb_vendas_pre_comandas_pre_pagamentosFindUniqueOrThrowArgs} args - Arguments to find a Tb_vendas_pre_comandas_pre_pagamentos
+     * @example
+     * // Get one Tb_vendas_pre_comandas_pre_pagamentos
+     * const tb_vendas_pre_comandas_pre_pagamentos = await prisma.tb_vendas_pre_comandas_pre_pagamentos.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tb_vendas_pre_comandas_pre_pagamentosFindUniqueOrThrowArgs>(args: SelectSubset<T, tb_vendas_pre_comandas_pre_pagamentosFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tb_vendas_pre_comandas_pre_pagamentosClient<$Result.GetResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Tb_vendas_pre_comandas_pre_pagamentos that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_pre_comandas_pre_pagamentosFindFirstArgs} args - Arguments to find a Tb_vendas_pre_comandas_pre_pagamentos
+     * @example
+     * // Get one Tb_vendas_pre_comandas_pre_pagamentos
+     * const tb_vendas_pre_comandas_pre_pagamentos = await prisma.tb_vendas_pre_comandas_pre_pagamentos.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tb_vendas_pre_comandas_pre_pagamentosFindFirstArgs>(args?: SelectSubset<T, tb_vendas_pre_comandas_pre_pagamentosFindFirstArgs<ExtArgs>>): Prisma__tb_vendas_pre_comandas_pre_pagamentosClient<$Result.GetResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Tb_vendas_pre_comandas_pre_pagamentos that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_pre_comandas_pre_pagamentosFindFirstOrThrowArgs} args - Arguments to find a Tb_vendas_pre_comandas_pre_pagamentos
+     * @example
+     * // Get one Tb_vendas_pre_comandas_pre_pagamentos
+     * const tb_vendas_pre_comandas_pre_pagamentos = await prisma.tb_vendas_pre_comandas_pre_pagamentos.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tb_vendas_pre_comandas_pre_pagamentosFindFirstOrThrowArgs>(args?: SelectSubset<T, tb_vendas_pre_comandas_pre_pagamentosFindFirstOrThrowArgs<ExtArgs>>): Prisma__tb_vendas_pre_comandas_pre_pagamentosClient<$Result.GetResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Tb_vendas_pre_comandas_pre_pagamentos that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_pre_comandas_pre_pagamentosFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tb_vendas_pre_comandas_pre_pagamentos
+     * const tb_vendas_pre_comandas_pre_pagamentos = await prisma.tb_vendas_pre_comandas_pre_pagamentos.findMany()
+     * 
+     * // Get first 10 Tb_vendas_pre_comandas_pre_pagamentos
+     * const tb_vendas_pre_comandas_pre_pagamentos = await prisma.tb_vendas_pre_comandas_pre_pagamentos.findMany({ take: 10 })
+     * 
+     * // Only select the `Codigo`
+     * const tb_vendas_pre_comandas_pre_pagamentosWithCodigoOnly = await prisma.tb_vendas_pre_comandas_pre_pagamentos.findMany({ select: { Codigo: true } })
+     * 
+     */
+    findMany<T extends tb_vendas_pre_comandas_pre_pagamentosFindManyArgs>(args?: SelectSubset<T, tb_vendas_pre_comandas_pre_pagamentosFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Tb_vendas_pre_comandas_pre_pagamentos.
+     * @param {tb_vendas_pre_comandas_pre_pagamentosCreateArgs} args - Arguments to create a Tb_vendas_pre_comandas_pre_pagamentos.
+     * @example
+     * // Create one Tb_vendas_pre_comandas_pre_pagamentos
+     * const Tb_vendas_pre_comandas_pre_pagamentos = await prisma.tb_vendas_pre_comandas_pre_pagamentos.create({
+     *   data: {
+     *     // ... data to create a Tb_vendas_pre_comandas_pre_pagamentos
+     *   }
+     * })
+     * 
+     */
+    create<T extends tb_vendas_pre_comandas_pre_pagamentosCreateArgs>(args: SelectSubset<T, tb_vendas_pre_comandas_pre_pagamentosCreateArgs<ExtArgs>>): Prisma__tb_vendas_pre_comandas_pre_pagamentosClient<$Result.GetResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Tb_vendas_pre_comandas_pre_pagamentos.
+     * @param {tb_vendas_pre_comandas_pre_pagamentosCreateManyArgs} args - Arguments to create many Tb_vendas_pre_comandas_pre_pagamentos.
+     * @example
+     * // Create many Tb_vendas_pre_comandas_pre_pagamentos
+     * const tb_vendas_pre_comandas_pre_pagamentos = await prisma.tb_vendas_pre_comandas_pre_pagamentos.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tb_vendas_pre_comandas_pre_pagamentosCreateManyArgs>(args?: SelectSubset<T, tb_vendas_pre_comandas_pre_pagamentosCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Tb_vendas_pre_comandas_pre_pagamentos.
+     * @param {tb_vendas_pre_comandas_pre_pagamentosDeleteArgs} args - Arguments to delete one Tb_vendas_pre_comandas_pre_pagamentos.
+     * @example
+     * // Delete one Tb_vendas_pre_comandas_pre_pagamentos
+     * const Tb_vendas_pre_comandas_pre_pagamentos = await prisma.tb_vendas_pre_comandas_pre_pagamentos.delete({
+     *   where: {
+     *     // ... filter to delete one Tb_vendas_pre_comandas_pre_pagamentos
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tb_vendas_pre_comandas_pre_pagamentosDeleteArgs>(args: SelectSubset<T, tb_vendas_pre_comandas_pre_pagamentosDeleteArgs<ExtArgs>>): Prisma__tb_vendas_pre_comandas_pre_pagamentosClient<$Result.GetResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Tb_vendas_pre_comandas_pre_pagamentos.
+     * @param {tb_vendas_pre_comandas_pre_pagamentosUpdateArgs} args - Arguments to update one Tb_vendas_pre_comandas_pre_pagamentos.
+     * @example
+     * // Update one Tb_vendas_pre_comandas_pre_pagamentos
+     * const tb_vendas_pre_comandas_pre_pagamentos = await prisma.tb_vendas_pre_comandas_pre_pagamentos.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tb_vendas_pre_comandas_pre_pagamentosUpdateArgs>(args: SelectSubset<T, tb_vendas_pre_comandas_pre_pagamentosUpdateArgs<ExtArgs>>): Prisma__tb_vendas_pre_comandas_pre_pagamentosClient<$Result.GetResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Tb_vendas_pre_comandas_pre_pagamentos.
+     * @param {tb_vendas_pre_comandas_pre_pagamentosDeleteManyArgs} args - Arguments to filter Tb_vendas_pre_comandas_pre_pagamentos to delete.
+     * @example
+     * // Delete a few Tb_vendas_pre_comandas_pre_pagamentos
+     * const { count } = await prisma.tb_vendas_pre_comandas_pre_pagamentos.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tb_vendas_pre_comandas_pre_pagamentosDeleteManyArgs>(args?: SelectSubset<T, tb_vendas_pre_comandas_pre_pagamentosDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tb_vendas_pre_comandas_pre_pagamentos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_pre_comandas_pre_pagamentosUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tb_vendas_pre_comandas_pre_pagamentos
+     * const tb_vendas_pre_comandas_pre_pagamentos = await prisma.tb_vendas_pre_comandas_pre_pagamentos.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tb_vendas_pre_comandas_pre_pagamentosUpdateManyArgs>(args: SelectSubset<T, tb_vendas_pre_comandas_pre_pagamentosUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Tb_vendas_pre_comandas_pre_pagamentos.
+     * @param {tb_vendas_pre_comandas_pre_pagamentosUpsertArgs} args - Arguments to update or create a Tb_vendas_pre_comandas_pre_pagamentos.
+     * @example
+     * // Update or create a Tb_vendas_pre_comandas_pre_pagamentos
+     * const tb_vendas_pre_comandas_pre_pagamentos = await prisma.tb_vendas_pre_comandas_pre_pagamentos.upsert({
+     *   create: {
+     *     // ... data to create a Tb_vendas_pre_comandas_pre_pagamentos
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tb_vendas_pre_comandas_pre_pagamentos we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tb_vendas_pre_comandas_pre_pagamentosUpsertArgs>(args: SelectSubset<T, tb_vendas_pre_comandas_pre_pagamentosUpsertArgs<ExtArgs>>): Prisma__tb_vendas_pre_comandas_pre_pagamentosClient<$Result.GetResult<Prisma.$tb_vendas_pre_comandas_pre_pagamentosPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Tb_vendas_pre_comandas_pre_pagamentos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_pre_comandas_pre_pagamentosCountArgs} args - Arguments to filter Tb_vendas_pre_comandas_pre_pagamentos to count.
+     * @example
+     * // Count the number of Tb_vendas_pre_comandas_pre_pagamentos
+     * const count = await prisma.tb_vendas_pre_comandas_pre_pagamentos.count({
+     *   where: {
+     *     // ... the filter for the Tb_vendas_pre_comandas_pre_pagamentos we want to count
+     *   }
+     * })
+    **/
+    count<T extends tb_vendas_pre_comandas_pre_pagamentosCountArgs>(
+      args?: Subset<T, tb_vendas_pre_comandas_pre_pagamentosCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tb_vendas_pre_comandas_pre_pagamentosCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tb_vendas_pre_comandas_pre_pagamentos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tb_vendas_pre_comandas_pre_pagamentosAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tb_vendas_pre_comandas_pre_pagamentosAggregateArgs>(args: Subset<T, Tb_vendas_pre_comandas_pre_pagamentosAggregateArgs>): Prisma.PrismaPromise<GetTb_vendas_pre_comandas_pre_pagamentosAggregateType<T>>
+
+    /**
+     * Group by Tb_vendas_pre_comandas_pre_pagamentos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_pre_comandas_pre_pagamentosGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tb_vendas_pre_comandas_pre_pagamentosGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tb_vendas_pre_comandas_pre_pagamentosGroupByArgs['orderBy'] }
+        : { orderBy?: tb_vendas_pre_comandas_pre_pagamentosGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tb_vendas_pre_comandas_pre_pagamentosGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTb_vendas_pre_comandas_pre_pagamentosGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tb_vendas_pre_comandas_pre_pagamentos model
+   */
+  readonly fields: tb_vendas_pre_comandas_pre_pagamentosFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tb_vendas_pre_comandas_pre_pagamentos.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tb_vendas_pre_comandas_pre_pagamentosClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tb_vendas_pre_comandas_pre_pagamentos model
+   */ 
+  interface tb_vendas_pre_comandas_pre_pagamentosFieldRefs {
+    readonly Codigo: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'Int'>
+    readonly Id_Comanda: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'Int'>
+    readonly Id_Pagamento: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'Int'>
+    readonly Valor: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'Float'>
+    readonly Valor_Recebido: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'Float'>
+    readonly Troco: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'Float'>
+    readonly tPag: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'String'>
+    readonly indPag_Opc: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'String'>
+    readonly xPag_Opc: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'String'>
+    readonly tpIntegra_Opc: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'String'>
+    readonly CNPJ_Opc: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'String'>
+    readonly tBand_Opc: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'String'>
+    readonly cAut_Opc: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'String'>
+    readonly TEF_Ok: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'String'>
+    readonly TEF_Adquirente: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'String'>
+    readonly TEF_CNPJ: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'String'>
+    readonly TEF_Bandeira: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'String'>
+    readonly TEF_CD: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'String'>
+    readonly IDUser: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'Int'>
+    readonly IDEmpresa: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'Int'>
+    readonly Processado: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'String'>
+    readonly ID_Lcto: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'Int'>
+    readonly RegExcluido: FieldRef<"tb_vendas_pre_comandas_pre_pagamentos", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tb_vendas_pre_comandas_pre_pagamentos findUnique
+   */
+  export type tb_vendas_pre_comandas_pre_pagamentosFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_pre_comandas_pre_pagamentos
+     */
+    select?: tb_vendas_pre_comandas_pre_pagamentosSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_pre_comandas_pre_pagamentos to fetch.
+     */
+    where: tb_vendas_pre_comandas_pre_pagamentosWhereUniqueInput
+  }
+
+  /**
+   * tb_vendas_pre_comandas_pre_pagamentos findUniqueOrThrow
+   */
+  export type tb_vendas_pre_comandas_pre_pagamentosFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_pre_comandas_pre_pagamentos
+     */
+    select?: tb_vendas_pre_comandas_pre_pagamentosSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_pre_comandas_pre_pagamentos to fetch.
+     */
+    where: tb_vendas_pre_comandas_pre_pagamentosWhereUniqueInput
+  }
+
+  /**
+   * tb_vendas_pre_comandas_pre_pagamentos findFirst
+   */
+  export type tb_vendas_pre_comandas_pre_pagamentosFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_pre_comandas_pre_pagamentos
+     */
+    select?: tb_vendas_pre_comandas_pre_pagamentosSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_pre_comandas_pre_pagamentos to fetch.
+     */
+    where?: tb_vendas_pre_comandas_pre_pagamentosWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_vendas_pre_comandas_pre_pagamentos to fetch.
+     */
+    orderBy?: tb_vendas_pre_comandas_pre_pagamentosOrderByWithRelationInput | tb_vendas_pre_comandas_pre_pagamentosOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_vendas_pre_comandas_pre_pagamentos.
+     */
+    cursor?: tb_vendas_pre_comandas_pre_pagamentosWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_vendas_pre_comandas_pre_pagamentos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_vendas_pre_comandas_pre_pagamentos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_vendas_pre_comandas_pre_pagamentos.
+     */
+    distinct?: Tb_vendas_pre_comandas_pre_pagamentosScalarFieldEnum | Tb_vendas_pre_comandas_pre_pagamentosScalarFieldEnum[]
+  }
+
+  /**
+   * tb_vendas_pre_comandas_pre_pagamentos findFirstOrThrow
+   */
+  export type tb_vendas_pre_comandas_pre_pagamentosFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_pre_comandas_pre_pagamentos
+     */
+    select?: tb_vendas_pre_comandas_pre_pagamentosSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_pre_comandas_pre_pagamentos to fetch.
+     */
+    where?: tb_vendas_pre_comandas_pre_pagamentosWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_vendas_pre_comandas_pre_pagamentos to fetch.
+     */
+    orderBy?: tb_vendas_pre_comandas_pre_pagamentosOrderByWithRelationInput | tb_vendas_pre_comandas_pre_pagamentosOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_vendas_pre_comandas_pre_pagamentos.
+     */
+    cursor?: tb_vendas_pre_comandas_pre_pagamentosWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_vendas_pre_comandas_pre_pagamentos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_vendas_pre_comandas_pre_pagamentos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_vendas_pre_comandas_pre_pagamentos.
+     */
+    distinct?: Tb_vendas_pre_comandas_pre_pagamentosScalarFieldEnum | Tb_vendas_pre_comandas_pre_pagamentosScalarFieldEnum[]
+  }
+
+  /**
+   * tb_vendas_pre_comandas_pre_pagamentos findMany
+   */
+  export type tb_vendas_pre_comandas_pre_pagamentosFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_pre_comandas_pre_pagamentos
+     */
+    select?: tb_vendas_pre_comandas_pre_pagamentosSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_pre_comandas_pre_pagamentos to fetch.
+     */
+    where?: tb_vendas_pre_comandas_pre_pagamentosWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_vendas_pre_comandas_pre_pagamentos to fetch.
+     */
+    orderBy?: tb_vendas_pre_comandas_pre_pagamentosOrderByWithRelationInput | tb_vendas_pre_comandas_pre_pagamentosOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tb_vendas_pre_comandas_pre_pagamentos.
+     */
+    cursor?: tb_vendas_pre_comandas_pre_pagamentosWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_vendas_pre_comandas_pre_pagamentos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_vendas_pre_comandas_pre_pagamentos.
+     */
+    skip?: number
+    distinct?: Tb_vendas_pre_comandas_pre_pagamentosScalarFieldEnum | Tb_vendas_pre_comandas_pre_pagamentosScalarFieldEnum[]
+  }
+
+  /**
+   * tb_vendas_pre_comandas_pre_pagamentos create
+   */
+  export type tb_vendas_pre_comandas_pre_pagamentosCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_pre_comandas_pre_pagamentos
+     */
+    select?: tb_vendas_pre_comandas_pre_pagamentosSelect<ExtArgs> | null
+    /**
+     * The data needed to create a tb_vendas_pre_comandas_pre_pagamentos.
+     */
+    data: XOR<tb_vendas_pre_comandas_pre_pagamentosCreateInput, tb_vendas_pre_comandas_pre_pagamentosUncheckedCreateInput>
+  }
+
+  /**
+   * tb_vendas_pre_comandas_pre_pagamentos createMany
+   */
+  export type tb_vendas_pre_comandas_pre_pagamentosCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tb_vendas_pre_comandas_pre_pagamentos.
+     */
+    data: tb_vendas_pre_comandas_pre_pagamentosCreateManyInput | tb_vendas_pre_comandas_pre_pagamentosCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tb_vendas_pre_comandas_pre_pagamentos update
+   */
+  export type tb_vendas_pre_comandas_pre_pagamentosUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_pre_comandas_pre_pagamentos
+     */
+    select?: tb_vendas_pre_comandas_pre_pagamentosSelect<ExtArgs> | null
+    /**
+     * The data needed to update a tb_vendas_pre_comandas_pre_pagamentos.
+     */
+    data: XOR<tb_vendas_pre_comandas_pre_pagamentosUpdateInput, tb_vendas_pre_comandas_pre_pagamentosUncheckedUpdateInput>
+    /**
+     * Choose, which tb_vendas_pre_comandas_pre_pagamentos to update.
+     */
+    where: tb_vendas_pre_comandas_pre_pagamentosWhereUniqueInput
+  }
+
+  /**
+   * tb_vendas_pre_comandas_pre_pagamentos updateMany
+   */
+  export type tb_vendas_pre_comandas_pre_pagamentosUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tb_vendas_pre_comandas_pre_pagamentos.
+     */
+    data: XOR<tb_vendas_pre_comandas_pre_pagamentosUpdateManyMutationInput, tb_vendas_pre_comandas_pre_pagamentosUncheckedUpdateManyInput>
+    /**
+     * Filter which tb_vendas_pre_comandas_pre_pagamentos to update
+     */
+    where?: tb_vendas_pre_comandas_pre_pagamentosWhereInput
+  }
+
+  /**
+   * tb_vendas_pre_comandas_pre_pagamentos upsert
+   */
+  export type tb_vendas_pre_comandas_pre_pagamentosUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_pre_comandas_pre_pagamentos
+     */
+    select?: tb_vendas_pre_comandas_pre_pagamentosSelect<ExtArgs> | null
+    /**
+     * The filter to search for the tb_vendas_pre_comandas_pre_pagamentos to update in case it exists.
+     */
+    where: tb_vendas_pre_comandas_pre_pagamentosWhereUniqueInput
+    /**
+     * In case the tb_vendas_pre_comandas_pre_pagamentos found by the `where` argument doesn't exist, create a new tb_vendas_pre_comandas_pre_pagamentos with this data.
+     */
+    create: XOR<tb_vendas_pre_comandas_pre_pagamentosCreateInput, tb_vendas_pre_comandas_pre_pagamentosUncheckedCreateInput>
+    /**
+     * In case the tb_vendas_pre_comandas_pre_pagamentos was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tb_vendas_pre_comandas_pre_pagamentosUpdateInput, tb_vendas_pre_comandas_pre_pagamentosUncheckedUpdateInput>
+  }
+
+  /**
+   * tb_vendas_pre_comandas_pre_pagamentos delete
+   */
+  export type tb_vendas_pre_comandas_pre_pagamentosDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_pre_comandas_pre_pagamentos
+     */
+    select?: tb_vendas_pre_comandas_pre_pagamentosSelect<ExtArgs> | null
+    /**
+     * Filter which tb_vendas_pre_comandas_pre_pagamentos to delete.
+     */
+    where: tb_vendas_pre_comandas_pre_pagamentosWhereUniqueInput
+  }
+
+  /**
+   * tb_vendas_pre_comandas_pre_pagamentos deleteMany
+   */
+  export type tb_vendas_pre_comandas_pre_pagamentosDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_vendas_pre_comandas_pre_pagamentos to delete
+     */
+    where?: tb_vendas_pre_comandas_pre_pagamentosWhereInput
+  }
+
+  /**
+   * tb_vendas_pre_comandas_pre_pagamentos without action
+   */
+  export type tb_vendas_pre_comandas_pre_pagamentosDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_pre_comandas_pre_pagamentos
+     */
+    select?: tb_vendas_pre_comandas_pre_pagamentosSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tb_vendas_produtos_lotes_avulso
+   */
+
+  export type AggregateTb_vendas_produtos_lotes_avulso = {
+    _count: Tb_vendas_produtos_lotes_avulsoCountAggregateOutputType | null
+    _avg: Tb_vendas_produtos_lotes_avulsoAvgAggregateOutputType | null
+    _sum: Tb_vendas_produtos_lotes_avulsoSumAggregateOutputType | null
+    _min: Tb_vendas_produtos_lotes_avulsoMinAggregateOutputType | null
+    _max: Tb_vendas_produtos_lotes_avulsoMaxAggregateOutputType | null
+  }
+
+  export type Tb_vendas_produtos_lotes_avulsoAvgAggregateOutputType = {
+    Codigo: number | null
+    Id_Lcto: number | null
+    Quantidade: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+  }
+
+  export type Tb_vendas_produtos_lotes_avulsoSumAggregateOutputType = {
+    Codigo: number | null
+    Id_Lcto: number | null
+    Quantidade: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+  }
+
+  export type Tb_vendas_produtos_lotes_avulsoMinAggregateOutputType = {
+    Codigo: number | null
+    Id_Lcto: number | null
+    nLote: string | null
+    dFab: Date | null
+    dVenc: Date | null
+    Quantidade: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    DHU: string | null
+    RegExcluido: string | null
+  }
+
+  export type Tb_vendas_produtos_lotes_avulsoMaxAggregateOutputType = {
+    Codigo: number | null
+    Id_Lcto: number | null
+    nLote: string | null
+    dFab: Date | null
+    dVenc: Date | null
+    Quantidade: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    DHU: string | null
+    RegExcluido: string | null
+  }
+
+  export type Tb_vendas_produtos_lotes_avulsoCountAggregateOutputType = {
+    Codigo: number
+    Id_Lcto: number
+    nLote: number
+    dFab: number
+    dVenc: number
+    Quantidade: number
+    IDUser: number
+    IDEmpresa: number
+    DHU: number
+    RegExcluido: number
+    _all: number
+  }
+
+
+  export type Tb_vendas_produtos_lotes_avulsoAvgAggregateInputType = {
+    Codigo?: true
+    Id_Lcto?: true
+    Quantidade?: true
+    IDUser?: true
+    IDEmpresa?: true
+  }
+
+  export type Tb_vendas_produtos_lotes_avulsoSumAggregateInputType = {
+    Codigo?: true
+    Id_Lcto?: true
+    Quantidade?: true
+    IDUser?: true
+    IDEmpresa?: true
+  }
+
+  export type Tb_vendas_produtos_lotes_avulsoMinAggregateInputType = {
+    Codigo?: true
+    Id_Lcto?: true
+    nLote?: true
+    dFab?: true
+    dVenc?: true
+    Quantidade?: true
+    IDUser?: true
+    IDEmpresa?: true
+    DHU?: true
+    RegExcluido?: true
+  }
+
+  export type Tb_vendas_produtos_lotes_avulsoMaxAggregateInputType = {
+    Codigo?: true
+    Id_Lcto?: true
+    nLote?: true
+    dFab?: true
+    dVenc?: true
+    Quantidade?: true
+    IDUser?: true
+    IDEmpresa?: true
+    DHU?: true
+    RegExcluido?: true
+  }
+
+  export type Tb_vendas_produtos_lotes_avulsoCountAggregateInputType = {
+    Codigo?: true
+    Id_Lcto?: true
+    nLote?: true
+    dFab?: true
+    dVenc?: true
+    Quantidade?: true
+    IDUser?: true
+    IDEmpresa?: true
+    DHU?: true
+    RegExcluido?: true
+    _all?: true
+  }
+
+  export type Tb_vendas_produtos_lotes_avulsoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_vendas_produtos_lotes_avulso to aggregate.
+     */
+    where?: tb_vendas_produtos_lotes_avulsoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_vendas_produtos_lotes_avulsos to fetch.
+     */
+    orderBy?: tb_vendas_produtos_lotes_avulsoOrderByWithRelationInput | tb_vendas_produtos_lotes_avulsoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tb_vendas_produtos_lotes_avulsoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_vendas_produtos_lotes_avulsos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_vendas_produtos_lotes_avulsos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tb_vendas_produtos_lotes_avulsos
+    **/
+    _count?: true | Tb_vendas_produtos_lotes_avulsoCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tb_vendas_produtos_lotes_avulsoAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tb_vendas_produtos_lotes_avulsoSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tb_vendas_produtos_lotes_avulsoMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tb_vendas_produtos_lotes_avulsoMaxAggregateInputType
+  }
+
+  export type GetTb_vendas_produtos_lotes_avulsoAggregateType<T extends Tb_vendas_produtos_lotes_avulsoAggregateArgs> = {
+        [P in keyof T & keyof AggregateTb_vendas_produtos_lotes_avulso]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTb_vendas_produtos_lotes_avulso[P]>
+      : GetScalarType<T[P], AggregateTb_vendas_produtos_lotes_avulso[P]>
+  }
+
+
+
+
+  export type tb_vendas_produtos_lotes_avulsoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tb_vendas_produtos_lotes_avulsoWhereInput
+    orderBy?: tb_vendas_produtos_lotes_avulsoOrderByWithAggregationInput | tb_vendas_produtos_lotes_avulsoOrderByWithAggregationInput[]
+    by: Tb_vendas_produtos_lotes_avulsoScalarFieldEnum[] | Tb_vendas_produtos_lotes_avulsoScalarFieldEnum
+    having?: tb_vendas_produtos_lotes_avulsoScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tb_vendas_produtos_lotes_avulsoCountAggregateInputType | true
+    _avg?: Tb_vendas_produtos_lotes_avulsoAvgAggregateInputType
+    _sum?: Tb_vendas_produtos_lotes_avulsoSumAggregateInputType
+    _min?: Tb_vendas_produtos_lotes_avulsoMinAggregateInputType
+    _max?: Tb_vendas_produtos_lotes_avulsoMaxAggregateInputType
+  }
+
+  export type Tb_vendas_produtos_lotes_avulsoGroupByOutputType = {
+    Codigo: number
+    Id_Lcto: number | null
+    nLote: string | null
+    dFab: Date | null
+    dVenc: Date | null
+    Quantidade: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    DHU: string | null
+    RegExcluido: string | null
+    _count: Tb_vendas_produtos_lotes_avulsoCountAggregateOutputType | null
+    _avg: Tb_vendas_produtos_lotes_avulsoAvgAggregateOutputType | null
+    _sum: Tb_vendas_produtos_lotes_avulsoSumAggregateOutputType | null
+    _min: Tb_vendas_produtos_lotes_avulsoMinAggregateOutputType | null
+    _max: Tb_vendas_produtos_lotes_avulsoMaxAggregateOutputType | null
+  }
+
+  type GetTb_vendas_produtos_lotes_avulsoGroupByPayload<T extends tb_vendas_produtos_lotes_avulsoGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tb_vendas_produtos_lotes_avulsoGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tb_vendas_produtos_lotes_avulsoGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tb_vendas_produtos_lotes_avulsoGroupByOutputType[P]>
+            : GetScalarType<T[P], Tb_vendas_produtos_lotes_avulsoGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tb_vendas_produtos_lotes_avulsoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Codigo?: boolean
+    Id_Lcto?: boolean
+    nLote?: boolean
+    dFab?: boolean
+    dVenc?: boolean
+    Quantidade?: boolean
+    IDUser?: boolean
+    IDEmpresa?: boolean
+    DHU?: boolean
+    RegExcluido?: boolean
+  }, ExtArgs["result"]["tb_vendas_produtos_lotes_avulso"]>
+
+
+  export type tb_vendas_produtos_lotes_avulsoSelectScalar = {
+    Codigo?: boolean
+    Id_Lcto?: boolean
+    nLote?: boolean
+    dFab?: boolean
+    dVenc?: boolean
+    Quantidade?: boolean
+    IDUser?: boolean
+    IDEmpresa?: boolean
+    DHU?: boolean
+    RegExcluido?: boolean
+  }
+
+
+  export type $tb_vendas_produtos_lotes_avulsoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tb_vendas_produtos_lotes_avulso"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      Codigo: number
+      Id_Lcto: number | null
+      nLote: string | null
+      dFab: Date | null
+      dVenc: Date | null
+      Quantidade: number | null
+      IDUser: number | null
+      IDEmpresa: number | null
+      DHU: string | null
+      RegExcluido: string | null
+    }, ExtArgs["result"]["tb_vendas_produtos_lotes_avulso"]>
+    composites: {}
+  }
+
+  type tb_vendas_produtos_lotes_avulsoGetPayload<S extends boolean | null | undefined | tb_vendas_produtos_lotes_avulsoDefaultArgs> = $Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload, S>
+
+  type tb_vendas_produtos_lotes_avulsoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<tb_vendas_produtos_lotes_avulsoFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Tb_vendas_produtos_lotes_avulsoCountAggregateInputType | true
+    }
+
+  export interface tb_vendas_produtos_lotes_avulsoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tb_vendas_produtos_lotes_avulso'], meta: { name: 'tb_vendas_produtos_lotes_avulso' } }
+    /**
+     * Find zero or one Tb_vendas_produtos_lotes_avulso that matches the filter.
+     * @param {tb_vendas_produtos_lotes_avulsoFindUniqueArgs} args - Arguments to find a Tb_vendas_produtos_lotes_avulso
+     * @example
+     * // Get one Tb_vendas_produtos_lotes_avulso
+     * const tb_vendas_produtos_lotes_avulso = await prisma.tb_vendas_produtos_lotes_avulso.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tb_vendas_produtos_lotes_avulsoFindUniqueArgs>(args: SelectSubset<T, tb_vendas_produtos_lotes_avulsoFindUniqueArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulsoClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Tb_vendas_produtos_lotes_avulso that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {tb_vendas_produtos_lotes_avulsoFindUniqueOrThrowArgs} args - Arguments to find a Tb_vendas_produtos_lotes_avulso
+     * @example
+     * // Get one Tb_vendas_produtos_lotes_avulso
+     * const tb_vendas_produtos_lotes_avulso = await prisma.tb_vendas_produtos_lotes_avulso.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tb_vendas_produtos_lotes_avulsoFindUniqueOrThrowArgs>(args: SelectSubset<T, tb_vendas_produtos_lotes_avulsoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulsoClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Tb_vendas_produtos_lotes_avulso that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_produtos_lotes_avulsoFindFirstArgs} args - Arguments to find a Tb_vendas_produtos_lotes_avulso
+     * @example
+     * // Get one Tb_vendas_produtos_lotes_avulso
+     * const tb_vendas_produtos_lotes_avulso = await prisma.tb_vendas_produtos_lotes_avulso.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tb_vendas_produtos_lotes_avulsoFindFirstArgs>(args?: SelectSubset<T, tb_vendas_produtos_lotes_avulsoFindFirstArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulsoClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Tb_vendas_produtos_lotes_avulso that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_produtos_lotes_avulsoFindFirstOrThrowArgs} args - Arguments to find a Tb_vendas_produtos_lotes_avulso
+     * @example
+     * // Get one Tb_vendas_produtos_lotes_avulso
+     * const tb_vendas_produtos_lotes_avulso = await prisma.tb_vendas_produtos_lotes_avulso.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tb_vendas_produtos_lotes_avulsoFindFirstOrThrowArgs>(args?: SelectSubset<T, tb_vendas_produtos_lotes_avulsoFindFirstOrThrowArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulsoClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Tb_vendas_produtos_lotes_avulsos that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_produtos_lotes_avulsoFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tb_vendas_produtos_lotes_avulsos
+     * const tb_vendas_produtos_lotes_avulsos = await prisma.tb_vendas_produtos_lotes_avulso.findMany()
+     * 
+     * // Get first 10 Tb_vendas_produtos_lotes_avulsos
+     * const tb_vendas_produtos_lotes_avulsos = await prisma.tb_vendas_produtos_lotes_avulso.findMany({ take: 10 })
+     * 
+     * // Only select the `Codigo`
+     * const tb_vendas_produtos_lotes_avulsoWithCodigoOnly = await prisma.tb_vendas_produtos_lotes_avulso.findMany({ select: { Codigo: true } })
+     * 
+     */
+    findMany<T extends tb_vendas_produtos_lotes_avulsoFindManyArgs>(args?: SelectSubset<T, tb_vendas_produtos_lotes_avulsoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Tb_vendas_produtos_lotes_avulso.
+     * @param {tb_vendas_produtos_lotes_avulsoCreateArgs} args - Arguments to create a Tb_vendas_produtos_lotes_avulso.
+     * @example
+     * // Create one Tb_vendas_produtos_lotes_avulso
+     * const Tb_vendas_produtos_lotes_avulso = await prisma.tb_vendas_produtos_lotes_avulso.create({
+     *   data: {
+     *     // ... data to create a Tb_vendas_produtos_lotes_avulso
+     *   }
+     * })
+     * 
+     */
+    create<T extends tb_vendas_produtos_lotes_avulsoCreateArgs>(args: SelectSubset<T, tb_vendas_produtos_lotes_avulsoCreateArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulsoClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Tb_vendas_produtos_lotes_avulsos.
+     * @param {tb_vendas_produtos_lotes_avulsoCreateManyArgs} args - Arguments to create many Tb_vendas_produtos_lotes_avulsos.
+     * @example
+     * // Create many Tb_vendas_produtos_lotes_avulsos
+     * const tb_vendas_produtos_lotes_avulso = await prisma.tb_vendas_produtos_lotes_avulso.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tb_vendas_produtos_lotes_avulsoCreateManyArgs>(args?: SelectSubset<T, tb_vendas_produtos_lotes_avulsoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Tb_vendas_produtos_lotes_avulso.
+     * @param {tb_vendas_produtos_lotes_avulsoDeleteArgs} args - Arguments to delete one Tb_vendas_produtos_lotes_avulso.
+     * @example
+     * // Delete one Tb_vendas_produtos_lotes_avulso
+     * const Tb_vendas_produtos_lotes_avulso = await prisma.tb_vendas_produtos_lotes_avulso.delete({
+     *   where: {
+     *     // ... filter to delete one Tb_vendas_produtos_lotes_avulso
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tb_vendas_produtos_lotes_avulsoDeleteArgs>(args: SelectSubset<T, tb_vendas_produtos_lotes_avulsoDeleteArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulsoClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Tb_vendas_produtos_lotes_avulso.
+     * @param {tb_vendas_produtos_lotes_avulsoUpdateArgs} args - Arguments to update one Tb_vendas_produtos_lotes_avulso.
+     * @example
+     * // Update one Tb_vendas_produtos_lotes_avulso
+     * const tb_vendas_produtos_lotes_avulso = await prisma.tb_vendas_produtos_lotes_avulso.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tb_vendas_produtos_lotes_avulsoUpdateArgs>(args: SelectSubset<T, tb_vendas_produtos_lotes_avulsoUpdateArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulsoClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Tb_vendas_produtos_lotes_avulsos.
+     * @param {tb_vendas_produtos_lotes_avulsoDeleteManyArgs} args - Arguments to filter Tb_vendas_produtos_lotes_avulsos to delete.
+     * @example
+     * // Delete a few Tb_vendas_produtos_lotes_avulsos
+     * const { count } = await prisma.tb_vendas_produtos_lotes_avulso.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tb_vendas_produtos_lotes_avulsoDeleteManyArgs>(args?: SelectSubset<T, tb_vendas_produtos_lotes_avulsoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tb_vendas_produtos_lotes_avulsos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_produtos_lotes_avulsoUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tb_vendas_produtos_lotes_avulsos
+     * const tb_vendas_produtos_lotes_avulso = await prisma.tb_vendas_produtos_lotes_avulso.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tb_vendas_produtos_lotes_avulsoUpdateManyArgs>(args: SelectSubset<T, tb_vendas_produtos_lotes_avulsoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Tb_vendas_produtos_lotes_avulso.
+     * @param {tb_vendas_produtos_lotes_avulsoUpsertArgs} args - Arguments to update or create a Tb_vendas_produtos_lotes_avulso.
+     * @example
+     * // Update or create a Tb_vendas_produtos_lotes_avulso
+     * const tb_vendas_produtos_lotes_avulso = await prisma.tb_vendas_produtos_lotes_avulso.upsert({
+     *   create: {
+     *     // ... data to create a Tb_vendas_produtos_lotes_avulso
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tb_vendas_produtos_lotes_avulso we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tb_vendas_produtos_lotes_avulsoUpsertArgs>(args: SelectSubset<T, tb_vendas_produtos_lotes_avulsoUpsertArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulsoClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulsoPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Tb_vendas_produtos_lotes_avulsos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_produtos_lotes_avulsoCountArgs} args - Arguments to filter Tb_vendas_produtos_lotes_avulsos to count.
+     * @example
+     * // Count the number of Tb_vendas_produtos_lotes_avulsos
+     * const count = await prisma.tb_vendas_produtos_lotes_avulso.count({
+     *   where: {
+     *     // ... the filter for the Tb_vendas_produtos_lotes_avulsos we want to count
+     *   }
+     * })
+    **/
+    count<T extends tb_vendas_produtos_lotes_avulsoCountArgs>(
+      args?: Subset<T, tb_vendas_produtos_lotes_avulsoCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tb_vendas_produtos_lotes_avulsoCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tb_vendas_produtos_lotes_avulso.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tb_vendas_produtos_lotes_avulsoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tb_vendas_produtos_lotes_avulsoAggregateArgs>(args: Subset<T, Tb_vendas_produtos_lotes_avulsoAggregateArgs>): Prisma.PrismaPromise<GetTb_vendas_produtos_lotes_avulsoAggregateType<T>>
+
+    /**
+     * Group by Tb_vendas_produtos_lotes_avulso.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_produtos_lotes_avulsoGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tb_vendas_produtos_lotes_avulsoGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tb_vendas_produtos_lotes_avulsoGroupByArgs['orderBy'] }
+        : { orderBy?: tb_vendas_produtos_lotes_avulsoGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tb_vendas_produtos_lotes_avulsoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTb_vendas_produtos_lotes_avulsoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tb_vendas_produtos_lotes_avulso model
+   */
+  readonly fields: tb_vendas_produtos_lotes_avulsoFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tb_vendas_produtos_lotes_avulso.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tb_vendas_produtos_lotes_avulsoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tb_vendas_produtos_lotes_avulso model
+   */ 
+  interface tb_vendas_produtos_lotes_avulsoFieldRefs {
+    readonly Codigo: FieldRef<"tb_vendas_produtos_lotes_avulso", 'Int'>
+    readonly Id_Lcto: FieldRef<"tb_vendas_produtos_lotes_avulso", 'Int'>
+    readonly nLote: FieldRef<"tb_vendas_produtos_lotes_avulso", 'String'>
+    readonly dFab: FieldRef<"tb_vendas_produtos_lotes_avulso", 'DateTime'>
+    readonly dVenc: FieldRef<"tb_vendas_produtos_lotes_avulso", 'DateTime'>
+    readonly Quantidade: FieldRef<"tb_vendas_produtos_lotes_avulso", 'Float'>
+    readonly IDUser: FieldRef<"tb_vendas_produtos_lotes_avulso", 'Int'>
+    readonly IDEmpresa: FieldRef<"tb_vendas_produtos_lotes_avulso", 'Int'>
+    readonly DHU: FieldRef<"tb_vendas_produtos_lotes_avulso", 'String'>
+    readonly RegExcluido: FieldRef<"tb_vendas_produtos_lotes_avulso", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tb_vendas_produtos_lotes_avulso findUnique
+   */
+  export type tb_vendas_produtos_lotes_avulsoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso
+     */
+    select?: tb_vendas_produtos_lotes_avulsoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_produtos_lotes_avulso to fetch.
+     */
+    where: tb_vendas_produtos_lotes_avulsoWhereUniqueInput
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso findUniqueOrThrow
+   */
+  export type tb_vendas_produtos_lotes_avulsoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso
+     */
+    select?: tb_vendas_produtos_lotes_avulsoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_produtos_lotes_avulso to fetch.
+     */
+    where: tb_vendas_produtos_lotes_avulsoWhereUniqueInput
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso findFirst
+   */
+  export type tb_vendas_produtos_lotes_avulsoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso
+     */
+    select?: tb_vendas_produtos_lotes_avulsoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_produtos_lotes_avulso to fetch.
+     */
+    where?: tb_vendas_produtos_lotes_avulsoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_vendas_produtos_lotes_avulsos to fetch.
+     */
+    orderBy?: tb_vendas_produtos_lotes_avulsoOrderByWithRelationInput | tb_vendas_produtos_lotes_avulsoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_vendas_produtos_lotes_avulsos.
+     */
+    cursor?: tb_vendas_produtos_lotes_avulsoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_vendas_produtos_lotes_avulsos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_vendas_produtos_lotes_avulsos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_vendas_produtos_lotes_avulsos.
+     */
+    distinct?: Tb_vendas_produtos_lotes_avulsoScalarFieldEnum | Tb_vendas_produtos_lotes_avulsoScalarFieldEnum[]
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso findFirstOrThrow
+   */
+  export type tb_vendas_produtos_lotes_avulsoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso
+     */
+    select?: tb_vendas_produtos_lotes_avulsoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_produtos_lotes_avulso to fetch.
+     */
+    where?: tb_vendas_produtos_lotes_avulsoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_vendas_produtos_lotes_avulsos to fetch.
+     */
+    orderBy?: tb_vendas_produtos_lotes_avulsoOrderByWithRelationInput | tb_vendas_produtos_lotes_avulsoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_vendas_produtos_lotes_avulsos.
+     */
+    cursor?: tb_vendas_produtos_lotes_avulsoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_vendas_produtos_lotes_avulsos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_vendas_produtos_lotes_avulsos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_vendas_produtos_lotes_avulsos.
+     */
+    distinct?: Tb_vendas_produtos_lotes_avulsoScalarFieldEnum | Tb_vendas_produtos_lotes_avulsoScalarFieldEnum[]
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso findMany
+   */
+  export type tb_vendas_produtos_lotes_avulsoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso
+     */
+    select?: tb_vendas_produtos_lotes_avulsoSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_produtos_lotes_avulsos to fetch.
+     */
+    where?: tb_vendas_produtos_lotes_avulsoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_vendas_produtos_lotes_avulsos to fetch.
+     */
+    orderBy?: tb_vendas_produtos_lotes_avulsoOrderByWithRelationInput | tb_vendas_produtos_lotes_avulsoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tb_vendas_produtos_lotes_avulsos.
+     */
+    cursor?: tb_vendas_produtos_lotes_avulsoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_vendas_produtos_lotes_avulsos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_vendas_produtos_lotes_avulsos.
+     */
+    skip?: number
+    distinct?: Tb_vendas_produtos_lotes_avulsoScalarFieldEnum | Tb_vendas_produtos_lotes_avulsoScalarFieldEnum[]
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso create
+   */
+  export type tb_vendas_produtos_lotes_avulsoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso
+     */
+    select?: tb_vendas_produtos_lotes_avulsoSelect<ExtArgs> | null
+    /**
+     * The data needed to create a tb_vendas_produtos_lotes_avulso.
+     */
+    data: XOR<tb_vendas_produtos_lotes_avulsoCreateInput, tb_vendas_produtos_lotes_avulsoUncheckedCreateInput>
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso createMany
+   */
+  export type tb_vendas_produtos_lotes_avulsoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tb_vendas_produtos_lotes_avulsos.
+     */
+    data: tb_vendas_produtos_lotes_avulsoCreateManyInput | tb_vendas_produtos_lotes_avulsoCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso update
+   */
+  export type tb_vendas_produtos_lotes_avulsoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso
+     */
+    select?: tb_vendas_produtos_lotes_avulsoSelect<ExtArgs> | null
+    /**
+     * The data needed to update a tb_vendas_produtos_lotes_avulso.
+     */
+    data: XOR<tb_vendas_produtos_lotes_avulsoUpdateInput, tb_vendas_produtos_lotes_avulsoUncheckedUpdateInput>
+    /**
+     * Choose, which tb_vendas_produtos_lotes_avulso to update.
+     */
+    where: tb_vendas_produtos_lotes_avulsoWhereUniqueInput
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso updateMany
+   */
+  export type tb_vendas_produtos_lotes_avulsoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tb_vendas_produtos_lotes_avulsos.
+     */
+    data: XOR<tb_vendas_produtos_lotes_avulsoUpdateManyMutationInput, tb_vendas_produtos_lotes_avulsoUncheckedUpdateManyInput>
+    /**
+     * Filter which tb_vendas_produtos_lotes_avulsos to update
+     */
+    where?: tb_vendas_produtos_lotes_avulsoWhereInput
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso upsert
+   */
+  export type tb_vendas_produtos_lotes_avulsoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso
+     */
+    select?: tb_vendas_produtos_lotes_avulsoSelect<ExtArgs> | null
+    /**
+     * The filter to search for the tb_vendas_produtos_lotes_avulso to update in case it exists.
+     */
+    where: tb_vendas_produtos_lotes_avulsoWhereUniqueInput
+    /**
+     * In case the tb_vendas_produtos_lotes_avulso found by the `where` argument doesn't exist, create a new tb_vendas_produtos_lotes_avulso with this data.
+     */
+    create: XOR<tb_vendas_produtos_lotes_avulsoCreateInput, tb_vendas_produtos_lotes_avulsoUncheckedCreateInput>
+    /**
+     * In case the tb_vendas_produtos_lotes_avulso was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tb_vendas_produtos_lotes_avulsoUpdateInput, tb_vendas_produtos_lotes_avulsoUncheckedUpdateInput>
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso delete
+   */
+  export type tb_vendas_produtos_lotes_avulsoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso
+     */
+    select?: tb_vendas_produtos_lotes_avulsoSelect<ExtArgs> | null
+    /**
+     * Filter which tb_vendas_produtos_lotes_avulso to delete.
+     */
+    where: tb_vendas_produtos_lotes_avulsoWhereUniqueInput
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso deleteMany
+   */
+  export type tb_vendas_produtos_lotes_avulsoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_vendas_produtos_lotes_avulsos to delete
+     */
+    where?: tb_vendas_produtos_lotes_avulsoWhereInput
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso without action
+   */
+  export type tb_vendas_produtos_lotes_avulsoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso
+     */
+    select?: tb_vendas_produtos_lotes_avulsoSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tb_vendas_produtos_lotes_avulso_pre
+   */
+
+  export type AggregateTb_vendas_produtos_lotes_avulso_pre = {
+    _count: Tb_vendas_produtos_lotes_avulso_preCountAggregateOutputType | null
+    _avg: Tb_vendas_produtos_lotes_avulso_preAvgAggregateOutputType | null
+    _sum: Tb_vendas_produtos_lotes_avulso_preSumAggregateOutputType | null
+    _min: Tb_vendas_produtos_lotes_avulso_preMinAggregateOutputType | null
+    _max: Tb_vendas_produtos_lotes_avulso_preMaxAggregateOutputType | null
+  }
+
+  export type Tb_vendas_produtos_lotes_avulso_preAvgAggregateOutputType = {
+    Codigo: number | null
+    Id_Lcto: number | null
+    Quantidade: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    Id_Lcto_Venda: number | null
+  }
+
+  export type Tb_vendas_produtos_lotes_avulso_preSumAggregateOutputType = {
+    Codigo: number | null
+    Id_Lcto: number | null
+    Quantidade: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    Id_Lcto_Venda: number | null
+  }
+
+  export type Tb_vendas_produtos_lotes_avulso_preMinAggregateOutputType = {
+    Codigo: number | null
+    Id_Lcto: number | null
+    nLote: string | null
+    dFab: Date | null
+    dVenc: Date | null
+    Quantidade: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    DHU: string | null
+    RegExcluido: string | null
+    Id_Lcto_Venda: number | null
+  }
+
+  export type Tb_vendas_produtos_lotes_avulso_preMaxAggregateOutputType = {
+    Codigo: number | null
+    Id_Lcto: number | null
+    nLote: string | null
+    dFab: Date | null
+    dVenc: Date | null
+    Quantidade: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    DHU: string | null
+    RegExcluido: string | null
+    Id_Lcto_Venda: number | null
+  }
+
+  export type Tb_vendas_produtos_lotes_avulso_preCountAggregateOutputType = {
+    Codigo: number
+    Id_Lcto: number
+    nLote: number
+    dFab: number
+    dVenc: number
+    Quantidade: number
+    IDUser: number
+    IDEmpresa: number
+    DHU: number
+    RegExcluido: number
+    Id_Lcto_Venda: number
+    _all: number
+  }
+
+
+  export type Tb_vendas_produtos_lotes_avulso_preAvgAggregateInputType = {
+    Codigo?: true
+    Id_Lcto?: true
+    Quantidade?: true
+    IDUser?: true
+    IDEmpresa?: true
+    Id_Lcto_Venda?: true
+  }
+
+  export type Tb_vendas_produtos_lotes_avulso_preSumAggregateInputType = {
+    Codigo?: true
+    Id_Lcto?: true
+    Quantidade?: true
+    IDUser?: true
+    IDEmpresa?: true
+    Id_Lcto_Venda?: true
+  }
+
+  export type Tb_vendas_produtos_lotes_avulso_preMinAggregateInputType = {
+    Codigo?: true
+    Id_Lcto?: true
+    nLote?: true
+    dFab?: true
+    dVenc?: true
+    Quantidade?: true
+    IDUser?: true
+    IDEmpresa?: true
+    DHU?: true
+    RegExcluido?: true
+    Id_Lcto_Venda?: true
+  }
+
+  export type Tb_vendas_produtos_lotes_avulso_preMaxAggregateInputType = {
+    Codigo?: true
+    Id_Lcto?: true
+    nLote?: true
+    dFab?: true
+    dVenc?: true
+    Quantidade?: true
+    IDUser?: true
+    IDEmpresa?: true
+    DHU?: true
+    RegExcluido?: true
+    Id_Lcto_Venda?: true
+  }
+
+  export type Tb_vendas_produtos_lotes_avulso_preCountAggregateInputType = {
+    Codigo?: true
+    Id_Lcto?: true
+    nLote?: true
+    dFab?: true
+    dVenc?: true
+    Quantidade?: true
+    IDUser?: true
+    IDEmpresa?: true
+    DHU?: true
+    RegExcluido?: true
+    Id_Lcto_Venda?: true
+    _all?: true
+  }
+
+  export type Tb_vendas_produtos_lotes_avulso_preAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_vendas_produtos_lotes_avulso_pre to aggregate.
+     */
+    where?: tb_vendas_produtos_lotes_avulso_preWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_vendas_produtos_lotes_avulso_pres to fetch.
+     */
+    orderBy?: tb_vendas_produtos_lotes_avulso_preOrderByWithRelationInput | tb_vendas_produtos_lotes_avulso_preOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tb_vendas_produtos_lotes_avulso_preWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_vendas_produtos_lotes_avulso_pres from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_vendas_produtos_lotes_avulso_pres.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tb_vendas_produtos_lotes_avulso_pres
+    **/
+    _count?: true | Tb_vendas_produtos_lotes_avulso_preCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tb_vendas_produtos_lotes_avulso_preAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tb_vendas_produtos_lotes_avulso_preSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tb_vendas_produtos_lotes_avulso_preMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tb_vendas_produtos_lotes_avulso_preMaxAggregateInputType
+  }
+
+  export type GetTb_vendas_produtos_lotes_avulso_preAggregateType<T extends Tb_vendas_produtos_lotes_avulso_preAggregateArgs> = {
+        [P in keyof T & keyof AggregateTb_vendas_produtos_lotes_avulso_pre]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTb_vendas_produtos_lotes_avulso_pre[P]>
+      : GetScalarType<T[P], AggregateTb_vendas_produtos_lotes_avulso_pre[P]>
+  }
+
+
+
+
+  export type tb_vendas_produtos_lotes_avulso_preGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tb_vendas_produtos_lotes_avulso_preWhereInput
+    orderBy?: tb_vendas_produtos_lotes_avulso_preOrderByWithAggregationInput | tb_vendas_produtos_lotes_avulso_preOrderByWithAggregationInput[]
+    by: Tb_vendas_produtos_lotes_avulso_preScalarFieldEnum[] | Tb_vendas_produtos_lotes_avulso_preScalarFieldEnum
+    having?: tb_vendas_produtos_lotes_avulso_preScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tb_vendas_produtos_lotes_avulso_preCountAggregateInputType | true
+    _avg?: Tb_vendas_produtos_lotes_avulso_preAvgAggregateInputType
+    _sum?: Tb_vendas_produtos_lotes_avulso_preSumAggregateInputType
+    _min?: Tb_vendas_produtos_lotes_avulso_preMinAggregateInputType
+    _max?: Tb_vendas_produtos_lotes_avulso_preMaxAggregateInputType
+  }
+
+  export type Tb_vendas_produtos_lotes_avulso_preGroupByOutputType = {
+    Codigo: number
+    Id_Lcto: number | null
+    nLote: string | null
+    dFab: Date | null
+    dVenc: Date | null
+    Quantidade: number | null
+    IDUser: number | null
+    IDEmpresa: number | null
+    DHU: string | null
+    RegExcluido: string | null
+    Id_Lcto_Venda: number | null
+    _count: Tb_vendas_produtos_lotes_avulso_preCountAggregateOutputType | null
+    _avg: Tb_vendas_produtos_lotes_avulso_preAvgAggregateOutputType | null
+    _sum: Tb_vendas_produtos_lotes_avulso_preSumAggregateOutputType | null
+    _min: Tb_vendas_produtos_lotes_avulso_preMinAggregateOutputType | null
+    _max: Tb_vendas_produtos_lotes_avulso_preMaxAggregateOutputType | null
+  }
+
+  type GetTb_vendas_produtos_lotes_avulso_preGroupByPayload<T extends tb_vendas_produtos_lotes_avulso_preGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tb_vendas_produtos_lotes_avulso_preGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tb_vendas_produtos_lotes_avulso_preGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tb_vendas_produtos_lotes_avulso_preGroupByOutputType[P]>
+            : GetScalarType<T[P], Tb_vendas_produtos_lotes_avulso_preGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tb_vendas_produtos_lotes_avulso_preSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Codigo?: boolean
+    Id_Lcto?: boolean
+    nLote?: boolean
+    dFab?: boolean
+    dVenc?: boolean
+    Quantidade?: boolean
+    IDUser?: boolean
+    IDEmpresa?: boolean
+    DHU?: boolean
+    RegExcluido?: boolean
+    Id_Lcto_Venda?: boolean
+  }, ExtArgs["result"]["tb_vendas_produtos_lotes_avulso_pre"]>
+
+
+  export type tb_vendas_produtos_lotes_avulso_preSelectScalar = {
+    Codigo?: boolean
+    Id_Lcto?: boolean
+    nLote?: boolean
+    dFab?: boolean
+    dVenc?: boolean
+    Quantidade?: boolean
+    IDUser?: boolean
+    IDEmpresa?: boolean
+    DHU?: boolean
+    RegExcluido?: boolean
+    Id_Lcto_Venda?: boolean
+  }
+
+
+  export type $tb_vendas_produtos_lotes_avulso_prePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tb_vendas_produtos_lotes_avulso_pre"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      Codigo: number
+      Id_Lcto: number | null
+      nLote: string | null
+      dFab: Date | null
+      dVenc: Date | null
+      Quantidade: number | null
+      IDUser: number | null
+      IDEmpresa: number | null
+      DHU: string | null
+      RegExcluido: string | null
+      Id_Lcto_Venda: number | null
+    }, ExtArgs["result"]["tb_vendas_produtos_lotes_avulso_pre"]>
+    composites: {}
+  }
+
+  type tb_vendas_produtos_lotes_avulso_preGetPayload<S extends boolean | null | undefined | tb_vendas_produtos_lotes_avulso_preDefaultArgs> = $Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload, S>
+
+  type tb_vendas_produtos_lotes_avulso_preCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<tb_vendas_produtos_lotes_avulso_preFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Tb_vendas_produtos_lotes_avulso_preCountAggregateInputType | true
+    }
+
+  export interface tb_vendas_produtos_lotes_avulso_preDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tb_vendas_produtos_lotes_avulso_pre'], meta: { name: 'tb_vendas_produtos_lotes_avulso_pre' } }
+    /**
+     * Find zero or one Tb_vendas_produtos_lotes_avulso_pre that matches the filter.
+     * @param {tb_vendas_produtos_lotes_avulso_preFindUniqueArgs} args - Arguments to find a Tb_vendas_produtos_lotes_avulso_pre
+     * @example
+     * // Get one Tb_vendas_produtos_lotes_avulso_pre
+     * const tb_vendas_produtos_lotes_avulso_pre = await prisma.tb_vendas_produtos_lotes_avulso_pre.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tb_vendas_produtos_lotes_avulso_preFindUniqueArgs>(args: SelectSubset<T, tb_vendas_produtos_lotes_avulso_preFindUniqueArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulso_preClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Tb_vendas_produtos_lotes_avulso_pre that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {tb_vendas_produtos_lotes_avulso_preFindUniqueOrThrowArgs} args - Arguments to find a Tb_vendas_produtos_lotes_avulso_pre
+     * @example
+     * // Get one Tb_vendas_produtos_lotes_avulso_pre
+     * const tb_vendas_produtos_lotes_avulso_pre = await prisma.tb_vendas_produtos_lotes_avulso_pre.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tb_vendas_produtos_lotes_avulso_preFindUniqueOrThrowArgs>(args: SelectSubset<T, tb_vendas_produtos_lotes_avulso_preFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulso_preClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Tb_vendas_produtos_lotes_avulso_pre that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_produtos_lotes_avulso_preFindFirstArgs} args - Arguments to find a Tb_vendas_produtos_lotes_avulso_pre
+     * @example
+     * // Get one Tb_vendas_produtos_lotes_avulso_pre
+     * const tb_vendas_produtos_lotes_avulso_pre = await prisma.tb_vendas_produtos_lotes_avulso_pre.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tb_vendas_produtos_lotes_avulso_preFindFirstArgs>(args?: SelectSubset<T, tb_vendas_produtos_lotes_avulso_preFindFirstArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulso_preClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Tb_vendas_produtos_lotes_avulso_pre that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_produtos_lotes_avulso_preFindFirstOrThrowArgs} args - Arguments to find a Tb_vendas_produtos_lotes_avulso_pre
+     * @example
+     * // Get one Tb_vendas_produtos_lotes_avulso_pre
+     * const tb_vendas_produtos_lotes_avulso_pre = await prisma.tb_vendas_produtos_lotes_avulso_pre.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tb_vendas_produtos_lotes_avulso_preFindFirstOrThrowArgs>(args?: SelectSubset<T, tb_vendas_produtos_lotes_avulso_preFindFirstOrThrowArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulso_preClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Tb_vendas_produtos_lotes_avulso_pres that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_produtos_lotes_avulso_preFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tb_vendas_produtos_lotes_avulso_pres
+     * const tb_vendas_produtos_lotes_avulso_pres = await prisma.tb_vendas_produtos_lotes_avulso_pre.findMany()
+     * 
+     * // Get first 10 Tb_vendas_produtos_lotes_avulso_pres
+     * const tb_vendas_produtos_lotes_avulso_pres = await prisma.tb_vendas_produtos_lotes_avulso_pre.findMany({ take: 10 })
+     * 
+     * // Only select the `Codigo`
+     * const tb_vendas_produtos_lotes_avulso_preWithCodigoOnly = await prisma.tb_vendas_produtos_lotes_avulso_pre.findMany({ select: { Codigo: true } })
+     * 
+     */
+    findMany<T extends tb_vendas_produtos_lotes_avulso_preFindManyArgs>(args?: SelectSubset<T, tb_vendas_produtos_lotes_avulso_preFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Tb_vendas_produtos_lotes_avulso_pre.
+     * @param {tb_vendas_produtos_lotes_avulso_preCreateArgs} args - Arguments to create a Tb_vendas_produtos_lotes_avulso_pre.
+     * @example
+     * // Create one Tb_vendas_produtos_lotes_avulso_pre
+     * const Tb_vendas_produtos_lotes_avulso_pre = await prisma.tb_vendas_produtos_lotes_avulso_pre.create({
+     *   data: {
+     *     // ... data to create a Tb_vendas_produtos_lotes_avulso_pre
+     *   }
+     * })
+     * 
+     */
+    create<T extends tb_vendas_produtos_lotes_avulso_preCreateArgs>(args: SelectSubset<T, tb_vendas_produtos_lotes_avulso_preCreateArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulso_preClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Tb_vendas_produtos_lotes_avulso_pres.
+     * @param {tb_vendas_produtos_lotes_avulso_preCreateManyArgs} args - Arguments to create many Tb_vendas_produtos_lotes_avulso_pres.
+     * @example
+     * // Create many Tb_vendas_produtos_lotes_avulso_pres
+     * const tb_vendas_produtos_lotes_avulso_pre = await prisma.tb_vendas_produtos_lotes_avulso_pre.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tb_vendas_produtos_lotes_avulso_preCreateManyArgs>(args?: SelectSubset<T, tb_vendas_produtos_lotes_avulso_preCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Tb_vendas_produtos_lotes_avulso_pre.
+     * @param {tb_vendas_produtos_lotes_avulso_preDeleteArgs} args - Arguments to delete one Tb_vendas_produtos_lotes_avulso_pre.
+     * @example
+     * // Delete one Tb_vendas_produtos_lotes_avulso_pre
+     * const Tb_vendas_produtos_lotes_avulso_pre = await prisma.tb_vendas_produtos_lotes_avulso_pre.delete({
+     *   where: {
+     *     // ... filter to delete one Tb_vendas_produtos_lotes_avulso_pre
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tb_vendas_produtos_lotes_avulso_preDeleteArgs>(args: SelectSubset<T, tb_vendas_produtos_lotes_avulso_preDeleteArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulso_preClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Tb_vendas_produtos_lotes_avulso_pre.
+     * @param {tb_vendas_produtos_lotes_avulso_preUpdateArgs} args - Arguments to update one Tb_vendas_produtos_lotes_avulso_pre.
+     * @example
+     * // Update one Tb_vendas_produtos_lotes_avulso_pre
+     * const tb_vendas_produtos_lotes_avulso_pre = await prisma.tb_vendas_produtos_lotes_avulso_pre.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tb_vendas_produtos_lotes_avulso_preUpdateArgs>(args: SelectSubset<T, tb_vendas_produtos_lotes_avulso_preUpdateArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulso_preClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Tb_vendas_produtos_lotes_avulso_pres.
+     * @param {tb_vendas_produtos_lotes_avulso_preDeleteManyArgs} args - Arguments to filter Tb_vendas_produtos_lotes_avulso_pres to delete.
+     * @example
+     * // Delete a few Tb_vendas_produtos_lotes_avulso_pres
+     * const { count } = await prisma.tb_vendas_produtos_lotes_avulso_pre.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tb_vendas_produtos_lotes_avulso_preDeleteManyArgs>(args?: SelectSubset<T, tb_vendas_produtos_lotes_avulso_preDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tb_vendas_produtos_lotes_avulso_pres.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_produtos_lotes_avulso_preUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tb_vendas_produtos_lotes_avulso_pres
+     * const tb_vendas_produtos_lotes_avulso_pre = await prisma.tb_vendas_produtos_lotes_avulso_pre.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tb_vendas_produtos_lotes_avulso_preUpdateManyArgs>(args: SelectSubset<T, tb_vendas_produtos_lotes_avulso_preUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Tb_vendas_produtos_lotes_avulso_pre.
+     * @param {tb_vendas_produtos_lotes_avulso_preUpsertArgs} args - Arguments to update or create a Tb_vendas_produtos_lotes_avulso_pre.
+     * @example
+     * // Update or create a Tb_vendas_produtos_lotes_avulso_pre
+     * const tb_vendas_produtos_lotes_avulso_pre = await prisma.tb_vendas_produtos_lotes_avulso_pre.upsert({
+     *   create: {
+     *     // ... data to create a Tb_vendas_produtos_lotes_avulso_pre
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tb_vendas_produtos_lotes_avulso_pre we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tb_vendas_produtos_lotes_avulso_preUpsertArgs>(args: SelectSubset<T, tb_vendas_produtos_lotes_avulso_preUpsertArgs<ExtArgs>>): Prisma__tb_vendas_produtos_lotes_avulso_preClient<$Result.GetResult<Prisma.$tb_vendas_produtos_lotes_avulso_prePayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Tb_vendas_produtos_lotes_avulso_pres.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_produtos_lotes_avulso_preCountArgs} args - Arguments to filter Tb_vendas_produtos_lotes_avulso_pres to count.
+     * @example
+     * // Count the number of Tb_vendas_produtos_lotes_avulso_pres
+     * const count = await prisma.tb_vendas_produtos_lotes_avulso_pre.count({
+     *   where: {
+     *     // ... the filter for the Tb_vendas_produtos_lotes_avulso_pres we want to count
+     *   }
+     * })
+    **/
+    count<T extends tb_vendas_produtos_lotes_avulso_preCountArgs>(
+      args?: Subset<T, tb_vendas_produtos_lotes_avulso_preCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tb_vendas_produtos_lotes_avulso_preCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tb_vendas_produtos_lotes_avulso_pre.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tb_vendas_produtos_lotes_avulso_preAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tb_vendas_produtos_lotes_avulso_preAggregateArgs>(args: Subset<T, Tb_vendas_produtos_lotes_avulso_preAggregateArgs>): Prisma.PrismaPromise<GetTb_vendas_produtos_lotes_avulso_preAggregateType<T>>
+
+    /**
+     * Group by Tb_vendas_produtos_lotes_avulso_pre.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tb_vendas_produtos_lotes_avulso_preGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tb_vendas_produtos_lotes_avulso_preGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tb_vendas_produtos_lotes_avulso_preGroupByArgs['orderBy'] }
+        : { orderBy?: tb_vendas_produtos_lotes_avulso_preGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tb_vendas_produtos_lotes_avulso_preGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTb_vendas_produtos_lotes_avulso_preGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tb_vendas_produtos_lotes_avulso_pre model
+   */
+  readonly fields: tb_vendas_produtos_lotes_avulso_preFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tb_vendas_produtos_lotes_avulso_pre.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tb_vendas_produtos_lotes_avulso_preClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tb_vendas_produtos_lotes_avulso_pre model
+   */ 
+  interface tb_vendas_produtos_lotes_avulso_preFieldRefs {
+    readonly Codigo: FieldRef<"tb_vendas_produtos_lotes_avulso_pre", 'Int'>
+    readonly Id_Lcto: FieldRef<"tb_vendas_produtos_lotes_avulso_pre", 'Int'>
+    readonly nLote: FieldRef<"tb_vendas_produtos_lotes_avulso_pre", 'String'>
+    readonly dFab: FieldRef<"tb_vendas_produtos_lotes_avulso_pre", 'DateTime'>
+    readonly dVenc: FieldRef<"tb_vendas_produtos_lotes_avulso_pre", 'DateTime'>
+    readonly Quantidade: FieldRef<"tb_vendas_produtos_lotes_avulso_pre", 'Float'>
+    readonly IDUser: FieldRef<"tb_vendas_produtos_lotes_avulso_pre", 'Int'>
+    readonly IDEmpresa: FieldRef<"tb_vendas_produtos_lotes_avulso_pre", 'Int'>
+    readonly DHU: FieldRef<"tb_vendas_produtos_lotes_avulso_pre", 'String'>
+    readonly RegExcluido: FieldRef<"tb_vendas_produtos_lotes_avulso_pre", 'String'>
+    readonly Id_Lcto_Venda: FieldRef<"tb_vendas_produtos_lotes_avulso_pre", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tb_vendas_produtos_lotes_avulso_pre findUnique
+   */
+  export type tb_vendas_produtos_lotes_avulso_preFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso_pre
+     */
+    select?: tb_vendas_produtos_lotes_avulso_preSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_produtos_lotes_avulso_pre to fetch.
+     */
+    where: tb_vendas_produtos_lotes_avulso_preWhereUniqueInput
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso_pre findUniqueOrThrow
+   */
+  export type tb_vendas_produtos_lotes_avulso_preFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso_pre
+     */
+    select?: tb_vendas_produtos_lotes_avulso_preSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_produtos_lotes_avulso_pre to fetch.
+     */
+    where: tb_vendas_produtos_lotes_avulso_preWhereUniqueInput
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso_pre findFirst
+   */
+  export type tb_vendas_produtos_lotes_avulso_preFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso_pre
+     */
+    select?: tb_vendas_produtos_lotes_avulso_preSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_produtos_lotes_avulso_pre to fetch.
+     */
+    where?: tb_vendas_produtos_lotes_avulso_preWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_vendas_produtos_lotes_avulso_pres to fetch.
+     */
+    orderBy?: tb_vendas_produtos_lotes_avulso_preOrderByWithRelationInput | tb_vendas_produtos_lotes_avulso_preOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_vendas_produtos_lotes_avulso_pres.
+     */
+    cursor?: tb_vendas_produtos_lotes_avulso_preWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_vendas_produtos_lotes_avulso_pres from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_vendas_produtos_lotes_avulso_pres.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_vendas_produtos_lotes_avulso_pres.
+     */
+    distinct?: Tb_vendas_produtos_lotes_avulso_preScalarFieldEnum | Tb_vendas_produtos_lotes_avulso_preScalarFieldEnum[]
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso_pre findFirstOrThrow
+   */
+  export type tb_vendas_produtos_lotes_avulso_preFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso_pre
+     */
+    select?: tb_vendas_produtos_lotes_avulso_preSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_produtos_lotes_avulso_pre to fetch.
+     */
+    where?: tb_vendas_produtos_lotes_avulso_preWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_vendas_produtos_lotes_avulso_pres to fetch.
+     */
+    orderBy?: tb_vendas_produtos_lotes_avulso_preOrderByWithRelationInput | tb_vendas_produtos_lotes_avulso_preOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tb_vendas_produtos_lotes_avulso_pres.
+     */
+    cursor?: tb_vendas_produtos_lotes_avulso_preWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_vendas_produtos_lotes_avulso_pres from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_vendas_produtos_lotes_avulso_pres.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tb_vendas_produtos_lotes_avulso_pres.
+     */
+    distinct?: Tb_vendas_produtos_lotes_avulso_preScalarFieldEnum | Tb_vendas_produtos_lotes_avulso_preScalarFieldEnum[]
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso_pre findMany
+   */
+  export type tb_vendas_produtos_lotes_avulso_preFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso_pre
+     */
+    select?: tb_vendas_produtos_lotes_avulso_preSelect<ExtArgs> | null
+    /**
+     * Filter, which tb_vendas_produtos_lotes_avulso_pres to fetch.
+     */
+    where?: tb_vendas_produtos_lotes_avulso_preWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tb_vendas_produtos_lotes_avulso_pres to fetch.
+     */
+    orderBy?: tb_vendas_produtos_lotes_avulso_preOrderByWithRelationInput | tb_vendas_produtos_lotes_avulso_preOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tb_vendas_produtos_lotes_avulso_pres.
+     */
+    cursor?: tb_vendas_produtos_lotes_avulso_preWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tb_vendas_produtos_lotes_avulso_pres from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tb_vendas_produtos_lotes_avulso_pres.
+     */
+    skip?: number
+    distinct?: Tb_vendas_produtos_lotes_avulso_preScalarFieldEnum | Tb_vendas_produtos_lotes_avulso_preScalarFieldEnum[]
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso_pre create
+   */
+  export type tb_vendas_produtos_lotes_avulso_preCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso_pre
+     */
+    select?: tb_vendas_produtos_lotes_avulso_preSelect<ExtArgs> | null
+    /**
+     * The data needed to create a tb_vendas_produtos_lotes_avulso_pre.
+     */
+    data: XOR<tb_vendas_produtos_lotes_avulso_preCreateInput, tb_vendas_produtos_lotes_avulso_preUncheckedCreateInput>
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso_pre createMany
+   */
+  export type tb_vendas_produtos_lotes_avulso_preCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tb_vendas_produtos_lotes_avulso_pres.
+     */
+    data: tb_vendas_produtos_lotes_avulso_preCreateManyInput | tb_vendas_produtos_lotes_avulso_preCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso_pre update
+   */
+  export type tb_vendas_produtos_lotes_avulso_preUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso_pre
+     */
+    select?: tb_vendas_produtos_lotes_avulso_preSelect<ExtArgs> | null
+    /**
+     * The data needed to update a tb_vendas_produtos_lotes_avulso_pre.
+     */
+    data: XOR<tb_vendas_produtos_lotes_avulso_preUpdateInput, tb_vendas_produtos_lotes_avulso_preUncheckedUpdateInput>
+    /**
+     * Choose, which tb_vendas_produtos_lotes_avulso_pre to update.
+     */
+    where: tb_vendas_produtos_lotes_avulso_preWhereUniqueInput
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso_pre updateMany
+   */
+  export type tb_vendas_produtos_lotes_avulso_preUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tb_vendas_produtos_lotes_avulso_pres.
+     */
+    data: XOR<tb_vendas_produtos_lotes_avulso_preUpdateManyMutationInput, tb_vendas_produtos_lotes_avulso_preUncheckedUpdateManyInput>
+    /**
+     * Filter which tb_vendas_produtos_lotes_avulso_pres to update
+     */
+    where?: tb_vendas_produtos_lotes_avulso_preWhereInput
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso_pre upsert
+   */
+  export type tb_vendas_produtos_lotes_avulso_preUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso_pre
+     */
+    select?: tb_vendas_produtos_lotes_avulso_preSelect<ExtArgs> | null
+    /**
+     * The filter to search for the tb_vendas_produtos_lotes_avulso_pre to update in case it exists.
+     */
+    where: tb_vendas_produtos_lotes_avulso_preWhereUniqueInput
+    /**
+     * In case the tb_vendas_produtos_lotes_avulso_pre found by the `where` argument doesn't exist, create a new tb_vendas_produtos_lotes_avulso_pre with this data.
+     */
+    create: XOR<tb_vendas_produtos_lotes_avulso_preCreateInput, tb_vendas_produtos_lotes_avulso_preUncheckedCreateInput>
+    /**
+     * In case the tb_vendas_produtos_lotes_avulso_pre was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tb_vendas_produtos_lotes_avulso_preUpdateInput, tb_vendas_produtos_lotes_avulso_preUncheckedUpdateInput>
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso_pre delete
+   */
+  export type tb_vendas_produtos_lotes_avulso_preDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso_pre
+     */
+    select?: tb_vendas_produtos_lotes_avulso_preSelect<ExtArgs> | null
+    /**
+     * Filter which tb_vendas_produtos_lotes_avulso_pre to delete.
+     */
+    where: tb_vendas_produtos_lotes_avulso_preWhereUniqueInput
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso_pre deleteMany
+   */
+  export type tb_vendas_produtos_lotes_avulso_preDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tb_vendas_produtos_lotes_avulso_pres to delete
+     */
+    where?: tb_vendas_produtos_lotes_avulso_preWhereInput
+  }
+
+  /**
+   * tb_vendas_produtos_lotes_avulso_pre without action
+   */
+  export type tb_vendas_produtos_lotes_avulso_preDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tb_vendas_produtos_lotes_avulso_pre
+     */
+    select?: tb_vendas_produtos_lotes_avulso_preSelect<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -242652,7 +253969,9 @@ export namespace Prisma {
     vICMSMonoRet: 'vICMSMonoRet',
     Margem_Ideal: 'Margem_Ideal',
     Markup_Ideal: 'Markup_Ideal',
-    Custo_Ideal: 'Custo_Ideal'
+    Custo_Ideal: 'Custo_Ideal',
+    Id_Unidade_Tributacao: 'Id_Unidade_Tributacao',
+    Fator_Unidade_Tributacao: 'Fator_Unidade_Tributacao'
   };
 
   export type Tb_produtosScalarFieldEnum = (typeof Tb_produtosScalarFieldEnum)[keyof typeof Tb_produtosScalarFieldEnum]
@@ -245109,7 +256428,14 @@ export namespace Prisma {
     Logo_Minha_Empresa: 'Logo_Minha_Empresa',
     Nome_Minha_Empresa: 'Nome_Minha_Empresa',
     Rodape_Minha_Empresa: 'Rodape_Minha_Empresa',
-    Exibe_Info_Mesa: 'Exibe_Info_Mesa'
+    Exibe_Info_Mesa: 'Exibe_Info_Mesa',
+    Tipo_Liberacao_Desconto: 'Tipo_Liberacao_Desconto',
+    Valida_Pre_Venda: 'Valida_Pre_Venda',
+    Supervisor_Sangria: 'Supervisor_Sangria',
+    Pessoa_Pgr_Fid_Comanda: 'Pessoa_Pgr_Fid_Comanda',
+    Impressao_TAP: 'Impressao_TAP',
+    Impressao_Cozinha: 'Impressao_Cozinha',
+    Incluir_Acres_Desc_Unitario: 'Incluir_Acres_Desc_Unitario'
   };
 
   export type Tb_parametros_execucaoScalarFieldEnum = (typeof Tb_parametros_execucaoScalarFieldEnum)[keyof typeof Tb_parametros_execucaoScalarFieldEnum]
@@ -245982,7 +257308,8 @@ export namespace Prisma {
     IDUser: 'IDUser',
     Liberado_para_Servidor: 'Liberado_para_Servidor',
     Importado_Servidor: 'Importado_Servidor',
-    Importado_Mentor: 'Importado_Mentor'
+    Importado_Mentor: 'Importado_Mentor',
+    Observacao: 'Observacao'
   };
 
   export type Tb_sangriaScalarFieldEnum = (typeof Tb_sangriaScalarFieldEnum)[keyof typeof Tb_sangriaScalarFieldEnum]
@@ -246698,7 +258025,8 @@ export namespace Prisma {
     Numero_Requisicao: 'Numero_Requisicao',
     Data_Fiscal: 'Data_Fiscal',
     Id_Comanda: 'Id_Comanda',
-    Id_Mesa: 'Id_Mesa'
+    Id_Mesa: 'Id_Mesa',
+    Validado: 'Validado'
   };
 
   export type Tb_vendas_preScalarFieldEnum = (typeof Tb_vendas_preScalarFieldEnum)[keyof typeof Tb_vendas_preScalarFieldEnum]
@@ -246712,7 +258040,8 @@ export namespace Prisma {
     IDUser: 'IDUser',
     IDEmpresa: 'IDEmpresa',
     RegExcluido: 'RegExcluido',
-    Id_Mesa: 'Id_Mesa'
+    Id_Mesa: 'Id_Mesa',
+    Comanda_Pessoa: 'Comanda_Pessoa'
   };
 
   export type Tb_vendas_pre_comandasScalarFieldEnum = (typeof Tb_vendas_pre_comandasScalarFieldEnum)[keyof typeof Tb_vendas_pre_comandasScalarFieldEnum]
@@ -246884,7 +258213,9 @@ export namespace Prisma {
     Pgr_Fid: 'Pgr_Fid',
     Pgr_Fid_Credito: 'Pgr_Fid_Credito',
     Mentor_Estoque_ID_Agrupamento: 'Mentor_Estoque_ID_Agrupamento',
-    Preco_Normal: 'Preco_Normal'
+    Preco_Normal: 'Preco_Normal',
+    Impressao_Tap: 'Impressao_Tap',
+    Impressao_Cozinha: 'Impressao_Cozinha'
   };
 
   export type Tb_vendas_produtos_preScalarFieldEnum = (typeof Tb_vendas_produtos_preScalarFieldEnum)[keyof typeof Tb_vendas_produtos_preScalarFieldEnum]
@@ -247043,6 +258374,176 @@ export namespace Prisma {
   };
 
   export type Tb_mesasScalarFieldEnum = (typeof Tb_mesasScalarFieldEnum)[keyof typeof Tb_mesasScalarFieldEnum]
+
+
+  export const Tb_empresas_movel_0001ScalarFieldEnum: {
+    Codigo: 'Codigo',
+    Servidor: 'Servidor',
+    Porta: 'Porta',
+    DHU: 'DHU',
+    IDUser: 'IDUser'
+  };
+
+  export type Tb_empresas_movel_0001ScalarFieldEnum = (typeof Tb_empresas_movel_0001ScalarFieldEnum)[keyof typeof Tb_empresas_movel_0001ScalarFieldEnum]
+
+
+  export const Tb_movel_0001_impressaoScalarFieldEnum: {
+    Codigo: 'Codigo',
+    Data: 'Data',
+    Hora: 'Hora',
+    Tempo: 'Tempo',
+    Id_Comanda: 'Id_Comanda',
+    Processado: 'Processado'
+  };
+
+  export type Tb_movel_0001_impressaoScalarFieldEnum = (typeof Tb_movel_0001_impressaoScalarFieldEnum)[keyof typeof Tb_movel_0001_impressaoScalarFieldEnum]
+
+
+  export const Tb_operacao_movimento_produtoScalarFieldEnum: {
+    Codigo: 'Codigo',
+    Id_Operacao: 'Id_Operacao',
+    Id_Produto: 'Id_Produto',
+    IDEmpresa: 'IDEmpresa',
+    IDUser: 'IDUser',
+    RegExcluido: 'RegExcluido'
+  };
+
+  export type Tb_operacao_movimento_produtoScalarFieldEnum = (typeof Tb_operacao_movimento_produtoScalarFieldEnum)[keyof typeof Tb_operacao_movimento_produtoScalarFieldEnum]
+
+
+  export const Tb_parametros_data_inicial_tela_gerenciarScalarFieldEnum: {
+    Codigo: 'Codigo',
+    IDUser: 'IDUser',
+    IDEmpresa: 'IDEmpresa',
+    DHU: 'DHU',
+    RegExcluido: 'RegExcluido',
+    Objeto: 'Objeto',
+    Nome_Comercial: 'Nome_Comercial',
+    Dias: 'Dias'
+  };
+
+  export type Tb_parametros_data_inicial_tela_gerenciarScalarFieldEnum = (typeof Tb_parametros_data_inicial_tela_gerenciarScalarFieldEnum)[keyof typeof Tb_parametros_data_inicial_tela_gerenciarScalarFieldEnum]
+
+
+  export const Tb_produtos_food_entrega_tapScalarFieldEnum: {
+    Codigo: 'Codigo',
+    DHU: 'DHU',
+    Id_Produto: 'Id_Produto',
+    RegExcluido: 'RegExcluido',
+    IDEmpresa: 'IDEmpresa',
+    IDUser: 'IDUser'
+  };
+
+  export type Tb_produtos_food_entrega_tapScalarFieldEnum = (typeof Tb_produtos_food_entrega_tapScalarFieldEnum)[keyof typeof Tb_produtos_food_entrega_tapScalarFieldEnum]
+
+
+  export const Tb_produtos_food_producao_cozinhaScalarFieldEnum: {
+    Codigo: 'Codigo',
+    Id_Produto: 'Id_Produto',
+    RegExcluido: 'RegExcluido',
+    DHU: 'DHU',
+    IDEmpresa: 'IDEmpresa',
+    IDUser: 'IDUser'
+  };
+
+  export type Tb_produtos_food_producao_cozinhaScalarFieldEnum = (typeof Tb_produtos_food_producao_cozinhaScalarFieldEnum)[keyof typeof Tb_produtos_food_producao_cozinhaScalarFieldEnum]
+
+
+  export const Tb_produtos_transformacaoScalarFieldEnum: {
+    Codigo: 'Codigo',
+    Id_Produto_Entrada: 'Id_Produto_Entrada',
+    Id_Produto_Saida: 'Id_Produto_Saida',
+    Quantidade_Saida: 'Quantidade_Saida',
+    Quantidade_Entrada: 'Quantidade_Entrada',
+    Estoque_Processado: 'Estoque_Processado',
+    IDEmpresa: 'IDEmpresa',
+    IDUser: 'IDUser',
+    DHU: 'DHU',
+    Data_Movimento: 'Data_Movimento',
+    Hora_Movimento: 'Hora_Movimento',
+    Tempo: 'Tempo',
+    Via_Sistema: 'Via_Sistema'
+  };
+
+  export type Tb_produtos_transformacaoScalarFieldEnum = (typeof Tb_produtos_transformacaoScalarFieldEnum)[keyof typeof Tb_produtos_transformacaoScalarFieldEnum]
+
+
+  export const Tb_produtos_transformacao_confScalarFieldEnum: {
+    Codigo: 'Codigo',
+    Id_Produto_Saida: 'Id_Produto_Saida',
+    Id_Produto_Entrada: 'Id_Produto_Entrada',
+    Quantidade_Saida: 'Quantidade_Saida',
+    Quantidade_Entrada: 'Quantidade_Entrada',
+    Acionar_Em: 'Acionar_Em',
+    DHU: 'DHU',
+    IDEmpresa: 'IDEmpresa',
+    IDUser: 'IDUser',
+    RegExcluido: 'RegExcluido'
+  };
+
+  export type Tb_produtos_transformacao_confScalarFieldEnum = (typeof Tb_produtos_transformacao_confScalarFieldEnum)[keyof typeof Tb_produtos_transformacao_confScalarFieldEnum]
+
+
+  export const Tb_vendas_pre_comandas_pre_pagamentosScalarFieldEnum: {
+    Codigo: 'Codigo',
+    Id_Comanda: 'Id_Comanda',
+    Id_Pagamento: 'Id_Pagamento',
+    Valor: 'Valor',
+    Valor_Recebido: 'Valor_Recebido',
+    Troco: 'Troco',
+    tPag: 'tPag',
+    indPag_Opc: 'indPag_Opc',
+    xPag_Opc: 'xPag_Opc',
+    tpIntegra_Opc: 'tpIntegra_Opc',
+    CNPJ_Opc: 'CNPJ_Opc',
+    tBand_Opc: 'tBand_Opc',
+    cAut_Opc: 'cAut_Opc',
+    TEF_Ok: 'TEF_Ok',
+    TEF_Adquirente: 'TEF_Adquirente',
+    TEF_CNPJ: 'TEF_CNPJ',
+    TEF_Bandeira: 'TEF_Bandeira',
+    TEF_CD: 'TEF_CD',
+    IDUser: 'IDUser',
+    IDEmpresa: 'IDEmpresa',
+    Processado: 'Processado',
+    ID_Lcto: 'ID_Lcto',
+    RegExcluido: 'RegExcluido'
+  };
+
+  export type Tb_vendas_pre_comandas_pre_pagamentosScalarFieldEnum = (typeof Tb_vendas_pre_comandas_pre_pagamentosScalarFieldEnum)[keyof typeof Tb_vendas_pre_comandas_pre_pagamentosScalarFieldEnum]
+
+
+  export const Tb_vendas_produtos_lotes_avulsoScalarFieldEnum: {
+    Codigo: 'Codigo',
+    Id_Lcto: 'Id_Lcto',
+    nLote: 'nLote',
+    dFab: 'dFab',
+    dVenc: 'dVenc',
+    Quantidade: 'Quantidade',
+    IDUser: 'IDUser',
+    IDEmpresa: 'IDEmpresa',
+    DHU: 'DHU',
+    RegExcluido: 'RegExcluido'
+  };
+
+  export type Tb_vendas_produtos_lotes_avulsoScalarFieldEnum = (typeof Tb_vendas_produtos_lotes_avulsoScalarFieldEnum)[keyof typeof Tb_vendas_produtos_lotes_avulsoScalarFieldEnum]
+
+
+  export const Tb_vendas_produtos_lotes_avulso_preScalarFieldEnum: {
+    Codigo: 'Codigo',
+    Id_Lcto: 'Id_Lcto',
+    nLote: 'nLote',
+    dFab: 'dFab',
+    dVenc: 'dVenc',
+    Quantidade: 'Quantidade',
+    IDUser: 'IDUser',
+    IDEmpresa: 'IDEmpresa',
+    DHU: 'DHU',
+    RegExcluido: 'RegExcluido',
+    Id_Lcto_Venda: 'Id_Lcto_Venda'
+  };
+
+  export type Tb_vendas_produtos_lotes_avulso_preScalarFieldEnum = (typeof Tb_vendas_produtos_lotes_avulso_preScalarFieldEnum)[keyof typeof Tb_vendas_produtos_lotes_avulso_preScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -248580,7 +260081,13 @@ export namespace Prisma {
     Logo_Minha_Empresa: 'Logo_Minha_Empresa',
     Nome_Minha_Empresa: 'Nome_Minha_Empresa',
     Rodape_Minha_Empresa: 'Rodape_Minha_Empresa',
-    Exibe_Info_Mesa: 'Exibe_Info_Mesa'
+    Exibe_Info_Mesa: 'Exibe_Info_Mesa',
+    Valida_Pre_Venda: 'Valida_Pre_Venda',
+    Supervisor_Sangria: 'Supervisor_Sangria',
+    Pessoa_Pgr_Fid_Comanda: 'Pessoa_Pgr_Fid_Comanda',
+    Impressao_TAP: 'Impressao_TAP',
+    Impressao_Cozinha: 'Impressao_Cozinha',
+    Incluir_Acres_Desc_Unitario: 'Incluir_Acres_Desc_Unitario'
   };
 
   export type tb_parametros_execucaoOrderByRelevanceFieldEnum = (typeof tb_parametros_execucaoOrderByRelevanceFieldEnum)[keyof typeof tb_parametros_execucaoOrderByRelevanceFieldEnum]
@@ -249083,7 +260590,8 @@ export namespace Prisma {
     Hora: 'Hora',
     Liberado_para_Servidor: 'Liberado_para_Servidor',
     Importado_Servidor: 'Importado_Servidor',
-    Importado_Mentor: 'Importado_Mentor'
+    Importado_Mentor: 'Importado_Mentor',
+    Observacao: 'Observacao'
   };
 
   export type tb_sangriaOrderByRelevanceFieldEnum = (typeof tb_sangriaOrderByRelevanceFieldEnum)[keyof typeof tb_sangriaOrderByRelevanceFieldEnum]
@@ -249482,7 +260990,8 @@ export namespace Prisma {
     Importado_NFe: 'Importado_NFe',
     Observacao: 'Observacao',
     Numero_Contrato: 'Numero_Contrato',
-    Numero_Requisicao: 'Numero_Requisicao'
+    Numero_Requisicao: 'Numero_Requisicao',
+    Validado: 'Validado'
   };
 
   export type tb_vendas_preOrderByRelevanceFieldEnum = (typeof tb_vendas_preOrderByRelevanceFieldEnum)[keyof typeof tb_vendas_preOrderByRelevanceFieldEnum]
@@ -249491,7 +261000,8 @@ export namespace Prisma {
   export const tb_vendas_pre_comandasOrderByRelevanceFieldEnum: {
     Numero_Comanda: 'Numero_Comanda',
     Codigo_Barras: 'Codigo_Barras',
-    RegExcluido: 'RegExcluido'
+    RegExcluido: 'RegExcluido',
+    Comanda_Pessoa: 'Comanda_Pessoa'
   };
 
   export type tb_vendas_pre_comandasOrderByRelevanceFieldEnum = (typeof tb_vendas_pre_comandasOrderByRelevanceFieldEnum)[keyof typeof tb_vendas_pre_comandasOrderByRelevanceFieldEnum]
@@ -249579,7 +261089,9 @@ export namespace Prisma {
     ID_NFe: 'ID_NFe',
     Observacao: 'Observacao',
     Descricao_Digitada: 'Descricao_Digitada',
-    Pgr_Fid: 'Pgr_Fid'
+    Pgr_Fid: 'Pgr_Fid',
+    Impressao_Tap: 'Impressao_Tap',
+    Impressao_Cozinha: 'Impressao_Cozinha'
   };
 
   export type tb_vendas_produtos_preOrderByRelevanceFieldEnum = (typeof tb_vendas_produtos_preOrderByRelevanceFieldEnum)[keyof typeof tb_vendas_produtos_preOrderByRelevanceFieldEnum]
@@ -249686,6 +261198,113 @@ export namespace Prisma {
   };
 
   export type tb_mesasOrderByRelevanceFieldEnum = (typeof tb_mesasOrderByRelevanceFieldEnum)[keyof typeof tb_mesasOrderByRelevanceFieldEnum]
+
+
+  export const tb_empresas_movel_0001OrderByRelevanceFieldEnum: {
+    Servidor: 'Servidor',
+    Porta: 'Porta',
+    DHU: 'DHU'
+  };
+
+  export type tb_empresas_movel_0001OrderByRelevanceFieldEnum = (typeof tb_empresas_movel_0001OrderByRelevanceFieldEnum)[keyof typeof tb_empresas_movel_0001OrderByRelevanceFieldEnum]
+
+
+  export const tb_movel_0001_impressaoOrderByRelevanceFieldEnum: {
+    Hora: 'Hora',
+    Processado: 'Processado'
+  };
+
+  export type tb_movel_0001_impressaoOrderByRelevanceFieldEnum = (typeof tb_movel_0001_impressaoOrderByRelevanceFieldEnum)[keyof typeof tb_movel_0001_impressaoOrderByRelevanceFieldEnum]
+
+
+  export const tb_operacao_movimento_produtoOrderByRelevanceFieldEnum: {
+    RegExcluido: 'RegExcluido'
+  };
+
+  export type tb_operacao_movimento_produtoOrderByRelevanceFieldEnum = (typeof tb_operacao_movimento_produtoOrderByRelevanceFieldEnum)[keyof typeof tb_operacao_movimento_produtoOrderByRelevanceFieldEnum]
+
+
+  export const tb_parametros_data_inicial_tela_gerenciarOrderByRelevanceFieldEnum: {
+    DHU: 'DHU',
+    RegExcluido: 'RegExcluido',
+    Objeto: 'Objeto',
+    Nome_Comercial: 'Nome_Comercial'
+  };
+
+  export type tb_parametros_data_inicial_tela_gerenciarOrderByRelevanceFieldEnum = (typeof tb_parametros_data_inicial_tela_gerenciarOrderByRelevanceFieldEnum)[keyof typeof tb_parametros_data_inicial_tela_gerenciarOrderByRelevanceFieldEnum]
+
+
+  export const tb_produtos_food_entrega_tapOrderByRelevanceFieldEnum: {
+    DHU: 'DHU',
+    RegExcluido: 'RegExcluido'
+  };
+
+  export type tb_produtos_food_entrega_tapOrderByRelevanceFieldEnum = (typeof tb_produtos_food_entrega_tapOrderByRelevanceFieldEnum)[keyof typeof tb_produtos_food_entrega_tapOrderByRelevanceFieldEnum]
+
+
+  export const tb_produtos_food_producao_cozinhaOrderByRelevanceFieldEnum: {
+    RegExcluido: 'RegExcluido',
+    DHU: 'DHU'
+  };
+
+  export type tb_produtos_food_producao_cozinhaOrderByRelevanceFieldEnum = (typeof tb_produtos_food_producao_cozinhaOrderByRelevanceFieldEnum)[keyof typeof tb_produtos_food_producao_cozinhaOrderByRelevanceFieldEnum]
+
+
+  export const tb_produtos_transformacaoOrderByRelevanceFieldEnum: {
+    Estoque_Processado: 'Estoque_Processado',
+    DHU: 'DHU',
+    Hora_Movimento: 'Hora_Movimento',
+    Tempo: 'Tempo',
+    Via_Sistema: 'Via_Sistema'
+  };
+
+  export type tb_produtos_transformacaoOrderByRelevanceFieldEnum = (typeof tb_produtos_transformacaoOrderByRelevanceFieldEnum)[keyof typeof tb_produtos_transformacaoOrderByRelevanceFieldEnum]
+
+
+  export const tb_produtos_transformacao_confOrderByRelevanceFieldEnum: {
+    DHU: 'DHU',
+    RegExcluido: 'RegExcluido'
+  };
+
+  export type tb_produtos_transformacao_confOrderByRelevanceFieldEnum = (typeof tb_produtos_transformacao_confOrderByRelevanceFieldEnum)[keyof typeof tb_produtos_transformacao_confOrderByRelevanceFieldEnum]
+
+
+  export const tb_vendas_pre_comandas_pre_pagamentosOrderByRelevanceFieldEnum: {
+    tPag: 'tPag',
+    indPag_Opc: 'indPag_Opc',
+    xPag_Opc: 'xPag_Opc',
+    tpIntegra_Opc: 'tpIntegra_Opc',
+    CNPJ_Opc: 'CNPJ_Opc',
+    tBand_Opc: 'tBand_Opc',
+    cAut_Opc: 'cAut_Opc',
+    TEF_Ok: 'TEF_Ok',
+    TEF_Adquirente: 'TEF_Adquirente',
+    TEF_CNPJ: 'TEF_CNPJ',
+    TEF_Bandeira: 'TEF_Bandeira',
+    TEF_CD: 'TEF_CD',
+    Processado: 'Processado',
+    RegExcluido: 'RegExcluido'
+  };
+
+  export type tb_vendas_pre_comandas_pre_pagamentosOrderByRelevanceFieldEnum = (typeof tb_vendas_pre_comandas_pre_pagamentosOrderByRelevanceFieldEnum)[keyof typeof tb_vendas_pre_comandas_pre_pagamentosOrderByRelevanceFieldEnum]
+
+
+  export const tb_vendas_produtos_lotes_avulsoOrderByRelevanceFieldEnum: {
+    nLote: 'nLote',
+    DHU: 'DHU',
+    RegExcluido: 'RegExcluido'
+  };
+
+  export type tb_vendas_produtos_lotes_avulsoOrderByRelevanceFieldEnum = (typeof tb_vendas_produtos_lotes_avulsoOrderByRelevanceFieldEnum)[keyof typeof tb_vendas_produtos_lotes_avulsoOrderByRelevanceFieldEnum]
+
+
+  export const tb_vendas_produtos_lotes_avulso_preOrderByRelevanceFieldEnum: {
+    nLote: 'nLote',
+    DHU: 'DHU',
+    RegExcluido: 'RegExcluido'
+  };
+
+  export type tb_vendas_produtos_lotes_avulso_preOrderByRelevanceFieldEnum = (typeof tb_vendas_produtos_lotes_avulso_preOrderByRelevanceFieldEnum)[keyof typeof tb_vendas_produtos_lotes_avulso_preOrderByRelevanceFieldEnum]
 
 
   /**
@@ -250084,6 +261703,8 @@ export namespace Prisma {
     Margem_Ideal?: FloatNullableFilter<"tb_produtos"> | number | null
     Markup_Ideal?: FloatNullableFilter<"tb_produtos"> | number | null
     Custo_Ideal?: FloatNullableFilter<"tb_produtos"> | number | null
+    Id_Unidade_Tributacao?: IntNullableFilter<"tb_produtos"> | number | null
+    Fator_Unidade_Tributacao?: FloatNullableFilter<"tb_produtos"> | number | null
   }
 
   export type tb_produtosOrderByWithRelationInput = {
@@ -250168,6 +261789,8 @@ export namespace Prisma {
     Margem_Ideal?: SortOrderInput | SortOrder
     Markup_Ideal?: SortOrderInput | SortOrder
     Custo_Ideal?: SortOrderInput | SortOrder
+    Id_Unidade_Tributacao?: SortOrderInput | SortOrder
+    Fator_Unidade_Tributacao?: SortOrderInput | SortOrder
     _relevance?: tb_produtosOrderByRelevanceInput
   }
 
@@ -250256,6 +261879,8 @@ export namespace Prisma {
     Margem_Ideal?: FloatNullableFilter<"tb_produtos"> | number | null
     Markup_Ideal?: FloatNullableFilter<"tb_produtos"> | number | null
     Custo_Ideal?: FloatNullableFilter<"tb_produtos"> | number | null
+    Id_Unidade_Tributacao?: IntNullableFilter<"tb_produtos"> | number | null
+    Fator_Unidade_Tributacao?: FloatNullableFilter<"tb_produtos"> | number | null
   }, "Codigo">
 
   export type tb_produtosOrderByWithAggregationInput = {
@@ -250340,6 +261965,8 @@ export namespace Prisma {
     Margem_Ideal?: SortOrderInput | SortOrder
     Markup_Ideal?: SortOrderInput | SortOrder
     Custo_Ideal?: SortOrderInput | SortOrder
+    Id_Unidade_Tributacao?: SortOrderInput | SortOrder
+    Fator_Unidade_Tributacao?: SortOrderInput | SortOrder
     _count?: tb_produtosCountOrderByAggregateInput
     _avg?: tb_produtosAvgOrderByAggregateInput
     _max?: tb_produtosMaxOrderByAggregateInput
@@ -250432,6 +262059,8 @@ export namespace Prisma {
     Margem_Ideal?: FloatNullableWithAggregatesFilter<"tb_produtos"> | number | null
     Markup_Ideal?: FloatNullableWithAggregatesFilter<"tb_produtos"> | number | null
     Custo_Ideal?: FloatNullableWithAggregatesFilter<"tb_produtos"> | number | null
+    Id_Unidade_Tributacao?: IntNullableWithAggregatesFilter<"tb_produtos"> | number | null
+    Fator_Unidade_Tributacao?: FloatNullableWithAggregatesFilter<"tb_produtos"> | number | null
   }
 
   export type tb_produtos_setorWhereInput = {
@@ -262403,6 +274032,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: StringNullableFilter<"tb_parametros_execucao"> | string | null
     Rodape_Minha_Empresa?: StringNullableFilter<"tb_parametros_execucao"> | string | null
     Exibe_Info_Mesa?: StringNullableFilter<"tb_parametros_execucao"> | string | null
+    Tipo_Liberacao_Desconto?: IntNullableFilter<"tb_parametros_execucao"> | number | null
+    Valida_Pre_Venda?: StringNullableFilter<"tb_parametros_execucao"> | string | null
+    Supervisor_Sangria?: StringNullableFilter<"tb_parametros_execucao"> | string | null
+    Pessoa_Pgr_Fid_Comanda?: StringNullableFilter<"tb_parametros_execucao"> | string | null
+    Impressao_TAP?: StringNullableFilter<"tb_parametros_execucao"> | string | null
+    Impressao_Cozinha?: StringNullableFilter<"tb_parametros_execucao"> | string | null
+    Incluir_Acres_Desc_Unitario?: StringNullableFilter<"tb_parametros_execucao"> | string | null
   }
 
   export type tb_parametros_execucaoOrderByWithRelationInput = {
@@ -262477,6 +274113,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: SortOrderInput | SortOrder
     Rodape_Minha_Empresa?: SortOrderInput | SortOrder
     Exibe_Info_Mesa?: SortOrderInput | SortOrder
+    Tipo_Liberacao_Desconto?: SortOrderInput | SortOrder
+    Valida_Pre_Venda?: SortOrderInput | SortOrder
+    Supervisor_Sangria?: SortOrderInput | SortOrder
+    Pessoa_Pgr_Fid_Comanda?: SortOrderInput | SortOrder
+    Impressao_TAP?: SortOrderInput | SortOrder
+    Impressao_Cozinha?: SortOrderInput | SortOrder
+    Incluir_Acres_Desc_Unitario?: SortOrderInput | SortOrder
     _relevance?: tb_parametros_execucaoOrderByRelevanceInput
   }
 
@@ -262555,6 +274198,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: StringNullableFilter<"tb_parametros_execucao"> | string | null
     Rodape_Minha_Empresa?: StringNullableFilter<"tb_parametros_execucao"> | string | null
     Exibe_Info_Mesa?: StringNullableFilter<"tb_parametros_execucao"> | string | null
+    Tipo_Liberacao_Desconto?: IntNullableFilter<"tb_parametros_execucao"> | number | null
+    Valida_Pre_Venda?: StringNullableFilter<"tb_parametros_execucao"> | string | null
+    Supervisor_Sangria?: StringNullableFilter<"tb_parametros_execucao"> | string | null
+    Pessoa_Pgr_Fid_Comanda?: StringNullableFilter<"tb_parametros_execucao"> | string | null
+    Impressao_TAP?: StringNullableFilter<"tb_parametros_execucao"> | string | null
+    Impressao_Cozinha?: StringNullableFilter<"tb_parametros_execucao"> | string | null
+    Incluir_Acres_Desc_Unitario?: StringNullableFilter<"tb_parametros_execucao"> | string | null
   }, "Codigo">
 
   export type tb_parametros_execucaoOrderByWithAggregationInput = {
@@ -262629,6 +274279,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: SortOrderInput | SortOrder
     Rodape_Minha_Empresa?: SortOrderInput | SortOrder
     Exibe_Info_Mesa?: SortOrderInput | SortOrder
+    Tipo_Liberacao_Desconto?: SortOrderInput | SortOrder
+    Valida_Pre_Venda?: SortOrderInput | SortOrder
+    Supervisor_Sangria?: SortOrderInput | SortOrder
+    Pessoa_Pgr_Fid_Comanda?: SortOrderInput | SortOrder
+    Impressao_TAP?: SortOrderInput | SortOrder
+    Impressao_Cozinha?: SortOrderInput | SortOrder
+    Incluir_Acres_Desc_Unitario?: SortOrderInput | SortOrder
     _count?: tb_parametros_execucaoCountOrderByAggregateInput
     _avg?: tb_parametros_execucaoAvgOrderByAggregateInput
     _max?: tb_parametros_execucaoMaxOrderByAggregateInput
@@ -262711,6 +274368,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: StringNullableWithAggregatesFilter<"tb_parametros_execucao"> | string | null
     Rodape_Minha_Empresa?: StringNullableWithAggregatesFilter<"tb_parametros_execucao"> | string | null
     Exibe_Info_Mesa?: StringNullableWithAggregatesFilter<"tb_parametros_execucao"> | string | null
+    Tipo_Liberacao_Desconto?: IntNullableWithAggregatesFilter<"tb_parametros_execucao"> | number | null
+    Valida_Pre_Venda?: StringNullableWithAggregatesFilter<"tb_parametros_execucao"> | string | null
+    Supervisor_Sangria?: StringNullableWithAggregatesFilter<"tb_parametros_execucao"> | string | null
+    Pessoa_Pgr_Fid_Comanda?: StringNullableWithAggregatesFilter<"tb_parametros_execucao"> | string | null
+    Impressao_TAP?: StringNullableWithAggregatesFilter<"tb_parametros_execucao"> | string | null
+    Impressao_Cozinha?: StringNullableWithAggregatesFilter<"tb_parametros_execucao"> | string | null
+    Incluir_Acres_Desc_Unitario?: StringNullableWithAggregatesFilter<"tb_parametros_execucao"> | string | null
   }
 
   export type tb_pdv_cadastroWhereInput = {
@@ -267007,6 +278671,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: StringNullableFilter<"tb_sangria"> | string | null
     Importado_Servidor?: StringNullableFilter<"tb_sangria"> | string | null
     Importado_Mentor?: StringNullableFilter<"tb_sangria"> | string | null
+    Observacao?: StringNullableFilter<"tb_sangria"> | string | null
   }
 
   export type tb_sangriaOrderByWithRelationInput = {
@@ -267020,6 +278685,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: SortOrderInput | SortOrder
     Importado_Servidor?: SortOrderInput | SortOrder
     Importado_Mentor?: SortOrderInput | SortOrder
+    Observacao?: SortOrderInput | SortOrder
     _relevance?: tb_sangriaOrderByRelevanceInput
   }
 
@@ -267037,6 +278703,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: StringNullableFilter<"tb_sangria"> | string | null
     Importado_Servidor?: StringNullableFilter<"tb_sangria"> | string | null
     Importado_Mentor?: StringNullableFilter<"tb_sangria"> | string | null
+    Observacao?: StringNullableFilter<"tb_sangria"> | string | null
   }, "Codigo">
 
   export type tb_sangriaOrderByWithAggregationInput = {
@@ -267050,6 +278717,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: SortOrderInput | SortOrder
     Importado_Servidor?: SortOrderInput | SortOrder
     Importado_Mentor?: SortOrderInput | SortOrder
+    Observacao?: SortOrderInput | SortOrder
     _count?: tb_sangriaCountOrderByAggregateInput
     _avg?: tb_sangriaAvgOrderByAggregateInput
     _max?: tb_sangriaMaxOrderByAggregateInput
@@ -267071,6 +278739,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: StringNullableWithAggregatesFilter<"tb_sangria"> | string | null
     Importado_Servidor?: StringNullableWithAggregatesFilter<"tb_sangria"> | string | null
     Importado_Mentor?: StringNullableWithAggregatesFilter<"tb_sangria"> | string | null
+    Observacao?: StringNullableWithAggregatesFilter<"tb_sangria"> | string | null
   }
 
   export type tb_segurancaWhereInput = {
@@ -270436,6 +282105,7 @@ export namespace Prisma {
     Data_Fiscal?: DateTimeNullableFilter<"tb_vendas_pre"> | Date | string | null
     Id_Comanda?: IntNullableFilter<"tb_vendas_pre"> | number | null
     Id_Mesa?: IntNullableFilter<"tb_vendas_pre"> | number | null
+    Validado?: StringNullableFilter<"tb_vendas_pre"> | string | null
   }
 
   export type tb_vendas_preOrderByWithRelationInput = {
@@ -270485,6 +282155,7 @@ export namespace Prisma {
     Data_Fiscal?: SortOrderInput | SortOrder
     Id_Comanda?: SortOrderInput | SortOrder
     Id_Mesa?: SortOrderInput | SortOrder
+    Validado?: SortOrderInput | SortOrder
     _relevance?: tb_vendas_preOrderByRelevanceInput
   }
 
@@ -270538,6 +282209,7 @@ export namespace Prisma {
     Data_Fiscal?: DateTimeNullableFilter<"tb_vendas_pre"> | Date | string | null
     Id_Comanda?: IntNullableFilter<"tb_vendas_pre"> | number | null
     Id_Mesa?: IntNullableFilter<"tb_vendas_pre"> | number | null
+    Validado?: StringNullableFilter<"tb_vendas_pre"> | string | null
   }, "Codigo">
 
   export type tb_vendas_preOrderByWithAggregationInput = {
@@ -270587,6 +282259,7 @@ export namespace Prisma {
     Data_Fiscal?: SortOrderInput | SortOrder
     Id_Comanda?: SortOrderInput | SortOrder
     Id_Mesa?: SortOrderInput | SortOrder
+    Validado?: SortOrderInput | SortOrder
     _count?: tb_vendas_preCountOrderByAggregateInput
     _avg?: tb_vendas_preAvgOrderByAggregateInput
     _max?: tb_vendas_preMaxOrderByAggregateInput
@@ -270644,6 +282317,7 @@ export namespace Prisma {
     Data_Fiscal?: DateTimeNullableWithAggregatesFilter<"tb_vendas_pre"> | Date | string | null
     Id_Comanda?: IntNullableWithAggregatesFilter<"tb_vendas_pre"> | number | null
     Id_Mesa?: IntNullableWithAggregatesFilter<"tb_vendas_pre"> | number | null
+    Validado?: StringNullableWithAggregatesFilter<"tb_vendas_pre"> | string | null
   }
 
   export type tb_vendas_pre_comandasWhereInput = {
@@ -270658,6 +282332,7 @@ export namespace Prisma {
     IDEmpresa?: IntNullableFilter<"tb_vendas_pre_comandas"> | number | null
     RegExcluido?: StringNullableFilter<"tb_vendas_pre_comandas"> | string | null
     Id_Mesa?: IntNullableFilter<"tb_vendas_pre_comandas"> | number | null
+    Comanda_Pessoa?: StringNullableFilter<"tb_vendas_pre_comandas"> | string | null
   }
 
   export type tb_vendas_pre_comandasOrderByWithRelationInput = {
@@ -270669,6 +282344,7 @@ export namespace Prisma {
     IDEmpresa?: SortOrderInput | SortOrder
     RegExcluido?: SortOrderInput | SortOrder
     Id_Mesa?: SortOrderInput | SortOrder
+    Comanda_Pessoa?: SortOrderInput | SortOrder
     _relevance?: tb_vendas_pre_comandasOrderByRelevanceInput
   }
 
@@ -270684,6 +282360,7 @@ export namespace Prisma {
     IDEmpresa?: IntNullableFilter<"tb_vendas_pre_comandas"> | number | null
     RegExcluido?: StringNullableFilter<"tb_vendas_pre_comandas"> | string | null
     Id_Mesa?: IntNullableFilter<"tb_vendas_pre_comandas"> | number | null
+    Comanda_Pessoa?: StringNullableFilter<"tb_vendas_pre_comandas"> | string | null
   }, "Codigo">
 
   export type tb_vendas_pre_comandasOrderByWithAggregationInput = {
@@ -270695,6 +282372,7 @@ export namespace Prisma {
     IDEmpresa?: SortOrderInput | SortOrder
     RegExcluido?: SortOrderInput | SortOrder
     Id_Mesa?: SortOrderInput | SortOrder
+    Comanda_Pessoa?: SortOrderInput | SortOrder
     _count?: tb_vendas_pre_comandasCountOrderByAggregateInput
     _avg?: tb_vendas_pre_comandasAvgOrderByAggregateInput
     _max?: tb_vendas_pre_comandasMaxOrderByAggregateInput
@@ -270714,6 +282392,7 @@ export namespace Prisma {
     IDEmpresa?: IntNullableWithAggregatesFilter<"tb_vendas_pre_comandas"> | number | null
     RegExcluido?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas"> | string | null
     Id_Mesa?: IntNullableWithAggregatesFilter<"tb_vendas_pre_comandas"> | number | null
+    Comanda_Pessoa?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas"> | string | null
   }
 
   export type tb_vendas_produtosWhereInput = {
@@ -271362,6 +283041,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: FloatNullableFilter<"tb_vendas_produtos_pre"> | number | null
     Mentor_Estoque_ID_Agrupamento?: IntNullableFilter<"tb_vendas_produtos_pre"> | number | null
     Preco_Normal?: FloatNullableFilter<"tb_vendas_produtos_pre"> | number | null
+    Impressao_Tap?: StringNullableFilter<"tb_vendas_produtos_pre"> | string | null
+    Impressao_Cozinha?: StringNullableFilter<"tb_vendas_produtos_pre"> | string | null
   }
 
   export type tb_vendas_produtos_preOrderByWithRelationInput = {
@@ -271412,6 +283093,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: SortOrderInput | SortOrder
     Mentor_Estoque_ID_Agrupamento?: SortOrderInput | SortOrder
     Preco_Normal?: SortOrderInput | SortOrder
+    Impressao_Tap?: SortOrderInput | SortOrder
+    Impressao_Cozinha?: SortOrderInput | SortOrder
     _relevance?: tb_vendas_produtos_preOrderByRelevanceInput
   }
 
@@ -271466,6 +283149,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: FloatNullableFilter<"tb_vendas_produtos_pre"> | number | null
     Mentor_Estoque_ID_Agrupamento?: IntNullableFilter<"tb_vendas_produtos_pre"> | number | null
     Preco_Normal?: FloatNullableFilter<"tb_vendas_produtos_pre"> | number | null
+    Impressao_Tap?: StringNullableFilter<"tb_vendas_produtos_pre"> | string | null
+    Impressao_Cozinha?: StringNullableFilter<"tb_vendas_produtos_pre"> | string | null
   }, "Codigo">
 
   export type tb_vendas_produtos_preOrderByWithAggregationInput = {
@@ -271516,6 +283201,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: SortOrderInput | SortOrder
     Mentor_Estoque_ID_Agrupamento?: SortOrderInput | SortOrder
     Preco_Normal?: SortOrderInput | SortOrder
+    Impressao_Tap?: SortOrderInput | SortOrder
+    Impressao_Cozinha?: SortOrderInput | SortOrder
     _count?: tb_vendas_produtos_preCountOrderByAggregateInput
     _avg?: tb_vendas_produtos_preAvgOrderByAggregateInput
     _max?: tb_vendas_produtos_preMaxOrderByAggregateInput
@@ -271574,6 +283261,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: FloatNullableWithAggregatesFilter<"tb_vendas_produtos_pre"> | number | null
     Mentor_Estoque_ID_Agrupamento?: IntNullableWithAggregatesFilter<"tb_vendas_produtos_pre"> | number | null
     Preco_Normal?: FloatNullableWithAggregatesFilter<"tb_vendas_produtos_pre"> | number | null
+    Impressao_Tap?: StringNullableWithAggregatesFilter<"tb_vendas_produtos_pre"> | string | null
+    Impressao_Cozinha?: StringNullableWithAggregatesFilter<"tb_vendas_produtos_pre"> | string | null
   }
 
   export type tb_vendas_produtos_receitasWhereInput = {
@@ -272351,6 +284040,856 @@ export namespace Prisma {
     IDUser?: IntNullableWithAggregatesFilter<"tb_mesas"> | number | null
   }
 
+  export type tb_empresas_movel_0001WhereInput = {
+    AND?: tb_empresas_movel_0001WhereInput | tb_empresas_movel_0001WhereInput[]
+    OR?: tb_empresas_movel_0001WhereInput[]
+    NOT?: tb_empresas_movel_0001WhereInput | tb_empresas_movel_0001WhereInput[]
+    Codigo?: IntFilter<"tb_empresas_movel_0001"> | number
+    Servidor?: StringNullableFilter<"tb_empresas_movel_0001"> | string | null
+    Porta?: StringNullableFilter<"tb_empresas_movel_0001"> | string | null
+    DHU?: StringNullableFilter<"tb_empresas_movel_0001"> | string | null
+    IDUser?: IntNullableFilter<"tb_empresas_movel_0001"> | number | null
+  }
+
+  export type tb_empresas_movel_0001OrderByWithRelationInput = {
+    Codigo?: SortOrder
+    Servidor?: SortOrderInput | SortOrder
+    Porta?: SortOrderInput | SortOrder
+    DHU?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    _relevance?: tb_empresas_movel_0001OrderByRelevanceInput
+  }
+
+  export type tb_empresas_movel_0001WhereUniqueInput = Prisma.AtLeast<{
+    Codigo?: number
+    AND?: tb_empresas_movel_0001WhereInput | tb_empresas_movel_0001WhereInput[]
+    OR?: tb_empresas_movel_0001WhereInput[]
+    NOT?: tb_empresas_movel_0001WhereInput | tb_empresas_movel_0001WhereInput[]
+    Servidor?: StringNullableFilter<"tb_empresas_movel_0001"> | string | null
+    Porta?: StringNullableFilter<"tb_empresas_movel_0001"> | string | null
+    DHU?: StringNullableFilter<"tb_empresas_movel_0001"> | string | null
+    IDUser?: IntNullableFilter<"tb_empresas_movel_0001"> | number | null
+  }, "Codigo">
+
+  export type tb_empresas_movel_0001OrderByWithAggregationInput = {
+    Codigo?: SortOrder
+    Servidor?: SortOrderInput | SortOrder
+    Porta?: SortOrderInput | SortOrder
+    DHU?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    _count?: tb_empresas_movel_0001CountOrderByAggregateInput
+    _avg?: tb_empresas_movel_0001AvgOrderByAggregateInput
+    _max?: tb_empresas_movel_0001MaxOrderByAggregateInput
+    _min?: tb_empresas_movel_0001MinOrderByAggregateInput
+    _sum?: tb_empresas_movel_0001SumOrderByAggregateInput
+  }
+
+  export type tb_empresas_movel_0001ScalarWhereWithAggregatesInput = {
+    AND?: tb_empresas_movel_0001ScalarWhereWithAggregatesInput | tb_empresas_movel_0001ScalarWhereWithAggregatesInput[]
+    OR?: tb_empresas_movel_0001ScalarWhereWithAggregatesInput[]
+    NOT?: tb_empresas_movel_0001ScalarWhereWithAggregatesInput | tb_empresas_movel_0001ScalarWhereWithAggregatesInput[]
+    Codigo?: IntWithAggregatesFilter<"tb_empresas_movel_0001"> | number
+    Servidor?: StringNullableWithAggregatesFilter<"tb_empresas_movel_0001"> | string | null
+    Porta?: StringNullableWithAggregatesFilter<"tb_empresas_movel_0001"> | string | null
+    DHU?: StringNullableWithAggregatesFilter<"tb_empresas_movel_0001"> | string | null
+    IDUser?: IntNullableWithAggregatesFilter<"tb_empresas_movel_0001"> | number | null
+  }
+
+  export type tb_movel_0001_impressaoWhereInput = {
+    AND?: tb_movel_0001_impressaoWhereInput | tb_movel_0001_impressaoWhereInput[]
+    OR?: tb_movel_0001_impressaoWhereInput[]
+    NOT?: tb_movel_0001_impressaoWhereInput | tb_movel_0001_impressaoWhereInput[]
+    Codigo?: IntFilter<"tb_movel_0001_impressao"> | number
+    Data?: DateTimeNullableFilter<"tb_movel_0001_impressao"> | Date | string | null
+    Hora?: StringNullableFilter<"tb_movel_0001_impressao"> | string | null
+    Tempo?: IntNullableFilter<"tb_movel_0001_impressao"> | number | null
+    Id_Comanda?: IntNullableFilter<"tb_movel_0001_impressao"> | number | null
+    Processado?: StringNullableFilter<"tb_movel_0001_impressao"> | string | null
+  }
+
+  export type tb_movel_0001_impressaoOrderByWithRelationInput = {
+    Codigo?: SortOrder
+    Data?: SortOrderInput | SortOrder
+    Hora?: SortOrderInput | SortOrder
+    Tempo?: SortOrderInput | SortOrder
+    Id_Comanda?: SortOrderInput | SortOrder
+    Processado?: SortOrderInput | SortOrder
+    _relevance?: tb_movel_0001_impressaoOrderByRelevanceInput
+  }
+
+  export type tb_movel_0001_impressaoWhereUniqueInput = Prisma.AtLeast<{
+    Codigo?: number
+    AND?: tb_movel_0001_impressaoWhereInput | tb_movel_0001_impressaoWhereInput[]
+    OR?: tb_movel_0001_impressaoWhereInput[]
+    NOT?: tb_movel_0001_impressaoWhereInput | tb_movel_0001_impressaoWhereInput[]
+    Data?: DateTimeNullableFilter<"tb_movel_0001_impressao"> | Date | string | null
+    Hora?: StringNullableFilter<"tb_movel_0001_impressao"> | string | null
+    Tempo?: IntNullableFilter<"tb_movel_0001_impressao"> | number | null
+    Id_Comanda?: IntNullableFilter<"tb_movel_0001_impressao"> | number | null
+    Processado?: StringNullableFilter<"tb_movel_0001_impressao"> | string | null
+  }, "Codigo">
+
+  export type tb_movel_0001_impressaoOrderByWithAggregationInput = {
+    Codigo?: SortOrder
+    Data?: SortOrderInput | SortOrder
+    Hora?: SortOrderInput | SortOrder
+    Tempo?: SortOrderInput | SortOrder
+    Id_Comanda?: SortOrderInput | SortOrder
+    Processado?: SortOrderInput | SortOrder
+    _count?: tb_movel_0001_impressaoCountOrderByAggregateInput
+    _avg?: tb_movel_0001_impressaoAvgOrderByAggregateInput
+    _max?: tb_movel_0001_impressaoMaxOrderByAggregateInput
+    _min?: tb_movel_0001_impressaoMinOrderByAggregateInput
+    _sum?: tb_movel_0001_impressaoSumOrderByAggregateInput
+  }
+
+  export type tb_movel_0001_impressaoScalarWhereWithAggregatesInput = {
+    AND?: tb_movel_0001_impressaoScalarWhereWithAggregatesInput | tb_movel_0001_impressaoScalarWhereWithAggregatesInput[]
+    OR?: tb_movel_0001_impressaoScalarWhereWithAggregatesInput[]
+    NOT?: tb_movel_0001_impressaoScalarWhereWithAggregatesInput | tb_movel_0001_impressaoScalarWhereWithAggregatesInput[]
+    Codigo?: IntWithAggregatesFilter<"tb_movel_0001_impressao"> | number
+    Data?: DateTimeNullableWithAggregatesFilter<"tb_movel_0001_impressao"> | Date | string | null
+    Hora?: StringNullableWithAggregatesFilter<"tb_movel_0001_impressao"> | string | null
+    Tempo?: IntNullableWithAggregatesFilter<"tb_movel_0001_impressao"> | number | null
+    Id_Comanda?: IntNullableWithAggregatesFilter<"tb_movel_0001_impressao"> | number | null
+    Processado?: StringNullableWithAggregatesFilter<"tb_movel_0001_impressao"> | string | null
+  }
+
+  export type tb_operacao_movimento_produtoWhereInput = {
+    AND?: tb_operacao_movimento_produtoWhereInput | tb_operacao_movimento_produtoWhereInput[]
+    OR?: tb_operacao_movimento_produtoWhereInput[]
+    NOT?: tb_operacao_movimento_produtoWhereInput | tb_operacao_movimento_produtoWhereInput[]
+    Codigo?: IntFilter<"tb_operacao_movimento_produto"> | number
+    Id_Operacao?: IntNullableFilter<"tb_operacao_movimento_produto"> | number | null
+    Id_Produto?: IntNullableFilter<"tb_operacao_movimento_produto"> | number | null
+    IDEmpresa?: IntNullableFilter<"tb_operacao_movimento_produto"> | number | null
+    IDUser?: IntNullableFilter<"tb_operacao_movimento_produto"> | number | null
+    RegExcluido?: StringNullableFilter<"tb_operacao_movimento_produto"> | string | null
+  }
+
+  export type tb_operacao_movimento_produtoOrderByWithRelationInput = {
+    Codigo?: SortOrder
+    Id_Operacao?: SortOrderInput | SortOrder
+    Id_Produto?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    _relevance?: tb_operacao_movimento_produtoOrderByRelevanceInput
+  }
+
+  export type tb_operacao_movimento_produtoWhereUniqueInput = Prisma.AtLeast<{
+    Codigo?: number
+    AND?: tb_operacao_movimento_produtoWhereInput | tb_operacao_movimento_produtoWhereInput[]
+    OR?: tb_operacao_movimento_produtoWhereInput[]
+    NOT?: tb_operacao_movimento_produtoWhereInput | tb_operacao_movimento_produtoWhereInput[]
+    Id_Operacao?: IntNullableFilter<"tb_operacao_movimento_produto"> | number | null
+    Id_Produto?: IntNullableFilter<"tb_operacao_movimento_produto"> | number | null
+    IDEmpresa?: IntNullableFilter<"tb_operacao_movimento_produto"> | number | null
+    IDUser?: IntNullableFilter<"tb_operacao_movimento_produto"> | number | null
+    RegExcluido?: StringNullableFilter<"tb_operacao_movimento_produto"> | string | null
+  }, "Codigo">
+
+  export type tb_operacao_movimento_produtoOrderByWithAggregationInput = {
+    Codigo?: SortOrder
+    Id_Operacao?: SortOrderInput | SortOrder
+    Id_Produto?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    _count?: tb_operacao_movimento_produtoCountOrderByAggregateInput
+    _avg?: tb_operacao_movimento_produtoAvgOrderByAggregateInput
+    _max?: tb_operacao_movimento_produtoMaxOrderByAggregateInput
+    _min?: tb_operacao_movimento_produtoMinOrderByAggregateInput
+    _sum?: tb_operacao_movimento_produtoSumOrderByAggregateInput
+  }
+
+  export type tb_operacao_movimento_produtoScalarWhereWithAggregatesInput = {
+    AND?: tb_operacao_movimento_produtoScalarWhereWithAggregatesInput | tb_operacao_movimento_produtoScalarWhereWithAggregatesInput[]
+    OR?: tb_operacao_movimento_produtoScalarWhereWithAggregatesInput[]
+    NOT?: tb_operacao_movimento_produtoScalarWhereWithAggregatesInput | tb_operacao_movimento_produtoScalarWhereWithAggregatesInput[]
+    Codigo?: IntWithAggregatesFilter<"tb_operacao_movimento_produto"> | number
+    Id_Operacao?: IntNullableWithAggregatesFilter<"tb_operacao_movimento_produto"> | number | null
+    Id_Produto?: IntNullableWithAggregatesFilter<"tb_operacao_movimento_produto"> | number | null
+    IDEmpresa?: IntNullableWithAggregatesFilter<"tb_operacao_movimento_produto"> | number | null
+    IDUser?: IntNullableWithAggregatesFilter<"tb_operacao_movimento_produto"> | number | null
+    RegExcluido?: StringNullableWithAggregatesFilter<"tb_operacao_movimento_produto"> | string | null
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarWhereInput = {
+    AND?: tb_parametros_data_inicial_tela_gerenciarWhereInput | tb_parametros_data_inicial_tela_gerenciarWhereInput[]
+    OR?: tb_parametros_data_inicial_tela_gerenciarWhereInput[]
+    NOT?: tb_parametros_data_inicial_tela_gerenciarWhereInput | tb_parametros_data_inicial_tela_gerenciarWhereInput[]
+    Codigo?: IntFilter<"tb_parametros_data_inicial_tela_gerenciar"> | number
+    IDUser?: IntNullableFilter<"tb_parametros_data_inicial_tela_gerenciar"> | number | null
+    IDEmpresa?: IntNullableFilter<"tb_parametros_data_inicial_tela_gerenciar"> | number | null
+    DHU?: StringNullableFilter<"tb_parametros_data_inicial_tela_gerenciar"> | string | null
+    RegExcluido?: StringNullableFilter<"tb_parametros_data_inicial_tela_gerenciar"> | string | null
+    Objeto?: StringNullableFilter<"tb_parametros_data_inicial_tela_gerenciar"> | string | null
+    Nome_Comercial?: StringNullableFilter<"tb_parametros_data_inicial_tela_gerenciar"> | string | null
+    Dias?: IntNullableFilter<"tb_parametros_data_inicial_tela_gerenciar"> | number | null
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarOrderByWithRelationInput = {
+    Codigo?: SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    DHU?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    Objeto?: SortOrderInput | SortOrder
+    Nome_Comercial?: SortOrderInput | SortOrder
+    Dias?: SortOrderInput | SortOrder
+    _relevance?: tb_parametros_data_inicial_tela_gerenciarOrderByRelevanceInput
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarWhereUniqueInput = Prisma.AtLeast<{
+    Codigo?: number
+    AND?: tb_parametros_data_inicial_tela_gerenciarWhereInput | tb_parametros_data_inicial_tela_gerenciarWhereInput[]
+    OR?: tb_parametros_data_inicial_tela_gerenciarWhereInput[]
+    NOT?: tb_parametros_data_inicial_tela_gerenciarWhereInput | tb_parametros_data_inicial_tela_gerenciarWhereInput[]
+    IDUser?: IntNullableFilter<"tb_parametros_data_inicial_tela_gerenciar"> | number | null
+    IDEmpresa?: IntNullableFilter<"tb_parametros_data_inicial_tela_gerenciar"> | number | null
+    DHU?: StringNullableFilter<"tb_parametros_data_inicial_tela_gerenciar"> | string | null
+    RegExcluido?: StringNullableFilter<"tb_parametros_data_inicial_tela_gerenciar"> | string | null
+    Objeto?: StringNullableFilter<"tb_parametros_data_inicial_tela_gerenciar"> | string | null
+    Nome_Comercial?: StringNullableFilter<"tb_parametros_data_inicial_tela_gerenciar"> | string | null
+    Dias?: IntNullableFilter<"tb_parametros_data_inicial_tela_gerenciar"> | number | null
+  }, "Codigo">
+
+  export type tb_parametros_data_inicial_tela_gerenciarOrderByWithAggregationInput = {
+    Codigo?: SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    DHU?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    Objeto?: SortOrderInput | SortOrder
+    Nome_Comercial?: SortOrderInput | SortOrder
+    Dias?: SortOrderInput | SortOrder
+    _count?: tb_parametros_data_inicial_tela_gerenciarCountOrderByAggregateInput
+    _avg?: tb_parametros_data_inicial_tela_gerenciarAvgOrderByAggregateInput
+    _max?: tb_parametros_data_inicial_tela_gerenciarMaxOrderByAggregateInput
+    _min?: tb_parametros_data_inicial_tela_gerenciarMinOrderByAggregateInput
+    _sum?: tb_parametros_data_inicial_tela_gerenciarSumOrderByAggregateInput
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarScalarWhereWithAggregatesInput = {
+    AND?: tb_parametros_data_inicial_tela_gerenciarScalarWhereWithAggregatesInput | tb_parametros_data_inicial_tela_gerenciarScalarWhereWithAggregatesInput[]
+    OR?: tb_parametros_data_inicial_tela_gerenciarScalarWhereWithAggregatesInput[]
+    NOT?: tb_parametros_data_inicial_tela_gerenciarScalarWhereWithAggregatesInput | tb_parametros_data_inicial_tela_gerenciarScalarWhereWithAggregatesInput[]
+    Codigo?: IntWithAggregatesFilter<"tb_parametros_data_inicial_tela_gerenciar"> | number
+    IDUser?: IntNullableWithAggregatesFilter<"tb_parametros_data_inicial_tela_gerenciar"> | number | null
+    IDEmpresa?: IntNullableWithAggregatesFilter<"tb_parametros_data_inicial_tela_gerenciar"> | number | null
+    DHU?: StringNullableWithAggregatesFilter<"tb_parametros_data_inicial_tela_gerenciar"> | string | null
+    RegExcluido?: StringNullableWithAggregatesFilter<"tb_parametros_data_inicial_tela_gerenciar"> | string | null
+    Objeto?: StringNullableWithAggregatesFilter<"tb_parametros_data_inicial_tela_gerenciar"> | string | null
+    Nome_Comercial?: StringNullableWithAggregatesFilter<"tb_parametros_data_inicial_tela_gerenciar"> | string | null
+    Dias?: IntNullableWithAggregatesFilter<"tb_parametros_data_inicial_tela_gerenciar"> | number | null
+  }
+
+  export type tb_produtos_food_entrega_tapWhereInput = {
+    AND?: tb_produtos_food_entrega_tapWhereInput | tb_produtos_food_entrega_tapWhereInput[]
+    OR?: tb_produtos_food_entrega_tapWhereInput[]
+    NOT?: tb_produtos_food_entrega_tapWhereInput | tb_produtos_food_entrega_tapWhereInput[]
+    Codigo?: IntFilter<"tb_produtos_food_entrega_tap"> | number
+    DHU?: StringNullableFilter<"tb_produtos_food_entrega_tap"> | string | null
+    Id_Produto?: IntNullableFilter<"tb_produtos_food_entrega_tap"> | number | null
+    RegExcluido?: StringNullableFilter<"tb_produtos_food_entrega_tap"> | string | null
+    IDEmpresa?: IntNullableFilter<"tb_produtos_food_entrega_tap"> | number | null
+    IDUser?: IntNullableFilter<"tb_produtos_food_entrega_tap"> | number | null
+  }
+
+  export type tb_produtos_food_entrega_tapOrderByWithRelationInput = {
+    Codigo?: SortOrder
+    DHU?: SortOrderInput | SortOrder
+    Id_Produto?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    _relevance?: tb_produtos_food_entrega_tapOrderByRelevanceInput
+  }
+
+  export type tb_produtos_food_entrega_tapWhereUniqueInput = Prisma.AtLeast<{
+    Codigo?: number
+    AND?: tb_produtos_food_entrega_tapWhereInput | tb_produtos_food_entrega_tapWhereInput[]
+    OR?: tb_produtos_food_entrega_tapWhereInput[]
+    NOT?: tb_produtos_food_entrega_tapWhereInput | tb_produtos_food_entrega_tapWhereInput[]
+    DHU?: StringNullableFilter<"tb_produtos_food_entrega_tap"> | string | null
+    Id_Produto?: IntNullableFilter<"tb_produtos_food_entrega_tap"> | number | null
+    RegExcluido?: StringNullableFilter<"tb_produtos_food_entrega_tap"> | string | null
+    IDEmpresa?: IntNullableFilter<"tb_produtos_food_entrega_tap"> | number | null
+    IDUser?: IntNullableFilter<"tb_produtos_food_entrega_tap"> | number | null
+  }, "Codigo">
+
+  export type tb_produtos_food_entrega_tapOrderByWithAggregationInput = {
+    Codigo?: SortOrder
+    DHU?: SortOrderInput | SortOrder
+    Id_Produto?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    _count?: tb_produtos_food_entrega_tapCountOrderByAggregateInput
+    _avg?: tb_produtos_food_entrega_tapAvgOrderByAggregateInput
+    _max?: tb_produtos_food_entrega_tapMaxOrderByAggregateInput
+    _min?: tb_produtos_food_entrega_tapMinOrderByAggregateInput
+    _sum?: tb_produtos_food_entrega_tapSumOrderByAggregateInput
+  }
+
+  export type tb_produtos_food_entrega_tapScalarWhereWithAggregatesInput = {
+    AND?: tb_produtos_food_entrega_tapScalarWhereWithAggregatesInput | tb_produtos_food_entrega_tapScalarWhereWithAggregatesInput[]
+    OR?: tb_produtos_food_entrega_tapScalarWhereWithAggregatesInput[]
+    NOT?: tb_produtos_food_entrega_tapScalarWhereWithAggregatesInput | tb_produtos_food_entrega_tapScalarWhereWithAggregatesInput[]
+    Codigo?: IntWithAggregatesFilter<"tb_produtos_food_entrega_tap"> | number
+    DHU?: StringNullableWithAggregatesFilter<"tb_produtos_food_entrega_tap"> | string | null
+    Id_Produto?: IntNullableWithAggregatesFilter<"tb_produtos_food_entrega_tap"> | number | null
+    RegExcluido?: StringNullableWithAggregatesFilter<"tb_produtos_food_entrega_tap"> | string | null
+    IDEmpresa?: IntNullableWithAggregatesFilter<"tb_produtos_food_entrega_tap"> | number | null
+    IDUser?: IntNullableWithAggregatesFilter<"tb_produtos_food_entrega_tap"> | number | null
+  }
+
+  export type tb_produtos_food_producao_cozinhaWhereInput = {
+    AND?: tb_produtos_food_producao_cozinhaWhereInput | tb_produtos_food_producao_cozinhaWhereInput[]
+    OR?: tb_produtos_food_producao_cozinhaWhereInput[]
+    NOT?: tb_produtos_food_producao_cozinhaWhereInput | tb_produtos_food_producao_cozinhaWhereInput[]
+    Codigo?: IntFilter<"tb_produtos_food_producao_cozinha"> | number
+    Id_Produto?: IntNullableFilter<"tb_produtos_food_producao_cozinha"> | number | null
+    RegExcluido?: StringNullableFilter<"tb_produtos_food_producao_cozinha"> | string | null
+    DHU?: StringNullableFilter<"tb_produtos_food_producao_cozinha"> | string | null
+    IDEmpresa?: IntNullableFilter<"tb_produtos_food_producao_cozinha"> | number | null
+    IDUser?: IntNullableFilter<"tb_produtos_food_producao_cozinha"> | number | null
+  }
+
+  export type tb_produtos_food_producao_cozinhaOrderByWithRelationInput = {
+    Codigo?: SortOrder
+    Id_Produto?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    DHU?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    _relevance?: tb_produtos_food_producao_cozinhaOrderByRelevanceInput
+  }
+
+  export type tb_produtos_food_producao_cozinhaWhereUniqueInput = Prisma.AtLeast<{
+    Codigo?: number
+    AND?: tb_produtos_food_producao_cozinhaWhereInput | tb_produtos_food_producao_cozinhaWhereInput[]
+    OR?: tb_produtos_food_producao_cozinhaWhereInput[]
+    NOT?: tb_produtos_food_producao_cozinhaWhereInput | tb_produtos_food_producao_cozinhaWhereInput[]
+    Id_Produto?: IntNullableFilter<"tb_produtos_food_producao_cozinha"> | number | null
+    RegExcluido?: StringNullableFilter<"tb_produtos_food_producao_cozinha"> | string | null
+    DHU?: StringNullableFilter<"tb_produtos_food_producao_cozinha"> | string | null
+    IDEmpresa?: IntNullableFilter<"tb_produtos_food_producao_cozinha"> | number | null
+    IDUser?: IntNullableFilter<"tb_produtos_food_producao_cozinha"> | number | null
+  }, "Codigo">
+
+  export type tb_produtos_food_producao_cozinhaOrderByWithAggregationInput = {
+    Codigo?: SortOrder
+    Id_Produto?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    DHU?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    _count?: tb_produtos_food_producao_cozinhaCountOrderByAggregateInput
+    _avg?: tb_produtos_food_producao_cozinhaAvgOrderByAggregateInput
+    _max?: tb_produtos_food_producao_cozinhaMaxOrderByAggregateInput
+    _min?: tb_produtos_food_producao_cozinhaMinOrderByAggregateInput
+    _sum?: tb_produtos_food_producao_cozinhaSumOrderByAggregateInput
+  }
+
+  export type tb_produtos_food_producao_cozinhaScalarWhereWithAggregatesInput = {
+    AND?: tb_produtos_food_producao_cozinhaScalarWhereWithAggregatesInput | tb_produtos_food_producao_cozinhaScalarWhereWithAggregatesInput[]
+    OR?: tb_produtos_food_producao_cozinhaScalarWhereWithAggregatesInput[]
+    NOT?: tb_produtos_food_producao_cozinhaScalarWhereWithAggregatesInput | tb_produtos_food_producao_cozinhaScalarWhereWithAggregatesInput[]
+    Codigo?: IntWithAggregatesFilter<"tb_produtos_food_producao_cozinha"> | number
+    Id_Produto?: IntNullableWithAggregatesFilter<"tb_produtos_food_producao_cozinha"> | number | null
+    RegExcluido?: StringNullableWithAggregatesFilter<"tb_produtos_food_producao_cozinha"> | string | null
+    DHU?: StringNullableWithAggregatesFilter<"tb_produtos_food_producao_cozinha"> | string | null
+    IDEmpresa?: IntNullableWithAggregatesFilter<"tb_produtos_food_producao_cozinha"> | number | null
+    IDUser?: IntNullableWithAggregatesFilter<"tb_produtos_food_producao_cozinha"> | number | null
+  }
+
+  export type tb_produtos_transformacaoWhereInput = {
+    AND?: tb_produtos_transformacaoWhereInput | tb_produtos_transformacaoWhereInput[]
+    OR?: tb_produtos_transformacaoWhereInput[]
+    NOT?: tb_produtos_transformacaoWhereInput | tb_produtos_transformacaoWhereInput[]
+    Codigo?: IntFilter<"tb_produtos_transformacao"> | number
+    Id_Produto_Entrada?: IntNullableFilter<"tb_produtos_transformacao"> | number | null
+    Id_Produto_Saida?: IntNullableFilter<"tb_produtos_transformacao"> | number | null
+    Quantidade_Saida?: FloatNullableFilter<"tb_produtos_transformacao"> | number | null
+    Quantidade_Entrada?: FloatNullableFilter<"tb_produtos_transformacao"> | number | null
+    Estoque_Processado?: StringNullableFilter<"tb_produtos_transformacao"> | string | null
+    IDEmpresa?: IntNullableFilter<"tb_produtos_transformacao"> | number | null
+    IDUser?: IntNullableFilter<"tb_produtos_transformacao"> | number | null
+    DHU?: StringNullableFilter<"tb_produtos_transformacao"> | string | null
+    Data_Movimento?: DateTimeNullableFilter<"tb_produtos_transformacao"> | Date | string | null
+    Hora_Movimento?: StringNullableFilter<"tb_produtos_transformacao"> | string | null
+    Tempo?: StringNullableFilter<"tb_produtos_transformacao"> | string | null
+    Via_Sistema?: StringNullableFilter<"tb_produtos_transformacao"> | string | null
+  }
+
+  export type tb_produtos_transformacaoOrderByWithRelationInput = {
+    Codigo?: SortOrder
+    Id_Produto_Entrada?: SortOrderInput | SortOrder
+    Id_Produto_Saida?: SortOrderInput | SortOrder
+    Quantidade_Saida?: SortOrderInput | SortOrder
+    Quantidade_Entrada?: SortOrderInput | SortOrder
+    Estoque_Processado?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    DHU?: SortOrderInput | SortOrder
+    Data_Movimento?: SortOrderInput | SortOrder
+    Hora_Movimento?: SortOrderInput | SortOrder
+    Tempo?: SortOrderInput | SortOrder
+    Via_Sistema?: SortOrderInput | SortOrder
+    _relevance?: tb_produtos_transformacaoOrderByRelevanceInput
+  }
+
+  export type tb_produtos_transformacaoWhereUniqueInput = Prisma.AtLeast<{
+    Codigo?: number
+    AND?: tb_produtos_transformacaoWhereInput | tb_produtos_transformacaoWhereInput[]
+    OR?: tb_produtos_transformacaoWhereInput[]
+    NOT?: tb_produtos_transformacaoWhereInput | tb_produtos_transformacaoWhereInput[]
+    Id_Produto_Entrada?: IntNullableFilter<"tb_produtos_transformacao"> | number | null
+    Id_Produto_Saida?: IntNullableFilter<"tb_produtos_transformacao"> | number | null
+    Quantidade_Saida?: FloatNullableFilter<"tb_produtos_transformacao"> | number | null
+    Quantidade_Entrada?: FloatNullableFilter<"tb_produtos_transformacao"> | number | null
+    Estoque_Processado?: StringNullableFilter<"tb_produtos_transformacao"> | string | null
+    IDEmpresa?: IntNullableFilter<"tb_produtos_transformacao"> | number | null
+    IDUser?: IntNullableFilter<"tb_produtos_transformacao"> | number | null
+    DHU?: StringNullableFilter<"tb_produtos_transformacao"> | string | null
+    Data_Movimento?: DateTimeNullableFilter<"tb_produtos_transformacao"> | Date | string | null
+    Hora_Movimento?: StringNullableFilter<"tb_produtos_transformacao"> | string | null
+    Tempo?: StringNullableFilter<"tb_produtos_transformacao"> | string | null
+    Via_Sistema?: StringNullableFilter<"tb_produtos_transformacao"> | string | null
+  }, "Codigo">
+
+  export type tb_produtos_transformacaoOrderByWithAggregationInput = {
+    Codigo?: SortOrder
+    Id_Produto_Entrada?: SortOrderInput | SortOrder
+    Id_Produto_Saida?: SortOrderInput | SortOrder
+    Quantidade_Saida?: SortOrderInput | SortOrder
+    Quantidade_Entrada?: SortOrderInput | SortOrder
+    Estoque_Processado?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    DHU?: SortOrderInput | SortOrder
+    Data_Movimento?: SortOrderInput | SortOrder
+    Hora_Movimento?: SortOrderInput | SortOrder
+    Tempo?: SortOrderInput | SortOrder
+    Via_Sistema?: SortOrderInput | SortOrder
+    _count?: tb_produtos_transformacaoCountOrderByAggregateInput
+    _avg?: tb_produtos_transformacaoAvgOrderByAggregateInput
+    _max?: tb_produtos_transformacaoMaxOrderByAggregateInput
+    _min?: tb_produtos_transformacaoMinOrderByAggregateInput
+    _sum?: tb_produtos_transformacaoSumOrderByAggregateInput
+  }
+
+  export type tb_produtos_transformacaoScalarWhereWithAggregatesInput = {
+    AND?: tb_produtos_transformacaoScalarWhereWithAggregatesInput | tb_produtos_transformacaoScalarWhereWithAggregatesInput[]
+    OR?: tb_produtos_transformacaoScalarWhereWithAggregatesInput[]
+    NOT?: tb_produtos_transformacaoScalarWhereWithAggregatesInput | tb_produtos_transformacaoScalarWhereWithAggregatesInput[]
+    Codigo?: IntWithAggregatesFilter<"tb_produtos_transformacao"> | number
+    Id_Produto_Entrada?: IntNullableWithAggregatesFilter<"tb_produtos_transformacao"> | number | null
+    Id_Produto_Saida?: IntNullableWithAggregatesFilter<"tb_produtos_transformacao"> | number | null
+    Quantidade_Saida?: FloatNullableWithAggregatesFilter<"tb_produtos_transformacao"> | number | null
+    Quantidade_Entrada?: FloatNullableWithAggregatesFilter<"tb_produtos_transformacao"> | number | null
+    Estoque_Processado?: StringNullableWithAggregatesFilter<"tb_produtos_transformacao"> | string | null
+    IDEmpresa?: IntNullableWithAggregatesFilter<"tb_produtos_transformacao"> | number | null
+    IDUser?: IntNullableWithAggregatesFilter<"tb_produtos_transformacao"> | number | null
+    DHU?: StringNullableWithAggregatesFilter<"tb_produtos_transformacao"> | string | null
+    Data_Movimento?: DateTimeNullableWithAggregatesFilter<"tb_produtos_transformacao"> | Date | string | null
+    Hora_Movimento?: StringNullableWithAggregatesFilter<"tb_produtos_transformacao"> | string | null
+    Tempo?: StringNullableWithAggregatesFilter<"tb_produtos_transformacao"> | string | null
+    Via_Sistema?: StringNullableWithAggregatesFilter<"tb_produtos_transformacao"> | string | null
+  }
+
+  export type tb_produtos_transformacao_confWhereInput = {
+    AND?: tb_produtos_transformacao_confWhereInput | tb_produtos_transformacao_confWhereInput[]
+    OR?: tb_produtos_transformacao_confWhereInput[]
+    NOT?: tb_produtos_transformacao_confWhereInput | tb_produtos_transformacao_confWhereInput[]
+    Codigo?: IntFilter<"tb_produtos_transformacao_conf"> | number
+    Id_Produto_Saida?: IntNullableFilter<"tb_produtos_transformacao_conf"> | number | null
+    Id_Produto_Entrada?: IntNullableFilter<"tb_produtos_transformacao_conf"> | number | null
+    Quantidade_Saida?: FloatNullableFilter<"tb_produtos_transformacao_conf"> | number | null
+    Quantidade_Entrada?: FloatNullableFilter<"tb_produtos_transformacao_conf"> | number | null
+    Acionar_Em?: FloatNullableFilter<"tb_produtos_transformacao_conf"> | number | null
+    DHU?: StringNullableFilter<"tb_produtos_transformacao_conf"> | string | null
+    IDEmpresa?: IntNullableFilter<"tb_produtos_transformacao_conf"> | number | null
+    IDUser?: IntNullableFilter<"tb_produtos_transformacao_conf"> | number | null
+    RegExcluido?: StringNullableFilter<"tb_produtos_transformacao_conf"> | string | null
+  }
+
+  export type tb_produtos_transformacao_confOrderByWithRelationInput = {
+    Codigo?: SortOrder
+    Id_Produto_Saida?: SortOrderInput | SortOrder
+    Id_Produto_Entrada?: SortOrderInput | SortOrder
+    Quantidade_Saida?: SortOrderInput | SortOrder
+    Quantidade_Entrada?: SortOrderInput | SortOrder
+    Acionar_Em?: SortOrderInput | SortOrder
+    DHU?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    _relevance?: tb_produtos_transformacao_confOrderByRelevanceInput
+  }
+
+  export type tb_produtos_transformacao_confWhereUniqueInput = Prisma.AtLeast<{
+    Codigo?: number
+    AND?: tb_produtos_transformacao_confWhereInput | tb_produtos_transformacao_confWhereInput[]
+    OR?: tb_produtos_transformacao_confWhereInput[]
+    NOT?: tb_produtos_transformacao_confWhereInput | tb_produtos_transformacao_confWhereInput[]
+    Id_Produto_Saida?: IntNullableFilter<"tb_produtos_transformacao_conf"> | number | null
+    Id_Produto_Entrada?: IntNullableFilter<"tb_produtos_transformacao_conf"> | number | null
+    Quantidade_Saida?: FloatNullableFilter<"tb_produtos_transformacao_conf"> | number | null
+    Quantidade_Entrada?: FloatNullableFilter<"tb_produtos_transformacao_conf"> | number | null
+    Acionar_Em?: FloatNullableFilter<"tb_produtos_transformacao_conf"> | number | null
+    DHU?: StringNullableFilter<"tb_produtos_transformacao_conf"> | string | null
+    IDEmpresa?: IntNullableFilter<"tb_produtos_transformacao_conf"> | number | null
+    IDUser?: IntNullableFilter<"tb_produtos_transformacao_conf"> | number | null
+    RegExcluido?: StringNullableFilter<"tb_produtos_transformacao_conf"> | string | null
+  }, "Codigo">
+
+  export type tb_produtos_transformacao_confOrderByWithAggregationInput = {
+    Codigo?: SortOrder
+    Id_Produto_Saida?: SortOrderInput | SortOrder
+    Id_Produto_Entrada?: SortOrderInput | SortOrder
+    Quantidade_Saida?: SortOrderInput | SortOrder
+    Quantidade_Entrada?: SortOrderInput | SortOrder
+    Acionar_Em?: SortOrderInput | SortOrder
+    DHU?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    _count?: tb_produtos_transformacao_confCountOrderByAggregateInput
+    _avg?: tb_produtos_transformacao_confAvgOrderByAggregateInput
+    _max?: tb_produtos_transformacao_confMaxOrderByAggregateInput
+    _min?: tb_produtos_transformacao_confMinOrderByAggregateInput
+    _sum?: tb_produtos_transformacao_confSumOrderByAggregateInput
+  }
+
+  export type tb_produtos_transformacao_confScalarWhereWithAggregatesInput = {
+    AND?: tb_produtos_transformacao_confScalarWhereWithAggregatesInput | tb_produtos_transformacao_confScalarWhereWithAggregatesInput[]
+    OR?: tb_produtos_transformacao_confScalarWhereWithAggregatesInput[]
+    NOT?: tb_produtos_transformacao_confScalarWhereWithAggregatesInput | tb_produtos_transformacao_confScalarWhereWithAggregatesInput[]
+    Codigo?: IntWithAggregatesFilter<"tb_produtos_transformacao_conf"> | number
+    Id_Produto_Saida?: IntNullableWithAggregatesFilter<"tb_produtos_transformacao_conf"> | number | null
+    Id_Produto_Entrada?: IntNullableWithAggregatesFilter<"tb_produtos_transformacao_conf"> | number | null
+    Quantidade_Saida?: FloatNullableWithAggregatesFilter<"tb_produtos_transformacao_conf"> | number | null
+    Quantidade_Entrada?: FloatNullableWithAggregatesFilter<"tb_produtos_transformacao_conf"> | number | null
+    Acionar_Em?: FloatNullableWithAggregatesFilter<"tb_produtos_transformacao_conf"> | number | null
+    DHU?: StringNullableWithAggregatesFilter<"tb_produtos_transformacao_conf"> | string | null
+    IDEmpresa?: IntNullableWithAggregatesFilter<"tb_produtos_transformacao_conf"> | number | null
+    IDUser?: IntNullableWithAggregatesFilter<"tb_produtos_transformacao_conf"> | number | null
+    RegExcluido?: StringNullableWithAggregatesFilter<"tb_produtos_transformacao_conf"> | string | null
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosWhereInput = {
+    AND?: tb_vendas_pre_comandas_pre_pagamentosWhereInput | tb_vendas_pre_comandas_pre_pagamentosWhereInput[]
+    OR?: tb_vendas_pre_comandas_pre_pagamentosWhereInput[]
+    NOT?: tb_vendas_pre_comandas_pre_pagamentosWhereInput | tb_vendas_pre_comandas_pre_pagamentosWhereInput[]
+    Codigo?: IntFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number
+    Id_Comanda?: IntNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Id_Pagamento?: IntNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Valor?: FloatNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Valor_Recebido?: FloatNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Troco?: FloatNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    tPag?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    indPag_Opc?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    xPag_Opc?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    tpIntegra_Opc?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    CNPJ_Opc?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    tBand_Opc?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    cAut_Opc?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_Ok?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_Adquirente?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_CNPJ?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_Bandeira?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_CD?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    IDUser?: IntNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    IDEmpresa?: IntNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Processado?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    ID_Lcto?: IntNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    RegExcluido?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosOrderByWithRelationInput = {
+    Codigo?: SortOrder
+    Id_Comanda?: SortOrderInput | SortOrder
+    Id_Pagamento?: SortOrderInput | SortOrder
+    Valor?: SortOrderInput | SortOrder
+    Valor_Recebido?: SortOrderInput | SortOrder
+    Troco?: SortOrderInput | SortOrder
+    tPag?: SortOrderInput | SortOrder
+    indPag_Opc?: SortOrderInput | SortOrder
+    xPag_Opc?: SortOrderInput | SortOrder
+    tpIntegra_Opc?: SortOrderInput | SortOrder
+    CNPJ_Opc?: SortOrderInput | SortOrder
+    tBand_Opc?: SortOrderInput | SortOrder
+    cAut_Opc?: SortOrderInput | SortOrder
+    TEF_Ok?: SortOrderInput | SortOrder
+    TEF_Adquirente?: SortOrderInput | SortOrder
+    TEF_CNPJ?: SortOrderInput | SortOrder
+    TEF_Bandeira?: SortOrderInput | SortOrder
+    TEF_CD?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    Processado?: SortOrderInput | SortOrder
+    ID_Lcto?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    _relevance?: tb_vendas_pre_comandas_pre_pagamentosOrderByRelevanceInput
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosWhereUniqueInput = Prisma.AtLeast<{
+    Codigo?: number
+    AND?: tb_vendas_pre_comandas_pre_pagamentosWhereInput | tb_vendas_pre_comandas_pre_pagamentosWhereInput[]
+    OR?: tb_vendas_pre_comandas_pre_pagamentosWhereInput[]
+    NOT?: tb_vendas_pre_comandas_pre_pagamentosWhereInput | tb_vendas_pre_comandas_pre_pagamentosWhereInput[]
+    Id_Comanda?: IntNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Id_Pagamento?: IntNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Valor?: FloatNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Valor_Recebido?: FloatNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Troco?: FloatNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    tPag?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    indPag_Opc?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    xPag_Opc?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    tpIntegra_Opc?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    CNPJ_Opc?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    tBand_Opc?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    cAut_Opc?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_Ok?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_Adquirente?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_CNPJ?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_Bandeira?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_CD?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    IDUser?: IntNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    IDEmpresa?: IntNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Processado?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    ID_Lcto?: IntNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    RegExcluido?: StringNullableFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+  }, "Codigo">
+
+  export type tb_vendas_pre_comandas_pre_pagamentosOrderByWithAggregationInput = {
+    Codigo?: SortOrder
+    Id_Comanda?: SortOrderInput | SortOrder
+    Id_Pagamento?: SortOrderInput | SortOrder
+    Valor?: SortOrderInput | SortOrder
+    Valor_Recebido?: SortOrderInput | SortOrder
+    Troco?: SortOrderInput | SortOrder
+    tPag?: SortOrderInput | SortOrder
+    indPag_Opc?: SortOrderInput | SortOrder
+    xPag_Opc?: SortOrderInput | SortOrder
+    tpIntegra_Opc?: SortOrderInput | SortOrder
+    CNPJ_Opc?: SortOrderInput | SortOrder
+    tBand_Opc?: SortOrderInput | SortOrder
+    cAut_Opc?: SortOrderInput | SortOrder
+    TEF_Ok?: SortOrderInput | SortOrder
+    TEF_Adquirente?: SortOrderInput | SortOrder
+    TEF_CNPJ?: SortOrderInput | SortOrder
+    TEF_Bandeira?: SortOrderInput | SortOrder
+    TEF_CD?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    Processado?: SortOrderInput | SortOrder
+    ID_Lcto?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    _count?: tb_vendas_pre_comandas_pre_pagamentosCountOrderByAggregateInput
+    _avg?: tb_vendas_pre_comandas_pre_pagamentosAvgOrderByAggregateInput
+    _max?: tb_vendas_pre_comandas_pre_pagamentosMaxOrderByAggregateInput
+    _min?: tb_vendas_pre_comandas_pre_pagamentosMinOrderByAggregateInput
+    _sum?: tb_vendas_pre_comandas_pre_pagamentosSumOrderByAggregateInput
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosScalarWhereWithAggregatesInput = {
+    AND?: tb_vendas_pre_comandas_pre_pagamentosScalarWhereWithAggregatesInput | tb_vendas_pre_comandas_pre_pagamentosScalarWhereWithAggregatesInput[]
+    OR?: tb_vendas_pre_comandas_pre_pagamentosScalarWhereWithAggregatesInput[]
+    NOT?: tb_vendas_pre_comandas_pre_pagamentosScalarWhereWithAggregatesInput | tb_vendas_pre_comandas_pre_pagamentosScalarWhereWithAggregatesInput[]
+    Codigo?: IntWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number
+    Id_Comanda?: IntNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Id_Pagamento?: IntNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Valor?: FloatNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Valor_Recebido?: FloatNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Troco?: FloatNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    tPag?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    indPag_Opc?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    xPag_Opc?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    tpIntegra_Opc?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    CNPJ_Opc?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    tBand_Opc?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    cAut_Opc?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_Ok?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_Adquirente?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_CNPJ?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_Bandeira?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    TEF_CD?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    IDUser?: IntNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    IDEmpresa?: IntNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    Processado?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+    ID_Lcto?: IntNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | number | null
+    RegExcluido?: StringNullableWithAggregatesFilter<"tb_vendas_pre_comandas_pre_pagamentos"> | string | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoWhereInput = {
+    AND?: tb_vendas_produtos_lotes_avulsoWhereInput | tb_vendas_produtos_lotes_avulsoWhereInput[]
+    OR?: tb_vendas_produtos_lotes_avulsoWhereInput[]
+    NOT?: tb_vendas_produtos_lotes_avulsoWhereInput | tb_vendas_produtos_lotes_avulsoWhereInput[]
+    Codigo?: IntFilter<"tb_vendas_produtos_lotes_avulso"> | number
+    Id_Lcto?: IntNullableFilter<"tb_vendas_produtos_lotes_avulso"> | number | null
+    nLote?: StringNullableFilter<"tb_vendas_produtos_lotes_avulso"> | string | null
+    dFab?: DateTimeNullableFilter<"tb_vendas_produtos_lotes_avulso"> | Date | string | null
+    dVenc?: DateTimeNullableFilter<"tb_vendas_produtos_lotes_avulso"> | Date | string | null
+    Quantidade?: FloatNullableFilter<"tb_vendas_produtos_lotes_avulso"> | number | null
+    IDUser?: IntNullableFilter<"tb_vendas_produtos_lotes_avulso"> | number | null
+    IDEmpresa?: IntNullableFilter<"tb_vendas_produtos_lotes_avulso"> | number | null
+    DHU?: StringNullableFilter<"tb_vendas_produtos_lotes_avulso"> | string | null
+    RegExcluido?: StringNullableFilter<"tb_vendas_produtos_lotes_avulso"> | string | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoOrderByWithRelationInput = {
+    Codigo?: SortOrder
+    Id_Lcto?: SortOrderInput | SortOrder
+    nLote?: SortOrderInput | SortOrder
+    dFab?: SortOrderInput | SortOrder
+    dVenc?: SortOrderInput | SortOrder
+    Quantidade?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    DHU?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    _relevance?: tb_vendas_produtos_lotes_avulsoOrderByRelevanceInput
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoWhereUniqueInput = Prisma.AtLeast<{
+    Codigo?: number
+    AND?: tb_vendas_produtos_lotes_avulsoWhereInput | tb_vendas_produtos_lotes_avulsoWhereInput[]
+    OR?: tb_vendas_produtos_lotes_avulsoWhereInput[]
+    NOT?: tb_vendas_produtos_lotes_avulsoWhereInput | tb_vendas_produtos_lotes_avulsoWhereInput[]
+    Id_Lcto?: IntNullableFilter<"tb_vendas_produtos_lotes_avulso"> | number | null
+    nLote?: StringNullableFilter<"tb_vendas_produtos_lotes_avulso"> | string | null
+    dFab?: DateTimeNullableFilter<"tb_vendas_produtos_lotes_avulso"> | Date | string | null
+    dVenc?: DateTimeNullableFilter<"tb_vendas_produtos_lotes_avulso"> | Date | string | null
+    Quantidade?: FloatNullableFilter<"tb_vendas_produtos_lotes_avulso"> | number | null
+    IDUser?: IntNullableFilter<"tb_vendas_produtos_lotes_avulso"> | number | null
+    IDEmpresa?: IntNullableFilter<"tb_vendas_produtos_lotes_avulso"> | number | null
+    DHU?: StringNullableFilter<"tb_vendas_produtos_lotes_avulso"> | string | null
+    RegExcluido?: StringNullableFilter<"tb_vendas_produtos_lotes_avulso"> | string | null
+  }, "Codigo">
+
+  export type tb_vendas_produtos_lotes_avulsoOrderByWithAggregationInput = {
+    Codigo?: SortOrder
+    Id_Lcto?: SortOrderInput | SortOrder
+    nLote?: SortOrderInput | SortOrder
+    dFab?: SortOrderInput | SortOrder
+    dVenc?: SortOrderInput | SortOrder
+    Quantidade?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    DHU?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    _count?: tb_vendas_produtos_lotes_avulsoCountOrderByAggregateInput
+    _avg?: tb_vendas_produtos_lotes_avulsoAvgOrderByAggregateInput
+    _max?: tb_vendas_produtos_lotes_avulsoMaxOrderByAggregateInput
+    _min?: tb_vendas_produtos_lotes_avulsoMinOrderByAggregateInput
+    _sum?: tb_vendas_produtos_lotes_avulsoSumOrderByAggregateInput
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoScalarWhereWithAggregatesInput = {
+    AND?: tb_vendas_produtos_lotes_avulsoScalarWhereWithAggregatesInput | tb_vendas_produtos_lotes_avulsoScalarWhereWithAggregatesInput[]
+    OR?: tb_vendas_produtos_lotes_avulsoScalarWhereWithAggregatesInput[]
+    NOT?: tb_vendas_produtos_lotes_avulsoScalarWhereWithAggregatesInput | tb_vendas_produtos_lotes_avulsoScalarWhereWithAggregatesInput[]
+    Codigo?: IntWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso"> | number
+    Id_Lcto?: IntNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso"> | number | null
+    nLote?: StringNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso"> | string | null
+    dFab?: DateTimeNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso"> | Date | string | null
+    dVenc?: DateTimeNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso"> | Date | string | null
+    Quantidade?: FloatNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso"> | number | null
+    IDUser?: IntNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso"> | number | null
+    IDEmpresa?: IntNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso"> | number | null
+    DHU?: StringNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso"> | string | null
+    RegExcluido?: StringNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso"> | string | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preWhereInput = {
+    AND?: tb_vendas_produtos_lotes_avulso_preWhereInput | tb_vendas_produtos_lotes_avulso_preWhereInput[]
+    OR?: tb_vendas_produtos_lotes_avulso_preWhereInput[]
+    NOT?: tb_vendas_produtos_lotes_avulso_preWhereInput | tb_vendas_produtos_lotes_avulso_preWhereInput[]
+    Codigo?: IntFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number
+    Id_Lcto?: IntNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+    nLote?: StringNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | string | null
+    dFab?: DateTimeNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | Date | string | null
+    dVenc?: DateTimeNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | Date | string | null
+    Quantidade?: FloatNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+    IDUser?: IntNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+    IDEmpresa?: IntNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+    DHU?: StringNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | string | null
+    RegExcluido?: StringNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | string | null
+    Id_Lcto_Venda?: IntNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preOrderByWithRelationInput = {
+    Codigo?: SortOrder
+    Id_Lcto?: SortOrderInput | SortOrder
+    nLote?: SortOrderInput | SortOrder
+    dFab?: SortOrderInput | SortOrder
+    dVenc?: SortOrderInput | SortOrder
+    Quantidade?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    DHU?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    Id_Lcto_Venda?: SortOrderInput | SortOrder
+    _relevance?: tb_vendas_produtos_lotes_avulso_preOrderByRelevanceInput
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preWhereUniqueInput = Prisma.AtLeast<{
+    Codigo?: number
+    AND?: tb_vendas_produtos_lotes_avulso_preWhereInput | tb_vendas_produtos_lotes_avulso_preWhereInput[]
+    OR?: tb_vendas_produtos_lotes_avulso_preWhereInput[]
+    NOT?: tb_vendas_produtos_lotes_avulso_preWhereInput | tb_vendas_produtos_lotes_avulso_preWhereInput[]
+    Id_Lcto?: IntNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+    nLote?: StringNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | string | null
+    dFab?: DateTimeNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | Date | string | null
+    dVenc?: DateTimeNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | Date | string | null
+    Quantidade?: FloatNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+    IDUser?: IntNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+    IDEmpresa?: IntNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+    DHU?: StringNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | string | null
+    RegExcluido?: StringNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | string | null
+    Id_Lcto_Venda?: IntNullableFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+  }, "Codigo">
+
+  export type tb_vendas_produtos_lotes_avulso_preOrderByWithAggregationInput = {
+    Codigo?: SortOrder
+    Id_Lcto?: SortOrderInput | SortOrder
+    nLote?: SortOrderInput | SortOrder
+    dFab?: SortOrderInput | SortOrder
+    dVenc?: SortOrderInput | SortOrder
+    Quantidade?: SortOrderInput | SortOrder
+    IDUser?: SortOrderInput | SortOrder
+    IDEmpresa?: SortOrderInput | SortOrder
+    DHU?: SortOrderInput | SortOrder
+    RegExcluido?: SortOrderInput | SortOrder
+    Id_Lcto_Venda?: SortOrderInput | SortOrder
+    _count?: tb_vendas_produtos_lotes_avulso_preCountOrderByAggregateInput
+    _avg?: tb_vendas_produtos_lotes_avulso_preAvgOrderByAggregateInput
+    _max?: tb_vendas_produtos_lotes_avulso_preMaxOrderByAggregateInput
+    _min?: tb_vendas_produtos_lotes_avulso_preMinOrderByAggregateInput
+    _sum?: tb_vendas_produtos_lotes_avulso_preSumOrderByAggregateInput
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preScalarWhereWithAggregatesInput = {
+    AND?: tb_vendas_produtos_lotes_avulso_preScalarWhereWithAggregatesInput | tb_vendas_produtos_lotes_avulso_preScalarWhereWithAggregatesInput[]
+    OR?: tb_vendas_produtos_lotes_avulso_preScalarWhereWithAggregatesInput[]
+    NOT?: tb_vendas_produtos_lotes_avulso_preScalarWhereWithAggregatesInput | tb_vendas_produtos_lotes_avulso_preScalarWhereWithAggregatesInput[]
+    Codigo?: IntWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number
+    Id_Lcto?: IntNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+    nLote?: StringNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso_pre"> | string | null
+    dFab?: DateTimeNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso_pre"> | Date | string | null
+    dVenc?: DateTimeNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso_pre"> | Date | string | null
+    Quantidade?: FloatNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+    IDUser?: IntNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+    IDEmpresa?: IntNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+    DHU?: StringNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso_pre"> | string | null
+    RegExcluido?: StringNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso_pre"> | string | null
+    Id_Lcto_Venda?: IntNullableWithAggregatesFilter<"tb_vendas_produtos_lotes_avulso_pre"> | number | null
+  }
+
   export type tb_pessoasCreateInput = {
     Codigo: number
     Tipo_Pessoa?: string | null
@@ -272797,6 +285336,8 @@ export namespace Prisma {
     Margem_Ideal?: number | null
     Markup_Ideal?: number | null
     Custo_Ideal?: number | null
+    Id_Unidade_Tributacao?: number | null
+    Fator_Unidade_Tributacao?: number | null
   }
 
   export type tb_produtosUncheckedCreateInput = {
@@ -272881,6 +285422,8 @@ export namespace Prisma {
     Margem_Ideal?: number | null
     Markup_Ideal?: number | null
     Custo_Ideal?: number | null
+    Id_Unidade_Tributacao?: number | null
+    Fator_Unidade_Tributacao?: number | null
   }
 
   export type tb_produtosUpdateInput = {
@@ -272965,6 +285508,8 @@ export namespace Prisma {
     Margem_Ideal?: NullableFloatFieldUpdateOperationsInput | number | null
     Markup_Ideal?: NullableFloatFieldUpdateOperationsInput | number | null
     Custo_Ideal?: NullableFloatFieldUpdateOperationsInput | number | null
+    Id_Unidade_Tributacao?: NullableIntFieldUpdateOperationsInput | number | null
+    Fator_Unidade_Tributacao?: NullableFloatFieldUpdateOperationsInput | number | null
   }
 
   export type tb_produtosUncheckedUpdateInput = {
@@ -273049,6 +285594,8 @@ export namespace Prisma {
     Margem_Ideal?: NullableFloatFieldUpdateOperationsInput | number | null
     Markup_Ideal?: NullableFloatFieldUpdateOperationsInput | number | null
     Custo_Ideal?: NullableFloatFieldUpdateOperationsInput | number | null
+    Id_Unidade_Tributacao?: NullableIntFieldUpdateOperationsInput | number | null
+    Fator_Unidade_Tributacao?: NullableFloatFieldUpdateOperationsInput | number | null
   }
 
   export type tb_produtosCreateManyInput = {
@@ -273133,6 +285680,8 @@ export namespace Prisma {
     Margem_Ideal?: number | null
     Markup_Ideal?: number | null
     Custo_Ideal?: number | null
+    Id_Unidade_Tributacao?: number | null
+    Fator_Unidade_Tributacao?: number | null
   }
 
   export type tb_produtosUpdateManyMutationInput = {
@@ -273217,6 +285766,8 @@ export namespace Prisma {
     Margem_Ideal?: NullableFloatFieldUpdateOperationsInput | number | null
     Markup_Ideal?: NullableFloatFieldUpdateOperationsInput | number | null
     Custo_Ideal?: NullableFloatFieldUpdateOperationsInput | number | null
+    Id_Unidade_Tributacao?: NullableIntFieldUpdateOperationsInput | number | null
+    Fator_Unidade_Tributacao?: NullableFloatFieldUpdateOperationsInput | number | null
   }
 
   export type tb_produtosUncheckedUpdateManyInput = {
@@ -273301,6 +285852,8 @@ export namespace Prisma {
     Margem_Ideal?: NullableFloatFieldUpdateOperationsInput | number | null
     Markup_Ideal?: NullableFloatFieldUpdateOperationsInput | number | null
     Custo_Ideal?: NullableFloatFieldUpdateOperationsInput | number | null
+    Id_Unidade_Tributacao?: NullableIntFieldUpdateOperationsInput | number | null
+    Fator_Unidade_Tributacao?: NullableFloatFieldUpdateOperationsInput | number | null
   }
 
   export type tb_produtos_setorCreateInput = {
@@ -287806,6 +300359,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: string | null
     Rodape_Minha_Empresa?: string | null
     Exibe_Info_Mesa?: string | null
+    Tipo_Liberacao_Desconto?: number | null
+    Valida_Pre_Venda?: string | null
+    Supervisor_Sangria?: string | null
+    Pessoa_Pgr_Fid_Comanda?: string | null
+    Impressao_TAP?: string | null
+    Impressao_Cozinha?: string | null
+    Incluir_Acres_Desc_Unitario?: string | null
   }
 
   export type tb_parametros_execucaoUncheckedCreateInput = {
@@ -287880,6 +300440,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: string | null
     Rodape_Minha_Empresa?: string | null
     Exibe_Info_Mesa?: string | null
+    Tipo_Liberacao_Desconto?: number | null
+    Valida_Pre_Venda?: string | null
+    Supervisor_Sangria?: string | null
+    Pessoa_Pgr_Fid_Comanda?: string | null
+    Impressao_TAP?: string | null
+    Impressao_Cozinha?: string | null
+    Incluir_Acres_Desc_Unitario?: string | null
   }
 
   export type tb_parametros_execucaoUpdateInput = {
@@ -287954,6 +300521,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: NullableStringFieldUpdateOperationsInput | string | null
     Rodape_Minha_Empresa?: NullableStringFieldUpdateOperationsInput | string | null
     Exibe_Info_Mesa?: NullableStringFieldUpdateOperationsInput | string | null
+    Tipo_Liberacao_Desconto?: NullableIntFieldUpdateOperationsInput | number | null
+    Valida_Pre_Venda?: NullableStringFieldUpdateOperationsInput | string | null
+    Supervisor_Sangria?: NullableStringFieldUpdateOperationsInput | string | null
+    Pessoa_Pgr_Fid_Comanda?: NullableStringFieldUpdateOperationsInput | string | null
+    Impressao_TAP?: NullableStringFieldUpdateOperationsInput | string | null
+    Impressao_Cozinha?: NullableStringFieldUpdateOperationsInput | string | null
+    Incluir_Acres_Desc_Unitario?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_parametros_execucaoUncheckedUpdateInput = {
@@ -288028,6 +300602,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: NullableStringFieldUpdateOperationsInput | string | null
     Rodape_Minha_Empresa?: NullableStringFieldUpdateOperationsInput | string | null
     Exibe_Info_Mesa?: NullableStringFieldUpdateOperationsInput | string | null
+    Tipo_Liberacao_Desconto?: NullableIntFieldUpdateOperationsInput | number | null
+    Valida_Pre_Venda?: NullableStringFieldUpdateOperationsInput | string | null
+    Supervisor_Sangria?: NullableStringFieldUpdateOperationsInput | string | null
+    Pessoa_Pgr_Fid_Comanda?: NullableStringFieldUpdateOperationsInput | string | null
+    Impressao_TAP?: NullableStringFieldUpdateOperationsInput | string | null
+    Impressao_Cozinha?: NullableStringFieldUpdateOperationsInput | string | null
+    Incluir_Acres_Desc_Unitario?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_parametros_execucaoCreateManyInput = {
@@ -288102,6 +300683,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: string | null
     Rodape_Minha_Empresa?: string | null
     Exibe_Info_Mesa?: string | null
+    Tipo_Liberacao_Desconto?: number | null
+    Valida_Pre_Venda?: string | null
+    Supervisor_Sangria?: string | null
+    Pessoa_Pgr_Fid_Comanda?: string | null
+    Impressao_TAP?: string | null
+    Impressao_Cozinha?: string | null
+    Incluir_Acres_Desc_Unitario?: string | null
   }
 
   export type tb_parametros_execucaoUpdateManyMutationInput = {
@@ -288176,6 +300764,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: NullableStringFieldUpdateOperationsInput | string | null
     Rodape_Minha_Empresa?: NullableStringFieldUpdateOperationsInput | string | null
     Exibe_Info_Mesa?: NullableStringFieldUpdateOperationsInput | string | null
+    Tipo_Liberacao_Desconto?: NullableIntFieldUpdateOperationsInput | number | null
+    Valida_Pre_Venda?: NullableStringFieldUpdateOperationsInput | string | null
+    Supervisor_Sangria?: NullableStringFieldUpdateOperationsInput | string | null
+    Pessoa_Pgr_Fid_Comanda?: NullableStringFieldUpdateOperationsInput | string | null
+    Impressao_TAP?: NullableStringFieldUpdateOperationsInput | string | null
+    Impressao_Cozinha?: NullableStringFieldUpdateOperationsInput | string | null
+    Incluir_Acres_Desc_Unitario?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_parametros_execucaoUncheckedUpdateManyInput = {
@@ -288250,6 +300845,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: NullableStringFieldUpdateOperationsInput | string | null
     Rodape_Minha_Empresa?: NullableStringFieldUpdateOperationsInput | string | null
     Exibe_Info_Mesa?: NullableStringFieldUpdateOperationsInput | string | null
+    Tipo_Liberacao_Desconto?: NullableIntFieldUpdateOperationsInput | number | null
+    Valida_Pre_Venda?: NullableStringFieldUpdateOperationsInput | string | null
+    Supervisor_Sangria?: NullableStringFieldUpdateOperationsInput | string | null
+    Pessoa_Pgr_Fid_Comanda?: NullableStringFieldUpdateOperationsInput | string | null
+    Impressao_TAP?: NullableStringFieldUpdateOperationsInput | string | null
+    Impressao_Cozinha?: NullableStringFieldUpdateOperationsInput | string | null
+    Incluir_Acres_Desc_Unitario?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_pdv_cadastroCreateInput = {
@@ -293107,6 +305709,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: string | null
     Importado_Servidor?: string | null
     Importado_Mentor?: string | null
+    Observacao?: string | null
   }
 
   export type tb_sangriaUncheckedCreateInput = {
@@ -293120,6 +305723,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: string | null
     Importado_Servidor?: string | null
     Importado_Mentor?: string | null
+    Observacao?: string | null
   }
 
   export type tb_sangriaUpdateInput = {
@@ -293133,6 +305737,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: NullableStringFieldUpdateOperationsInput | string | null
     Importado_Servidor?: NullableStringFieldUpdateOperationsInput | string | null
     Importado_Mentor?: NullableStringFieldUpdateOperationsInput | string | null
+    Observacao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_sangriaUncheckedUpdateInput = {
@@ -293146,6 +305751,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: NullableStringFieldUpdateOperationsInput | string | null
     Importado_Servidor?: NullableStringFieldUpdateOperationsInput | string | null
     Importado_Mentor?: NullableStringFieldUpdateOperationsInput | string | null
+    Observacao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_sangriaCreateManyInput = {
@@ -293159,6 +305765,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: string | null
     Importado_Servidor?: string | null
     Importado_Mentor?: string | null
+    Observacao?: string | null
   }
 
   export type tb_sangriaUpdateManyMutationInput = {
@@ -293172,6 +305779,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: NullableStringFieldUpdateOperationsInput | string | null
     Importado_Servidor?: NullableStringFieldUpdateOperationsInput | string | null
     Importado_Mentor?: NullableStringFieldUpdateOperationsInput | string | null
+    Observacao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_sangriaUncheckedUpdateManyInput = {
@@ -293185,6 +305793,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: NullableStringFieldUpdateOperationsInput | string | null
     Importado_Servidor?: NullableStringFieldUpdateOperationsInput | string | null
     Importado_Mentor?: NullableStringFieldUpdateOperationsInput | string | null
+    Observacao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_segurancaCreateInput = {
@@ -297018,6 +309627,7 @@ export namespace Prisma {
     Data_Fiscal?: Date | string | null
     Id_Comanda?: number | null
     Id_Mesa?: number | null
+    Validado?: string | null
   }
 
   export type tb_vendas_preUncheckedCreateInput = {
@@ -297067,6 +309677,7 @@ export namespace Prisma {
     Data_Fiscal?: Date | string | null
     Id_Comanda?: number | null
     Id_Mesa?: number | null
+    Validado?: string | null
   }
 
   export type tb_vendas_preUpdateInput = {
@@ -297116,6 +309727,7 @@ export namespace Prisma {
     Data_Fiscal?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Id_Comanda?: NullableIntFieldUpdateOperationsInput | number | null
     Id_Mesa?: NullableIntFieldUpdateOperationsInput | number | null
+    Validado?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_vendas_preUncheckedUpdateInput = {
@@ -297165,6 +309777,7 @@ export namespace Prisma {
     Data_Fiscal?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Id_Comanda?: NullableIntFieldUpdateOperationsInput | number | null
     Id_Mesa?: NullableIntFieldUpdateOperationsInput | number | null
+    Validado?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_vendas_preCreateManyInput = {
@@ -297214,6 +309827,7 @@ export namespace Prisma {
     Data_Fiscal?: Date | string | null
     Id_Comanda?: number | null
     Id_Mesa?: number | null
+    Validado?: string | null
   }
 
   export type tb_vendas_preUpdateManyMutationInput = {
@@ -297263,6 +309877,7 @@ export namespace Prisma {
     Data_Fiscal?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Id_Comanda?: NullableIntFieldUpdateOperationsInput | number | null
     Id_Mesa?: NullableIntFieldUpdateOperationsInput | number | null
+    Validado?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_vendas_preUncheckedUpdateManyInput = {
@@ -297312,6 +309927,7 @@ export namespace Prisma {
     Data_Fiscal?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Id_Comanda?: NullableIntFieldUpdateOperationsInput | number | null
     Id_Mesa?: NullableIntFieldUpdateOperationsInput | number | null
+    Validado?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_vendas_pre_comandasCreateInput = {
@@ -297323,6 +309939,7 @@ export namespace Prisma {
     IDEmpresa?: number | null
     RegExcluido?: string | null
     Id_Mesa?: number | null
+    Comanda_Pessoa?: string | null
   }
 
   export type tb_vendas_pre_comandasUncheckedCreateInput = {
@@ -297334,6 +309951,7 @@ export namespace Prisma {
     IDEmpresa?: number | null
     RegExcluido?: string | null
     Id_Mesa?: number | null
+    Comanda_Pessoa?: string | null
   }
 
   export type tb_vendas_pre_comandasUpdateInput = {
@@ -297345,6 +309963,7 @@ export namespace Prisma {
     IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
     RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
     Id_Mesa?: NullableIntFieldUpdateOperationsInput | number | null
+    Comanda_Pessoa?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_vendas_pre_comandasUncheckedUpdateInput = {
@@ -297356,6 +309975,7 @@ export namespace Prisma {
     IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
     RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
     Id_Mesa?: NullableIntFieldUpdateOperationsInput | number | null
+    Comanda_Pessoa?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_vendas_pre_comandasCreateManyInput = {
@@ -297367,6 +309987,7 @@ export namespace Prisma {
     IDEmpresa?: number | null
     RegExcluido?: string | null
     Id_Mesa?: number | null
+    Comanda_Pessoa?: string | null
   }
 
   export type tb_vendas_pre_comandasUpdateManyMutationInput = {
@@ -297378,6 +309999,7 @@ export namespace Prisma {
     IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
     RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
     Id_Mesa?: NullableIntFieldUpdateOperationsInput | number | null
+    Comanda_Pessoa?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_vendas_pre_comandasUncheckedUpdateManyInput = {
@@ -297389,6 +310011,7 @@ export namespace Prisma {
     IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
     RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
     Id_Mesa?: NullableIntFieldUpdateOperationsInput | number | null
+    Comanda_Pessoa?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_vendas_produtosCreateInput = {
@@ -298146,6 +310769,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: number | null
     Mentor_Estoque_ID_Agrupamento?: number | null
     Preco_Normal?: number | null
+    Impressao_Tap?: string | null
+    Impressao_Cozinha?: string | null
   }
 
   export type tb_vendas_produtos_preUncheckedCreateInput = {
@@ -298196,6 +310821,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: number | null
     Mentor_Estoque_ID_Agrupamento?: number | null
     Preco_Normal?: number | null
+    Impressao_Tap?: string | null
+    Impressao_Cozinha?: string | null
   }
 
   export type tb_vendas_produtos_preUpdateInput = {
@@ -298246,6 +310873,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: NullableFloatFieldUpdateOperationsInput | number | null
     Mentor_Estoque_ID_Agrupamento?: NullableIntFieldUpdateOperationsInput | number | null
     Preco_Normal?: NullableFloatFieldUpdateOperationsInput | number | null
+    Impressao_Tap?: NullableStringFieldUpdateOperationsInput | string | null
+    Impressao_Cozinha?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_vendas_produtos_preUncheckedUpdateInput = {
@@ -298296,6 +310925,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: NullableFloatFieldUpdateOperationsInput | number | null
     Mentor_Estoque_ID_Agrupamento?: NullableIntFieldUpdateOperationsInput | number | null
     Preco_Normal?: NullableFloatFieldUpdateOperationsInput | number | null
+    Impressao_Tap?: NullableStringFieldUpdateOperationsInput | string | null
+    Impressao_Cozinha?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_vendas_produtos_preCreateManyInput = {
@@ -298346,6 +310977,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: number | null
     Mentor_Estoque_ID_Agrupamento?: number | null
     Preco_Normal?: number | null
+    Impressao_Tap?: string | null
+    Impressao_Cozinha?: string | null
   }
 
   export type tb_vendas_produtos_preUpdateManyMutationInput = {
@@ -298396,6 +311029,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: NullableFloatFieldUpdateOperationsInput | number | null
     Mentor_Estoque_ID_Agrupamento?: NullableIntFieldUpdateOperationsInput | number | null
     Preco_Normal?: NullableFloatFieldUpdateOperationsInput | number | null
+    Impressao_Tap?: NullableStringFieldUpdateOperationsInput | string | null
+    Impressao_Cozinha?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_vendas_produtos_preUncheckedUpdateManyInput = {
@@ -298446,6 +311081,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: NullableFloatFieldUpdateOperationsInput | number | null
     Mentor_Estoque_ID_Agrupamento?: NullableIntFieldUpdateOperationsInput | number | null
     Preco_Normal?: NullableFloatFieldUpdateOperationsInput | number | null
+    Impressao_Tap?: NullableStringFieldUpdateOperationsInput | string | null
+    Impressao_Cozinha?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tb_vendas_produtos_receitasCreateInput = {
@@ -299323,6 +311960,965 @@ export namespace Prisma {
     IDUser?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
+  export type tb_empresas_movel_0001CreateInput = {
+    Codigo: number
+    Servidor?: string | null
+    Porta?: string | null
+    DHU?: string | null
+    IDUser?: number | null
+  }
+
+  export type tb_empresas_movel_0001UncheckedCreateInput = {
+    Codigo: number
+    Servidor?: string | null
+    Porta?: string | null
+    DHU?: string | null
+    IDUser?: number | null
+  }
+
+  export type tb_empresas_movel_0001UpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Servidor?: NullableStringFieldUpdateOperationsInput | string | null
+    Porta?: NullableStringFieldUpdateOperationsInput | string | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_empresas_movel_0001UncheckedUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Servidor?: NullableStringFieldUpdateOperationsInput | string | null
+    Porta?: NullableStringFieldUpdateOperationsInput | string | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_empresas_movel_0001CreateManyInput = {
+    Codigo: number
+    Servidor?: string | null
+    Porta?: string | null
+    DHU?: string | null
+    IDUser?: number | null
+  }
+
+  export type tb_empresas_movel_0001UpdateManyMutationInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Servidor?: NullableStringFieldUpdateOperationsInput | string | null
+    Porta?: NullableStringFieldUpdateOperationsInput | string | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_empresas_movel_0001UncheckedUpdateManyInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Servidor?: NullableStringFieldUpdateOperationsInput | string | null
+    Porta?: NullableStringFieldUpdateOperationsInput | string | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_movel_0001_impressaoCreateInput = {
+    Codigo: number
+    Data?: Date | string | null
+    Hora?: string | null
+    Tempo?: number | null
+    Id_Comanda?: number | null
+    Processado?: string | null
+  }
+
+  export type tb_movel_0001_impressaoUncheckedCreateInput = {
+    Codigo: number
+    Data?: Date | string | null
+    Hora?: string | null
+    Tempo?: number | null
+    Id_Comanda?: number | null
+    Processado?: string | null
+  }
+
+  export type tb_movel_0001_impressaoUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Data?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Hora?: NullableStringFieldUpdateOperationsInput | string | null
+    Tempo?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Comanda?: NullableIntFieldUpdateOperationsInput | number | null
+    Processado?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_movel_0001_impressaoUncheckedUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Data?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Hora?: NullableStringFieldUpdateOperationsInput | string | null
+    Tempo?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Comanda?: NullableIntFieldUpdateOperationsInput | number | null
+    Processado?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_movel_0001_impressaoCreateManyInput = {
+    Codigo: number
+    Data?: Date | string | null
+    Hora?: string | null
+    Tempo?: number | null
+    Id_Comanda?: number | null
+    Processado?: string | null
+  }
+
+  export type tb_movel_0001_impressaoUpdateManyMutationInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Data?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Hora?: NullableStringFieldUpdateOperationsInput | string | null
+    Tempo?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Comanda?: NullableIntFieldUpdateOperationsInput | number | null
+    Processado?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_movel_0001_impressaoUncheckedUpdateManyInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Data?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Hora?: NullableStringFieldUpdateOperationsInput | string | null
+    Tempo?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Comanda?: NullableIntFieldUpdateOperationsInput | number | null
+    Processado?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_operacao_movimento_produtoCreateInput = {
+    Codigo: number
+    Id_Operacao?: number | null
+    Id_Produto?: number | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+    RegExcluido?: string | null
+  }
+
+  export type tb_operacao_movimento_produtoUncheckedCreateInput = {
+    Codigo: number
+    Id_Operacao?: number | null
+    Id_Produto?: number | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+    RegExcluido?: string | null
+  }
+
+  export type tb_operacao_movimento_produtoUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Operacao?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Produto?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_operacao_movimento_produtoUncheckedUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Operacao?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Produto?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_operacao_movimento_produtoCreateManyInput = {
+    Codigo: number
+    Id_Operacao?: number | null
+    Id_Produto?: number | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+    RegExcluido?: string | null
+  }
+
+  export type tb_operacao_movimento_produtoUpdateManyMutationInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Operacao?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Produto?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_operacao_movimento_produtoUncheckedUpdateManyInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Operacao?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Produto?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarCreateInput = {
+    Codigo: number
+    IDUser?: number | null
+    IDEmpresa?: number | null
+    DHU?: string | null
+    RegExcluido?: string | null
+    Objeto?: string | null
+    Nome_Comercial?: string | null
+    Dias?: number | null
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarUncheckedCreateInput = {
+    Codigo: number
+    IDUser?: number | null
+    IDEmpresa?: number | null
+    DHU?: string | null
+    RegExcluido?: string | null
+    Objeto?: string | null
+    Nome_Comercial?: string | null
+    Dias?: number | null
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    Objeto?: NullableStringFieldUpdateOperationsInput | string | null
+    Nome_Comercial?: NullableStringFieldUpdateOperationsInput | string | null
+    Dias?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarUncheckedUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    Objeto?: NullableStringFieldUpdateOperationsInput | string | null
+    Nome_Comercial?: NullableStringFieldUpdateOperationsInput | string | null
+    Dias?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarCreateManyInput = {
+    Codigo: number
+    IDUser?: number | null
+    IDEmpresa?: number | null
+    DHU?: string | null
+    RegExcluido?: string | null
+    Objeto?: string | null
+    Nome_Comercial?: string | null
+    Dias?: number | null
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarUpdateManyMutationInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    Objeto?: NullableStringFieldUpdateOperationsInput | string | null
+    Nome_Comercial?: NullableStringFieldUpdateOperationsInput | string | null
+    Dias?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarUncheckedUpdateManyInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    Objeto?: NullableStringFieldUpdateOperationsInput | string | null
+    Nome_Comercial?: NullableStringFieldUpdateOperationsInput | string | null
+    Dias?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_produtos_food_entrega_tapCreateInput = {
+    Codigo: number
+    DHU?: string | null
+    Id_Produto?: number | null
+    RegExcluido?: string | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+  }
+
+  export type tb_produtos_food_entrega_tapUncheckedCreateInput = {
+    Codigo: number
+    DHU?: string | null
+    Id_Produto?: number | null
+    RegExcluido?: string | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+  }
+
+  export type tb_produtos_food_entrega_tapUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    Id_Produto?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_produtos_food_entrega_tapUncheckedUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    Id_Produto?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_produtos_food_entrega_tapCreateManyInput = {
+    Codigo: number
+    DHU?: string | null
+    Id_Produto?: number | null
+    RegExcluido?: string | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+  }
+
+  export type tb_produtos_food_entrega_tapUpdateManyMutationInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    Id_Produto?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_produtos_food_entrega_tapUncheckedUpdateManyInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    Id_Produto?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_produtos_food_producao_cozinhaCreateInput = {
+    Codigo: number
+    Id_Produto?: number | null
+    RegExcluido?: string | null
+    DHU?: string | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+  }
+
+  export type tb_produtos_food_producao_cozinhaUncheckedCreateInput = {
+    Codigo: number
+    Id_Produto?: number | null
+    RegExcluido?: string | null
+    DHU?: string | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+  }
+
+  export type tb_produtos_food_producao_cozinhaUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Produto?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_produtos_food_producao_cozinhaUncheckedUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Produto?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_produtos_food_producao_cozinhaCreateManyInput = {
+    Codigo: number
+    Id_Produto?: number | null
+    RegExcluido?: string | null
+    DHU?: string | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+  }
+
+  export type tb_produtos_food_producao_cozinhaUpdateManyMutationInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Produto?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_produtos_food_producao_cozinhaUncheckedUpdateManyInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Produto?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_produtos_transformacaoCreateInput = {
+    Codigo: number
+    Id_Produto_Entrada?: number | null
+    Id_Produto_Saida?: number | null
+    Quantidade_Saida?: number | null
+    Quantidade_Entrada?: number | null
+    Estoque_Processado?: string | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+    DHU?: string | null
+    Data_Movimento?: Date | string | null
+    Hora_Movimento?: string | null
+    Tempo?: string | null
+    Via_Sistema?: string | null
+  }
+
+  export type tb_produtos_transformacaoUncheckedCreateInput = {
+    Codigo: number
+    Id_Produto_Entrada?: number | null
+    Id_Produto_Saida?: number | null
+    Quantidade_Saida?: number | null
+    Quantidade_Entrada?: number | null
+    Estoque_Processado?: string | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+    DHU?: string | null
+    Data_Movimento?: Date | string | null
+    Hora_Movimento?: string | null
+    Tempo?: string | null
+    Via_Sistema?: string | null
+  }
+
+  export type tb_produtos_transformacaoUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Produto_Entrada?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Produto_Saida?: NullableIntFieldUpdateOperationsInput | number | null
+    Quantidade_Saida?: NullableFloatFieldUpdateOperationsInput | number | null
+    Quantidade_Entrada?: NullableFloatFieldUpdateOperationsInput | number | null
+    Estoque_Processado?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    Data_Movimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Hora_Movimento?: NullableStringFieldUpdateOperationsInput | string | null
+    Tempo?: NullableStringFieldUpdateOperationsInput | string | null
+    Via_Sistema?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_produtos_transformacaoUncheckedUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Produto_Entrada?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Produto_Saida?: NullableIntFieldUpdateOperationsInput | number | null
+    Quantidade_Saida?: NullableFloatFieldUpdateOperationsInput | number | null
+    Quantidade_Entrada?: NullableFloatFieldUpdateOperationsInput | number | null
+    Estoque_Processado?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    Data_Movimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Hora_Movimento?: NullableStringFieldUpdateOperationsInput | string | null
+    Tempo?: NullableStringFieldUpdateOperationsInput | string | null
+    Via_Sistema?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_produtos_transformacaoCreateManyInput = {
+    Codigo: number
+    Id_Produto_Entrada?: number | null
+    Id_Produto_Saida?: number | null
+    Quantidade_Saida?: number | null
+    Quantidade_Entrada?: number | null
+    Estoque_Processado?: string | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+    DHU?: string | null
+    Data_Movimento?: Date | string | null
+    Hora_Movimento?: string | null
+    Tempo?: string | null
+    Via_Sistema?: string | null
+  }
+
+  export type tb_produtos_transformacaoUpdateManyMutationInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Produto_Entrada?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Produto_Saida?: NullableIntFieldUpdateOperationsInput | number | null
+    Quantidade_Saida?: NullableFloatFieldUpdateOperationsInput | number | null
+    Quantidade_Entrada?: NullableFloatFieldUpdateOperationsInput | number | null
+    Estoque_Processado?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    Data_Movimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Hora_Movimento?: NullableStringFieldUpdateOperationsInput | string | null
+    Tempo?: NullableStringFieldUpdateOperationsInput | string | null
+    Via_Sistema?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_produtos_transformacaoUncheckedUpdateManyInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Produto_Entrada?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Produto_Saida?: NullableIntFieldUpdateOperationsInput | number | null
+    Quantidade_Saida?: NullableFloatFieldUpdateOperationsInput | number | null
+    Quantidade_Entrada?: NullableFloatFieldUpdateOperationsInput | number | null
+    Estoque_Processado?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    Data_Movimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Hora_Movimento?: NullableStringFieldUpdateOperationsInput | string | null
+    Tempo?: NullableStringFieldUpdateOperationsInput | string | null
+    Via_Sistema?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_produtos_transformacao_confCreateInput = {
+    Codigo: number
+    Id_Produto_Saida?: number | null
+    Id_Produto_Entrada?: number | null
+    Quantidade_Saida?: number | null
+    Quantidade_Entrada?: number | null
+    Acionar_Em?: number | null
+    DHU?: string | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+    RegExcluido?: string | null
+  }
+
+  export type tb_produtos_transformacao_confUncheckedCreateInput = {
+    Codigo: number
+    Id_Produto_Saida?: number | null
+    Id_Produto_Entrada?: number | null
+    Quantidade_Saida?: number | null
+    Quantidade_Entrada?: number | null
+    Acionar_Em?: number | null
+    DHU?: string | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+    RegExcluido?: string | null
+  }
+
+  export type tb_produtos_transformacao_confUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Produto_Saida?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Produto_Entrada?: NullableIntFieldUpdateOperationsInput | number | null
+    Quantidade_Saida?: NullableFloatFieldUpdateOperationsInput | number | null
+    Quantidade_Entrada?: NullableFloatFieldUpdateOperationsInput | number | null
+    Acionar_Em?: NullableFloatFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_produtos_transformacao_confUncheckedUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Produto_Saida?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Produto_Entrada?: NullableIntFieldUpdateOperationsInput | number | null
+    Quantidade_Saida?: NullableFloatFieldUpdateOperationsInput | number | null
+    Quantidade_Entrada?: NullableFloatFieldUpdateOperationsInput | number | null
+    Acionar_Em?: NullableFloatFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_produtos_transformacao_confCreateManyInput = {
+    Codigo: number
+    Id_Produto_Saida?: number | null
+    Id_Produto_Entrada?: number | null
+    Quantidade_Saida?: number | null
+    Quantidade_Entrada?: number | null
+    Acionar_Em?: number | null
+    DHU?: string | null
+    IDEmpresa?: number | null
+    IDUser?: number | null
+    RegExcluido?: string | null
+  }
+
+  export type tb_produtos_transformacao_confUpdateManyMutationInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Produto_Saida?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Produto_Entrada?: NullableIntFieldUpdateOperationsInput | number | null
+    Quantidade_Saida?: NullableFloatFieldUpdateOperationsInput | number | null
+    Quantidade_Entrada?: NullableFloatFieldUpdateOperationsInput | number | null
+    Acionar_Em?: NullableFloatFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_produtos_transformacao_confUncheckedUpdateManyInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Produto_Saida?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Produto_Entrada?: NullableIntFieldUpdateOperationsInput | number | null
+    Quantidade_Saida?: NullableFloatFieldUpdateOperationsInput | number | null
+    Quantidade_Entrada?: NullableFloatFieldUpdateOperationsInput | number | null
+    Acionar_Em?: NullableFloatFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosCreateInput = {
+    Codigo: number
+    Id_Comanda?: number | null
+    Id_Pagamento?: number | null
+    Valor?: number | null
+    Valor_Recebido?: number | null
+    Troco?: number | null
+    tPag?: string | null
+    indPag_Opc?: string | null
+    xPag_Opc?: string | null
+    tpIntegra_Opc?: string | null
+    CNPJ_Opc?: string | null
+    tBand_Opc?: string | null
+    cAut_Opc?: string | null
+    TEF_Ok?: string | null
+    TEF_Adquirente?: string | null
+    TEF_CNPJ?: string | null
+    TEF_Bandeira?: string | null
+    TEF_CD?: string | null
+    IDUser?: number | null
+    IDEmpresa?: number | null
+    Processado?: string | null
+    ID_Lcto?: number | null
+    RegExcluido?: string | null
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosUncheckedCreateInput = {
+    Codigo: number
+    Id_Comanda?: number | null
+    Id_Pagamento?: number | null
+    Valor?: number | null
+    Valor_Recebido?: number | null
+    Troco?: number | null
+    tPag?: string | null
+    indPag_Opc?: string | null
+    xPag_Opc?: string | null
+    tpIntegra_Opc?: string | null
+    CNPJ_Opc?: string | null
+    tBand_Opc?: string | null
+    cAut_Opc?: string | null
+    TEF_Ok?: string | null
+    TEF_Adquirente?: string | null
+    TEF_CNPJ?: string | null
+    TEF_Bandeira?: string | null
+    TEF_CD?: string | null
+    IDUser?: number | null
+    IDEmpresa?: number | null
+    Processado?: string | null
+    ID_Lcto?: number | null
+    RegExcluido?: string | null
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Comanda?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Pagamento?: NullableIntFieldUpdateOperationsInput | number | null
+    Valor?: NullableFloatFieldUpdateOperationsInput | number | null
+    Valor_Recebido?: NullableFloatFieldUpdateOperationsInput | number | null
+    Troco?: NullableFloatFieldUpdateOperationsInput | number | null
+    tPag?: NullableStringFieldUpdateOperationsInput | string | null
+    indPag_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    xPag_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    tpIntegra_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    CNPJ_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    tBand_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    cAut_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_Ok?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_Adquirente?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_CNPJ?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_Bandeira?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_CD?: NullableStringFieldUpdateOperationsInput | string | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    Processado?: NullableStringFieldUpdateOperationsInput | string | null
+    ID_Lcto?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosUncheckedUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Comanda?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Pagamento?: NullableIntFieldUpdateOperationsInput | number | null
+    Valor?: NullableFloatFieldUpdateOperationsInput | number | null
+    Valor_Recebido?: NullableFloatFieldUpdateOperationsInput | number | null
+    Troco?: NullableFloatFieldUpdateOperationsInput | number | null
+    tPag?: NullableStringFieldUpdateOperationsInput | string | null
+    indPag_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    xPag_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    tpIntegra_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    CNPJ_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    tBand_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    cAut_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_Ok?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_Adquirente?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_CNPJ?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_Bandeira?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_CD?: NullableStringFieldUpdateOperationsInput | string | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    Processado?: NullableStringFieldUpdateOperationsInput | string | null
+    ID_Lcto?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosCreateManyInput = {
+    Codigo: number
+    Id_Comanda?: number | null
+    Id_Pagamento?: number | null
+    Valor?: number | null
+    Valor_Recebido?: number | null
+    Troco?: number | null
+    tPag?: string | null
+    indPag_Opc?: string | null
+    xPag_Opc?: string | null
+    tpIntegra_Opc?: string | null
+    CNPJ_Opc?: string | null
+    tBand_Opc?: string | null
+    cAut_Opc?: string | null
+    TEF_Ok?: string | null
+    TEF_Adquirente?: string | null
+    TEF_CNPJ?: string | null
+    TEF_Bandeira?: string | null
+    TEF_CD?: string | null
+    IDUser?: number | null
+    IDEmpresa?: number | null
+    Processado?: string | null
+    ID_Lcto?: number | null
+    RegExcluido?: string | null
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosUpdateManyMutationInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Comanda?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Pagamento?: NullableIntFieldUpdateOperationsInput | number | null
+    Valor?: NullableFloatFieldUpdateOperationsInput | number | null
+    Valor_Recebido?: NullableFloatFieldUpdateOperationsInput | number | null
+    Troco?: NullableFloatFieldUpdateOperationsInput | number | null
+    tPag?: NullableStringFieldUpdateOperationsInput | string | null
+    indPag_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    xPag_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    tpIntegra_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    CNPJ_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    tBand_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    cAut_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_Ok?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_Adquirente?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_CNPJ?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_Bandeira?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_CD?: NullableStringFieldUpdateOperationsInput | string | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    Processado?: NullableStringFieldUpdateOperationsInput | string | null
+    ID_Lcto?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosUncheckedUpdateManyInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Comanda?: NullableIntFieldUpdateOperationsInput | number | null
+    Id_Pagamento?: NullableIntFieldUpdateOperationsInput | number | null
+    Valor?: NullableFloatFieldUpdateOperationsInput | number | null
+    Valor_Recebido?: NullableFloatFieldUpdateOperationsInput | number | null
+    Troco?: NullableFloatFieldUpdateOperationsInput | number | null
+    tPag?: NullableStringFieldUpdateOperationsInput | string | null
+    indPag_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    xPag_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    tpIntegra_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    CNPJ_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    tBand_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    cAut_Opc?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_Ok?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_Adquirente?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_CNPJ?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_Bandeira?: NullableStringFieldUpdateOperationsInput | string | null
+    TEF_CD?: NullableStringFieldUpdateOperationsInput | string | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    Processado?: NullableStringFieldUpdateOperationsInput | string | null
+    ID_Lcto?: NullableIntFieldUpdateOperationsInput | number | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoCreateInput = {
+    Codigo: number
+    Id_Lcto?: number | null
+    nLote?: string | null
+    dFab?: Date | string | null
+    dVenc?: Date | string | null
+    Quantidade?: number | null
+    IDUser?: number | null
+    IDEmpresa?: number | null
+    DHU?: string | null
+    RegExcluido?: string | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoUncheckedCreateInput = {
+    Codigo: number
+    Id_Lcto?: number | null
+    nLote?: string | null
+    dFab?: Date | string | null
+    dVenc?: Date | string | null
+    Quantidade?: number | null
+    IDUser?: number | null
+    IDEmpresa?: number | null
+    DHU?: string | null
+    RegExcluido?: string | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Lcto?: NullableIntFieldUpdateOperationsInput | number | null
+    nLote?: NullableStringFieldUpdateOperationsInput | string | null
+    dFab?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    dVenc?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Quantidade?: NullableFloatFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoUncheckedUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Lcto?: NullableIntFieldUpdateOperationsInput | number | null
+    nLote?: NullableStringFieldUpdateOperationsInput | string | null
+    dFab?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    dVenc?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Quantidade?: NullableFloatFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoCreateManyInput = {
+    Codigo: number
+    Id_Lcto?: number | null
+    nLote?: string | null
+    dFab?: Date | string | null
+    dVenc?: Date | string | null
+    Quantidade?: number | null
+    IDUser?: number | null
+    IDEmpresa?: number | null
+    DHU?: string | null
+    RegExcluido?: string | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoUpdateManyMutationInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Lcto?: NullableIntFieldUpdateOperationsInput | number | null
+    nLote?: NullableStringFieldUpdateOperationsInput | string | null
+    dFab?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    dVenc?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Quantidade?: NullableFloatFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoUncheckedUpdateManyInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Lcto?: NullableIntFieldUpdateOperationsInput | number | null
+    nLote?: NullableStringFieldUpdateOperationsInput | string | null
+    dFab?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    dVenc?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Quantidade?: NullableFloatFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preCreateInput = {
+    Codigo: number
+    Id_Lcto?: number | null
+    nLote?: string | null
+    dFab?: Date | string | null
+    dVenc?: Date | string | null
+    Quantidade?: number | null
+    IDUser?: number | null
+    IDEmpresa?: number | null
+    DHU?: string | null
+    RegExcluido?: string | null
+    Id_Lcto_Venda?: number | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preUncheckedCreateInput = {
+    Codigo: number
+    Id_Lcto?: number | null
+    nLote?: string | null
+    dFab?: Date | string | null
+    dVenc?: Date | string | null
+    Quantidade?: number | null
+    IDUser?: number | null
+    IDEmpresa?: number | null
+    DHU?: string | null
+    RegExcluido?: string | null
+    Id_Lcto_Venda?: number | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Lcto?: NullableIntFieldUpdateOperationsInput | number | null
+    nLote?: NullableStringFieldUpdateOperationsInput | string | null
+    dFab?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    dVenc?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Quantidade?: NullableFloatFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    Id_Lcto_Venda?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preUncheckedUpdateInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Lcto?: NullableIntFieldUpdateOperationsInput | number | null
+    nLote?: NullableStringFieldUpdateOperationsInput | string | null
+    dFab?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    dVenc?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Quantidade?: NullableFloatFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    Id_Lcto_Venda?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preCreateManyInput = {
+    Codigo: number
+    Id_Lcto?: number | null
+    nLote?: string | null
+    dFab?: Date | string | null
+    dVenc?: Date | string | null
+    Quantidade?: number | null
+    IDUser?: number | null
+    IDEmpresa?: number | null
+    DHU?: string | null
+    RegExcluido?: string | null
+    Id_Lcto_Venda?: number | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preUpdateManyMutationInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Lcto?: NullableIntFieldUpdateOperationsInput | number | null
+    nLote?: NullableStringFieldUpdateOperationsInput | string | null
+    dFab?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    dVenc?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Quantidade?: NullableFloatFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    Id_Lcto_Venda?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preUncheckedUpdateManyInput = {
+    Codigo?: IntFieldUpdateOperationsInput | number
+    Id_Lcto?: NullableIntFieldUpdateOperationsInput | number | null
+    nLote?: NullableStringFieldUpdateOperationsInput | string | null
+    dFab?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    dVenc?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Quantidade?: NullableFloatFieldUpdateOperationsInput | number | null
+    IDUser?: NullableIntFieldUpdateOperationsInput | number | null
+    IDEmpresa?: NullableIntFieldUpdateOperationsInput | number | null
+    DHU?: NullableStringFieldUpdateOperationsInput | string | null
+    RegExcluido?: NullableStringFieldUpdateOperationsInput | string | null
+    Id_Lcto_Venda?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
   export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[]
@@ -299745,6 +313341,8 @@ export namespace Prisma {
     Margem_Ideal?: SortOrder
     Markup_Ideal?: SortOrder
     Custo_Ideal?: SortOrder
+    Id_Unidade_Tributacao?: SortOrder
+    Fator_Unidade_Tributacao?: SortOrder
   }
 
   export type tb_produtosAvgOrderByAggregateInput = {
@@ -299793,6 +313391,8 @@ export namespace Prisma {
     Margem_Ideal?: SortOrder
     Markup_Ideal?: SortOrder
     Custo_Ideal?: SortOrder
+    Id_Unidade_Tributacao?: SortOrder
+    Fator_Unidade_Tributacao?: SortOrder
   }
 
   export type tb_produtosMaxOrderByAggregateInput = {
@@ -299877,6 +313477,8 @@ export namespace Prisma {
     Margem_Ideal?: SortOrder
     Markup_Ideal?: SortOrder
     Custo_Ideal?: SortOrder
+    Id_Unidade_Tributacao?: SortOrder
+    Fator_Unidade_Tributacao?: SortOrder
   }
 
   export type tb_produtosMinOrderByAggregateInput = {
@@ -299961,6 +313563,8 @@ export namespace Prisma {
     Margem_Ideal?: SortOrder
     Markup_Ideal?: SortOrder
     Custo_Ideal?: SortOrder
+    Id_Unidade_Tributacao?: SortOrder
+    Fator_Unidade_Tributacao?: SortOrder
   }
 
   export type tb_produtosSumOrderByAggregateInput = {
@@ -300009,6 +313613,8 @@ export namespace Prisma {
     Margem_Ideal?: SortOrder
     Markup_Ideal?: SortOrder
     Custo_Ideal?: SortOrder
+    Id_Unidade_Tributacao?: SortOrder
+    Fator_Unidade_Tributacao?: SortOrder
   }
 
   export type tb_produtos_setorOrderByRelevanceInput = {
@@ -309305,6 +322911,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: SortOrder
     Rodape_Minha_Empresa?: SortOrder
     Exibe_Info_Mesa?: SortOrder
+    Tipo_Liberacao_Desconto?: SortOrder
+    Valida_Pre_Venda?: SortOrder
+    Supervisor_Sangria?: SortOrder
+    Pessoa_Pgr_Fid_Comanda?: SortOrder
+    Impressao_TAP?: SortOrder
+    Impressao_Cozinha?: SortOrder
+    Incluir_Acres_Desc_Unitario?: SortOrder
   }
 
   export type tb_parametros_execucaoAvgOrderByAggregateInput = {
@@ -309335,6 +322948,7 @@ export namespace Prisma {
     Tipo_Preenchimento_CI?: SortOrder
     Impressao_Recibo_Quitacao?: SortOrder
     Tipo_Consulta_Dados?: SortOrder
+    Tipo_Liberacao_Desconto?: SortOrder
   }
 
   export type tb_parametros_execucaoMaxOrderByAggregateInput = {
@@ -309409,6 +323023,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: SortOrder
     Rodape_Minha_Empresa?: SortOrder
     Exibe_Info_Mesa?: SortOrder
+    Tipo_Liberacao_Desconto?: SortOrder
+    Valida_Pre_Venda?: SortOrder
+    Supervisor_Sangria?: SortOrder
+    Pessoa_Pgr_Fid_Comanda?: SortOrder
+    Impressao_TAP?: SortOrder
+    Impressao_Cozinha?: SortOrder
+    Incluir_Acres_Desc_Unitario?: SortOrder
   }
 
   export type tb_parametros_execucaoMinOrderByAggregateInput = {
@@ -309483,6 +323104,13 @@ export namespace Prisma {
     Nome_Minha_Empresa?: SortOrder
     Rodape_Minha_Empresa?: SortOrder
     Exibe_Info_Mesa?: SortOrder
+    Tipo_Liberacao_Desconto?: SortOrder
+    Valida_Pre_Venda?: SortOrder
+    Supervisor_Sangria?: SortOrder
+    Pessoa_Pgr_Fid_Comanda?: SortOrder
+    Impressao_TAP?: SortOrder
+    Impressao_Cozinha?: SortOrder
+    Incluir_Acres_Desc_Unitario?: SortOrder
   }
 
   export type tb_parametros_execucaoSumOrderByAggregateInput = {
@@ -309513,6 +323141,7 @@ export namespace Prisma {
     Tipo_Preenchimento_CI?: SortOrder
     Impressao_Recibo_Quitacao?: SortOrder
     Tipo_Consulta_Dados?: SortOrder
+    Tipo_Liberacao_Desconto?: SortOrder
   }
 
   export type tb_pdv_cadastroOrderByRelevanceInput = {
@@ -312858,6 +326487,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: SortOrder
     Importado_Servidor?: SortOrder
     Importado_Mentor?: SortOrder
+    Observacao?: SortOrder
   }
 
   export type tb_sangriaAvgOrderByAggregateInput = {
@@ -312879,6 +326509,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: SortOrder
     Importado_Servidor?: SortOrder
     Importado_Mentor?: SortOrder
+    Observacao?: SortOrder
   }
 
   export type tb_sangriaMinOrderByAggregateInput = {
@@ -312892,6 +326523,7 @@ export namespace Prisma {
     Liberado_para_Servidor?: SortOrder
     Importado_Servidor?: SortOrder
     Importado_Mentor?: SortOrder
+    Observacao?: SortOrder
   }
 
   export type tb_sangriaSumOrderByAggregateInput = {
@@ -315480,6 +329112,7 @@ export namespace Prisma {
     Data_Fiscal?: SortOrder
     Id_Comanda?: SortOrder
     Id_Mesa?: SortOrder
+    Validado?: SortOrder
   }
 
   export type tb_vendas_preAvgOrderByAggregateInput = {
@@ -315563,6 +329196,7 @@ export namespace Prisma {
     Data_Fiscal?: SortOrder
     Id_Comanda?: SortOrder
     Id_Mesa?: SortOrder
+    Validado?: SortOrder
   }
 
   export type tb_vendas_preMinOrderByAggregateInput = {
@@ -315612,6 +329246,7 @@ export namespace Prisma {
     Data_Fiscal?: SortOrder
     Id_Comanda?: SortOrder
     Id_Mesa?: SortOrder
+    Validado?: SortOrder
   }
 
   export type tb_vendas_preSumOrderByAggregateInput = {
@@ -315663,6 +329298,7 @@ export namespace Prisma {
     IDEmpresa?: SortOrder
     RegExcluido?: SortOrder
     Id_Mesa?: SortOrder
+    Comanda_Pessoa?: SortOrder
   }
 
   export type tb_vendas_pre_comandasAvgOrderByAggregateInput = {
@@ -315682,6 +329318,7 @@ export namespace Prisma {
     IDEmpresa?: SortOrder
     RegExcluido?: SortOrder
     Id_Mesa?: SortOrder
+    Comanda_Pessoa?: SortOrder
   }
 
   export type tb_vendas_pre_comandasMinOrderByAggregateInput = {
@@ -315693,6 +329330,7 @@ export namespace Prisma {
     IDEmpresa?: SortOrder
     RegExcluido?: SortOrder
     Id_Mesa?: SortOrder
+    Comanda_Pessoa?: SortOrder
   }
 
   export type tb_vendas_pre_comandasSumOrderByAggregateInput = {
@@ -316240,6 +329878,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: SortOrder
     Mentor_Estoque_ID_Agrupamento?: SortOrder
     Preco_Normal?: SortOrder
+    Impressao_Tap?: SortOrder
+    Impressao_Cozinha?: SortOrder
   }
 
   export type tb_vendas_produtos_preAvgOrderByAggregateInput = {
@@ -316323,6 +329963,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: SortOrder
     Mentor_Estoque_ID_Agrupamento?: SortOrder
     Preco_Normal?: SortOrder
+    Impressao_Tap?: SortOrder
+    Impressao_Cozinha?: SortOrder
   }
 
   export type tb_vendas_produtos_preMinOrderByAggregateInput = {
@@ -316373,6 +330015,8 @@ export namespace Prisma {
     Pgr_Fid_Credito?: SortOrder
     Mentor_Estoque_ID_Agrupamento?: SortOrder
     Preco_Normal?: SortOrder
+    Impressao_Tap?: SortOrder
+    Impressao_Cozinha?: SortOrder
   }
 
   export type tb_vendas_produtos_preSumOrderByAggregateInput = {
@@ -317028,6 +330672,663 @@ export namespace Prisma {
     Codigo?: SortOrder
     IDEmpresa?: SortOrder
     IDUser?: SortOrder
+  }
+
+  export type tb_empresas_movel_0001OrderByRelevanceInput = {
+    fields: tb_empresas_movel_0001OrderByRelevanceFieldEnum | tb_empresas_movel_0001OrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type tb_empresas_movel_0001CountOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Servidor?: SortOrder
+    Porta?: SortOrder
+    DHU?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_empresas_movel_0001AvgOrderByAggregateInput = {
+    Codigo?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_empresas_movel_0001MaxOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Servidor?: SortOrder
+    Porta?: SortOrder
+    DHU?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_empresas_movel_0001MinOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Servidor?: SortOrder
+    Porta?: SortOrder
+    DHU?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_empresas_movel_0001SumOrderByAggregateInput = {
+    Codigo?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_movel_0001_impressaoOrderByRelevanceInput = {
+    fields: tb_movel_0001_impressaoOrderByRelevanceFieldEnum | tb_movel_0001_impressaoOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type tb_movel_0001_impressaoCountOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Data?: SortOrder
+    Hora?: SortOrder
+    Tempo?: SortOrder
+    Id_Comanda?: SortOrder
+    Processado?: SortOrder
+  }
+
+  export type tb_movel_0001_impressaoAvgOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Tempo?: SortOrder
+    Id_Comanda?: SortOrder
+  }
+
+  export type tb_movel_0001_impressaoMaxOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Data?: SortOrder
+    Hora?: SortOrder
+    Tempo?: SortOrder
+    Id_Comanda?: SortOrder
+    Processado?: SortOrder
+  }
+
+  export type tb_movel_0001_impressaoMinOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Data?: SortOrder
+    Hora?: SortOrder
+    Tempo?: SortOrder
+    Id_Comanda?: SortOrder
+    Processado?: SortOrder
+  }
+
+  export type tb_movel_0001_impressaoSumOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Tempo?: SortOrder
+    Id_Comanda?: SortOrder
+  }
+
+  export type tb_operacao_movimento_produtoOrderByRelevanceInput = {
+    fields: tb_operacao_movimento_produtoOrderByRelevanceFieldEnum | tb_operacao_movimento_produtoOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type tb_operacao_movimento_produtoCountOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Operacao?: SortOrder
+    Id_Produto?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+    RegExcluido?: SortOrder
+  }
+
+  export type tb_operacao_movimento_produtoAvgOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Operacao?: SortOrder
+    Id_Produto?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_operacao_movimento_produtoMaxOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Operacao?: SortOrder
+    Id_Produto?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+    RegExcluido?: SortOrder
+  }
+
+  export type tb_operacao_movimento_produtoMinOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Operacao?: SortOrder
+    Id_Produto?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+    RegExcluido?: SortOrder
+  }
+
+  export type tb_operacao_movimento_produtoSumOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Operacao?: SortOrder
+    Id_Produto?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarOrderByRelevanceInput = {
+    fields: tb_parametros_data_inicial_tela_gerenciarOrderByRelevanceFieldEnum | tb_parametros_data_inicial_tela_gerenciarOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarCountOrderByAggregateInput = {
+    Codigo?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    DHU?: SortOrder
+    RegExcluido?: SortOrder
+    Objeto?: SortOrder
+    Nome_Comercial?: SortOrder
+    Dias?: SortOrder
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarAvgOrderByAggregateInput = {
+    Codigo?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    Dias?: SortOrder
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarMaxOrderByAggregateInput = {
+    Codigo?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    DHU?: SortOrder
+    RegExcluido?: SortOrder
+    Objeto?: SortOrder
+    Nome_Comercial?: SortOrder
+    Dias?: SortOrder
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarMinOrderByAggregateInput = {
+    Codigo?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    DHU?: SortOrder
+    RegExcluido?: SortOrder
+    Objeto?: SortOrder
+    Nome_Comercial?: SortOrder
+    Dias?: SortOrder
+  }
+
+  export type tb_parametros_data_inicial_tela_gerenciarSumOrderByAggregateInput = {
+    Codigo?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    Dias?: SortOrder
+  }
+
+  export type tb_produtos_food_entrega_tapOrderByRelevanceInput = {
+    fields: tb_produtos_food_entrega_tapOrderByRelevanceFieldEnum | tb_produtos_food_entrega_tapOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type tb_produtos_food_entrega_tapCountOrderByAggregateInput = {
+    Codigo?: SortOrder
+    DHU?: SortOrder
+    Id_Produto?: SortOrder
+    RegExcluido?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_produtos_food_entrega_tapAvgOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_produtos_food_entrega_tapMaxOrderByAggregateInput = {
+    Codigo?: SortOrder
+    DHU?: SortOrder
+    Id_Produto?: SortOrder
+    RegExcluido?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_produtos_food_entrega_tapMinOrderByAggregateInput = {
+    Codigo?: SortOrder
+    DHU?: SortOrder
+    Id_Produto?: SortOrder
+    RegExcluido?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_produtos_food_entrega_tapSumOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_produtos_food_producao_cozinhaOrderByRelevanceInput = {
+    fields: tb_produtos_food_producao_cozinhaOrderByRelevanceFieldEnum | tb_produtos_food_producao_cozinhaOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type tb_produtos_food_producao_cozinhaCountOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto?: SortOrder
+    RegExcluido?: SortOrder
+    DHU?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_produtos_food_producao_cozinhaAvgOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_produtos_food_producao_cozinhaMaxOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto?: SortOrder
+    RegExcluido?: SortOrder
+    DHU?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_produtos_food_producao_cozinhaMinOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto?: SortOrder
+    RegExcluido?: SortOrder
+    DHU?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_produtos_food_producao_cozinhaSumOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_produtos_transformacaoOrderByRelevanceInput = {
+    fields: tb_produtos_transformacaoOrderByRelevanceFieldEnum | tb_produtos_transformacaoOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type tb_produtos_transformacaoCountOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto_Entrada?: SortOrder
+    Id_Produto_Saida?: SortOrder
+    Quantidade_Saida?: SortOrder
+    Quantidade_Entrada?: SortOrder
+    Estoque_Processado?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+    DHU?: SortOrder
+    Data_Movimento?: SortOrder
+    Hora_Movimento?: SortOrder
+    Tempo?: SortOrder
+    Via_Sistema?: SortOrder
+  }
+
+  export type tb_produtos_transformacaoAvgOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto_Entrada?: SortOrder
+    Id_Produto_Saida?: SortOrder
+    Quantidade_Saida?: SortOrder
+    Quantidade_Entrada?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_produtos_transformacaoMaxOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto_Entrada?: SortOrder
+    Id_Produto_Saida?: SortOrder
+    Quantidade_Saida?: SortOrder
+    Quantidade_Entrada?: SortOrder
+    Estoque_Processado?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+    DHU?: SortOrder
+    Data_Movimento?: SortOrder
+    Hora_Movimento?: SortOrder
+    Tempo?: SortOrder
+    Via_Sistema?: SortOrder
+  }
+
+  export type tb_produtos_transformacaoMinOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto_Entrada?: SortOrder
+    Id_Produto_Saida?: SortOrder
+    Quantidade_Saida?: SortOrder
+    Quantidade_Entrada?: SortOrder
+    Estoque_Processado?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+    DHU?: SortOrder
+    Data_Movimento?: SortOrder
+    Hora_Movimento?: SortOrder
+    Tempo?: SortOrder
+    Via_Sistema?: SortOrder
+  }
+
+  export type tb_produtos_transformacaoSumOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto_Entrada?: SortOrder
+    Id_Produto_Saida?: SortOrder
+    Quantidade_Saida?: SortOrder
+    Quantidade_Entrada?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_produtos_transformacao_confOrderByRelevanceInput = {
+    fields: tb_produtos_transformacao_confOrderByRelevanceFieldEnum | tb_produtos_transformacao_confOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type tb_produtos_transformacao_confCountOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto_Saida?: SortOrder
+    Id_Produto_Entrada?: SortOrder
+    Quantidade_Saida?: SortOrder
+    Quantidade_Entrada?: SortOrder
+    Acionar_Em?: SortOrder
+    DHU?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+    RegExcluido?: SortOrder
+  }
+
+  export type tb_produtos_transformacao_confAvgOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto_Saida?: SortOrder
+    Id_Produto_Entrada?: SortOrder
+    Quantidade_Saida?: SortOrder
+    Quantidade_Entrada?: SortOrder
+    Acionar_Em?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_produtos_transformacao_confMaxOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto_Saida?: SortOrder
+    Id_Produto_Entrada?: SortOrder
+    Quantidade_Saida?: SortOrder
+    Quantidade_Entrada?: SortOrder
+    Acionar_Em?: SortOrder
+    DHU?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+    RegExcluido?: SortOrder
+  }
+
+  export type tb_produtos_transformacao_confMinOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto_Saida?: SortOrder
+    Id_Produto_Entrada?: SortOrder
+    Quantidade_Saida?: SortOrder
+    Quantidade_Entrada?: SortOrder
+    Acionar_Em?: SortOrder
+    DHU?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+    RegExcluido?: SortOrder
+  }
+
+  export type tb_produtos_transformacao_confSumOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Produto_Saida?: SortOrder
+    Id_Produto_Entrada?: SortOrder
+    Quantidade_Saida?: SortOrder
+    Quantidade_Entrada?: SortOrder
+    Acionar_Em?: SortOrder
+    IDEmpresa?: SortOrder
+    IDUser?: SortOrder
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosOrderByRelevanceInput = {
+    fields: tb_vendas_pre_comandas_pre_pagamentosOrderByRelevanceFieldEnum | tb_vendas_pre_comandas_pre_pagamentosOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosCountOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Comanda?: SortOrder
+    Id_Pagamento?: SortOrder
+    Valor?: SortOrder
+    Valor_Recebido?: SortOrder
+    Troco?: SortOrder
+    tPag?: SortOrder
+    indPag_Opc?: SortOrder
+    xPag_Opc?: SortOrder
+    tpIntegra_Opc?: SortOrder
+    CNPJ_Opc?: SortOrder
+    tBand_Opc?: SortOrder
+    cAut_Opc?: SortOrder
+    TEF_Ok?: SortOrder
+    TEF_Adquirente?: SortOrder
+    TEF_CNPJ?: SortOrder
+    TEF_Bandeira?: SortOrder
+    TEF_CD?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    Processado?: SortOrder
+    ID_Lcto?: SortOrder
+    RegExcluido?: SortOrder
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosAvgOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Comanda?: SortOrder
+    Id_Pagamento?: SortOrder
+    Valor?: SortOrder
+    Valor_Recebido?: SortOrder
+    Troco?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    ID_Lcto?: SortOrder
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosMaxOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Comanda?: SortOrder
+    Id_Pagamento?: SortOrder
+    Valor?: SortOrder
+    Valor_Recebido?: SortOrder
+    Troco?: SortOrder
+    tPag?: SortOrder
+    indPag_Opc?: SortOrder
+    xPag_Opc?: SortOrder
+    tpIntegra_Opc?: SortOrder
+    CNPJ_Opc?: SortOrder
+    tBand_Opc?: SortOrder
+    cAut_Opc?: SortOrder
+    TEF_Ok?: SortOrder
+    TEF_Adquirente?: SortOrder
+    TEF_CNPJ?: SortOrder
+    TEF_Bandeira?: SortOrder
+    TEF_CD?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    Processado?: SortOrder
+    ID_Lcto?: SortOrder
+    RegExcluido?: SortOrder
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosMinOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Comanda?: SortOrder
+    Id_Pagamento?: SortOrder
+    Valor?: SortOrder
+    Valor_Recebido?: SortOrder
+    Troco?: SortOrder
+    tPag?: SortOrder
+    indPag_Opc?: SortOrder
+    xPag_Opc?: SortOrder
+    tpIntegra_Opc?: SortOrder
+    CNPJ_Opc?: SortOrder
+    tBand_Opc?: SortOrder
+    cAut_Opc?: SortOrder
+    TEF_Ok?: SortOrder
+    TEF_Adquirente?: SortOrder
+    TEF_CNPJ?: SortOrder
+    TEF_Bandeira?: SortOrder
+    TEF_CD?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    Processado?: SortOrder
+    ID_Lcto?: SortOrder
+    RegExcluido?: SortOrder
+  }
+
+  export type tb_vendas_pre_comandas_pre_pagamentosSumOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Comanda?: SortOrder
+    Id_Pagamento?: SortOrder
+    Valor?: SortOrder
+    Valor_Recebido?: SortOrder
+    Troco?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    ID_Lcto?: SortOrder
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoOrderByRelevanceInput = {
+    fields: tb_vendas_produtos_lotes_avulsoOrderByRelevanceFieldEnum | tb_vendas_produtos_lotes_avulsoOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoCountOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Lcto?: SortOrder
+    nLote?: SortOrder
+    dFab?: SortOrder
+    dVenc?: SortOrder
+    Quantidade?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    DHU?: SortOrder
+    RegExcluido?: SortOrder
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoAvgOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Lcto?: SortOrder
+    Quantidade?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoMaxOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Lcto?: SortOrder
+    nLote?: SortOrder
+    dFab?: SortOrder
+    dVenc?: SortOrder
+    Quantidade?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    DHU?: SortOrder
+    RegExcluido?: SortOrder
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoMinOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Lcto?: SortOrder
+    nLote?: SortOrder
+    dFab?: SortOrder
+    dVenc?: SortOrder
+    Quantidade?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    DHU?: SortOrder
+    RegExcluido?: SortOrder
+  }
+
+  export type tb_vendas_produtos_lotes_avulsoSumOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Lcto?: SortOrder
+    Quantidade?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preOrderByRelevanceInput = {
+    fields: tb_vendas_produtos_lotes_avulso_preOrderByRelevanceFieldEnum | tb_vendas_produtos_lotes_avulso_preOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preCountOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Lcto?: SortOrder
+    nLote?: SortOrder
+    dFab?: SortOrder
+    dVenc?: SortOrder
+    Quantidade?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    DHU?: SortOrder
+    RegExcluido?: SortOrder
+    Id_Lcto_Venda?: SortOrder
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preAvgOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Lcto?: SortOrder
+    Quantidade?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    Id_Lcto_Venda?: SortOrder
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preMaxOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Lcto?: SortOrder
+    nLote?: SortOrder
+    dFab?: SortOrder
+    dVenc?: SortOrder
+    Quantidade?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    DHU?: SortOrder
+    RegExcluido?: SortOrder
+    Id_Lcto_Venda?: SortOrder
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preMinOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Lcto?: SortOrder
+    nLote?: SortOrder
+    dFab?: SortOrder
+    dVenc?: SortOrder
+    Quantidade?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    DHU?: SortOrder
+    RegExcluido?: SortOrder
+    Id_Lcto_Venda?: SortOrder
+  }
+
+  export type tb_vendas_produtos_lotes_avulso_preSumOrderByAggregateInput = {
+    Codigo?: SortOrder
+    Id_Lcto?: SortOrder
+    Quantidade?: SortOrder
+    IDUser?: SortOrder
+    IDEmpresa?: SortOrder
+    Id_Lcto_Venda?: SortOrder
   }
 
   export type IntFieldUpdateOperationsInput = {

@@ -1,10 +1,10 @@
 {
   "name": "waiter-app",
   "version": "1.0.0",
-  "main": "src/app.ts",
+  "main": "src/server.ts",
   "scripts": {
-    "dev": "tsx watch src/app.ts",
-    "start": "tsx src/app.ts",
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,6 +12,7 @@
   "description": "",
   "dependencies": {
     "@fastify/cors": "^10.0.1",
+    "@fastify/jwt": "^9.0.4",
     "@prisma/client": "^6.1.0",
     "date-fns": "^4.1.0",
     "fastify": "^5.0.0"

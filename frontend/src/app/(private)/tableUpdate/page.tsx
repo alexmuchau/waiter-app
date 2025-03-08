@@ -6,7 +6,7 @@ import {
     CommandItemProps,
     TableItemProps,
     User,
-} from "../../../../utils/types";
+} from "../../../../../utils/types";
 import api from "@/api/api";
 
 import { HeaderTitle } from "@/components/Header/HeaderTitle";
@@ -15,6 +15,7 @@ import { Title } from "@/components/Title/Default";
 import { IdentifyList } from "@/components/Identify/IdentifyList";
 import { BackHeader } from "@/components/Header/BackHeader";
 import { LinkButton } from "@/components/Buttons/LinkButton";
+import { getCookie } from "cookies-next";
 
 export default function TableUpdate() {
     const [tables, setTables] = useState<TableItemProps[]>([]);
@@ -38,9 +39,15 @@ export default function TableUpdate() {
     
     async function submitUpdate() {
         try {
+            const token = getCookie('token')
+
             await api.put('/commands', {
                 commandNumbers: activeCommands.map((command) => command.commandNumber),
                 tableNumber: newTable?.tableNumber
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
             })
         } catch (error) {
             
@@ -91,11 +98,21 @@ export default function TableUpdate() {
 
     useEffect(() => {
         async function fetchData() {
-            const { commands } = (await api.get("/commands?onlyActive=true&useClientName=true"))
+            const token = getCookie('token')
+
+            const { commands } = (await api.get("/commands?onlyActive=true&useClientName=true", {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }))
                 .data as {
                 commands: CommandItemProps[];
             };
-            const { tables } = (await api.get("/tables")).data as {
+            const { tables } = (await api.get("/tables", {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })).data as {
                 tables: TableItemProps[];
             };
 

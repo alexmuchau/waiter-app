@@ -9,6 +9,8 @@ export async function syncDBs() {
 
     await syncProducts();
 
+    await syncUsers();
+
     console.log("Sincronização concluída.");
 }
 
@@ -56,6 +58,28 @@ export async function syncTables() {
     }
 
     return desktopRecords
+}
+
+export async function syncUsers() {
+    console.log("Sincronizando usuarios...");
+    const desktopUsers = await desktopClient.tb_usuarios.findMany({
+        where: {
+            Login: { not: null },
+            Senha: { not: null }
+        }
+    })
+
+    await mobileClient.waiter.deleteMany()
+    const mobileUsers = await mobileClient.waiter.createMany({
+        data: desktopUsers.filter((user) => user.Senha!.length > 0).map((user) => ({
+            waiterId: user.Codigo,
+            name: user.Login!,
+            password: user.Senha!,
+            username: user.Login!,
+        }))
+    })
+
+    
 }
 
 export async function syncCommands() {

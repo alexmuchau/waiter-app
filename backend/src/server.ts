@@ -1,17 +1,22 @@
-import Fastify from 'fastify'
-import cors from '@fastify/cors'
+import { fastify } from 'fastify'
+import { fastifyCors } from '@fastify/cors'
+import { fastifyJwt } from "@fastify/jwt"
+
+import { authMiddleware } from './middleware';
 import { routes } from './routes/routes';
+import { syncDBs } from './tools/syncDBs';
 
-export default function createServer(){
-    const fastify = Fastify({logger: {
-        level: 'error'
-    }})
+const app = fastify()
 
-    fastify.register(cors, {
-        origin: true, // Permitir apenas o frontend
-        methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
-    });
-    fastify.register(routes)
+app.register(fastifyCors, { origin: '*' })
+app.register(fastifyJwt, {
+    secret: 'your-secret-key'
+});
+
+app.register(routes)
+
+app.listen({ host: '192.168.0.36', port: 8080 }).then( async () => {
+    await syncDBs()
     
-    return fastify;
-}
+    console.log('Server running')
+})

@@ -9,7 +9,7 @@ export function ConnectionBackend({status}: ConnectionBackendProps) {
                 ? 'bg-accent-blur'
                 : 'bg-red-500 bg-opacity-20'
             }
-            flex py-2 px-8 text-xs rounded-full
+            flex py-2 px-8 text-xs rounded-md
         `}>
             <p className={`
                 ${ status === true

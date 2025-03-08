@@ -8,7 +8,7 @@ import {
     TableItemProps,
     CommandItemProps,
     CategoryGroupedProductProps,
-} from "../../../../utils/types";
+} from "../../../../../utils/types";
 
 import { ProductItemProps } from "@/components/ProductList/ProductItem";
 import { BackHeader } from "@/components/Header/BackHeader";
@@ -216,17 +216,35 @@ export default function Order() {
         }
 
         async function fetchData() {
-            const { clients } = (await api.get("/clients")).data as {
+            const token = getCookie('token')
+
+            const { clients } = (await api.get("/clients", {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })).data as {
                 clients: ClientProps[];
             };
-            let { commands } = (await api.get("/commands")).data as {
+            let { commands } = (await api.get("/commands", {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })).data as {
                 commands: CommandItemProps[];
             };
-            const { tables } = (await api.get("/tables")).data as {
+            const { tables } = (await api.get("/tables", {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })).data as {
                 tables: TableItemProps[];
             };
 
-            const { products } = (await api.get("/products")).data as {
+            const { products } = (await api.get("/products", {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })).data as {
                 products: CategoryGroupedProductProps;
             };
 

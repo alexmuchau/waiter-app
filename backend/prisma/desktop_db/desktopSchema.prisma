@@ -143,6 +143,8 @@ model tb_produtos {
   Margem_Ideal                     Float?
   Markup_Ideal                     Float?
   Custo_Ideal                      Float?
+  Id_Unidade_Tributacao            Int?
+  Fator_Unidade_Tributacao         Float?
 }
 
 model tb_produtos_setor {
@@ -2306,6 +2308,13 @@ model tb_parametros_execucao {
   Nome_Minha_Empresa                   String? @db.VarChar(300)
   Rodape_Minha_Empresa                 String? @db.VarChar(300)
   Exibe_Info_Mesa                      String? @db.VarChar(300)
+  Tipo_Liberacao_Desconto              Int?
+  Valida_Pre_Venda                     String? @db.VarChar(300)
+  Supervisor_Sangria                   String? @db.VarChar(300)
+  Pessoa_Pgr_Fid_Comanda               String? @db.VarChar(300)
+  Impressao_TAP                        String? @db.VarChar(300)
+  Impressao_Cozinha                    String? @db.VarChar(300)
+  Incluir_Acres_Desc_Unitario          String? @db.VarChar(300)
 }
 
 model tb_pdv_cadastro {
@@ -3025,6 +3034,7 @@ model tb_sangria {
   Liberado_para_Servidor String?   @db.VarChar(300)
   Importado_Servidor     String?   @db.VarChar(300)
   Importado_Mentor       String?   @db.VarChar(300)
+  Observacao             String?   @db.VarChar(300)
 }
 
 model tb_seguranca {
@@ -3626,6 +3636,7 @@ model tb_vendas_pre {
   Data_Fiscal             DateTime? @db.Date
   Id_Comanda              Int?
   Id_Mesa                 Int?
+  Validado                String?   @db.VarChar(300)
 
   @@index([Id_Venda], map: "Idx_Id_Venda")
 }
@@ -3639,6 +3650,7 @@ model tb_vendas_pre_comandas {
   IDEmpresa      Int?
   RegExcluido    String? @db.VarChar(300)
   Id_Mesa        Int?
+  Comanda_Pessoa String? @db.VarChar(300)
 }
 
 model tb_vendas_produtos {
@@ -3802,6 +3814,8 @@ model tb_vendas_produtos_pre {
   Pgr_Fid_Credito               Float?
   Mentor_Estoque_ID_Agrupamento Int?
   Preco_Normal                  Float?
+  Impressao_Tap                 String? @db.VarChar(300)
+  Impressao_Cozinha             String? @db.VarChar(300)
 }
 
 model tb_vendas_produtos_receitas {
@@ -3927,4 +3941,141 @@ model tb_mesas {
   RegExcluido String? @db.VarChar(300)
   IDEmpresa   Int?
   IDUser      Int?
+}
+
+model tb_empresas_movel_0001 {
+  Codigo   Int     @id
+  Servidor String? @db.VarChar(300)
+  Porta    String? @db.VarChar(300)
+  DHU      String? @db.VarChar(300)
+  IDUser   Int?
+}
+
+model tb_movel_0001_impressao {
+  Codigo     Int       @id
+  Data       DateTime? @db.Date
+  Hora       String?   @db.VarChar(300)
+  Tempo      Int?
+  Id_Comanda Int?
+  Processado String?   @db.VarChar(300)
+}
+
+model tb_operacao_movimento_produto {
+  Codigo      Int     @id
+  Id_Operacao Int?
+  Id_Produto  Int?
+  IDEmpresa   Int?
+  IDUser      Int?
+  RegExcluido String? @db.VarChar(300)
+}
+
+model tb_parametros_data_inicial_tela_gerenciar {
+  Codigo         Int     @id
+  IDUser         Int?
+  IDEmpresa      Int?
+  DHU            String? @db.VarChar(300)
+  RegExcluido    String? @db.VarChar(300)
+  Objeto         String? @db.VarChar(300)
+  Nome_Comercial String? @db.VarChar(300)
+  Dias           Int?
+}
+
+model tb_produtos_food_entrega_tap {
+  Codigo      Int     @id
+  DHU         String? @db.VarChar(300)
+  Id_Produto  Int?
+  RegExcluido String? @db.VarChar(300)
+  IDEmpresa   Int?
+  IDUser      Int?
+}
+
+model tb_produtos_food_producao_cozinha {
+  Codigo      Int     @id
+  Id_Produto  Int?
+  RegExcluido String? @db.VarChar(300)
+  DHU         String? @db.VarChar(300)
+  IDEmpresa   Int?
+  IDUser      Int?
+}
+
+model tb_produtos_transformacao {
+  Codigo             Int       @id
+  Id_Produto_Entrada Int?
+  Id_Produto_Saida   Int?
+  Quantidade_Saida   Float?
+  Quantidade_Entrada Float?
+  Estoque_Processado String?   @db.VarChar(300)
+  IDEmpresa          Int?
+  IDUser             Int?
+  DHU                String?   @db.VarChar(300)
+  Data_Movimento     DateTime? @db.Date
+  Hora_Movimento     String?   @db.VarChar(300)
+  Tempo              String?   @db.LongText
+  Via_Sistema        String?   @db.VarChar(300)
+}
+
+model tb_produtos_transformacao_conf {
+  Codigo             Int     @id
+  Id_Produto_Saida   Int?
+  Id_Produto_Entrada Int?
+  Quantidade_Saida   Float?
+  Quantidade_Entrada Float?
+  Acionar_Em         Float?
+  DHU                String? @db.VarChar(300)
+  IDEmpresa          Int?
+  IDUser             Int?
+  RegExcluido        String? @db.VarChar(300)
+}
+
+model tb_vendas_pre_comandas_pre_pagamentos {
+  Codigo         Int     @id
+  Id_Comanda     Int?
+  Id_Pagamento   Int?
+  Valor          Float?
+  Valor_Recebido Float?
+  Troco          Float?
+  tPag           String? @db.VarChar(300)
+  indPag_Opc     String? @db.VarChar(300)
+  xPag_Opc       String? @db.VarChar(300)
+  tpIntegra_Opc  String? @db.VarChar(300)
+  CNPJ_Opc       String? @db.VarChar(300)
+  tBand_Opc      String? @db.VarChar(300)
+  cAut_Opc       String? @db.VarChar(300)
+  TEF_Ok         String? @db.VarChar(300)
+  TEF_Adquirente String? @db.VarChar(300)
+  TEF_CNPJ       String? @db.VarChar(300)
+  TEF_Bandeira   String? @db.VarChar(300)
+  TEF_CD         String? @db.VarChar(300)
+  IDUser         Int?
+  IDEmpresa      Int?
+  Processado     String? @db.VarChar(300)
+  ID_Lcto        Int?
+  RegExcluido    String? @db.VarChar(300)
+}
+
+model tb_vendas_produtos_lotes_avulso {
+  Codigo      Int       @id
+  Id_Lcto     Int?
+  nLote       String?   @db.VarChar(300)
+  dFab        DateTime? @db.Date
+  dVenc       DateTime? @db.Date
+  Quantidade  Float?
+  IDUser      Int?
+  IDEmpresa   Int?
+  DHU         String?   @db.VarChar(300)
+  RegExcluido String?   @db.VarChar(300)
+}
+
+model tb_vendas_produtos_lotes_avulso_pre {
+  Codigo        Int       @id
+  Id_Lcto       Int?
+  nLote         String?   @db.VarChar(300)
+  dFab          DateTime? @db.Date
+  dVenc         DateTime? @db.Date
+  Quantidade    Float?
+  IDUser        Int?
+  IDEmpresa     Int?
+  DHU           String?   @db.VarChar(300)
+  RegExcluido   String?   @db.VarChar(300)
+  Id_Lcto_Venda Int?
 }

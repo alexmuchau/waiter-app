@@ -5,16 +5,18 @@ import {
     syncDBs,
     syncProducts,
     syncTables,
+    syncUsers
 } from "../../tools/syncDBs";
 
 export async function syncDB(req: FastifyRequest, res: FastifyReply) {
-    const { table } = req.query as { table: "produto" | "cliente" | "comanda" | "mesa" | "syncAll" };
+    const { table } = req.query as { table: "produto" | "cliente" | "comanda" | "mesa" | "usuario" };
 
     const syncs = {
         produto: syncProducts,
         cliente: syncClients,
         comanda: syncCommands,
         mesa: syncTables,
+        usuario: syncUsers,
         syncAll: syncDBs,
     };
 
@@ -22,4 +24,4 @@ export async function syncDB(req: FastifyRequest, res: FastifyReply) {
     else syncs[table]();
 
     return res.send("Sincronização concluída");
-}
+} 
