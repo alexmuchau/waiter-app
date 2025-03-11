@@ -52,10 +52,15 @@ export async function listOrdersOnCommand(req: FastifyRequest, reply: FastifyRep
             AND Id_Comanda = ${command?.Codigo}
     `
 
+    console.log(orders)
+
     let res: ResumeOrderProps = {}
 
     for (const order of orders) {
+        order.Data_Movimento.setTime(order.Data_Movimento.getTime() + (4 * 60 * 60 * 1000))
         const dt = order.Data_Movimento.toLocaleDateString('pt-BR') + ' - ' + order.Hora_Finalizacao
+        console.log(`${dt}`)
+        console.log(order.Data_Movimento)
         res[dt] = (res[dt] ?? [])
 
         res[dt].push({
