@@ -15,7 +15,7 @@ app.register(fastifyJwt, {
 
 app.register(routes)
 
-app.listen({ host: '192.168.0.37', port: 8080 }).then( async () => {
+app.listen({ host: '192.168.0.204', port: 8080 }).then( async () => {
     await syncDBs()
     
     console.log('Server running')
