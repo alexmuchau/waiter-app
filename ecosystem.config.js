@@ -6,7 +6,7 @@ module.exports = {
     apps: [
       {
         name: "backend",
-        script: "src/app.ts",
+        script: "src/server.ts",
         cwd: "./backend",
         interpreter: "node",
         interpreter_args: "-r ts-node/register",
