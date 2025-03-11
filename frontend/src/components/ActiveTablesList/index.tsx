@@ -17,7 +17,7 @@ export function ActiveTablesList({ activeTables }: ActiveTablesListProps) {
                             key={activeTable.tableNumber}
                             className="flex flex-col gap-4"
                         >
-                            <Title text={activeTable.tableDescription}/>
+                            <Title text={'Mesa '+ activeTable.tableDescription}/>
                             <div className="flex gap-4 flex-wrap pl-8">
                                 {
                                     activeTable.commands.map((command) => (

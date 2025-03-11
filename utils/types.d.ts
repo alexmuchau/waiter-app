@@ -55,3 +55,13 @@ export interface ProductListProps {
 export interface CategoryGroupedProductProps {
     [category: string]: ProductListProps[]
 }
+
+interface ResumeOrderProps {
+    [realizedDt: string]: {
+        id: string
+        name: string,
+        price: number,
+        quantity: number,
+        totalPrice: number
+    }[]
+}

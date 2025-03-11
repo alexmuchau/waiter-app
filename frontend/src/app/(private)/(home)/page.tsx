@@ -73,14 +73,20 @@ export default function Home() {
                         />
                     </header>
                     <div className="flex flex-col gap-8">
-                        <div className="flex w-full">
-                            <HeaderTitle text="mesas ativas"/>
+                        <div className="flex w-full gap-4">
                             <LinkButton
                                 href="/tableUpdate"
                                 disabled={!connectedBackend}
                                 fixed={false}
                             >
-                                Atualizar comanda mesa
+                                <span className="text-xs font-regular">Atualizar comanda mesa</span>
+                            </LinkButton>
+                            <LinkButton
+                                href="/ordersResume"
+                                disabled={!connectedBackend}
+                                fixed={false}
+                            >
+                                <span className="text-xs font-regular">Revisar comanda</span>
                             </LinkButton>
                         </div>
                         <ActiveTablesList

@@ -29,7 +29,7 @@ const config: Config = {
       themes: {
         light: {
           colors: {
-            primary: "#DDAA55",
+            primary: "#444444",
             secondary: "var(--background)"
           }
         },

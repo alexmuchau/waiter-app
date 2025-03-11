@@ -66,7 +66,7 @@ export default function Resume() {
                 <h1 className="text-3xl">resumo do pedido</h1>
             </header>
             <div className="flex flex-col gap-8">
-                <div className="flex gap-16">
+                <div className="flex gap-8">
                     <IdentifyCard title="Mesa" number={table!} />
                     <IdentifyCard title={!!client ? "Cliente" : 'Comanda'} number={!!client ? clientName! : command!} />
                 </div>

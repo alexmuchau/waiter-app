@@ -9,12 +9,13 @@ interface LinkButtonProps {
     onClick?: () => void
     disabled?: boolean
     replace?: boolean
+    paddingVertical?: 'py-2' 
 }
 
 export function LinkButton({ fixed = true, replace = false, children, href, query, onClick, disabled = false }: LinkButtonProps) {
     return (
         <div
-            className={`${fixed && 'fixed'} bottom-0 left-0 flex w-full p-4 justify-center`}
+            className={`${fixed && 'fixed bottom-0 left-0 p-4'} flex w-full justify-center`}
         >
             <Link
                 className={`

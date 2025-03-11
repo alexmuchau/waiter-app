@@ -12,7 +12,7 @@ export function Title({text} : TitleProps) {
             radius="md"
             isDisabled={true}
             color="primary"
-            startContent={<h2 className="flex w-full items-start font-bold text-[2rem] whitespace-nowrap capitalize">{text}</h2>}
+            startContent={<h2 className="flex w-full items-start font-bold text-[2rem] whitespace-nowrap capitalize text-white">{text}</h2>}
             variant="shadow"
         />
     )

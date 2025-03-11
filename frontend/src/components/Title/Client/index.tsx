@@ -1,5 +1,6 @@
 'use client'
 
+import { CaretDown } from "phosphor-react";
 import { ClientProps } from "../../../../../utils/types"
 import { ModalClientList } from "./ModalClientList"
 import { Button, useDisclosure } from "@heroui/react"
@@ -31,7 +32,8 @@ export function TitleClient({ text, selectedClient, clients, disabled, selectCli
                 isDisabled={disabled}
                 onPress={onOpen}
                 color="primary"
-                startContent={<h2 className="flex w-full items-start font-bold text-[2rem]">{text}</h2>}
+                startContent={<h2 className="flex w-full items-start font-bold text-[2rem] text-white">{text}</h2>}
+                endContent={<CaretDown width={24} height={24} color="#ffff" />}
                 variant="shadow"
             />
         </>
