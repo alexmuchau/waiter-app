@@ -65,7 +65,9 @@ export function ModalClientList({ isOpen, onOpenChange, selectedClient, clients,
                                 </div>
                             </ModalBody>
                             <ModalFooter>
-                                <Button text="Salvar" onClick={onClose}/>
+                                <Button onClick={onClose}>
+                                    Salvar
+                                </Button>
                             </ModalFooter>
                         </>
                     )

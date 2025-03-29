@@ -166,7 +166,8 @@ exports.Prisma.Tb_pessoasScalarFieldEnum = {
   Op_Fornecedor: 'Op_Fornecedor',
   Op_Transportador: 'Op_Transportador',
   Op_Prestador_Servico: 'Op_Prestador_Servico',
-  Id_Comanda_Personalizada: 'Id_Comanda_Personalizada'
+  Id_Comanda_Personalizada: 'Id_Comanda_Personalizada',
+  Quitacao_Ordem: 'Quitacao_Ordem'
 };
 
 exports.Prisma.Tb_produtosScalarFieldEnum = {
@@ -972,7 +973,10 @@ exports.Prisma.Tb_empresas_conf_geralScalarFieldEnum = {
   Alteracao_Unitario: 'Alteracao_Unitario',
   Limite_Alteracao_Unitario: 'Limite_Alteracao_Unitario',
   Obs_Venda_A4: 'Obs_Venda_A4',
-  Promissoria_Termica: 'Promissoria_Termica'
+  Promissoria_Termica: 'Promissoria_Termica',
+  Site_Endereco: 'Site_Endereco',
+  Site_CK: 'Site_CK',
+  Site_CS: 'Site_CS'
 };
 
 exports.Prisma.Tb_empresas_conf_petScalarFieldEnum = {
@@ -1268,7 +1272,8 @@ exports.Prisma.Tb_formas_pagamentoScalarFieldEnum = {
   Abre_Gaveta: 'Abre_Gaveta',
   Integra_Fechamento: 'Integra_Fechamento',
   uMovMe_Enviar: 'uMovMe_Enviar',
-  Utiliza_Movel: 'Utiliza_Movel'
+  Utiliza_Movel: 'Utiliza_Movel',
+  Padrao_Clientes_Novos: 'Padrao_Clientes_Novos'
 };
 
 exports.Prisma.Tb_formas_pagamento_desconto_autorizadoScalarFieldEnum = {
@@ -1629,7 +1634,8 @@ exports.Prisma.Tb_nfceScalarFieldEnum = {
   Importado_Mentor: 'Importado_Mentor',
   Motivo_cStat: 'Motivo_cStat',
   Protocolo: 'Protocolo',
-  qBCMonoRet: 'qBCMonoRet'
+  qBCMonoRet: 'qBCMonoRet',
+  Obs_Venda: 'Obs_Venda'
 };
 
 exports.Prisma.Tb_nfce_assinadosScalarFieldEnum = {
@@ -1909,7 +1915,8 @@ exports.Prisma.Tb_nfeScalarFieldEnum = {
   IDUser: 'IDUser',
   RegConfirmado: 'RegConfirmado',
   Liberado_para_Servidor: 'Liberado_para_Servidor',
-  Info_IRRF: 'Info_IRRF'
+  Info_IRRF: 'Info_IRRF',
+  qBCMonoRet: 'qBCMonoRet'
 };
 
 exports.Prisma.Tb_nfe_autxmlScalarFieldEnum = {
@@ -2131,7 +2138,10 @@ exports.Prisma.Tb_nfe_itemScalarFieldEnum = {
   Liberado_para_Servidor: 'Liberado_para_Servidor',
   Id_Item_Compra: 'Id_Item_Compra',
   Desconto_Venda: 'Desconto_Venda',
-  Acrescimo_Venda: 'Acrescimo_Venda'
+  Acrescimo_Venda: 'Acrescimo_Venda',
+  adRemICMSRet: 'adRemICMSRet',
+  vICMSMonoRet: 'vICMSMonoRet',
+  qBCMonoRet: 'qBCMonoRet'
 };
 
 exports.Prisma.Tb_nfe_item_rastroScalarFieldEnum = {
@@ -2395,7 +2405,9 @@ exports.Prisma.Tb_parametros_execucaoScalarFieldEnum = {
   Pessoa_Pgr_Fid_Comanda: 'Pessoa_Pgr_Fid_Comanda',
   Impressao_TAP: 'Impressao_TAP',
   Impressao_Cozinha: 'Impressao_Cozinha',
-  Incluir_Acres_Desc_Unitario: 'Incluir_Acres_Desc_Unitario'
+  Incluir_Acres_Desc_Unitario: 'Incluir_Acres_Desc_Unitario',
+  Confirmar_Senha_Final_Venda: 'Confirmar_Senha_Final_Venda',
+  Ordem_Tela_Revisao: 'Ordem_Tela_Revisao'
 };
 
 exports.Prisma.Tb_pdv_cadastroScalarFieldEnum = {
@@ -2674,7 +2686,8 @@ exports.Prisma.Tb_prestacao_servico_desacordoScalarFieldEnum = {
   RegExcluido: 'RegExcluido',
   cStat: 'cStat',
   nroProtocolo: 'nroProtocolo',
-  dhProtocolo: 'dhProtocolo'
+  dhProtocolo: 'dhProtocolo',
+  cUF: 'cUF'
 };
 
 exports.Prisma.Tb_produtos_alocacaoScalarFieldEnum = {
@@ -3393,7 +3406,8 @@ exports.Prisma.Tb_usuarios_permissoesScalarFieldEnum = {
   IDEmpresa: 'IDEmpresa',
   DHU: 'DHU',
   IDUser: 'IDUser',
-  Tela_Principal: 'Tela_Principal'
+  Tela_Principal: 'Tela_Principal',
+  Visualiza_Custos_Pesquisas: 'Visualiza_Custos_Pesquisas'
 };
 
 exports.Prisma.Tb_usuarios_permissoes_comandosScalarFieldEnum = {
@@ -4122,6 +4136,80 @@ exports.Prisma.Tb_vendas_produtos_lotes_avulso_preScalarFieldEnum = {
   Id_Lcto_Venda: 'Id_Lcto_Venda'
 };
 
+exports.Prisma.Tb_0001_updateScalarFieldEnum = {
+  Codigo: 'Codigo'
+};
+
+exports.Prisma.Tb_site_categoriaScalarFieldEnum = {
+  Codigo: 'Codigo',
+  Descricao: 'Descricao',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  IDUser: 'IDUser',
+  IDEmpresa: 'IDEmpresa',
+  Id_Site: 'Id_Site'
+};
+
+exports.Prisma.Tb_site_categoria_2ScalarFieldEnum = {
+  Codigo: 'Codigo',
+  Id_Categoria: 'Id_Categoria',
+  Descricao: 'Descricao',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  IDUser: 'IDUser',
+  IDEmpresa: 'IDEmpresa',
+  Id_Site: 'Id_Site'
+};
+
+exports.Prisma.Tb_site_imageScalarFieldEnum = {
+  Codigo: 'Codigo'
+};
+
+exports.Prisma.Tb_site_produtosScalarFieldEnum = {
+  Codigo: 'Codigo',
+  Id_Produto: 'Id_Produto',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  IDEmpresa: 'IDEmpresa',
+  Id_Site: 'Id_Site',
+  Id_Categoria: 'Id_Categoria',
+  Id_Categoria_2: 'Id_Categoria_2',
+  Descricao: 'Descricao',
+  Slug: 'Slug',
+  Complemento: 'Complemento',
+  IDUser: 'IDUser',
+  Preco_Venda: 'Preco_Venda',
+  Estoque_Disponivel: 'Estoque_Disponivel'
+};
+
+exports.Prisma.Tb_usuarios_atalhosScalarFieldEnum = {
+  Codigo: 'Codigo',
+  Id_Usuario: 'Id_Usuario',
+  Formulario: 'Formulario',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.Tb_vendas_liberacaoScalarFieldEnum = {
+  Codigo: 'Codigo',
+  Data: 'Data',
+  Hora: 'Hora',
+  Tempo: 'Tempo',
+  IDUser_Solicitacao: 'IDUser_Solicitacao',
+  Tipo_Movimento: 'Tipo_Movimento',
+  Pedido_Item: 'Pedido_Item',
+  Id_Movimento: 'Id_Movimento',
+  Id_Lcto_Item: 'Id_Lcto_Item',
+  Valor_Original: 'Valor_Original',
+  Valor_Solicitado: 'Valor_Solicitado',
+  Percentual_Desconto: 'Percentual_Desconto',
+  IDUser_Resposta: 'IDUser_Resposta',
+  Data_Resposta: 'Data_Resposta',
+  Hora_Resposta: 'Hora_Resposta',
+  Tempo_Resposta: 'Tempo_Resposta',
+  Status: 'Status',
+  Resposta_Visualizada: 'Resposta_Visualizada'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -4169,7 +4257,8 @@ exports.Prisma.tb_pessoasOrderByRelevanceFieldEnum = {
   Op_Cliente: 'Op_Cliente',
   Op_Fornecedor: 'Op_Fornecedor',
   Op_Transportador: 'Op_Transportador',
-  Op_Prestador_Servico: 'Op_Prestador_Servico'
+  Op_Prestador_Servico: 'Op_Prestador_Servico',
+  Quitacao_Ordem: 'Quitacao_Ordem'
 };
 
 exports.Prisma.tb_produtosOrderByRelevanceFieldEnum = {
@@ -4574,7 +4663,10 @@ exports.Prisma.tb_empresas_conf_geralOrderByRelevanceFieldEnum = {
   Modelo_Documento_Impressao: 'Modelo_Documento_Impressao',
   Alteracao_Unitario: 'Alteracao_Unitario',
   Obs_Venda_A4: 'Obs_Venda_A4',
-  Promissoria_Termica: 'Promissoria_Termica'
+  Promissoria_Termica: 'Promissoria_Termica',
+  Site_Endereco: 'Site_Endereco',
+  Site_CK: 'Site_CK',
+  Site_CS: 'Site_CS'
 };
 
 exports.Prisma.tb_empresas_conf_petOrderByRelevanceFieldEnum = {
@@ -4760,7 +4852,8 @@ exports.Prisma.tb_formas_pagamentoOrderByRelevanceFieldEnum = {
   Abre_Gaveta: 'Abre_Gaveta',
   Integra_Fechamento: 'Integra_Fechamento',
   uMovMe_Enviar: 'uMovMe_Enviar',
-  Utiliza_Movel: 'Utiliza_Movel'
+  Utiliza_Movel: 'Utiliza_Movel',
+  Padrao_Clientes_Novos: 'Padrao_Clientes_Novos'
 };
 
 exports.Prisma.tb_formas_pagamento_desconto_autorizadoOrderByRelevanceFieldEnum = {
@@ -4954,7 +5047,8 @@ exports.Prisma.tb_nfceOrderByRelevanceFieldEnum = {
   Importado_Servidor: 'Importado_Servidor',
   Importado_Mentor: 'Importado_Mentor',
   Motivo_cStat: 'Motivo_cStat',
-  Protocolo: 'Protocolo'
+  Protocolo: 'Protocolo',
+  Obs_Venda: 'Obs_Venda'
 };
 
 exports.Prisma.tb_nfce_assinadosOrderByRelevanceFieldEnum = {
@@ -5351,7 +5445,9 @@ exports.Prisma.tb_parametros_execucaoOrderByRelevanceFieldEnum = {
   Pessoa_Pgr_Fid_Comanda: 'Pessoa_Pgr_Fid_Comanda',
   Impressao_TAP: 'Impressao_TAP',
   Impressao_Cozinha: 'Impressao_Cozinha',
-  Incluir_Acres_Desc_Unitario: 'Incluir_Acres_Desc_Unitario'
+  Incluir_Acres_Desc_Unitario: 'Incluir_Acres_Desc_Unitario',
+  Confirmar_Senha_Final_Venda: 'Confirmar_Senha_Final_Venda',
+  Ordem_Tela_Revisao: 'Ordem_Tela_Revisao'
 };
 
 exports.Prisma.tb_pdv_cadastroOrderByRelevanceFieldEnum = {
@@ -5493,7 +5589,8 @@ exports.Prisma.tb_prestacao_servico_desacordoOrderByRelevanceFieldEnum = {
   DHU: 'DHU',
   RegExcluido: 'RegExcluido',
   nroProtocolo: 'nroProtocolo',
-  dhProtocolo: 'dhProtocolo'
+  dhProtocolo: 'dhProtocolo',
+  cUF: 'cUF'
 };
 
 exports.Prisma.tb_produtos_alocacaoOrderByRelevanceFieldEnum = {
@@ -5857,7 +5954,8 @@ exports.Prisma.tb_usuarios_permissoesOrderByRelevanceFieldEnum = {
   Descricao: 'Descricao',
   Ativo: 'Ativo',
   RegExcluido: 'RegExcluido',
-  DHU: 'DHU'
+  DHU: 'DHU',
+  Visualiza_Custos_Pesquisas: 'Visualiza_Custos_Pesquisas'
 };
 
 exports.Prisma.tb_usuarios_permissoes_comandosOrderByRelevanceFieldEnum = {
@@ -6223,6 +6321,40 @@ exports.Prisma.tb_vendas_produtos_lotes_avulso_preOrderByRelevanceFieldEnum = {
   RegExcluido: 'RegExcluido'
 };
 
+exports.Prisma.tb_site_categoriaOrderByRelevanceFieldEnum = {
+  Descricao: 'Descricao',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_site_categoria_2OrderByRelevanceFieldEnum = {
+  Descricao: 'Descricao',
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_site_produtosOrderByRelevanceFieldEnum = {
+  Ativo: 'Ativo',
+  RegExcluido: 'RegExcluido',
+  Descricao: 'Descricao',
+  Slug: 'Slug',
+  Complemento: 'Complemento'
+};
+
+exports.Prisma.tb_usuarios_atalhosOrderByRelevanceFieldEnum = {
+  Formulario: 'Formulario',
+  RegExcluido: 'RegExcluido'
+};
+
+exports.Prisma.tb_vendas_liberacaoOrderByRelevanceFieldEnum = {
+  Hora: 'Hora',
+  Tipo_Movimento: 'Tipo_Movimento',
+  Pedido_Item: 'Pedido_Item',
+  Hora_Resposta: 'Hora_Resposta',
+  Status: 'Status',
+  Resposta_Visualizada: 'Resposta_Visualizada'
+};
+
 
 exports.Prisma.ModelName = {
   tb_pessoas: 'tb_pessoas',
@@ -6460,7 +6592,14 @@ exports.Prisma.ModelName = {
   tb_produtos_transformacao_conf: 'tb_produtos_transformacao_conf',
   tb_vendas_pre_comandas_pre_pagamentos: 'tb_vendas_pre_comandas_pre_pagamentos',
   tb_vendas_produtos_lotes_avulso: 'tb_vendas_produtos_lotes_avulso',
-  tb_vendas_produtos_lotes_avulso_pre: 'tb_vendas_produtos_lotes_avulso_pre'
+  tb_vendas_produtos_lotes_avulso_pre: 'tb_vendas_produtos_lotes_avulso_pre',
+  tb_0001_update: 'tb_0001_update',
+  tb_site_categoria: 'tb_site_categoria',
+  tb_site_categoria_2: 'tb_site_categoria_2',
+  tb_site_image: 'tb_site_image',
+  tb_site_produtos: 'tb_site_produtos',
+  tb_usuarios_atalhos: 'tb_usuarios_atalhos',
+  tb_vendas_liberacao: 'tb_vendas_liberacao'
 };
 
 /**

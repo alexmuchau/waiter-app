@@ -15,7 +15,7 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     const command = await checkCommand(bodyOrder.command, bodyOrder.board, table.Codigo)
     if (!command) return res.status(400).send('Command error')
 
-    await createPreOrder(command.Codigo, table.Codigo, bodyOrder.items, products)
+    await createPreOrder(command.Codigo, table.Codigo, bodyOrder.items, products, req.user.userId)
     
     return res.send('Working!')
 }
@@ -91,7 +91,7 @@ async function checkProducts(items: OrderProps['items']) {
     return products
 }
 
-async function createPreOrder(commandNumber: number, tableId: number, products: OrderProps['items'], productsDB: any) {
+async function createPreOrder(commandNumber: number, tableId: number, products: OrderProps['items'], productsDB: any, userId: number) {
     const mobileOrderIdentifier = 97
 
     const orderCode = await desktopClient.tb_vendas_pre.findMany({
@@ -141,7 +141,7 @@ async function createPreOrder(commandNumber: number, tableId: number, products: 
             MODO: 'MODO PDV',
             Tempo: ((new Date().getTime() / 1000) - (new Date('2000-01-01T00:00:00').getTime() / 1000)),
             Observacao: null,
-            IDUser: params?.IDUser,
+            IDUser: userId,
             IDEmpresa: params?.IDEmpresa,
             Id_Comanda: commandNumber,
             Id_Mesa: tableId

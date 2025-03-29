@@ -10,6 +10,7 @@ import { BackHeader } from "@/components/Header/BackHeader";
 import { HeaderTitle } from "@/components/Header/HeaderTitle";
 import { LinkButton } from "@/components/Buttons/LinkButton";
 import { ProductList } from "@/components/ProductList";
+import { ArrowRight } from "phosphor-react";
 
 export default function OrdersResume() {
     const [command, setCommand] = useState<CommandItemProps>()
@@ -17,7 +18,7 @@ export default function OrdersResume() {
     const [listCommands, setListCommands] = useState<
         Array<CommandItemProps & { disabled: boolean }>
     >([]);
-    const [orders, setOrders] = useState<ResumeOrderProps>({})
+    const [productsTotal, setProductsTotal] = useState<ResumeOrderProps>()
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     async function printOrder() {
@@ -32,7 +33,7 @@ export default function OrdersResume() {
     }
 
     useEffect(() => {
-        async function fetchOrders() {
+        async function fetchProductsTotal() {
             if (!command) return
 
             const token = getCookie('token');
@@ -42,11 +43,12 @@ export default function OrdersResume() {
                 }
             })
 
-            const { orders } = res.data as { orders: ResumeOrderProps }
-            setOrders(orders)
+            const { productsTotal } = res.data as {productsTotal: ResumeOrderProps}
+            setProductsTotal(productsTotal)
+            console.log(productsTotal)
         }
 
-        fetchOrders()
+        fetchProductsTotal()
     }, [command])
 
     function createListCommands(commands: CommandItemProps[]) {
@@ -106,17 +108,16 @@ export default function OrdersResume() {
             </div>
             <div className="flex flex-col gap-6">
                 {
-                    Object.keys(orders).map((dt) => (
-                        <div key={dt} className="flex flex-col gap-4">
-                            <div className="flex flex-col gap-2">
-                                <strong>{ dt }</strong>
-                                <div className="h-0.5 w-full bg-accent"/>
-                            </div>
+                    productsTotal && command
+                        && <>
                             <ProductList
-                                listActiveProducts={orders[dt]}
+                                listActiveProducts={productsTotal.products}
                             />
-                        </div>
-                    ))
+                            <div className="flex flex-col items-center bg-accent-blur-using border-accent border-2 p-4 rounded-md gap-2 ml-8">
+                                Total comanda {command?.description}
+                                <strong className="text-3xl">R${productsTotal.total.toFixed(2)}</strong>
+                            </div>
+                        </>
                 }
             </div>
             <footer>

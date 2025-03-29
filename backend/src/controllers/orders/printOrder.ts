@@ -32,7 +32,7 @@ export async function printOrder(req: FastifyRequest, reply: FastifyReply) {
             Codigo: 'desc'
         },
         take: 1
-    }).then((res) => !res ? 99 : res.Codigo + 100)
+    }).then((res) => !res ? 199 : res.Codigo + 100)
 
 
 
@@ -41,7 +41,8 @@ export async function printOrder(req: FastifyRequest, reply: FastifyReply) {
             Codigo: impId,
             Data: new Date(),
             Hora: format(new Date(), 'HH:mm:ss'),
-            Id_Comanda: commandId.Codigo
+            Id_Comanda: commandId.Codigo,
+            Tempo: ((new Date().getTime() / 1000) - (new Date('2000-01-01T00:00:00').getTime() / 1000))
         }
     })
 

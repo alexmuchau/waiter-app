@@ -11,7 +11,7 @@ interface ModalClientItemProps {
 export function ModalClientItem({ client, addClient, isSelected }: ModalClientItemProps) {
     return (
         <Button
-            className="flex h-full py-2 gap-4 items-center justify-between"
+            className={`flex h-full py-2 gap-4 items-center justify-between ${isSelected && 'text-white'}`}
             color={!isSelected ? "default" : "primary"}
             onPress={() => addClient(client.id)}
         >

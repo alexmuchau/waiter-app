@@ -27,7 +27,7 @@ export function ModalProductItem({ product, addProduct }: ModalProductItemProps)
 
     return (
         <Button
-            className="flex h-full py-2 gap-4 items-center justify-between"
+            className={`flex h-full py-2 gap-4 items-center justify-between ${quantity > 0 && "text-white"}`}
             onPress={plusQuantity}
             color={quantity < 1 ? "default" : "primary"}
         >
@@ -38,7 +38,7 @@ export function ModalProductItem({ product, addProduct }: ModalProductItemProps)
             <div className="flex items-center gap-2">
                 <p>R${product.price.toFixed(2)}</p>
                 <Button
-                    className={`flex p-2 min-w-0 min-h-0 h-full rounded-full ${quantity > 0 && 'bg-background'}`}
+                    className={`flex p-2 min-w-0 min-h-0 h-full rounded-full ${quantity > 0 && 'bg-accent'}`}
                     isDisabled={quantity < 1}
                     onPress={minusQuantity}
                 >

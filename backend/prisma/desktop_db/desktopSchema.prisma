@@ -59,6 +59,7 @@ model tb_pessoas {
   Op_Transportador          String?   @db.VarChar(300)
   Op_Prestador_Servico      String?   @db.VarChar(300)
   Id_Comanda_Personalizada  Int?
+  Quitacao_Ordem            String?   @db.VarChar(300)
 }
 
 model tb_produtos {
@@ -871,6 +872,9 @@ model tb_empresas_conf_geral {
   Limite_Alteracao_Unitario        Float?
   Obs_Venda_A4                     String? @db.VarChar(300)
   Promissoria_Termica              String? @db.VarChar(300)
+  Site_Endereco                    String? @db.VarChar(300)
+  Site_CK                          String? @db.VarChar(300)
+  Site_CS                          String? @db.VarChar(300)
 }
 
 model tb_empresas_conf_pet {
@@ -1169,6 +1173,7 @@ model tb_formas_pagamento {
   Integra_Fechamento               String? @db.VarChar(300)
   uMovMe_Enviar                    String? @db.VarChar(300)
   Utiliza_Movel                    String? @db.VarChar(300)
+  Padrao_Clientes_Novos            String? @db.VarChar(300)
 }
 
 model tb_formas_pagamento_desconto_autorizado {
@@ -1530,6 +1535,7 @@ model tb_nfce {
   Motivo_cStat           String?   @db.VarChar(300)
   Protocolo              String?   @db.VarChar(300)
   qBCMonoRet             Float?
+  Obs_Venda              String?   @db.VarChar(300)
 
   @@index([ChaveNFe], map: "Idx_ChaveNFe")
   @@index([Id_Operacao], map: "Idx_Id_Operacao")
@@ -1820,6 +1826,7 @@ model tb_nfe {
   RegConfirmado          String?   @db.VarChar(300)
   Liberado_para_Servidor String?   @db.VarChar(300)
   Info_IRRF              String?   @db.VarChar(300)
+  qBCMonoRet             Float?
 
   @@index([ChaveNFe], map: "Idx_ChaveNFe")
   @@index([Id_Operacao], map: "Idx_Id_Operacao")
@@ -2048,6 +2055,9 @@ model tb_nfe_item {
   Id_Item_Compra           Int?
   Desconto_Venda           Float?
   Acrescimo_Venda          Float?
+  adRemICMSRet             Float?
+  vICMSMonoRet             Float?
+  qBCMonoRet               Float?
 
   @@index([Id_NFe], map: "Idx_id_NFe")
   @@index([Id_Produto], map: "Idx_id_Produto")
@@ -2315,6 +2325,8 @@ model tb_parametros_execucao {
   Impressao_TAP                        String? @db.VarChar(300)
   Impressao_Cozinha                    String? @db.VarChar(300)
   Incluir_Acres_Desc_Unitario          String? @db.VarChar(300)
+  Confirmar_Senha_Final_Venda          String? @db.VarChar(300)
+  Ordem_Tela_Revisao                   String? @db.VarChar(300)
 }
 
 model tb_pdv_cadastro {
@@ -2594,6 +2606,7 @@ model tb_prestacao_servico_desacordo {
   cStat        Int?
   nroProtocolo String? @db.VarChar(300)
   dhProtocolo  String? @db.VarChar(300)
+  cUF          String? @db.VarChar(300)
 }
 
 model tb_produtos_alocacao {
@@ -3319,14 +3332,15 @@ model tb_usuarios_empresas {
 }
 
 model tb_usuarios_permissoes {
-  Codigo         Int     @id
-  Descricao      String? @db.VarChar(300)
-  Ativo          String? @db.VarChar(300)
-  RegExcluido    String? @db.VarChar(300)
-  IDEmpresa      Int?
-  DHU            String? @db.VarChar(300)
-  IDUser         Int?
-  Tela_Principal Int?
+  Codigo                     Int     @id
+  Descricao                  String? @db.VarChar(300)
+  Ativo                      String? @db.VarChar(300)
+  RegExcluido                String? @db.VarChar(300)
+  IDEmpresa                  Int?
+  DHU                        String? @db.VarChar(300)
+  IDUser                     Int?
+  Tela_Principal             Int?
+  Visualiza_Custos_Pesquisas String? @db.VarChar(300)
 }
 
 model tb_usuarios_permissoes_comandos {
@@ -4078,4 +4092,78 @@ model tb_vendas_produtos_lotes_avulso_pre {
   DHU           String?   @db.VarChar(300)
   RegExcluido   String?   @db.VarChar(300)
   Id_Lcto_Venda Int?
+}
+
+model tb_0001_update {
+  Codigo Int @id
+}
+
+model tb_site_categoria {
+  Codigo      Int     @id
+  Descricao   String? @db.VarChar(300)
+  Ativo       String? @db.VarChar(300)
+  RegExcluido String? @db.VarChar(300)
+  IDUser      Int?
+  IDEmpresa   Int?
+  Id_Site     Int?
+}
+
+model tb_site_categoria_2 {
+  Codigo       Int     @id
+  Id_Categoria Int?
+  Descricao    String? @db.VarChar(300)
+  Ativo        String? @db.VarChar(300)
+  RegExcluido  String? @db.VarChar(300)
+  IDUser       Int?
+  IDEmpresa    Int?
+  Id_Site      Int?
+}
+
+model tb_site_image {
+  Codigo Int @id
+}
+
+model tb_site_produtos {
+  Codigo             Int     @id
+  Id_Produto         Int?
+  Ativo              String? @db.VarChar(300)
+  RegExcluido        String? @db.VarChar(300)
+  IDEmpresa          Int?
+  Id_Site            Int?
+  Id_Categoria       Int?
+  Id_Categoria_2     Int?
+  Descricao          String? @db.VarChar(300)
+  Slug               String? @db.VarChar(300)
+  Complemento        String? @db.VarChar(300)
+  IDUser             Int?
+  Preco_Venda        Float?
+  Estoque_Disponivel Float?
+}
+
+model tb_usuarios_atalhos {
+  Codigo      Int     @id
+  Id_Usuario  Int?
+  Formulario  String? @db.VarChar(300)
+  RegExcluido String? @db.VarChar(300)
+}
+
+model tb_vendas_liberacao {
+  Codigo               Int       @id
+  Data                 DateTime? @db.Date
+  Hora                 String?   @db.VarChar(300)
+  Tempo                Int?
+  IDUser_Solicitacao   Int?
+  Tipo_Movimento       String?   @db.VarChar(300)
+  Pedido_Item          String?   @db.VarChar(300)
+  Id_Movimento         Int?
+  Id_Lcto_Item         Int?
+  Valor_Original       Float?
+  Valor_Solicitado     Float?
+  Percentual_Desconto  Float?
+  IDUser_Resposta      Int?
+  Data_Resposta        DateTime? @db.Date
+  Hora_Resposta        String?   @db.VarChar(300)
+  Tempo_Resposta       Int?
+  Status               String?   @db.VarChar(300)
+  Resposta_Visualizada String?   @db.VarChar(300)
 }

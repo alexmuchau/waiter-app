@@ -3,13 +3,10 @@ import { desktopClient } from "../../../prisma/prisma";
 import { ResumeOrderProps } from "../../../../utils/types";
 
 interface PreOrderProps {
-    Codigo: number,
-    Data_Movimento: Date,
-    Hora_Finalizacao: string,
     Id_Produto: number,
     Produto_Curto: string,
-    Quantidade: number,
     Unitario: number,
+    Quantidade_Total: number,
     Total: number
 }
 
@@ -32,16 +29,13 @@ export async function listOrdersOnCommand(req: FastifyRequest, reply: FastifyRep
         return
     }
 
-    const orders: PreOrderProps[] = await desktopClient.$queryRaw`
+    const productsTotal: ResumeOrderProps = await desktopClient.$queryRaw`
         SELECT
-            vp.Codigo,
-            vp.Data_Movimento,
-            vp.Hora_Finalizacao,
             pp.Id_Produto,
             p.Produto_Curto,
-            pp.Quantidade,
             pp.Unitario,
-            pp.Total
+            SUM(pp.Quantidade) AS Quantidade_Total,
+            SUM(pp.Total) AS Total
         FROM windados.tb_vendas_pre vp
         INNER JOIN windados.tb_vendas_produtos_pre pp
             ON vp.Codigo = pp.Id_Venda
@@ -50,30 +44,16 @@ export async function listOrdersOnCommand(req: FastifyRequest, reply: FastifyRep
         WHERE
             vp.Id_Venda IS NULL
             AND Id_Comanda = ${command?.Codigo}
-    `
+        GROUP BY Id_Produto, Produto_Curto, Unitario
+    `.then((res: any) => ({
+        products: res.map((productTotal: PreOrderProps) => ({
+            id: productTotal.Id_Produto.toString(),
+            name: productTotal.Produto_Curto,
+            price: productTotal.Unitario,
+            quantity: productTotal.Quantidade_Total,
+        })),
+        total: res.reduce((acc: number, productTotal: PreOrderProps) => acc + productTotal.Total, 0)
+    }))
 
-    console.log(orders)
-
-    let res: ResumeOrderProps = {}
-
-    for (const order of orders) {
-        order.Data_Movimento.setTime(order.Data_Movimento.getTime() + (4 * 60 * 60 * 1000))
-        const dt = order.Data_Movimento.toLocaleDateString('pt-BR') + ' - ' + order.Hora_Finalizacao
-        console.log(`${dt}`)
-        console.log(order.Data_Movimento)
-        res[dt] = (res[dt] ?? [])
-
-        res[dt].push({
-            id: `${order.Codigo}${order.Id_Produto}`,
-            name: order.Produto_Curto,
-            quantity: order.Quantidade,
-            price: order.Unitario,
-            totalPrice: order.Total
-        })
-    }
-
-
-    reply.send({
-        orders: res
-    })
+    reply.send({productsTotal})
 }

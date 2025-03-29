@@ -50,7 +50,7 @@ export default function Home() {
             checkConnection()
             getActiveTables()
         } else {
-            router.push('/login')
+            router.push('/sign-in')
         }
         
         setCheckingCookies(false)

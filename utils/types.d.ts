@@ -57,11 +57,11 @@ export interface CategoryGroupedProductProps {
 }
 
 interface ResumeOrderProps {
-    [realizedDt: string]: {
+    products: {
         id: string
         name: string,
         price: number,
         quantity: number,
-        totalPrice: number
-    }[]
+    }[],
+    total: number
 }

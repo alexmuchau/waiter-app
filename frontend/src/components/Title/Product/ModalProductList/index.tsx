@@ -73,7 +73,9 @@ export function ModalProductList({ category, isOpen, onOpenChange, products, cho
                                 </div>
                             </ModalBody>
                             <ModalFooter>
-                                <Button text="Salvar" onClick={onClose}/>
+                                <Button onClick={onClose}>
+                                    Salvar
+                                </Button>
                             </ModalFooter>
                         </>
                     )

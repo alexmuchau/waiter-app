@@ -11,15 +11,18 @@ import { useCookies } from "react-cookie";
 import { Form } from "@heroui/form";
 import { setCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
+import { Spinner } from "@heroui/react";
 
 export default function LoginScreen() {
     const [ username, setUsername ] = useState<string>('')
     const [ password, setPassword ] = useState<string>('')
     const [ errorMessage, setErrorMessage ] = useState<string | undefined>(undefined)
+    const [ isLoading, setIsLoading ] = useState<boolean>(false)
     const router = useRouter()
 
     async function tryLogin(event: FormEvent) {
         event.preventDefault()
+        setIsLoading(true)
 
         try {
             if(!username || !password) {
@@ -41,6 +44,7 @@ export default function LoginScreen() {
         } catch (error) {
             setErrorMessage("Erro ao fazer login!!")
         }
+        setIsLoading(false)
     }
     
     return (
@@ -63,8 +67,12 @@ export default function LoginScreen() {
                     isRequired
                 />
 
-                <Button type="submit" text="Login"/>
-
+                <Button type="submit" disabled={isLoading}>
+                    <div className="flex gap-2">
+                        { isLoading && <Spinner size="sm" /> }
+                        Login
+                    </div>
+                </Button>
                 {
                     errorMessage && <p className="text-red-500 text-xs">{errorMessage}</p>
                 }
