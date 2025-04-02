@@ -10,12 +10,12 @@ const app = fastify()
 
 app.register(fastifyCors, { origin: '*' })
 app.register(fastifyJwt, {
-    secret: 'your-secret-key'
+    secret: process.env.JWT_SECRET ?? 'secret'
 });
 
 app.register(routes)
 
-app.listen({ host: '192.168.0.204', port: 8080 }).then( async () => {
+app.listen({ host: process.env.HOST, port: 8080 }).then( async () => {
     await syncDBs()
     
     console.log('Server running')

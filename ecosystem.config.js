@@ -2,6 +2,8 @@
 // # or for production
 // pm2 start ecosystem.config.js --env production
 
+const HOST = "192.168.0.204"
+
 module.exports = {
     apps: [
       {
@@ -16,6 +18,7 @@ module.exports = {
         },
         env_production: {
           NODE_ENV: "production",
+          HOST
         },
       },
       {
@@ -29,6 +32,7 @@ module.exports = {
         },
         env_production: {
           NODE_ENV: "production",
+          HOST
         },
       },
     ],
