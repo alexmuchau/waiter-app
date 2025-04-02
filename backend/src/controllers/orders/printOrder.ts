@@ -10,7 +10,7 @@ export async function printOrder(req: FastifyRequest, reply: FastifyReply) {
         return
     }
 
-    const commandId: { Codigo: number } = await desktopClient.$queryRaw`
+    const commandId: { Codigo: number }[] = await desktopClient.$queryRaw`
         SELECT Codigo
         FROM windados.tb_vendas_pre_comandas
         WHERE
@@ -19,7 +19,9 @@ export async function printOrder(req: FastifyRequest, reply: FastifyReply) {
         LIMIT 1
     `
 
-    if (!commandId) {
+    console.log(commandId)
+
+    if (!commandId || !commandId[0].Codigo) {
         reply.status(401).send('Command dont exist!')
         return
     }
@@ -34,14 +36,12 @@ export async function printOrder(req: FastifyRequest, reply: FastifyReply) {
         take: 1
     }).then((res) => !res ? 199 : res.Codigo + 100)
 
-
-
     await desktopClient.tb_movel_0001_impressao.create({
         data: {
             Codigo: impId,
             Data: new Date(),
             Hora: format(new Date(), 'HH:mm:ss'),
-            Id_Comanda: commandId.Codigo,
+            Id_Comanda: commandId[0].Codigo,
             Tempo: ((new Date().getTime() / 1000) - (new Date('2000-01-01T00:00:00').getTime() / 1000))
         }
     })

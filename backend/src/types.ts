@@ -1,6 +1,5 @@
 export interface AuthPayload {
-    userId: number;
-    companyId: number;
+    waiterId: number;
 }
 
 declare module '@fastify/jwt' {

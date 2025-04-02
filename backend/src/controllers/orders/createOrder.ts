@@ -15,7 +15,7 @@ export async function createOrder(req: FastifyRequest, res: FastifyReply) {
     const command = await checkCommand(bodyOrder.command, bodyOrder.board, table.Codigo)
     if (!command) return res.status(400).send('Command error')
 
-    await createPreOrder(command.Codigo, table.Codigo, bodyOrder.items, products, req.user.userId)
+    await createPreOrder(command.Codigo, table.Codigo, bodyOrder.items, products, req.user.waiterId)
     
     return res.send('Working!')
 }
